@@ -33,7 +33,7 @@ const Wizard: React.FC = () => {
     },
   };
 
-  const handleSubmit = useCallback(async (data: any) => {
+  const handleSubmit = useCallback(async (data: HTMLFormElement) => {
     try {
       const schema = Yup.object().shape({
         age: Yup.string().required('Idade obrigatório'),
@@ -42,8 +42,6 @@ const Wizard: React.FC = () => {
       await schema.validate(data, {
         abortEarly: false,
       });
-
-      console.log(data);
     } catch (err) {
       console.log(err);
     }

@@ -16,7 +16,7 @@ const Button: React.FC<ButtonProps & ButtonGroupProps> = ({
 }) => {
   const inputRef = useRef<HTMLButtonElement>(null);
 
-  const { fieldName, defaultValue, error, registerField } = useField(name);
+  const { fieldName, defaultValue, registerField } = useField(name);
 
   useEffect(() => {
     registerField({
