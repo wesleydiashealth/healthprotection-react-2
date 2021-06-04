@@ -1,0 +1,247 @@
+[
+  {
+    "key": "step-1",
+    "title": "Age",
+    "label": "What is your age?",
+    "tooltip": "We need to know how old you are to make sude we find the best supplements just for you.",
+    "options": [
+      {
+        "value": "18-30",
+        "label": "18 - 30"
+      },
+      {
+        "value": "31-40",
+        "label": "31 - 40"
+      },
+      {
+        "value": "41-50",
+        "label": "41 - 50"
+      },
+      {
+        "value": "51-60",
+        "label": "51 - 60"
+      },
+      {
+        "value": ">60",
+        "label": "> 60"
+      }
+    ]
+  },
+  {
+    "key": "step-2",
+    "title": "Gender",
+    "label": "What is your gender?",
+    "tooltip": "You gender says a lot about your body and that can help us answer some questions by ourselves, so you don´t have to.",
+    "options": [
+      {
+        "value": "male",
+        "label": "Male"
+      },
+      {
+        "value": "Female",
+        "label": "Female"
+      }
+    ]
+  },
+  {
+    "key": "step-2-1",
+    "label": "Are you?",
+    "tooltip": "Don´t worry, this information is protected, we just need to know so we can safely recommend you supplements that won´t be harmful to you.",
+    "options": [
+      {
+        "value": "trying-to-conceive",
+        "label": "Trying to conceive"
+      },
+      {
+        "value": "lactating",
+        "label": "Lactating"
+      },
+      {
+        "value": "pregnant",
+        "label": "Pregnant"
+      },
+      {
+        "value": "none-of-the-above",
+        "label": "None of the above"
+      }
+    ]
+  },
+  {
+    "key": "step-3",
+    "title": "Diets",
+    "label": "Please, indicate all of the special diets you follow",
+    "tooltip": "Depending on how you eat, your body will work differently and may or may not need certain vitamins or minerals.",
+    "options": [
+      {
+        "value": "none",
+        "label": "None"
+      },
+      {
+        "value": "vegan",
+        "label": "Vegan"
+      },
+      {
+        "value": "vegeratian",
+        "label": "Vegeratian"
+      },
+      {
+        "value": "kosher",
+        "label": "Kosher"
+      },
+      {
+        "value": "halal",
+        "label": "Halal"
+      },
+      {
+        "value": "low-sodium",
+        "label": "Low Sodium"
+      },
+      {
+        "value": "ketogenic",
+        "label": "Ketogenic"
+      },
+      {
+        "value": "gluten-free",
+        "label": "Gluten free"
+      },
+      {
+        "value": "paleo-low-carb",
+        "label": "Paleo/Low carb"
+      },
+      {
+        "value": "dairy-free",
+        "label": "Dairy free"
+      },
+      {
+        "value": "other",
+        "label": "Other"
+      }
+    ]
+  },
+  {
+    "key": "step-4",
+    "title": "Conditions",
+    "label": "Please, indicate all of your allergies",
+    "tooltip": "Some supplements may contain those kinds of allergens, this information is very important so we can exclude the products that can be dangerous to you.",
+    "options": [
+      {
+        "value": "none",
+        "label": "None"
+      },
+      {
+        "value": "treenuts",
+        "label": "Treenuts"
+      },
+      {
+        "value": "peanuts",
+        "label": "Peanuts"
+      },
+      {
+        "value": "soy",
+        "label": "Soy"
+      },
+      {
+        "value": "shellfish",
+        "label": "Shellfish"
+      },
+      {
+        "value": "eggs",
+        "label": "Eggs"
+      },
+      {
+        "value": "dairy",
+        "label": "Dairy"
+      },
+      {
+        "value": "other",
+        "label": "Other"
+      }
+    ]
+  },
+  {
+    "key": "step-5",
+    "title": "Medications",
+    "label": "Do you take any medications?",
+    "tooltip": "We need to know if you take any drug so we can recommend a safe mix and match without any interactions. Don´t worry, this information is protected.",
+    "options": [
+      {
+        "value": "yes",
+        "label": "Yes"
+      },
+      {
+        "value": "no",
+        "label": "No"
+      }
+    ]
+  },
+  {
+    "key": "step-5-1",
+    "label": "What kind?",
+    "tooltip": "Depending on the kind of drug you take there are different kinds of interactions.",
+    "options": [
+      {
+        "value": "diabetes-medication",
+        "label": "Diabetes Medication"
+      },
+      {
+        "value": "blood-pressure-medication",
+        "label": "Blood Pressure Medication"
+      },
+      {
+        "value": "immunosuppressant-medication",
+        "label": "Immunosuppressant Medication"
+      },
+      {
+        "value": "antiacids",
+        "label": "Antiacids"
+      },
+      {
+        "value": "psychotropic-medication",
+        "label": "Psychotropic Medication"
+      },
+      {
+        "value": "asthma-medication",
+        "label": "Asthma Medication"
+      },
+      {
+        "value": "antiallergics",
+        "label": "Antiallergics"
+      },
+      {
+        "value": "thyroid-medication",
+        "label": "Thyroid Medication"
+      }
+    ]
+  },
+  {
+    "key": "step-6",
+    "label": "Do you fit in any of these categories?",
+    "tooltip": "We need to ask this because we cannot make any recommendation without the supervision of your doctor if you find yourself in any of the answers.",
+    "options": [
+      {
+        "value": "none",
+        "label": "None"
+      },
+      {
+        "value": "ongoing-cancer-treatment",
+        "label": "Ongoing Cancer Treatment"
+      },
+      {
+        "value": "dialisis-chronic-kidney-disease",
+        "label": "Dialisis/Chronic Kidney Disease"
+      },
+      {
+        "value": "transplant-recipient",
+        "label": "Transplant Recipient"
+      },
+      {
+        "value": "life-threatening-condition",
+        "label": "Life Threatening Condition"
+      },
+      {
+        "value": "participating-in-any-kind-anti-doping-test",
+        "label": "Participating in any kind anti-doping test"
+      }
+    ]
+  }
+]
