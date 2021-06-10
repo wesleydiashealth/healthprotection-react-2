@@ -1,0 +1,64 @@
+{
+  "outcomes": [
+    {
+      "key": "cardiovascular-health",
+      "title": "Cardiovascular Health",
+      "description": "Long tooltip description"
+    },
+    {
+      "key": "immunity",
+      "title": "Immunity",
+      "description": "Long tooltip description"
+    }
+  ],
+  "suboutcomes": [
+    {
+      "key": "cholesterol-and-triglycedires",
+      "title": "Cholesterol-and Triglycedires",
+      "description": "Long tooltip description"
+    },
+    {
+      "key": "blood-pressure",
+      "title": "Blood Pressure",
+      "description": "Long tooltip description"
+    },
+    {
+      "key": "immune-response",
+      "title": "Immune Response",
+      "description": "Long tooltip description"
+    },
+    {
+      "key": "nutrient-supplementation",
+      "title": "Nutrient Supplementation",
+      "description": "Long tooltip description"
+    }
+  ],
+  "substances": [
+    {
+      "key": "omega-3",
+      "title": "Omega 3",
+      "dosage": "300 mg",
+      "descripton": "Long tooltip description",
+      "fine-tune": "med"
+    },
+    {
+      "key": "psyllium",
+      "title": "Psyllium",
+      "dosage": "10000 mg",
+      "descripton": "Long tooltip description",
+      "fine-tune": "max"
+    },
+    {
+      "key": "black-garlic",
+      "title": "Black Garlic",
+      "dosage": "600 mg",
+      "descripton": "Long tooltip description"
+    },
+    {
+      "key": "vitamin-c",
+      "title": "Vitamin C",
+      "dosage": "1000 mg",
+      "descripton": "Long tooltip description"
+    }
+  ]
+}

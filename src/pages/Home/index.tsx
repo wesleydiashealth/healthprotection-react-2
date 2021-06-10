@@ -5,12 +5,14 @@ import Container from './styles';
 import Header from '../../components/Header';
 import Hero from '../../components/Hero';
 import Wizard from '../../components/Wizard';
+import Sankey from '../../components/Sankey';
 
 const Home: React.FC = () => (
   <Container className="content-wrapper">
     <Header />
     <Hero />
     <Wizard />
+    <Sankey />
   </Container>
 );
 

@@ -20,8 +20,10 @@ const Step1: React.FC = () => {
         size={20}
         color="#7664C8"
         data-tip={`<strong>${currentStep.title}</strong><span>${currentStep.tooltip}</span>`}
+        data-for="step-tooltip"
       />
       <ReactToolTip
+        id="step-tooltip"
         className="step-tooltip"
         place="bottom"
         type="light"
