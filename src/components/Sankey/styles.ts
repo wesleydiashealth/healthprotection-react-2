@@ -5,26 +5,65 @@ interface FineTuneProps {
 }
 
 const Container = styled.div`
-  margin: 100px 0 200px;
+  .step-intro {
+    margin-bottom: 40px;
 
-  display: flex;
-  justify-content: space-between;
+    text-align: center;
 
-  .sankey-tooltip {
-    width: 260px;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.11);
-    border-radius: 20px;
-
-    font-size: 14px;
-    line-height: 22px;
-
-    strong {
-      display: block;
+    h2,
+    h3 {
       margin-bottom: 10px;
-      font-size: 20px;
-      line-height: 28px;
-      font-weight: 500;
-      color: #7664c8;
+
+      color: #565656;
+    }
+
+    h2 {
+      font-weight: 700;
+
+      font-size: 33px;
+      line-height: 40px;
+    }
+
+    h3 {
+      margin-bottom: 10px;
+
+      font-size: 28px;
+      line-height: 34px;
+
+      strong {
+        font-weight: 600;
+        color: #db71af;
+      }
+    }
+
+    span {
+      color: #565656;
+
+      font-size: 18px;
+      line-height: 24px;
+    }
+  }
+
+  .step-content {
+    display: flex;
+    justify-content: space-between;
+
+    .sankey-tooltip {
+      width: 260px;
+      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.11);
+      border-radius: 20px;
+
+      font-size: 14px;
+      line-height: 22px;
+
+      strong {
+        display: block;
+        margin-bottom: 10px;
+        font-size: 20px;
+        line-height: 28px;
+        font-weight: 500;
+        color: #7664c8;
+      }
     }
   }
 `;

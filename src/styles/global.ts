@@ -8,16 +8,23 @@ export default createGlobalStyle`
     outline: 0;
   }
 
-  body {
-    -webkit-font-smoothing: antialiased;
+  html {
+    scroll-behavior: smooth;
   }
 
-  body, input, button {
-    font-family: 'Roboto', sans-serif;
+  body {
+    -webkit-font-smoothing: antialiased;
+
+    overflow-x: hidden;
+  }
+
+  body, input, button, p {
+    font-family: 'Montserrat', sans-serif;
     font-size: 16px;
   }
 
   h1, h2, h3, h4, h5, h6, strong {
+    font-family: 'Montserrat', sans-serif;
     font-weight: 500;
   }
 
@@ -29,7 +36,7 @@ export default createGlobalStyle`
     margin: 0 auto;
     padding: 0 20px;
 
-    max-width: 1200px;
+    max-width: 1800px;
     width: 100%;
   }
 `;

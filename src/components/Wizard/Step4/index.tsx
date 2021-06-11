@@ -1,4 +1,6 @@
 import React, { useState, useCallback } from 'react';
+import ReactToolTip from 'react-tooltip';
+import { HiQuestionMarkCircle } from 'react-icons/hi';
 import ScrollArea from 'react-scrollbar';
 
 import { StepContainer } from '../styles';
@@ -32,8 +34,24 @@ const Step2: React.FC = () => {
 
   return (
     <StepContainer>
-      <p>Question 4/{formSteps.length}</p>
+      <span>Question 4/{formSteps.length}</span>
       <strong>{currentStep.label}</strong>
+      <HiQuestionMarkCircle
+        size={20}
+        color="#7664C8"
+        data-tip={`<strong>${currentStep.title}</strong><span>${currentStep.tooltip}</span>`}
+        data-for="step_4_tooltip"
+      />
+      <ReactToolTip
+        id="step_4_tooltip"
+        className="step-tooltip"
+        place="bottom"
+        type="light"
+        effect="solid"
+        offset={{ top: 10, left: 100 }}
+        html
+        backgroundColor="#fff"
+      />
       <ScrollArea className="buttons-list" smoothScrolling horizontal={false}>
         {currentStep.options.map(option => (
           <Button

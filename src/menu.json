@@ -1,22 +1,32 @@
 [
   {
+    "id": "menu_1",
     "title": "The Science behind us",
-    "target": "#"
+    "target": "#",
+    "class": "has-background"
   },
   {
+    "id": "menu_2",
     "title": "About Us",
-    "target": "#"
+    "target": "#",
+    "class": ""
   },
   {
+    "id": "menu_3",
     "title": "Products",
-    "target": "#"
+    "target": "#",
+    "class": ""
   },
   {
+    "id": "menu_4",
     "title": "Blog",
-    "target": "#"
+    "target": "#",
+    "class": ""
   },
   {
+    "id": "menu_5",
     "title": "Sign In",
-    "target": "#"
+    "target": "#",
+    "class": ""
   }
 ]

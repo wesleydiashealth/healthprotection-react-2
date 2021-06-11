@@ -8,7 +8,7 @@ import Wizard from '../../components/Wizard';
 import Sankey from '../../components/Sankey';
 
 const Home: React.FC = () => (
-  <Container className="content-wrapper">
+  <Container>
     <Header />
     <Hero />
     <Wizard />

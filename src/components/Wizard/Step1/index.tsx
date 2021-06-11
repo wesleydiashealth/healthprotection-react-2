@@ -14,16 +14,16 @@ const Step1: React.FC = () => {
 
   return (
     <StepContainer>
-      <p>Question 1/{formSteps.length}</p>
+      <span>Question 1/{formSteps.length}</span>
       <strong>{currentStep.label}</strong>
       <HiQuestionMarkCircle
         size={20}
         color="#7664C8"
         data-tip={`<strong>${currentStep.title}</strong><span>${currentStep.tooltip}</span>`}
-        data-for="step-tooltip"
+        data-for="step_1_tooltip"
       />
       <ReactToolTip
-        id="step-tooltip"
+        id="step_1_tooltip"
         className="step-tooltip"
         place="bottom"
         type="light"
