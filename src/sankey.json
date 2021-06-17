@@ -3,62 +3,210 @@
     {
       "key": "cardiovascular-health",
       "title": "Cardiovascular Health",
-      "description": "Long tooltip description"
+      "description": "Long tooltip description",
+      "sub-outcomes": [
+        "cholesterol-and-triglycedires",
+        "blood-pressure"
+      ]
     },
     {
       "key": "immunity",
       "title": "Immunity",
-      "description": "Long tooltip description"
+      "description": "Long tooltip description",
+      "sub-outcomes": [
+        "immune-response",
+        "nutrient-supplementation"
+      ]
     }
   ],
   "suboutcomes": [
     {
       "key": "cholesterol-and-triglycedires",
       "title": "Cholesterol-and Triglycedires",
-      "description": "Long tooltip description"
+      "description": "Long tooltip description",
+      "substances": {
+        "med": [
+          {
+            "key": "omega-3",
+            "title": "Omega 3",
+            "dosage": "300 mg",
+            "description": "Long tooltip description",
+            "parents": [
+              "cholesterol-and-triglycedires"
+            ]
+          },
+          {
+            "key": "black-garlic",
+            "title": "Black Garlic",
+            "dosage": "600 mg",
+            "description": "Long tooltip description",
+            "parents": [
+              "cholesterol-and-triglycedires"
+            ]
+          }
+        ],
+        "max": [
+          {
+            "key": "grape-seed-extract",
+            "title": "Grape Seed Extract",
+            "dosage": "400 mg",
+            "description": "Long tooltip description",
+            "parents": [
+              "cholesterol-and-triglycedires"
+            ]
+          },
+          {
+            "key": "psyllium",
+            "title": "Psyllium",
+            "dosage": "10000 mg",
+            "description": "Long tooltip description",
+            "parents": [
+              "cholesterol-and-triglycedires"
+            ]
+          }
+        ]
+      }
     },
     {
       "key": "blood-pressure",
       "title": "Blood Pressure",
-      "description": "Long tooltip description"
+      "description": "Long tooltip description",
+      "substances": {
+        "med": [
+          {
+            "key": "black-garlic",
+            "title": "Black Garlic",
+            "dosage": "600 mg",
+            "description": "Long tooltip description",
+            "parents": [
+              "blood-pressure"
+            ]
+          },
+          {
+            "key": "grape-seed-extract",
+            "title": "Grape Seed Extract",
+            "dosage": "200 mg",
+            "description": "Long tooltip description",
+            "parents": [
+              "blood-pressure"
+            ]
+          }
+        ],
+        "max": [
+          {
+            "key": "olive-leaf-extract",
+            "title": "Olive Leaf Extract",
+            "dosage": "1000 mg",
+            "description": "Long tooltip description",
+            "parents": [
+              "blood-pressure"
+            ]
+          },
+          {
+            "key": "resveratrol",
+            "title": "Resveratrol",
+            "dosage": "500 mg",
+            "description": "Long tooltip description",
+            "parents": [
+              "blood-pressure"
+            ]
+          }
+        ]
+      }
     },
     {
       "key": "immune-response",
       "title": "Immune Response",
-      "description": "Long tooltip description"
+      "description": "Long tooltip description",
+      "substances": {
+        "med": [
+          {
+            "key": "black-garlic",
+            "title": "Black Garlic",
+            "dosage": "600 mg",
+            "description": "Long tooltip description",
+            "parents": [
+              "immune-response"
+            ]
+          },
+          {
+            "key": "vitamin-c",
+            "title": "Vitamin C",
+            "dosage": "500 mg",
+            "description": "Long tooltip description",
+            "parents": [
+              "immune-response"
+            ]
+          }
+        ],
+        "max": [
+          {
+            "key": "reishi",
+            "title": "Reishi",
+            "dosage": "5 mg",
+            "description": "Long tooltip description",
+            "parents": [
+              "immune-response"
+            ]
+          },
+          {
+            "key": "iron",
+            "title": "Iron",
+            "dosage": "5 mg",
+            "description": "Long tooltip description",
+            "parents": [
+              "immune-response"
+            ]
+          }
+        ]
+      }
     },
     {
       "key": "nutrient-supplementation",
       "title": "Nutrient Supplementation",
-      "description": "Long tooltip description"
-    }
-  ],
-  "substances": [
-    {
-      "key": "omega-3",
-      "title": "Omega 3",
-      "dosage": "300 mg",
-      "descripton": "Long tooltip description",
-      "fine-tune": "med"
-    },
-    {
-      "key": "psyllium",
-      "title": "Psyllium",
-      "dosage": "10000 mg",
-      "descripton": "Long tooltip description",
-      "fine-tune": "max"
-    },
-    {
-      "key": "black-garlic",
-      "title": "Black Garlic",
-      "dosage": "600 mg",
-      "descripton": "Long tooltip description"
-    },
-    {
-      "key": "vitamin-c",
-      "title": "Vitamin C",
-      "dosage": "1000 mg",
-      "descripton": "Long tooltip description"
+      "description": "Long tooltip description",
+      "substances": {
+        "med": [
+          {
+            "key": "vitamin-a",
+            "title": "Vitamin A",
+            "dosage": "700 mg",
+            "description": "Long tooltip description",
+            "parents": [
+              "nutrient-supplementation"
+            ]
+          },
+          {
+            "key": "vitamin-c",
+            "title": "Vitamin C",
+            "dosage": "500 mg",
+            "description": "Long tooltip description",
+            "parents": [
+              "nutrient-supplementation"
+            ]
+          }
+        ],
+        "max": [
+          {
+            "key": "psyllium",
+            "title": "Psyllium",
+            "dosage": "10000 mg",
+            "description": "Long tooltip description",
+            "parents": [
+              "nutrient-supplementation"
+            ]
+          },
+          {
+            "key": "lactobacillus",
+            "title": "Lactobacillus",
+            "dosage": "10 billion",
+            "description": "Long tooltip description",
+            "parents": [
+              "nutrient-supplementation"
+            ]
+          }
+        ]
+      }
     }
   ]
 }

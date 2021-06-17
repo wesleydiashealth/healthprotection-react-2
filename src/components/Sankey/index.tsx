@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import ReactToolTip from 'react-tooltip';
 import { HiQuestionMarkCircle } from 'react-icons/hi';
 import Xarrow from 'react-xarrows';
@@ -13,10 +13,37 @@ import Container, {
 
 import sankeyData from '../../sankey.json';
 
-const Sankey: React.FC = () => {
-  const { outcomes, suboutcomes, substances } = sankeyData;
+interface Substance {
+  key: string;
+  title: string;
+  dosage: string;
+  description: string;
+  parents: Array<string>;
+}
 
-  const [fineTune, setFineTune] = useState({});
+const Sankey: React.FC = () => {
+  const { outcomes, suboutcomes } = sankeyData;
+
+  const [nutraceutics, setNutraceutics] = useState<Substance[]>([]);
+
+  const handleFineTuneClick = useCallback(
+    async (items: Array<Substance>) => {
+      if (items.length) {
+        const newItems = items.filter(
+          (item: Substance) => !nutraceutics.includes(item),
+        );
+
+        // const newItems = items.filter(
+        //   (item: Substance) => nutraceutics.indexOf(item) !== -1,
+        // );
+
+        setNutraceutics([...nutraceutics, ...newItems]);
+      } else {
+        setNutraceutics(items);
+      }
+    },
+    [nutraceutics],
+  );
 
   return (
     <Container>
@@ -42,6 +69,16 @@ const Sankey: React.FC = () => {
                 data-tip={`<strong>${outcome.title}</strong><span>${outcome.description}</span>`}
                 data-for="sankey-tooltip"
               />
+              {outcome['sub-outcomes'].map(suboutcome => (
+                <Xarrow
+                  start={outcome.key}
+                  end={suboutcome}
+                  showHead={false}
+                  strokeWidth={40}
+                  curveness={0.4}
+                  color="rgba(240, 94, 98, 0.07)"
+                />
+              ))}
             </div>
           ))}
         </Outcomes>
@@ -61,94 +98,54 @@ const Sankey: React.FC = () => {
               <div className="fine-tune">
                 <FineTune
                   onClick={() => {
-                    setFineTune({
-                      ...fineTune,
-                      abc: 'off',
-                    });
+                    handleFineTuneClick([]);
                   }}
                 >
                   Off
                 </FineTune>
-                <FineTune>Med</FineTune>
-                <FineTune>Max</FineTune>
+                <FineTune
+                  onClick={() => {
+                    handleFineTuneClick(suboutcome.substances?.med || []);
+                  }}
+                >
+                  Med
+                </FineTune>
+                <FineTune
+                  onClick={() => {
+                    handleFineTuneClick(suboutcome.substances?.max || []);
+                  }}
+                >
+                  Max
+                </FineTune>
               </div>
             </div>
           ))}
         </SubOutcomes>
 
         <Substances>
-          {substances.map(substance => (
-            <div key={substance.key} id={substance.key}>
-              {substance.title}
+          {nutraceutics.map(nutraceutic => (
+            <div key={nutraceutic.key} id={nutraceutic.key}>
+              {nutraceutic.title}
+              {nutraceutic.parents.map(parent => {
+                return (
+                  <Xarrow
+                    start={parent}
+                    end={nutraceutic.key}
+                    showHead={false}
+                    strokeWidth={40}
+                    curveness={0.4}
+                    color="rgba(240, 94, 98, 0.07)"
+                  />
+                );
+              })}
             </div>
           ))}
+          {/* {nutraceutics.map(nutraceutic => (
+            <div key={nutraceutic} id={nutraceutic}>
+              {nutraceutic}
+            </div>
+          ))} */}
         </Substances>
-
-        <Xarrow
-          start="cardiovascular-health"
-          end="cholesterol-and-triglycedires"
-          showHead={false}
-          strokeWidth={40}
-          curveness={0.4}
-          color="rgba(240, 94, 98, 0.07)"
-        />
-        <Xarrow
-          start="cardiovascular-health"
-          end="blood-pressure"
-          showHead={false}
-          strokeWidth={40}
-          curveness={0.4}
-          color="rgba(240, 94, 98, 0.07)"
-        />
-        <Xarrow
-          start="immunity"
-          end="immune-response"
-          showHead={false}
-          strokeWidth={40}
-          curveness={0.4}
-          color="rgba(240, 94, 98, 0.07)"
-        />
-        <Xarrow
-          start="immunity"
-          end="nutrient-supplementation"
-          showHead={false}
-          strokeWidth={40}
-          curveness={0.4}
-          color="rgba(240, 94, 98, 0.07)"
-        />
-
-        <Xarrow
-          start="cholesterol-and-triglycedires"
-          end="omega-3"
-          showHead={false}
-          strokeWidth={40}
-          curveness={0.4}
-          color="rgba(240, 94, 98, 0.07)"
-        />
-        <Xarrow
-          start="cholesterol-and-triglycedires"
-          end="black-garlic"
-          showHead={false}
-          strokeWidth={40}
-          curveness={0.4}
-          color="rgba(240, 94, 98, 0.07)"
-        />
-        <Xarrow
-          start="immune-response"
-          end="black-garlic"
-          showHead={false}
-          strokeWidth={40}
-          curveness={0.4}
-          color="rgba(240, 94, 98, 0.07)"
-        />
-        <Xarrow
-          start="immune-response"
-          end="vitamin-c"
-          showHead={false}
-          strokeWidth={40}
-          curveness={0.4}
-          color="rgba(240, 94, 98, 0.07)"
-        />
 
         <ReactToolTip
           id="sankey-tooltip"
