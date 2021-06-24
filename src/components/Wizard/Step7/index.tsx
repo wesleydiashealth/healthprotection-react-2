@@ -1,51 +1,39 @@
-import React, { useState } from 'react';
-import ReactToolTip from 'react-tooltip';
-import { HiQuestionMarkCircle } from 'react-icons/hi';
+import React from 'react';
+import { IoOptionsOutline } from 'react-icons/io5';
+import { BsChevronCompactRight } from 'react-icons/bs';
 
-import { StepContainer } from '../styles';
-import formSteps from '../../../form.json';
-
-import Button from '../../Button';
+import StepContainer from './styles';
 
 const Step2: React.FC = () => {
-  const [category, setCategory] = useState('');
-
-  const currentStep = formSteps[7];
-
   return (
     <StepContainer>
-      <span>Question 7/{formSteps.length}</span>
-      <strong>{currentStep.label}</strong>
-      <HiQuestionMarkCircle
-        size={20}
-        color="#7664C8"
-        data-tip={`<strong>${currentStep.title}</strong><span>${currentStep.tooltip}</span>`}
-        data-for="step_7_tooltip"
-      />
-      <ReactToolTip
-        id="step_7_tooltip"
-        className="step-tooltip"
-        place="bottom"
-        type="light"
-        effect="solid"
-        offset={{ top: 10, left: 100 }}
-        html
-        backgroundColor="#fff"
-      />
-      {currentStep.options.map(option => (
-        <Button
-          key={option.value}
-          type="button"
-          onClick={() => {
-            setCategory(option.value);
-          }}
-          isActive={category === option.value}
-          name="category"
-          value={category}
-        >
-          {option.label}
-        </Button>
-      ))}
+      <IoOptionsOutline size={52} color="#DB71AF" />
+      <strong>Well done, now it&apos;s time to fine-tune your goals</strong>
+      <p>
+        All our products are sold without prescriptions, but we care about their
+        efficiency and of course, your safety.
+      </p>
+      <p>Based on your answers we&apos;ve filtered</p>
+      <div className="results">
+        <ul>
+          <li>17 outcomes</li>
+          <li>43 sub-outcomes</li>
+          <li>500+ products</li>
+        </ul>
+        <BsChevronCompactRight size={72} color="#C6C6C6" />
+        <ul>
+          <li>2 outcomes</li>
+          <li>4 sub-outcomes</li>
+          <li>11 products</li>
+        </ul>
+      </div>
+      <p>for you to safely fine-tune your priorities.</p>
+      <div className="buttons">
+        <button type="button" name="reset">
+          Reset
+        </button>
+        <a href="#step_2">Go to Step 2</a>
+      </div>
     </StepContainer>
   );
 };

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import ReactToolTip from 'react-tooltip';
-import { HiQuestionMarkCircle } from 'react-icons/hi';
+import { HiQuestionMarkCircle, HiOutlineCheckCircle } from 'react-icons/hi';
 
 import { StepContainer } from '../styles';
 import formSteps from '../../../form.json';
@@ -9,17 +9,38 @@ import Button from '../../Button';
 
 const Step2: React.FC = () => {
   const [gender, setGender] = useState('');
+  const [femaleCondition, setFemaleCondition] = useState('');
 
   const currentStep = formSteps[1];
 
   return (
-    <StepContainer>
-      <span>Question 2/{formSteps.length}</span>
-      <strong>{currentStep.label}</strong>
+    <StepContainer
+      isCompleted={gender === 'male' || femaleCondition.length > 0}
+    >
+      {(gender === 'male' || femaleCondition.length > 0) && (
+        <HiOutlineCheckCircle
+          className="completed-icon"
+          size={32}
+          color="#1BC9BD"
+        />
+      )}
+      <span>
+        Question {gender !== 'female' ? '2' : '2.1'}/{formSteps.length}
+      </span>
+      <strong>
+        {gender !== 'female' ? currentStep.label : currentStep.substep?.label}
+      </strong>
       <HiQuestionMarkCircle
+        className="tooltip-icon"
         size={20}
         color="#7664C8"
-        data-tip={`<strong>${currentStep.title}</strong><span>${currentStep.tooltip}</span>`}
+        data-tip={`<strong>${
+          gender !== 'female' ? currentStep.title : currentStep.substep?.title
+        }</strong><span>${
+          gender !== 'female'
+            ? currentStep.tooltip
+            : currentStep.substep?.tooltip
+        }</span>`}
         data-for="step_2_tooltip"
       />
       <ReactToolTip
@@ -32,20 +53,36 @@ const Step2: React.FC = () => {
         html
         backgroundColor="#fff"
       />
-      {currentStep.options.map(option => (
-        <Button
-          key={option.value}
-          type="button"
-          onClick={() => {
-            setGender(option.value);
-          }}
-          isActive={gender === option.value}
-          name="gender"
-          value={gender}
-        >
-          {option.label}
-        </Button>
-      ))}
+      {gender !== 'female' &&
+        currentStep.options.map(option => (
+          <Button
+            key={option.value}
+            type="button"
+            onClick={() => {
+              setGender(option.value);
+            }}
+            isActive={gender === option.value}
+            name="gender"
+            value={gender}
+          >
+            {option.label}
+          </Button>
+        ))}
+      {gender === 'female' &&
+        currentStep.substep?.options.map(option => (
+          <Button
+            key={option.value}
+            type="button"
+            onClick={() => {
+              setFemaleCondition(option.value);
+            }}
+            isActive={femaleCondition === option.value}
+            name="female_condition"
+            value={femaleCondition}
+          >
+            {option.label}
+          </Button>
+        ))}
     </StepContainer>
   );
 };

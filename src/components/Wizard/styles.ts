@@ -1,4 +1,9 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+
+interface StepContainerProps {
+  isCompleted?: boolean;
+  isDisabled?: boolean;
+}
 
 const Container = styled.div`
   margin: 0 auto;
@@ -44,9 +49,13 @@ const Container = styled.div`
       line-height: 24px;
     }
   }
+
+  .react-multi-carousel-list {
+    padding-bottom: 40px;
+  }
 `;
 
-export const StepContainer = styled.div`
+export const StepContainer = styled.div<StepContainerProps>`
   display: flex;
   flex-direction: column;
   position: relative;
@@ -58,6 +67,16 @@ export const StepContainer = styled.div`
 
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.11);
   border-radius: 20px;
+
+  ${props =>
+    props.isCompleted &&
+    css`
+      opacity: 0.3;
+
+      button {
+        pointer-events: none;
+      }
+    `}
 
   span {
     margin-bottom: 5px;
@@ -72,7 +91,15 @@ export const StepContainer = styled.div`
     font-weight: 600;
   }
 
-  svg {
+  .completed-icon {
+    position: absolute;
+    top: -16px;
+    left: calc(50% - 16px);
+    background: #fff;
+    border-radius: 100%;
+  }
+
+  .tooltip-icon {
     position: absolute;
     top: 15px;
     right: 15px !important;
@@ -107,6 +134,12 @@ export const StepContainer = styled.div`
         margin-right: 20px;
       }
     }
+  }
+
+  .advance-button {
+    margin-top: 20px;
+    align-self: center;
+    cursor: pointer;
   }
 `;
 

@@ -38,33 +38,34 @@
         "label": "Male"
       },
       {
-        "value": "Female",
+        "value": "female",
         "label": "Female"
       }
-    ]
-  },
-  {
-    "key": "step-2-1",
-    "label": "Are you?",
-    "tooltip": "Don´t worry, this information is protected, we just need to know so we can safely recommend you supplements that won´t be harmful to you.",
-    "options": [
-      {
-        "value": "trying-to-conceive",
-        "label": "Trying to conceive"
-      },
-      {
-        "value": "lactating",
-        "label": "Lactating"
-      },
-      {
-        "value": "pregnant",
-        "label": "Pregnant"
-      },
-      {
-        "value": "none-of-the-above",
-        "label": "None of the above"
-      }
-    ]
+    ],
+    "substep": {
+      "key": "step-2-1",
+      "title": "Are you?",
+      "label": "Are you?",
+      "tooltip": "Don´t worry, this information is protected, we just need to know so we can safely recommend you supplements that won´t be harmful to you.",
+      "options": [
+        {
+          "value": "trying-to-conceive",
+          "label": "Trying to conceive"
+        },
+        {
+          "value": "lactating",
+          "label": "Lactating"
+        },
+        {
+          "value": "pregnant",
+          "label": "Pregnant"
+        },
+        {
+          "value": "none-of-the-above",
+          "label": "None of the above"
+        }
+      ]
+    }
   },
   {
     "key": "step-3",
@@ -172,46 +173,46 @@
         "value": "no",
         "label": "No"
       }
-    ]
-  },
-  {
-    "key": "step-5-1",
-    "label": "What kind?",
-    "tooltip": "Depending on the kind of drug you take there are different kinds of interactions.",
-    "options": [
-      {
-        "value": "diabetes-medication",
-        "label": "Diabetes Medication"
-      },
-      {
-        "value": "blood-pressure-medication",
-        "label": "Blood Pressure Medication"
-      },
-      {
-        "value": "immunosuppressant-medication",
-        "label": "Immunosuppressant Medication"
-      },
-      {
-        "value": "antiacids",
-        "label": "Antiacids"
-      },
-      {
-        "value": "psychotropic-medication",
-        "label": "Psychotropic Medication"
-      },
-      {
-        "value": "asthma-medication",
-        "label": "Asthma Medication"
-      },
-      {
-        "value": "antiallergics",
-        "label": "Antiallergics"
-      },
-      {
-        "value": "thyroid-medication",
-        "label": "Thyroid Medication"
-      }
-    ]
+    ],
+    "substep": {
+      "key": "step-5-1",
+      "label": "What kind?",
+      "tooltip": "Depending on the kind of drug you take there are different kinds of interactions.",
+      "options": [
+        {
+          "value": "diabetes-medication",
+          "label": "Diabetes Medication"
+        },
+        {
+          "value": "blood-pressure-medication",
+          "label": "Blood Pressure Medication"
+        },
+        {
+          "value": "immunosuppressant-medication",
+          "label": "Immunosuppressant Medication"
+        },
+        {
+          "value": "antiacids",
+          "label": "Antiacids"
+        },
+        {
+          "value": "psychotropic-medication",
+          "label": "Psychotropic Medication"
+        },
+        {
+          "value": "asthma-medication",
+          "label": "Asthma Medication"
+        },
+        {
+          "value": "antiallergics",
+          "label": "Antiallergics"
+        },
+        {
+          "value": "thyroid-medication",
+          "label": "Thyroid Medication"
+        }
+      ]
+    }
   },
   {
     "key": "step-6",

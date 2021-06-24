@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import ReactToolTip from 'react-tooltip';
-import { HiQuestionMarkCircle } from 'react-icons/hi';
+import { HiQuestionMarkCircle, HiOutlineCheckCircle } from 'react-icons/hi';
 
 import { StepContainer } from '../styles';
 import formSteps from '../../../form.json';
@@ -13,10 +13,18 @@ const Step1: React.FC = () => {
   const currentStep = formSteps[0];
 
   return (
-    <StepContainer>
+    <StepContainer isCompleted={age.length > 0}>
+      {age && (
+        <HiOutlineCheckCircle
+          className="completed-icon"
+          size={32}
+          color="#1BC9BD"
+        />
+      )}
       <span>Question 1/{formSteps.length}</span>
       <strong>{currentStep.label}</strong>
       <HiQuestionMarkCircle
+        className="tooltip-icon"
         size={20}
         color="#7664C8"
         data-tip={`<strong>${currentStep.title}</strong><span>${currentStep.tooltip}</span>`}

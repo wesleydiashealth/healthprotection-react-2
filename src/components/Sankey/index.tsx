@@ -46,7 +46,7 @@ const Sankey: React.FC = () => {
   );
 
   return (
-    <Container>
+    <Container id="step_2">
       <div className="step-intro content-wrapper">
         <IoOptionsOutline size={52} color="#DB71AF" />
         <h2>Step 2</h2>

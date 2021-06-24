@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { transparentize } from 'polished';
 
 interface ContainerProps {
   isActive?: boolean;
@@ -27,8 +28,9 @@ const Container = styled.button<ContainerProps>`
   ${props =>
     props.isActive &&
     css`
-      color: red;
-      border-color: red;
+      color: #7664c8;
+      border-color: #7664c8;
+      background: ${transparentize(0.9, '#7664c8')};
     `}
 `;
 

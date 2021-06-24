@@ -9,6 +9,8 @@ import getValidationErrors from '../../utils/getValidationErrors';
 import Container from './styles';
 import 'react-multi-carousel/lib/styles.css';
 
+import { WizardProvider } from '../../contexts/wizard';
+
 import Step1 from './Step1';
 import Step2 from './Step2';
 import Step3 from './Step3';
@@ -70,21 +72,23 @@ const Wizard: React.FC = () => {
         </span>
       </div>
       <Form ref={formRef} onSubmit={handleSubmit} className="content-wrapper">
-        <Carousel
-          centerMode
-          focusOnSelect
-          arrows={false}
-          showDots
-          responsive={responsive}
-        >
-          <Step1 />
-          <Step2 />
-          <Step3 />
-          <Step4 />
-          <Step5 />
-          <Step6 />
-          <Step7 />
-        </Carousel>
+        <WizardProvider>
+          <Carousel
+            centerMode
+            focusOnSelect
+            arrows={false}
+            showDots
+            responsive={responsive}
+          >
+            <Step1 />
+            <Step2 />
+            <Step3 />
+            <Step4 />
+            <Step5 />
+            <Step6 />
+            <Step7 />
+          </Carousel>
+        </WizardProvider>
 
         <button type="submit">Enviar</button>
       </Form>
