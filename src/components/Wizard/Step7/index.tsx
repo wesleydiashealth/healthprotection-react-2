@@ -4,7 +4,11 @@ import { BsChevronCompactRight } from 'react-icons/bs';
 
 import StepContainer from './styles';
 
+import { useWizard } from '../../../contexts/wizard';
+
 const Step2: React.FC = () => {
+  const context = useWizard();
+
   return (
     <StepContainer>
       <IoOptionsOutline size={52} color="#DB71AF" />
@@ -29,7 +33,13 @@ const Step2: React.FC = () => {
       </div>
       <p>for you to safely fine-tune your priorities.</p>
       <div className="buttons">
-        <button type="button" name="reset">
+        <button
+          type="button"
+          name="reset"
+          onClick={() => {
+            context.resetSteps();
+          }}
+        >
           Reset
         </button>
         <a href="#step_2">Go to Step 2</a>

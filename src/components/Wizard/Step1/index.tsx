@@ -7,14 +7,20 @@ import formSteps from '../../../form.json';
 
 import Button from '../../Button';
 
+import { useWizard } from '../../../contexts/wizard';
+
 const Step1: React.FC = () => {
   const [age, setAge] = useState('');
 
   const currentStep = formSteps[0];
 
+  const context = useWizard();
+
+  const { steps } = context;
+
   return (
-    <StepContainer isCompleted={age.length > 0}>
-      {age && (
+    <StepContainer isCompleted={steps.step1}>
+      {steps.step1 && (
         <HiOutlineCheckCircle
           className="completed-icon"
           size={32}
@@ -46,6 +52,7 @@ const Step1: React.FC = () => {
           type="button"
           onClick={() => {
             setAge(option.value);
+            context.updateStep('step1', true);
           }}
           isActive={age === option.value}
           name="age"

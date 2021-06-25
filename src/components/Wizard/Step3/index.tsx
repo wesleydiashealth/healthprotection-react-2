@@ -9,16 +9,22 @@ import formSteps from '../../../form.json';
 
 import Button from '../../Button';
 
+import { useWizard } from '../../../contexts/wizard';
+
 const Step2: React.FC = () => {
   const [diets, setDiets] = useState<string[]>([]);
-  const [stepCompleted, setStepCompleted] = useState<boolean>(false);
 
   const currentStep = formSteps[2];
+
+  const context = useWizard();
+
+  const { steps } = context;
 
   const handleButtonClick = useCallback(
     value => {
       if (value === 'none') {
         setDiets([value]);
+        context.updateStep('step3', true);
 
         return;
       }
@@ -37,12 +43,12 @@ const Step2: React.FC = () => {
         setDiets(diets.filter(diet => diet !== value));
       }
     },
-    [diets],
+    [diets, context],
   );
 
   return (
-    <StepContainer isCompleted={diets.length > 0 && stepCompleted}>
-      {diets.length > 0 && stepCompleted && (
+    <StepContainer isCompleted={steps.step3}>
+      {steps.step3 && (
         <HiOutlineCheckCircle
           className="completed-icon"
           size={32}
@@ -84,14 +90,16 @@ const Step2: React.FC = () => {
           </Button>
         ))}
       </ScrollArea>
-      <CgChevronRightO
-        className="advance-button"
-        size={28}
-        color="#7664C8"
-        onClick={() => {
-          setStepCompleted(true);
-        }}
-      />
+      {diets.length > 0 && diets.indexOf('none') === -1 && (
+        <CgChevronRightO
+          className="advance-button"
+          size={28}
+          color="#7664C8"
+          onClick={() => {
+            context.updateStep('step3', true);
+          }}
+        />
+      )}
     </StepContainer>
   );
 };

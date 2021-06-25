@@ -7,17 +7,21 @@ import formSteps from '../../../form.json';
 
 import Button from '../../Button';
 
+import { useWizard } from '../../../contexts/wizard';
+
 const Step2: React.FC = () => {
   const [gender, setGender] = useState('');
   const [femaleCondition, setFemaleCondition] = useState('');
 
   const currentStep = formSteps[1];
 
+  const context = useWizard();
+
+  const { steps } = context;
+
   return (
-    <StepContainer
-      isCompleted={gender === 'male' || femaleCondition.length > 0}
-    >
-      {(gender === 'male' || femaleCondition.length > 0) && (
+    <StepContainer isCompleted={steps.step2}>
+      {steps.step2 && (
         <HiOutlineCheckCircle
           className="completed-icon"
           size={32}
@@ -60,6 +64,7 @@ const Step2: React.FC = () => {
             type="button"
             onClick={() => {
               setGender(option.value);
+              context.updateStep('step2', option.value !== 'female');
             }}
             isActive={gender === option.value}
             name="gender"
@@ -75,6 +80,7 @@ const Step2: React.FC = () => {
             type="button"
             onClick={() => {
               setFemaleCondition(option.value);
+              context.updateStep('step2', true);
             }}
             isActive={femaleCondition === option.value}
             name="female_condition"
