@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ReactToolTip from 'react-tooltip';
 import { HiQuestionMarkCircle, HiOutlineCheckCircle } from 'react-icons/hi';
 
@@ -10,8 +10,6 @@ import Button from '../../Button';
 import { useWizard } from '../../../contexts/wizard';
 
 const Step1: React.FC = () => {
-  const [age, setAge] = useState('');
-
   const currentStep = formSteps[0];
 
   const context = useWizard();
@@ -19,8 +17,8 @@ const Step1: React.FC = () => {
   const { steps } = context;
 
   return (
-    <StepContainer isCompleted={steps.step1}>
-      {steps.step1 && (
+    <StepContainer isCompleted={steps.step1.isCompleted}>
+      {steps.step1.isCompleted && (
         <HiOutlineCheckCircle
           className="completed-icon"
           size={32}
@@ -51,12 +49,14 @@ const Step1: React.FC = () => {
           key={option.value}
           type="button"
           onClick={() => {
-            setAge(option.value);
-            context.updateStep('step1', true);
+            context.updateStep('step1', {
+              isCompleted: true,
+              content: option.value,
+            });
           }}
-          isActive={age === option.value}
+          isActive={steps.step1.content === option.value}
           name="age"
-          value={age}
+          value={steps.step1.content}
         >
           {option.label}
         </Button>

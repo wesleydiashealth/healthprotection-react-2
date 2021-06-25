@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useCallback } from 'react';
 import ReactToolTip from 'react-tooltip';
 import { HiQuestionMarkCircle, HiOutlineCheckCircle } from 'react-icons/hi';
 import { CgChevronRightO } from 'react-icons/cg';
@@ -9,40 +9,43 @@ import formSteps from '../../../form.json';
 
 import Button from '../../Button';
 
-const Step2: React.FC = () => {
-  const [allergies, setAllergies] = useState<string[]>([]);
-  const [stepCompleted, setStepCompleted] = useState<boolean>(false);
+import { useWizard } from '../../../contexts/wizard';
 
+const Step2: React.FC = () => {
   const currentStep = formSteps[3];
+
+  const context = useWizard();
+
+  const { steps } = context;
+  const { step4: step } = steps;
 
   const handleButtonClick = useCallback(
     value => {
       if (value === 'none') {
-        setAllergies([value]);
+        context.updateStep('step4', { isCompleted: true, content: [value] });
 
         return;
       }
 
-      const noneIndex = allergies.indexOf('none');
+      const updatedAllergies = Array.isArray(step.content) ? step.content : [];
 
-      if (noneIndex !== -1) {
-        allergies.splice(noneIndex, 1);
-      }
-
-      const existentValue = allergies.find(allergy => allergy === value);
-
-      if (!existentValue) {
-        setAllergies([...allergies, value]);
+      if (!step?.content.includes(value)) {
+        updatedAllergies.push(value);
       } else {
-        setAllergies(allergies.filter(allergy => allergy !== value));
+        updatedAllergies.splice(step.content.indexOf(value), 1);
       }
+
+      context.updateStep('step4', { content: updatedAllergies });
     },
-    [allergies],
+    [context, step],
   );
 
   return (
-    <StepContainer isCompleted={allergies.length > 0 && stepCompleted}>
-      {allergies.length > 0 && stepCompleted && (
+    <StepContainer
+      isCompleted={steps.step4?.isCompleted}
+      isDisabled={!steps.step3.isCompleted}
+    >
+      {steps.step4?.isCompleted && (
         <HiOutlineCheckCircle
           className="completed-icon"
           size={32}
@@ -76,9 +79,9 @@ const Step2: React.FC = () => {
             onClick={() => {
               handleButtonClick(option.value);
             }}
-            isActive={allergies.indexOf(option.value) > -1}
+            isActive={steps.step4?.content.indexOf(option.value) > -1}
             name="allergies"
-            value={allergies}
+            value={steps.step4?.content}
           >
             {option.label}
           </Button>
@@ -89,7 +92,10 @@ const Step2: React.FC = () => {
         size={28}
         color="#7664C8"
         onClick={() => {
-          setStepCompleted(true);
+          context.updateStep('step4', {
+            isCompleted: true,
+            content: steps.step4?.content,
+          });
         }}
       />
     </StepContainer>

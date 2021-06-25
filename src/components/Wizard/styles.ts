@@ -69,7 +69,7 @@ export const StepContainer = styled.div<StepContainerProps>`
   border-radius: 20px;
 
   ${props =>
-    props.isCompleted &&
+    (props.isCompleted || props.isDisabled) &&
     css`
       opacity: 0.3;
 

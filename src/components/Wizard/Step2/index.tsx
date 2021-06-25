@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ReactToolTip from 'react-tooltip';
 import { HiQuestionMarkCircle, HiOutlineCheckCircle } from 'react-icons/hi';
 
@@ -10,9 +10,6 @@ import Button from '../../Button';
 import { useWizard } from '../../../contexts/wizard';
 
 const Step2: React.FC = () => {
-  const [gender, setGender] = useState('');
-  const [femaleCondition, setFemaleCondition] = useState('');
-
   const currentStep = formSteps[1];
 
   const context = useWizard();
@@ -20,8 +17,11 @@ const Step2: React.FC = () => {
   const { steps } = context;
 
   return (
-    <StepContainer isCompleted={steps.step2}>
-      {steps.step2 && (
+    <StepContainer
+      isCompleted={steps.step2?.isCompleted || steps.step2_1?.isCompleted}
+      isDisabled={!steps.step1?.isCompleted}
+    >
+      {(steps.step2?.isCompleted || steps.step2_1?.isCompleted) && (
         <HiOutlineCheckCircle
           className="completed-icon"
           size={32}
@@ -29,19 +29,24 @@ const Step2: React.FC = () => {
         />
       )}
       <span>
-        Question {gender !== 'female' ? '2' : '2.1'}/{formSteps.length}
+        Question {steps.step2?.content !== 'female' ? '2' : '2.1'}/
+        {formSteps.length}
       </span>
       <strong>
-        {gender !== 'female' ? currentStep.label : currentStep.substep?.label}
+        {steps.step2?.content !== 'female'
+          ? currentStep.label
+          : currentStep.substep?.label}
       </strong>
       <HiQuestionMarkCircle
         className="tooltip-icon"
         size={20}
         color="#7664C8"
         data-tip={`<strong>${
-          gender !== 'female' ? currentStep.title : currentStep.substep?.title
+          steps.step2?.content !== 'female'
+            ? currentStep.title
+            : currentStep.substep?.title
         }</strong><span>${
-          gender !== 'female'
+          steps.step2?.content !== 'female'
             ? currentStep.tooltip
             : currentStep.substep?.tooltip
         }</span>`}
@@ -57,34 +62,38 @@ const Step2: React.FC = () => {
         html
         backgroundColor="#fff"
       />
-      {gender !== 'female' &&
+      {steps.step2?.content !== 'female' &&
         currentStep.options.map(option => (
           <Button
             key={option.value}
             type="button"
             onClick={() => {
-              setGender(option.value);
-              context.updateStep('step2', option.value !== 'female');
+              context.updateStep('step2', {
+                isCompleted: option.value !== 'female',
+                content: option.value,
+              });
             }}
-            isActive={gender === option.value}
+            isActive={steps.step2?.content === option.value}
             name="gender"
-            value={gender}
+            value={steps.step2?.content}
           >
             {option.label}
           </Button>
         ))}
-      {gender === 'female' &&
+      {steps.step2?.content === 'female' &&
         currentStep.substep?.options.map(option => (
           <Button
             key={option.value}
             type="button"
             onClick={() => {
-              setFemaleCondition(option.value);
-              context.updateStep('step2', true);
+              context.updateStep('step2_1', {
+                isCompleted: true,
+                content: option.value,
+              });
             }}
-            isActive={femaleCondition === option.value}
+            isActive={steps.step2_1?.content === option.value}
             name="female_condition"
-            value={femaleCondition}
+            value={steps.step2_1?.content}
           >
             {option.label}
           </Button>
