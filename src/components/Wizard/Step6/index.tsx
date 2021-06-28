@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ReactToolTip from 'react-tooltip';
 import { HiQuestionMarkCircle, HiOutlineCheckCircle } from 'react-icons/hi';
 import { CgChevronRightO } from 'react-icons/cg';
@@ -9,14 +9,21 @@ import formSteps from '../../../form.json';
 
 import Button from '../../Button';
 
-const Step2: React.FC = () => {
-  const [category, setCategory] = useState('');
+import { useWizard } from '../../../contexts/wizard';
 
+const Step6: React.FC = () => {
   const currentStep = formSteps[5];
 
+  const context = useWizard();
+
+  const { steps } = context;
+
   return (
-    <StepContainer isCompleted={category.length > 0}>
-      {category && (
+    <StepContainer
+      isCompleted={steps.step6?.isCompleted}
+      isDisabled={!steps.step5.isCompleted}
+    >
+      {steps.step6?.content.length > 0 && (
         <HiOutlineCheckCircle
           className="completed-icon"
           size={32}
@@ -48,11 +55,14 @@ const Step2: React.FC = () => {
             key={option.value}
             type="button"
             onClick={() => {
-              setCategory(option.value);
+              context.updateStep('step6', {
+                isCompleted: true,
+                content: option.value,
+              });
             }}
-            isActive={category === option.value}
+            isActive={steps.step6?.content === option.value}
             name="category"
-            value={category}
+            value={steps.step6?.content}
           >
             {option.label}
           </Button>
@@ -63,4 +73,4 @@ const Step2: React.FC = () => {
   );
 };
 
-export default Step2;
+export default Step6;

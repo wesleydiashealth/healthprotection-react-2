@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useCallback } from 'react';
 import ReactToolTip from 'react-tooltip';
 import { HiQuestionMarkCircle, HiOutlineCheckCircle } from 'react-icons/hi';
 import { CgChevronRightO } from 'react-icons/cg';
@@ -9,48 +9,46 @@ import formSteps from '../../../form.json';
 
 import Button from '../../Button';
 
-const Step2: React.FC = () => {
-  const [hasMedications, setHasMedications] = useState('');
-  const [medications, setMedications] = useState<string[]>([]);
-  const [stepCompleted, setStepCompleted] = useState<boolean>(false);
+import { useWizard } from '../../../contexts/wizard';
 
+const Step2: React.FC = () => {
   const currentStep = formSteps[4];
+
+  const context = useWizard();
+
+  const { steps } = context;
+  const { step5_1: step } = steps;
 
   const handleButtonClick = useCallback(
     value => {
       if (value === 'none') {
-        setMedications([value]);
+        context.updateStep('step5_1', { isCompleted: true, content: [value] });
 
         return;
       }
 
-      const noneIndex = medications.indexOf('none');
+      const updatedMedications = Array.isArray(step.content)
+        ? step.content
+        : [];
 
-      if (noneIndex !== -1) {
-        medications.splice(noneIndex, 1);
-      }
-
-      const existentValue = medications.find(
-        medication => medication === value,
-      );
-
-      if (!existentValue) {
-        setMedications([...medications, value]);
+      if (!step?.content.includes(value)) {
+        updatedMedications.push(value);
       } else {
-        setMedications(medications.filter(medication => medication !== value));
+        updatedMedications.splice(step.content.indexOf(value), 1);
       }
+
+      context.updateStep('step5_1', { content: updatedMedications });
     },
-    [medications],
+    [context, step],
   );
 
   return (
     <StepContainer
-      isCompleted={
-        (medications.length > 0 && stepCompleted) || hasMedications === 'no'
-      }
+      isCompleted={steps.step5?.isCompleted}
+      isDisabled={!steps.step4?.isCompleted}
     >
-      {((medications.length > 0 && stepCompleted) ||
-        hasMedications === 'no') && (
+      {((steps.step5?.content.length > 0 && steps.step5?.isCompleted) ||
+        steps.step5?.content === 'no') && (
         <HiOutlineCheckCircle
           className="completed-icon"
           size={32}
@@ -58,10 +56,11 @@ const Step2: React.FC = () => {
         />
       )}
       <span>
-        Question {hasMedications !== 'yes' ? '5' : '5.1'}/{formSteps.length}
+        Question {steps.step5?.content !== 'yes' ? '5' : '5.1'}/
+        {formSteps.length}
       </span>
       <strong>
-        {hasMedications !== 'yes'
+        {steps.step5?.content !== 'yes'
           ? currentStep.label
           : currentStep.substep?.label}
       </strong>
@@ -82,22 +81,25 @@ const Step2: React.FC = () => {
         html
         backgroundColor="#fff"
       />
-      {hasMedications !== 'yes' &&
+      {steps.step5?.content !== 'yes' &&
         currentStep.options.map(option => (
           <Button
             key={option.value}
             type="button"
             onClick={() => {
-              setHasMedications(option.value);
+              context.updateStep('step5', {
+                isCompleted: option.value !== 'yes',
+                content: option.value,
+              });
             }}
-            isActive={hasMedications === option.value}
+            isActive={steps.step5?.content === option.value}
             name="has_medications"
-            value={hasMedications}
+            value={steps.step5?.content}
           >
             {option.label}
           </Button>
         ))}
-      {hasMedications === 'yes' && (
+      {steps.step5?.content === 'yes' && (
         <>
           <ScrollArea
             className="buttons-list"
@@ -111,9 +113,9 @@ const Step2: React.FC = () => {
                 onClick={() => {
                   handleButtonClick(option.value);
                 }}
-                isActive={medications.indexOf(option.value) > -1}
+                isActive={steps.step5_1?.content.indexOf(option.value) > -1}
                 name="medications"
-                value={medications}
+                value={steps.step5_1?.content}
               >
                 {option.label}
               </Button>
@@ -124,7 +126,10 @@ const Step2: React.FC = () => {
             size={28}
             color="#7664C8"
             onClick={() => {
-              setStepCompleted(true);
+              context.updateStep('step5', {
+                isCompleted: true,
+                content: steps.step5_1?.content,
+              });
             }}
           />
         </>
