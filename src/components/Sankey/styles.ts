@@ -4,6 +4,10 @@ interface FineTuneProps {
   isActive?: boolean;
 }
 
+interface SubstancesProps {
+  isActive?: boolean;
+}
+
 const Container = styled.div`
   .step-intro {
     margin-bottom: 40px;
@@ -69,41 +73,74 @@ const Container = styled.div`
 `;
 
 export const Outcomes = styled.div`
-  > div {
-    padding: 20px;
-    background: rgba(240, 94, 98, 0.15);
-
-    & ~ div {
-      margin-top: 10px;
-    }
+  &:before {
+    content: 'Filtered Outcomes';
   }
-`;
 
-export const SubOutcomes = styled.div`
-  > div {
+  .outcome-wrapper {
+    margin-top: 10px;
     padding: 20px;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    background: rgba(255, 100, 0, 0.2);
+    position: relative;
+    z-index: 10;
+
+    background: #fde7e8;
+    min-height: 90px;
+
+    font-weight: 600;
+  }
+
+  > div {
+    & ~ div {
+      margin-top: 20px;
+    }
+  }
+`;
+
+export const SubOutcomes = styled.div`
+  position: relative;
+
+  &:before {
+    content: 'Choose your Sub-outcomes';
+  }
+
+  &:after {
+    content: 'Fine-tune';
+    position: absolute;
+    top: 0;
+    left: 260px;
+  }
+
+  > div {
+    margin-top: 10px;
+    padding: 10px 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: #f2f2f2;
+    min-height: 90px;
 
     & ~ div {
-      margin-top: 10px;
+      margin-top: 20px;
     }
 
     .content {
       margin-right: 20px;
 
-      max-width: 200px;
+      max-width: 220px;
 
       span {
         padding-right: 5px;
 
-        font-weight: 500;
-        font-size: 18px;
-        line-height: 26px;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 24px;
       }
     }
 
@@ -133,26 +170,65 @@ export const SubOutcomes = styled.div`
   }
 `;
 
-export const Substances = styled.div`
-  > div {
-    padding: 20px;
-    background: rgba(255, 100, 0, 0.2);
-
-    & ~ div {
-      margin-top: 10px;
-    }
-  }
-`;
-
 export const FineTune = styled.a<FineTuneProps>`
   cursor: pointer;
+
+  font-size: 14px;
+  line-height: 14px;
+
+  color: #f7aeb0;
 
   ${props =>
     props.isActive &&
     css`
       color: #fff;
-      background: red;
+      background: #f7aeb0;
     `}
+`;
+
+export const Substances = styled.div<SubstancesProps>`
+  position: relative;
+
+  ${props =>
+    props.isActive &&
+    css`
+      &:before {
+        content: 'Scientific foundation';
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+    `}
+
+  > div {
+    margin-top: 30px;
+    padding: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    background: #f2f2f2;
+    min-height: 90px;
+
+    & ~ div {
+      margin-top: 20px;
+    }
+
+    strong {
+      font-weight: 600;
+
+      &:after {
+        padding: 0 5px;
+        content: '|';
+        color: #ccc;
+      }
+    }
+
+    span {
+      color: #565656;
+    }
+  }
 `;
 
 export default Container;

@@ -13,6 +13,10 @@ import Container, {
 
 import sankeyData from '../../sankey.json';
 
+interface FineTune {
+  [key: string]: 'off' | 'med' | 'max';
+}
+
 interface Substance {
   key: string;
   title: string;
@@ -24,22 +28,53 @@ interface Substance {
 const Sankey: React.FC = () => {
   const { outcomes, suboutcomes } = sankeyData;
 
+  const [fineTune, setFineTune] = useState<FineTune>({});
   const [nutraceutics, setNutraceutics] = useState<Substance[]>([]);
 
   const handleFineTuneClick = useCallback(
-    async (items: Array<Substance>) => {
+    async (items: Array<Substance>, suboutcome) => {
       if (items.length) {
-        const newItems = items.filter(
-          (item: Substance) => !nutraceutics.includes(item),
-        );
+        const updatedNutraceutics = [...nutraceutics];
 
-        // const newItems = items.filter(
-        //   (item: Substance) => nutraceutics.indexOf(item) !== -1,
-        // );
+        Object.values(items).forEach(item => {
+          const itemIndex = nutraceutics.findIndex(
+            nutraceutic => nutraceutic.key === item.key,
+          );
 
-        setNutraceutics([...nutraceutics, ...newItems]);
+          if (itemIndex > -1) {
+            setNutraceutics(
+              nutraceutics
+                .filter(substance => substance.key === item.key)
+                .map(substance => {
+                  const suboutcomeIndex = substance.parents.indexOf(suboutcome);
+
+                  if (suboutcomeIndex > -1) {
+                    substance.parents.splice(suboutcomeIndex, 1, suboutcome);
+                  } else {
+                    substance.parents.push(suboutcome);
+                  }
+
+                  return substance;
+                }),
+            );
+          } else {
+            updatedNutraceutics.push(item);
+          }
+        });
+
+        setNutraceutics(updatedNutraceutics);
       } else {
-        setNutraceutics(items);
+        setNutraceutics(
+          nutraceutics.map(nutraceutic => {
+            const suboutcomeIndex = nutraceutic.parents.indexOf(suboutcome);
+
+            if (suboutcomeIndex > -1) {
+              nutraceutic.parents.splice(suboutcomeIndex, 1);
+            }
+
+            return nutraceutic;
+          }),
+        );
       }
     },
     [nutraceutics],
@@ -57,26 +92,27 @@ const Sankey: React.FC = () => {
           Click on the selected substances to explore scientific information
         </span>
       </div>
-
       <div className="step-content content-wrapper">
         <Outcomes>
           {outcomes.map(outcome => (
             <div key={outcome.key} id={outcome.key}>
-              <span>{outcome.title}</span>
-              <HiQuestionMarkCircle
-                size={20}
-                color="#7664C8"
-                data-tip={`<strong>${outcome.title}</strong><span>${outcome.description}</span>`}
-                data-for="sankey-tooltip"
-              />
+              <div className="outcome-wrapper">
+                <span>{outcome.title}</span>
+                <HiQuestionMarkCircle
+                  size={20}
+                  color="#7664C8"
+                  data-tip={`<strong>${outcome.title}</strong><span>${outcome.description}</span>`}
+                  data-for="sankey-tooltip"
+                />
+              </div>
               {outcome['sub-outcomes'].map(suboutcome => (
                 <Xarrow
                   start={outcome.key}
                   end={suboutcome}
                   showHead={false}
-                  strokeWidth={40}
-                  curveness={0.4}
-                  color="rgba(240, 94, 98, 0.07)"
+                  strokeWidth={90}
+                  curveness={0.6}
+                  color="rgba(0,0,0,0.05)"
                 />
               ))}
             </div>
@@ -97,22 +133,46 @@ const Sankey: React.FC = () => {
               </div>
               <div className="fine-tune">
                 <FineTune
+                  isActive={
+                    fineTune[suboutcome.key] === 'off' ||
+                    !fineTune[suboutcome.key]
+                  }
                   onClick={() => {
-                    handleFineTuneClick([]);
+                    handleFineTuneClick([], suboutcome.key);
+                    setFineTune({
+                      ...fineTune,
+                      [suboutcome.key]: 'off',
+                    });
                   }}
                 >
                   Off
                 </FineTune>
                 <FineTune
+                  isActive={fineTune[suboutcome.key] === 'med'}
                   onClick={() => {
-                    handleFineTuneClick(suboutcome.substances?.med || []);
+                    handleFineTuneClick(
+                      suboutcome.substances?.med || [],
+                      suboutcome.key,
+                    );
+                    setFineTune({
+                      ...fineTune,
+                      [suboutcome.key]: 'med',
+                    });
                   }}
                 >
                   Med
                 </FineTune>
                 <FineTune
+                  isActive={fineTune[suboutcome.key] === 'max'}
                   onClick={() => {
-                    handleFineTuneClick(suboutcome.substances?.max || []);
+                    handleFineTuneClick(
+                      suboutcome.substances?.max || [],
+                      suboutcome.key,
+                    );
+                    setFineTune({
+                      ...fineTune,
+                      [suboutcome.key]: 'max',
+                    });
                   }}
                 >
                   Max
@@ -122,29 +182,32 @@ const Sankey: React.FC = () => {
           ))}
         </SubOutcomes>
 
-        <Substances>
-          {nutraceutics.map(nutraceutic => (
-            <div key={nutraceutic.key} id={nutraceutic.key}>
-              {nutraceutic.title}
-              {nutraceutic.parents.map(parent => {
-                return (
-                  <Xarrow
-                    start={parent}
-                    end={nutraceutic.key}
-                    showHead={false}
-                    strokeWidth={40}
-                    curveness={0.4}
-                    color="rgba(240, 94, 98, 0.07)"
-                  />
-                );
-              })}
-            </div>
-          ))}
-          {/* {nutraceutics.map(nutraceutic => (
-            <div key={nutraceutic} id={nutraceutic}>
-              {nutraceutic}
-            </div>
-          ))} */}
+        <Substances
+          isActive={
+            nutraceutics.filter(nutraceutic => nutraceutic.parents.length)
+              .length > 0
+          }
+        >
+          {nutraceutics
+            .filter(nutraceutic => nutraceutic.parents.length)
+            .map(nutraceutic => (
+              <div key={nutraceutic.key} id={nutraceutic.key}>
+                <strong>{nutraceutic.title}</strong>
+                <span>{nutraceutic.dosage}</span>
+                {nutraceutic.parents.map(parent => {
+                  return (
+                    <Xarrow
+                      start={parent}
+                      end={nutraceutic.key}
+                      showHead={false}
+                      strokeWidth={90}
+                      curveness={0.6}
+                      color="rgba(0,0,0,0.05)"
+                    />
+                  );
+                })}
+              </div>
+            ))}
         </Substances>
 
         <ReactToolTip
