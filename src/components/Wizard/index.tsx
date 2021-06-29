@@ -68,7 +68,7 @@ const Wizard: React.FC = () => {
         </h3>
         <span>
           Doing this step is critical to narrow down all more than 500 products,
-          17 possible outcomes and 43 sub-outcomes
+          17 possible outcomes and 43 sub-outcomes.
         </span>
       </div>
       <Form ref={formRef} onSubmit={handleSubmit} className="content-wrapper">
@@ -90,7 +90,7 @@ const Wizard: React.FC = () => {
           </Carousel>
         </WizardProvider>
 
-        <button type="submit">Enviar</button>
+        {/* <button type="submit">Enviar</button> */}
       </Form>
     </Container>
   );

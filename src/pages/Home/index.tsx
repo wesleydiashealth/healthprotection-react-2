@@ -6,6 +6,7 @@ import Header from '../../components/Header';
 import Hero from '../../components/Hero';
 import Wizard from '../../components/Wizard';
 import Sankey from '../../components/Sankey';
+import Cart from '../../components/Cart';
 
 const Home: React.FC = () => (
   <Container>
@@ -13,6 +14,7 @@ const Home: React.FC = () => (
     <Hero />
     <Wizard />
     <Sankey />
+    <Cart />
   </Container>
 );
 

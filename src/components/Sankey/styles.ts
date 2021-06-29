@@ -9,6 +9,7 @@ interface SubstancesProps {
 }
 
 const Container = styled.div`
+  margin-bottom: 40px;
   .step-intro {
     margin-bottom: 40px;
 

@@ -126,7 +126,7 @@ const Sankey: React.FC = () => {
           <strong>Fine-tune</strong> your desired outcomes
         </h3>
         <span>
-          Click on the selected substances to explore scientific information
+          Click on the selected substances to explore scientific information.
         </span>
       </div>
       <div className="step-content content-wrapper">
