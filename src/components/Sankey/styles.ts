@@ -22,6 +22,9 @@ const Container = styled.div`
     }
 
     h2 {
+      display: flex;
+      justify-content: center;
+
       font-weight: 700;
 
       font-size: 33px;
@@ -45,6 +48,35 @@ const Container = styled.div`
 
       font-size: 18px;
       line-height: 24px;
+    }
+
+    .tooltip-icon {
+      margin-left: 5px;
+      display: inline-flex;
+    }
+
+    .sankey-title-tooltip {
+      width: 320px;
+      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.11);
+      border-radius: 20px;
+
+      text-align: left;
+      font-size: 14px;
+      line-height: 22px;
+
+      strong {
+        display: block;
+        margin-bottom: 10px;
+        font-size: 20px;
+        line-height: 28px;
+        font-weight: 500;
+        color: #db71af;
+      }
+
+      span {
+        font-size: 14px;
+        line-height: 22px;
+      }
     }
   }
 
@@ -126,6 +158,10 @@ export const SubOutcomes = styled.div`
     background: #f2f2f2;
     min-height: 90px;
 
+    &.active {
+      background: #fde7e8;
+    }
+
     & ~ div {
       margin-top: 20px;
     }
@@ -188,6 +224,8 @@ export const FineTune = styled.a<FineTuneProps>`
 
 export const Substances = styled.div<SubstancesProps>`
   position: relative;
+
+  min-width: 200px;
 
   ${props =>
     props.isActive &&

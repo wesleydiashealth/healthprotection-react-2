@@ -36,6 +36,22 @@ const Sankey: React.FC = () => {
       if (items.length) {
         const updatedNutraceutics = [...nutraceutics];
 
+        updatedNutraceutics
+          .filter(current => {
+            return (
+              items.filter(other => other.key === current.key).length === 0
+            );
+          })
+          .map(nutraceutic => {
+            const suboutcomeIndex = nutraceutic.parents.indexOf(suboutcome);
+
+            if (suboutcomeIndex > -1) {
+              nutraceutic.parents.splice(suboutcomeIndex, 1);
+            }
+
+            return nutraceutic;
+          });
+
         Object.values(items).forEach(item => {
           const itemIndex = nutraceutics.findIndex(
             nutraceutic => nutraceutic.key === item.key,
@@ -44,17 +60,18 @@ const Sankey: React.FC = () => {
           if (itemIndex > -1) {
             setNutraceutics(
               nutraceutics
-                .filter(substance => substance.key === item.key)
-                .map(substance => {
-                  const suboutcomeIndex = substance.parents.indexOf(suboutcome);
+                .filter(nutraceutic => nutraceutic.key === item.key)
+                .map(nutraceutic => {
+                  const suboutcomeIndex =
+                    nutraceutic.parents.indexOf(suboutcome);
 
                   if (suboutcomeIndex > -1) {
-                    substance.parents.splice(suboutcomeIndex, 1, suboutcome);
+                    nutraceutic.parents.splice(suboutcomeIndex, 1, suboutcome);
                   } else {
-                    substance.parents.push(suboutcome);
+                    nutraceutic.parents.push(suboutcome);
                   }
 
-                  return substance;
+                  return nutraceutic;
                 }),
             );
           } else {
@@ -84,7 +101,27 @@ const Sankey: React.FC = () => {
     <Container id="step_2">
       <div className="step-intro content-wrapper">
         <IoOptionsOutline size={52} color="#DB71AF" />
-        <h2>Step 2</h2>
+        <h2>
+          Step 2
+          <HiQuestionMarkCircle
+            className="tooltip-icon"
+            size={20}
+            color="#db71af"
+            data-tip="<strong>Step 2</strong><span>We already made a pre-selection...</span>"
+            data-for="sankey-title-tooltip"
+          />
+          <ReactToolTip
+            id="sankey-title-tooltip"
+            className="sankey-title-tooltip"
+            place="bottom"
+            type="light"
+            effect="solid"
+            offset={{ top: 10, left: 10 }}
+            html
+            backgroundColor="#fff"
+          />
+        </h2>
+
         <h3>
           <strong>Fine-tune</strong> your desired outcomes
         </h3>
@@ -112,7 +149,11 @@ const Sankey: React.FC = () => {
                   showHead={false}
                   strokeWidth={90}
                   curveness={0.6}
-                  color="rgba(0,0,0,0.05)"
+                  color={
+                    fineTune[suboutcome] === 'off' || !fineTune[suboutcome]
+                      ? 'rgba(0,0,0,0.05)'
+                      : 'rgba(240, 94, 98, 0.15)'
+                  }
                 />
               ))}
             </div>
@@ -121,7 +162,15 @@ const Sankey: React.FC = () => {
 
         <SubOutcomes>
           {suboutcomes.map(suboutcome => (
-            <div key={suboutcome.key} id={suboutcome.key}>
+            <div
+              key={suboutcome.key}
+              id={suboutcome.key}
+              className={
+                fineTune[suboutcome.key] === 'off' || !fineTune[suboutcome.key]
+                  ? ''
+                  : 'active'
+              }
+            >
               <div className="content">
                 <span>{suboutcome.title}</span>
                 <HiQuestionMarkCircle
@@ -202,7 +251,11 @@ const Sankey: React.FC = () => {
                       showHead={false}
                       strokeWidth={90}
                       curveness={0.6}
-                      color="rgba(0,0,0,0.05)"
+                      color={
+                        fineTune[parent] === 'off' || !fineTune[parent]
+                          ? 'rgba(0,0,0,0.05)'
+                          : 'rgba(240, 94, 98, 0.15)'
+                      }
                     />
                   );
                 })}
