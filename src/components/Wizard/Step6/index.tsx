@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import ReactToolTip from 'react-tooltip';
 import { HiQuestionMarkCircle, HiOutlineCheckCircle } from 'react-icons/hi';
 import { CgChevronRightO } from 'react-icons/cg';
 import ScrollArea from 'react-scrollbar';
+import { CarouselContext } from 'pure-react-carousel';
 
 import { StepContainer } from '../styles';
 import formSteps from '../../../form.json';
@@ -17,6 +18,8 @@ const Step6: React.FC = () => {
   const context = useWizard();
 
   const { steps } = context;
+
+  const carouselContext = useContext(CarouselContext);
 
   return (
     <StepContainer
@@ -59,6 +62,7 @@ const Step6: React.FC = () => {
                 isCompleted: true,
                 content: option.value,
               });
+              carouselContext.setStoreState({ currentSlide: 6 });
             }}
             isActive={steps.step6?.content === option.value}
             name="category"

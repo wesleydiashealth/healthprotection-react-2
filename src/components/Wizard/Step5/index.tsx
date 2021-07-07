@@ -1,8 +1,9 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useContext } from 'react';
 import ReactToolTip from 'react-tooltip';
 import { HiQuestionMarkCircle, HiOutlineCheckCircle } from 'react-icons/hi';
 import { CgChevronRightO } from 'react-icons/cg';
 import ScrollArea from 'react-scrollbar';
+import { CarouselContext } from 'pure-react-carousel';
 
 import { StepContainer } from '../styles';
 import formSteps from '../../../form.json';
@@ -19,10 +20,13 @@ const Step2: React.FC = () => {
   const { steps } = context;
   const { step5_1: step } = steps;
 
+  const carouselContext = useContext(CarouselContext);
+
   const handleButtonClick = useCallback(
     value => {
       if (value === 'none') {
         context.updateStep('step5_1', { isCompleted: true, content: [value] });
+        carouselContext.setStoreState({ currentSlide: 5 });
 
         return;
       }
@@ -39,7 +43,7 @@ const Step2: React.FC = () => {
 
       context.updateStep('step5_1', { content: updatedMedications });
     },
-    [context, step],
+    [context, step, carouselContext],
   );
 
   return (
@@ -91,6 +95,8 @@ const Step2: React.FC = () => {
                 isCompleted: option.value !== 'yes',
                 content: option.value,
               });
+              if (option.value !== 'yes')
+                carouselContext.setStoreState({ currentSlide: 5 });
             }}
             isActive={steps.step5?.content === option.value}
             name="has_medications"
@@ -130,6 +136,7 @@ const Step2: React.FC = () => {
                 isCompleted: true,
                 content: steps.step5_1?.content,
               });
+              carouselContext.setStoreState({ currentSlide: 5 });
             }}
           />
         </>

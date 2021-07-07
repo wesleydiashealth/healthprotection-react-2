@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import ReactToolTip from 'react-tooltip';
 import { HiQuestionMarkCircle, HiOutlineCheckCircle } from 'react-icons/hi';
+import { CarouselContext } from 'pure-react-carousel';
 
 import { StepContainer } from '../styles';
 import formSteps from '../../../form.json';
@@ -15,6 +16,8 @@ const Step2: React.FC = () => {
   const context = useWizard();
 
   const { steps } = context;
+
+  const carouselContext = useContext(CarouselContext);
 
   return (
     <StepContainer
@@ -72,6 +75,8 @@ const Step2: React.FC = () => {
                 isCompleted: option.value !== 'female',
                 content: option.value,
               });
+              if (option.value !== 'female')
+                carouselContext.setStoreState({ currentSlide: 2 });
             }}
             isActive={steps.step2?.content === option.value}
             name="gender"
@@ -90,6 +95,7 @@ const Step2: React.FC = () => {
                 isCompleted: true,
                 content: option.value,
               });
+              carouselContext.setStoreState({ currentSlide: 2 });
             }}
             isActive={steps.step2_1?.content === option.value}
             name="female_condition"

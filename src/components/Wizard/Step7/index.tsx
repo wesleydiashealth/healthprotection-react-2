@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { IoOptionsOutline } from 'react-icons/io5';
 import { BsChevronCompactRight } from 'react-icons/bs';
+import { CarouselContext } from 'pure-react-carousel';
 
 import StepContainer from './styles';
 
@@ -8,6 +9,8 @@ import { useWizard } from '../../../contexts/wizard';
 
 const Step2: React.FC = () => {
   const context = useWizard();
+
+  const carouselContext = useContext(CarouselContext);
 
   return (
     <StepContainer>
@@ -38,6 +41,7 @@ const Step2: React.FC = () => {
           name="reset"
           onClick={() => {
             context.resetSteps();
+            carouselContext.setStoreState({ currentSlide: 0 });
           }}
         >
           Reset

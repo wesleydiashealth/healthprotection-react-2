@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import ReactToolTip from 'react-tooltip';
 import { HiQuestionMarkCircle, HiOutlineCheckCircle } from 'react-icons/hi';
+import { CarouselContext } from 'pure-react-carousel';
 
 import { StepContainer } from '../styles';
 import formSteps from '../../../form.json';
@@ -15,6 +16,8 @@ const Step1: React.FC = () => {
   const context = useWizard();
 
   const { steps } = context;
+
+  const carouselContext = useContext(CarouselContext);
 
   return (
     <StepContainer isCompleted={steps.step1.isCompleted}>
@@ -53,6 +56,7 @@ const Step1: React.FC = () => {
               isCompleted: true,
               content: option.value,
             });
+            carouselContext.setStoreState({ currentSlide: 1 });
           }}
           isActive={steps.step1.content === option.value}
           name="age"
