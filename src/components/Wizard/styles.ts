@@ -49,10 +49,6 @@ const Container = styled.div`
       line-height: 24px;
     }
   }
-
-  .react-multi-carousel-list {
-    padding-bottom: 40px;
-  }
 `;
 
 export const StepContainer = styled.div<StepContainerProps>`
@@ -88,7 +84,9 @@ export const StepContainer = styled.div<StepContainerProps>`
   strong {
     margin-bottom: 24px;
 
-    font-weight: 600;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 22px;
   }
 
   .completed-icon {
@@ -124,7 +122,7 @@ export const StepContainer = styled.div<StepContainerProps>`
   }
 
   .buttons-list {
-    height: 240px;
+    /* height: 240px; */
 
     > div {
       display: flex;

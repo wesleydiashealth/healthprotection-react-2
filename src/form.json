@@ -162,7 +162,7 @@
   {
     "key": "step-5",
     "title": "Medications",
-    "label": "Do you take any medications?",
+    "label": "Do you take any prescribed medications?",
     "tooltip": "We need to know if you take any drug so we can recommend a safe mix and match without any interactions. Don´t worry, this information is protected.",
     "options": [
       {
@@ -216,6 +216,7 @@
   },
   {
     "key": "step-6",
+    "title": "Categories",
     "label": "Do you fit in any of these categories?",
     "tooltip": "We need to ask this because we cannot make any recommendation without the supervision of your doctor if you find yourself in any of the answers.",
     "options": [

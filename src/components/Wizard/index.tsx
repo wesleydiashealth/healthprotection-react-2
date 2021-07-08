@@ -59,13 +59,13 @@ const Wizard: React.FC = () => {
         <WizardProvider>
           <CarouselProvider
             naturalSlideWidth={400}
-            naturalSlideHeight={525}
-            totalSlides={7}
+            naturalSlideHeight={760}
+            totalSlides={8}
             visibleSlides={3}
             step={1}
-            currentSlide={0}
           >
             <Slider>
+              <Slide index={0} />
               <Slide index={1}>
                 <Step1 />
               </Slide>

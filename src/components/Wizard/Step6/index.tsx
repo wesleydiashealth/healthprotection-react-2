@@ -24,7 +24,7 @@ const Step6: React.FC = () => {
   return (
     <StepContainer
       isCompleted={steps.step6?.isCompleted}
-      isDisabled={!steps.step5.isCompleted}
+      isDisabled={!steps.step5.isCompleted && !steps.step5_1.isCompleted}
     >
       {steps.step6?.content.length > 0 && (
         <HiOutlineCheckCircle
