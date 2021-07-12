@@ -1,7 +1,10 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import ReactToolTip from 'react-tooltip';
 import { HiQuestionMarkCircle, HiOutlineCheckCircle } from 'react-icons/hi';
 import { CarouselContext } from 'pure-react-carousel';
+
+// import api from '../../../services/api';
+import StepData from '../../../dtos/StepData';
 
 import { StepContainer } from '../styles';
 import formSteps from '../../../form.json';
@@ -10,21 +13,41 @@ import Button from '../../Button';
 
 import { useWizard } from '../../../contexts/wizard';
 
+import WizardJson from '../../../form2.json';
+
 const Step2: React.FC = () => {
   const currentStep = formSteps[1];
 
   const context = useWizard();
 
   const { steps } = context;
+  const { step2: step, step2_1: subStep, step1: previousStep } = steps;
 
   const carouselContext = useContext(CarouselContext);
 
+  const [stepData, setStepData] = useState<StepData | undefined>();
+
+  const wizardSteps = Object.keys(steps).filter(
+    item => !item.includes('_'),
+  ).length;
+
+  // useEffect(() => {
+  //   api.get('/data-files/anamnese.json').then(response => {
+  //     const { data } = response;
+  //     setStepData(data[2]);
+  //   });
+  // }, []);
+
+  useEffect(() => {
+    setStepData(WizardJson[1]);
+  }, []);
+
   return (
     <StepContainer
-      isCompleted={steps.step2?.isCompleted || steps.step2_1?.isCompleted}
-      isDisabled={!steps.step1?.isCompleted}
+      isCompleted={step?.isCompleted || subStep?.isCompleted}
+      isDisabled={!previousStep?.isCompleted}
     >
-      {(steps.step2?.isCompleted || steps.step2_1?.isCompleted) && (
+      {(step?.isCompleted || subStep?.isCompleted) && (
         <HiOutlineCheckCircle
           className="completed-icon"
           size={32}
@@ -32,12 +55,11 @@ const Step2: React.FC = () => {
         />
       )}
       <span>
-        Question {steps.step2?.content !== 'female' ? '2' : '2.1'}/
-        {formSteps.length}
+        Question {step?.answers !== 'female' ? '2' : '2.1'}/{wizardSteps}
       </span>
       <strong>
-        {steps.step2?.content !== 'female'
-          ? currentStep.label
+        {step?.answers !== 'female'
+          ? stepData?.label
           : currentStep.substep?.label}
       </strong>
       <HiQuestionMarkCircle
@@ -45,12 +67,12 @@ const Step2: React.FC = () => {
         size={20}
         color="#7664C8"
         data-tip={`<strong>${
-          steps.step2?.content !== 'female'
-            ? currentStep.title
+          step?.answers !== 'female'
+            ? stepData?.label
             : currentStep.substep?.title
         }</strong><span>${
-          steps.step2?.content !== 'female'
-            ? currentStep.tooltip
+          step?.answers !== 'female'
+            ? stepData?.label
             : currentStep.substep?.tooltip
         }</span>`}
         data-for="step_2_tooltip"
@@ -65,27 +87,28 @@ const Step2: React.FC = () => {
         html
         backgroundColor="#fff"
       />
-      {steps.step2?.content !== 'female' &&
-        currentStep.options.map(option => (
+      {step?.answers !== 'female' &&
+        stepData?.answers &&
+        Object.values(stepData?.answers).map(answer => (
           <Button
-            key={option.value}
+            key={answer.id}
             type="button"
             onClick={() => {
               context.updateStep('step2', {
-                isCompleted: option.value !== 'female',
-                content: option.value,
+                isCompleted: answer.api !== 'female',
+                answers: answer.api,
               });
-              if (option.value !== 'female')
+              if (answer.api !== 'female')
                 carouselContext.setStoreState({ currentSlide: 2 });
             }}
-            isActive={steps.step2?.content === option.value}
+            isActive={step?.answers === answer.api}
             name="gender"
-            value={steps.step2?.content}
+            value={step?.answers}
           >
-            {option.label}
+            {answer.label}
           </Button>
         ))}
-      {steps.step2?.content === 'female' &&
+      {step?.answers === 'female' &&
         currentStep.substep?.options.map(option => (
           <Button
             key={option.value}
@@ -93,13 +116,13 @@ const Step2: React.FC = () => {
             onClick={() => {
               context.updateStep('step2_1', {
                 isCompleted: true,
-                content: option.value,
+                answers: option.value,
               });
               carouselContext.setStoreState({ currentSlide: 2 });
             }}
-            isActive={steps.step2_1?.content === option.value}
+            isActive={subStep?.answers === option.value}
             name="female_condition"
-            value={steps.step2_1?.content}
+            value={subStep?.answers}
           >
             {option.label}
           </Button>

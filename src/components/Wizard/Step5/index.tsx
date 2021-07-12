@@ -23,7 +23,7 @@ const Step2: React.FC = () => {
   const context = useWizard();
 
   const { steps } = context;
-  const { step5_1: step } = steps;
+  const { step5: step, step5_1: subStep, step4: previousStep } = steps;
 
   const [stepNumber, setStepNumber] = useState<string>('5');
   const [stepTitle, setStepTitle] = useState<string>(currentStep.label);
@@ -35,35 +35,35 @@ const Step2: React.FC = () => {
     (medicationObject: MedicationData) => {
       const value = Object.values(medicationObject).join('_');
 
-      const updatedMedications = Array.isArray(step.content)
-        ? step.content
+      const updatedMedications = Array.isArray(subStep.answers)
+        ? subStep.answers
         : [];
 
       if (
-        Array.isArray(step.content) &&
-        !step?.content.find((medication: string) =>
+        Array.isArray(subStep.answers) &&
+        !subStep?.answers.find((medication: string) =>
           medication.includes(medicationObject.medication),
         )
       ) {
         updatedMedications.push(value);
       } else {
-        updatedMedications.splice(step.content.indexOf(value), 1);
+        updatedMedications.splice(subStep.answers.indexOf(value), 1);
       }
 
-      context.updateStep('step5_1', { content: updatedMedications });
+      context.updateStep('step5_1', { answers: updatedMedications });
       setSelectedMedication('');
     },
-    [context, step],
+    [context, subStep],
   );
 
   return (
     <StepContainer
-      isCompleted={steps.step5?.isCompleted || steps.step5_1?.isCompleted}
-      isDisabled={!steps.step4?.isCompleted}
+      isCompleted={step?.isCompleted || subStep?.isCompleted}
+      isDisabled={!previousStep?.isCompleted}
     >
-      {((steps.step5?.content.length > 0 &&
-        (steps.step5?.isCompleted || steps.step5_1?.isCompleted)) ||
-        steps.step5?.content === 'no') && (
+      {((step?.answers.length > 0 &&
+        (step?.isCompleted || subStep?.isCompleted)) ||
+        step?.answers === 'no') && (
         <HiOutlineCheckCircle
           className="completed-icon"
           size={32}
@@ -91,7 +91,7 @@ const Step2: React.FC = () => {
         html
         backgroundColor="#fff"
       />
-      {steps.step5?.content !== 'yes' &&
+      {step?.answers !== 'yes' &&
         currentStep.options.map(option => (
           <Button
             key={option.value}
@@ -99,7 +99,7 @@ const Step2: React.FC = () => {
             onClick={() => {
               context.updateStep('step5', {
                 isCompleted: option.value !== 'yes',
-                content: option.value,
+                answers: option.value,
               });
               if (option.value !== 'yes') {
                 carouselContext.setStoreState({ currentSlide: 5 });
@@ -108,14 +108,14 @@ const Step2: React.FC = () => {
                 setStepTitle(currentStep.substep?.label || '');
               }
             }}
-            isActive={steps.step5?.content === option.value}
+            isActive={step?.answers === option.value}
             name="has_medications"
-            value={steps.step5?.content}
+            value={step?.answers}
           >
             {option.label}
           </Button>
         ))}
-      {steps.step5?.content === 'yes' && (
+      {step?.answers === 'yes' && (
         <>
           {!selectedMedication.length && (
             <ScrollArea
@@ -133,22 +133,22 @@ const Step2: React.FC = () => {
                     setStepTitle('How often?');
                   }}
                   isActive={
-                    Array.isArray(step.content) &&
-                    !!step.content.find((medication: string) =>
+                    Array.isArray(subStep.answers) &&
+                    !!subStep.answers.find((medication: string) =>
                       medication.includes(option.value),
                     )
                   }
                   name="medications"
-                  value={step?.content}
+                  value={step?.answers}
                 >
                   {option.label}{' '}
                   <span>
-                    {Array.isArray(step.content) &&
-                      !!step.content.find((medication: string) =>
+                    {Array.isArray(subStep.answers) &&
+                      !!subStep.answers.find((medication: string) =>
                         medication.includes(option.value),
                       ) &&
                       `(${
-                        step?.content
+                        subStep?.answers
                           .find((medication: string) =>
                             medication.includes(option.value),
                           )
@@ -196,7 +196,7 @@ const Step2: React.FC = () => {
             onClick={() => {
               context.updateStep('step5_1', {
                 isCompleted: true,
-                content: step?.content,
+                answers: subStep?.answers,
               });
               carouselContext.setStoreState({ currentSlide: 5 });
             }}

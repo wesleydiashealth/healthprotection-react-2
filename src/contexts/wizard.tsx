@@ -4,7 +4,7 @@ interface StepData {
   isCompleted?: boolean;
   isActive?: boolean;
   isDisabled?: boolean;
-  content: string | Array<string>;
+  answers: string | Array<string>;
 }
 
 interface StepsData {
@@ -21,14 +21,14 @@ const WizardContext = createContext<WizardContextData>({} as WizardContextData);
 
 export const WizardProvider: React.FC = ({ children }) => {
   const [steps, setSteps] = useState<StepsData>({
-    step1: { isCompleted: false, content: [] },
-    step2: { isCompleted: false, content: [] },
-    step2_1: { isCompleted: false, content: [] },
-    step3: { isCompleted: false, content: [] },
-    step4: { isCompleted: false, content: [] },
-    step5: { isCompleted: false, content: [] },
-    step5_1: { isCompleted: false, content: [] },
-    step6: { isCompleted: false, content: [] },
+    step1: { isCompleted: false, answers: [] },
+    step2: { isCompleted: false, answers: [] },
+    step2_1: { isCompleted: false, answers: [] },
+    step3: { isCompleted: false, answers: [] },
+    step4: { isCompleted: false, answers: [] },
+    step5: { isCompleted: false, answers: [] },
+    step5_1: { isCompleted: false, answers: [] },
+    step6: { isCompleted: false, answers: [] },
   });
 
   async function updateStep(step: string, attrs: StepData) {
@@ -39,7 +39,7 @@ export const WizardProvider: React.FC = ({ children }) => {
 
   async function resetSteps() {
     Object.keys(steps).forEach(step => {
-      updateStep(step, { isCompleted: false, content: [] });
+      updateStep(step, { isCompleted: false, answers: [] });
     });
   }
 

@@ -1,61 +1,60 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import ReactToolTip from 'react-tooltip';
 import { HiQuestionMarkCircle, HiOutlineCheckCircle } from 'react-icons/hi';
 import { CarouselContext } from 'pure-react-carousel';
 
-import api from '../../../services/api';
+// import api from '../../../services/api';
+import StepData from '../../../dtos/StepData';
 
 import { StepContainer } from '../styles';
-import formSteps from '../../../form.json';
 
 import Button from '../../Button';
 
 import { useWizard } from '../../../contexts/wizard';
 
-const Step1: React.FC = () => {
-  const currentStep = formSteps[0];
+import WizardJson from '../../../form2.json';
 
+const Step1: React.FC = () => {
   const context = useWizard();
 
   const { steps } = context;
+  const { step1: step } = steps;
 
   const carouselContext = useContext(CarouselContext);
 
+  const [stepData, setStepData] = useState<StepData | undefined>();
+
+  const wizardSteps = Object.keys(steps).filter(
+    item => !item.includes('_'),
+  ).length;
+
+  // useEffect(() => {
+  //   api.get('/data-files/anamnese.json').then(response => {
+  //     const { data } = response;
+  //     setStepData(data[1]);
+  //   });
+  // }, [context]);
+
   useEffect(() => {
-    api
-      .get('/data-files/anamnese.json', {
-        headers: {
-          'Access-Control-Allow-Origin': '*',
-        },
-        proxy: {
-          host: 'localhost',
-          port: 3000,
-        },
-      })
-      .then(response => {
-        console.log(response);
-      })
-      .catch(error => {
-        console.log(error);
-      });
+    setStepData(WizardJson[1]);
   }, []);
 
   return (
-    <StepContainer isCompleted={steps.step1.isCompleted}>
-      {steps.step1.isCompleted && (
+    <StepContainer isCompleted={step.isCompleted}>
+      {step.isCompleted && (
         <HiOutlineCheckCircle
           className="completed-icon"
           size={32}
           color="#1BC9BD"
         />
       )}
-      <span>Question 1/{formSteps.length}</span>
-      <strong>{currentStep.label}</strong>
+      <span>Question 1/{wizardSteps}</span>
+      <strong>{stepData?.label}</strong>
       <HiQuestionMarkCircle
         className="tooltip-icon"
         size={20}
         color="#7664C8"
-        data-tip={`<strong>${currentStep.title}</strong><span>${currentStep.tooltip}</span>`}
+        data-tip={`<strong>${stepData?.label}</strong><span>${stepData?.label}</span>`}
         data-for="step_1_tooltip"
       />
       <ReactToolTip
@@ -68,24 +67,25 @@ const Step1: React.FC = () => {
         html
         backgroundColor="#fff"
       />
-      {currentStep.options.map(option => (
-        <Button
-          key={option.value}
-          type="button"
-          onClick={() => {
-            context.updateStep('step1', {
-              isCompleted: true,
-              content: option.value,
-            });
-            carouselContext.setStoreState({ currentSlide: 1 });
-          }}
-          isActive={steps.step1.content === option.value}
-          name="age"
-          value={steps.step1.content}
-        >
-          {option.label}
-        </Button>
-      ))}
+      {stepData?.answers &&
+        Object.values(stepData.answers).map(answer => (
+          <Button
+            key={answer.id}
+            type="button"
+            onClick={() => {
+              context.updateStep('step1', {
+                isCompleted: true,
+                answers: answer.api,
+              });
+              carouselContext.setStoreState({ currentSlide: 1 });
+            }}
+            isActive={step.answers === answer.api}
+            name="age"
+            value={step.answers}
+          >
+            {answer.label}
+          </Button>
+        ))}
     </StepContainer>
   );
 };
