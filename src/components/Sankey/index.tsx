@@ -11,7 +11,7 @@ import Container, {
   FineTune,
 } from './styles';
 
-import sankeyData from '../../sankey.json';
+import sankeyData from '../../sankey2.json';
 
 interface FineTune {
   [key: string]: 'off' | 'med' | 'max';
@@ -106,7 +106,7 @@ const Sankey: React.FC = () => {
           <HiQuestionMarkCircle
             className="tooltip-icon"
             size={20}
-            color="#db71af"
+            color="#DB71AF"
             data-tip="<strong>Step 2</strong><span>We already made a pre-selection...</span>"
             data-for="sankey-title-tooltip"
           />
@@ -131,7 +131,7 @@ const Sankey: React.FC = () => {
       </div>
       <div className="step-content content-wrapper">
         <Outcomes>
-          {outcomes.map(outcome => (
+          {Object.values(outcomes).map(outcome => (
             <div key={outcome.key} id={outcome.key}>
               <div className="outcome-wrapper">
                 <span>{outcome.title}</span>
@@ -142,26 +142,33 @@ const Sankey: React.FC = () => {
                   data-for="sankey-tooltip"
                 />
               </div>
-              {outcome['sub-outcomes'].map(suboutcome => (
-                <Xarrow
-                  start={outcome.key}
-                  end={suboutcome}
-                  showHead={false}
-                  strokeWidth={90}
-                  curveness={0.6}
-                  color={
-                    fineTune[suboutcome] === 'off' || !fineTune[suboutcome]
-                      ? 'rgba(0,0,0,0.05)'
-                      : 'rgba(240, 94, 98, 0.15)'
-                  }
-                />
-              ))}
+              {outcome.suboutcomes
+                .filter(
+                  suboutcome =>
+                    !!Object.values(suboutcomes).filter(
+                      item => item.key === suboutcome,
+                    ).length,
+                )
+                .map(suboutcome => (
+                  <Xarrow
+                    start={outcome.key}
+                    end={suboutcome}
+                    showHead={false}
+                    strokeWidth={90}
+                    curveness={0.6}
+                    color={
+                      fineTune[suboutcome] === 'off' || !fineTune[suboutcome]
+                        ? 'rgba(0,0,0,0.05)'
+                        : 'rgba(240, 94, 98, 0.15)'
+                    }
+                  />
+                ))}
             </div>
           ))}
         </Outcomes>
 
         <SubOutcomes>
-          {suboutcomes.map(suboutcome => (
+          {Object.values(suboutcomes).map(suboutcome => (
             <div
               key={suboutcome.key}
               id={suboutcome.key}
@@ -200,7 +207,7 @@ const Sankey: React.FC = () => {
                   isActive={fineTune[suboutcome.key] === 'med'}
                   onClick={() => {
                     handleFineTuneClick(
-                      suboutcome.substances?.med || [],
+                      suboutcome.sustances?.med || [],
                       suboutcome.key,
                     );
                     setFineTune({
@@ -215,7 +222,7 @@ const Sankey: React.FC = () => {
                   isActive={fineTune[suboutcome.key] === 'max'}
                   onClick={() => {
                     handleFineTuneClick(
-                      suboutcome.substances?.max || [],
+                      suboutcome.sustances?.max || [],
                       suboutcome.key,
                     );
                     setFineTune({
