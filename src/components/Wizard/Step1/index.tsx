@@ -1,7 +1,9 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import ReactToolTip from 'react-tooltip';
 import { HiQuestionMarkCircle, HiOutlineCheckCircle } from 'react-icons/hi';
 import { CarouselContext } from 'pure-react-carousel';
+
+import api from '../../../services/api';
 
 import { StepContainer } from '../styles';
 import formSteps from '../../../form.json';
@@ -18,6 +20,25 @@ const Step1: React.FC = () => {
   const { steps } = context;
 
   const carouselContext = useContext(CarouselContext);
+
+  useEffect(() => {
+    api
+      .get('/data-files/anamnese.json', {
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+        },
+        proxy: {
+          host: 'localhost',
+          port: 3000,
+        },
+      })
+      .then(response => {
+        console.log(response);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }, []);
 
   return (
     <StepContainer isCompleted={steps.step1.isCompleted}>
