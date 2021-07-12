@@ -1,7 +1,6 @@
 import React, { useCallback, useRef } from 'react';
 import { Form } from '@unform/web';
 import { FormHandles } from '@unform/core';
-// import Carousel from 'react-multi-carousel';
 import { CarouselProvider, Slider, Slide } from 'pure-react-carousel';
 import * as Yup from 'yup';
 import { IoChatbubblesOutline } from 'react-icons/io5';
@@ -90,7 +89,6 @@ const Wizard: React.FC = () => {
             </Slider>
           </CarouselProvider>
         </WizardProvider>
-        {/* <button type="submit">Enviar</button> */}
       </Form>
     </Container>
   );
