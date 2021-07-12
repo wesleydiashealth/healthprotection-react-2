@@ -52,55 +52,6 @@
         "label": "anamnese.gender.male",
         "has_child": false,
         "slug": "whats-your-birth-gender"
-      },
-      "6": {
-        "internal": {
-          "5": {
-            "id": 5,
-            "label": "anamnese.gender.female",
-            "api": "female",
-            "type": "C",
-            "answers": {
-              "7": {
-                "id": 7,
-                "api": "exclude",
-                "type": "S",
-                "label": "anamnese.gender.female.lactating",
-                "has_child": false,
-                "slug": "whats-your-birth-gender"
-              },
-              "8": {
-                "id": 8,
-                "api": "exclude",
-                "type": "S",
-                "label": "anamnese.gender.female.conceive",
-                "has_child": false,
-                "slug": "whats-your-birth-gender"
-              },
-              "9": {
-                "id": 9,
-                "api": "exclude",
-                "type": "S",
-                "label": "anamnese.gender.female.pregnant",
-                "has_child": false,
-                "slug": "whats-your-birth-gender"
-              },
-              "47": {
-                "id": 47,
-                "api": "female",
-                "type": "S",
-                "label": "general.none",
-                "has_child": false,
-                "slug": "whats-your-birth-gender"
-              }
-            }
-          },
-          "6": {
-            "slug": "whats-your-birth-gender"
-          }
-        },
-        "has_child": true,
-        "id": 6
       }
     }
   },
