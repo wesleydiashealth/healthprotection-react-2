@@ -39,7 +39,7 @@ const Step2: React.FC = () => {
   // }, []);
 
   useEffect(() => {
-    setStepData(WizardJson[1]);
+    setStepData(WizardJson[2]);
   }, []);
 
   return (
