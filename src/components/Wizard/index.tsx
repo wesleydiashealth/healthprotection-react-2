@@ -11,6 +11,7 @@ import 'react-multi-carousel/lib/styles.css';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 
 import { WizardProvider } from '../../contexts/wizard';
+import Carousel from './Carousel';
 
 import Step1 from './Step1';
 import Step2 from './Step2';
@@ -56,38 +57,40 @@ const Wizard: React.FC = () => {
       </div>
       <Form ref={formRef} onSubmit={handleSubmit} className="content-wrapper">
         <WizardProvider>
-          <CarouselProvider
-            naturalSlideWidth={400}
-            naturalSlideHeight={760}
-            totalSlides={8}
-            visibleSlides={3}
-            step={1}
-          >
-            <Slider>
-              <Slide index={0} />
-              <Slide index={1}>
-                <Step1 />
-              </Slide>
-              <Slide index={2}>
-                <Step2 />
-              </Slide>
-              <Slide index={3}>
-                <Step3 />
-              </Slide>
-              <Slide index={4}>
-                <Step4 />
-              </Slide>
-              <Slide index={5}>
-                <Step5 />
-              </Slide>
-              <Slide index={6}>
-                <Step6 />
-              </Slide>
-              <Slide index={7}>
-                <Step7 />
-              </Slide>
-            </Slider>
-          </CarouselProvider>
+          <Carousel>
+            <CarouselProvider
+              naturalSlideWidth={400}
+              naturalSlideHeight={760}
+              totalSlides={8}
+              visibleSlides={3}
+              step={1}
+            >
+              <Slider>
+                <Slide index={0} />
+                <Slide index={1}>
+                  <Step1 />
+                </Slide>
+                <Slide index={2}>
+                  <Step2 />
+                </Slide>
+                <Slide index={3}>
+                  <Step3 />
+                </Slide>
+                <Slide index={4}>
+                  <Step4 />
+                </Slide>
+                <Slide index={5}>
+                  <Step5 />
+                </Slide>
+                <Slide index={6}>
+                  <Step6 />
+                </Slide>
+                <Slide index={7}>
+                  <Step7 />
+                </Slide>
+              </Slider>
+            </CarouselProvider>
+          </Carousel>
         </WizardProvider>
       </Form>
     </Container>

@@ -1,10 +1,7 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import ReactToolTip from 'react-tooltip';
 import { HiQuestionMarkCircle, HiOutlineCheckCircle } from 'react-icons/hi';
 import { CarouselContext } from 'pure-react-carousel';
-
-// import api from '../../../services/api';
-import StepData from '../../../dtos/StepData';
 
 import { StepContainer } from '../styles';
 
@@ -12,32 +9,17 @@ import Button from '../../Button';
 
 import { useWizard } from '../../../contexts/wizard';
 
-import WizardJson from '../../../form2.json';
-
 const Step1: React.FC = () => {
   const context = useWizard();
-
-  const { steps } = context;
+  const { steps, questions } = context;
   const { step1: step } = steps;
+  const { 1: currentQuestion } = questions;
 
   const carouselContext = useContext(CarouselContext);
-
-  const [stepData, setStepData] = useState<StepData | undefined>();
 
   const wizardSteps = Object.keys(steps).filter(
     item => !item.includes('_'),
   ).length;
-
-  // useEffect(() => {
-  //   api.get('/data-files/anamnese.json').then(response => {
-  //     const { data } = response;
-  //     setStepData(data[1]);
-  //   });
-  // }, [context]);
-
-  useEffect(() => {
-    setStepData(WizardJson[1]);
-  }, []);
 
   return (
     <StepContainer isCompleted={step.isCompleted}>
@@ -49,12 +31,12 @@ const Step1: React.FC = () => {
         />
       )}
       <span>Question 1/{wizardSteps}</span>
-      <strong>{stepData?.label}</strong>
+      <strong>{currentQuestion?.label}</strong>
       <HiQuestionMarkCircle
         className="tooltip-icon"
         size={20}
         color="#7664C8"
-        data-tip={`<strong>${stepData?.label}</strong><span>${stepData?.label}</span>`}
+        data-tip={`<strong>${currentQuestion?.label}</strong><span>${currentQuestion?.label}</span>`}
         data-for="step_1_tooltip"
       />
       <ReactToolTip
@@ -67,8 +49,8 @@ const Step1: React.FC = () => {
         html
         backgroundColor="#fff"
       />
-      {stepData?.answers &&
-        Object.values(stepData.answers).map(answer => (
+      {currentQuestion?.answers &&
+        Object.values(currentQuestion.answers).map(answer => (
           <Button
             key={answer.id}
             type="button"

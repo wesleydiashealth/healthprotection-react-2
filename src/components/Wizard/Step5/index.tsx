@@ -1,7 +1,6 @@
 import React, { useCallback, useContext, useState } from 'react';
 import ReactToolTip from 'react-tooltip';
 import { HiQuestionMarkCircle, HiOutlineCheckCircle } from 'react-icons/hi';
-import { CgChevronRightO } from 'react-icons/cg';
 import ScrollArea from 'react-scrollbar';
 import { CarouselContext } from 'pure-react-carousel';
 
@@ -21,12 +20,12 @@ const Step2: React.FC = () => {
   const currentStep = formSteps[4];
 
   const context = useWizard();
-
-  const { steps } = context;
+  const { steps, questions } = context;
   const { step5: step, step5_1: subStep, step4: previousStep } = steps;
+  const { 8: currentQuestion } = questions;
 
   const [stepNumber, setStepNumber] = useState<string>('5');
-  const [stepTitle, setStepTitle] = useState<string>(currentStep.label);
+  const [stepTitle, setStepTitle] = useState<string>(currentQuestion.label);
   const [selectedMedication, setSelectedMedication] = useState<string>('');
 
   const carouselContext = useContext(CarouselContext);
@@ -52,8 +51,9 @@ const Step2: React.FC = () => {
 
       context.updateStep('step5_1', { answers: updatedMedications });
       setSelectedMedication('');
+      setStepTitle(currentQuestion.label);
     },
-    [context, subStep],
+    [context, subStep, currentQuestion.label],
   );
 
   return (
@@ -78,7 +78,7 @@ const Step2: React.FC = () => {
         className="tooltip-icon"
         size={20}
         color="#7664C8"
-        data-tip={`<strong>${currentStep.title}</strong><span>${currentStep.tooltip}</span>`}
+        data-tip={`<strong>${stepTitle}</strong><span>${stepTitle}</span>`}
         data-for="step_5_tooltip"
       />
       <ReactToolTip
@@ -92,30 +92,31 @@ const Step2: React.FC = () => {
         backgroundColor="#fff"
       />
       {step?.answers !== 'yes' &&
-        currentStep.options.map(option => (
+        currentQuestion?.answers &&
+        Object.values(currentQuestion.answers).map(option => (
           <Button
-            key={option.value}
+            key={option.api}
             type="button"
             onClick={() => {
               context.updateStep('step5', {
-                isCompleted: option.value !== 'yes',
-                answers: option.value,
+                isCompleted: option.api !== 'yes',
+                answers: option.api,
               });
-              if (option.value !== 'yes') {
+              if (option.api !== 'yes') {
                 carouselContext.setStoreState({ currentSlide: 5 });
               } else {
                 setStepNumber('5.1');
                 setStepTitle(currentStep.substep?.label || '');
               }
             }}
-            isActive={step?.answers === option.value}
+            isActive={step?.answers === option.api}
             name="has_medications"
             value={step?.answers}
           >
             {option.label}
           </Button>
         ))}
-      {step?.answers === 'yes' && (
+      {step?.answers === 'yes' && currentQuestion?.answers && (
         <>
           {!selectedMedication.length && (
             <ScrollArea
@@ -123,40 +124,42 @@ const Step2: React.FC = () => {
               smoothScrolling
               horizontal={false}
             >
-              {currentStep.substep?.options.map(option => (
-                <Button
-                  key={option.value}
-                  type="button"
-                  onClick={() => {
-                    setSelectedMedication(option.value);
-                    setStepNumber('5.2');
-                    setStepTitle('How often?');
-                  }}
-                  isActive={
-                    Array.isArray(subStep.answers) &&
-                    !!subStep.answers.find((medication: string) =>
-                      medication.includes(option.value),
-                    )
-                  }
-                  name="medications"
-                  value={step?.answers}
-                >
-                  {option.label}{' '}
-                  <span>
-                    {Array.isArray(subStep.answers) &&
+              {Object.values(currentQuestion.answers)
+                .filter(answer => !!answer.has_child)
+                .map(option => (
+                  <Button
+                    key={option.api}
+                    type="button"
+                    onClick={() => {
+                      setSelectedMedication(option.api);
+                      setStepNumber('5.2');
+                      setStepTitle('How often?');
+                    }}
+                    isActive={
+                      Array.isArray(subStep.answers) &&
                       !!subStep.answers.find((medication: string) =>
-                        medication.includes(option.value),
-                      ) &&
-                      `(${
-                        subStep?.answers
-                          .find((medication: string) =>
-                            medication.includes(option.value),
-                          )
-                          ?.split('_')[1] || ''
-                      })`}
-                  </span>
-                </Button>
-              ))}
+                        medication.includes(option.api),
+                      )
+                    }
+                    name="medications"
+                    value={step?.answers}
+                  >
+                    {option.label}{' '}
+                    <span>
+                      {Array.isArray(subStep.answers) &&
+                        !!subStep.answers.find((medication: string) =>
+                          medication.includes(option.api),
+                        ) &&
+                        `(${
+                          subStep?.answers
+                            .find((medication: string) =>
+                              medication.includes(option.api),
+                            )
+                            ?.split('_')[1] || ''
+                        })`}
+                    </span>
+                  </Button>
+                ))}
             </ScrollArea>
           )}
           {selectedMedication && (
@@ -189,18 +192,21 @@ const Step2: React.FC = () => {
               </Button>
             </>
           )}
-          <CgChevronRightO
-            className="advance-button"
-            size={28}
-            color="#7664C8"
-            onClick={() => {
-              context.updateStep('step5_1', {
-                isCompleted: true,
-                answers: subStep?.answers,
-              });
-              carouselContext.setStoreState({ currentSlide: 5 });
-            }}
-          />
+          {!selectedMedication && !!subStep?.answers.length && (
+            <button
+              type="button"
+              className="advance-button"
+              onClick={() => {
+                context.updateStep('step5_1', {
+                  isCompleted: true,
+                  answers: step?.answers,
+                });
+                carouselContext.setStoreState({ currentSlide: 5 });
+              }}
+            >
+              Next Question
+            </button>
+          )}
         </>
       )}
     </StepContainer>

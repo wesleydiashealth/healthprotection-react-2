@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { transparentize } from 'polished';
 
 interface StepContainerProps {
   isCompleted?: boolean;
@@ -128,16 +129,28 @@ export const StepContainer = styled.div<StepContainerProps>`
       display: flex;
       flex-direction: column;
 
-      button {
+      /* button {
         margin-right: 20px;
-      }
+      } */
     }
   }
 
   .advance-button {
     margin-top: 20px;
-    align-self: center;
-    cursor: pointer;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 32px;
+
+    background: #7664c8;
+    color: white;
+
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 500;
+
+    &:hover {
+      background: ${transparentize(0.2, '#7664c8')};
+    }
   }
 `;
 

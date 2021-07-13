@@ -1,10 +1,7 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import ReactToolTip from 'react-tooltip';
 import { HiQuestionMarkCircle, HiOutlineCheckCircle } from 'react-icons/hi';
 import { CarouselContext } from 'pure-react-carousel';
-
-// import api from '../../../services/api';
-import StepData from '../../../dtos/StepData';
 
 import { StepContainer } from '../styles';
 import formSteps from '../../../form.json';
@@ -13,34 +10,19 @@ import Button from '../../Button';
 
 import { useWizard } from '../../../contexts/wizard';
 
-import WizardJson from '../../../form2.json';
-
 const Step2: React.FC = () => {
   const currentStep = formSteps[1];
 
   const context = useWizard();
-
-  const { steps } = context;
+  const { steps, questions } = context;
   const { step2: step, step2_1: subStep, step1: previousStep } = steps;
+  const { 2: currentQuestion } = questions;
 
   const carouselContext = useContext(CarouselContext);
-
-  const [stepData, setStepData] = useState<StepData | undefined>();
 
   const wizardSteps = Object.keys(steps).filter(
     item => !item.includes('_'),
   ).length;
-
-  // useEffect(() => {
-  //   api.get('/data-files/anamnese.json').then(response => {
-  //     const { data } = response;
-  //     setStepData(data[2]);
-  //   });
-  // }, []);
-
-  useEffect(() => {
-    setStepData(WizardJson[2]);
-  }, []);
 
   return (
     <StepContainer
@@ -59,7 +41,7 @@ const Step2: React.FC = () => {
       </span>
       <strong>
         {step?.answers !== 'female'
-          ? stepData?.label
+          ? currentQuestion?.label
           : currentStep.substep?.label}
       </strong>
       <HiQuestionMarkCircle
@@ -68,11 +50,11 @@ const Step2: React.FC = () => {
         color="#7664C8"
         data-tip={`<strong>${
           step?.answers !== 'female'
-            ? stepData?.label
+            ? currentQuestion?.label
             : currentStep.substep?.title
         }</strong><span>${
           step?.answers !== 'female'
-            ? stepData?.label
+            ? currentQuestion?.label
             : currentStep.substep?.tooltip
         }</span>`}
         data-for="step_2_tooltip"
@@ -88,8 +70,8 @@ const Step2: React.FC = () => {
         backgroundColor="#fff"
       />
       {step?.answers !== 'female' &&
-        stepData?.answers &&
-        Object.values(stepData?.answers).map(answer => (
+        currentQuestion?.answers &&
+        Object.values(currentQuestion?.answers).map(answer => (
           <Button
             key={answer.id}
             type="button"
@@ -109,24 +91,27 @@ const Step2: React.FC = () => {
           </Button>
         ))}
       {step?.answers === 'female' &&
-        currentStep.substep?.options.map(option => (
-          <Button
-            key={option.value}
-            type="button"
-            onClick={() => {
-              context.updateStep('step2_1', {
-                isCompleted: true,
-                answers: option.value,
-              });
-              carouselContext.setStoreState({ currentSlide: 2 });
-            }}
-            isActive={subStep?.answers === option.value}
-            name="female_condition"
-            value={subStep?.answers}
-          >
-            {option.label}
-          </Button>
-        ))}
+        currentQuestion?.answers &&
+        Object.values(currentQuestion.answers)
+          .filter(answer => !!answer.has_child)
+          .map(option => (
+            <Button
+              key={option.api}
+              type="button"
+              onClick={() => {
+                context.updateStep('step2_1', {
+                  isCompleted: true,
+                  answers: option.api,
+                });
+                carouselContext.setStoreState({ currentSlide: 2 });
+              }}
+              isActive={subStep?.answers === option.api}
+              name="female_condition"
+              value={subStep?.answers}
+            >
+              {option.label}
+            </Button>
+          ))}
     </StepContainer>
   );
 };

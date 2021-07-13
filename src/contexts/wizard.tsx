@@ -1,4 +1,7 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState, useEffect } from 'react';
+
+import api from '../services/api';
+import QuestionData from '../dtos/QuestionData';
 
 interface StepData {
   isCompleted?: boolean;
@@ -13,8 +16,14 @@ interface StepsData {
 
 interface WizardContextData {
   steps: StepsData;
+  questions: QuestionsData;
+  error: string;
   updateStep(step: string, attrs: StepData): Promise<void>;
   resetSteps(): Promise<void>;
+}
+
+interface QuestionsData {
+  [key: string]: QuestionData;
 }
 
 const WizardContext = createContext<WizardContextData>({} as WizardContextData);
@@ -31,6 +40,36 @@ export const WizardProvider: React.FC = ({ children }) => {
     step6: { isCompleted: false, answers: [] },
   });
 
+  const [questions, setQuestions] = useState<QuestionsData>({
+    '1': {
+      slug: '',
+      type: '',
+      table: '',
+      label: '',
+      answers: {},
+    },
+  });
+
+  const [error, setError] = useState<string>('');
+
+  useEffect(() => {
+    api
+      .get('/wp-json/hp/v1/wizard/')
+      .then(response => {
+        const { content, success, message } = response.data;
+
+        if (success) {
+          setQuestions(content);
+          setError('');
+        } else {
+          setError(message);
+        }
+      })
+      .catch(err => {
+        setError(err);
+      });
+  }, []);
+
   async function updateStep(step: string, attrs: StepData) {
     steps[step] = attrs;
 
@@ -44,7 +83,9 @@ export const WizardProvider: React.FC = ({ children }) => {
   }
 
   return (
-    <WizardContext.Provider value={{ steps, updateStep, resetSteps }}>
+    <WizardContext.Provider
+      value={{ steps, questions, error, updateStep, resetSteps }}
+    >
       {children}
     </WizardContext.Provider>
   );
