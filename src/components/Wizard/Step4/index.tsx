@@ -14,7 +14,7 @@ const Step2: React.FC = () => {
   const context = useWizard();
   const { steps, questions } = context;
   const { step4: step, step3: previousStep } = steps;
-  const { 6: currentQuestion } = questions;
+  const { 7: currentQuestion } = questions;
 
   const carouselContext = useContext(CarouselContext);
 
