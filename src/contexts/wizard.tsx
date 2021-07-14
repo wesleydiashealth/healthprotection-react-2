@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 import api from '../services/api';
 import QuestionData from '../dtos/QuestionData';
@@ -28,7 +29,13 @@ interface QuestionsData {
 
 const WizardContext = createContext<WizardContextData>({} as WizardContextData);
 
+function useQuery() {
+  return new URLSearchParams(useLocation().search);
+}
+
 export const WizardProvider: React.FC = ({ children }) => {
+  const query = useQuery();
+
   const [steps, setSteps] = useState<StepsData>({
     step1: { isCompleted: false, answers: [] },
     step2: { isCompleted: false, answers: [] },
@@ -54,7 +61,7 @@ export const WizardProvider: React.FC = ({ children }) => {
 
   useEffect(() => {
     api
-      .get('/wp-json/hp/v1/wizard/')
+      .get(`/wp-json/hp/v1/wizard/${query.get('lang')}`)
       .then(response => {
         const { content, success, message } = response.data;
 
@@ -66,9 +73,15 @@ export const WizardProvider: React.FC = ({ children }) => {
         }
       })
       .catch(err => {
-        setError(err);
+        if (err.response) {
+          setError(err.response.data.message);
+        } else if (err.request) {
+          setError(JSON.parse(err.request.response).message);
+        } else {
+          setError(err.message);
+        }
       });
-  }, []);
+  }, [query]);
 
   async function updateStep(step: string, attrs: StepData) {
     steps[step] = attrs;
