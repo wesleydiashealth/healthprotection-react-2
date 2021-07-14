@@ -1,5 +1,9 @@
 import styled, { css } from 'styled-components';
 
+interface ContainerProps {
+  isActive?: boolean;
+}
+
 interface FineTuneProps {
   isActive?: boolean;
 }
@@ -8,12 +12,30 @@ interface SubstancesProps {
   isActive?: boolean;
 }
 
-const Container = styled.div`
+const Container = styled.div<ContainerProps>`
+  ${props =>
+    props.isActive &&
+    css`
+      .step-intro {
+        > svg {
+          color: #db71af;
+        }
+
+        h3 {
+          strong {
+            color: #db71af;
+          }
+        }
+      }
+    `}
+
   margin-bottom: 40px;
+
   .step-intro {
     margin-bottom: 40px;
 
     text-align: center;
+    color: #565656;
 
     h2,
     h3 {
@@ -40,7 +62,6 @@ const Container = styled.div`
 
       strong {
         font-weight: 600;
-        color: #db71af;
       }
     }
 
@@ -71,10 +92,25 @@ const Container = styled.div`
         font-size: 20px;
         line-height: 28px;
         font-weight: 500;
-        color: #db71af;
       }
 
       span {
+        font-size: 14px;
+        line-height: 22px;
+      }
+    }
+
+    .step-disabled {
+      margin-bottom: 10px;
+
+      strong {
+        font-weight: 600;
+      }
+
+      &,
+      span {
+        color: #707070;
+
         font-size: 14px;
         line-height: 22px;
       }

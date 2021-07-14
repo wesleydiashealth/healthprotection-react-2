@@ -81,7 +81,8 @@ export const WizardProvider: React.FC = ({ children }) => {
           setError(err.message);
         }
       });
-  }, [query]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   async function updateStep(step: string, attrs: StepData) {
     steps[step] = attrs;

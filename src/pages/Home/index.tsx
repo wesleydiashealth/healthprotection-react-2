@@ -2,6 +2,8 @@ import React from 'react';
 
 import Container from './styles';
 
+import { AppProvider } from '../../contexts/app';
+
 import Header from '../../components/Header';
 import Hero from '../../components/Hero';
 import Wizard from '../../components/Wizard';
@@ -10,11 +12,13 @@ import Cart from '../../components/Cart';
 
 const Home: React.FC = () => (
   <Container>
-    <Header />
-    <Hero />
-    <Wizard />
-    <Sankey />
-    <Cart />
+    <AppProvider>
+      <Header />
+      <Hero />
+      <Wizard />
+      <Sankey />
+      <Cart />
+    </AppProvider>
   </Container>
 );
 

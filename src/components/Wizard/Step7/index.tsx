@@ -5,11 +5,13 @@ import { CarouselContext } from 'pure-react-carousel';
 
 import StepContainer from './styles';
 
+import { useApp } from '../../../contexts/app';
 import { useWizard } from '../../../contexts/wizard';
 
 const Step2: React.FC = () => {
-  const context = useWizard();
+  const appContext = useApp();
 
+  const context = useWizard();
   const carouselContext = useContext(CarouselContext);
 
   return (
@@ -46,7 +48,14 @@ const Step2: React.FC = () => {
         >
           Reset
         </button>
-        <a href="#step_2">Go to Step 2</a>
+        <a
+          href="#step_2"
+          onClick={() => {
+            appContext.updateStep('step1', { isCompleted: true });
+          }}
+        >
+          Go to Step 2
+        </a>
       </div>
     </StepContainer>
   );

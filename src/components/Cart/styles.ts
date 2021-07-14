@@ -1,11 +1,36 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-const Container = styled.div`
+interface ContainerProps {
+  isActive?: boolean;
+}
+
+const Container = styled.div<ContainerProps>`
+  ${props =>
+    props.isActive &&
+    css`
+      .step-intro {
+        > svg {
+          fill: #1bc9bd !important;
+        }
+
+        h3 {
+          strong {
+            color: #1bc9bd;
+          }
+        }
+      }
+    `}
+
   margin-bottom: 40px;
+
   .step-intro {
     margin-bottom: 40px;
 
     text-align: center;
+
+    > svg {
+      fill: #707070;
+    }
 
     h2,
     h3 {
@@ -32,7 +57,6 @@ const Container = styled.div`
 
       strong {
         font-weight: 600;
-        color: #1bc9bd;
       }
     }
 
@@ -44,6 +68,22 @@ const Container = styled.div`
 
       font-size: 18px;
       line-height: 26px;
+    }
+
+    .step-disabled {
+      margin-bottom: 10px;
+
+      strong {
+        font-weight: 600;
+      }
+
+      &,
+      span {
+        color: #707070;
+
+        font-size: 14px;
+        line-height: 22px;
+      }
     }
   }
 `;
