@@ -76,7 +76,11 @@ export const WizardProvider: React.FC = ({ children }) => {
         if (err.response) {
           setError(err.response.data.message);
         } else if (err.request) {
-          setError(JSON.parse(err.request.response).message);
+          const errorMessage = err.request.response
+            ? JSON.parse(err.request.response).message
+            : 'Unknown Error';
+
+          setError(errorMessage);
         } else {
           setError(err.message);
         }
