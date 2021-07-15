@@ -8,7 +8,7 @@ import StepContainer from './styles';
 import { useApp } from '../../../contexts/app';
 import { useWizard } from '../../../contexts/wizard';
 
-const Step2: React.FC = () => {
+const Step7: React.FC = () => {
   const appContext = useApp();
 
   const context = useWizard();
@@ -61,4 +61,4 @@ const Step2: React.FC = () => {
   );
 };
 
-export default Step2;
+export default Step7;

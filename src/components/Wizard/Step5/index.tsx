@@ -16,7 +16,7 @@ interface MedicationData {
   frequency: string;
 }
 
-const Step2: React.FC = () => {
+const Step5: React.FC = () => {
   const currentStep = formSteps[4];
 
   const context = useWizard();
@@ -213,4 +213,4 @@ const Step2: React.FC = () => {
   );
 };
 
-export default Step2;
+export default Step5;

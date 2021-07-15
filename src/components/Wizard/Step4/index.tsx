@@ -10,7 +10,7 @@ import Button from '../../Button';
 
 import { useWizard } from '../../../contexts/wizard';
 
-const Step2: React.FC = () => {
+const Step4: React.FC = () => {
   const context = useWizard();
   const { steps, questions } = context;
   const { step4: step, step3: previousStep } = steps;
@@ -111,4 +111,4 @@ const Step2: React.FC = () => {
   );
 };
 
-export default Step2;
+export default Step4;
