@@ -138,7 +138,7 @@ export const StepContainer = styled.div<StepContainerProps>`
   .advance-button {
     margin-top: 20px;
     border: none;
-    border-radius: 20px;
+    border-radius: 12px;
     padding: 8px 32px;
 
     background: #7664c8;
