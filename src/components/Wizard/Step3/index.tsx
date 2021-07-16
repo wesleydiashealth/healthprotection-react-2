@@ -71,7 +71,7 @@ const Step3: React.FC = () => {
         place="bottom"
         type="light"
         effect="solid"
-        offset={{ top: 10, left: 500 }}
+        offset={{ top: 10, left: 100 }}
         html
         backgroundColor="#fff"
       />
