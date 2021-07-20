@@ -18,7 +18,7 @@ import { useApp } from '../../contexts/app';
 import sankeyData from '../../sankey2.json';
 
 interface FineTune {
-  [key: string]: 'off' | 'med' | 'max';
+  [key: string]: string;
 }
 
 interface Substance {
@@ -265,36 +265,26 @@ const Sankey: React.FC = () => {
                   >
                     Off
                   </FineTune>
-                  <FineTune
-                    isActive={fineTune[suboutcome.key] === 'med'}
-                    onClick={() => {
-                      handleFineTuneClick(
-                        suboutcome.sustances?.med || [],
-                        suboutcome.key,
-                      );
-                      setFineTune({
-                        ...fineTune,
-                        [suboutcome.key]: 'med',
-                      });
-                    }}
-                  >
-                    Med
-                  </FineTune>
-                  <FineTune
-                    isActive={fineTune[suboutcome.key] === 'max'}
-                    onClick={() => {
-                      handleFineTuneClick(
-                        suboutcome.sustances?.max || [],
-                        suboutcome.key,
-                      );
-                      setFineTune({
-                        ...fineTune,
-                        [suboutcome.key]: 'max',
-                      });
-                    }}
-                  >
-                    Max
-                  </FineTune>
+                  {Object.keys(suboutcome.sustances).map((key, index) => {
+                    return (
+                      <FineTune
+                        isActive={fineTune[suboutcome.key] === key}
+                        onClick={() => {
+                          handleFineTuneClick(
+                            Object.values(suboutcome.sustances)[index] || [],
+                            suboutcome.key,
+                          );
+
+                          setFineTune({
+                            ...fineTune,
+                            [suboutcome.key]: key,
+                          });
+                        }}
+                      >
+                        {key.charAt(0).toUpperCase() + key.slice(1)}
+                      </FineTune>
+                    );
+                  })}
                 </div>
               </SubOutcome>
             ))}
@@ -314,24 +304,20 @@ const Sankey: React.FC = () => {
                   <span>{nutraceutic.dosage}</span>
                   {nutraceutic.parents.map(parent => {
                     return (
-                      !!Object.values(suboutcomes).filter(
-                        item => item.key === parent,
-                      ).length && (
-                        <Xarrow
-                          start={`${parent}-${nutraceutic.key}`}
-                          end={nutraceutic.key}
-                          showHead={false}
-                          strokeWidth={68}
-                          curveness={0.6}
-                          startAnchor="right"
-                          endAnchor="left"
-                          color={
-                            fineTune[parent] === 'off' || !fineTune[parent]
-                              ? 'rgba(0,0,0,0.05)'
-                              : 'rgba(240, 94, 98, 0.15)'
-                          }
-                        />
-                      )
+                      <Xarrow
+                        start={`${parent}-${nutraceutic.key}`}
+                        end={nutraceutic.key}
+                        showHead={false}
+                        strokeWidth={68}
+                        curveness={0.6}
+                        startAnchor="right"
+                        endAnchor="left"
+                        color={
+                          fineTune[parent] === 'off' || !fineTune[parent]
+                            ? 'rgba(0,0,0,0.05)'
+                            : 'rgba(240, 94, 98, 0.15)'
+                        }
+                      />
                     );
                   })}
                 </div>
