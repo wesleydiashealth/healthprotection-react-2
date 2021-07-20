@@ -5,8 +5,10 @@ import Xarrow from 'react-xarrows';
 import { IoOptionsOutline } from 'react-icons/io5';
 
 import Container, {
+  Outcome,
   Outcomes,
   SubOutcomes,
+  SubOutcome,
   Substances,
   FineTune,
 } from './styles';
@@ -154,9 +156,24 @@ const Sankey: React.FC = () => {
         <div className="step-content content-wrapper">
           <Outcomes>
             {Object.values(outcomes).map(outcome => (
-              <div key={outcome.key} id={outcome.key}>
+              <Outcome
+                key={outcome.key}
+                id={outcome.key}
+                suboutcomes={
+                  nutraceutics.filter(nutraceutic => {
+                    let valueExists = false;
+
+                    outcome.suboutcomes.forEach(suboutcome => {
+                      if (nutraceutic.parents.includes(suboutcome))
+                        valueExists = true;
+                    });
+                    return valueExists;
+                  }).length
+                }
+              >
                 <div className="outcome-wrapper">
                   <span>{outcome.title}</span>
+
                   <HiQuestionMarkCircle
                     size={20}
                     color="#7664C8"
@@ -176,7 +193,11 @@ const Sankey: React.FC = () => {
                       start={outcome.key}
                       end={suboutcome}
                       showHead={false}
-                      strokeWidth={90}
+                      strokeWidth={
+                        nutraceutics.filter(nutraceutic =>
+                          nutraceutic.parents.includes(suboutcome),
+                        ).length * 68 || 68
+                      }
                       curveness={0.6}
                       color={
                         fineTune[suboutcome] === 'off' || !fineTune[suboutcome]
@@ -185,14 +206,19 @@ const Sankey: React.FC = () => {
                       }
                     />
                   ))}
-              </div>
+              </Outcome>
             ))}
           </Outcomes>
 
           <SubOutcomes>
             {Object.values(suboutcomes).map(suboutcome => (
-              <div
+              <SubOutcome
                 key={suboutcome.key}
+                nutraceutics={
+                  nutraceutics.filter(nutraceutic =>
+                    nutraceutic.parents.includes(suboutcome.key),
+                  ).length
+                }
                 id={suboutcome.key}
                 className={
                   fineTune[suboutcome.key] === 'off' ||
@@ -201,6 +227,19 @@ const Sankey: React.FC = () => {
                     : 'active'
                 }
               >
+                <div className="anchors">
+                  {nutraceutics
+                    .filter(nutraceutic =>
+                      nutraceutic.parents.includes(suboutcome.key),
+                    )
+                    .map(nutraceutic => (
+                      <div
+                        key={`${suboutcome.key}-${nutraceutic.key}`}
+                        id={`${suboutcome.key}-${nutraceutic.key}`}
+                        className="anchors__item"
+                      />
+                    ))}
+                </div>
                 <div className="content">
                   <span>{suboutcome.title}</span>
                   <HiQuestionMarkCircle
@@ -257,7 +296,7 @@ const Sankey: React.FC = () => {
                     Max
                   </FineTune>
                 </div>
-              </div>
+              </SubOutcome>
             ))}
           </SubOutcomes>
 
@@ -275,18 +314,24 @@ const Sankey: React.FC = () => {
                   <span>{nutraceutic.dosage}</span>
                   {nutraceutic.parents.map(parent => {
                     return (
-                      <Xarrow
-                        start={parent}
-                        end={nutraceutic.key}
-                        showHead={false}
-                        strokeWidth={90}
-                        curveness={0.6}
-                        color={
-                          fineTune[parent] === 'off' || !fineTune[parent]
-                            ? 'rgba(0,0,0,0.05)'
-                            : 'rgba(240, 94, 98, 0.15)'
-                        }
-                      />
+                      !!Object.values(suboutcomes).filter(
+                        item => item.key === parent,
+                      ).length && (
+                        <Xarrow
+                          start={`${parent}-${nutraceutic.key}`}
+                          end={nutraceutic.key}
+                          showHead={false}
+                          strokeWidth={68}
+                          curveness={0.6}
+                          startAnchor="right"
+                          endAnchor="left"
+                          color={
+                            fineTune[parent] === 'off' || !fineTune[parent]
+                              ? 'rgba(0,0,0,0.05)'
+                              : 'rgba(240, 94, 98, 0.15)'
+                          }
+                        />
+                      )
                     );
                   })}
                 </div>
