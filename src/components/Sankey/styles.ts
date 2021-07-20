@@ -4,6 +4,14 @@ interface ContainerProps {
   isActive?: boolean;
 }
 
+interface OutcomeProps {
+  suboutcomes?: number;
+}
+
+interface SubOutcomeProps {
+  nutraceutics?: number;
+}
+
 interface FineTuneProps {
   isActive?: boolean;
 }
@@ -148,7 +156,7 @@ export const Outcomes = styled.div`
 
   .outcome-wrapper {
     margin-top: 10px;
-    padding: 20px;
+    padding: 10px 20px;
 
     display: flex;
     align-items: center;
@@ -158,16 +166,28 @@ export const Outcomes = styled.div`
     z-index: 10;
 
     background: #fde7e8;
-    min-height: 90px;
+    min-height: 45px;
 
     font-weight: 600;
   }
+`;
 
-  > div {
-    & ~ div {
-      margin-top: 20px;
-    }
+export const Outcome = styled.div<OutcomeProps>`
+  & ~ div {
+    margin-top: 20px;
   }
+
+  .outcome-wrapper {
+    min-height: 68px;
+  }
+
+  ${props =>
+    props.suboutcomes &&
+    css`
+      .outcome-wrapper {
+        min-height: ${`${68 * props.suboutcomes}px`};
+      }
+    `}
 `;
 
 export const SubOutcomes = styled.div`
@@ -183,64 +203,88 @@ export const SubOutcomes = styled.div`
     top: 0;
     left: 260px;
   }
+`;
 
-  > div {
-    margin-top: 10px;
-    padding: 10px 20px;
+export const SubOutcome = styled.div<SubOutcomeProps>`
+  margin-top: 10px;
+  padding: 10px 20px;
+
+  position: relative;
+
+  min-height: 68px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: #f2f2f2;
+
+  &.active {
+    background: #fde7e8;
+  }
+
+  & ~ div {
+    margin-top: 20px;
+  }
+
+  .content {
+    margin-right: 20px;
+
+    max-width: 220px;
+
+    span {
+      padding-right: 5px;
+
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 22px;
+    }
+  }
+
+  .fine-tune {
+    border-radius: 20px;
+    padding: 2px;
 
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
 
-    background: #f2f2f2;
-    min-height: 90px;
+    background: #fff;
 
-    &.active {
-      background: #fde7e8;
-    }
-
-    & ~ div {
-      margin-top: 20px;
-    }
-
-    .content {
-      margin-right: 20px;
-
-      max-width: 220px;
-
-      span {
-        padding-right: 5px;
-
-        font-weight: 600;
-        font-size: 16px;
-        line-height: 24px;
-      }
-    }
-
-    .fine-tune {
+    a {
       border-radius: 20px;
-      padding: 2px;
+      padding: 5px 10px;
 
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: inline-block;
 
-      background: #fff;
+      text-decoration: none;
 
-      a {
-        border-radius: 20px;
-        padding: 5px 10px;
-
-        display: inline-block;
-
-        text-decoration: none;
-
-        & ~ a {
-          margin-left: 5px;
-        }
+      & ~ a {
+        margin-left: 5px;
       }
     }
   }
+
+  .anchors {
+    display: flex;
+    flex-flow: column wrap;
+
+    position: absolute;
+
+    top: 0;
+    right: 0;
+
+    &__item {
+      width: 10px;
+      height: 68px;
+    }
+  }
+
+  ${props =>
+    props.nutraceutics &&
+    css`
+      min-height: ${`${68 * props.nutraceutics}px`};
+    `}
 `;
 
 export const FineTune = styled.a<FineTuneProps>`
@@ -277,14 +321,14 @@ export const Substances = styled.div<SubstancesProps>`
 
   > div {
     margin-top: 30px;
-    padding: 20px;
+    padding: 10px 20px;
 
     display: flex;
     align-items: center;
     justify-content: flex-end;
 
     background: #f2f2f2;
-    min-height: 90px;
+    min-height: 68px;
 
     & ~ div {
       margin-top: 20px;
