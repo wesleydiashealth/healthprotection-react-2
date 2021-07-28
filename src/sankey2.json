@@ -38,6 +38,30 @@
       "label": "",
       "description": "",
       "sustances": {
+        "min": [
+          {
+            "key": "reishi",
+            "title": "Reishi",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          },
+          {
+            "key": "black-garlic",
+            "title": "Black Garlic",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          }
+        ],
         "med": [
           {
             "key": "reishi",
@@ -94,6 +118,30 @@
       "label": "",
       "description": "",
       "sustances": {
+        "min": [
+          {
+            "key": "reishi",
+            "title": "Reishi",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "power-output"
+            ]
+          },
+          {
+            "key": "black-garlic",
+            "title": "Black Garlic",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "power-output"
+            ]
+          }
+        ],
         "med": [
           {
             "key": "reishi",
@@ -150,6 +198,36 @@
       "label": "",
       "description": "",
       "sustances": {
+        "min": [
+          {
+            "key": "reishi",
+            "title": "Reishi",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "anxiety",
+              "stress-management",
+              "depression",
+              "overall-well-being-(energy-and-mood)"
+            ]
+          },
+          {
+            "key": "black-garlic",
+            "title": "Black Garlic",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "anxiety",
+              "stress-management",
+              "depression",
+              "overall-well-being-(energy-and-mood)"
+            ]
+          }
+        ],
         "med": [
           {
             "key": "reishi",

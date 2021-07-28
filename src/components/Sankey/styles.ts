@@ -153,9 +153,17 @@ export const Outcomes = styled.div`
   &:before {
     content: 'Filtered Outcomes';
   }
+`;
+
+export const Outcome = styled.div<OutcomeProps>`
+  & ~ div {
+    margin-top: 20px;
+  }
 
   .outcome-wrapper {
     margin-top: 10px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
     padding: 10px 20px;
 
     display: flex;
@@ -169,15 +177,7 @@ export const Outcomes = styled.div`
     min-height: 45px;
 
     font-weight: 600;
-  }
-`;
 
-export const Outcome = styled.div<OutcomeProps>`
-  & ~ div {
-    margin-top: 20px;
-  }
-
-  .outcome-wrapper {
     min-height: 68px;
   }
 
@@ -321,6 +321,8 @@ export const Substances = styled.div<SubstancesProps>`
 
   > div {
     margin-top: 30px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
     padding: 10px 20px;
 
     display: flex;
