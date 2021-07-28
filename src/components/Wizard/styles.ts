@@ -139,6 +139,7 @@ export const StepContainer = styled.div<StepContainerProps>`
     margin-top: 20px;
     border: none;
     border-radius: 12px;
+    border: 1px solid #7664c8;
     padding: 8px 32px;
 
     background: #7664c8;
