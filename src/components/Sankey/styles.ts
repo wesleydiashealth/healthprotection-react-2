@@ -22,6 +22,10 @@ interface SubstancesProps {
   isActive?: boolean;
 }
 
+interface SubstanceProps {
+  suboutcomes?: number;
+}
+
 const Container = styled.div<ContainerProps>`
   ${props =>
     props.isActive &&
@@ -170,13 +174,20 @@ export const Outcome = styled.div<OutcomeProps>`
 
     position: absolute;
 
-    top: 0;
-    right: 0;
-
     &__item {
       width: 10px;
       height: 68px;
     }
+  }
+
+  .entry-anchors {
+    top: 0;
+    left: 0;
+  }
+
+  .exit-anchors {
+    top: 0;
+    right: 0;
   }
 
   .outcome-wrapper {
@@ -298,13 +309,20 @@ export const SubOutcome = styled.div<SubOutcomeProps>`
 
     position: absolute;
 
-    top: 0;
-    right: 0;
-
     &__item {
       width: 10px;
       height: 68px;
     }
+  }
+
+  .entry-anchors {
+    top: 0;
+    left: 0;
+  }
+
+  .exit-anchors {
+    top: 0;
+    right: 0;
   }
 
   ${props =>
@@ -345,38 +363,68 @@ export const Substances = styled.div<SubstancesProps>`
         right: 0;
       }
     `}
+`;
 
-  > div {
-    margin-top: 30px;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    padding: 10px 20px;
+export const Substance = styled.div<SubstanceProps>`
+  margin-top: 30px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  padding: 10px 20px;
 
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
+  position: relative;
 
-    background: #f2f2f2;
-    min-height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 
-    & ~ div {
-      margin-top: 20px;
-    }
+  background: #f2f2f2;
+  min-height: 68px;
 
-    strong {
-      font-weight: 600;
+  & ~ div {
+    margin-top: 20px;
+  }
 
-      &:after {
-        padding: 0 5px;
-        content: '|';
-        color: #ccc;
-      }
-    }
+  strong {
+    font-weight: 600;
 
-    span {
-      color: #565656;
+    &:after {
+      padding: 0 5px;
+      content: '|';
+      color: #ccc;
     }
   }
+
+  span {
+    color: #565656;
+  }
+
+  .anchors {
+    display: flex;
+    flex-flow: column wrap;
+
+    position: absolute;
+
+    &__item {
+      width: 10px;
+      height: 68px;
+    }
+  }
+
+  .entry-anchors {
+    top: 0;
+    left: 0;
+  }
+
+  .exit-anchors {
+    top: 0;
+    right: 0;
+  }
+
+  ${props =>
+    props.suboutcomes &&
+    css`
+      min-height: ${`${68 * props.suboutcomes}px`};
+    `}
 `;
 
 export default Container;

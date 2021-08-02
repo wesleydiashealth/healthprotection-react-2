@@ -11,6 +11,7 @@ import Container, {
   SubOutcomes,
   SubOutcome,
   Substances,
+  Substance,
   FineTune,
 } from './styles';
 
@@ -157,16 +158,6 @@ const Sankey: React.FC = () => {
         <div className="step-content content-wrapper">
           <Outcomes>
             {Object.values(outcomes).map(outcome => {
-              // let children = 0;
-
-              // outcome.suboutcomes.forEach(suboutcome => {
-              //   const suboutcomeIndex = nutraceutics.filter(nutraceutic =>
-              //     nutraceutic.parents.includes(suboutcome),
-              //   );
-
-              //   children = suboutcomeIndex.length;
-              // });
-
               return (
                 <Outcome
                   key={outcome.key}
@@ -174,7 +165,7 @@ const Sankey: React.FC = () => {
                   color={outcome.color}
                   suboutcomes={outcome.suboutcomes.length}
                 >
-                  <div className="anchors">
+                  <div className="exit-anchors anchors">
                     {outcome.suboutcomes.map(suboutcome => (
                       <div
                         key={`${outcome.key}-${suboutcome}`}
@@ -202,13 +193,9 @@ const Sankey: React.FC = () => {
                     .map(suboutcome => (
                       <Xarrow
                         start={`${outcome.key}-${suboutcome}`}
-                        end={suboutcome}
+                        end={`${suboutcome}-${outcome.key}`}
                         showHead={false}
-                        strokeWidth={
-                          nutraceutics.filter(nutraceutic =>
-                            nutraceutic.parents.includes(suboutcome),
-                          ).length * 68 || 68
-                        }
+                        strokeWidth={68}
                         curveness={0.6}
                         startAnchor="right"
                         endAnchor="left"
@@ -232,6 +219,9 @@ const Sankey: React.FC = () => {
                 nutraceutics={
                   nutraceutics.filter(nutraceutic =>
                     nutraceutic.parents.includes(suboutcome.key),
+                  ).length ||
+                  Object.values(outcomes).filter(outcome =>
+                    outcome.suboutcomes.includes(suboutcome.key),
                   ).length
                 }
                 id={suboutcome.key}
@@ -242,7 +232,38 @@ const Sankey: React.FC = () => {
                     : 'active'
                 }
               >
-                <div className="anchors">
+                <div className="entry-anchors anchors">
+                  {/* {!!nutraceutics.filter(nutraceutic =>
+                    nutraceutic.parents.includes(suboutcome.key),
+                  ).length &&
+                    nutraceutics
+                      .filter(nutraceutic =>
+                        nutraceutic.parents.includes(suboutcome.key),
+                      )
+                      .map((nutraceutic, index) => (
+                        <div
+                          // eslint-disable-next-line react/no-array-index-key
+                          key={`${suboutcome.key}-${index}`}
+                          id={`${suboutcome.key}-${index}`}
+                          className="anchors__item"
+                        />
+                      ))} */}
+
+                  {Object.values(outcomes)
+                    .filter(outcome =>
+                      outcome.suboutcomes.includes(suboutcome.key),
+                    )
+                    .map(outcome => {
+                      return (
+                        <div
+                          key={`${suboutcome.key}-${outcome.key}`}
+                          id={`${suboutcome.key}-${outcome.key}`}
+                          className="anchors__item"
+                        />
+                      );
+                    })}
+                </div>
+                <div className="exit-anchors anchors">
                   {nutraceutics
                     .filter(nutraceutic =>
                       nutraceutic.parents.includes(suboutcome.key),
@@ -314,28 +335,42 @@ const Sankey: React.FC = () => {
             {nutraceutics
               .filter(nutraceutic => nutraceutic.parents.length)
               .map(nutraceutic => (
-                <div key={nutraceutic.key} id={nutraceutic.key}>
+                <Substance
+                  key={nutraceutic.key}
+                  id={nutraceutic.key}
+                  suboutcomes={nutraceutic.parents.length}
+                >
                   <strong>{nutraceutic.title}</strong>
                   <span>{nutraceutic.dosage}</span>
-                  {nutraceutic.parents.map(parent => {
-                    return (
-                      <Xarrow
-                        start={`${parent}-${nutraceutic.key}`}
-                        end={nutraceutic.key}
-                        showHead={false}
-                        strokeWidth={68}
-                        curveness={0.6}
-                        startAnchor="right"
-                        endAnchor="left"
-                        color={
-                          fineTune[parent] === 'off' || !fineTune[parent]
-                            ? 'rgba(0,0,0,0.05)'
-                            : 'rgba(240, 94, 98, 0.15)'
-                        }
-                      />
-                    );
-                  })}
-                </div>
+                  <div className="entry-anchors anchors">
+                    {nutraceutic.parents.map(parent => {
+                      return (
+                        <>
+                          <div
+                            key={`${nutraceutic.key}-${parent}`}
+                            id={`${nutraceutic.key}-${parent}`}
+                            className="anchors__item"
+                          />
+
+                          <Xarrow
+                            start={`${parent}-${nutraceutic.key}`}
+                            end={`${nutraceutic.key}-${parent}`}
+                            showHead={false}
+                            strokeWidth={68}
+                            curveness={0.6}
+                            startAnchor="right"
+                            endAnchor="left"
+                            color={
+                              fineTune[parent] === 'off' || !fineTune[parent]
+                                ? 'rgba(0,0,0,0.05)'
+                                : 'rgba(240, 94, 98, 0.15)'
+                            }
+                          />
+                        </>
+                      );
+                    })}
+                  </div>
+                </Substance>
               ))}
           </Substances>
 
