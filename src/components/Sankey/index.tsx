@@ -3,6 +3,7 @@ import ReactToolTip from 'react-tooltip';
 import { HiQuestionMarkCircle, HiLockClosed } from 'react-icons/hi';
 import Xarrow from 'react-xarrows';
 import { IoOptionsOutline } from 'react-icons/io5';
+import { transparentize } from 'polished';
 
 import Container, {
   Outcome,
@@ -155,59 +156,73 @@ const Sankey: React.FC = () => {
       {previousStep.isCompleted && (
         <div className="step-content content-wrapper">
           <Outcomes>
-            {Object.values(outcomes).map(outcome => (
-              <Outcome
-                key={outcome.key}
-                id={outcome.key}
-                suboutcomes={
-                  nutraceutics.filter(nutraceutic => {
-                    let valueExists = false;
+            {Object.values(outcomes).map(outcome => {
+              // let children = 0;
 
-                    outcome.suboutcomes.forEach(suboutcome => {
-                      if (nutraceutic.parents.includes(suboutcome))
-                        valueExists = true;
-                    });
-                    return valueExists;
-                  }).length
-                }
-              >
-                <div className="outcome-wrapper">
-                  <span>{outcome.title}</span>
+              // outcome.suboutcomes.forEach(suboutcome => {
+              //   const suboutcomeIndex = nutraceutics.filter(nutraceutic =>
+              //     nutraceutic.parents.includes(suboutcome),
+              //   );
 
-                  <HiQuestionMarkCircle
-                    size={20}
-                    color="#7664C8"
-                    data-tip={`<strong>${outcome.title}</strong><span>${outcome.description}</span>`}
-                    data-for="sankey-tooltip"
-                  />
-                </div>
-                {outcome.suboutcomes
-                  .filter(
-                    suboutcome =>
-                      !!Object.values(suboutcomes).filter(
-                        item => item.key === suboutcome,
-                      ).length,
-                  )
-                  .map(suboutcome => (
-                    <Xarrow
-                      start={outcome.key}
-                      end={suboutcome}
-                      showHead={false}
-                      strokeWidth={
-                        nutraceutics.filter(nutraceutic =>
-                          nutraceutic.parents.includes(suboutcome),
-                        ).length * 68 || 68
-                      }
-                      curveness={0.6}
-                      color={
-                        fineTune[suboutcome] === 'off' || !fineTune[suboutcome]
-                          ? 'rgba(0,0,0,0.05)'
-                          : 'rgba(240, 94, 98, 0.15)'
-                      }
+              //   children = suboutcomeIndex.length;
+              // });
+
+              return (
+                <Outcome
+                  key={outcome.key}
+                  id={outcome.key}
+                  color={outcome.color}
+                  suboutcomes={outcome.suboutcomes.length}
+                >
+                  <div className="anchors">
+                    {outcome.suboutcomes.map(suboutcome => (
+                      <div
+                        key={`${outcome.key}-${suboutcome}`}
+                        id={`${outcome.key}-${suboutcome}`}
+                        className="anchors__item"
+                      />
+                    ))}
+                  </div>
+                  <div className="outcome-wrapper">
+                    <span>{outcome.title}</span>
+                    <HiQuestionMarkCircle
+                      size={20}
+                      color="#7664C8"
+                      data-tip={`<strong>${outcome.title}</strong><span>${outcome.description}</span>`}
+                      data-for="sankey-tooltip"
                     />
-                  ))}
-              </Outcome>
-            ))}
+                  </div>
+                  {outcome.suboutcomes
+                    .filter(
+                      suboutcome =>
+                        !!Object.values(suboutcomes).filter(
+                          item => item.key === suboutcome,
+                        ).length,
+                    )
+                    .map(suboutcome => (
+                      <Xarrow
+                        start={`${outcome.key}-${suboutcome}`}
+                        end={suboutcome}
+                        showHead={false}
+                        strokeWidth={
+                          nutraceutics.filter(nutraceutic =>
+                            nutraceutic.parents.includes(suboutcome),
+                          ).length * 68 || 68
+                        }
+                        curveness={0.6}
+                        startAnchor="right"
+                        endAnchor="left"
+                        color={
+                          fineTune[suboutcome] === 'off' ||
+                          !fineTune[suboutcome]
+                            ? transparentize(0.8, outcome.color)
+                            : 'rgba(240, 94, 98, 0.15)'
+                        }
+                      />
+                    ))}
+                </Outcome>
+              );
+            })}
           </Outcomes>
 
           <SubOutcomes>

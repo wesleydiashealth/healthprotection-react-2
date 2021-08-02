@@ -3,24 +3,36 @@
     "immunity": {
       "key": "immunity",
       "title": "Immunity",
+      "color": "#DA3363",
       "label": "",
       "description": "",
       "suboutcomes": [
-        "preventive-immunity"
+        "preventive-immunity",
+        "nutrient-supplementation",
+        "anti-inflammatory",
+        "anti-oxidant",
+        "immune-response"
       ]
     },
     "muscle-health": {
       "key": "muscle-health",
       "title": "Muscle Health",
+      "color": "#F37E67",
       "label": "",
       "description": "",
       "suboutcomes": [
+        "blood-pressure",
+        "muscle-recovery",
+        "muscle-gain",
+        "muscular-endurance",
+        "fatigue-prevention",
         "power-output"
       ]
     },
     "energy-and-mood": {
       "key": "energy-and-mood",
       "title": "Energy and Mood",
+      "color": "#FEC763",
       "label": "",
       "description": "",
       "suboutcomes": [
@@ -29,12 +41,358 @@
         "depression",
         "overall-well-being-(energy-and-mood)"
       ]
+    },
+    "womens-health": {
+      "key": "womens-health",
+      "title": "Women´s Health",
+      "color": "#CD61A4",
+      "label": "",
+      "description": "",
+      "suboutcomes": [
+        "estrogen",
+        "pms",
+        "menopause"
+      ]
+    },
+    "libido-sexual-health": {
+      "key": "libido-sexual-health",
+      "title": "Libido & Sexual Health",
+      "color": "#B09AC9",
+      "label": "",
+      "description": "",
+      "suboutcomes": [
+        "erections",
+        "testosterone",
+        "fertility",
+        "libido",
+        "sexual-performance"
+      ]
     }
   },
   "suboutcomes": {
     "immunity": {
       "key": "preventive-immunity",
       "title": "Preventive Immunity",
+      "label": "",
+      "description": "",
+      "sustances": {
+        "min": [
+          {
+            "key": "reishi",
+            "title": "Reishi",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          },
+          {
+            "key": "black-garlic",
+            "title": "Black Garlic",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          }
+        ],
+        "med": [
+          {
+            "key": "reishi",
+            "title": "Reishi",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          },
+          {
+            "key": "black-garlic",
+            "title": "Black Garlic",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          }
+        ],
+        "max": [
+          {
+            "key": "reishi",
+            "title": "Reishi",
+            "dosage": "700",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          },
+          {
+            "key": "omega-3",
+            "title": "Omega 3",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          }
+        ]
+      }
+    },
+    "nutrient-supplementation": {
+      "key": "nutrient-supplementation",
+      "title": "Nutrient Supplementation",
+      "label": "",
+      "description": "",
+      "sustances": {
+        "min": [
+          {
+            "key": "reishi",
+            "title": "Reishi",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          },
+          {
+            "key": "black-garlic",
+            "title": "Black Garlic",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          }
+        ],
+        "med": [
+          {
+            "key": "reishi",
+            "title": "Reishi",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          },
+          {
+            "key": "black-garlic",
+            "title": "Black Garlic",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          }
+        ],
+        "max": [
+          {
+            "key": "reishi",
+            "title": "Reishi",
+            "dosage": "700",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          },
+          {
+            "key": "omega-3",
+            "title": "Omega 3",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          }
+        ]
+      }
+    },
+    "anti-inflammatory": {
+      "key": "anti-inflammatory",
+      "title": "Anti-inflammatory",
+      "label": "",
+      "description": "",
+      "sustances": {
+        "min": [
+          {
+            "key": "reishi",
+            "title": "Reishi",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          },
+          {
+            "key": "black-garlic",
+            "title": "Black Garlic",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          }
+        ],
+        "med": [
+          {
+            "key": "reishi",
+            "title": "Reishi",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          },
+          {
+            "key": "black-garlic",
+            "title": "Black Garlic",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          }
+        ],
+        "max": [
+          {
+            "key": "reishi",
+            "title": "Reishi",
+            "dosage": "700",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          },
+          {
+            "key": "omega-3",
+            "title": "Omega 3",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          }
+        ]
+      }
+    },
+    "anti-oxidant": {
+      "key": "anti-oxidant",
+      "title": "Anti-oxidant",
+      "label": "",
+      "description": "",
+      "sustances": {
+        "min": [
+          {
+            "key": "reishi",
+            "title": "Reishi",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          },
+          {
+            "key": "black-garlic",
+            "title": "Black Garlic",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          }
+        ],
+        "med": [
+          {
+            "key": "reishi",
+            "title": "Reishi",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          },
+          {
+            "key": "black-garlic",
+            "title": "Black Garlic",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          }
+        ],
+        "max": [
+          {
+            "key": "reishi",
+            "title": "Reishi",
+            "dosage": "700",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          },
+          {
+            "key": "omega-3",
+            "title": "Omega 3",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          }
+        ]
+      }
+    },
+    "immune-response": {
+      "key": "immune-response",
+      "title": "Immune Response",
       "label": "",
       "description": "",
       "sustances": {
@@ -285,6 +643,1536 @@
               "stress-management",
               "depression",
               "overall-well-being-(energy-and-mood)"
+            ]
+          }
+        ]
+      }
+    },
+    "stress-management": {
+      "key": "stress-management",
+      "title": "Stress Management",
+      "label": "",
+      "description": "",
+      "sustances": {
+        "min": [
+          {
+            "key": "reishi",
+            "title": "Reishi",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "anxiety",
+              "stress-management",
+              "depression",
+              "overall-well-being-(energy-and-mood)"
+            ]
+          },
+          {
+            "key": "black-garlic",
+            "title": "Black Garlic",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "anxiety",
+              "stress-management",
+              "depression",
+              "overall-well-being-(energy-and-mood)"
+            ]
+          }
+        ],
+        "med": [
+          {
+            "key": "reishi",
+            "title": "Reishi",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "anxiety",
+              "stress-management",
+              "depression",
+              "overall-well-being-(energy-and-mood)"
+            ]
+          },
+          {
+            "key": "black-garlic",
+            "title": "Black Garlic",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "anxiety",
+              "stress-management",
+              "depression",
+              "overall-well-being-(energy-and-mood)"
+            ]
+          }
+        ],
+        "max": [
+          {
+            "key": "reishi",
+            "title": "Reishi",
+            "dosage": "700",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "anxiety",
+              "stress-management",
+              "depression",
+              "overall-well-being-(energy-and-mood)"
+            ]
+          },
+          {
+            "key": "omega-3",
+            "title": "Omega 3",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "anxiety",
+              "stress-management",
+              "depression",
+              "overall-well-being-(energy-and-mood)"
+            ]
+          }
+        ]
+      }
+    },
+    "depression": {
+      "key": "depression",
+      "title": "Depression",
+      "label": "",
+      "description": "",
+      "sustances": {
+        "min": [
+          {
+            "key": "reishi",
+            "title": "Reishi",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "anxiety",
+              "stress-management",
+              "depression",
+              "overall-well-being-(energy-and-mood)"
+            ]
+          },
+          {
+            "key": "black-garlic",
+            "title": "Black Garlic",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "anxiety",
+              "stress-management",
+              "depression",
+              "overall-well-being-(energy-and-mood)"
+            ]
+          }
+        ],
+        "med": [
+          {
+            "key": "reishi",
+            "title": "Reishi",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "anxiety",
+              "stress-management",
+              "depression",
+              "overall-well-being-(energy-and-mood)"
+            ]
+          },
+          {
+            "key": "black-garlic",
+            "title": "Black Garlic",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "anxiety",
+              "stress-management",
+              "depression",
+              "overall-well-being-(energy-and-mood)"
+            ]
+          }
+        ],
+        "max": [
+          {
+            "key": "reishi",
+            "title": "Reishi",
+            "dosage": "700",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "anxiety",
+              "stress-management",
+              "depression",
+              "overall-well-being-(energy-and-mood)"
+            ]
+          },
+          {
+            "key": "omega-3",
+            "title": "Omega 3",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "anxiety",
+              "stress-management",
+              "depression",
+              "overall-well-being-(energy-and-mood)"
+            ]
+          }
+        ]
+      }
+    },
+    "anxiety": {
+      "key": "anxiety",
+      "title": "Anxiety",
+      "label": "",
+      "description": "",
+      "sustances": {
+        "min": [
+          {
+            "key": "reishi",
+            "title": "Reishi",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "anxiety",
+              "stress-management",
+              "depression",
+              "overall-well-being-(energy-and-mood)"
+            ]
+          },
+          {
+            "key": "black-garlic",
+            "title": "Black Garlic",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "anxiety",
+              "stress-management",
+              "depression",
+              "overall-well-being-(energy-and-mood)"
+            ]
+          }
+        ],
+        "med": [
+          {
+            "key": "reishi",
+            "title": "Reishi",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "anxiety",
+              "stress-management",
+              "depression",
+              "overall-well-being-(energy-and-mood)"
+            ]
+          },
+          {
+            "key": "black-garlic",
+            "title": "Black Garlic",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "anxiety",
+              "stress-management",
+              "depression",
+              "overall-well-being-(energy-and-mood)"
+            ]
+          }
+        ],
+        "max": [
+          {
+            "key": "reishi",
+            "title": "Reishi",
+            "dosage": "700",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "anxiety",
+              "stress-management",
+              "depression",
+              "overall-well-being-(energy-and-mood)"
+            ]
+          },
+          {
+            "key": "omega-3",
+            "title": "Omega 3",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "anxiety",
+              "stress-management",
+              "depression",
+              "overall-well-being-(energy-and-mood)"
+            ]
+          }
+        ]
+      }
+    },
+    "sleep": {
+      "key": "sleep",
+      "title": "Sleep",
+      "label": "",
+      "description": "",
+      "sustances": {
+        "min": [
+          {
+            "key": "reishi",
+            "title": "Reishi",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "anxiety",
+              "stress-management",
+              "depression",
+              "overall-well-being-(energy-and-mood)"
+            ]
+          },
+          {
+            "key": "black-garlic",
+            "title": "Black Garlic",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "anxiety",
+              "stress-management",
+              "depression",
+              "overall-well-being-(energy-and-mood)"
+            ]
+          }
+        ],
+        "med": [
+          {
+            "key": "reishi",
+            "title": "Reishi",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "anxiety",
+              "stress-management",
+              "depression",
+              "overall-well-being-(energy-and-mood)"
+            ]
+          },
+          {
+            "key": "black-garlic",
+            "title": "Black Garlic",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "anxiety",
+              "stress-management",
+              "depression",
+              "overall-well-being-(energy-and-mood)"
+            ]
+          }
+        ],
+        "max": [
+          {
+            "key": "reishi",
+            "title": "Reishi",
+            "dosage": "700",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "anxiety",
+              "stress-management",
+              "depression",
+              "overall-well-being-(energy-and-mood)"
+            ]
+          },
+          {
+            "key": "omega-3",
+            "title": "Omega 3",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "anxiety",
+              "stress-management",
+              "depression",
+              "overall-well-being-(energy-and-mood)"
+            ]
+          }
+        ]
+      }
+    },
+    "relaxation": {
+      "key": "relaxation",
+      "title": "Relaxation",
+      "label": "",
+      "description": "",
+      "sustances": {
+        "min": [
+          {
+            "key": "reishi",
+            "title": "Reishi",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "anxiety",
+              "stress-management",
+              "depression",
+              "overall-well-being-(energy-and-mood)"
+            ]
+          },
+          {
+            "key": "black-garlic",
+            "title": "Black Garlic",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "anxiety",
+              "stress-management",
+              "depression",
+              "overall-well-being-(energy-and-mood)"
+            ]
+          }
+        ],
+        "med": [
+          {
+            "key": "reishi",
+            "title": "Reishi",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "anxiety",
+              "stress-management",
+              "depression",
+              "overall-well-being-(energy-and-mood)"
+            ]
+          },
+          {
+            "key": "black-garlic",
+            "title": "Black Garlic",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "anxiety",
+              "stress-management",
+              "depression",
+              "overall-well-being-(energy-and-mood)"
+            ]
+          }
+        ],
+        "max": [
+          {
+            "key": "reishi",
+            "title": "Reishi",
+            "dosage": "700",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "anxiety",
+              "stress-management",
+              "depression",
+              "overall-well-being-(energy-and-mood)"
+            ]
+          },
+          {
+            "key": "omega-3",
+            "title": "Omega 3",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "anxiety",
+              "stress-management",
+              "depression",
+              "overall-well-being-(energy-and-mood)"
+            ]
+          }
+        ]
+      }
+    },
+    "estrogen": {
+      "key": "estrogen",
+      "title": "Estrogen",
+      "label": "",
+      "description": "",
+      "sustances": {
+        "min": [
+          {
+            "key": "reishi",
+            "title": "Reishi",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          },
+          {
+            "key": "black-garlic",
+            "title": "Black Garlic",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          }
+        ],
+        "med": [
+          {
+            "key": "reishi",
+            "title": "Reishi",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          },
+          {
+            "key": "black-garlic",
+            "title": "Black Garlic",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          }
+        ],
+        "max": [
+          {
+            "key": "reishi",
+            "title": "Reishi",
+            "dosage": "700",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          },
+          {
+            "key": "omega-3",
+            "title": "Omega 3",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          }
+        ]
+      }
+    },
+    "pms": {
+      "key": "pms",
+      "title": "PMS",
+      "label": "",
+      "description": "",
+      "sustances": {
+        "min": [
+          {
+            "key": "reishi",
+            "title": "Reishi",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          },
+          {
+            "key": "black-garlic",
+            "title": "Black Garlic",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          }
+        ],
+        "med": [
+          {
+            "key": "reishi",
+            "title": "Reishi",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          },
+          {
+            "key": "black-garlic",
+            "title": "Black Garlic",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          }
+        ],
+        "max": [
+          {
+            "key": "reishi",
+            "title": "Reishi",
+            "dosage": "700",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          },
+          {
+            "key": "omega-3",
+            "title": "Omega 3",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          }
+        ]
+      }
+    },
+    "menopause": {
+      "key": "menopause",
+      "title": "Menopause",
+      "label": "",
+      "description": "",
+      "sustances": {
+        "min": [
+          {
+            "key": "reishi",
+            "title": "Reishi",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          },
+          {
+            "key": "black-garlic",
+            "title": "Black Garlic",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          }
+        ],
+        "med": [
+          {
+            "key": "reishi",
+            "title": "Reishi",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          },
+          {
+            "key": "black-garlic",
+            "title": "Black Garlic",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          }
+        ],
+        "max": [
+          {
+            "key": "reishi",
+            "title": "Reishi",
+            "dosage": "700",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          },
+          {
+            "key": "omega-3",
+            "title": "Omega 3",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          }
+        ]
+      }
+    },
+    "erections": {
+      "key": "erections",
+      "title": "Erections",
+      "label": "",
+      "description": "",
+      "sustances": {
+        "min": [
+          {
+            "key": "reishi",
+            "title": "Reishi",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          },
+          {
+            "key": "black-garlic",
+            "title": "Black Garlic",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          }
+        ],
+        "med": [
+          {
+            "key": "reishi",
+            "title": "Reishi",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          },
+          {
+            "key": "black-garlic",
+            "title": "Black Garlic",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          }
+        ],
+        "max": [
+          {
+            "key": "reishi",
+            "title": "Reishi",
+            "dosage": "700",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          },
+          {
+            "key": "omega-3",
+            "title": "Omega 3",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          }
+        ]
+      }
+    },
+    "testosterone": {
+      "key": "testosterone",
+      "title": "Testosterone",
+      "label": "",
+      "description": "",
+      "sustances": {
+        "min": [
+          {
+            "key": "reishi",
+            "title": "Reishi",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          },
+          {
+            "key": "black-garlic",
+            "title": "Black Garlic",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          }
+        ],
+        "med": [
+          {
+            "key": "reishi",
+            "title": "Reishi",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          },
+          {
+            "key": "black-garlic",
+            "title": "Black Garlic",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          }
+        ],
+        "max": [
+          {
+            "key": "reishi",
+            "title": "Reishi",
+            "dosage": "700",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          },
+          {
+            "key": "omega-3",
+            "title": "Omega 3",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          }
+        ]
+      }
+    },
+    "fertility": {
+      "key": "fertility",
+      "title": "Fertility",
+      "label": "",
+      "description": "",
+      "sustances": {
+        "min": [
+          {
+            "key": "reishi",
+            "title": "Reishi",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          },
+          {
+            "key": "black-garlic",
+            "title": "Black Garlic",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          }
+        ],
+        "med": [
+          {
+            "key": "reishi",
+            "title": "Reishi",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          },
+          {
+            "key": "black-garlic",
+            "title": "Black Garlic",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          }
+        ],
+        "max": [
+          {
+            "key": "reishi",
+            "title": "Reishi",
+            "dosage": "700",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          },
+          {
+            "key": "omega-3",
+            "title": "Omega 3",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          }
+        ]
+      }
+    },
+    "libido": {
+      "key": "libido",
+      "title": "Libido",
+      "label": "",
+      "description": "",
+      "sustances": {
+        "min": [
+          {
+            "key": "reishi",
+            "title": "Reishi",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          },
+          {
+            "key": "black-garlic",
+            "title": "Black Garlic",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          }
+        ],
+        "med": [
+          {
+            "key": "reishi",
+            "title": "Reishi",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          },
+          {
+            "key": "black-garlic",
+            "title": "Black Garlic",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          }
+        ],
+        "max": [
+          {
+            "key": "reishi",
+            "title": "Reishi",
+            "dosage": "700",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          },
+          {
+            "key": "omega-3",
+            "title": "Omega 3",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          }
+        ]
+      }
+    },
+    "sexual-performance": {
+      "key": "sexual-performance",
+      "title": "Sexual Performance",
+      "label": "",
+      "description": "",
+      "sustances": {
+        "min": [
+          {
+            "key": "reishi",
+            "title": "Reishi",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          },
+          {
+            "key": "black-garlic",
+            "title": "Black Garlic",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          }
+        ],
+        "med": [
+          {
+            "key": "reishi",
+            "title": "Reishi",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          },
+          {
+            "key": "black-garlic",
+            "title": "Black Garlic",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          }
+        ],
+        "max": [
+          {
+            "key": "reishi",
+            "title": "Reishi",
+            "dosage": "700",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          },
+          {
+            "key": "omega-3",
+            "title": "Omega 3",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          }
+        ]
+      }
+    },
+    "blood-pressure": {
+      "key": "blood-pressure",
+      "title": "Blood Pressure",
+      "label": "",
+      "description": "",
+      "sustances": {
+        "min": [
+          {
+            "key": "reishi",
+            "title": "Reishi",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          },
+          {
+            "key": "black-garlic",
+            "title": "Black Garlic",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          }
+        ],
+        "med": [
+          {
+            "key": "reishi",
+            "title": "Reishi",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          },
+          {
+            "key": "black-garlic",
+            "title": "Black Garlic",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          }
+        ],
+        "max": [
+          {
+            "key": "reishi",
+            "title": "Reishi",
+            "dosage": "700",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          },
+          {
+            "key": "omega-3",
+            "title": "Omega 3",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          }
+        ]
+      }
+    },
+    "muscle-recovery": {
+      "key": "muscle-recovery",
+      "title": "Muscle Recovery",
+      "label": "",
+      "description": "",
+      "sustances": {
+        "min": [
+          {
+            "key": "reishi",
+            "title": "Reishi",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          },
+          {
+            "key": "black-garlic",
+            "title": "Black Garlic",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          }
+        ],
+        "med": [
+          {
+            "key": "reishi",
+            "title": "Reishi",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          },
+          {
+            "key": "black-garlic",
+            "title": "Black Garlic",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          }
+        ],
+        "max": [
+          {
+            "key": "reishi",
+            "title": "Reishi",
+            "dosage": "700",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          },
+          {
+            "key": "omega-3",
+            "title": "Omega 3",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          }
+        ]
+      }
+    },
+    "muscle-gain": {
+      "key": "muscle-gain",
+      "title": "Muscle Gain",
+      "label": "",
+      "description": "",
+      "sustances": {
+        "min": [
+          {
+            "key": "reishi",
+            "title": "Reishi",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          },
+          {
+            "key": "black-garlic",
+            "title": "Black Garlic",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          }
+        ],
+        "med": [
+          {
+            "key": "reishi",
+            "title": "Reishi",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          },
+          {
+            "key": "black-garlic",
+            "title": "Black Garlic",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          }
+        ],
+        "max": [
+          {
+            "key": "reishi",
+            "title": "Reishi",
+            "dosage": "700",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          },
+          {
+            "key": "omega-3",
+            "title": "Omega 3",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          }
+        ]
+      }
+    },
+    "muscular-endurance": {
+      "key": "muscular-endurance",
+      "title": "Muscular Endurance",
+      "label": "",
+      "description": "",
+      "sustances": {
+        "min": [
+          {
+            "key": "reishi",
+            "title": "Reishi",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          },
+          {
+            "key": "black-garlic",
+            "title": "Black Garlic",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          }
+        ],
+        "med": [
+          {
+            "key": "reishi",
+            "title": "Reishi",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          },
+          {
+            "key": "black-garlic",
+            "title": "Black Garlic",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          }
+        ],
+        "max": [
+          {
+            "key": "reishi",
+            "title": "Reishi",
+            "dosage": "700",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          },
+          {
+            "key": "omega-3",
+            "title": "Omega 3",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          }
+        ]
+      }
+    },
+    "fatigue-prevention": {
+      "key": "fatigue-prevention",
+      "title": "Fatigue Prevention",
+      "label": "",
+      "description": "",
+      "sustances": {
+        "min": [
+          {
+            "key": "reishi",
+            "title": "Reishi",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          },
+          {
+            "key": "black-garlic",
+            "title": "Black Garlic",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          }
+        ],
+        "med": [
+          {
+            "key": "reishi",
+            "title": "Reishi",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          },
+          {
+            "key": "black-garlic",
+            "title": "Black Garlic",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          }
+        ],
+        "max": [
+          {
+            "key": "reishi",
+            "title": "Reishi",
+            "dosage": "700",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
+            ]
+          },
+          {
+            "key": "omega-3",
+            "title": "Omega 3",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "",
+            "description": "",
+            "parents": [
+              "preventive-immunity"
             ]
           }
         ]

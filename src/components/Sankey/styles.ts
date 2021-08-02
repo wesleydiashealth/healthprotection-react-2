@@ -1,10 +1,12 @@
 import styled, { css } from 'styled-components';
+import { transparentize } from 'polished';
 
 interface ContainerProps {
   isActive?: boolean;
 }
 
 interface OutcomeProps {
+  color?: string;
   suboutcomes?: number;
 }
 
@@ -156,8 +158,25 @@ export const Outcomes = styled.div`
 `;
 
 export const Outcome = styled.div<OutcomeProps>`
+  position: relative;
+
   & ~ div {
     margin-top: 20px;
+  }
+
+  .anchors {
+    display: flex;
+    flex-flow: column wrap;
+
+    position: absolute;
+
+    top: 0;
+    right: 0;
+
+    &__item {
+      width: 10px;
+      height: 68px;
+    }
   }
 
   .outcome-wrapper {
@@ -180,6 +199,14 @@ export const Outcome = styled.div<OutcomeProps>`
 
     min-height: 68px;
   }
+
+  ${props =>
+    props.color &&
+    css`
+      .outcome-wrapper {
+        background-color: ${transparentize(0.5, props.color)};
+      }
+    `}
 
   ${props =>
     props.suboutcomes &&
