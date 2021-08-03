@@ -33,6 +33,14 @@ interface Substance {
   parents: Array<string>;
 }
 
+interface Connections {
+  [key: string]: Connection;
+}
+
+interface Connection {
+  [key: string]: string[];
+}
+
 const Sankey: React.FC = () => {
   const context = useApp();
   const { steps } = context;
@@ -43,11 +51,17 @@ const Sankey: React.FC = () => {
   const [fineTune, setFineTune] = useState<FineTune>({});
   const [nutraceutics, setNutraceutics] = useState<Substance[]>([]);
 
-  const [connections, setConnections] = useState(() => {
+  const [connections, setConnections] = useState<Connections>(() => {
     const items = {};
 
     Object.values(outcomes).forEach(outcome => {
-      Object.assign(items, { [outcome.key]: outcome.suboutcomes });
+      const subItems = {};
+
+      outcome.suboutcomes.forEach(suboutcome => {
+        Object.assign(subItems, { [suboutcome]: [] });
+      });
+
+      Object.assign(items, { [outcome.key]: subItems });
     });
 
     return items;
@@ -55,6 +69,10 @@ const Sankey: React.FC = () => {
 
   const handleFineTuneClick = useCallback(
     async (items: Array<Substance>, suboutcome) => {
+      const suboutcomeParents = Object.values(outcomes).filter(outcome =>
+        outcome.suboutcomes.includes(suboutcome),
+      );
+
       if (items.length) {
         const updatedNutraceutics = [...nutraceutics];
 
@@ -99,6 +117,20 @@ const Sankey: React.FC = () => {
           } else {
             updatedNutraceutics.push(item);
           }
+
+          suboutcomeParents.forEach(parent => {
+            const connectionItems = connections[parent.key][suboutcome];
+
+            const subItemIndex = connectionItems.indexOf(item.key);
+
+            if (subItemIndex > -1) {
+              connectionItems.splice(subItemIndex, 1, item.key);
+            } else {
+              connectionItems.push(item.key);
+            }
+
+            setConnections(connections);
+          });
         });
 
         setNutraceutics(updatedNutraceutics);
@@ -114,9 +146,17 @@ const Sankey: React.FC = () => {
             return nutraceutic;
           }),
         );
+
+        suboutcomeParents.forEach(parent => {
+          const connectionItems = connections[parent.key][suboutcome];
+
+          connectionItems.splice(0, connectionItems.length);
+
+          setConnections(connections);
+        });
       }
     },
-    [nutraceutics],
+    [nutraceutics, connections, outcomes],
   );
 
   return (
@@ -170,6 +210,12 @@ const Sankey: React.FC = () => {
         <div className="step-content content-wrapper">
           <Outcomes>
             {Object.values(outcomes).map(outcome => {
+              const connectionIndex = Object.keys(connections).findIndex(
+                connection => connection === outcome.key,
+              );
+
+              const children = Object.values(connections)[connectionIndex];
+
               return (
                 <Outcome
                   key={outcome.key}
@@ -196,136 +242,171 @@ const Sankey: React.FC = () => {
                     />
                     <span>{outcome.title}</span>
                   </div>
-
-                  {connections && console.log(outcome.key)}
-
-                  {outcome.suboutcomes
-                    .filter(
-                      suboutcome =>
-                        !!Object.values(suboutcomes).filter(
-                          item => item.key === suboutcome,
-                        ).length,
-                    )
-                    .map(suboutcome => (
+                  {Object.keys(children).map(child => {
+                    return (
                       <Xarrow
-                        start={`${outcome.key}-${suboutcome}`}
-                        end={`${suboutcome}-${outcome.key}`}
+                        key={`${outcome.key}-${child}`}
+                        start={`${outcome.key}-${child}`}
+                        end={`${child}-${outcome.key}`}
                         showHead={false}
                         strokeWidth={58}
                         curveness={0.6}
                         startAnchor="right"
                         endAnchor="left"
                         color={
-                          fineTune[suboutcome] === 'off' ||
-                          !fineTune[suboutcome]
+                          fineTune[child] === 'off' || !fineTune[child]
                             ? 'rgba(0,0,0,0.05)'
                             : transparentize(0.8, outcome.color)
                         }
                       />
-                    ))}
+                    );
+                  })}
+                  {Object.values(children).map(child => {
+                    return child.map(item => (
+                      <>
+                        <div>{outcome.key}</div>
+                        <div>{item}</div>
+                      </>
+                    ));
+                  })}
                 </Outcome>
               );
             })}
           </Outcomes>
 
           <SubOutcomes>
-            {Object.values(suboutcomes).map(suboutcome => (
-              <SubOutcome
-                key={suboutcome.key}
-                nutraceutics={
-                  nutraceutics.filter(nutraceutic =>
-                    nutraceutic.parents.includes(suboutcome.key),
-                  ).length ||
-                  Object.values(outcomes).filter(outcome =>
-                    outcome.suboutcomes.includes(suboutcome.key),
-                  ).length
-                }
-                color={suboutcome.color}
-                isActive={
-                  fineTune[suboutcome.key] !== undefined &&
-                  fineTune[suboutcome.key] !== 'off'
-                }
-                id={suboutcome.key}
-              >
-                <div className="entry-anchors anchors">
-                  {Object.values(outcomes)
-                    .filter(outcome =>
+            {Object.values(suboutcomes).map(suboutcome => {
+              const outcomeIndex = Object.values(outcomes).findIndex(outcome =>
+                outcome.suboutcomes.includes(suboutcome.key),
+              );
+
+              return (
+                <SubOutcome
+                  key={suboutcome.key}
+                  nutraceutics={
+                    nutraceutics.filter(nutraceutic =>
+                      nutraceutic.parents.includes(suboutcome.key),
+                    ).length ||
+                    Object.values(outcomes).filter(outcome =>
                       outcome.suboutcomes.includes(suboutcome.key),
-                    )
-                    .map(outcome => {
-                      return (
+                    ).length
+                  }
+                  color={
+                    outcomeIndex > -1
+                      ? Object.values(outcomes)[outcomeIndex].color
+                      : '#f2f2f2'
+                  }
+                  isActive={
+                    fineTune[suboutcome.key] !== undefined &&
+                    fineTune[suboutcome.key] !== 'off'
+                  }
+                  id={suboutcome.key}
+                >
+                  <div className="entry-anchors anchors">
+                    {Object.values(outcomes)
+                      .filter(outcome =>
+                        outcome.suboutcomes.includes(suboutcome.key),
+                      )
+                      .map(outcome => {
+                        return (
+                          <div
+                            key={`${suboutcome.key}-${outcome.key}`}
+                            id={`${suboutcome.key}-${outcome.key}`}
+                            className="anchors__item"
+                          />
+                        );
+                      })}
+
+                    {Object.values(outcomes)
+                      .filter(outcome =>
+                        outcome.suboutcomes.includes(suboutcome.key),
+                      )
+                      .map(outcome => {
+                        const outcomeNutraceutics =
+                          connections[outcome.key][suboutcome.key];
+
+                        return outcomeNutraceutics.map(nutraceutic => (
+                          <div
+                            key={`${nutraceutic}-${outcome.key}`}
+                            id={`${nutraceutic}-${outcome.key}`}
+                            className="anchors__item"
+                          />
+                        ));
+                      })}
+                  </div>
+                  <div className="exit-anchors anchors">
+                    {nutraceutics
+                      .filter(nutraceutic =>
+                        nutraceutic.parents.includes(suboutcome.key),
+                      )
+                      .map(nutraceutic => (
                         <div
-                          key={`${suboutcome.key}-${outcome.key}`}
-                          id={`${suboutcome.key}-${outcome.key}`}
+                          key={`${suboutcome.key}-${nutraceutic.key}`}
+                          id={`${suboutcome.key}-${nutraceutic.key}`}
                           className="anchors__item"
                         />
+                      ))}
+                  </div>
+                  <div className="content">
+                    <HiQuestionMarkCircle
+                      size={20}
+                      color="rgba(0,0,0,0.7)"
+                      data-tip={`<strong>${suboutcome.title}</strong><span>${suboutcome.description}</span>`}
+                      data-for="sankey-tooltip"
+                      className="tooltip-icon"
+                    />
+                    <span>{suboutcome.title}</span>
+                  </div>
+                  <div className="fine-tune">
+                    <FineTune
+                      isActive={
+                        fineTune[suboutcome.key] === 'off' ||
+                        !fineTune[suboutcome.key]
+                      }
+                      color={
+                        outcomeIndex > -1
+                          ? Object.values(outcomes)[outcomeIndex].color
+                          : '#565656'
+                      }
+                      onClick={() => {
+                        handleFineTuneClick([], suboutcome.key);
+                        setFineTune({
+                          ...fineTune,
+                          [suboutcome.key]: 'off',
+                        });
+                      }}
+                    >
+                      Off
+                    </FineTune>
+                    {Object.keys(suboutcome.sustances).map((key, index) => {
+                      return (
+                        <FineTune
+                          isActive={fineTune[suboutcome.key] === key}
+                          color={
+                            outcomeIndex > -1
+                              ? Object.values(outcomes)[outcomeIndex].color
+                              : '#565656'
+                          }
+                          onClick={() => {
+                            handleFineTuneClick(
+                              Object.values(suboutcome.sustances)[index] || [],
+                              suboutcome.key,
+                            );
+
+                            setFineTune({
+                              ...fineTune,
+                              [suboutcome.key]: key,
+                            });
+                          }}
+                        >
+                          {key.charAt(0).toUpperCase() + key.slice(1)}
+                        </FineTune>
                       );
                     })}
-                </div>
-                <div className="exit-anchors anchors">
-                  {nutraceutics
-                    .filter(nutraceutic =>
-                      nutraceutic.parents.includes(suboutcome.key),
-                    )
-                    .map(nutraceutic => (
-                      <div
-                        key={`${suboutcome.key}-${nutraceutic.key}`}
-                        id={`${suboutcome.key}-${nutraceutic.key}`}
-                        className="anchors__item"
-                      />
-                    ))}
-                </div>
-                <div className="content">
-                  <HiQuestionMarkCircle
-                    size={20}
-                    color="rgba(0,0,0,0.7)"
-                    data-tip={`<strong>${suboutcome.title}</strong><span>${suboutcome.description}</span>`}
-                    data-for="sankey-tooltip"
-                    className="tooltip-icon"
-                  />
-                  <span>{suboutcome.title}</span>
-                </div>
-                <div className="fine-tune">
-                  <FineTune
-                    isActive={
-                      fineTune[suboutcome.key] === 'off' ||
-                      !fineTune[suboutcome.key]
-                    }
-                    color={suboutcome.color}
-                    onClick={() => {
-                      handleFineTuneClick([], suboutcome.key);
-                      setFineTune({
-                        ...fineTune,
-                        [suboutcome.key]: 'off',
-                      });
-                    }}
-                  >
-                    Off
-                  </FineTune>
-                  {Object.keys(suboutcome.sustances).map((key, index) => {
-                    return (
-                      <FineTune
-                        isActive={fineTune[suboutcome.key] === key}
-                        color={suboutcome.color}
-                        onClick={() => {
-                          handleFineTuneClick(
-                            Object.values(suboutcome.sustances)[index] || [],
-                            suboutcome.key,
-                          );
-
-                          setFineTune({
-                            ...fineTune,
-                            [suboutcome.key]: key,
-                          });
-                        }}
-                      >
-                        {key.charAt(0).toUpperCase() + key.slice(1)}
-                      </FineTune>
-                    );
-                  })}
-                </div>
-              </SubOutcome>
-            ))}
+                  </div>
+                </SubOutcome>
+              );
+            })}
           </SubOutcomes>
 
           <Substances
@@ -336,23 +417,44 @@ const Sankey: React.FC = () => {
           >
             {nutraceutics
               .filter(nutraceutic => nutraceutic.parents.length)
-              .map(nutraceutic => (
-                <Substance
-                  key={nutraceutic.key}
-                  id={nutraceutic.key}
-                  suboutcomes={nutraceutic.parents.length}
-                >
-                  <div className="content">
-                    <HiQuestionMarkCircle
-                      className="tooltip-icon"
+              .map(nutraceutic => {
+                return (
+                  <Substance
+                    key={nutraceutic.key}
+                    id={nutraceutic.key}
+                    suboutcomes={nutraceutic.parents.length}
+                  >
+                    <div className="content">
+                      <HiQuestionMarkCircle
+                        className="tooltip-icon"
+                        size={20}
+                        color="rgba(0,0,0,0.7)"
+                        data-tip={`${nutraceutic.title}`}
+                        data-for={`sankey-${nutraceutic.key}-tooltip`}
+                      />
+                      <ReactToolTip
+                        id={`sankey-${nutraceutic.key}-tooltip`}
+                        className={`sankey-${nutraceutic.key}-tooltip`}
+                        place="bottom"
+                        type="light"
+                        effect="solid"
+                        offset={{ top: 10, left: 10 }}
+                        html
+                        backgroundColor="#fff"
+                      />
+                      <strong>{nutraceutic.title}</strong>
+                      <span>{`${nutraceutic.dosage} ${nutraceutic.unit}`}</span>
+                    </div>
+                    <FiRefreshCcw
+                      className="refresh-icon"
                       size={20}
-                      color="rgba(0,0,0,0.7)"
+                      color="#fff"
                       data-tip={`${nutraceutic.title}`}
-                      data-for={`sankey-${nutraceutic.key}-tooltip`}
+                      data-for={`sankey-${nutraceutic.key}-refresh`}
                     />
                     <ReactToolTip
-                      id={`sankey-${nutraceutic.key}-tooltip`}
-                      className={`sankey-${nutraceutic.key}-tooltip`}
+                      id={`sankey-${nutraceutic.key}-refresh`}
+                      className={`sankey-${nutraceutic.key}-refresh`}
                       place="bottom"
                       type="light"
                       effect="solid"
@@ -360,63 +462,46 @@ const Sankey: React.FC = () => {
                       html
                       backgroundColor="#fff"
                     />
-                    <strong>{nutraceutic.title}</strong>
-                    <span>{`${nutraceutic.dosage} ${nutraceutic.unit}`}</span>
-                  </div>
-                  <FiRefreshCcw
-                    className="refresh-icon"
-                    size={20}
-                    color="#fff"
-                    data-tip={`${nutraceutic.title}`}
-                    data-for={`sankey-${nutraceutic.key}-refresh`}
-                  />
-                  <ReactToolTip
-                    id={`sankey-${nutraceutic.key}-refresh`}
-                    className={`sankey-${nutraceutic.key}-refresh`}
-                    place="bottom"
-                    type="light"
-                    effect="solid"
-                    offset={{ top: 10, left: 10 }}
-                    html
-                    backgroundColor="#fff"
-                  />
-                  <div className="entry-anchors anchors">
-                    {nutraceutic.parents.map(parent => {
-                      const parentIndex = Object.values(suboutcomes).findIndex(
-                        suboutcome => suboutcome.key === parent,
-                      );
+                    <div className="entry-anchors anchors">
+                      {nutraceutic.parents.map(parent => {
+                        const outcomeIndex = Object.values(outcomes).findIndex(
+                          outcome => outcome.suboutcomes.includes(parent),
+                        );
 
-                      return (
-                        <>
-                          <div
-                            key={`${nutraceutic.key}-${parent}`}
-                            id={`${nutraceutic.key}-${parent}`}
-                            className="anchors__item"
-                          />
-                          <Xarrow
-                            start={`${parent}-${nutraceutic.key}`}
-                            end={`${nutraceutic.key}-${parent}`}
-                            showHead={false}
-                            strokeWidth={58}
-                            curveness={0.6}
-                            startAnchor="right"
-                            endAnchor="left"
-                            color={
-                              fineTune[parent] === 'off' || !fineTune[parent]
-                                ? 'rgba(0,0,0,0.05)'
-                                : transparentize(
-                                    0.8,
-                                    Object.values(suboutcomes)[parentIndex]
-                                      .color,
-                                  )
-                            }
-                          />
-                        </>
-                      );
-                    })}
-                  </div>
-                </Substance>
-              ))}
+                        return (
+                          <>
+                            <div
+                              key={`${nutraceutic.key}-${parent}`}
+                              id={`${nutraceutic.key}-${parent}`}
+                              className="anchors__item"
+                            />
+                            <Xarrow
+                              start={`${parent}-${nutraceutic.key}`}
+                              end={`${nutraceutic.key}-${parent}`}
+                              showHead={false}
+                              strokeWidth={58}
+                              curveness={0.6}
+                              startAnchor="right"
+                              endAnchor="left"
+                              color={
+                                (outcomeIndex > -1 &&
+                                  fineTune[parent] === 'off') ||
+                                !fineTune[parent]
+                                  ? 'rgba(0,0,0,0.05)'
+                                  : transparentize(
+                                      0.8,
+                                      Object.values(outcomes)[outcomeIndex]
+                                        .color,
+                                    )
+                              }
+                            />
+                          </>
+                        );
+                      })}
+                    </div>
+                  </Substance>
+                );
+              })}
           </Substances>
 
           <ReactToolTip

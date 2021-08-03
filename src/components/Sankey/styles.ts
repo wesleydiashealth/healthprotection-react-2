@@ -230,7 +230,7 @@ export const Outcome = styled.div<OutcomeProps>`
     props.suboutcomes &&
     css`
       .outcome-wrapper {
-        min-height: ${`${68 * props.suboutcomes}px`};
+        min-height: ${`${58 * props.suboutcomes}px`};
       }
     `}
 `;
@@ -347,7 +347,7 @@ export const SubOutcome = styled.div<SubOutcomeProps>`
     props.isActive &&
     props.color &&
     css`
-      background-color: ${transparentize(0.7, props.color)};
+      background-color: ${transparentize(0.8, props.color)};
     `}
 `;
 
