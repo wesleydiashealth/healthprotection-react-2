@@ -4,6 +4,8 @@ const Container = styled.section`
   display: flex;
   align-items: center;
 
+  height: calc(100vh - 191px);
+
   position: relative;
 
   > div {
@@ -12,7 +14,7 @@ const Container = styled.section`
 `;
 
 export const HeroContent = styled.div`
-  margin: 80px 0 0;
+  margin: 240px 0 0;
 
   h1,
   h2,
@@ -68,7 +70,7 @@ export const HeroContent = styled.div`
   }
 
   .hero-list {
-    margin-top: 140px;
+    margin-top: 100px;
     padding: 40px 0;
 
     ul {
