@@ -83,9 +83,10 @@
     }
   },
   "suboutcomes": {
-    "immunity": {
+    "preventive-immunity": {
       "key": "preventive-immunity",
       "title": "Preventive Immunity",
+      "color": "#7E61A8",
       "label": "",
       "description": "",
       "sustances": {
@@ -177,6 +178,7 @@
     "nutrient-supplementation": {
       "key": "nutrient-supplementation",
       "title": "Nutrient Supplementation",
+      "color": "#D3C8BC",
       "label": "",
       "description": "",
       "sustances": {
@@ -257,6 +259,7 @@
     "anti-inflammatory": {
       "key": "anti-inflammatory",
       "title": "Anti-inflammatory",
+      "color": "#FEC763",
       "label": "",
       "description": "",
       "sustances": {
@@ -337,6 +340,7 @@
     "anti-oxidant": {
       "key": "anti-oxidant",
       "title": "Anti-oxidant",
+      "color": "#4FB758",
       "label": "",
       "description": "",
       "sustances": {
@@ -417,6 +421,7 @@
     "immune-response": {
       "key": "immune-response",
       "title": "Immune Response",
+      "color": "#7E61A8",
       "label": "",
       "description": "",
       "sustances": {
@@ -497,6 +502,7 @@
     "blood-pressure": {
       "key": "blood-pressure",
       "title": "Blood Pressure",
+      "color": "#EF708F",
       "label": "",
       "description": "",
       "sustances": {
@@ -577,6 +583,7 @@
     "muscle-recovery": {
       "key": "muscle-recovery",
       "title": "Muscle Recovery",
+      "color": "#7E61A8",
       "label": "",
       "description": "",
       "sustances": {
@@ -657,6 +664,7 @@
     "muscle-gain": {
       "key": "muscle-gain",
       "title": "Muscle Gain",
+      "color": "#7E61A8",
       "label": "",
       "description": "",
       "sustances": {
@@ -737,6 +745,7 @@
     "muscular-endurance": {
       "key": "muscular-endurance",
       "title": "Muscular Endurance",
+      "color": "#7E61A8",
       "label": "",
       "description": "",
       "sustances": {
@@ -817,6 +826,7 @@
     "fatigue-prevention": {
       "key": "fatigue-prevention",
       "title": "Fatigue Prevention",
+      "color": "#7E61A8",
       "label": "",
       "description": "",
       "sustances": {
@@ -897,6 +907,7 @@
     "muscle-health": {
       "key": "power-output",
       "title": "Power Output",
+      "color": "#7E61A8",
       "label": "",
       "description": "",
       "sustances": {
@@ -977,6 +988,7 @@
     "energy-and-mood": {
       "key": "overall-well-being-(energy-and-mood)",
       "title": "Overall Well-Being",
+      "color": "#7E61A8",
       "label": "",
       "description": "",
       "sustances": {
@@ -1075,6 +1087,7 @@
     "stress-management": {
       "key": "stress-management",
       "title": "Stress Management",
+      "color": "#7E61A8",
       "label": "",
       "description": "",
       "sustances": {
@@ -1173,6 +1186,7 @@
     "depression": {
       "key": "depression",
       "title": "Depression",
+      "color": "#7E61A8",
       "label": "",
       "description": "",
       "sustances": {
@@ -1271,6 +1285,7 @@
     "anxiety": {
       "key": "anxiety",
       "title": "Anxiety",
+      "color": "#7E61A8",
       "label": "",
       "description": "",
       "sustances": {
@@ -1369,6 +1384,7 @@
     "sleep": {
       "key": "sleep",
       "title": "Sleep",
+      "color": "#7E61A8",
       "label": "",
       "description": "",
       "sustances": {
@@ -1467,6 +1483,7 @@
     "relaxation": {
       "key": "relaxation",
       "title": "Relaxation",
+      "color": "#7E61A8",
       "label": "",
       "description": "",
       "sustances": {
@@ -1565,6 +1582,7 @@
     "estrogen": {
       "key": "estrogen",
       "title": "Estrogen",
+      "color": "#7E61A8",
       "label": "",
       "description": "",
       "sustances": {
@@ -1645,6 +1663,7 @@
     "pms": {
       "key": "pms",
       "title": "PMS",
+      "color": "#7E61A8",
       "label": "",
       "description": "",
       "sustances": {
@@ -1725,6 +1744,7 @@
     "menopause": {
       "key": "menopause",
       "title": "Menopause",
+      "color": "#7E61A8",
       "label": "",
       "description": "",
       "sustances": {
@@ -1805,6 +1825,7 @@
     "erections": {
       "key": "erections",
       "title": "Erections",
+      "color": "#7E61A8",
       "label": "",
       "description": "",
       "sustances": {
@@ -1885,6 +1906,7 @@
     "testosterone": {
       "key": "testosterone",
       "title": "Testosterone",
+      "color": "#7E61A8",
       "label": "",
       "description": "",
       "sustances": {
@@ -1965,6 +1987,7 @@
     "fertility": {
       "key": "fertility",
       "title": "Fertility",
+      "color": "#7E61A8",
       "label": "",
       "description": "",
       "sustances": {
@@ -2045,6 +2068,7 @@
     "libido": {
       "key": "libido",
       "title": "Libido",
+      "color": "#7E61A8",
       "label": "",
       "description": "",
       "sustances": {
@@ -2125,6 +2149,7 @@
     "sexual-performance": {
       "key": "sexual-performance",
       "title": "Sexual Performance",
+      "color": "#7E61A8",
       "label": "",
       "description": "",
       "sustances": {
@@ -2205,6 +2230,7 @@
     "heart-function": {
       "key": "heart-function",
       "title": "Heart Function",
+      "color": "#7E61A8",
       "label": "",
       "description": "",
       "sustances": {
@@ -2285,6 +2311,7 @@
     "cholesterol-triglycerides": {
       "key": "cholesterol-triglycerides",
       "title": "Cholesterol & Triglycerides",
+      "color": "#7E61A8",
       "label": "",
       "description": "",
       "sustances": {

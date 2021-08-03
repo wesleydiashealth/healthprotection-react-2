@@ -12,10 +12,13 @@ interface OutcomeProps {
 
 interface SubOutcomeProps {
   nutraceutics?: number;
+  isActive?: boolean;
+  color?: string;
 }
 
 interface FineTuneProps {
   isActive?: boolean;
+  color?: string;
 }
 
 interface SubstancesProps {
@@ -176,7 +179,7 @@ export const Outcome = styled.div<OutcomeProps>`
 
     &__item {
       width: 10px;
-      height: 68px;
+      height: 58px;
     }
   }
 
@@ -194,11 +197,11 @@ export const Outcome = styled.div<OutcomeProps>`
     margin-top: 10px;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
-    padding: 10px 20px;
+    padding: 5px 10px;
 
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
 
     position: relative;
     z-index: 10;
@@ -208,7 +211,11 @@ export const Outcome = styled.div<OutcomeProps>`
 
     font-weight: 600;
 
-    min-height: 68px;
+    min-height: 58px;
+  }
+
+  .tooltip-icon {
+    margin-right: 5px;
   }
 
   ${props =>
@@ -241,25 +248,30 @@ export const SubOutcomes = styled.div`
     top: 0;
     left: 260px;
   }
+
+  .content {
+    display: flex;
+  }
+
+  .tooltip-icon {
+    margin-right: 5px;
+    min-width: fit-content;
+  }
 `;
 
 export const SubOutcome = styled.div<SubOutcomeProps>`
   margin-top: 10px;
-  padding: 10px 20px;
+  padding: 5px 20px;
 
   position: relative;
 
-  min-height: 68px;
+  min-height: 58px;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 
   background: #f2f2f2;
-
-  &.active {
-    background: #fde7e8;
-  }
 
   & ~ div {
     margin-top: 20px;
@@ -268,13 +280,13 @@ export const SubOutcome = styled.div<SubOutcomeProps>`
   .content {
     margin-right: 20px;
 
-    max-width: 220px;
+    max-width: 170px;
 
     span {
       padding-right: 5px;
 
       font-weight: 600;
-      font-size: 14px;
+      font-size: 16px;
       line-height: 22px;
     }
   }
@@ -311,7 +323,7 @@ export const SubOutcome = styled.div<SubOutcomeProps>`
 
     &__item {
       width: 10px;
-      height: 68px;
+      height: 58px;
     }
   }
 
@@ -328,7 +340,14 @@ export const SubOutcome = styled.div<SubOutcomeProps>`
   ${props =>
     props.nutraceutics &&
     css`
-      min-height: ${`${68 * props.nutraceutics}px`};
+      min-height: ${`${58 * props.nutraceutics}px`};
+    `}
+
+  ${props =>
+    props.isActive &&
+    props.color &&
+    css`
+      background-color: ${transparentize(0.7, props.color)};
     `}
 `;
 
@@ -338,13 +357,15 @@ export const FineTune = styled.a<FineTuneProps>`
   font-size: 14px;
   line-height: 14px;
 
-  color: #f7aeb0;
+  ${props => css`
+    color: ${props.color};
+  `}
 
   ${props =>
     props.isActive &&
     css`
       color: #fff;
-      background: #f7aeb0;
+      background: ${props.color};
     `}
 `;
 
@@ -369,33 +390,69 @@ export const Substance = styled.div<SubstanceProps>`
   margin-top: 30px;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
-  padding: 10px 20px;
+  padding: 10px;
 
   position: relative;
 
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
+
+  max-width: 300px;
 
   background: #f2f2f2;
-  min-height: 68px;
 
   & ~ div {
     margin-top: 20px;
   }
 
+  :after {
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    content: '';
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 40px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+
   strong {
     font-weight: 600;
+    position: relative;
+    padding-right: 20px;
 
     &:after {
-      padding: 0 5px;
-      content: '|';
-      color: #ccc;
+      border-left: 1px solid #ccc;
+      padding-right: 10px;
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
     }
   }
 
   span {
     color: #565656;
+  }
+
+  .content {
+    display: flex;
+    align-items: center;
+  }
+
+  .tooltip-icon {
+    margin-right: 5px;
+    min-width: fit-content;
+  }
+
+  .refresh-icon {
+    margin-left: 20px;
+    min-width: fit-content;
+    position: relative;
+    z-index: 5;
   }
 
   .anchors {
@@ -406,7 +463,7 @@ export const Substance = styled.div<SubstanceProps>`
 
     &__item {
       width: 10px;
-      height: 68px;
+      height: 58px;
     }
   }
 
@@ -423,7 +480,7 @@ export const Substance = styled.div<SubstanceProps>`
   ${props =>
     props.suboutcomes &&
     css`
-      min-height: ${`${68 * props.suboutcomes}px`};
+      min-height: ${`${58 * props.suboutcomes}px`};
     `}
 `;
 

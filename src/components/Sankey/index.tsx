@@ -1,6 +1,7 @@
 import React, { useState, useCallback } from 'react';
 import ReactToolTip from 'react-tooltip';
 import { HiQuestionMarkCircle, HiLockClosed } from 'react-icons/hi';
+import { FiRefreshCcw } from 'react-icons/fi';
 import Xarrow from 'react-xarrows';
 import { IoOptionsOutline } from 'react-icons/io5';
 import { transparentize } from 'polished';
@@ -27,6 +28,7 @@ interface Substance {
   key: string;
   title: string;
   dosage: string;
+  unit: string;
   description: string;
   parents: Array<string>;
 }
@@ -40,6 +42,16 @@ const Sankey: React.FC = () => {
 
   const [fineTune, setFineTune] = useState<FineTune>({});
   const [nutraceutics, setNutraceutics] = useState<Substance[]>([]);
+
+  const [connections, setConnections] = useState(() => {
+    const items = {};
+
+    Object.values(outcomes).forEach(outcome => {
+      Object.assign(items, { [outcome.key]: outcome.suboutcomes });
+    });
+
+    return items;
+  });
 
   const handleFineTuneClick = useCallback(
     async (items: Array<Substance>, suboutcome) => {
@@ -175,14 +187,18 @@ const Sankey: React.FC = () => {
                     ))}
                   </div>
                   <div className="outcome-wrapper">
-                    <span>{outcome.title}</span>
                     <HiQuestionMarkCircle
                       size={20}
-                      color="#7664C8"
+                      color="rgba(0,0,0,0.7)"
                       data-tip={`<strong>${outcome.title}</strong><span>${outcome.description}</span>`}
                       data-for="sankey-tooltip"
+                      className="tooltip-icon"
                     />
+                    <span>{outcome.title}</span>
                   </div>
+
+                  {connections && console.log(outcome.key)}
+
                   {outcome.suboutcomes
                     .filter(
                       suboutcome =>
@@ -195,15 +211,15 @@ const Sankey: React.FC = () => {
                         start={`${outcome.key}-${suboutcome}`}
                         end={`${suboutcome}-${outcome.key}`}
                         showHead={false}
-                        strokeWidth={68}
+                        strokeWidth={58}
                         curveness={0.6}
                         startAnchor="right"
                         endAnchor="left"
                         color={
                           fineTune[suboutcome] === 'off' ||
                           !fineTune[suboutcome]
-                            ? transparentize(0.8, outcome.color)
-                            : 'rgba(240, 94, 98, 0.15)'
+                            ? 'rgba(0,0,0,0.05)'
+                            : transparentize(0.8, outcome.color)
                         }
                       />
                     ))}
@@ -224,31 +240,14 @@ const Sankey: React.FC = () => {
                     outcome.suboutcomes.includes(suboutcome.key),
                   ).length
                 }
-                id={suboutcome.key}
-                className={
-                  fineTune[suboutcome.key] === 'off' ||
-                  !fineTune[suboutcome.key]
-                    ? ''
-                    : 'active'
+                color={suboutcome.color}
+                isActive={
+                  fineTune[suboutcome.key] !== undefined &&
+                  fineTune[suboutcome.key] !== 'off'
                 }
+                id={suboutcome.key}
               >
                 <div className="entry-anchors anchors">
-                  {/* {!!nutraceutics.filter(nutraceutic =>
-                    nutraceutic.parents.includes(suboutcome.key),
-                  ).length &&
-                    nutraceutics
-                      .filter(nutraceutic =>
-                        nutraceutic.parents.includes(suboutcome.key),
-                      )
-                      .map((nutraceutic, index) => (
-                        <div
-                          // eslint-disable-next-line react/no-array-index-key
-                          key={`${suboutcome.key}-${index}`}
-                          id={`${suboutcome.key}-${index}`}
-                          className="anchors__item"
-                        />
-                      ))} */}
-
                   {Object.values(outcomes)
                     .filter(outcome =>
                       outcome.suboutcomes.includes(suboutcome.key),
@@ -277,13 +276,14 @@ const Sankey: React.FC = () => {
                     ))}
                 </div>
                 <div className="content">
-                  <span>{suboutcome.title}</span>
                   <HiQuestionMarkCircle
                     size={20}
-                    color="#7664C8"
+                    color="rgba(0,0,0,0.7)"
                     data-tip={`<strong>${suboutcome.title}</strong><span>${suboutcome.description}</span>`}
                     data-for="sankey-tooltip"
+                    className="tooltip-icon"
                   />
+                  <span>{suboutcome.title}</span>
                 </div>
                 <div className="fine-tune">
                   <FineTune
@@ -291,6 +291,7 @@ const Sankey: React.FC = () => {
                       fineTune[suboutcome.key] === 'off' ||
                       !fineTune[suboutcome.key]
                     }
+                    color={suboutcome.color}
                     onClick={() => {
                       handleFineTuneClick([], suboutcome.key);
                       setFineTune({
@@ -305,6 +306,7 @@ const Sankey: React.FC = () => {
                     return (
                       <FineTune
                         isActive={fineTune[suboutcome.key] === key}
+                        color={suboutcome.color}
                         onClick={() => {
                           handleFineTuneClick(
                             Object.values(suboutcome.sustances)[index] || [],
@@ -340,10 +342,50 @@ const Sankey: React.FC = () => {
                   id={nutraceutic.key}
                   suboutcomes={nutraceutic.parents.length}
                 >
-                  <strong>{nutraceutic.title}</strong>
-                  <span>{nutraceutic.dosage}</span>
+                  <div className="content">
+                    <HiQuestionMarkCircle
+                      className="tooltip-icon"
+                      size={20}
+                      color="rgba(0,0,0,0.7)"
+                      data-tip={`${nutraceutic.title}`}
+                      data-for={`sankey-${nutraceutic.key}-tooltip`}
+                    />
+                    <ReactToolTip
+                      id={`sankey-${nutraceutic.key}-tooltip`}
+                      className={`sankey-${nutraceutic.key}-tooltip`}
+                      place="bottom"
+                      type="light"
+                      effect="solid"
+                      offset={{ top: 10, left: 10 }}
+                      html
+                      backgroundColor="#fff"
+                    />
+                    <strong>{nutraceutic.title}</strong>
+                    <span>{`${nutraceutic.dosage} ${nutraceutic.unit}`}</span>
+                  </div>
+                  <FiRefreshCcw
+                    className="refresh-icon"
+                    size={20}
+                    color="#fff"
+                    data-tip={`${nutraceutic.title}`}
+                    data-for={`sankey-${nutraceutic.key}-refresh`}
+                  />
+                  <ReactToolTip
+                    id={`sankey-${nutraceutic.key}-refresh`}
+                    className={`sankey-${nutraceutic.key}-refresh`}
+                    place="bottom"
+                    type="light"
+                    effect="solid"
+                    offset={{ top: 10, left: 10 }}
+                    html
+                    backgroundColor="#fff"
+                  />
                   <div className="entry-anchors anchors">
                     {nutraceutic.parents.map(parent => {
+                      const parentIndex = Object.values(suboutcomes).findIndex(
+                        suboutcome => suboutcome.key === parent,
+                      );
+
                       return (
                         <>
                           <div
@@ -351,19 +393,22 @@ const Sankey: React.FC = () => {
                             id={`${nutraceutic.key}-${parent}`}
                             className="anchors__item"
                           />
-
                           <Xarrow
                             start={`${parent}-${nutraceutic.key}`}
                             end={`${nutraceutic.key}-${parent}`}
                             showHead={false}
-                            strokeWidth={68}
+                            strokeWidth={58}
                             curveness={0.6}
                             startAnchor="right"
                             endAnchor="left"
                             color={
                               fineTune[parent] === 'off' || !fineTune[parent]
                                 ? 'rgba(0,0,0,0.05)'
-                                : 'rgba(240, 94, 98, 0.15)'
+                                : transparentize(
+                                    0.8,
+                                    Object.values(suboutcomes)[parentIndex]
+                                      .color,
+                                  )
                             }
                           />
                         </>
