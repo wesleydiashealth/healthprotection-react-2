@@ -224,12 +224,56 @@ const Sankey: React.FC = () => {
                   suboutcomes={outcome.suboutcomes.length}
                 >
                   <div className="exit-anchors anchors">
+                    {Object.values(children).map(child => {
+                      return child.map(item => (
+                        <>
+                          <div
+                            key={`anchor-${outcome.key}-${item}`}
+                            id={`${outcome.key}-${item}`}
+                            className="anchors__item"
+                          />
+                          <Xarrow
+                            key={`${outcome.key}-${item}`}
+                            start={`${outcome.key}-${item}`}
+                            end={`${item}-${outcome.key}`}
+                            showHead={false}
+                            strokeWidth={58}
+                            curveness={0.6}
+                            startAnchor="right"
+                            endAnchor="left"
+                            color={
+                              fineTune[item] === 'off' || !fineTune[item]
+                                ? 'rgba(0,0,0,0.05)'
+                                : transparentize(0.8, outcome.color)
+                            }
+                          />
+                        </>
+                      ));
+                    })}
                     {outcome.suboutcomes.map(suboutcome => (
-                      <div
-                        key={`${outcome.key}-${suboutcome}`}
-                        id={`${outcome.key}-${suboutcome}`}
-                        className="anchors__item"
-                      />
+                      <>
+                        <div
+                          key={`anchor-${outcome.key}-${suboutcome}`}
+                          id={`${outcome.key}-${suboutcome}`}
+                          className="anchors__item"
+                        />
+                        <Xarrow
+                          key={`${outcome.key}-${suboutcome}`}
+                          start={`${outcome.key}-${suboutcome}`}
+                          end={`${suboutcome}-${outcome.key}`}
+                          showHead={false}
+                          strokeWidth={58}
+                          curveness={0.6}
+                          startAnchor="right"
+                          endAnchor="left"
+                          color={
+                            fineTune[suboutcome] === 'off' ||
+                            !fineTune[suboutcome]
+                              ? 'rgba(0,0,0,0.05)'
+                              : transparentize(0.8, outcome.color)
+                          }
+                        />
+                      </>
                     ))}
                   </div>
                   <div className="outcome-wrapper">
@@ -242,33 +286,6 @@ const Sankey: React.FC = () => {
                     />
                     <span>{outcome.title}</span>
                   </div>
-                  {Object.keys(children).map(child => {
-                    return (
-                      <Xarrow
-                        key={`${outcome.key}-${child}`}
-                        start={`${outcome.key}-${child}`}
-                        end={`${child}-${outcome.key}`}
-                        showHead={false}
-                        strokeWidth={58}
-                        curveness={0.6}
-                        startAnchor="right"
-                        endAnchor="left"
-                        color={
-                          fineTune[child] === 'off' || !fineTune[child]
-                            ? 'rgba(0,0,0,0.05)'
-                            : transparentize(0.8, outcome.color)
-                        }
-                      />
-                    );
-                  })}
-                  {Object.values(children).map(child => {
-                    return child.map(item => (
-                      <>
-                        <div>{outcome.key}</div>
-                        <div>{item}</div>
-                      </>
-                    ));
-                  })}
                 </Outcome>
               );
             })}
@@ -316,7 +333,6 @@ const Sankey: React.FC = () => {
                           />
                         );
                       })}
-
                     {Object.values(outcomes)
                       .filter(outcome =>
                         outcome.suboutcomes.includes(suboutcome.key),
