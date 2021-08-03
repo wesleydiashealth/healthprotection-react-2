@@ -1,31 +1,25 @@
 [
   {
     "id": "menu_1",
-    "title": "The Science behind us",
+    "title": "How it Works",
     "target": "#",
-    "class": "has-background"
+    "class": ""
   },
   {
     "id": "menu_2",
-    "title": "About Us",
+    "title": "Knowledge Base",
     "target": "#",
     "class": ""
   },
   {
     "id": "menu_3",
-    "title": "Products",
-    "target": "#",
-    "class": ""
-  },
-  {
-    "id": "menu_4",
     "title": "Blog",
     "target": "#",
     "class": ""
   },
   {
-    "id": "menu_5",
-    "title": "Sign In",
+    "id": "menu_4",
+    "title": "Contact",
     "target": "#",
     "class": ""
   }

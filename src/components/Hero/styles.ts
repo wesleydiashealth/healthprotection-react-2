@@ -4,8 +4,6 @@ const Container = styled.section`
   display: flex;
   align-items: center;
 
-  height: calc(100vh - 191px);
-
   position: relative;
 
   > div {
@@ -16,34 +14,62 @@ const Container = styled.section`
 export const HeroContent = styled.div`
   margin: 80px 0 0;
 
+  h1,
+  h2,
+  p {
+    display: block;
+
+    max-width: 520px;
+    color: #565656;
+  }
+
   h1 {
     margin-bottom: 40px;
 
-    max-width: 50%;
-
-    color: #565656;
-
     text-transform: uppercase;
 
+    font-weight: 700;
     font-size: 52px;
     line-height: 62px;
+  }
 
-    span {
-      margin-top: 20px;
+  h2 {
+    margin-bottom: 42px;
 
-      display: block;
-      color: #7664c8;
+    font-size: 18px;
+    line-height: 24px;
+  }
 
-      font-weight: 700;
-      font-size: 72px;
-      line-height: 88px;
-    }
+  p {
+    margin-bottom: 20px;
+
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  a {
+    background: #7664c8;
+    padding: 20px 40px;
+    border-radius: 42px;
+
+    max-width: 270px;
+
+    color: white;
+
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .hero-list {
+    margin-top: 140px;
     padding: 40px 0;
-
-    background: #fafafa;
 
     ul {
       margin-bottom: 160px;
@@ -54,22 +80,40 @@ export const HeroContent = styled.div`
       list-style: none;
 
       li {
+        display: flex;
+        align-items: center;
+
+        position: relative;
+
         color: #4f4f4f;
 
+        max-width: 200px;
+
         & + li {
-          margin-left: 40px;
+          margin-left: 24px;
+          padding-left: 24px;
+
+          &:before {
+            content: '';
+            border-left: 2px solid #e0e0e0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+          }
         }
 
         svg {
-          margin-bottom: 10px;
+          margin-right: 20px;
         }
 
         strong {
           display: block;
 
           font-weight: 700;
-          font-size: 24px;
-          line-height: 32px;
+          font-size: 18px;
+          line-height: 24px;
+          color: #db71af;
         }
 
         span {
@@ -77,30 +121,11 @@ export const HeroContent = styled.div`
         }
       }
     }
-
-    .start-now {
-      text-align: center;
-
-      a {
-        text-transform: uppercase;
-        text-decoration: none;
-
-        font-size: 14px;
-        line-height: 14px;
-
-        color: #707070;
-
-        strong {
-          display: block;
-
-          font-weight: 700;
-        }
-      }
-    }
   }
 `;
 
 export const HeroImage = styled.div`
+  padding-right: 80px;
   position: absolute;
   top: 0;
   right: 0;

@@ -1,31 +1,24 @@
 import React from 'react';
-import {
-  IoChatbubblesOutline,
-  IoOptionsOutline,
-  IoShieldCheckmarkOutline,
-} from 'react-icons/io5';
-import { HiOutlineArrowNarrowDown } from 'react-icons/hi';
-import { BsChevronCompactRight } from 'react-icons/bs';
+import { FaExclamationCircle } from 'react-icons/fa';
+import { GiMicroscope } from 'react-icons/gi';
+import { ImPlay } from 'react-icons/im';
 
 import Container, { HeroContent, HeroImage } from './styles';
-import heroImg from '../../assets/hero_image.png';
+import heroImg from '../../assets/header_hero.svg';
 
 const Hero: React.FC = () => {
   const steps = [
     {
-      icon: <IoChatbubblesOutline size={52} color="#7664C8" />,
-      title: 'Step 1',
-      description: 'Talk a little about yourself',
+      icon: <ImPlay size={90} color="#DB71AF" />,
+      title: 'Watch the Video',
     },
     {
-      icon: <IoOptionsOutline size={52} color="#DB71AF" />,
-      title: 'Step 2',
-      description: 'Fine-tune your desired outcomes',
+      icon: <GiMicroscope size={90} color="#DB71AF" />,
+      title: 'The Science behind us',
     },
     {
-      icon: <IoShieldCheckmarkOutline size={52} color="#1BC9BD" />,
-      title: 'Step 3',
-      description: 'Check information and be secure',
+      icon: <FaExclamationCircle size={90} color="#DB71AF" />,
+      title: 'Our Solid Foundation',
     },
   ];
 
@@ -33,32 +26,26 @@ const Hero: React.FC = () => {
     <Container id="hero">
       <HeroContent>
         <div className="content-wrapper">
-          <h1>
-            Get pure science-based dietary supplement <span>in 3 steps</span>
-          </h1>
+          <h1>Deep level personalization</h1>
+          <h2>
+            A new approach to understand your nutritional needs through science,
+            true Artificial Intelligence and top-level products.
+          </h2>
+          <p>Try now by taking 3 quick steps</p>
+          <a href="#step_1">Go to Step 1</a>
         </div>
         <div className="hero-list">
           <div className="content-wrapper">
             <ul>
-              {steps.map((step, index) => (
+              {steps.map(step => (
                 <React.Fragment key={step.title}>
                   <li>
                     {step.icon}
                     <strong>{step.title}</strong>
-                    <span>{step.description}</span>
                   </li>
-                  {index < steps.length - 1 && (
-                    <BsChevronCompactRight size={92} color="#EFEFEF" />
-                  )}
                 </React.Fragment>
               ))}
             </ul>
-            <div className="start-now">
-              <a href="#step_1">
-                Start <strong>now</strong>
-              </a>
-              <HiOutlineArrowNarrowDown size={36} color="#707070" />
-            </div>
           </div>
         </div>
       </HeroContent>
