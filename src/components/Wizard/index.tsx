@@ -97,9 +97,9 @@ const Wizard: React.FC = () => {
               totalSlides={8}
               visibleSlides={3}
               step={1}
+              currentSlide={-1}
             >
               <Slider>
-                <Slide index={0} />
                 <Slide index={1}>
                   <Step1 />
                 </Slide>

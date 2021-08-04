@@ -26,7 +26,7 @@ const Step4: React.FC = () => {
     value => {
       if (value === 'none') {
         context.updateStep('step4', { isCompleted: true, answers: [value] });
-        carouselContext.setStoreState({ currentSlide: 4 });
+        carouselContext.setStoreState({ currentSlide: 3 });
 
         return;
       }
@@ -101,7 +101,7 @@ const Step4: React.FC = () => {
               isCompleted: true,
               answers: step?.answers,
             });
-            carouselContext.setStoreState({ currentSlide: 4 });
+            carouselContext.setStoreState({ currentSlide: 3 });
           }}
         >
           Next Question

@@ -94,7 +94,7 @@ const Step5: React.FC = () => {
                 answers: option.api,
               });
               if (option.api !== 'yes') {
-                carouselContext.setStoreState({ currentSlide: 5 });
+                carouselContext.setStoreState({ currentSlide: 4 });
               } else {
                 setStepNumber('5.1');
                 setStepTitle('Do you take any prescribed medications?');
@@ -233,7 +233,7 @@ const Step5: React.FC = () => {
               isCompleted: true,
               answers: step?.answers,
             });
-            carouselContext.setStoreState({ currentSlide: 5 });
+            carouselContext.setStoreState({ currentSlide: 4 });
           }}
         >
           Next Question

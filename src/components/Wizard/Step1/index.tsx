@@ -59,7 +59,7 @@ const Step1: React.FC = () => {
                 isCompleted: true,
                 answers: answer.api,
               });
-              carouselContext.setStoreState({ currentSlide: 1 });
+              carouselContext.setStoreState({ currentSlide: 0 });
             }}
             isActive={step.answers === answer.api}
             name="age"

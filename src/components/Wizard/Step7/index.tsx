@@ -43,7 +43,7 @@ const Step7: React.FC = () => {
           name="reset"
           onClick={() => {
             context.resetSteps();
-            carouselContext.setStoreState({ currentSlide: 0 });
+            carouselContext.setStoreState({ currentSlide: -1 });
           }}
         >
           Reset
