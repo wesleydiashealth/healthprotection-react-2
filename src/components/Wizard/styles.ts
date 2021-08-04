@@ -52,6 +52,64 @@ const Container = styled.div`
   }
 `;
 
+export const SliderNavigation = styled.div`
+  padding: 10px 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  > button {
+    border: none;
+    background: transparent;
+
+    display: flex;
+    align-items: center;
+
+    color: #565656;
+
+    font-size: 14px;
+    line-height: 14px;
+
+    &:disabled {
+      color: ${transparentize(0.5, '#565656')};
+    }
+  }
+
+  .carousel__back-button {
+    svg {
+      margin-right: 10px;
+    }
+  }
+
+  .carousel__next-button {
+    svg {
+      margin-left: 10px;
+    }
+  }
+
+  .carousel__dot-group {
+    margin: 0 20px;
+
+    display: flex;
+
+    button {
+      margin: 0 5px;
+      border: none;
+
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+
+      background: #c6c6c6;
+    }
+
+    .carousel__dot--selected {
+      background: ${transparentize(0.5, '#7664c8')};
+    }
+  }
+`;
+
 export const StepContainer = styled.div<StepContainerProps>`
   display: flex;
   flex-direction: column;

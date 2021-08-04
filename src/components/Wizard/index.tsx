@@ -1,14 +1,26 @@
 import React, { useCallback, useRef } from 'react';
 import ReactToolTip from 'react-tooltip';
+import {
+  HiOutlineArrowNarrowLeft,
+  HiOutlineArrowNarrowRight,
+  HiQuestionMarkCircle,
+} from 'react-icons/hi';
 import { Form } from '@unform/web';
 import { FormHandles } from '@unform/core';
-import { CarouselProvider, Slider, Slide } from 'pure-react-carousel';
+import {
+  CarouselProvider,
+  Slider,
+  Slide,
+  ButtonBack,
+  ButtonNext,
+  DotGroup,
+} from 'pure-react-carousel';
 import * as Yup from 'yup';
 import { IoChatbubblesOutline } from 'react-icons/io5';
-import { HiQuestionMarkCircle } from 'react-icons/hi';
+
 import getValidationErrors from '../../utils/getValidationErrors';
 
-import Container from './styles';
+import Container, { SliderNavigation } from './styles';
 import 'react-multi-carousel/lib/styles.css';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 
@@ -110,6 +122,21 @@ const Wizard: React.FC = () => {
                   <Step7 />
                 </Slide>
               </Slider>
+              <SliderNavigation>
+                <ButtonBack>
+                  <>
+                    <HiOutlineArrowNarrowLeft size={20} />
+                    Prev
+                  </>
+                </ButtonBack>
+                <DotGroup showAsSelectedForCurrentSlideOnly />
+                <ButtonNext>
+                  <>
+                    Next
+                    <HiOutlineArrowNarrowRight size={20} />
+                  </>
+                </ButtonNext>
+              </SliderNavigation>
             </CarouselProvider>
           </Carousel>
         </WizardProvider>
