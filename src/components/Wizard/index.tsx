@@ -1,9 +1,11 @@
 import React, { useCallback, useRef } from 'react';
+import ReactToolTip from 'react-tooltip';
 import { Form } from '@unform/web';
 import { FormHandles } from '@unform/core';
 import { CarouselProvider, Slider, Slide } from 'pure-react-carousel';
 import * as Yup from 'yup';
 import { IoChatbubblesOutline } from 'react-icons/io5';
+import { HiQuestionMarkCircle } from 'react-icons/hi';
 import getValidationErrors from '../../utils/getValidationErrors';
 
 import Container from './styles';
@@ -46,7 +48,26 @@ const Wizard: React.FC = () => {
     <Container id="step_1">
       <div className="step-intro content-wrapper">
         <IoChatbubblesOutline size={52} color="#7664C8" />
-        <h2>Step 1</h2>
+        <h2>
+          Step 1
+          <HiQuestionMarkCircle
+            className="tooltip-icon"
+            size={20}
+            color="#7664C8"
+            data-tip="<strong>Step 2</strong><span>We already made a pre-selection...</span>"
+            data-for="wizard-title-tooltip"
+          />
+          <ReactToolTip
+            id="wizard-title-tooltip"
+            className="wizard-title-tooltip"
+            place="bottom"
+            type="light"
+            effect="solid"
+            offset={{ top: 10, left: 10 }}
+            html
+            backgroundColor="#fff"
+          />
+        </h2>
         <h3>
           <strong>Start</strong> by talking a little about yourself
         </h3>

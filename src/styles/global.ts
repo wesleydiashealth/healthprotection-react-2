@@ -39,4 +39,8 @@ export default createGlobalStyle`
     max-width: 1800px;
     width: 100%;
   }
+
+  .mb-10 {
+    margin-bottom: 10px !important;
+  }
 `;

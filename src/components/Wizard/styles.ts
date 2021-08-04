@@ -88,6 +88,17 @@ export const StepContainer = styled.div<StepContainerProps>`
     font-weight: 500;
     font-size: 14px;
     line-height: 22px;
+
+    &:first-of-type {
+      min-height: 44px;
+    }
+  }
+
+  .secondary-question {
+    margin-top: 40px;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: flex-end;
   }
 
   .completed-icon {
