@@ -16,7 +16,7 @@ const Step2: React.FC = () => {
   const context = useWizard();
   const { steps, questions } = context;
   const { step2: step, step2_1: subStep, step1: previousStep } = steps;
-  const { 2: currentQuestion } = questions;
+  const { 2: currentQuestion } = questions || {};
 
   const carouselContext = useContext(CarouselContext);
 
@@ -81,7 +81,7 @@ const Step2: React.FC = () => {
                 answers: answer.api,
               });
               if (answer.api !== 'female')
-                carouselContext.setStoreState({ currentSlide: 1 });
+                carouselContext.setStoreState({ currentSlide: 2 });
             }}
             isActive={step?.answers === answer.api}
             name="gender"
@@ -103,7 +103,7 @@ const Step2: React.FC = () => {
                   isCompleted: true,
                   answers: option.api,
                 });
-                carouselContext.setStoreState({ currentSlide: 1 });
+                carouselContext.setStoreState({ currentSlide: 2 });
               }}
               isActive={subStep?.answers === option.api}
               name="female_condition"

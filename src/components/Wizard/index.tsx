@@ -34,6 +34,7 @@ import Step4 from './Step4';
 import Step5 from './Step5';
 import Step6 from './Step6';
 import Step7 from './Step7';
+import Step8 from './Step8';
 
 const Wizard: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
@@ -95,9 +96,8 @@ const Wizard: React.FC = () => {
               naturalSlideWidth={400}
               naturalSlideHeight={800}
               totalSlides={8}
-              visibleSlides={3}
+              visibleSlides={1}
               step={1}
-              currentSlide={-1}
             >
               <Slider>
                 <Slide index={1}>
@@ -120,6 +120,9 @@ const Wizard: React.FC = () => {
                 </Slide>
                 <Slide index={7}>
                   <Step7 />
+                </Slide>
+                <Slide index={8}>
+                  <Step8 />
                 </Slide>
               </Slider>
               <SliderNavigation>

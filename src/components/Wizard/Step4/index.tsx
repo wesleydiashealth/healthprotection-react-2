@@ -14,7 +14,7 @@ const Step4: React.FC = () => {
   const context = useWizard();
   const { steps, questions } = context;
   const { step4: step, step3: previousStep } = steps;
-  const { 7: currentQuestion } = questions;
+  const { 7: currentQuestion } = questions || {};
 
   const carouselContext = useContext(CarouselContext);
 
@@ -26,7 +26,7 @@ const Step4: React.FC = () => {
     value => {
       if (value === 'none') {
         context.updateStep('step4', { isCompleted: true, answers: [value] });
-        carouselContext.setStoreState({ currentSlide: 3 });
+        carouselContext.setStoreState({ currentSlide: 4 });
 
         return;
       }
@@ -101,7 +101,7 @@ const Step4: React.FC = () => {
               isCompleted: true,
               answers: step?.answers,
             });
-            carouselContext.setStoreState({ currentSlide: 3 });
+            carouselContext.setStoreState({ currentSlide: 4 });
           }}
         >
           Next Question

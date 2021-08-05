@@ -216,6 +216,61 @@
   },
   {
     "key": "step-6",
+    "title": "Medications",
+    "label": "Do you take any prescribed medications?",
+    "tooltip": "We need to know if you take any drug so we can recommend a safe mix and match without any interactions. Don´t worry, this information is protected.",
+    "options": [
+      {
+        "value": "yes",
+        "label": "Yes"
+      },
+      {
+        "value": "no",
+        "label": "No"
+      }
+    ],
+    "substep": {
+      "key": "step-6-1",
+      "label": "What kind?",
+      "tooltip": "Depending on the kind of drug you take there are different kinds of interactions.",
+      "options": [
+        {
+          "value": "diabetes-medication",
+          "label": "Diabetes Medication"
+        },
+        {
+          "value": "blood-pressure-medication",
+          "label": "Blood Pressure Medication"
+        },
+        {
+          "value": "immunosuppressant-medication",
+          "label": "Immunosuppressant Medication"
+        },
+        {
+          "value": "antiacids",
+          "label": "Antiacids"
+        },
+        {
+          "value": "psychotropic-medication",
+          "label": "Psychotropic Medication"
+        },
+        {
+          "value": "asthma-medication",
+          "label": "Asthma Medication"
+        },
+        {
+          "value": "antiallergics",
+          "label": "Antiallergics"
+        },
+        {
+          "value": "thyroid-medication",
+          "label": "Thyroid Medication"
+        }
+      ]
+    }
+  },
+  {
+    "key": "step-7",
     "title": "Categories",
     "label": "Do you fit in any of these categories?",
     "tooltip": "We need to ask this because we cannot make any recommendation without the supervision of your doctor if you find yourself in any of the answers.",

@@ -10,7 +10,6 @@ import Autocomplete from '@material-ui/lab/Autocomplete';
 import TextField from '@material-ui/core/TextField';
 
 import { StepContainer } from '../styles';
-import formSteps from '../../../form.json';
 
 import Button from '../../Button';
 
@@ -25,12 +24,10 @@ interface MedicationData {
 }
 
 const Step5: React.FC = () => {
-  // const currentStep = formSteps[4];
-
   const context = useWizard();
   const { steps, questions } = context;
   const { step5: step, step4: previousStep } = steps;
-  const { 8: currentQuestion } = questions;
+  const { 8: currentQuestion } = questions || {};
 
   const subSteps = [steps.step5_1, steps.step5_2, steps.step5_3, steps.step5_4];
 
@@ -38,9 +35,15 @@ const Step5: React.FC = () => {
     .length;
 
   const [stepNumber, setStepNumber] = useState<string>('5');
-  const [stepTitle, setStepTitle] = useState<string>(currentQuestion.label);
+  const [stepTitle, setStepTitle] = useState<string>(
+    currentQuestion.label || '',
+  );
 
   const carouselContext = useContext(CarouselContext);
+
+  const wizardSteps = Object.keys(steps).filter(
+    item => !item.includes('_'),
+  ).length;
 
   const handleButtonClick = useCallback(
     (medicationObject: MedicationData[], updatedStep: string) => {
@@ -79,9 +82,26 @@ const Step5: React.FC = () => {
         />
       )}
       <span>
-        Question {stepNumber}/{formSteps.length}
+        Question {stepNumber}/{wizardSteps}
       </span>
-      <strong className="mb-10">{stepTitle}</strong>
+      <strong>{stepTitle}</strong>
+      <HiQuestionMarkCircle
+        className="tooltip-icon"
+        size={20}
+        color="#7664C8"
+        data-tip={`<strong>${stepTitle}</strong><span>${stepTitle}</span>`}
+        data-for="step_5_medications_tooltip"
+      />
+      <ReactToolTip
+        id="step_5_medications_tooltip"
+        className="step-tooltip"
+        place="bottom"
+        type="light"
+        effect="solid"
+        offset={{ top: 10, left: 100 }}
+        html
+        backgroundColor="#fff"
+      />
       {step?.answers !== 'yes' &&
         currentQuestion?.answers &&
         Object.values(currentQuestion.answers).map(option => (
@@ -94,7 +114,7 @@ const Step5: React.FC = () => {
                 answers: option.api,
               });
               if (option.api !== 'yes') {
-                carouselContext.setStoreState({ currentSlide: 4 });
+                carouselContext.setStoreState({ currentSlide: 5 });
               } else {
                 setStepNumber('5.1');
                 setStepTitle('Do you take any prescribed medications?');
@@ -109,23 +129,6 @@ const Step5: React.FC = () => {
         ))}
       {step?.answers === 'yes' && currentQuestion?.answers && (
         <>
-          <HiQuestionMarkCircle
-            className="tooltip-icon"
-            size={20}
-            color="#7664C8"
-            data-tip={`<strong>${stepTitle}</strong><span>${stepTitle}</span>`}
-            data-for="step_5_medications_tooltip"
-          />
-          <ReactToolTip
-            id="step_5_medications_tooltip"
-            className="step-tooltip"
-            place="bottom"
-            type="light"
-            effect="solid"
-            offset={{ top: 10, left: 100 }}
-            html
-            backgroundColor="#fff"
-          />
           <Autocomplete
             multiple
             id="medications_daily"
@@ -162,65 +165,6 @@ const Step5: React.FC = () => {
               />
             )}
           />
-          <div className="secondary-question">
-            <HiQuestionMarkCircle
-              className="secondary-tooltip-icon"
-              size={20}
-              color="#7664C8"
-              data-tip={`<strong>${stepTitle}</strong><span>${stepTitle}</span>`}
-              data-for="step_5_drugs_tooltip"
-            />
-            <ReactToolTip
-              id="step_5_drugs_tooltip"
-              className="step-tooltip"
-              place="bottom"
-              type="light"
-              effect="solid"
-              offset={{ top: 10, left: 100 }}
-              html
-              backgroundColor="#fff"
-            />
-            <strong className="mb-10">
-              Do you drink alcohol, smoke, or take recreational drugs?{' '}
-              <span>(Data secured by GDPR)</span>
-            </strong>
-          </div>
-          <Autocomplete
-            multiple
-            id="drugs_daily"
-            options={medications}
-            getOptionLabel={option => option.title}
-            disabled={step?.isCompleted}
-            onChange={(event, newValue) => {
-              handleButtonClick(newValue, 'step5_3');
-            }}
-            renderInput={params => (
-              <TextField
-                {...params}
-                variant="standard"
-                label="Daily Use"
-                placeholder="Type your medications"
-              />
-            )}
-          />
-          <Autocomplete
-            multiple
-            id="drugs_occasionally"
-            options={medications}
-            getOptionLabel={option => option.title}
-            disabled={step?.isCompleted}
-            onChange={(event, newValue) => {
-              handleButtonClick(newValue, 'step5_4');
-            }}
-            renderInput={params => (
-              <TextField
-                {...params}
-                variant="standard"
-                label="Occasionally Use"
-                placeholder="Type your medications"
-              />
-            )}
-          />
         </>
       )}
 
@@ -233,7 +177,7 @@ const Step5: React.FC = () => {
               isCompleted: true,
               answers: step?.answers,
             });
-            carouselContext.setStoreState({ currentSlide: 4 });
+            carouselContext.setStoreState({ currentSlide: 5 });
           }}
         >
           Next Question

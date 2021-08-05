@@ -50,6 +50,28 @@ const Container = styled.div`
       line-height: 24px;
     }
   }
+
+  /* max-width constrains the width of our carousel to 550, but shrinks on small devices */
+  .carousel__container {
+    max-width: 360px;
+    margin: auto;
+  }
+
+  /* gives us the illusion of a "centered" slide */
+  .carousel__slider {
+    padding-left: calc((100% - 400px) / 2);
+    padding-right: calc((100% - 400px) / 2);
+  }
+
+  /* gives us the illusion of spaces between the slides */
+  .carousel__inner-slide {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
 `;
 
 export const SliderNavigation = styled.div`
@@ -117,6 +139,9 @@ export const StepContainer = styled.div<StepContainerProps>`
 
   margin: 20px;
   padding: 24px;
+
+  min-width: 360px;
+  max-width: 360px;
 
   background: #ffffff;
 
