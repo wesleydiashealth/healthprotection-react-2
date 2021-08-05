@@ -10,7 +10,7 @@ const Container = styled.div<ContainerProps>`
     css`
       .step-intro {
         > svg {
-          fill: #1bc9bd !important;
+          color: #1bc9bd;
         }
 
         h3 {
@@ -28,8 +28,8 @@ const Container = styled.div<ContainerProps>`
 
     text-align: center;
 
-    > svg {
-      fill: #707070;
+    .locked-icon {
+      margin-right: 5px;
     }
 
     h2,
@@ -68,6 +68,34 @@ const Container = styled.div<ContainerProps>`
 
       font-size: 18px;
       line-height: 26px;
+    }
+
+    .tooltip-icon {
+      margin-left: 5px;
+      display: inline-flex;
+    }
+
+    .habits-title-tooltip {
+      width: 320px;
+      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.11);
+      border-radius: 20px;
+
+      text-align: left;
+      font-size: 14px;
+      line-height: 22px;
+
+      strong {
+        display: block;
+        margin-bottom: 10px;
+        font-size: 20px;
+        line-height: 28px;
+        font-weight: 500;
+      }
+
+      span {
+        font-size: 14px;
+        line-height: 22px;
+      }
     }
 
     .step-disabled {

@@ -1,12 +1,28 @@
 import styled, { css } from 'styled-components';
 import { transparentize } from 'polished';
 
+interface ContainerProps {
+  isActive?: boolean;
+}
+
 interface StepContainerProps {
   isCompleted?: boolean;
   isDisabled?: boolean;
 }
 
-const Container = styled.div`
+const Container = styled.div<ContainerProps>`
+  ${props =>
+    props.isActive &&
+    css`
+      .step-intro {
+        h3 {
+          strong {
+            color: #7664c8;
+          }
+        }
+      }
+    `}
+
   margin: 0 auto;
   padding: 40px 0;
 
@@ -17,6 +33,10 @@ const Container = styled.div`
 
     text-align: center;
 
+    .locked-icon {
+      margin-right: 5px;
+    }
+
     h2,
     h3 {
       margin-bottom: 10px;
@@ -25,6 +45,9 @@ const Container = styled.div`
     }
 
     h2 {
+      display: flex;
+      justify-content: center;
+
       font-weight: 700;
 
       font-size: 33px;
@@ -39,7 +62,6 @@ const Container = styled.div`
 
       strong {
         font-weight: 600;
-        color: #7664c8;
       }
     }
 
@@ -48,6 +70,50 @@ const Container = styled.div`
 
       font-size: 18px;
       line-height: 24px;
+    }
+
+    .tooltip-icon {
+      margin-left: 5px;
+      display: inline-flex;
+    }
+
+    .wizard-title-tooltip {
+      width: 320px;
+      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.11);
+      border-radius: 20px;
+
+      text-align: left;
+      font-size: 14px;
+      line-height: 22px;
+
+      strong {
+        display: block;
+        margin-bottom: 10px;
+        font-size: 20px;
+        line-height: 28px;
+        font-weight: 500;
+      }
+
+      span {
+        font-size: 14px;
+        line-height: 22px;
+      }
+    }
+
+    .step-disabled {
+      margin-bottom: 10px;
+
+      strong {
+        font-weight: 600;
+      }
+
+      &,
+      span {
+        color: #707070;
+
+        font-size: 14px;
+        line-height: 22px;
+      }
     }
   }
 

@@ -34,10 +34,6 @@ const Container = styled.div<ContainerProps>`
     props.isActive &&
     css`
       .step-intro {
-        > svg {
-          color: #db71af;
-        }
-
         h3 {
           strong {
             color: #db71af;
@@ -53,6 +49,10 @@ const Container = styled.div<ContainerProps>`
 
     text-align: center;
     color: #565656;
+
+    .locked-icon {
+      margin-right: 5px;
+    }
 
     h2,
     h3 {

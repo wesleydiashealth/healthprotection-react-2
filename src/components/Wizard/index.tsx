@@ -4,6 +4,7 @@ import {
   HiOutlineArrowNarrowLeft,
   HiOutlineArrowNarrowRight,
   HiQuestionMarkCircle,
+  HiLockClosed,
 } from 'react-icons/hi';
 import { Form } from '@unform/web';
 import { FormHandles } from '@unform/core';
@@ -39,6 +40,8 @@ import Step8 from './Step8';
 const Wizard: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
 
+  const previousStep = { isCompleted: true };
+
   const handleSubmit = useCallback(async (data: HTMLFormElement) => {
     try {
       formRef.current?.setErrors({});
@@ -58,15 +61,23 @@ const Wizard: React.FC = () => {
   }, []);
 
   return (
-    <Container id="step_1">
+    <Container id="step_1" isActive={previousStep.isCompleted}>
       <div className="step-intro content-wrapper">
-        <IoChatbubblesOutline size={52} color="#7664C8" />
+        <IoChatbubblesOutline
+          size={52}
+          color={previousStep.isCompleted ? '#7664C8' : '#565656'}
+        />
         <h2>
+          {!previousStep.isCompleted && (
+            <>
+              <HiLockClosed size={20} className="locked-icon" />
+            </>
+          )}
           Step 1
           <HiQuestionMarkCircle
             className="tooltip-icon"
             size={20}
-            color="#7664C8"
+            color={previousStep.isCompleted ? '#7664C8' : '#565656'}
             data-tip="<strong>Step 2</strong><span>We already made a pre-selection...</span>"
             data-for="wizard-title-tooltip"
           />
@@ -81,6 +92,12 @@ const Wizard: React.FC = () => {
             backgroundColor="#fff"
           />
         </h2>
+        {!previousStep.isCompleted && (
+          <div className="step-disabled">
+            <strong>Step Blocked.</strong>
+          </div>
+        )}
+
         <h3>
           <strong>Start</strong> by talking a little about yourself
         </h3>

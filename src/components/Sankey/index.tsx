@@ -134,6 +134,8 @@ const Sankey: React.FC = () => {
         });
 
         setNutraceutics(updatedNutraceutics);
+
+        context.updateStep('step2', { isCompleted: true });
       } else {
         setNutraceutics(
           nutraceutics.map(nutraceutic => {
@@ -154,42 +156,44 @@ const Sankey: React.FC = () => {
 
           setConnections(connections);
         });
+
+        context.updateStep('step2', { isCompleted: false });
       }
     },
-    [nutraceutics, connections, outcomes],
+    [nutraceutics, connections, outcomes, context],
   );
 
   return (
     <Container id="step_2" isActive={previousStep.isCompleted}>
       <div className="step-intro content-wrapper">
-        <IoOptionsOutline size={52} />
+        <IoOptionsOutline
+          size={52}
+          color={previousStep.isCompleted ? '#DB71AF' : '#565656'}
+        />
         <h2>
-          Step 2
-          {previousStep.isCompleted ? (
+          {!previousStep.isCompleted && (
             <>
-              <HiQuestionMarkCircle
-                className="tooltip-icon"
-                size={20}
-                color="#DB71AF"
-                data-tip="<strong>Step 2</strong><span>We already made a pre-selection...</span>"
-                data-for="sankey-title-tooltip"
-              />
-              <ReactToolTip
-                id="sankey-title-tooltip"
-                className="sankey-title-tooltip"
-                place="bottom"
-                type="light"
-                effect="solid"
-                offset={{ top: 10, left: 10 }}
-                html
-                backgroundColor="#fff"
-              />
-            </>
-          ) : (
-            <>
-              <HiLockClosed size={20} />
+              <HiLockClosed size={20} className="locked-icon" />
             </>
           )}
+          Step 2
+          <HiQuestionMarkCircle
+            className="tooltip-icon"
+            size={20}
+            color={previousStep.isCompleted ? '#DB71AF' : '#565656'}
+            data-tip="<strong>Step 2</strong><span>We already made a pre-selection...</span>"
+            data-for="sankey-title-tooltip"
+          />
+          <ReactToolTip
+            id="sankey-title-tooltip"
+            className="sankey-title-tooltip"
+            place="bottom"
+            type="light"
+            effect="solid"
+            offset={{ top: 10, left: 10 }}
+            html
+            backgroundColor="#fff"
+          />
         </h2>
 
         {!previousStep.isCompleted && (

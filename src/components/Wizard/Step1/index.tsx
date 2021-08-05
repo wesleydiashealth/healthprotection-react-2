@@ -15,6 +15,8 @@ const Step1: React.FC = () => {
   const { step1: step } = steps;
   const { 1: currentQuestion } = questions || {};
 
+  const previousStep = { isCompleted: true };
+
   const carouselContext = useContext(CarouselContext);
 
   const wizardSteps = Object.keys(steps).filter(
@@ -22,7 +24,10 @@ const Step1: React.FC = () => {
   ).length;
 
   return (
-    <StepContainer isCompleted={step.isCompleted}>
+    <StepContainer
+      isCompleted={step.isCompleted}
+      isDisabled={!previousStep?.isCompleted}
+    >
       {step.isCompleted && (
         <HiOutlineCheckCircle
           className="completed-icon"
