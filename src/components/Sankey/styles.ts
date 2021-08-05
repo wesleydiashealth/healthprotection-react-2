@@ -285,6 +285,8 @@ export const SubOutcome = styled.div<SubOutcomeProps>`
     span {
       padding-right: 5px;
 
+      display: block;
+
       font-weight: 600;
       font-size: 16px;
       line-height: 22px;
