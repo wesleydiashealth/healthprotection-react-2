@@ -52,8 +52,6 @@ const Container = styled.div<ContainerProps>`
         margin-right: 10px;
 
         font-weight: 700;
-
-        color: #1bc9bd;
       }
     }
 
