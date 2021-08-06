@@ -117,7 +117,7 @@ const Step5: React.FC = () => {
                 carouselContext.setStoreState({ currentSlide: 5 });
               } else {
                 setStepNumber('5.1');
-                setStepTitle('Do you take any prescribed medications?');
+                setStepTitle('Select below which medications you use:');
               }
             }}
             isActive={step?.answers === option.api}

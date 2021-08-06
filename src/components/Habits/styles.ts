@@ -47,14 +47,6 @@ const Container = styled.div<ContainerProps>`
 
       font-size: 33px;
       line-height: 40px;
-
-      strong {
-        margin-right: 10px;
-
-        font-weight: 700;
-
-        color: #1bc9bd;
-      }
     }
 
     h3 {
@@ -119,6 +111,83 @@ const Container = styled.div<ContainerProps>`
 
         font-size: 14px;
         line-height: 22px;
+      }
+    }
+  }
+`;
+
+export const HabitsContainer = styled.div`
+  display: flex;
+  flex-flow: row wrap;
+`;
+
+export const HabitContainer = styled.div`
+  margin-bottom: 40px;
+
+  display: flex;
+  align-items: center;
+
+  width: calc(50% - 20px);
+
+  &:nth-child(odd) {
+    margin-right: 40px;
+  }
+
+  .habit-intro {
+    margin-right: 40px;
+
+    display: flex;
+    align-items: center;
+
+    width: 320px;
+
+    img {
+      margin-right: 20px;
+
+      max-width: 120px;
+      height: auto;
+    }
+
+    h4 {
+      color: #565656;
+
+      font-weight: 600;
+
+      font-size: 18px;
+      line-height: 26px;
+    }
+  }
+
+  .habit-content {
+    p {
+      margin-bottom: 10px;
+
+      font-size: 14px;
+      line-height: 22px;
+    }
+
+    .Dropdown-root {
+      max-width: 244px;
+
+      font-size: 14px;
+      line-height: 22px;
+
+      .Dropdown-control {
+        border-radius: 12px;
+        padding: 8px 52px 8px 20px;
+
+        min-height: 44px;
+
+        display: flex;
+        align-items: center;
+      }
+
+      .Dropdown-menu {
+        border-radius: 12px;
+      }
+
+      .Dropdown-arrow {
+        top: 19px;
       }
     }
   }

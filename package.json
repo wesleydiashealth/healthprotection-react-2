@@ -19,6 +19,7 @@
     "pure-react-carousel": "^1.27.6",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-dropdown": "^1.9.2",
     "react-icons": "^4.2.0",
     "react-loading": "^2.0.3",
     "react-multi-carousel": "^2.6.3",

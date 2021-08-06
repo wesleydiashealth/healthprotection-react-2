@@ -15,7 +15,7 @@ import Button from '../../Button';
 
 import { useWizard } from '../../../contexts/wizard';
 
-import medications from '../../../medications.json';
+import drugs from '../../../drugs.json';
 
 interface MedicationData {
   id: string;
@@ -117,7 +117,7 @@ const Step6: React.FC = () => {
                 carouselContext.setStoreState({ currentSlide: 6 });
               } else {
                 setStepNumber('6.1');
-                setStepTitle('Do you take any prescribed medications?');
+                setStepTitle('Select below which one you use:');
               }
             }}
             isActive={step?.answers === option.api}
@@ -131,8 +131,8 @@ const Step6: React.FC = () => {
         <>
           <Autocomplete
             multiple
-            id="medications_daily"
-            options={medications}
+            id="drugs_daily"
+            options={drugs}
             getOptionLabel={option => option.title}
             disabled={step?.isCompleted}
             onChange={(event, newValue) => {
@@ -149,8 +149,8 @@ const Step6: React.FC = () => {
           />
           <Autocomplete
             multiple
-            id="medications_occasionally"
-            options={medications}
+            id="drugs_occasionally"
+            options={drugs}
             getOptionLabel={option => option.title}
             disabled={step?.isCompleted}
             onChange={(event, newValue) => {
