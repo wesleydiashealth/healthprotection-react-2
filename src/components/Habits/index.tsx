@@ -68,7 +68,26 @@ const Habits: React.FC = () => {
                   src={`${process.env.PUBLIC_URL}/icons/${habit.image}`}
                   alt=""
                 />
-                <h4>{habit.title}</h4>
+                <h4>
+                  {habit.title}
+                  <HiQuestionMarkCircle
+                    className="tooltip-icon"
+                    size={20}
+                    color={previousStep.isCompleted ? '#1bc9bd' : '#565656'}
+                    data-tip={habit.title}
+                    data-for="habit-title-tooltip"
+                  />
+                  <ReactToolTip
+                    id="habit-title-tooltip"
+                    className="habit-title-tooltip"
+                    place="bottom"
+                    type="light"
+                    effect="solid"
+                    offset={{ top: 10, left: 10 }}
+                    html
+                    backgroundColor="#fff"
+                  />
+                </h4>
               </div>
               <div className="habit-content">
                 <p>{habit.question}</p>

@@ -21,6 +21,7 @@ const Container = styled.div<ContainerProps>`
       }
     `}
 
+  margin-top: 100px;
   margin-bottom: 40px;
 
   .step-intro {
@@ -155,6 +156,10 @@ export const HabitContainer = styled.div`
 
       font-size: 18px;
       line-height: 26px;
+
+      svg {
+        margin-left: 5px;
+      }
     }
   }
 
@@ -167,7 +172,7 @@ export const HabitContainer = styled.div`
     }
 
     .Dropdown-root {
-      max-width: 244px;
+      width: 360px;
 
       font-size: 14px;
       line-height: 22px;
