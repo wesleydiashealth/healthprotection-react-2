@@ -2,19 +2,14 @@ import styled from 'styled-components';
 
 const Container = styled.section`
   display: flex;
-  align-items: center;
 
   height: calc(100vh - 191px);
 
   position: relative;
-
-  > div {
-    flex: 1;
-  }
 `;
 
 export const HeroContent = styled.div`
-  margin: 240px 0 0;
+  max-width: 100%;
 
   h1,
   h2,
@@ -26,20 +21,20 @@ export const HeroContent = styled.div`
   }
 
   h1 {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 
     text-transform: uppercase;
 
     font-weight: 700;
-    font-size: 52px;
-    line-height: 62px;
+    font-size: 26px;
+    line-height: 32px;
   }
 
   h2 {
     margin-bottom: 42px;
 
-    font-size: 18px;
-    line-height: 24px;
+    font-size: 14px;
+    line-height: 22px;
   }
 
   p {
@@ -122,6 +117,15 @@ export const HeroContent = styled.div`
           font-size: 14px;
         }
       }
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    h1 {
+      margin-bottom: 40px;
+
+      font-size: 52px;
+      line-height: 62px;
     }
   }
 `;

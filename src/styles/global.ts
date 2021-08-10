@@ -14,7 +14,6 @@ export default createGlobalStyle`
 
   body {
     -webkit-font-smoothing: antialiased;
-
     overflow-x: hidden;
   }
 
@@ -36,8 +35,8 @@ export default createGlobalStyle`
     margin: 0 auto;
     padding: 0 20px;
 
-    max-width: 1800px;
     width: 100%;
+    max-width: 1300px;
   }
 
   .mb-10 {
