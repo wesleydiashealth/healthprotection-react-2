@@ -218,67 +218,116 @@ const Sankey: React.FC = () => {
                 connection => connection === outcome.key,
               );
 
-              const children = Object.values(connections)[connectionIndex];
+              const outcomeConnections =
+                Object.values(connections)[connectionIndex];
+
+              const connectionsQuantity = Object.values(
+                outcomeConnections,
+              ).reduce((acc, current) => {
+                return acc + current.length;
+              }, 0);
+
+              const connectionsLength = Object.values(
+                outcomeConnections,
+              ).filter(connection => !!connection.length).length;
 
               return (
                 <Outcome
                   key={outcome.key}
                   id={outcome.key}
                   color={outcome.color}
-                  suboutcomes={outcome.suboutcomes.length}
+                  suboutcomes={
+                    outcome.suboutcomes.length +
+                    connectionsQuantity -
+                    connectionsLength
+                  }
                 >
                   <div className="exit-anchors anchors">
-                    {Object.values(children).map(child => {
-                      return child.map(item => (
-                        <>
-                          <div
-                            key={`anchor-${outcome.key}-${item}`}
-                            id={`${outcome.key}-${item}`}
-                            className="anchors__item"
-                          />
-                          <Xarrow
-                            key={`${outcome.key}-${item}`}
-                            start={`${outcome.key}-${item}`}
-                            end={`${item}-${outcome.key}`}
-                            showHead={false}
-                            strokeWidth={58}
-                            curveness={0.6}
-                            startAnchor="right"
-                            endAnchor="left"
-                            color={
-                              fineTune[item] === 'off' || !fineTune[item]
-                                ? 'rgba(0,0,0,0.05)'
-                                : transparentize(0.8, outcome.color)
-                            }
-                          />
-                        </>
-                      ));
-                    })}
-                    {outcome.suboutcomes.map(suboutcome => (
-                      <>
-                        <div
-                          key={`anchor-${outcome.key}-${suboutcome}`}
-                          id={`${outcome.key}-${suboutcome}`}
-                          className="anchors__item"
-                        />
-                        <Xarrow
-                          key={`${outcome.key}-${suboutcome}`}
-                          start={`${outcome.key}-${suboutcome}`}
-                          end={`${suboutcome}-${outcome.key}`}
-                          showHead={false}
-                          strokeWidth={58}
-                          curveness={0.6}
-                          startAnchor="right"
-                          endAnchor="left"
-                          color={
-                            fineTune[suboutcome] === 'off' ||
-                            !fineTune[suboutcome]
-                              ? 'rgba(0,0,0,0.05)'
-                              : transparentize(0.8, outcome.color)
-                          }
-                        />
-                      </>
-                    ))}
+                    {Object.values(outcomeConnections).filter(
+                      connection => !!connection.length,
+                    ).length
+                      ? Object.entries(outcomeConnections).map(child => {
+                          return child[1].filter(
+                            connection => !!connection.length,
+                          ).length ? (
+                            child[1]
+                              .filter(nutraceutic => !!nutraceutic.length)
+                              .map(nutraceutic => (
+                                <>
+                                  <div
+                                    key={`${outcome.key}-${child[0]}-${nutraceutic}`}
+                                    id={`${outcome.key}-${child[0]}-${nutraceutic}`}
+                                    className="anchors__item"
+                                  />
+                                  <Xarrow
+                                    key={`arrow-${outcome.key}-${child[0]}-${nutraceutic}`}
+                                    start={`${outcome.key}-${child[0]}-${nutraceutic}`}
+                                    end={`${nutraceutic}-${child[0]}-${outcome.key}`}
+                                    showHead={false}
+                                    strokeWidth={58}
+                                    curveness={0.6}
+                                    startAnchor="right"
+                                    endAnchor="left"
+                                    color={
+                                      fineTune[nutraceutic] === 'off' ||
+                                      !fineTune[nutraceutic]
+                                        ? 'rgba(0,0,0,0.05)'
+                                        : transparentize(0.8, outcome.color)
+                                    }
+                                  />
+                                </>
+                              ))
+                          ) : (
+                            <>
+                              <div
+                                key={`${outcome.key}-${child[0]}`}
+                                id={`${outcome.key}-${child[0]}`}
+                                className="anchors__item"
+                              />
+                              <Xarrow
+                                key={`arrow-${outcome.key}-${child[0]}`}
+                                start={`${outcome.key}-${child[0]}`}
+                                end={`${child[0]}-${outcome.key}`}
+                                showHead={false}
+                                strokeWidth={58}
+                                curveness={0.6}
+                                startAnchor="right"
+                                endAnchor="left"
+                                color={
+                                  fineTune[child[0]] === 'off' ||
+                                  !fineTune[child[0]]
+                                    ? 'rgba(0,0,0,0.05)'
+                                    : transparentize(0.8, outcome.color)
+                                }
+                              />
+                            </>
+                          );
+                        })
+                      : outcome.suboutcomes.map(suboutcome => (
+                          <>
+                            <div
+                              key={`${outcome.key}-${suboutcome}`}
+                              id={`${outcome.key}-${suboutcome}`}
+                              className="anchors__item"
+                            />
+                            <Xarrow
+                              key={`arrow-${outcome.key}-${suboutcome}`}
+                              start={`${outcome.key}-${suboutcome}`}
+                              end={`${suboutcome}-${outcome.key}`}
+                              showHead={false}
+                              strokeWidth={58}
+                              curveness={0.6}
+                              startAnchor="right"
+                              endAnchor="left"
+                              color={
+                                fineTune[suboutcome] === 'off' ||
+                                !fineTune[suboutcome]
+                                  ? 'rgba(0,0,0,0.05)'
+                                  : transparentize(0.8, outcome.color)
+                              }
+                            />
+                          </>
+                        ))}
                   </div>
                   <div className="outcome-wrapper">
                     <HiQuestionMarkCircle
@@ -299,6 +348,10 @@ const Sankey: React.FC = () => {
             {Object.values(suboutcomes).map(suboutcome => {
               const outcomeIndex = Object.values(outcomes).findIndex(outcome =>
                 outcome.suboutcomes.includes(suboutcome.key),
+              );
+
+              const suboutcomeOutcomes = Object.entries(connections).filter(
+                connection => !!connection[1][suboutcome.key],
               );
 
               return (
@@ -324,35 +377,74 @@ const Sankey: React.FC = () => {
                   id={suboutcome.key}
                 >
                   <div className="entry-anchors anchors">
-                    {Object.values(outcomes)
-                      .filter(outcome =>
-                        outcome.suboutcomes.includes(suboutcome.key),
-                      )
-                      .map(outcome => {
-                        return (
-                          <div
-                            key={`${suboutcome.key}-${outcome.key}`}
-                            id={`${suboutcome.key}-${outcome.key}`}
-                            className="anchors__item"
-                          />
-                        );
-                      })}
-                    {Object.values(outcomes)
-                      .filter(outcome =>
-                        outcome.suboutcomes.includes(suboutcome.key),
-                      )
-                      .map(outcome => {
-                        const outcomeNutraceutics =
-                          connections[outcome.key][suboutcome.key];
+                    {suboutcomeOutcomes.map(suboutcomeOutcome => {
+                      return Object.entries(suboutcomeOutcome[1]).filter(
+                        connection => {
+                          return (
+                            connection[0] === suboutcome.key &&
+                            !!connection[1].length
+                          );
+                        },
+                      ).length ? (
+                        Object.entries(suboutcomeOutcome[1])
+                          .filter(
+                            nutraceutic =>
+                              nutraceutic[0] === suboutcome.key &&
+                              !!nutraceutic[1].length,
+                          )
+                          .map(nutraceutic => {
+                            return nutraceutic[1].map(item => {
+                              return (
+                                <>
+                                  <div
+                                    key={`${item}-${nutraceutic[0]}-${suboutcomeOutcome[0]}`}
+                                    id={`${item}-${nutraceutic[0]}-${suboutcomeOutcome[0]}`}
+                                    className="anchors__item xpto"
+                                  />
+                                </>
+                              );
+                            });
+                          })
+                      ) : (
+                        <div
+                          key={`${suboutcome.key}-${suboutcomeOutcome[0]}`}
+                          id={`${suboutcome.key}-${suboutcomeOutcome[0]}`}
+                          className="anchors__item abcd"
+                        />
+                      );
+                    })}
 
-                        return outcomeNutraceutics.map(nutraceutic => (
-                          <div
-                            key={`${nutraceutic}-${outcome.key}`}
-                            id={`${nutraceutic}-${outcome.key}`}
-                            className="anchors__item"
-                          />
-                        ));
-                      })}
+                    {/* {Object.values(children).filter(child => !!child.length)
+                      .length
+                      ? Object.values(outcomes)
+                          .filter(outcome =>
+                            outcome.suboutcomes.includes(suboutcome.key),
+                          )
+                          .map(outcome => {
+                            const outcomeNutraceutics =
+                              connections[outcome.key][suboutcome.key];
+
+                            return outcomeNutraceutics.map(nutraceutic => (
+                              <div
+                                key={`${nutraceutic}-${outcome.key}`}
+                                id={`${nutraceutic}-${outcome.key}`}
+                                className="anchors__item"
+                              />
+                            ));
+                          })
+                      : Object.values(outcomes)
+                          .filter(outcome =>
+                            outcome.suboutcomes.includes(suboutcome.key),
+                          )
+                          .map(outcome => {
+                            return (
+                              <div
+                                key={`${suboutcome.key}-${outcome.key}`}
+                                id={`${suboutcome.key}-${outcome.key}`}
+                                className="anchors__item"
+                              />
+                            );
+                          })} */}
                   </div>
                   <div className="exit-anchors anchors">
                     {nutraceutics

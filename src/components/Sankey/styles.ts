@@ -137,6 +137,7 @@ const Container = styled.div<ContainerProps>`
   .step-content {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 
     .sankey-tooltip {
       width: 260px;
