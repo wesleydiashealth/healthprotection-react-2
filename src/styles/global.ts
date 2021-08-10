@@ -36,7 +36,7 @@ export default createGlobalStyle`
     padding: 0 20px;
 
     width: 100%;
-    max-width: 1300px;
+    max-width: 1800px;
   }
 
   .mb-10 {
