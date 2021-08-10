@@ -252,31 +252,33 @@ const Sankey: React.FC = () => {
                           ).length ? (
                             child[1]
                               .filter(nutraceutic => !!nutraceutic.length)
-                              .map(nutraceutic => (
-                                <>
-                                  <div
-                                    key={`${outcome.key}-${child[0]}-${nutraceutic}`}
-                                    id={`${outcome.key}-${child[0]}-${nutraceutic}`}
-                                    className="anchors__item"
-                                  />
-                                  <Xarrow
-                                    key={`arrow-${outcome.key}-${child[0]}-${nutraceutic}`}
-                                    start={`${outcome.key}-${child[0]}-${nutraceutic}`}
-                                    end={`${nutraceutic}-${child[0]}-${outcome.key}`}
-                                    showHead={false}
-                                    strokeWidth={58}
-                                    curveness={0.6}
-                                    startAnchor="right"
-                                    endAnchor="left"
-                                    color={
-                                      fineTune[nutraceutic] === 'off' ||
-                                      !fineTune[nutraceutic]
-                                        ? 'rgba(0,0,0,0.05)'
-                                        : transparentize(0.8, outcome.color)
-                                    }
-                                  />
-                                </>
-                              ))
+                              .map(nutraceutic => {
+                                return (
+                                  <>
+                                    <div
+                                      key={`${outcome.key}-${child[0]}-${nutraceutic}`}
+                                      id={`${outcome.key}-${child[0]}-${nutraceutic}`}
+                                      className="anchors__item"
+                                    />
+                                    <Xarrow
+                                      key={`arrow-${outcome.key}-${child[0]}-${nutraceutic}`}
+                                      start={`${outcome.key}-${child[0]}-${nutraceutic}`}
+                                      end={`${nutraceutic}-${child[0]}-${outcome.key}`}
+                                      showHead={false}
+                                      strokeWidth={58}
+                                      curveness={0.6}
+                                      startAnchor="right"
+                                      endAnchor="left"
+                                      color={
+                                        fineTune[child[0]] === 'off' ||
+                                        !fineTune[child[0]]
+                                          ? 'rgba(0,0,0,0.05)'
+                                          : transparentize(0.8, outcome.color)
+                                      }
+                                    />
+                                  </>
+                                );
+                              })
                           ) : (
                             <>
                               <div
