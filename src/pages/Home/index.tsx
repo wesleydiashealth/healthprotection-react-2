@@ -4,7 +4,7 @@ import Container from './styles';
 
 import { AppProvider } from '../../contexts/app';
 
-import Header from '../../components/Header';
+// import Header from '../../components/Header';
 import Hero from '../../components/Hero';
 import Wizard from '../../components/Wizard';
 import Sankey from '../../components/Sankey';
