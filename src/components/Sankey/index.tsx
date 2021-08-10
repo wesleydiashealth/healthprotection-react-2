@@ -379,12 +379,9 @@ const Sankey: React.FC = () => {
                   <div className="entry-anchors anchors">
                     {suboutcomeOutcomes.map(suboutcomeOutcome => {
                       return Object.entries(suboutcomeOutcome[1]).filter(
-                        connection => {
-                          return (
-                            connection[0] === suboutcome.key &&
-                            !!connection[1].length
-                          );
-                        },
+                        connection =>
+                          connection[0] === suboutcome.key &&
+                          !!connection[1].length,
                       ).length ? (
                         Object.entries(suboutcomeOutcome[1])
                           .filter(
@@ -393,23 +390,19 @@ const Sankey: React.FC = () => {
                               !!nutraceutic[1].length,
                           )
                           .map(nutraceutic => {
-                            return nutraceutic[1].map(item => {
-                              return (
-                                <>
-                                  <div
-                                    key={`${item}-${nutraceutic[0]}-${suboutcomeOutcome[0]}`}
-                                    id={`${item}-${nutraceutic[0]}-${suboutcomeOutcome[0]}`}
-                                    className="anchors__item xpto"
-                                  />
-                                </>
-                              );
-                            });
+                            return nutraceutic[1].map(item => (
+                              <div
+                                key={`${item}-${nutraceutic[0]}-${suboutcomeOutcome[0]}`}
+                                id={`${item}-${nutraceutic[0]}-${suboutcomeOutcome[0]}`}
+                                className="anchors__item"
+                              />
+                            ));
                           })
                       ) : (
                         <div
                           key={`${suboutcome.key}-${suboutcomeOutcome[0]}`}
                           id={`${suboutcome.key}-${suboutcomeOutcome[0]}`}
-                          className="anchors__item abcd"
+                          className="anchors__item"
                         />
                       );
                     })}
@@ -588,6 +581,7 @@ const Sankey: React.FC = () => {
                               className="anchors__item"
                             />
                             <Xarrow
+                              key={`anchor-${nutraceutic.key}-${parent}`}
                               start={`${parent}-${nutraceutic.key}`}
                               end={`${nutraceutic.key}-${parent}`}
                               showHead={false}
