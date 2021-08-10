@@ -14,7 +14,7 @@ import Habits from '../../components/Habits';
 const Home: React.FC = () => (
   <Container>
     <AppProvider>
-      <Header />
+      {/* <Header /> */}
       <Hero />
       <Wizard />
       <Sankey />
