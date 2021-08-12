@@ -30,6 +30,8 @@ interface SubstanceProps {
 }
 
 const Container = styled.div<ContainerProps>`
+  padding: 80px 0 0;
+
   ${props =>
     props.isActive &&
     css`
@@ -41,8 +43,6 @@ const Container = styled.div<ContainerProps>`
         }
       }
     `}
-
-  margin-bottom: 40px;
 
   .step-intro {
     margin-bottom: 40px;

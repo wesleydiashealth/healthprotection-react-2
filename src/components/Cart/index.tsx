@@ -17,7 +17,7 @@ const Cart: React.FC = () => {
   const { step2: previousStep } = steps;
 
   return (
-    <Container id="step_3" isActive={previousStep.isCompleted}>
+    <Container isActive={previousStep.isCompleted}>
       <div className="step-intro content-wrapper">
         <TiShoppingCart
           size={52}

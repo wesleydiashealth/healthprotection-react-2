@@ -24,7 +24,7 @@ const Container = styled.div<ContainerProps>`
     `}
 
   margin: 0 auto;
-  padding: 40px 0;
+  padding: 80px 0 0;
 
   max-width: 1200px;
 
@@ -227,14 +227,15 @@ export const StepContainer = styled.div<StepContainerProps>`
   span {
     margin-bottom: 5px;
 
+    font-weight: 600;
     font-size: 12px;
     line-height: 20px;
   }
 
-  strong {
+  > strong {
     margin-bottom: 24px;
 
-    font-weight: 500;
+    font-weight: 600;
     font-size: 14px;
     line-height: 22px;
 
@@ -273,10 +274,11 @@ export const StepContainer = styled.div<StepContainerProps>`
     line-height: 22px;
 
     strong {
+      margin-bottom: 5px;
+
       display: block;
-      margin-bottom: 10px;
-      font-size: 20px;
-      line-height: 28px;
+      font-size: 16px;
+      line-height: 24px;
       font-weight: 500;
       color: #7664c8;
     }

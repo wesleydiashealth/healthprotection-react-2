@@ -17,9 +17,10 @@ const Container = styled.button<ContainerProps>`
 
   background: transparent;
 
+  font-family: 'Montserrat';
   font-size: 14px;
   line-height: 18px;
-  font-weight: 500;
+  font-weight: 600;
 
   & ~ button {
     margin-top: 15px;
