@@ -1,138 +1,145 @@
 import styled from 'styled-components';
 
 const Container = styled.section`
-  display: flex;
+  margin: 0 auto;
+  padding: 20px;
 
-  position: relative;
+  box-sizing: border-box;
+
+  max-width: 1300px;
+
+  @media screen and (min-width: 768px) {
+    padding: 20px 50px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+  }
 `;
 
-export const HeroContent = styled.div`
+export const HeroIntro = styled.div`
+  margin-bottom: 40px;
+
+  @media screen and (min-width: 768px) {
+    grid-column: 1;
+    grid-row: 1;
+  }
+`;
+
+export const HeroMainTitle = styled.h1`
+  margin-bottom: 10px;
+
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 32px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 36px;
+    line-height: 44px;
+  }
+
+  @media screen and (min-width: 992px) {
+    font-size: 52px;
+    line-height: 64px;
+  }
+`;
+
+export const HeroSubTitle = styled.h2`
+  margin-bottom: 20px;
+
+  font-family: 'Open Sans';
+  font-size: 12px;
+  line-height: 16px;
+`;
+
+export const HeroDescription = styled.p`
+  margin-bottom: 10px;
+
+  font-family: 'Montserrat';
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 18px;
+`;
+
+export const HeroButton = styled.a``;
+
+export const HeroImage = styled.img`
+  margin: 0 auto 30px;
+
+  display: block;
+
   max-width: 100%;
+  max-height: 200px;
 
-  h1,
-  h2,
-  p {
-    display: block;
+  @media screen and (min-width: 768px) {
+    margin: 0;
 
-    max-width: 520px;
-    color: #565656;
+    grid-column: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+
+    max-height: none;
+  }
+`;
+
+export const HeroList = styled.ul`
+  display: flex;
+  flex-flow: column wrap;
+
+  li {
+    display: flex;
+    align-items: center;
   }
 
-  h1 {
-    margin-bottom: 20px;
-
-    text-transform: uppercase;
-
-    font-weight: 700;
-    font-size: 26px;
-    line-height: 32px;
+  li {
+    & ~ li {
+      margin: 5px 0 0;
+      border-top: 1px solid #e0e0e0;
+      padding: 5px 0 0;
+    }
   }
 
-  h2 {
-    margin-bottom: 42px;
-
-    font-size: 14px;
-    line-height: 22px;
-  }
-
-  p {
-    margin-bottom: 20px;
-
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 24px;
+  svg {
+    margin-right: 10px;
+    fill: #db71af;
   }
 
   a {
-    background: #7664c8;
-    padding: 20px 40px;
-    border-radius: 42px;
-
-    max-width: 270px;
-
-    color: white;
+    color: #db71af;
 
     text-decoration: none;
     font-weight: 700;
-    font-size: 18px;
-    line-height: 22px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .hero-list {
-    margin-top: 100px;
-    padding: 40px 0;
-
-    ul {
-      margin-bottom: 160px;
-
-      display: flex;
-      align-items: center;
-
-      list-style: none;
-
-      li {
-        display: flex;
-        align-items: center;
-
-        position: relative;
-
-        color: #4f4f4f;
-
-        max-width: 200px;
-
-        & + li {
-          margin-left: 24px;
-          padding-left: 24px;
-
-          &:before {
-            content: '';
-            border-left: 2px solid #e0e0e0;
-            position: absolute;
-            top: 0;
-            left: 0;
-            bottom: 0;
-          }
-        }
-
-        svg {
-          margin-right: 20px;
-        }
-
-        strong {
-          display: block;
-
-          font-weight: 700;
-          font-size: 18px;
-          line-height: 24px;
-          color: #db71af;
-        }
-
-        span {
-          font-size: 14px;
-        }
-      }
-    }
+    font-size: 10px;
+    line-height: 12px;
   }
 
   @media screen and (min-width: 768px) {
-    h1 {
-      margin-bottom: 40px;
+    flex-flow: row nowrap;
 
-      font-size: 52px;
-      line-height: 62px;
+    grid-column: 1;
+
+    li {
+      & ~ li {
+        margin: 0 0 0 10px;
+        border-top: none;
+        border-left: 1px solid #e0e0e0;
+        padding: 0 0 0 10px;
+      }
+    }
+
+    a {
+      font-size: 16px;
+      line-height: 22px;
     }
   }
-`;
 
-export const HeroImage = styled.div`
-  padding-right: 80px;
-  position: absolute;
-  top: 0;
-  right: 0;
+  @media screen and (min-width: 992px) {
+    a {
+      font-size: 18px;
+      line-height: 24px;
+    }
+  }
 `;
 
 export default Container;

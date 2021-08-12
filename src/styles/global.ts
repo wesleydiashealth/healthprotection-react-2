@@ -6,6 +6,8 @@ export default createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
     outline: 0;
+
+    color: #565656;
   }
 
   html {
@@ -18,8 +20,10 @@ export default createGlobalStyle`
   }
 
   body, input, button, p {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
     font-size: 16px;
+    line-height: 22px;
   }
 
   h1, h2, h3, h4, h5, h6, strong {
@@ -29,6 +33,24 @@ export default createGlobalStyle`
 
   button {
     cursor: pointer;
+  }
+
+  a {
+    &.button {
+      border-radius: 30px;
+      padding: 14px 28px;
+
+      display: inline-block;
+      min-width: 180px;
+      background-color: #7664C8;
+
+      color: #fff;
+      text-decoration: none;
+      text-align: center;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 18px;
+    }
   }
 
   .content-wrapper {
