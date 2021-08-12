@@ -46,7 +46,7 @@ import Step8 from './Step8';
 const Wizard: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
 
-  const previousStep = { isCompleted: true };
+  const previousStep = { isCompleted: false };
 
   const handleSubmit = useCallback(async (data: HTMLFormElement) => {
     try {
@@ -93,7 +93,7 @@ const Wizard: React.FC = () => {
           />
         </StepTitle>
         {!previousStep.isCompleted && (
-          <div className="step-disabled">Step Blocked</div>
+          <div className="step-disabled">Step Blocked.</div>
         )}
         <StepDescription>
           <strong>Start</strong> by talking a little about yourself
@@ -103,61 +103,63 @@ const Wizard: React.FC = () => {
           17 possible outcomes and 43 sub-outcomes.
         </StepSubDescription>
       </StepIntro>
-      <Form ref={formRef} onSubmit={handleSubmit} className="content-wrapper">
-        <WizardProvider>
-          <Carousel>
-            <CarouselProvider
-              naturalSlideWidth={400}
-              naturalSlideHeight={800}
-              totalSlides={8}
-              visibleSlides={1}
-              step={1}
-            >
-              <Slider>
-                <Slide index={1}>
-                  <Step1 />
-                </Slide>
-                <Slide index={2}>
-                  <Step2 />
-                </Slide>
-                <Slide index={3}>
-                  <Step3 />
-                </Slide>
-                <Slide index={4}>
-                  <Step4 />
-                </Slide>
-                <Slide index={5}>
-                  <Step5 />
-                </Slide>
-                <Slide index={6}>
-                  <Step6 />
-                </Slide>
-                <Slide index={7}>
-                  <Step7 />
-                </Slide>
-                <Slide index={8}>
-                  <Step8 />
-                </Slide>
-              </Slider>
-              <SliderNavigation>
-                <ButtonBack>
-                  <>
-                    <HiOutlineArrowNarrowLeft size={20} />
-                    Prev
-                  </>
-                </ButtonBack>
-                <DotGroup showAsSelectedForCurrentSlideOnly />
-                <ButtonNext>
-                  <>
-                    Next
-                    <HiOutlineArrowNarrowRight size={20} />
-                  </>
-                </ButtonNext>
-              </SliderNavigation>
-            </CarouselProvider>
-          </Carousel>
-        </WizardProvider>
-      </Form>
+      {previousStep.isCompleted && (
+        <Form ref={formRef} onSubmit={handleSubmit} className="content-wrapper">
+          <WizardProvider>
+            <Carousel>
+              <CarouselProvider
+                naturalSlideWidth={400}
+                naturalSlideHeight={800}
+                totalSlides={8}
+                visibleSlides={1}
+                step={1}
+              >
+                <Slider>
+                  <Slide index={1}>
+                    <Step1 />
+                  </Slide>
+                  <Slide index={2}>
+                    <Step2 />
+                  </Slide>
+                  <Slide index={3}>
+                    <Step3 />
+                  </Slide>
+                  <Slide index={4}>
+                    <Step4 />
+                  </Slide>
+                  <Slide index={5}>
+                    <Step5 />
+                  </Slide>
+                  <Slide index={6}>
+                    <Step6 />
+                  </Slide>
+                  <Slide index={7}>
+                    <Step7 />
+                  </Slide>
+                  <Slide index={8}>
+                    <Step8 />
+                  </Slide>
+                </Slider>
+                <SliderNavigation>
+                  <ButtonBack>
+                    <>
+                      <HiOutlineArrowNarrowLeft size={20} />
+                      Prev
+                    </>
+                  </ButtonBack>
+                  <DotGroup showAsSelectedForCurrentSlideOnly />
+                  <ButtonNext>
+                    <>
+                      Next
+                      <HiOutlineArrowNarrowRight size={20} />
+                    </>
+                  </ButtonNext>
+                </SliderNavigation>
+              </CarouselProvider>
+            </Carousel>
+          </WizardProvider>
+        </Form>
+      )}
     </Container>
   );
 };
