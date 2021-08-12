@@ -21,14 +21,6 @@
     <script>
 			var level = document.location.search.replace(/\?/,'') || 0;
 			$('#nested').attr('href','frame.nested.html?'+(++level));
-
-      $('a=[href^=#]').click(function(e) {
-        if('parentIFrame' in window) {
-          var href = $(this).blur().attr('href');
-          e.preventDefault();
-          window.parentIFrame.sendMessage(href.substring(href.indexOf('#')));
-        }
-      });
 		</script>
     <script type="text/javascript" src="js/iframeResizer.contentWindow.min.js"></script>
   </body>
