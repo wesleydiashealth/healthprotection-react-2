@@ -3,8 +3,6 @@ import styled from 'styled-components';
 const Container = styled.section`
   display: flex;
 
-  height: calc(100vh - 191px);
-
   position: relative;
 `;
 
