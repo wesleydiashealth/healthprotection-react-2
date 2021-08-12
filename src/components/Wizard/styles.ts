@@ -11,111 +11,10 @@ interface StepContainerProps {
 }
 
 const Container = styled.div<ContainerProps>`
-  ${props =>
-    props.isActive &&
-    css`
-      .step-intro {
-        h3 {
-          strong {
-            color: #7664c8;
-          }
-        }
-      }
-    `}
-
   margin: 0 auto;
-  padding: 80px 0 0;
+  padding: 80px 50px 0;
 
-  max-width: 1200px;
-
-  .step-intro {
-    margin-bottom: 40px;
-
-    text-align: center;
-
-    .locked-icon {
-      margin-right: 5px;
-    }
-
-    h2,
-    h3 {
-      margin-bottom: 10px;
-
-      color: #565656;
-    }
-
-    h2 {
-      display: flex;
-      justify-content: center;
-
-      font-weight: 700;
-
-      font-size: 33px;
-      line-height: 40px;
-    }
-
-    h3 {
-      margin-bottom: 10px;
-
-      font-size: 28px;
-      line-height: 34px;
-
-      strong {
-        font-weight: 600;
-      }
-    }
-
-    span {
-      color: #565656;
-
-      font-size: 18px;
-      line-height: 24px;
-    }
-
-    .tooltip-icon {
-      margin-left: 5px;
-      display: inline-flex;
-    }
-
-    .wizard-title-tooltip {
-      width: 320px;
-      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.11);
-      border-radius: 20px;
-
-      text-align: left;
-      font-size: 14px;
-      line-height: 22px;
-
-      strong {
-        display: block;
-        margin-bottom: 10px;
-        font-size: 20px;
-        line-height: 28px;
-        font-weight: 500;
-      }
-
-      span {
-        font-size: 14px;
-        line-height: 22px;
-      }
-    }
-
-    .step-disabled {
-      margin-bottom: 10px;
-
-      strong {
-        font-weight: 600;
-      }
-
-      &,
-      span {
-        color: #707070;
-
-        font-size: 14px;
-        line-height: 22px;
-      }
-    }
-  }
+  max-width: 1300px;
 
   /* max-width constrains the width of our carousel to 550, but shrinks on small devices */
   .carousel__container {
@@ -138,6 +37,102 @@ const Container = styled.div<ContainerProps>`
     justify-content: center;
     align-items: flex-start;
   }
+
+  ${props =>
+    props.isActive &&
+    css`
+      h3 {
+        strong {
+          color: #7664c8;
+        }
+      }
+    `}
+`;
+
+export const StepIntro = styled.div`
+  margin-bottom: 40px;
+  padding: 0 20px;
+
+  width: 100%;
+  max-width: 100%;
+
+  color: #565656;
+  text-align: center;
+
+  svg {
+    &:first-child {
+      margin-right: 5px;
+    }
+
+    &:last-of-type {
+      margin-left: 5px;
+    }
+  }
+
+  .__react_component_tooltip {
+    width: 320px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.11);
+    border-radius: 20px;
+
+    text-align: left;
+
+    strong {
+      margin-bottom: 5px;
+
+      display: block;
+
+      color: #7664c8;
+
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    span {
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 22px;
+    }
+  }
+
+  .step-disabled {
+    margin-bottom: 10px;
+
+    color: #707070;
+
+    font-family: 'Montserrat';
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 22px;
+  }
+`;
+
+export const StepTitle = styled.h2`
+  margin-bottom: 10px;
+
+  display: flex;
+  justify-content: center;
+
+  font-weight: 700;
+
+  font-size: 33px;
+  line-height: 40px;
+`;
+
+export const StepDescription = styled.h3`
+  margin-bottom: 10px;
+
+  font-size: 28px;
+  line-height: 34px;
+
+  strong {
+    font-weight: 600;
+  }
+`;
+
+export const StepSubDescription = styled.span`
+  font-size: 18px;
+  line-height: 24px;
 `;
 
 export const SliderNavigation = styled.div`
@@ -199,15 +194,14 @@ export const SliderNavigation = styled.div`
 `;
 
 export const StepContainer = styled.div<StepContainerProps>`
+  margin: 20px;
+  padding: 24px;
+
   display: flex;
   flex-direction: column;
   position: relative;
 
-  margin: 20px;
-  padding: 24px;
-
-  min-width: 360px;
-  max-width: 360px;
+  width: 360px;
 
   background: #ffffff;
 
@@ -224,7 +218,7 @@ export const StepContainer = styled.div<StepContainerProps>`
       }
     `}
 
-  span {
+  > span {
     margin-bottom: 5px;
 
     font-weight: 600;
@@ -235,7 +229,7 @@ export const StepContainer = styled.div<StepContainerProps>`
   > strong {
     margin-bottom: 24px;
 
-    font-weight: 600;
+    font-weight: 500;
     font-size: 14px;
     line-height: 22px;
 
@@ -270,17 +264,25 @@ export const StepContainer = styled.div<StepContainerProps>`
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.11);
     border-radius: 20px;
 
-    font-size: 14px;
-    line-height: 22px;
+    text-align: left;
+    font-family: 'Montserrat';
 
     strong {
       margin-bottom: 5px;
 
       display: block;
+
+      color: #7664c8;
+
+      font-weight: 600;
       font-size: 16px;
       line-height: 24px;
-      font-weight: 500;
-      color: #7664c8;
+    }
+
+    span {
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 22px;
     }
   }
 

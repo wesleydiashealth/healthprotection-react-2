@@ -8,6 +8,8 @@ const Container = styled.section`
 
   max-width: 1300px;
 
+  color: #565656;
+
   @media screen and (min-width: 768px) {
     padding: 20px 50px;
 
@@ -51,6 +53,11 @@ export const HeroSubTitle = styled.h2`
   font-family: 'Open Sans';
   font-size: 12px;
   line-height: 16px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 18px;
+    line-height: 24px;
+  }
 `;
 
 export const HeroDescription = styled.p`
@@ -60,6 +67,11 @@ export const HeroDescription = styled.p`
   font-weight: 700;
   font-size: 14px;
   line-height: 18px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 18px;
+    line-height: 24px;
+  }
 `;
 
 export const HeroButton = styled.a``;

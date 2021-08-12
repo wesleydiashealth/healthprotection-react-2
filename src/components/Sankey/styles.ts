@@ -100,18 +100,21 @@ const Container = styled.div<ContainerProps>`
       border-radius: 20px;
 
       text-align: left;
-      font-size: 14px;
-      line-height: 22px;
 
       strong {
+        margin-bottom: 5px;
+
         display: block;
-        margin-bottom: 10px;
-        font-size: 20px;
-        line-height: 28px;
-        font-weight: 500;
+
+        color: #db71af;
+
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 24px;
       }
 
       span {
+        font-weight: normal;
         font-size: 14px;
         line-height: 22px;
       }
@@ -160,6 +163,8 @@ const Container = styled.div<ContainerProps>`
 `;
 
 export const Outcomes = styled.div`
+  font-weight: 600;
+
   &:before {
     content: 'Filtered Outcomes';
   }
@@ -170,6 +175,10 @@ export const Outcome = styled.div<OutcomeProps>`
 
   & ~ div {
     margin-top: 20px;
+  }
+
+  span {
+    color: #000;
   }
 
   .anchors {
@@ -238,6 +247,8 @@ export const Outcome = styled.div<OutcomeProps>`
 
 export const SubOutcomes = styled.div`
   position: relative;
+
+  font-weight: 600;
 
   &:before {
     content: 'Choose your Sub-outcomes';
@@ -376,6 +387,10 @@ export const Substances = styled.div<SubstancesProps>`
   position: relative;
 
   min-width: 200px;
+
+  align-self: flex-start;
+
+  font-weight: 600;
 
   ${props =>
     props.isActive &&

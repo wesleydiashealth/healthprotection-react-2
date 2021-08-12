@@ -21,7 +21,13 @@ import { IoChatbubblesOutline } from 'react-icons/io5';
 
 import getValidationErrors from '../../utils/getValidationErrors';
 
-import Container, { SliderNavigation } from './styles';
+import Container, {
+  StepIntro,
+  StepTitle,
+  StepDescription,
+  StepSubDescription,
+  SliderNavigation,
+} from './styles';
 import 'react-multi-carousel/lib/styles.css';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 
@@ -62,20 +68,15 @@ const Wizard: React.FC = () => {
 
   return (
     <Container id="step_1" isActive={previousStep.isCompleted}>
-      <div className="step-intro content-wrapper">
+      <StepIntro>
         <IoChatbubblesOutline
           size={52}
           color={previousStep.isCompleted ? '#7664C8' : '#565656'}
         />
-        <h2>
-          {!previousStep.isCompleted && (
-            <>
-              <HiLockClosed size={20} className="locked-icon" />
-            </>
-          )}
+        <StepTitle>
+          {!previousStep.isCompleted && <HiLockClosed size={20} />}
           Step 1
           <HiQuestionMarkCircle
-            className="tooltip-icon"
             size={20}
             color={previousStep.isCompleted ? '#7664C8' : '#565656'}
             data-tip="<strong>Step 2</strong><span>We already made a pre-selection...</span>"
@@ -83,7 +84,6 @@ const Wizard: React.FC = () => {
           />
           <ReactToolTip
             id="wizard-title-tooltip"
-            className="wizard-title-tooltip"
             place="bottom"
             type="light"
             effect="solid"
@@ -91,21 +91,18 @@ const Wizard: React.FC = () => {
             html
             backgroundColor="#fff"
           />
-        </h2>
+        </StepTitle>
         {!previousStep.isCompleted && (
-          <div className="step-disabled">
-            <strong>Step Blocked.</strong>
-          </div>
+          <div className="step-disabled">Step Blocked</div>
         )}
-
-        <h3>
+        <StepDescription>
           <strong>Start</strong> by talking a little about yourself
-        </h3>
-        <span>
+        </StepDescription>
+        <StepSubDescription>
           Doing this step is critical to narrow down all more than 500 products,
           17 possible outcomes and 43 sub-outcomes.
-        </span>
-      </div>
+        </StepSubDescription>
+      </StepIntro>
       <Form ref={formRef} onSubmit={handleSubmit} className="content-wrapper">
         <WizardProvider>
           <Carousel>

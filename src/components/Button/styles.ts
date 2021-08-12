@@ -20,7 +20,7 @@ const Container = styled.button<ContainerProps>`
   font-family: 'Montserrat';
   font-size: 14px;
   line-height: 18px;
-  font-weight: 600;
+  font-weight: 500;
 
   & ~ button {
     margin-top: 15px;

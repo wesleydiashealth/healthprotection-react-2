@@ -5,7 +5,7 @@
       "title": "Immunity",
       "color": "#DA3363",
       "label": "",
-      "description": "",
+      "description": "Lorem ipsum",
       "suboutcomes": [
         "preventive-immunity",
         "nutrient-supplementation",
@@ -19,7 +19,7 @@
       "title": "Muscle Health",
       "color": "#F37E67",
       "label": "",
-      "description": "",
+      "description": "Lorem ipsum",
       "suboutcomes": [
         "blood-pressure",
         "muscle-recovery",
@@ -34,7 +34,7 @@
       "title": "Energy and Mood",
       "color": "#FEC763",
       "label": "",
-      "description": "",
+      "description": "Lorem ipsum",
       "suboutcomes": [
         "anxiety",
         "stress-management",
@@ -47,7 +47,7 @@
       "title": "Women´s Health",
       "color": "#CD61A4",
       "label": "",
-      "description": "",
+      "description": "Lorem ipsum",
       "suboutcomes": [
         "estrogen",
         "pms",
@@ -59,7 +59,7 @@
       "title": "Libido & Sexual Health",
       "color": "#B09AC9",
       "label": "",
-      "description": "",
+      "description": "Lorem ipsum",
       "suboutcomes": [
         "erections",
         "testosterone",
@@ -73,7 +73,7 @@
       "title": "Cardiovascular Health",
       "color": "#3BB9A0",
       "label": "",
-      "description": "",
+      "description": "Lorem ipsum",
       "suboutcomes": [
         "anti-inflammatory",
         "blood-pressure",
@@ -88,7 +88,7 @@
       "title": "Preventive Immunity",
       "color": "#7E61A8",
       "label": "",
-      "description": "",
+      "description": "Lorem ipsum",
       "sustances": {
         "min": [
           {
@@ -97,7 +97,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -108,7 +108,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -121,7 +121,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -132,7 +132,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -145,7 +145,7 @@
             "dosage": "700",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -156,7 +156,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -167,7 +167,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -180,7 +180,7 @@
       "title": "Nutrient Supplementation",
       "color": "#D3C8BC",
       "label": "",
-      "description": "",
+      "description": "Lorem ipsum",
       "sustances": {
         "min": [
           {
@@ -189,7 +189,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -200,7 +200,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -213,7 +213,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -224,7 +224,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -237,7 +237,7 @@
             "dosage": "700",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -248,7 +248,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -261,7 +261,7 @@
       "title": "Anti-inflammatory",
       "color": "#FEC763",
       "label": "",
-      "description": "",
+      "description": "Lorem ipsum",
       "sustances": {
         "min": [
           {
@@ -270,7 +270,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -281,7 +281,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -294,7 +294,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -305,7 +305,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -318,7 +318,7 @@
             "dosage": "700",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -329,7 +329,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -342,7 +342,7 @@
       "title": "Anti-oxidant",
       "color": "#4FB758",
       "label": "",
-      "description": "",
+      "description": "Lorem ipsum",
       "sustances": {
         "min": [
           {
@@ -351,7 +351,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -362,7 +362,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -375,7 +375,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -386,7 +386,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -399,7 +399,7 @@
             "dosage": "700",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -410,7 +410,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -423,7 +423,7 @@
       "title": "Immune Response",
       "color": "#7E61A8",
       "label": "",
-      "description": "",
+      "description": "Lorem ipsum",
       "sustances": {
         "min": [
           {
@@ -432,7 +432,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -443,7 +443,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -456,7 +456,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -467,7 +467,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -480,7 +480,7 @@
             "dosage": "700",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -491,7 +491,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -504,7 +504,7 @@
       "title": "Blood Pressure",
       "color": "#EF708F",
       "label": "",
-      "description": "",
+      "description": "Lorem ipsum",
       "sustances": {
         "min": [
           {
@@ -513,7 +513,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -524,7 +524,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -537,7 +537,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -548,7 +548,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -561,7 +561,7 @@
             "dosage": "700",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -572,7 +572,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -585,7 +585,7 @@
       "title": "Muscle Recovery",
       "color": "#7E61A8",
       "label": "",
-      "description": "",
+      "description": "Lorem ipsum",
       "sustances": {
         "min": [
           {
@@ -594,7 +594,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -605,7 +605,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -618,7 +618,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -629,7 +629,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -642,7 +642,7 @@
             "dosage": "700",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -653,7 +653,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -666,7 +666,7 @@
       "title": "Muscle Gain",
       "color": "#7E61A8",
       "label": "",
-      "description": "",
+      "description": "Lorem ipsum",
       "sustances": {
         "min": [
           {
@@ -675,7 +675,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -686,7 +686,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -699,7 +699,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -710,7 +710,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -723,7 +723,7 @@
             "dosage": "700",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -734,7 +734,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -747,7 +747,7 @@
       "title": "Muscular Endurance",
       "color": "#7E61A8",
       "label": "",
-      "description": "",
+      "description": "Lorem ipsum",
       "sustances": {
         "min": [
           {
@@ -756,7 +756,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -767,7 +767,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -780,7 +780,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -791,7 +791,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -804,7 +804,7 @@
             "dosage": "700",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -815,7 +815,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -828,7 +828,7 @@
       "title": "Fatigue Prevention",
       "color": "#7E61A8",
       "label": "",
-      "description": "",
+      "description": "Lorem ipsum",
       "sustances": {
         "min": [
           {
@@ -837,7 +837,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -848,7 +848,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -861,7 +861,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -872,7 +872,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -885,7 +885,7 @@
             "dosage": "700",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -896,7 +896,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -909,7 +909,7 @@
       "title": "Power Output",
       "color": "#7E61A8",
       "label": "",
-      "description": "",
+      "description": "Lorem ipsum",
       "sustances": {
         "min": [
           {
@@ -918,7 +918,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "power-output"
             ]
@@ -929,7 +929,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "power-output"
             ]
@@ -942,7 +942,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "power-output"
             ]
@@ -953,7 +953,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "power-output"
             ]
@@ -966,7 +966,7 @@
             "dosage": "700",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "power-output"
             ]
@@ -977,7 +977,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "power-output"
             ]
@@ -990,7 +990,7 @@
       "title": "Overall Well-Being",
       "color": "#7E61A8",
       "label": "",
-      "description": "",
+      "description": "Lorem ipsum",
       "sustances": {
         "min": [
           {
@@ -999,7 +999,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "anxiety",
               "stress-management",
@@ -1013,7 +1013,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "anxiety",
               "stress-management",
@@ -1029,7 +1029,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "anxiety",
               "stress-management",
@@ -1043,7 +1043,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "anxiety",
               "stress-management",
@@ -1059,7 +1059,7 @@
             "dosage": "700",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "anxiety",
               "stress-management",
@@ -1073,7 +1073,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "anxiety",
               "stress-management",
@@ -1089,7 +1089,7 @@
       "title": "Stress Management",
       "color": "#7E61A8",
       "label": "",
-      "description": "",
+      "description": "Lorem ipsum",
       "sustances": {
         "min": [
           {
@@ -1098,7 +1098,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "anxiety",
               "stress-management",
@@ -1112,7 +1112,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "anxiety",
               "stress-management",
@@ -1128,7 +1128,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "anxiety",
               "stress-management",
@@ -1142,7 +1142,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "anxiety",
               "stress-management",
@@ -1158,7 +1158,7 @@
             "dosage": "700",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "anxiety",
               "stress-management",
@@ -1172,7 +1172,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "anxiety",
               "stress-management",
@@ -1188,7 +1188,7 @@
       "title": "Depression",
       "color": "#7E61A8",
       "label": "",
-      "description": "",
+      "description": "Lorem ipsum",
       "sustances": {
         "min": [
           {
@@ -1197,7 +1197,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "anxiety",
               "stress-management",
@@ -1211,7 +1211,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "anxiety",
               "stress-management",
@@ -1227,7 +1227,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "anxiety",
               "stress-management",
@@ -1241,7 +1241,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "anxiety",
               "stress-management",
@@ -1257,7 +1257,7 @@
             "dosage": "700",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "anxiety",
               "stress-management",
@@ -1271,7 +1271,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "anxiety",
               "stress-management",
@@ -1287,7 +1287,7 @@
       "title": "Anxiety",
       "color": "#7E61A8",
       "label": "",
-      "description": "",
+      "description": "Lorem ipsum",
       "sustances": {
         "min": [
           {
@@ -1296,7 +1296,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "anxiety",
               "stress-management",
@@ -1310,7 +1310,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "anxiety",
               "stress-management",
@@ -1326,7 +1326,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "anxiety",
               "stress-management",
@@ -1340,7 +1340,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "anxiety",
               "stress-management",
@@ -1356,7 +1356,7 @@
             "dosage": "700",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "anxiety",
               "stress-management",
@@ -1370,7 +1370,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "anxiety",
               "stress-management",
@@ -1386,7 +1386,7 @@
       "title": "Estrogen",
       "color": "#7E61A8",
       "label": "",
-      "description": "",
+      "description": "Lorem ipsum",
       "sustances": {
         "min": [
           {
@@ -1395,7 +1395,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -1406,7 +1406,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -1419,7 +1419,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -1430,7 +1430,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -1443,7 +1443,7 @@
             "dosage": "700",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -1454,7 +1454,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -1467,7 +1467,7 @@
       "title": "PMS",
       "color": "#7E61A8",
       "label": "",
-      "description": "",
+      "description": "Lorem ipsum",
       "sustances": {
         "min": [
           {
@@ -1476,7 +1476,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -1487,7 +1487,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -1500,7 +1500,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -1511,7 +1511,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -1524,7 +1524,7 @@
             "dosage": "700",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -1535,7 +1535,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -1548,7 +1548,7 @@
       "title": "Menopause",
       "color": "#7E61A8",
       "label": "",
-      "description": "",
+      "description": "Lorem ipsum",
       "sustances": {
         "min": [
           {
@@ -1557,7 +1557,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -1568,7 +1568,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -1581,7 +1581,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -1592,7 +1592,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -1605,7 +1605,7 @@
             "dosage": "700",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -1616,7 +1616,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -1629,7 +1629,7 @@
       "title": "Erections",
       "color": "#7E61A8",
       "label": "",
-      "description": "",
+      "description": "Lorem ipsum",
       "sustances": {
         "min": [
           {
@@ -1638,7 +1638,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -1649,7 +1649,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -1662,7 +1662,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -1673,7 +1673,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -1686,7 +1686,7 @@
             "dosage": "700",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -1697,7 +1697,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -1710,7 +1710,7 @@
       "title": "Testosterone",
       "color": "#7E61A8",
       "label": "",
-      "description": "",
+      "description": "Lorem ipsum",
       "sustances": {
         "min": [
           {
@@ -1719,7 +1719,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -1730,7 +1730,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -1743,7 +1743,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -1754,7 +1754,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -1767,7 +1767,7 @@
             "dosage": "700",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -1778,7 +1778,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -1791,7 +1791,7 @@
       "title": "Fertility",
       "color": "#7E61A8",
       "label": "",
-      "description": "",
+      "description": "Lorem ipsum",
       "sustances": {
         "min": [
           {
@@ -1800,7 +1800,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -1811,7 +1811,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -1824,7 +1824,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -1835,7 +1835,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -1848,7 +1848,7 @@
             "dosage": "700",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -1859,7 +1859,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -1872,7 +1872,7 @@
       "title": "Libido",
       "color": "#7E61A8",
       "label": "",
-      "description": "",
+      "description": "Lorem ipsum",
       "sustances": {
         "min": [
           {
@@ -1881,7 +1881,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -1892,7 +1892,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -1905,7 +1905,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -1916,7 +1916,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -1929,7 +1929,7 @@
             "dosage": "700",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -1940,7 +1940,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -1953,7 +1953,7 @@
       "title": "Sexual Performance",
       "color": "#7E61A8",
       "label": "",
-      "description": "",
+      "description": "Lorem ipsum",
       "sustances": {
         "min": [
           {
@@ -1962,7 +1962,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -1973,7 +1973,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -1986,7 +1986,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -1997,7 +1997,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -2010,7 +2010,7 @@
             "dosage": "700",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -2021,7 +2021,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -2034,7 +2034,7 @@
       "title": "Heart Function",
       "color": "#7E61A8",
       "label": "",
-      "description": "",
+      "description": "Lorem ipsum",
       "sustances": {
         "min": [
           {
@@ -2043,7 +2043,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -2054,7 +2054,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -2067,7 +2067,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -2078,7 +2078,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -2091,7 +2091,7 @@
             "dosage": "700",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -2102,7 +2102,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -2115,7 +2115,7 @@
       "title": "Cholesterol & Triglycerides",
       "color": "#7E61A8",
       "label": "",
-      "description": "",
+      "description": "Lorem ipsum",
       "sustances": {
         "min": [
           {
@@ -2124,7 +2124,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -2135,7 +2135,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -2148,7 +2148,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -2159,7 +2159,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -2172,7 +2172,7 @@
             "dosage": "700",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
@@ -2183,7 +2183,7 @@
             "dosage": "300",
             "unit": "mg",
             "label": "",
-            "description": "",
+            "description": "Lorem ipsum",
             "parents": [
               "preventive-immunity"
             ]
