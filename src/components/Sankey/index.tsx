@@ -539,7 +539,7 @@ const Sankey: React.FC = () => {
                                   suboutcomes,
                                 ).find(suboutcome => suboutcome.key === parent);
                                 return (
-                                  <>
+                                  <div className="list-item">
                                     <h4>
                                       <strong>{nutraceutic.title}</strong> for{' '}
                                       {selectedParent?.title}
@@ -575,7 +575,7 @@ const Sankey: React.FC = () => {
                                     {/* <a href="#2">
                                       Read each of the scientific studies
                                     </a> */}
-                                  </>
+                                  </div>
                                 );
                               })}
                             </PopupList>

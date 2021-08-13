@@ -449,6 +449,24 @@
             "label": "Label text",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
             "parents": ["bone-density"]
+          },
+          {
+            "key": "vitamin-d",
+            "title": "Vitamin D",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": ["bone-density"]
+          },
+          {
+            "key": "vitamin-k",
+            "title": "Vitamin K",
+            "dosage": "200",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": ["bone-density"]
           }
         ],
         "med": [
@@ -482,6 +500,39 @@
             "parents": [
               "bone-density"
             ]
+          },
+          {
+            "key": "magnesium",
+            "title": "Magnesium",
+            "dosage": "500",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": [
+              "bone-density"
+            ]
+          },
+          {
+            "key": "msm",
+            "title": "MSM",
+            "dosage": "200",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": [
+              "bone-density"
+            ]
+          },
+          {
+            "key": "vitamin-c",
+            "title": "Vitamin C",
+            "dosage": "200",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": [
+              "bone-density"
+            ]
           }
         ],
         "max": [
@@ -509,6 +560,39 @@
             "key": "calcium",
             "title": "Calcium",
             "dosage": "100",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": [
+              "bone-density"
+            ]
+          },
+          {
+            "key": "magnesium",
+            "title": "Magnesium",
+            "dosage": "500",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": [
+              "bone-density"
+            ]
+          },
+          {
+            "key": "msm",
+            "title": "MSM",
+            "dosage": "200",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": [
+              "bone-density"
+            ]
+          },
+          {
+            "key": "vitamin-c",
+            "title": "Vitamin C",
+            "dosage": "200",
             "unit": "mg",
             "label": "Label text",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
@@ -570,9 +654,9 @@
       "sustances": {
         "min": [
           {
-            "key": "reishi",
-            "title": "Reishi",
-            "dosage": "300",
+            "key": "coq10",
+            "title": "CoQ10",
+            "dosage": "100",
             "unit": "mg",
             "label": "Label text",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
@@ -581,9 +665,9 @@
         ],
         "med": [
           {
-            "key": "reishi",
-            "title": "Reishi",
-            "dosage": "300",
+            "key": "coq10",
+            "title": "CoQ10",
+            "dosage": "100",
             "unit": "mg",
             "label": "Label text",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
@@ -592,9 +676,9 @@
         ],
         "max": [
           {
-            "key": "reishi",
-            "title": "Reishi",
-            "dosage": "300",
+            "key": "coq10",
+            "title": "CoQ10",
+            "dosage": "100",
             "unit": "mg",
             "label": "Label text",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
@@ -630,6 +714,24 @@
             "label": "Label text",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
             "parents": ["blood-pressure"]
+          },
+          {
+            "key": "omega-3",
+            "title": "Omega 3",
+            "dosage": "700",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": ["blood-pressure"]
+          },
+          {
+            "key": "vitamin-k",
+            "title": "Vitamin K",
+            "dosage": "200",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": ["blood-pressure"]
           }
         ],
         "max": [
@@ -637,6 +739,24 @@
             "key": "garlic",
             "title": "Garlic",
             "dosage": "300",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": ["blood-pressure"]
+          },
+          {
+            "key": "omega-3",
+            "title": "Omega 3",
+            "dosage": "700",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": ["blood-pressure"]
+          },
+          {
+            "key": "vitamin-k",
+            "title": "Vitamin K",
+            "dosage": "200",
             "unit": "mg",
             "label": "Label text",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
@@ -681,6 +801,15 @@
             "label": "Label text",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
             "parents": ["memory"]
+          },
+          {
+            "key": "same",
+            "title": "SAMe",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": ["memory"]
           }
         ],
         "max": [
@@ -697,6 +826,15 @@
             "key": "cdp-choline",
             "title": "CDP-Choline",
             "dosage": "400",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": ["memory"]
+          },
+          {
+            "key": "same",
+            "title": "SAMe",
+            "dosage": "300",
             "unit": "mg",
             "label": "Label text",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
@@ -810,6 +948,24 @@
             "label": "Label text",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
             "parents": ["cholesterol-and-triglycerides"]
+          },
+          {
+            "key": "omega-3",
+            "title": "Omega 3",
+            "dosage": "700",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": ["cholesterol-and-triglycerides"]
+          },
+          {
+            "key": "psyllium",
+            "title": "Psyllium",
+            "dosage": "400",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": ["cholesterol-and-triglycerides"]
           }
         ],
         "max": [
@@ -817,6 +973,24 @@
             "key": "garlic",
             "title": "Garlic",
             "dosage": "300",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": ["cholesterol-and-triglycerides"]
+          },
+          {
+            "key": "omega-3",
+            "title": "Omega 3",
+            "dosage": "700",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": ["cholesterol-and-triglycerides"]
+          },
+          {
+            "key": "psyllium",
+            "title": "Psyllium",
+            "dosage": "400",
             "unit": "mg",
             "label": "Label text",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
@@ -834,9 +1008,9 @@
       "sustances": {
         "min": [
           {
-            "key": "reishi",
-            "title": "Reishi",
-            "dosage": "300",
+            "key": "hmb",
+            "title": "HMB",
+            "dosage": "100",
             "unit": "mg",
             "label": "Label text",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
@@ -845,9 +1019,9 @@
         ],
         "med": [
           {
-            "key": "reishi",
-            "title": "Reishi",
-            "dosage": "300",
+            "key": "hmb",
+            "title": "HMB",
+            "dosage": "100",
             "unit": "mg",
             "label": "Label text",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
@@ -856,9 +1030,9 @@
         ],
         "max": [
           {
-            "key": "reishi",
-            "title": "Reishi",
-            "dosage": "300",
+            "key": "hmb",
+            "title": "HMB",
+            "dosage": "100",
             "unit": "mg",
             "label": "Label text",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
@@ -1120,6 +1294,26 @@
             "label": "Label text",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
             "parents": ["nutrient-supplementation"]
+          },
+          {
+            "key": "vitamin-c",
+            "title": "Vitamin C",
+            "dosage": "200",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": [
+              "nutrient-supplementation"
+            ]
+          },
+          {
+            "key": "vitamin-d",
+            "title": "Vitamin D",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": ["nutrient-supplementation"]
           }
         ],
         "med": [
@@ -1131,6 +1325,44 @@
             "label": "Label text",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
             "parents": ["nutrient-supplementation"]
+          },
+          {
+            "key": "iron",
+            "title": "Iron",
+            "dosage": "200",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": ["nutrient-supplementation"]
+          },
+          {
+            "key": "omega-3",
+            "title": "Omega 3",
+            "dosage": "700",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": ["nutrient-supplementation"]
+          },
+          {
+            "key": "magnesium",
+            "title": "Magnesium",
+            "dosage": "500",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": [
+              "nutrient-supplementation"
+            ]
+          },
+          {
+            "key": "psyllium",
+            "title": "Psyllium",
+            "dosage": "400",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": ["nutrient-supplementation"]
           }
         ],
         "max": [
@@ -1138,6 +1370,53 @@
             "key": "bifidobacterium",
             "title": "Bifidobacterium",
             "dosage": "100",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": ["nutrient-supplementation"]
+          },
+          {
+            "key": "iron",
+            "title": "Iron",
+            "dosage": "200",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": ["nutrient-supplementation"]
+          },
+          {
+            "key": "omega-3",
+            "title": "Omega 3",
+            "dosage": "700",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": ["nutrient-supplementation"]
+          },
+          {
+            "key": "magnesium",
+            "title": "Magnesium",
+            "dosage": "500",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": [
+              "nutrient-supplementation"
+            ]
+          },
+          {
+            "key": "psyllium",
+            "title": "Psyllium",
+            "dosage": "400",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": ["nutrient-supplementation"]
+          },
+          {
+            "key": "vitamin-b12",
+            "title": "Vitamin B12",
+            "dosage": "200",
             "unit": "mg",
             "label": "Label text",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
@@ -1173,6 +1452,15 @@
             "label": "Label text",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
             "parents": ["anti-inflammatory"]
+          },
+          {
+            "key": "omega-3",
+            "title": "Omega 3",
+            "dosage": "700",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": ["anti-inflammatory"]
           }
         ],
         "max": [
@@ -1180,6 +1468,15 @@
             "key": "reishi",
             "title": "Reishi",
             "dosage": "300",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": ["anti-inflammatory"]
+          },
+          {
+            "key": "omega-3",
+            "title": "Omega 3",
+            "dosage": "700",
             "unit": "mg",
             "label": "Label text",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
@@ -1197,8 +1494,8 @@
       "sustances": {
         "min": [
           {
-            "key": "reishi",
-            "title": "Reishi",
+            "key": "same",
+            "title": "SAMe",
             "dosage": "300",
             "unit": "mg",
             "label": "Label text",
@@ -1208,8 +1505,17 @@
         ],
         "med": [
           {
-            "key": "reishi",
-            "title": "Reishi",
+            "key": "same",
+            "title": "SAMe",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": ["anti-oxidant"]
+          },
+          {
+            "key": "spirulina",
+            "title": "Spirulina",
             "dosage": "300",
             "unit": "mg",
             "label": "Label text",
@@ -1219,8 +1525,17 @@
         ],
         "max": [
           {
-            "key": "reishi",
-            "title": "Reishi",
+            "key": "same",
+            "title": "SAMe",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": ["anti-oxidant"]
+          },
+          {
+            "key": "spirulina",
+            "title": "Spirulina",
             "dosage": "300",
             "unit": "mg",
             "label": "Label text",
@@ -1239,17 +1554,86 @@
       "sustances": {
         "min": [
           {
-            "key": "reishi",
-            "title": "Reishi",
+            "key": "garlic",
+            "title": "Garlic",
             "dosage": "300",
             "unit": "mg",
             "label": "Label text",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
             "parents": ["immune-response"]
+          },
+          {
+            "key": "vitamin-c",
+            "title": "Vitamin C",
+            "dosage": "200",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": [
+              "immune-response"
+            ]
+          },
+          {
+            "key": "zinc",
+            "title": "Zinc",
+            "dosage": "200",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": [
+              "immune-response"
+            ]
+          },
+          {
+            "key": "zma",
+            "title": "ZMA",
+            "dosage": "200",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": [
+              "immune-response"
+            ]
           }
         ],
         "med": [
           {
+            "key": "garlic",
+            "title": "Garlic",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": ["immune-response"]
+          },
+          {
+            "key": "iron",
+            "title": "Iron",
+            "dosage": "200",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": ["immune-response"]
+          },
+          {
+            "key": "lactoferrin",
+            "title": "Lactoferrin",
+            "dosage": "100",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": ["immune-response"]
+          },
+          {
+            "key": "nac",
+            "title": "NAC",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": ["immune-response"]
+          },
+          {
             "key": "reishi",
             "title": "Reishi",
             "dosage": "300",
@@ -1257,13 +1641,123 @@
             "label": "Label text",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
             "parents": ["immune-response"]
+          },
+          {
+            "key": "spirulina",
+            "title": "Spirulina",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": ["immune-response"]
+          },
+          {
+            "key": "vitamin-a",
+            "title": "Vitamin A",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": ["immune-response"]
+          },
+          {
+            "key": "vitamin-d",
+            "title": "Vitamin D",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": ["immune-response"]
+          },
+          {
+            "key": "zinc",
+            "title": "Zinc",
+            "dosage": "200",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": [
+              "immune-response"
+            ]
           }
         ],
         "max": [
           {
+            "key": "garlic",
+            "title": "Garlic",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": ["immune-response"]
+          },
+          {
+            "key": "iron",
+            "title": "Iron",
+            "dosage": "200",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": ["immune-response"]
+          },
+          {
+            "key": "lactoferrin",
+            "title": "Lactoferrin",
+            "dosage": "100",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": ["immune-response"]
+          },
+          {
+            "key": "nac",
+            "title": "NAC",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": ["immune-response"]
+          },
+          {
             "key": "reishi",
             "title": "Reishi",
             "dosage": "300",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": ["immune-response"]
+          },
+          {
+            "key": "spirulina",
+            "title": "Spirulina",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": ["immune-response"]
+          },
+          {
+            "key": "vitamin-a",
+            "title": "Vitamin A",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": ["immune-response"]
+          },
+          {
+            "key": "vitamin-d",
+            "title": "Vitamin D",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": ["immune-response"]
+          },
+          {
+            "key": "vitamin-e",
+            "title": "Vitamin E",
+            "dosage": "200",
             "unit": "mg",
             "label": "Label text",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
@@ -1281,8 +1775,8 @@
       "sustances": {
         "min": [
           {
-            "key": "reishi",
-            "title": "Reishi",
+            "key": "nac",
+            "title": "NAC",
             "dosage": "300",
             "unit": "mg",
             "label": "Label text",
@@ -1292,8 +1786,17 @@
         ],
         "med": [
           {
-            "key": "reishi",
-            "title": "Reishi",
+            "key": "nac",
+            "title": "NAC",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": ["liver-function"]
+          },
+          {
+            "key": "spirulina",
+            "title": "Spirulina",
             "dosage": "300",
             "unit": "mg",
             "label": "Label text",
@@ -1303,8 +1806,17 @@
         ],
         "max": [
           {
-            "key": "reishi",
-            "title": "Reishi",
+            "key": "nac",
+            "title": "NAC",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": ["liver-function"]
+          },
+          {
+            "key": "spirulina",
+            "title": "Spirulina",
             "dosage": "300",
             "unit": "mg",
             "label": "Label text",
@@ -1330,6 +1842,17 @@
             "label": "Label text",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
             "parents": ["preventive-immunity"]
+          },
+          {
+            "key": "zinc",
+            "title": "Zinc",
+            "dosage": "200",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": [
+              "preventive-immunity"
+            ]
           }
         ],
         "med": [
@@ -1341,6 +1864,26 @@
             "label": "Label text",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
             "parents": ["preventive-immunity"]
+          },
+          {
+            "key": "vitamin-a",
+            "title": "Vitamin A",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": ["preventive-immunity"]
+          },
+          {
+            "key": "zinc",
+            "title": "Zinc",
+            "dosage": "200",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": [
+              "preventive-immunity"
+            ]
           }
         ],
         "max": [
@@ -1352,6 +1895,26 @@
             "label": "Label text",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
             "parents": ["preventive-immunity"]
+          },
+          {
+            "key": "vitamin-a",
+            "title": "Vitamin A",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": ["preventive-immunity"]
+          },
+          {
+            "key": "zinc",
+            "title": "Zinc",
+            "dosage": "200",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": [
+              "preventive-immunity"
+            ]
           }
         ]
       }
@@ -1372,6 +1935,15 @@
             "label": "Label text",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
             "parents": ["depression"]
+          },
+          {
+            "key": "vitamin-d",
+            "title": "Vitamin D",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": ["depression"]
           }
         ],
         "med": [
@@ -1383,6 +1955,55 @@
             "label": "Label text",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
             "parents": ["depression"]
+          },
+          {
+            "key": "omega-3",
+            "title": "Omega 3",
+            "dosage": "700",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": ["depression"]
+          },
+          {
+            "key": "kava",
+            "title": "Kava",
+            "dosage": "400",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": ["depression"]
+          },
+          {
+            "key": "magnesium",
+            "title": "Magnesium",
+            "dosage": "500",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": [
+              "depression"
+            ]
+          },
+          {
+            "key": "same",
+            "title": "SAMe",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": ["depression"]
+          },
+          {
+            "key": "zinc",
+            "title": "Zinc",
+            "dosage": "200",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": [
+              "depression"
+            ]
           }
         ],
         "max": [
@@ -1394,6 +2015,55 @@
             "label": "Label text",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
             "parents": ["depression"]
+          },
+          {
+            "key": "omega-3",
+            "title": "Omega 3",
+            "dosage": "700",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": ["depression"]
+          },
+          {
+            "key": "kava",
+            "title": "Kava",
+            "dosage": "400",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": ["depression"]
+          },
+          {
+            "key": "magnesium",
+            "title": "Magnesium",
+            "dosage": "500",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": [
+              "depression"
+            ]
+          },
+          {
+            "key": "same",
+            "title": "SAMe",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": ["depression"]
+          },
+          {
+            "key": "zinc",
+            "title": "Zinc",
+            "dosage": "200",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": [
+              "depression"
+            ]
           }
         ]
       }
@@ -1414,6 +2084,17 @@
             "label": "Label text",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
             "parents": ["overall-well-being"]
+          },
+          {
+            "key": "zinc",
+            "title": "Zinc",
+            "dosage": "200",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": [
+              "overall-well-being"
+            ]
           }
         ],
         "med": [
@@ -1425,6 +2106,24 @@
             "label": "Label text",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
             "parents": ["overall-well-being"]
+          },
+          {
+            "key": "kava",
+            "title": "Kava",
+            "dosage": "400",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": ["overall-well-being"]
+          },
+          {
+            "key": "nac",
+            "title": "NAC",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": ["overall-well-being"]
           }
         ],
         "max": [
@@ -1432,6 +2131,24 @@
             "key": "ashwagandha",
             "title": "Ashwagandha",
             "dosage": "200",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": ["overall-well-being"]
+          },
+          {
+            "key": "kava",
+            "title": "Kava",
+            "dosage": "400",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": ["overall-well-being"]
+          },
+          {
+            "key": "nac",
+            "title": "NAC",
+            "dosage": "300",
             "unit": "mg",
             "label": "Label text",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
@@ -1456,6 +2173,15 @@
             "label": "Label text",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
             "parents": ["anxiety"]
+          },
+          {
+            "key": "vitamin-d",
+            "title": "Vitamin D",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": ["anxiety"]
           }
         ],
         "med": [
@@ -1467,6 +2193,44 @@
             "label": "Label text",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
             "parents": ["anxiety"]
+          },
+          {
+            "key": "omega-3",
+            "title": "Omega 3",
+            "dosage": "700",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": ["anxiety"]
+          },
+          {
+            "key": "kava",
+            "title": "Kava",
+            "dosage": "400",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": ["anxiety"]
+          },
+          {
+            "key": "lavender",
+            "title": "Lavender",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": ["anxiety"]
+          },
+          {
+            "key": "zinc",
+            "title": "Zinc",
+            "dosage": "200",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": [
+              "anxiety"
+            ]
           }
         ],
         "max": [
@@ -1478,6 +2242,53 @@
             "label": "Label text",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
             "parents": ["anxiety"]
+          },
+          {
+            "key": "omega-3",
+            "title": "Omega 3",
+            "dosage": "700",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": ["anxiety"]
+          },
+          {
+            "key": "kava",
+            "title": "Kava",
+            "dosage": "400",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": ["anxiety"]
+          },
+          {
+            "key": "lavender",
+            "title": "Lavender",
+            "dosage": "300",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": ["anxiety"]
+          },
+          {
+            "key": "lysine",
+            "title": "Lysine",
+            "dosage": "100",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": ["anxiety"]
+          },
+          {
+            "key": "zinc",
+            "title": "Zinc",
+            "dosage": "200",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": [
+              "anxiety"
+            ]
           }
         ]
       }
@@ -1551,6 +2362,15 @@
             "label": "Label text",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
             "parents": ["stress"]
+          },
+          {
+            "key": "kava",
+            "title": "Kava",
+            "dosage": "400",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": ["stress"]
           }
         ],
         "max": [
@@ -1558,6 +2378,15 @@
             "key": "ashwagandha",
             "title": "Ashwagandha",
             "dosage": "200",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": ["stress"]
+          },
+          {
+            "key": "kava",
+            "title": "Kava",
+            "dosage": "400",
             "unit": "mg",
             "label": "Label text",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
@@ -1617,35 +2446,77 @@
       "sustances": {
         "min": [
           {
-            "key": "reishi",
-            "title": "Reishi",
-            "dosage": "300",
+            "key": "magnesium",
+            "title": "Magnesium",
+            "dosage": "500",
             "unit": "mg",
             "label": "Label text",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
-            "parents": ["sleep"]
+            "parents": [
+              "sleep"
+            ]
           }
         ],
         "med": [
           {
-            "key": "reishi",
-            "title": "Reishi",
+            "key": "magnesium",
+            "title": "Magnesium",
+            "dosage": "500",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": [
+              "sleep"
+            ]
+          },
+          {
+            "key": "lavender",
+            "title": "Lavender",
             "dosage": "300",
             "unit": "mg",
             "label": "Label text",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
-            "parents": ["sleep"]
+            "parents": ["anxiety"]
+          },
+          {
+            "key": "melatonin",
+            "title": "Melatonin",
+            "dosage": "200",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": ["anxiety"]
           }
         ],
         "max": [
           {
-            "key": "reishi",
-            "title": "Reishi",
+            "key": "magnesium",
+            "title": "Magnesium",
+            "dosage": "500",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": [
+              "sleep"
+            ]
+          },
+          {
+            "key": "lavender",
+            "title": "Lavender",
             "dosage": "300",
             "unit": "mg",
             "label": "Label text",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
-            "parents": ["sleep"]
+            "parents": ["anxiety"]
+          },
+          {
+            "key": "melatonin",
+            "title": "Melatonin",
+            "dosage": "200",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": ["anxiety"]
           }
         ]
       }
@@ -1659,35 +2530,81 @@
       "sustances": {
         "min": [
           {
-            "key": "reishi",
-            "title": "Reishi",
-            "dosage": "300",
+            "key": "magnesium",
+            "title": "Magnesium",
+            "dosage": "500",
             "unit": "mg",
             "label": "Label text",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
-            "parents": ["blood-sugar-control"]
+            "parents": [
+              "blood-sugar-control"
+            ]
           }
         ],
         "med": [
           {
-            "key": "reishi",
-            "title": "Reishi",
-            "dosage": "300",
+            "key": "magnesium",
+            "title": "Magnesium",
+            "dosage": "500",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": [
+              "blood-sugar-control"
+            ]
+          },
+          {
+            "key": "psyllium",
+            "title": "Psyllium",
+            "dosage": "400",
             "unit": "mg",
             "label": "Label text",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
             "parents": ["blood-sugar-control"]
+          },
+          {
+            "key": "zinc",
+            "title": "Zinc",
+            "dosage": "200",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": [
+              "blood-sugar-control"
+            ]
           }
         ],
         "max": [
           {
-            "key": "reishi",
-            "title": "Reishi",
-            "dosage": "300",
+            "key": "magnesium",
+            "title": "Magnesium",
+            "dosage": "500",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": [
+              "blood-sugar-control"
+            ]
+          },
+          {
+            "key": "psyllium",
+            "title": "Psyllium",
+            "dosage": "400",
             "unit": "mg",
             "label": "Label text",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
             "parents": ["blood-sugar-control"]
+          },
+          {
+            "key": "zinc",
+            "title": "Zinc",
+            "dosage": "200",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": [
+              "blood-sugar-control"
+            ]
           }
         ]
       }
@@ -1701,35 +2618,68 @@
       "sustances": {
         "min": [
           {
-            "key": "reishi",
-            "title": "Reishi",
+            "key": "vitamin-d",
+            "title": "Vitamin D",
             "dosage": "300",
             "unit": "mg",
             "label": "Label text",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
             "parents": ["testosterone"]
+          },
+          {
+            "key": "zinc",
+            "title": "Zinc",
+            "dosage": "200",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": [
+              "testosterone"
+            ]
           }
         ],
         "med": [
           {
-            "key": "reishi",
-            "title": "Reishi",
+            "key": "vitamin-d",
+            "title": "Vitamin D",
             "dosage": "300",
             "unit": "mg",
             "label": "Label text",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
             "parents": ["testosterone"]
+          },
+          {
+            "key": "zinc",
+            "title": "Zinc",
+            "dosage": "200",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": [
+              "testosterone"
+            ]
           }
         ],
         "max": [
           {
-            "key": "reishi",
-            "title": "Reishi",
+            "key": "vitamin-d",
+            "title": "Vitamin D",
             "dosage": "300",
             "unit": "mg",
             "label": "Label text",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
             "parents": ["testosterone"]
+          },
+          {
+            "key": "zinc",
+            "title": "Zinc",
+            "dosage": "200",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": [
+              "testosterone"
+            ]
           }
         ]
       }
@@ -1743,8 +2693,8 @@
       "sustances": {
         "min": [
           {
-            "key": "reishi",
-            "title": "Reishi",
+            "key": "lavender",
+            "title": "Lavender",
             "dosage": "300",
             "unit": "mg",
             "label": "Label text",
@@ -1754,8 +2704,8 @@
         ],
         "med": [
           {
-            "key": "reishi",
-            "title": "Reishi",
+            "key": "lavender",
+            "title": "Lavender",
             "dosage": "300",
             "unit": "mg",
             "label": "Label text",
@@ -1765,8 +2715,8 @@
         ],
         "max": [
           {
-            "key": "reishi",
-            "title": "Reishi",
+            "key": "lavender",
+            "title": "Lavender",
             "dosage": "300",
             "unit": "mg",
             "label": "Label text",
@@ -1785,35 +2735,41 @@
       "sustances": {
         "min": [
           {
-            "key": "reishi",
-            "title": "Reishi",
-            "dosage": "300",
+            "key": "zinc",
+            "title": "Zinc",
+            "dosage": "200",
             "unit": "mg",
             "label": "Label text",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
-            "parents": ["fertility"]
+            "parents": [
+              "fertility"
+            ]
           }
         ],
         "med": [
           {
-            "key": "reishi",
-            "title": "Reishi",
-            "dosage": "300",
+            "key": "zinc",
+            "title": "Zinc",
+            "dosage": "200",
             "unit": "mg",
             "label": "Label text",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
-            "parents": ["fertility"]
+            "parents": [
+              "fertility"
+            ]
           }
         ],
         "max": [
           {
-            "key": "reishi",
-            "title": "Reishi",
-            "dosage": "300",
+            "key": "zinc",
+            "title": "Zinc",
+            "dosage": "200",
             "unit": "mg",
             "label": "Label text",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
-            "parents": ["fertility"]
+            "parents": [
+              "fertility"
+            ]
           }
         ]
       }
@@ -1911,9 +2867,9 @@
       "sustances": {
         "min": [
           {
-            "key": "reishi",
-            "title": "Reishi",
-            "dosage": "300",
+            "key": "melatonin",
+            "title": "Melatonin",
+            "dosage": "200",
             "unit": "mg",
             "label": "Label text",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
@@ -1922,9 +2878,9 @@
         ],
         "med": [
           {
-            "key": "reishi",
-            "title": "Reishi",
-            "dosage": "300",
+            "key": "melatonin",
+            "title": "Melatonin",
+            "dosage": "200",
             "unit": "mg",
             "label": "Label text",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
@@ -1933,9 +2889,9 @@
         ],
         "max": [
           {
-            "key": "reishi",
-            "title": "Reishi",
-            "dosage": "300",
+            "key": "melatonin",
+            "title": "Melatonin",
+            "dosage": "200",
             "unit": "mg",
             "label": "Label text",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
@@ -1953,8 +2909,8 @@
       "sustances": {
         "min": [
           {
-            "key": "reishi",
-            "title": "Reishi",
+            "key": "maca",
+            "title": "Maca",
             "dosage": "300",
             "unit": "mg",
             "label": "Label text",
@@ -1964,8 +2920,8 @@
         ],
         "med": [
           {
-            "key": "reishi",
-            "title": "Reishi",
+            "key": "maca",
+            "title": "Maca",
             "dosage": "300",
             "unit": "mg",
             "label": "Label text",
@@ -1975,8 +2931,8 @@
         ],
         "max": [
           {
-            "key": "reishi",
-            "title": "Reishi",
+            "key": "maca",
+            "title": "Maca",
             "dosage": "300",
             "unit": "mg",
             "label": "Label text",
@@ -2006,9 +2962,18 @@
         ],
         "med": [
           {
-            "key": "reishi",
-            "title": "Reishi",
+            "key": "5-htp",
+            "title": "5-HTP",
             "dosage": "300",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": ["appetite-control"]
+          },
+          {
+            "key": "psyllium",
+            "title": "Psyllium",
+            "dosage": "400",
             "unit": "mg",
             "label": "Label text",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
@@ -2017,9 +2982,18 @@
         ],
         "max": [
           {
-            "key": "reishi",
-            "title": "Reishi",
+            "key": "5-htp",
+            "title": "5-HTP",
             "dosage": "300",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": ["appetite-control"]
+          },
+          {
+            "key": "psyllium",
+            "title": "Psyllium",
+            "dosage": "400",
             "unit": "mg",
             "label": "Label text",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
@@ -2079,8 +3053,8 @@
       "sustances": {
         "min": [
           {
-            "key": "reishi",
-            "title": "Reishi",
+            "key": "maca",
+            "title": "Maca",
             "dosage": "300",
             "unit": "mg",
             "label": "Label text",
@@ -2090,8 +3064,8 @@
         ],
         "med": [
           {
-            "key": "reishi",
-            "title": "Reishi",
+            "key": "maca",
+            "title": "Maca",
             "dosage": "300",
             "unit": "mg",
             "label": "Label text",
@@ -2101,8 +3075,8 @@
         ],
         "max": [
           {
-            "key": "reishi",
-            "title": "Reishi",
+            "key": "maca",
+            "title": "Maca",
             "dosage": "300",
             "unit": "mg",
             "label": "Label text",
@@ -2121,9 +3095,9 @@
       "sustances": {
         "min": [
           {
-            "key": "reishi",
-            "title": "Reishi",
-            "dosage": "300",
+            "key": "lutein",
+            "title": "Lutein",
+            "dosage": "100",
             "unit": "mg",
             "label": "Label text",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
@@ -2132,8 +3106,17 @@
         ],
         "med": [
           {
-            "key": "reishi",
-            "title": "Reishi",
+            "key": "lutein",
+            "title": "Lutein",
+            "dosage": "100",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": ["eye-function"]
+          },
+          {
+            "key": "vitamin-a",
+            "title": "Vitamin A",
             "dosage": "300",
             "unit": "mg",
             "label": "Label text",
@@ -2143,8 +3126,17 @@
         ],
         "max": [
           {
-            "key": "reishi",
-            "title": "Reishi",
+            "key": "lutein",
+            "title": "Lutein",
+            "dosage": "100",
+            "unit": "mg",
+            "label": "Label text",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+            "parents": ["eye-function"]
+          },
+          {
+            "key": "vitamin-a",
+            "title": "Vitamin A",
             "dosage": "300",
             "unit": "mg",
             "label": "Label text",
@@ -2247,8 +3239,8 @@
       "sustances": {
         "min": [
           {
-            "key": "reishi",
-            "title": "Reishi",
+            "key": "maca",
+            "title": "Maca",
             "dosage": "300",
             "unit": "mg",
             "label": "Label text",
@@ -2258,8 +3250,8 @@
         ],
         "med": [
           {
-            "key": "reishi",
-            "title": "Reishi",
+            "key": "maca",
+            "title": "Maca",
             "dosage": "300",
             "unit": "mg",
             "label": "Label text",
@@ -2269,8 +3261,8 @@
         ],
         "max": [
           {
-            "key": "reishi",
-            "title": "Reishi",
+            "key": "maca",
+            "title": "Maca",
             "dosage": "300",
             "unit": "mg",
             "label": "Label text",

@@ -563,6 +563,12 @@ export const PopupList = styled.div`
 
     background: #f3f3f3;
   }
+
+  .list-item {
+    & ~ .list-item {
+      margin-top: 40px;
+    }
+  }
 `;
 
 export const PopupListIcons = styled.div`
