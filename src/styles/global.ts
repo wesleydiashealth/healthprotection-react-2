@@ -62,4 +62,17 @@ export default createGlobalStyle`
   .mb-10 {
     margin-bottom: 10px !important;
   }
+
+  .popup-content {
+    border-radius: 16px;
+
+    color: #565656;
+
+
+    filter: drop-shadow(10px 10px 26px rgba(0, 0, 0, 0.15));
+
+    .ScrollbarsCustom-Content {
+      padding: 30px !important;
+    }
+  }
 `;

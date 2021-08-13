@@ -143,20 +143,29 @@ const Container = styled.div<ContainerProps>`
     align-items: center;
 
     .sankey-tooltip {
-      width: 260px;
+      width: 640px;
       box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.11);
       border-radius: 20px;
 
-      font-size: 14px;
-      line-height: 22px;
+      text-align: left;
+      font-family: 'Montserrat';
 
       strong {
+        margin-bottom: 5px;
+
         display: block;
-        margin-bottom: 10px;
-        font-size: 20px;
-        line-height: 28px;
-        font-weight: 500;
+
         color: #7664c8;
+
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 24px;
+      }
+
+      span {
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 22px;
       }
     }
   }
@@ -437,9 +446,14 @@ export const Substance = styled.div<SubstanceProps>`
   }
 
   strong {
-    font-weight: 600;
-    position: relative;
     padding-right: 20px;
+    position: relative;
+
+    flex: 1;
+
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
 
     &:after {
       border-left: 1px solid #ccc;
@@ -500,6 +514,87 @@ export const Substance = styled.div<SubstanceProps>`
     css`
       min-height: ${`${58 * props.suboutcomes}px`};
     `}
+`;
+
+export const PopupContent = styled.div`
+  h3 {
+    margin-bottom: 20px;
+  }
+
+  p {
+    margin-bottom: 10px;
+
+    text-align: justify;
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  a {
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+
+    display: block;
+
+    color: #62a8ea;
+    text-align: right;
+    font-size: 14px;
+    line-height: 22px;
+  }
+`;
+
+export const PopupList = styled.div`
+  h4 {
+    font-size: 18px;
+    line-height: 22px;
+
+    strong {
+      color: #62a8ea;
+      font-weight: 600;
+    }
+  }
+
+  h5 {
+    margin: 10px 0;
+    padding: 6px 18px;
+
+    color: #62a8ea;
+    font-weight: 600;
+
+    background: #f3f3f3;
+  }
+`;
+
+export const PopupListIcons = styled.div`
+  margin-bottom: 20px;
+
+  display: flex;
+
+  .icon-wrapper {
+    strong {
+      margin-bottom: 10px;
+
+      display: block;
+
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 18px;
+    }
+
+    & ~ .icon-wrapper {
+      margin-left: 40px;
+    }
+  }
+
+  .icon-content {
+    display: flex;
+    align-items: center;
+
+    img {
+      margin-right: 10px;
+      flex-shrink: 0;
+    }
+  }
 `;
 
 export default Container;

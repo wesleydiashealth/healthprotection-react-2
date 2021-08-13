@@ -1,5 +1,8 @@
 import React, { useState, useCallback } from 'react';
 import ReactToolTip from 'react-tooltip';
+import { Scrollbar } from 'react-scrollbars-custom';
+import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css';
 import { HiQuestionMarkCircle, HiLockClosed } from 'react-icons/hi';
 import { FiRefreshCcw } from 'react-icons/fi';
 import Xarrow from 'react-xarrows';
@@ -14,6 +17,9 @@ import Container, {
   Substances,
   Substance,
   FineTune,
+  PopupContent,
+  PopupList,
+  PopupListIcons,
 } from './styles';
 
 import { useApp } from '../../contexts/app';
@@ -45,6 +51,8 @@ const Sankey: React.FC = () => {
   const context = useApp();
   const { steps } = context;
   const { step1: previousStep } = steps;
+
+  previousStep.isCompleted = true;
 
   const { outcomes, suboutcomes } = sankeyData;
 
@@ -408,38 +416,6 @@ const Sankey: React.FC = () => {
                         />
                       );
                     })}
-
-                    {/* {Object.values(children).filter(child => !!child.length)
-                      .length
-                      ? Object.values(outcomes)
-                          .filter(outcome =>
-                            outcome.suboutcomes.includes(suboutcome.key),
-                          )
-                          .map(outcome => {
-                            const outcomeNutraceutics =
-                              connections[outcome.key][suboutcome.key];
-
-                            return outcomeNutraceutics.map(nutraceutic => (
-                              <div
-                                key={`${nutraceutic}-${outcome.key}`}
-                                id={`${nutraceutic}-${outcome.key}`}
-                                className="anchors__item"
-                              />
-                            ));
-                          })
-                      : Object.values(outcomes)
-                          .filter(outcome =>
-                            outcome.suboutcomes.includes(suboutcome.key),
-                          )
-                          .map(outcome => {
-                            return (
-                              <div
-                                key={`${suboutcome.key}-${outcome.key}`}
-                                id={`${suboutcome.key}-${outcome.key}`}
-                                className="anchors__item"
-                              />
-                            );
-                          })} */}
                   </div>
                   <div className="exit-anchors anchors">
                     {nutraceutics
@@ -448,7 +424,7 @@ const Sankey: React.FC = () => {
                       )
                       .map(nutraceutic => (
                         <div
-                          key={`${suboutcome.key}-${nutraceutic.key}`}
+                          key={`anchor-${suboutcome.key}-${nutraceutic.key}`}
                           id={`${suboutcome.key}-${nutraceutic.key}`}
                           className="anchors__item"
                         />
@@ -488,6 +464,7 @@ const Sankey: React.FC = () => {
                     {Object.keys(suboutcome.sustances).map((key, index) => {
                       return (
                         <FineTune
+                          key={key}
                           isActive={fineTune[suboutcome.key] === key}
                           color={
                             outcomeIndex > -1
@@ -532,23 +509,79 @@ const Sankey: React.FC = () => {
                     suboutcomes={nutraceutic.parents.length}
                   >
                     <div className="content">
-                      <HiQuestionMarkCircle
-                        className="tooltip-icon"
-                        size={20}
-                        color="rgba(0,0,0,0.7)"
-                        data-tip={`${nutraceutic.title}`}
-                        data-for={`sankey-${nutraceutic.key}-tooltip`}
-                      />
-                      <ReactToolTip
-                        id={`sankey-${nutraceutic.key}-tooltip`}
-                        className={`sankey-${nutraceutic.key}-tooltip`}
-                        place="bottom"
-                        type="light"
-                        effect="solid"
-                        offset={{ top: 10, left: 10 }}
-                        html
-                        backgroundColor="#fff"
-                      />
+                      <Popup
+                        trigger={
+                          <HiQuestionMarkCircle
+                            className="tooltip-icon"
+                            size={20}
+                            color="rgba(0,0,0,0.7)"
+                            data-tip={`${nutraceutic.title}`}
+                            data-for={`sankey-${nutraceutic.key}-tooltip`}
+                          />
+                        }
+                        modal
+                        nested
+                      >
+                        <Scrollbar style={{ height: 'calc(100vh - 80px)' }}>
+                          <PopupContent>
+                            <h3>{nutraceutic.title}</h3>
+                            <p>{nutraceutic.description}</p>
+                            <a
+                              href={`https://www.healthprotection.com/nutraceuticals/${nutraceutic.key}`}
+                              target="_blank"
+                              rel="noreferrer"
+                            >
+                              Access 227 scientific studies
+                            </a>
+                            <PopupList>
+                              {nutraceutic.parents.map(parent => {
+                                const selectedParent = Object.values(
+                                  suboutcomes,
+                                ).find(suboutcome => suboutcome.key === parent);
+                                return (
+                                  <>
+                                    <h4>
+                                      <strong>{nutraceutic.title}</strong> for{' '}
+                                      {selectedParent?.title}
+                                    </h4>
+                                    <h5>
+                                      These data summarize XX scientific studies
+                                    </h5>
+                                    <PopupListIcons>
+                                      <div className="icon-wrapper">
+                                        <strong>Level of Evidence</strong>
+                                        <div className="icon-content">
+                                          <img
+                                            src={`${process.env.PUBLIC_URL}/icons/evidence+3.svg`}
+                                            alt=""
+                                            height="24"
+                                          />
+                                          <span>High</span>
+                                        </div>
+                                      </div>
+                                      <div className="icon-wrapper">
+                                        <strong>Magnitude of Effect</strong>
+                                        <div className="icon-content">
+                                          <img
+                                            src={`${process.env.PUBLIC_URL}/icons/magnitude+2.svg`}
+                                            alt=""
+                                            height="24"
+                                          />
+                                          <span>Notable</span>
+                                        </div>
+                                      </div>
+                                    </PopupListIcons>
+                                    <p>{selectedParent?.description}</p>
+                                    {/* <a href="#2">
+                                      Read each of the scientific studies
+                                    </a> */}
+                                  </>
+                                );
+                              })}
+                            </PopupList>
+                          </PopupContent>
+                        </Scrollbar>
+                      </Popup>
                       <strong>{nutraceutic.title}</strong>
                       <span>{`${nutraceutic.dosage} ${nutraceutic.unit}`}</span>
                     </div>

@@ -26,7 +26,7 @@ interface MedicationData {
 const Step6: React.FC = () => {
   const context = useWizard();
   const { steps, questions } = context;
-  const { step6: step, step4: previousStep } = steps;
+  const { step6: step, step5: previousStep } = steps;
   const { 13: currentQuestion } = questions || {};
 
   const subSteps = [steps.step6_1, steps.step6_2, steps.step6_3, steps.step6_4];

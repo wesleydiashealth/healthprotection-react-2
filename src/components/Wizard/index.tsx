@@ -46,7 +46,7 @@ import Step8 from './Step8';
 const Wizard: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
 
-  const previousStep = { isCompleted: false };
+  const previousStep = { isCompleted: true };
 
   const handleSubmit = useCallback(async (data: HTMLFormElement) => {
     try {

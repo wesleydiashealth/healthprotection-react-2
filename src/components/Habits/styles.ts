@@ -5,7 +5,10 @@ interface ContainerProps {
 }
 
 const Container = styled.div<ContainerProps>`
-  padding: 80px 0 0;
+  margin: 0 auto;
+  padding: 80px 50px 0;
+
+  max-width: 1300px;
 
   ${props =>
     props.isActive &&
@@ -134,20 +137,15 @@ export const HabitContainer = styled.div`
   }
 
   .habit-intro {
-    margin-right: 40px;
-
-    display: flex;
-    align-items: center;
-
-    width: 320px;
+    margin-right: 20px;
 
     img {
-      margin-right: 20px;
-
       max-width: 120px;
       height: auto;
     }
+  }
 
+  .habit-content {
     h4 {
       color: #565656;
 
@@ -160,9 +158,7 @@ export const HabitContainer = styled.div`
         margin-left: 5px;
       }
     }
-  }
 
-  .habit-content {
     p {
       margin-bottom: 10px;
 

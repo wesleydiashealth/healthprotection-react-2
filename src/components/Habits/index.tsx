@@ -68,6 +68,8 @@ const Habits: React.FC = () => {
                   src={`${process.env.PUBLIC_URL}/icons/${habit.image}`}
                   alt=""
                 />
+              </div>
+              <div className="habit-content">
                 <h4>
                   {habit.title}
                   <HiQuestionMarkCircle
@@ -88,8 +90,6 @@ const Habits: React.FC = () => {
                     backgroundColor="#fff"
                   />
                 </h4>
-              </div>
-              <div className="habit-content">
                 <p>{habit.question}</p>
                 <Dropdown
                   options={habit.answers}
