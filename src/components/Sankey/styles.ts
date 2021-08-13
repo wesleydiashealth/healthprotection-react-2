@@ -408,7 +408,7 @@ export const Substances = styled.div<SubstancesProps>`
         content: 'Scientific foundation';
         position: absolute;
         top: 0;
-        right: 0;
+        left: 0;
       }
     `}
 `;
