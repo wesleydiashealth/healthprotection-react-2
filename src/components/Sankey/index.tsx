@@ -52,8 +52,6 @@ const Sankey: React.FC = () => {
   const { steps } = context;
   const { step1: previousStep } = steps;
 
-  previousStep.isCompleted = true;
-
   const { outcomes, suboutcomes } = sankeyData;
 
   const [fineTune, setFineTune] = useState<FineTune>({});
