@@ -90,10 +90,10 @@ const Step6: React.FC = () => {
         size={20}
         color="#7664C8"
         data-tip={`<strong>${stepTitle}</strong><span>${stepTitle}</span>`}
-        data-for="step_5_medications_tooltip"
+        data-for="step_6_drugs_tooltip"
       />
       <ReactToolTip
-        id="step_5_medications_tooltip"
+        id="step_6_drugs_tooltip"
         className="step-tooltip"
         place="bottom"
         type="light"

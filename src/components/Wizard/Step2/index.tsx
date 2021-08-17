@@ -94,24 +94,26 @@ const Step2: React.FC = () => {
         currentQuestion?.answers &&
         Object.values(currentQuestion.answers)
           .filter(answer => !!answer.has_child)
-          .map(option => (
-            <Button
-              key={option.api}
-              type="button"
-              onClick={() => {
-                context.updateStep('step2_1', {
-                  isCompleted: true,
-                  answers: option.api,
-                });
-                carouselContext.setStoreState({ currentSlide: 2 });
-              }}
-              isActive={subStep?.answers === option.api}
-              name="female_condition"
-              value={subStep?.answers}
-            >
-              {option.label}
-            </Button>
-          ))}
+          .map(option => {
+            return (
+              <Button
+                key={option.api}
+                type="button"
+                onClick={() => {
+                  context.updateStep('step2_1', {
+                    isCompleted: true,
+                    answers: option.api,
+                  });
+                  carouselContext.setStoreState({ currentSlide: 2 });
+                }}
+                isActive={subStep?.answers === option.api}
+                name="female_condition"
+                value={subStep?.answers}
+              >
+                {option.label}
+              </Button>
+            );
+          })}
     </StepContainer>
   );
 };

@@ -1,5 +1,6 @@
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 import { transparentize } from 'polished';
+import { fadeIn } from 'react-animations';
 
 interface ContainerProps {
   isActive?: boolean;
@@ -29,8 +30,14 @@ interface SubstanceProps {
   suboutcomes?: number;
 }
 
+const fadeInAnimation = keyframes`${fadeIn}`;
+
 const Container = styled.div<ContainerProps>`
   padding: 80px 0 0;
+
+  svg {
+    animation: 0.5s ${fadeInAnimation};
+  }
 
   ${props =>
     props.isActive &&

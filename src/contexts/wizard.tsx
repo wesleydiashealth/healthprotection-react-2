@@ -53,6 +53,10 @@ export const WizardProvider: React.FC = ({ children }) => {
     step6_3: { isCompleted: false, answers: [] },
     step6_4: { isCompleted: false, answers: [] },
     step7: { isCompleted: false, answers: [] },
+    step7_1: { isCompleted: false, answers: [] },
+    step8: { isCompleted: false, answers: [] },
+    step8_1: { isCompleted: false, answers: [] },
+    step9: { isCompleted: false, answers: [] },
   });
 
   const [questions, setQuestions] = useState<QuestionsData>({

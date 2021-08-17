@@ -208,6 +208,43 @@ export const StepContainer = styled.div<StepContainerProps>`
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.11);
   border-radius: 20px;
 
+  label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  input[type='text'] {
+    margin: 5px 0 0 20px;
+    border: 1px solid #565656;
+    border-radius: 12px;
+    padding: 8px;
+
+    flex: 1;
+
+    max-width: 60px;
+    width: 100%;
+  }
+
+  input[type='file'] {
+    margin-bottom: 40px;
+  }
+
+  .step-8-logos-title {
+    margin-top: 40px;
+  }
+
+  .step-8-logos {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      margin-bottom: 10px;
+    }
+  }
+
   ${props =>
     (props.isCompleted || props.isDisabled) &&
     css`
@@ -283,6 +320,19 @@ export const StepContainer = styled.div<StepContainerProps>`
       font-weight: normal;
       font-size: 14px;
       line-height: 22px;
+    }
+  }
+
+  .inputs-list {
+    height: 545px;
+
+    > div {
+      display: flex;
+      flex-direction: column;
+
+      input {
+        margin-right: 20px;
+      }
     }
   }
 
