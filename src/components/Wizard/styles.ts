@@ -214,7 +214,7 @@ export const StepContainer = styled.div<StepContainerProps>`
     align-items: center;
   }
 
-  input[type='text'] {
+  .input-text {
     margin: 5px 0 0 20px;
     border: 1px solid #565656;
     border-radius: 12px;

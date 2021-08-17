@@ -11,6 +11,10 @@ import Button from '../../Button';
 
 import { useWizard } from '../../../contexts/wizard';
 
+interface BloodTestData {
+  [key: string]: string;
+}
+
 const Step7: React.FC = () => {
   const currentStep = formSteps[1];
 
@@ -179,6 +183,8 @@ const Step7: React.FC = () => {
     },
   };
 
+  const [bloodTestData, setBloodTestData] = useState<BloodTestData>({});
+
   const [stepNumber, setStepNumber] = useState<string>('7');
   const [stepTitle, setStepTitle] = useState<string>(
     currentQuestion?.label || '',
@@ -268,6 +274,18 @@ const Step7: React.FC = () => {
                     type="text"
                     name={`bloodtest-${option.api}`}
                     id={`bloodtest-${option.api}`}
+                    className="input-text"
+                    value={bloodTestData[option.api] || ''}
+                    maxLength={4}
+                    onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+                      setBloodTestData({
+                        ...bloodTestData,
+                        [option.api]: event.currentTarget.value.replace(
+                          /\D/,
+                          '',
+                        ),
+                      });
+                    }}
                   />
                 </label>
               );

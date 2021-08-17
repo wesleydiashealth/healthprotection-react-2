@@ -115,6 +115,7 @@ const Wizard: React.FC = () => {
                 totalSlides={10}
                 visibleSlides={1}
                 step={1}
+                dragEnabled={false}
               >
                 <Slider>
                   <Slide index={1}>
