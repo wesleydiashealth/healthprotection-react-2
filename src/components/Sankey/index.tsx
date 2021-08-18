@@ -10,12 +10,22 @@ import { IoOptionsOutline } from 'react-icons/io5';
 import { transparentize } from 'polished';
 
 import Container, {
-  Outcome,
+  StepIntro,
+  StepTitle,
+  StepDescription,
+  StepSubDescription,
+  StepContent,
   Outcomes,
+  Outcome,
+  OutcomeContent,
+  OutcomeName,
   SubOutcomes,
   SubOutcome,
+  SubOutcomeContent,
+  SubOutcomeContentName,
   Substances,
   Substance,
+  FineTuneGroup,
   FineTune,
   PopupContent,
   PopupList,
@@ -171,12 +181,12 @@ const Sankey: React.FC = () => {
 
   return (
     <Container id="step_2" isActive={previousStep.isCompleted}>
-      <div className="step-intro content-wrapper">
+      <StepIntro>
         <IoOptionsOutline
           size={52}
           color={previousStep.isCompleted ? '#DB71AF' : '#565656'}
         />
-        <h2>
+        <StepTitle>
           {!previousStep.isCompleted && (
             <>
               <HiLockClosed size={20} className="locked-icon" />
@@ -200,7 +210,7 @@ const Sankey: React.FC = () => {
             html
             backgroundColor="#fff"
           />
-        </h2>
+        </StepTitle>
 
         {!previousStep.isCompleted && (
           <div className="step-disabled">
@@ -209,15 +219,15 @@ const Sankey: React.FC = () => {
           </div>
         )}
 
-        <h3>
+        <StepDescription>
           <strong>Fine-tune</strong> your desired outcomes
-        </h3>
-        <span>
+        </StepDescription>
+        <StepSubDescription>
           Click on the selected substances to explore scientific information.
-        </span>
-      </div>
+        </StepSubDescription>
+      </StepIntro>
       {previousStep.isCompleted && (
-        <div className="step-content content-wrapper">
+        <StepContent>
           <Outcomes>
             {Object.values(outcomes).map(outcome => {
               const connectionIndex = Object.keys(connections).findIndex(
@@ -260,14 +270,14 @@ const Sankey: React.FC = () => {
                               .filter(nutraceutic => !!nutraceutic.length)
                               .map(nutraceutic => {
                                 return (
-                                  <>
+                                  <React.Fragment
+                                    key={`${outcome.key}-${child[0]}-${nutraceutic}`}
+                                  >
                                     <div
-                                      key={`${outcome.key}-${child[0]}-${nutraceutic}`}
                                       id={`${outcome.key}-${child[0]}-${nutraceutic}`}
                                       className="anchors__item"
                                     />
                                     <Xarrow
-                                      key={`arrow-${outcome.key}-${child[0]}-${nutraceutic}`}
                                       start={`${outcome.key}-${child[0]}-${nutraceutic}`}
                                       end={`${nutraceutic}-${child[0]}-${outcome.key}`}
                                       showHead={false}
@@ -282,7 +292,7 @@ const Sankey: React.FC = () => {
                                           : transparentize(0.8, outcome.color)
                                       }
                                     />
-                                  </>
+                                  </React.Fragment>
                                 );
                               })
                           ) : (
@@ -312,14 +322,12 @@ const Sankey: React.FC = () => {
                           );
                         })
                       : outcome.suboutcomes.map(suboutcome => (
-                          <>
+                          <React.Fragment key={`${outcome.key}-${suboutcome}`}>
                             <div
-                              key={`${outcome.key}-${suboutcome}`}
                               id={`${outcome.key}-${suboutcome}`}
                               className="anchors__item"
                             />
                             <Xarrow
-                              key={`arrow-${outcome.key}-${suboutcome}`}
                               start={`${outcome.key}-${suboutcome}`}
                               end={`${suboutcome}-${outcome.key}`}
                               showHead={false}
@@ -334,19 +342,26 @@ const Sankey: React.FC = () => {
                                   : transparentize(0.8, outcome.color)
                               }
                             />
-                          </>
+                          </React.Fragment>
                         ))}
                   </div>
-                  <div className="outcome-wrapper">
-                    <HiQuestionMarkCircle
-                      size={20}
-                      color="rgba(0,0,0,0.7)"
-                      data-tip={`<strong>${outcome.title}</strong><span>${outcome.description}</span>`}
-                      data-for="sankey-tooltip"
-                      className="tooltip-icon"
+                  <OutcomeContent className="outcome-wrapper">
+                    <img
+                      src={`${process.env.PUBLIC_URL}/icons/outcomes/${outcome.key}.svg`}
+                      alt={outcome.title}
+                      width={48}
                     />
-                    <span>{outcome.title}</span>
-                  </div>
+                    <OutcomeName>
+                      {outcome.title}
+                      <HiQuestionMarkCircle
+                        size={20}
+                        color="rgba(0,0,0,0.7)"
+                        data-tip={`<strong>${outcome.title}</strong><span>${outcome.description}</span>`}
+                        data-for="sankey-tooltip"
+                        className="tooltip-icon"
+                      />
+                    </OutcomeName>
+                  </OutcomeContent>
                 </Outcome>
               );
             })}
@@ -428,7 +443,7 @@ const Sankey: React.FC = () => {
                         />
                       ))}
                   </div>
-                  <div className="content">
+                  <SubOutcomeContent>
                     <HiQuestionMarkCircle
                       size={20}
                       color="rgba(0,0,0,0.7)"
@@ -436,9 +451,11 @@ const Sankey: React.FC = () => {
                       data-for="sankey-tooltip"
                       className="tooltip-icon"
                     />
-                    <span>{suboutcome.title}</span>
-                  </div>
-                  <div className="fine-tune">
+                    <SubOutcomeContentName>
+                      {suboutcome.title}
+                    </SubOutcomeContentName>
+                  </SubOutcomeContent>
+                  <FineTuneGroup>
                     <FineTune
                       isActive={
                         fineTune[suboutcome.key] === 'off' ||
@@ -485,7 +502,7 @@ const Sankey: React.FC = () => {
                         </FineTune>
                       );
                     })}
-                  </div>
+                  </FineTuneGroup>
                 </SubOutcome>
               );
             })}
@@ -537,7 +554,10 @@ const Sankey: React.FC = () => {
                                   suboutcomes,
                                 ).find(suboutcome => suboutcome.key === parent);
                                 return (
-                                  <div className="list-item">
+                                  <div
+                                    key={`popup-${parent}`}
+                                    className="list-item"
+                                  >
                                     <h4>
                                       <strong>{nutraceutic.title}</strong> for{' '}
                                       {selectedParent?.title}
@@ -607,14 +627,12 @@ const Sankey: React.FC = () => {
                         );
 
                         return (
-                          <>
+                          <React.Fragment key={`${nutraceutic.key}-${parent}`}>
                             <div
-                              key={`${nutraceutic.key}-${parent}`}
                               id={`${nutraceutic.key}-${parent}`}
                               className="anchors__item"
                             />
                             <Xarrow
-                              key={`anchor-${nutraceutic.key}-${parent}`}
                               start={`${parent}-${nutraceutic.key}`}
                               end={`${nutraceutic.key}-${parent}`}
                               showHead={false}
@@ -634,7 +652,7 @@ const Sankey: React.FC = () => {
                                     )
                               }
                             />
-                          </>
+                          </React.Fragment>
                         );
                       })}
                     </div>
@@ -653,7 +671,7 @@ const Sankey: React.FC = () => {
             html
             backgroundColor="#fff"
           />
-        </div>
+        </StepContent>
       )}
     </Container>
   );

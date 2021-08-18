@@ -20,7 +20,7 @@ const Step10: React.FC = () => {
       <HiQuestionMarkCircle
         className="tooltip-icon"
         size={20}
-        color="#7664C8"
+        color="#db71af"
         data-tip="<strong>Titulo</strong><span>Texto</span>"
         data-for="step_8_tooltip"
       />

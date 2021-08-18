@@ -63,7 +63,7 @@ const Cart: React.FC = () => {
             <h4>The safest products for your health</h4>
             <ProductsList>
               {products.map(product => (
-                <Product>
+                <Product key={product.value}>
                   <div className="product-content">
                     <img
                       src={`${process.env.PUBLIC_URL}/svg/${product.image}`}

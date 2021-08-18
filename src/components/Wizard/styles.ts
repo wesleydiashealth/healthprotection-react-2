@@ -12,7 +12,7 @@ interface StepContainerProps {
 
 const Container = styled.div<ContainerProps>`
   margin: 0 auto;
-  padding: 80px 50px 0;
+  padding: 20px;
 
   max-width: 1300px;
 
@@ -38,6 +38,10 @@ const Container = styled.div<ContainerProps>`
     align-items: flex-start;
   }
 
+  @media screen and (min-width: 768px) {
+    padding: 80px 50px 0;
+  }
+
   ${props =>
     props.isActive &&
     css`
@@ -50,9 +54,6 @@ const Container = styled.div<ContainerProps>`
 `;
 
 export const StepIntro = styled.div`
-  margin-bottom: 40px;
-  padding: 0 20px;
-
   width: 100%;
   max-width: 100%;
 
@@ -70,7 +71,7 @@ export const StepIntro = styled.div`
   }
 
   .__react_component_tooltip {
-    width: 320px;
+    width: 260px;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.11);
     border-radius: 20px;
 
@@ -89,6 +90,8 @@ export const StepIntro = styled.div`
     }
 
     span {
+      display: block;
+
       font-weight: normal;
       font-size: 14px;
       line-height: 22px;
@@ -105,6 +108,15 @@ export const StepIntro = styled.div`
     font-size: 14px;
     line-height: 22px;
   }
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 40px;
+    padding: 0 20px;
+
+    .__react_component_tooltip {
+      width: 320px;
+    }
+  }
 `;
 
 export const StepTitle = styled.h2`
@@ -113,26 +125,43 @@ export const StepTitle = styled.h2`
   display: flex;
   justify-content: center;
 
-  font-weight: 700;
+  font-weight: 600;
 
-  font-size: 33px;
-  line-height: 40px;
+  font-size: 18px;
+  line-height: 32px;
+
+  @media screen and (min-width: 768px) {
+    font-weight: 700;
+
+    font-size: 33px;
+    line-height: 40px;
+  }
 `;
 
 export const StepDescription = styled.h3`
   margin-bottom: 10px;
 
-  font-size: 28px;
-  line-height: 34px;
+  font-size: 14px;
+  line-height: 18px;
 
   strong {
     font-weight: 600;
   }
+
+  @media screen and (min-width: 768px) {
+    font-size: 28px;
+    line-height: 34px;
+  }
 `;
 
 export const StepSubDescription = styled.span`
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 18px;
+    line-height: 24px;
+  }
 `;
 
 export const SliderNavigation = styled.div`
@@ -180,8 +209,8 @@ export const SliderNavigation = styled.div`
       margin: 0 5px;
       border: none;
 
-      width: 20px;
-      height: 20px;
+      width: 10px;
+      height: 10px;
       border-radius: 50%;
 
       background: #c6c6c6;
@@ -189,6 +218,15 @@ export const SliderNavigation = styled.div`
 
     .carousel__dot--selected {
       background: ${transparentize(0.5, '#7664c8')};
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .carousel__dot-group {
+      button {
+        width: 20px;
+        height: 20px;
+      }
     }
   }
 `;

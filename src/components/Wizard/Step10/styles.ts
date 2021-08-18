@@ -48,16 +48,26 @@ const StepContainer = styled.div`
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.11);
     border-radius: 20px;
 
-    font-size: 14px;
-    line-height: 22px;
+    text-align: left;
 
     strong {
+      margin-bottom: 5px;
+
       display: block;
-      margin-bottom: 10px;
-      font-size: 20px;
-      line-height: 28px;
-      font-weight: 500;
-      color: #7664c8;
+
+      color: #db71af;
+
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    span {
+      display: block;
+
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 22px;
     }
   }
 
@@ -68,19 +78,24 @@ const StepContainer = styled.div`
   }
 
   .buttons {
-    margin-top: 60px;
+    margin-top: 40px;
+
+    display: flex;
+    align-items: center;
 
     button,
     a {
-      display: inline-block;
       border: none;
       border-radius: 32px;
+      padding: 16px 18px;
+
+      display: inline-block;
       box-sizing: border-box;
-      padding: 16px 24px;
+
       text-decoration: none;
       color: #fff;
       font-weight: 600;
-      font-size: 18px;
+      font-size: 14px;
       line-height: 1;
     }
 
@@ -91,6 +106,23 @@ const StepContainer = styled.div`
     a {
       margin-left: 20px;
       background: #db71af;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .buttons {
+      margin-top: 60px;
+
+      width: 100%;
+
+      justify-content: space-between;
+
+      button,
+      a {
+        padding: 16px 24px;
+
+        font-size: 18px;
+      }
     }
   }
 `;

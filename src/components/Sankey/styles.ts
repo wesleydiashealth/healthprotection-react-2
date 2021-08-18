@@ -33,7 +33,8 @@ interface SubstanceProps {
 const fadeInAnimation = keyframes`${fadeIn}`;
 
 const Container = styled.div<ContainerProps>`
-  padding: 80px 0 0;
+  margin: 0 auto;
+  padding: 20px 50px 0;
 
   svg {
     animation: 0.5s ${fadeInAnimation};
@@ -42,147 +43,188 @@ const Container = styled.div<ContainerProps>`
   ${props =>
     props.isActive &&
     css`
-      .step-intro {
-        h3 {
-          strong {
-            color: #db71af;
-          }
+      h3 {
+        strong {
+          color: #db71af;
         }
       }
     `}
+`;
 
-  .step-intro {
-    margin-bottom: 40px;
+export const StepIntro = styled.div`
+  margin-bottom: 20px;
 
-    text-align: center;
-    color: #565656;
+  width: 100%;
+  max-width: 100%;
 
-    .locked-icon {
+  color: #565656;
+  text-align: center;
+
+  svg {
+    &:first-child {
       margin-right: 5px;
     }
 
-    h2,
-    h3 {
-      margin-bottom: 10px;
-
-      color: #565656;
-    }
-
-    h2 {
-      display: flex;
-      justify-content: center;
-
-      font-weight: 700;
-
-      font-size: 33px;
-      line-height: 40px;
-    }
-
-    h3 {
-      margin-bottom: 10px;
-
-      font-size: 28px;
-      line-height: 34px;
-
-      strong {
-        font-weight: 600;
-      }
-    }
-
-    span {
-      color: #565656;
-
-      font-size: 18px;
-      line-height: 24px;
-    }
-
-    .tooltip-icon {
+    &:last-of-type {
       margin-left: 5px;
-      display: inline-flex;
-    }
-
-    .sankey-title-tooltip {
-      width: 320px;
-      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.11);
-      border-radius: 20px;
-
-      text-align: left;
-
-      strong {
-        margin-bottom: 5px;
-
-        display: block;
-
-        color: #db71af;
-
-        font-weight: 600;
-        font-size: 16px;
-        line-height: 24px;
-      }
-
-      span {
-        font-weight: normal;
-        font-size: 14px;
-        line-height: 22px;
-      }
-    }
-
-    .step-disabled {
-      margin-bottom: 10px;
-
-      strong {
-        font-weight: 600;
-      }
-
-      &,
-      span {
-        color: #707070;
-
-        font-size: 14px;
-        line-height: 22px;
-      }
     }
   }
 
-  .step-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  .__react_component_tooltip {
+    width: 260px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.11);
+    border-radius: 20px;
 
-    .sankey-tooltip {
-      width: 640px;
-      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.11);
-      border-radius: 20px;
+    text-align: left;
 
-      text-align: left;
-      font-family: 'Montserrat';
+    strong {
+      margin-bottom: 5px;
 
-      strong {
-        margin-bottom: 5px;
+      display: block;
 
-        display: block;
+      color: #7664c8;
 
-        color: #7664c8;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 24px;
+    }
 
-        font-weight: 600;
-        font-size: 16px;
-        line-height: 24px;
-      }
+    span {
+      display: block;
 
-      span {
-        font-weight: normal;
-        font-size: 14px;
-        line-height: 22px;
-      }
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 22px;
+    }
+  }
+
+  .step-disabled {
+    margin-bottom: 10px;
+
+    color: #707070;
+
+    font-family: 'Montserrat';
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 40px;
+    padding: 0 20px;
+
+    .__react_component_tooltip {
+      width: 320px;
     }
   }
 `;
 
+export const StepTitle = styled.h2`
+  margin-bottom: 10px;
+
+  display: flex;
+  justify-content: center;
+
+  font-weight: 600;
+
+  font-size: 18px;
+  line-height: 32px;
+
+  @media screen and (min-width: 768px) {
+    font-weight: 700;
+
+    font-size: 33px;
+    line-height: 40px;
+  }
+`;
+
+export const StepDescription = styled.h3`
+  margin-bottom: 10px;
+
+  font-size: 14px;
+  line-height: 18px;
+
+  strong {
+    font-weight: 600;
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 28px;
+    line-height: 34px;
+  }
+`;
+
+export const StepSubDescription = styled.span`
+  font-size: 12px;
+  line-height: 16px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 18px;
+    line-height: 24px;
+  }
+`;
+
+export const StepContent = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .sankey-tooltip {
+    width: 640px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.11);
+    border-radius: 20px;
+
+    text-align: left;
+    font-family: 'Montserrat';
+
+    strong {
+      margin-bottom: 5px;
+
+      display: block;
+
+      color: #7664c8;
+
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    span {
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 22px;
+    }
+  }
+
+  > div:before {
+    margin-bottom: 10px;
+
+    display: block;
+
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 40px;
+  }
+`;
+
 export const Outcomes = styled.div`
+  align-self: flex-start;
+
+  max-width: 33.33%;
+
   font-weight: 600;
 
   &:before {
     content: 'Filtered Outcomes';
+  }
+
+  @media screen and (min-width: 768px) {
+    align-self: center;
+
+    max-width: none;
   }
 `;
 
@@ -191,10 +233,6 @@ export const Outcome = styled.div<OutcomeProps>`
 
   & ~ div {
     margin-top: 20px;
-  }
-
-  span {
-    color: #000;
   }
 
   .anchors {
@@ -217,27 +255,6 @@ export const Outcome = styled.div<OutcomeProps>`
   .exit-anchors {
     top: 0;
     right: 0;
-  }
-
-  .outcome-wrapper {
-    margin-top: 10px;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-    padding: 5px 10px;
-
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-
-    position: relative;
-    z-index: 10;
-
-    background: #fde7e8;
-    min-height: 45px;
-
-    font-weight: 600;
-
-    min-height: 58px;
   }
 
   .tooltip-icon {
@@ -261,8 +278,71 @@ export const Outcome = styled.div<OutcomeProps>`
     `}
 `;
 
+export const OutcomeContent = styled.div`
+  margin-top: 10px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  padding: 5px 10px;
+
+  display: flex;
+  flex-flow: column wrap;
+  align-items: flex-start;
+  justify-content: center;
+
+  position: relative;
+  z-index: 10;
+
+  background: #fde7e8;
+  max-width: 320px;
+  min-height: 45px;
+
+  font-weight: 600;
+
+  min-height: 58px;
+
+  > img {
+    margin-right: 10px;
+    flex-shrink: 0;
+  }
+
+  @media screen and (min-width: 768px) {
+    padding: 10px 20px;
+
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+  }
+`;
+
+export const OutcomeName = styled.span`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  flex: 1;
+
+  color: #000;
+  font-size: 12px;
+  line-height: 20px;
+
+  svg {
+    margin-left: 5px;
+
+    flex-shrink: 0;
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+    line-height: 24px;
+  }
+`;
+
 export const SubOutcomes = styled.div`
   position: relative;
+
+  max-width: 33.33%;
+
+  align-self: flex-start;
 
   font-weight: 600;
 
@@ -277,18 +357,12 @@ export const SubOutcomes = styled.div`
     left: 260px;
   }
 
-  .content {
-    display: flex;
-  }
-
-  .tooltip-icon {
-    margin-right: 5px;
-    min-width: fit-content;
+  @media screen and (min-width: 768px) {
+    max-width: none;
   }
 `;
 
 export const SubOutcome = styled.div<SubOutcomeProps>`
-  margin-top: 10px;
   padding: 5px 20px;
 
   position: relative;
@@ -296,7 +370,8 @@ export const SubOutcome = styled.div<SubOutcomeProps>`
   min-height: 58px;
 
   display: flex;
-  align-items: center;
+  flex-flow: column wrap;
+  align-items: flex-start;
   justify-content: space-between;
 
   background: #f2f2f2;
@@ -305,51 +380,12 @@ export const SubOutcome = styled.div<SubOutcomeProps>`
     margin-top: 20px;
   }
 
-  .content {
-    margin-right: 20px;
-
-    max-width: 170px;
-
-    span {
-      padding-right: 5px;
-
-      display: block;
-
-      font-weight: 600;
-      font-size: 16px;
-      line-height: 22px;
-    }
-  }
-
-  .fine-tune {
-    border-radius: 20px;
-    padding: 2px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background: #fff;
-
-    a {
-      border-radius: 20px;
-      padding: 5px 10px;
-
-      display: inline-block;
-
-      text-decoration: none;
-
-      & ~ a {
-        margin-left: 5px;
-      }
-    }
-  }
-
   .anchors {
     display: flex;
     flex-flow: column wrap;
 
     position: absolute;
+    top: 0;
 
     &__item {
       width: 10px;
@@ -358,13 +394,16 @@ export const SubOutcome = styled.div<SubOutcomeProps>`
   }
 
   .entry-anchors {
-    top: 0;
     left: 0;
   }
 
   .exit-anchors {
-    top: 0;
     right: 0;
+  }
+
+  @media screen and (min-width: 768px) {
+    flex-flow: row nowrap;
+    align-items: center;
   }
 
   ${props =>
@@ -381,11 +420,76 @@ export const SubOutcome = styled.div<SubOutcomeProps>`
     `}
 `;
 
+export const SubOutcomeContent = styled.div`
+  margin: 0 0 10px;
+
+  display: flex;
+  flex-flow: row nowrap;
+
+  svg {
+    margin-right: 5px;
+    flex-shrink: 0;
+  }
+
+  @media screen and (min-width: 768px) {
+    margin: 0 20px 0 0;
+
+    max-width: 170px;
+  }
+`;
+
+export const SubOutcomeContentName = styled.span`
+  display: block;
+
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 18px;
+
+  @media screen and (min-width: 768px) {
+    padding-right: 5px;
+
+    display: block;
+
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+  }
+`;
+
+export const FineTuneGroup = styled.div`
+  border-radius: 20px;
+  padding: 2px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #fff;
+`;
+
 export const FineTune = styled.a<FineTuneProps>`
   cursor: pointer;
 
   font-size: 14px;
   line-height: 14px;
+
+  border-radius: 20px;
+  padding: 5px;
+
+  display: inline-block;
+
+  text-decoration: none;
+  font-size: 10px;
+
+  & ~ a {
+    margin-left: 5px;
+  }
+
+  @media screen and (min-width: 768px) {
+    padding: 5px 10px;
+
+    font-size: 14px;
+  }
 
   ${props => css`
     color: ${props.color};
@@ -402,11 +506,16 @@ export const FineTune = styled.a<FineTuneProps>`
 export const Substances = styled.div<SubstancesProps>`
   position: relative;
 
-  min-width: 200px;
+  max-width: 33.33%;
 
   align-self: flex-start;
 
   font-weight: 600;
+
+  @media screen and (min-width: 768px) {
+    max-width: none;
+    min-width: 200px;
+  }
 
   ${props =>
     props.isActive &&
@@ -429,6 +538,7 @@ export const Substance = styled.div<SubstanceProps>`
   position: relative;
 
   display: flex;
+  flex-flow: column wrap;
   align-items: center;
   justify-content: space-between;
 
@@ -456,10 +566,12 @@ export const Substance = styled.div<SubstanceProps>`
     padding-right: 20px;
     position: relative;
 
+    display: block;
+
     flex: 1;
 
     font-weight: 600;
-    font-size: 14px;
+    font-size: 10px;
     line-height: 18px;
 
     &:after {
@@ -480,11 +592,6 @@ export const Substance = styled.div<SubstanceProps>`
   .content {
     display: flex;
     align-items: center;
-  }
-
-  .tooltip-icon {
-    margin-right: 5px;
-    min-width: fit-content;
   }
 
   .refresh-icon {
@@ -514,6 +621,15 @@ export const Substance = styled.div<SubstanceProps>`
   .exit-anchors {
     top: 0;
     right: 0;
+  }
+
+  @media screen and (min-width: 768px) {
+    flex-flow: row nowrap;
+
+    strong {
+      font-size: 14px;
+      line-height: 18px;
+    }
   }
 
   ${props =>

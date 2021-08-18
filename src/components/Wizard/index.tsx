@@ -106,7 +106,7 @@ const Wizard: React.FC = () => {
         </StepSubDescription>
       </StepIntro>
       {previousStep.isCompleted && (
-        <Form ref={formRef} onSubmit={handleSubmit} className="content-wrapper">
+        <Form ref={formRef} onSubmit={handleSubmit}>
           <WizardProvider>
             <Carousel>
               <CarouselProvider

@@ -62,7 +62,7 @@ const Habits: React.FC = () => {
       {previousStep.isCompleted && (
         <HabitsContainer className="content-wrapper">
           {habits.map(habit => (
-            <HabitContainer>
+            <HabitContainer key={habit.slug}>
               <div className="habit-intro">
                 <img
                   src={`${process.env.PUBLIC_URL}/icons/${habit.image}`}
