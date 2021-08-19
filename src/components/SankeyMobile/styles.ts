@@ -34,10 +34,14 @@ const fadeInAnimation = keyframes`${fadeIn}`;
 
 const Container = styled.div<ContainerProps>`
   margin: 0 auto;
-  padding: 20px 50px 0;
+  padding: 20px 5px 0;
 
   svg {
     animation: 0.5s ${fadeInAnimation};
+  }
+
+  @media screen and (min-width: 768px) {
+    padding: 20px 50px 0;
   }
 
   ${props =>
@@ -201,19 +205,24 @@ export const StepContent = styled.div`
 
     display: block;
 
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 10px;
+    line-height: 18px;
   }
 
   @media screen and (min-width: 768px) {
     margin-bottom: 40px;
+
+    > div:before {
+      font-size: 16px;
+      line-height: 24px;
+    }
   }
 `;
 
 export const Outcomes = styled.div`
   align-self: flex-start;
 
-  max-width: 33.33%;
+  max-width: 45%;
 
   font-weight: 600;
 
@@ -229,6 +238,10 @@ export const Outcomes = styled.div`
 `;
 
 export const Outcome = styled.div<OutcomeProps>`
+  border-radius: 20px;
+
+  overflow: hidden;
+
   position: relative;
 
   & ~ div {
@@ -264,29 +277,21 @@ export const Outcome = styled.div<OutcomeProps>`
     props.color &&
     css`
       .outcome-wrapper {
-        background-color: ${transparentize(0.5, props.color)};
+        background-color: ${transparentize(0, props.color)};
       }
-    `}
 
-  ${props =>
-    props.suboutcomes &&
-    css`
-      .outcome-wrapper {
-        min-height: ${`${58 * props.suboutcomes}px`};
+      .outcome-list {
+        background-color: ${transparentize(0.5, props.color)};
       }
     `}
 `;
 
 export const OutcomeContent = styled.div`
-  margin-top: 10px;
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
   padding: 5px 10px;
 
   display: flex;
-  flex-flow: column wrap;
-  align-items: flex-start;
-  justify-content: center;
+  flex-flow: row nowrap;
+  align-items: center;
 
   position: relative;
   z-index: 10;
@@ -301,6 +306,10 @@ export const OutcomeContent = styled.div`
 
   > img {
     margin-right: 10px;
+
+    width: 16qpx;
+    height: auto;
+
     flex-shrink: 0;
   }
 
@@ -310,6 +319,10 @@ export const OutcomeContent = styled.div`
     flex-flow: row nowrap;
     justify-content: flex-start;
     align-items: center;
+
+    > img {
+      width: 48px;
+    }
   }
 `;
 
@@ -321,11 +334,14 @@ export const OutcomeName = styled.span`
   flex: 1;
 
   color: #000;
-  font-size: 12px;
-  line-height: 20px;
+  font-size: 10px;
+  line-height: 18px;
 
   svg {
     margin-left: 5px;
+
+    color: #fff;
+    fill: #fff;
 
     flex-shrink: 0;
   }
@@ -336,30 +352,19 @@ export const OutcomeName = styled.span`
   }
 `;
 
-export const SubOutcomes = styled.div`
-  position: relative;
+export const OutcomeList = styled.div`
+  padding: 10px;
 
-  align-self: flex-start;
+  .list-item {
+    position: relative;
 
-  max-width: 33.33%;
-
-  font-weight: 600;
-
-  &:before {
-    content: 'Choose your Sub-outcomes';
+    & ~ .list-item {
+      margin-top: 10px;
+    }
   }
 
-  &:after {
-    content: 'Fine-tune';
-    position: absolute;
-    top: 0;
-    left: 260px;
-  }
-
-  @media screen and (min-width: 768px) {
-    align-self: center;
-
-    max-width: none;
+  p {
+    font-size: 12px;
   }
 `;
 
@@ -507,7 +512,7 @@ export const FineTune = styled.a<FineTuneProps>`
 export const Substances = styled.div<SubstancesProps>`
   position: relative;
 
-  max-width: 33.33%;
+  max-width: 40%;
 
   align-self: flex-start;
 
@@ -523,24 +528,19 @@ export const Substances = styled.div<SubstancesProps>`
     css`
       &:before {
         content: 'Scientific foundation';
-        position: absolute;
-        top: 0;
-        left: 0;
       }
     `}
 `;
 
 export const Substance = styled.div<SubstanceProps>`
-  margin-top: 30px;
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
+  border-radius: 20px;
   padding: 10px;
 
   position: relative;
 
   display: flex;
   flex-flow: column wrap;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
 
   max-width: 300px;
@@ -557,17 +557,16 @@ export const Substance = styled.div<SubstanceProps>`
     content: '';
     position: absolute;
     background-color: rgba(0, 0, 0, 0.3);
-    width: 40px;
+    width: 22px;
     top: 0;
     right: 0;
     bottom: 0;
   }
 
-  strong {
-    padding-right: 20px;
+  .content-inner {
     position: relative;
 
-    display: block;
+    display: flex;
 
     flex: 1;
 
@@ -575,31 +574,37 @@ export const Substance = styled.div<SubstanceProps>`
     font-size: 10px;
     line-height: 18px;
 
-    &:after {
-      border-left: 1px solid #ccc;
-      padding-right: 10px;
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
+    svg {
+      margin-right: 5px;
+
+      flex-shrink: 0;
+    }
+
+    strong {
+      display: flex;
+      flex-flow: column wrap;
     }
   }
 
   span {
     color: #565656;
+
+    font-size: 10px;
+    line-height: 18px;
   }
 
   .content {
     display: flex;
-    align-items: center;
+    flex-flow: column wrap;
   }
 
   .refresh-icon {
-    margin-left: 20px;
     min-width: fit-content;
-    position: relative;
+
+    position: absolute;
     z-index: 5;
+    top: calc(50% - 6px);
+    right: 5px;
   }
 
   .anchors {
@@ -636,7 +641,7 @@ export const Substance = styled.div<SubstanceProps>`
   ${props =>
     props.suboutcomes &&
     css`
-      min-height: ${`${58 * props.suboutcomes}px`};
+      /* min-height: ${`${58 * props.suboutcomes}px`}; */
     `}
 `;
 

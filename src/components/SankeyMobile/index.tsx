@@ -19,7 +19,7 @@ import Container, {
   Outcome,
   OutcomeContent,
   OutcomeName,
-  SubOutcomes,
+  OutcomeList,
   SubOutcome,
   SubOutcomeContent,
   SubOutcomeContentName,
@@ -57,7 +57,7 @@ interface Connection {
   [key: string]: string[];
 }
 
-const Sankey: React.FC = () => {
+const SankeyMobile: React.FC = () => {
   const context = useApp();
   const { steps } = context;
   const { step1: previousStep } = steps;
@@ -260,7 +260,7 @@ const Sankey: React.FC = () => {
                     connectionsLength
                   }
                 >
-                  <div className="exit-anchors anchors">
+                  {/* <div className="exit-anchors anchors">
                     {Object.values(outcomeConnections).filter(
                       connection => !!connection.length,
                     ).length
@@ -346,12 +346,11 @@ const Sankey: React.FC = () => {
                             />
                           </React.Fragment>
                         ))}
-                  </div>
+                  </div> */}
                   <OutcomeContent className="outcome-wrapper">
                     <img
                       src={`${process.env.PUBLIC_URL}/icons/outcomes/${outcome.key}.svg`}
                       alt={outcome.title}
-                      width={48}
                     />
                     <OutcomeName>
                       {outcome.title}
@@ -364,151 +363,99 @@ const Sankey: React.FC = () => {
                       />
                     </OutcomeName>
                   </OutcomeContent>
+                  <OutcomeList className="outcome-list">
+                    {outcome.suboutcomes.map(suboutcome => {
+                      const suboutcomeIndex = Object.keys(
+                        suboutcomes,
+                      ).findIndex(key => key === suboutcome);
+
+                      const selectedSuboutcome =
+                        Object.values(suboutcomes)[suboutcomeIndex];
+
+                      const outcomeIndex = Object.values(outcomes).findIndex(
+                        value =>
+                          value.suboutcomes.includes(selectedSuboutcome.key),
+                      );
+
+                      return (
+                        <div key={selectedSuboutcome.key} className="list-item">
+                          <div className="exit-anchors anchors">
+                            {nutraceutics
+                              .filter(nutraceutic =>
+                                nutraceutic.parents.includes(suboutcome),
+                              )
+                              .map(nutraceutic => (
+                                <div
+                                  key={`${suboutcome}-${nutraceutic.key}`}
+                                  id={`${suboutcome}-${nutraceutic.key}`}
+                                  className="anchors__item"
+                                />
+                              ))}
+                          </div>
+                          <p>{selectedSuboutcome.title}</p>
+                          <FineTuneGroup>
+                            <FineTune
+                              isActive={
+                                fineTune[selectedSuboutcome.key] === 'off' ||
+                                !fineTune[selectedSuboutcome.key]
+                              }
+                              color={
+                                outcomeIndex > -1
+                                  ? Object.values(outcomes)[outcomeIndex].color
+                                  : '#565656'
+                              }
+                              onClick={() => {
+                                handleFineTuneClick([], selectedSuboutcome.key);
+                                setFineTune({
+                                  ...fineTune,
+                                  [selectedSuboutcome.key]: 'off',
+                                });
+                              }}
+                            >
+                              Off
+                            </FineTune>
+                            {Object.keys(selectedSuboutcome.sustances).map(
+                              (key, index) => {
+                                return (
+                                  <FineTune
+                                    key={key}
+                                    isActive={
+                                      fineTune[selectedSuboutcome.key] === key
+                                    }
+                                    color={
+                                      outcomeIndex > -1
+                                        ? Object.values(outcomes)[outcomeIndex]
+                                            .color
+                                        : '#565656'
+                                    }
+                                    onClick={() => {
+                                      handleFineTuneClick(
+                                        Object.values(
+                                          selectedSuboutcome.sustances,
+                                        )[index] || [],
+                                        selectedSuboutcome.key,
+                                      );
+
+                                      setFineTune({
+                                        ...fineTune,
+                                        [selectedSuboutcome.key]: key,
+                                      });
+                                    }}
+                                  >
+                                    {key.charAt(0).toUpperCase() + key.slice(1)}
+                                  </FineTune>
+                                );
+                              },
+                            )}
+                          </FineTuneGroup>
+                        </div>
+                      );
+                    })}
+                  </OutcomeList>
                 </Outcome>
               );
             })}
           </Outcomes>
-
-          <SubOutcomes>
-            {Object.values(suboutcomes).map(suboutcome => {
-              const outcomeIndex = Object.values(outcomes).findIndex(outcome =>
-                outcome.suboutcomes.includes(suboutcome.key),
-              );
-
-              const suboutcomeOutcomes = Object.entries(connections).filter(
-                connection => !!connection[1][suboutcome.key],
-              );
-
-              return (
-                <SubOutcome
-                  key={suboutcome.key}
-                  nutraceutics={
-                    nutraceutics.filter(nutraceutic =>
-                      nutraceutic.parents.includes(suboutcome.key),
-                    ).length ||
-                    Object.values(outcomes).filter(outcome =>
-                      outcome.suboutcomes.includes(suboutcome.key),
-                    ).length
-                  }
-                  color={
-                    outcomeIndex > -1
-                      ? Object.values(outcomes)[outcomeIndex].color
-                      : '#f2f2f2'
-                  }
-                  isActive={
-                    fineTune[suboutcome.key] !== undefined &&
-                    fineTune[suboutcome.key] !== 'off'
-                  }
-                  id={suboutcome.key}
-                >
-                  <div className="entry-anchors anchors">
-                    {suboutcomeOutcomes.map(suboutcomeOutcome => {
-                      return Object.entries(suboutcomeOutcome[1]).filter(
-                        connection =>
-                          connection[0] === suboutcome.key &&
-                          !!connection[1].length,
-                      ).length ? (
-                        Object.entries(suboutcomeOutcome[1])
-                          .filter(
-                            nutraceutic =>
-                              nutraceutic[0] === suboutcome.key &&
-                              !!nutraceutic[1].length,
-                          )
-                          .map(nutraceutic => {
-                            return nutraceutic[1].map(item => (
-                              <div
-                                key={`${item}-${nutraceutic[0]}-${suboutcomeOutcome[0]}`}
-                                id={`${item}-${nutraceutic[0]}-${suboutcomeOutcome[0]}`}
-                                className="anchors__item"
-                              />
-                            ));
-                          })
-                      ) : (
-                        <div
-                          key={`${suboutcome.key}-${suboutcomeOutcome[0]}`}
-                          id={`${suboutcome.key}-${suboutcomeOutcome[0]}`}
-                          className="anchors__item"
-                        />
-                      );
-                    })}
-                  </div>
-                  <div className="exit-anchors anchors">
-                    {nutraceutics
-                      .filter(nutraceutic =>
-                        nutraceutic.parents.includes(suboutcome.key),
-                      )
-                      .map(nutraceutic => (
-                        <div
-                          key={`anchor-${suboutcome.key}-${nutraceutic.key}`}
-                          id={`${suboutcome.key}-${nutraceutic.key}`}
-                          className="anchors__item"
-                        />
-                      ))}
-                  </div>
-                  <SubOutcomeContent>
-                    <HiQuestionMarkCircle
-                      size={20}
-                      color="rgba(0,0,0,0.7)"
-                      data-tip={`<strong>${suboutcome.title}</strong><span>${suboutcome.description}</span>`}
-                      data-for="sankey-tooltip"
-                      className="tooltip-icon"
-                    />
-                    <SubOutcomeContentName>
-                      {suboutcome.title}
-                    </SubOutcomeContentName>
-                  </SubOutcomeContent>
-                  <FineTuneGroup>
-                    <FineTune
-                      isActive={
-                        fineTune[suboutcome.key] === 'off' ||
-                        !fineTune[suboutcome.key]
-                      }
-                      color={
-                        outcomeIndex > -1
-                          ? Object.values(outcomes)[outcomeIndex].color
-                          : '#565656'
-                      }
-                      onClick={() => {
-                        handleFineTuneClick([], suboutcome.key);
-                        setFineTune({
-                          ...fineTune,
-                          [suboutcome.key]: 'off',
-                        });
-                      }}
-                    >
-                      Off
-                    </FineTune>
-                    {Object.keys(suboutcome.sustances).map((key, index) => {
-                      return (
-                        <FineTune
-                          key={key}
-                          isActive={fineTune[suboutcome.key] === key}
-                          color={
-                            outcomeIndex > -1
-                              ? Object.values(outcomes)[outcomeIndex].color
-                              : '#565656'
-                          }
-                          onClick={() => {
-                            handleFineTuneClick(
-                              Object.values(suboutcome.sustances)[index] || [],
-                              suboutcome.key,
-                            );
-
-                            setFineTune({
-                              ...fineTune,
-                              [suboutcome.key]: key,
-                            });
-                          }}
-                        >
-                          {key.charAt(0).toUpperCase() + key.slice(1)}
-                        </FineTune>
-                      );
-                    })}
-                  </FineTuneGroup>
-                </SubOutcome>
-              );
-            })}
-          </SubOutcomes>
 
           <Substances
             isActive={
@@ -526,88 +473,95 @@ const Sankey: React.FC = () => {
                     suboutcomes={nutraceutic.parents.length}
                   >
                     <div className="content">
-                      <Popup
-                        trigger={
-                          <HiQuestionMarkCircle
-                            className="tooltip-icon"
-                            size={20}
-                            color="rgba(0,0,0,0.7)"
-                            data-tip={`${nutraceutic.title}`}
-                            data-for={`sankey-${nutraceutic.key}-tooltip`}
-                          />
-                        }
-                        modal
-                        nested
-                      >
-                        <Scrollbar style={{ height: 'calc(100vh - 80px)' }}>
-                          <PopupContent>
-                            <h3>{nutraceutic.title}</h3>
-                            <p>{nutraceutic.description}</p>
-                            <a
-                              href={`https://www.healthprotection.com/nutraceuticals/${nutraceutic.key}`}
-                              target="_blank"
-                              rel="noreferrer"
-                            >
-                              Access 227 scientific studies
-                            </a>
-                            <PopupList>
-                              {nutraceutic.parents.map(parent => {
-                                const selectedParent = Object.values(
-                                  suboutcomes,
-                                ).find(suboutcome => suboutcome.key === parent);
-                                return (
-                                  <div
-                                    key={`popup-${parent}`}
-                                    className="list-item"
-                                  >
-                                    <h4>
-                                      <strong>{nutraceutic.title}</strong> for{' '}
-                                      {selectedParent?.title}
-                                    </h4>
-                                    <h5>
-                                      These data summarize XX scientific studies
-                                    </h5>
-                                    <PopupListIcons>
-                                      <div className="icon-wrapper">
-                                        <strong>Level of Evidence</strong>
-                                        <div className="icon-content">
-                                          <img
-                                            src={`${process.env.PUBLIC_URL}/icons/evidence+3.svg`}
-                                            alt=""
-                                            height="24"
-                                          />
-                                          <span>High</span>
+                      <div className="content-inner">
+                        <Popup
+                          trigger={
+                            <HiQuestionMarkCircle
+                              className="tooltip-icon"
+                              size={14}
+                              color="rgba(0,0,0,0.7)"
+                              data-tip={`${nutraceutic.title}`}
+                              data-for={`sankey-${nutraceutic.key}-tooltip`}
+                            />
+                          }
+                          modal
+                          nested
+                        >
+                          <Scrollbar style={{ height: 'calc(100vh - 80px)' }}>
+                            <PopupContent>
+                              <h3>{nutraceutic.title}</h3>
+                              <p>{nutraceutic.description}</p>
+                              <a
+                                href={`https://www.healthprotection.com/nutraceuticals/${nutraceutic.key}`}
+                                target="_blank"
+                                rel="noreferrer"
+                              >
+                                Access 227 scientific studies
+                              </a>
+                              <PopupList>
+                                {nutraceutic.parents.map(parent => {
+                                  const selectedParent = Object.values(
+                                    suboutcomes,
+                                  ).find(
+                                    suboutcome => suboutcome.key === parent,
+                                  );
+                                  return (
+                                    <div
+                                      key={`popup-${parent}`}
+                                      className="list-item"
+                                    >
+                                      <h4>
+                                        <strong>{nutraceutic.title}</strong> for{' '}
+                                        {selectedParent?.title}
+                                      </h4>
+                                      <h5>
+                                        These data summarize XX scientific
+                                        studies
+                                      </h5>
+                                      <PopupListIcons>
+                                        <div className="icon-wrapper">
+                                          <strong>Level of Evidence</strong>
+                                          <div className="icon-content">
+                                            <img
+                                              src={`${process.env.PUBLIC_URL}/icons/evidence+3.svg`}
+                                              alt=""
+                                              height="24"
+                                            />
+                                            <span>High</span>
+                                          </div>
                                         </div>
-                                      </div>
-                                      <div className="icon-wrapper">
-                                        <strong>Magnitude of Effect</strong>
-                                        <div className="icon-content">
-                                          <img
-                                            src={`${process.env.PUBLIC_URL}/icons/magnitude+2.svg`}
-                                            alt=""
-                                            height="24"
-                                          />
-                                          <span>Notable</span>
+                                        <div className="icon-wrapper">
+                                          <strong>Magnitude of Effect</strong>
+                                          <div className="icon-content">
+                                            <img
+                                              src={`${process.env.PUBLIC_URL}/icons/magnitude+2.svg`}
+                                              alt=""
+                                              height="24"
+                                            />
+                                            <span>Notable</span>
+                                          </div>
                                         </div>
-                                      </div>
-                                    </PopupListIcons>
-                                    <p>{selectedParent?.description}</p>
-                                    {/* <a href="#2">
+                                      </PopupListIcons>
+                                      <p>{selectedParent?.description}</p>
+                                      {/* <a href="#2">
                                       Read each of the scientific studies
                                     </a> */}
-                                  </div>
-                                );
-                              })}
-                            </PopupList>
-                          </PopupContent>
-                        </Scrollbar>
-                      </Popup>
-                      <strong>{nutraceutic.title}</strong>
-                      <span>{`${nutraceutic.dosage} ${nutraceutic.unit}`}</span>
+                                    </div>
+                                  );
+                                })}
+                              </PopupList>
+                            </PopupContent>
+                          </Scrollbar>
+                        </Popup>
+                        <strong>
+                          {nutraceutic.title}
+                          <span>{`${nutraceutic.dosage} ${nutraceutic.unit}`}</span>
+                        </strong>
+                      </div>
                     </div>
                     <FiRefreshCcw
                       className="refresh-icon"
-                      size={20}
+                      size={12}
                       color="#fff"
                       data-tip={`${nutraceutic.title}`}
                       data-for={`sankey-${nutraceutic.key}-refresh`}
@@ -638,7 +592,7 @@ const Sankey: React.FC = () => {
                               start={`${parent}-${nutraceutic.key}`}
                               end={`${nutraceutic.key}-${parent}`}
                               showHead={false}
-                              strokeWidth={58}
+                              strokeWidth={10}
                               curveness={0.6}
                               startAnchor="right"
                               endAnchor="left"
@@ -679,4 +633,4 @@ const Sankey: React.FC = () => {
   );
 };
 
-export default Sankey;
+export default SankeyMobile;
