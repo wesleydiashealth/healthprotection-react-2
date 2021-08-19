@@ -4,7 +4,7 @@ import { Scrollbar } from 'react-scrollbars-custom';
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 import { HiQuestionMarkCircle, HiLockClosed } from 'react-icons/hi';
-import { FiRefreshCcw } from 'react-icons/fi';
+import { FiRefreshCcw, FiChevronDown } from 'react-icons/fi';
 import Xarrow from 'react-xarrows';
 import { IoOptionsOutline } from 'react-icons/io5';
 import { transparentize } from 'polished';
@@ -257,107 +257,23 @@ const SankeyMobile: React.FC = () => {
                     connectionsLength
                   }
                 >
-                  {/* <div className="exit-anchors anchors">
-                    {Object.values(outcomeConnections).filter(
-                      connection => !!connection.length,
-                    ).length
-                      ? Object.entries(outcomeConnections).map(child => {
-                          return child[1].filter(
-                            connection => !!connection.length,
-                          ).length ? (
-                            child[1]
-                              .filter(nutraceutic => !!nutraceutic.length)
-                              .map(nutraceutic => {
-                                return (
-                                  <React.Fragment
-                                    key={`${outcome.key}-${child[0]}-${nutraceutic}`}
-                                  >
-                                    <div
-                                      id={`${outcome.key}-${child[0]}-${nutraceutic}`}
-                                      className="anchors__item"
-                                    />
-                                    <Xarrow
-                                      start={`${outcome.key}-${child[0]}-${nutraceutic}`}
-                                      end={`${nutraceutic}-${child[0]}-${outcome.key}`}
-                                      showHead={false}
-                                      strokeWidth={58}
-                                      curveness={0.6}
-                                      startAnchor="right"
-                                      endAnchor="left"
-                                      color={
-                                        fineTune[child[0]] === 'off' ||
-                                        !fineTune[child[0]]
-                                          ? 'rgba(0,0,0,0.05)'
-                                          : transparentize(0.8, outcome.color)
-                                      }
-                                    />
-                                  </React.Fragment>
-                                );
-                              })
-                          ) : (
-                            <>
-                              <div
-                                key={`${outcome.key}-${child[0]}`}
-                                id={`${outcome.key}-${child[0]}`}
-                                className="anchors__item"
-                              />
-                              <Xarrow
-                                key={`arrow-${outcome.key}-${child[0]}`}
-                                start={`${outcome.key}-${child[0]}`}
-                                end={`${child[0]}-${outcome.key}`}
-                                showHead={false}
-                                strokeWidth={58}
-                                curveness={0.6}
-                                startAnchor="right"
-                                endAnchor="left"
-                                color={
-                                  fineTune[child[0]] === 'off' ||
-                                  !fineTune[child[0]]
-                                    ? 'rgba(0,0,0,0.05)'
-                                    : transparentize(0.8, outcome.color)
-                                }
-                              />
-                            </>
-                          );
-                        })
-                      : outcome.suboutcomes.map(suboutcome => (
-                          <React.Fragment key={`${outcome.key}-${suboutcome}`}>
-                            <div
-                              id={`${outcome.key}-${suboutcome}`}
-                              className="anchors__item"
-                            />
-                            <Xarrow
-                              start={`${outcome.key}-${suboutcome}`}
-                              end={`${suboutcome}-${outcome.key}`}
-                              showHead={false}
-                              strokeWidth={58}
-                              curveness={0.6}
-                              startAnchor="right"
-                              endAnchor="left"
-                              color={
-                                fineTune[suboutcome] === 'off' ||
-                                !fineTune[suboutcome]
-                                  ? 'rgba(0,0,0,0.05)'
-                                  : transparentize(0.8, outcome.color)
-                              }
-                            />
-                          </React.Fragment>
-                        ))}
-                  </div> */}
-                  <OutcomeContent className="outcome-wrapper">
+                  <OutcomeContent
+                    expandIcon={<FiChevronDown color="#000" />}
+                    className="outcome-wrapper"
+                  >
                     <img
                       src={`${process.env.PUBLIC_URL}/icons/outcomes/${outcome.key}.svg`}
                       alt={outcome.title}
                     />
                     <OutcomeName>
                       {outcome.title}
-                      <HiQuestionMarkCircle
+                      {/* <HiQuestionMarkCircle
                         size={20}
                         color="rgba(0,0,0,0.7)"
                         data-tip={`<strong>${outcome.title}</strong><span>${outcome.description}</span>`}
                         data-for="sankey-tooltip"
                         className="tooltip-icon"
-                      />
+                      /> */}
                     </OutcomeName>
                   </OutcomeContent>
                   <OutcomeList className="outcome-list">
@@ -629,7 +545,6 @@ const SankeyMobile: React.FC = () => {
             place="bottom"
             type="light"
             effect="solid"
-            offset={{ top: 10, left: 100 }}
             html
             backgroundColor="#fff"
           />
