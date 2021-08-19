@@ -2,6 +2,10 @@ import styled, { css, keyframes } from 'styled-components';
 import { transparentize } from 'polished';
 import { fadeIn } from 'react-animations';
 
+import Accordion from '@material-ui/core/Accordion';
+import AccordionSummary from '@material-ui/core/AccordionSummary';
+import AccordionDetails from '@material-ui/core/AccordionDetails';
+
 interface ContainerProps {
   isActive?: boolean;
 }
@@ -75,6 +79,7 @@ export const StepIntro = styled.div`
   }
 
   .__react_component_tooltip {
+    max-width: 100%;
     width: 260px;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.11);
     border-radius: 20px;
@@ -174,6 +179,7 @@ export const StepContent = styled.div`
   align-items: center;
 
   .sankey-tooltip {
+    max-width: 100vw;
     width: 640px;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.11);
     border-radius: 20px;
@@ -237,8 +243,8 @@ export const Outcomes = styled.div`
   }
 `;
 
-export const Outcome = styled.div<OutcomeProps>`
-  border-radius: 20px;
+export const Outcome = styled(Accordion)<OutcomeProps>`
+  border-radius: 20px !important;
 
   overflow: hidden;
 
@@ -288,8 +294,8 @@ export const Outcome = styled.div<OutcomeProps>`
     `}
 `;
 
-export const OutcomeContent = styled.div`
-  padding: 5px 10px;
+export const OutcomeContent = styled(AccordionSummary)`
+  padding: 10px !important;
 
   display: flex;
   flex-flow: row nowrap;
@@ -300,16 +306,21 @@ export const OutcomeContent = styled.div`
 
   background: #fde7e8;
   max-width: 320px;
-  min-height: 45px;
+  min-height: none;
 
   font-weight: 600;
 
-  min-height: 58px;
+  min-height: 0 !important;
 
-  > img {
+  > div {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  img {
     margin-right: 10px;
 
-    width: 16qpx;
+    width: 16px;
     height: auto;
 
     flex-shrink: 0;
@@ -354,11 +365,15 @@ export const OutcomeName = styled.span`
   }
 `;
 
-export const OutcomeList = styled.div`
-  padding: 10px;
+export const OutcomeList = styled(AccordionDetails)`
+  padding: 10px !important;
+
+  flex-flow: column wrap;
 
   .list-item {
     position: relative;
+
+    max-width: 100%;
 
     & ~ .list-item {
       margin-top: 10px;
