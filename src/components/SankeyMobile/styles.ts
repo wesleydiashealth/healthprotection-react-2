@@ -251,13 +251,15 @@ export const Outcome = styled.div<OutcomeProps>`
   .anchors {
     display: flex;
     flex-flow: column wrap;
+    align-items: center;
 
     position: absolute;
-    top: 0;
+
+    top: calc(50% - 5px);
 
     &__item {
       width: 10px;
-      height: 58px;
+      height: 10px;
     }
   }
 
@@ -466,6 +468,8 @@ export const FineTuneGroup = styled.div`
   border-radius: 20px;
   padding: 2px;
 
+  position: relative;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -610,22 +614,25 @@ export const Substance = styled.div<SubstanceProps>`
   .anchors {
     display: flex;
     flex-flow: column wrap;
+    align-items: center;
 
     position: absolute;
 
+    height: 100%;
+
+    top: calc(50% - 5px);
+
     &__item {
       width: 10px;
-      height: 58px;
+      height: 10px;
     }
   }
 
   .entry-anchors {
-    top: 0;
     left: 0;
   }
 
   .exit-anchors {
-    top: 0;
     right: 0;
   }
 

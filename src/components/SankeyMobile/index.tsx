@@ -376,8 +376,15 @@ const SankeyMobile: React.FC = () => {
 
                       return (
                         <div key={selectedSuboutcome.key} className="list-item">
-                          <div className="exit-anchors anchors">
-                            {nutraceutics
+                          <p>{selectedSuboutcome.title}</p>
+                          <FineTuneGroup>
+                            <div className="exit-anchors anchors">
+                              <div
+                                key={`${suboutcome}`}
+                                id={`${suboutcome}`}
+                                className="anchors__item"
+                              />
+                              {/* {nutraceutics
                               .filter(nutraceutic =>
                                 nutraceutic.parents.includes(suboutcome),
                               )
@@ -387,10 +394,8 @@ const SankeyMobile: React.FC = () => {
                                   id={`${suboutcome}-${nutraceutic.key}`}
                                   className="anchors__item"
                                 />
-                              ))}
-                          </div>
-                          <p>{selectedSuboutcome.title}</p>
-                          <FineTuneGroup>
+                              ))} */}
+                            </div>
                             <FineTune
                               isActive={
                                 fineTune[selectedSuboutcome.key] === 'off' ||
@@ -574,6 +579,10 @@ const SankeyMobile: React.FC = () => {
                       backgroundColor="#fff"
                     />
                     <div className="entry-anchors anchors">
+                      <div
+                        id={`${nutraceutic.key}`}
+                        className="anchors__item"
+                      />
                       {nutraceutic.parents.map(parent => {
                         const outcomeIndex = Object.values(outcomes).findIndex(
                           outcome => outcome.suboutcomes.includes(parent),
@@ -582,12 +591,12 @@ const SankeyMobile: React.FC = () => {
                         return (
                           <React.Fragment key={`${nutraceutic.key}-${parent}`}>
                             <div
-                              id={`${nutraceutic.key}-${parent}`}
+                              id={`${nutraceutic.key}`}
                               className="anchors__item"
                             />
                             <Xarrow
-                              start={`${parent}-${nutraceutic.key}`}
-                              end={`${nutraceutic.key}-${parent}`}
+                              start={`${parent}`}
+                              end={`${nutraceutic.key}`}
                               showHead={false}
                               strokeWidth={10}
                               curveness={0.6}
