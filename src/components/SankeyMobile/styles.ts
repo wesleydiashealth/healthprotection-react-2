@@ -538,7 +538,7 @@ export const Substances = styled.div<SubstancesProps>`
 
 export const Substance = styled.div<SubstanceProps>`
   border-radius: 20px;
-  padding: 10px;
+  padding: 10px 30px 10px 10px;
 
   position: relative;
 
