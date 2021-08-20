@@ -100,10 +100,6 @@ const Wizard: React.FC = () => {
         <StepDescription>
           <strong>Start</strong> by talking a little about yourself
         </StepDescription>
-        <StepSubDescription>
-          Doing this step is critical to narrow down all more than 500 products,
-          17 possible outcomes and 43 sub-outcomes.
-        </StepSubDescription>
       </StepIntro>
       {previousStep.isCompleted && (
         <Form ref={formRef} onSubmit={handleSubmit}>

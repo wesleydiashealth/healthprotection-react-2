@@ -224,9 +224,6 @@ const Sankey: React.FC = () => {
         <StepDescription>
           <strong>Fine-tune</strong> your desired outcomes
         </StepDescription>
-        <StepSubDescription>
-          Click on the selected substances to explore scientific information.
-        </StepSubDescription>
       </StepIntro>
       {previousStep.isCompleted && (
         <StepContent>
