@@ -5,15 +5,18 @@ import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 import { HiQuestionMarkCircle, HiLockClosed } from 'react-icons/hi';
 import { FiRefreshCcw } from 'react-icons/fi';
+import { FaInfoCircle } from 'react-icons/fa';
 import Xarrow from 'react-xarrows';
 import { IoOptionsOutline } from 'react-icons/io5';
 import { transparentize } from 'polished';
+
+// import Outcome2 from './components/Outcome';
 
 import Container, {
   StepIntro,
   StepTitle,
   StepDescription,
-  StepSubDescription,
+  // StepSubDescription,
   StepContent,
   Outcomes,
   Outcome,
@@ -228,6 +231,10 @@ const Sankey: React.FC = () => {
       {previousStep.isCompleted && (
         <StepContent>
           <Outcomes>
+            {/* {Object.values(outcomes).map(outcome => {
+              return <Outcome2 id={outcome.key} {...outcome} />;
+            })} */}
+
             {Object.values(outcomes).map(outcome => {
               const connectionIndex = Object.keys(connections).findIndex(
                 connection => connection === outcome.key,
@@ -525,7 +532,7 @@ const Sankey: React.FC = () => {
                     <div className="content">
                       <Popup
                         trigger={
-                          <HiQuestionMarkCircle
+                          <FaInfoCircle
                             className="tooltip-icon"
                             size={20}
                             color="rgba(0,0,0,0.7)"

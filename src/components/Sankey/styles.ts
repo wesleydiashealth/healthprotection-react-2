@@ -593,6 +593,10 @@ export const Substance = styled.div<SubstanceProps>`
   .content {
     display: flex;
     align-items: center;
+
+    svg {
+      margin-right: 5px;
+    }
   }
 
   .refresh-icon {

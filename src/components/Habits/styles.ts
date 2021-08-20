@@ -6,7 +6,7 @@ interface ContainerProps {
 
 const Container = styled.div<ContainerProps>`
   margin: 0 auto;
-  padding: 80px 50px 0;
+  padding: 80px 10px 0;
 
   max-width: 1300px;
 
@@ -116,12 +116,20 @@ const Container = styled.div<ContainerProps>`
         line-height: 22px;
       }
     }
+
+    @media screen and (min-width: 768px) {
+      padding: 80px 50px 0;
+    }
   }
 `;
 
 export const HabitsContainer = styled.div`
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column wrap;
+
+  @media screen and (min-width: 768px) {
+    flex-flow: row wrap;
+  }
 `;
 
 export const HabitContainer = styled.div`
@@ -130,22 +138,20 @@ export const HabitContainer = styled.div`
   display: flex;
   align-items: center;
 
-  width: calc(50% - 20px);
-
-  &:nth-child(odd) {
-    margin-right: 40px;
-  }
+  width: 100%;
 
   .habit-intro {
     margin-right: 20px;
 
     img {
-      max-width: 120px;
+      max-width: 60px;
       height: auto;
     }
   }
 
   .habit-content {
+    max-width: 100%;
+
     h4 {
       color: #565656;
 
@@ -188,6 +194,20 @@ export const HabitContainer = styled.div`
 
       .Dropdown-arrow {
         top: 19px;
+      }
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    width: calc(50% - 20px);
+
+    &:nth-child(odd) {
+      margin-right: 40px;
+    }
+
+    .habit-intro {
+      img {
+        max-width: 120px;
       }
     }
   }

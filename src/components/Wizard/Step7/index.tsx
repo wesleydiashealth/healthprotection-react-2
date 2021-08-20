@@ -293,21 +293,22 @@ const Step7: React.FC = () => {
           }
         </ScrollArea>
       )}
-      {step?.answers.length > 0 && step.answers.indexOf('none') === -1 && (
-        <button
-          type="button"
-          className="advance-button"
-          onClick={() => {
-            context.updateStep('step7', {
-              isCompleted: true,
-              answers: step?.answers,
-            });
-            carouselContext.setStoreState({ currentSlide: 7 });
-          }}
-        >
-          Next Question
-        </button>
-      )}
+      {step?.answers === 'yes' &&
+        !!Object.values(bloodTestData).filter(data => !!data.length).length && (
+          <button
+            type="button"
+            className="advance-button"
+            onClick={() => {
+              context.updateStep('step7', {
+                isCompleted: true,
+                answers: step?.answers,
+              });
+              carouselContext.setStoreState({ currentSlide: 7 });
+            }}
+          >
+            Next Question
+          </button>
+        )}
     </StepContainer>
   );
 };

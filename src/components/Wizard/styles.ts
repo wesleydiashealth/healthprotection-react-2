@@ -16,6 +16,11 @@ const Container = styled.div<ContainerProps>`
 
   max-width: 1300px;
 
+  // Disable focused step outline
+  .focusRing___1airF.carousel__slide-focus-ring {
+    outline: none !important;
+  }
+
   /* max-width constrains the width of our carousel to 550, but shrinks on small devices */
   .carousel__container {
     max-width: 360px;

@@ -25,7 +25,7 @@ import Container, {
   StepIntro,
   StepTitle,
   StepDescription,
-  StepSubDescription,
+  // StepSubDescription,
   SliderNavigation,
 } from './styles';
 import 'react-multi-carousel/lib/styles.css';
