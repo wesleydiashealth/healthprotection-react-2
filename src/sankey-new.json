@@ -1,0 +1,49 @@
+{
+  "outcomes": {
+    "blood-sugar": {
+      "id": "blood-sugar",
+      "title": "Blood Sugar",
+      "color": "#3F72B7",
+      "description": "",
+      "suboutcomes": [
+        "blood-sugar-control"
+      ]
+    }
+  },
+  "suboutcomes": {
+    "blood-sugar-control": {
+      "id": "blood-sugar-control",
+      "title": "Blood Sugar Control",
+      "color": "#7E61A8",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
+      "nutraceuticals": {
+        "min": [],
+        "med": [
+          "psyllium"
+        ],
+        "max": [
+          "psyllium",
+          "inositol"
+        ]
+      }
+    }
+  },
+  "nutraceuticals": {
+    "inositol": {
+      "key": "inositol",
+      "title": "Inositol",
+      "dosage": "1000mg",
+      "unit": "mg",
+      "label": "Label text",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus."
+    },
+    "psyllium": {
+      "key": "psyllium",
+      "title": "Psyllium",
+      "dosage": "700mg",
+      "unit": "mg",
+      "label": "Label text",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus."
+    }
+  }
+}
