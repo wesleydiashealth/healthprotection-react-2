@@ -24,8 +24,6 @@ export const AppProvider: React.FC = ({ children }) => {
     step3: { isCompleted: false, isDisabled: true },
   });
 
-  const [sankeyConnections, setSankeyConnections] = useState();
-
   async function updateStep(step: string, attrs: StepData) {
     steps[step] = attrs;
 

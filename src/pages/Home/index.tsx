@@ -7,7 +7,8 @@ import { AppProvider } from '../../contexts/app';
 import Hero from '../../components/Hero';
 import Wizard from '../../components/Wizard';
 // import Sankey from '../../components/Sankey';
-import SankeyMobile from '../../components/SankeyMobile';
+import SankeyNew from '../../components/SankeyNew';
+// import SankeyMobile from '../../components/SankeyMobile';
 import Cart from '../../components/Cart';
 import Habits from '../../components/Habits';
 
@@ -16,7 +17,7 @@ const Home: React.FC = () => (
     <AppProvider>
       <Hero />
       <Wizard />
-      <SankeyMobile />
+      <SankeyNew />
       <Habits />
       <Cart />
     </AppProvider>
