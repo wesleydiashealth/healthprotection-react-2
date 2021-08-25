@@ -1,6 +1,7 @@
 import React, { useState, useCallback } from 'react';
-// import Xarrow from 'react-xarrows';
+import Xarrow from 'react-xarrows';
 import { HiQuestionMarkCircle } from 'react-icons/hi';
+import { transparentize } from 'polished';
 
 import { useSankey } from '../../../../contexts/sankey';
 
@@ -16,6 +17,7 @@ import Container, {
 interface SuboutcomeProps {
   id: string;
   title: string;
+  color: string;
   description: string;
   nutraceuticals: {
     min: string[];
@@ -31,11 +33,35 @@ interface FineTuneProps {
 const Suboutcome: React.FC<SuboutcomeProps> = ({
   id,
   title,
+  color,
   description,
   nutraceuticals,
 }) => {
   const context = useSankey();
-  const { updateConnections } = context;
+  const { connections, updateConnections } = context;
+
+  const outcomeConnections = Object.entries(connections).filter(
+    ({ 1: value }) => Object.keys(value).includes(id),
+  );
+
+  const selectedConnections = outcomeConnections.filter(
+    ({ 1: outcomeConnection }) => Object.keys(outcomeConnection).includes(id),
+  );
+
+  const supConnectionsQuantity = outcomeConnections.length;
+
+  const subConnectionsQuantity = outcomeConnections.reduce(
+    (acc, { 1: subconnections }) =>
+      acc +
+      Object.entries(subconnections)
+        .filter(({ 0: key }) => key === id)
+        .reduce((subAcc, subCurr) => {
+          const { 1: value } = subCurr;
+
+          return Array.isArray(value) ? subAcc + value.length : 0;
+        }, 0),
+    0,
+  );
 
   const [fineTune, setFineTune] = useState<FineTuneProps>({});
 
@@ -47,9 +73,51 @@ const Suboutcome: React.FC<SuboutcomeProps> = ({
   );
 
   return (
-    <Container id={id}>
-      <Anchors>
-        <Anchor id={`${id}`} />
+    <Container
+      id={id}
+      color={color}
+      isActive={fineTune[id] !== undefined && fineTune[id] !== 'off'}
+      connections={subConnectionsQuantity || supConnectionsQuantity}
+    >
+      <Anchors className="entry-anchors">
+        {outcomeConnections.map(({ 0: key }) => (
+          <Anchor key={`${id}-${key}`} id={`${id}-${key}`} />
+        ))}
+      </Anchors>
+      <Anchors className="exit-anchors">
+        {selectedConnections.map(({ 1: subconnections }) =>
+          Object.values(subconnections)
+            .filter(
+              subconnection =>
+                Array.isArray(subconnection) && !!subconnection.length,
+            )
+            .map(
+              subconnection =>
+                Array.isArray(subconnection) &&
+                subconnection.map(nutraceutical => (
+                  <>
+                    <Anchor
+                      key={`${id}-${nutraceutical}`}
+                      id={`${id}-${nutraceutical}`}
+                    />
+                    <Xarrow
+                      start={`${id}-${nutraceutical}`}
+                      end={`${nutraceutical}-${id}`}
+                      showHead={false}
+                      strokeWidth={58}
+                      curveness={0.6}
+                      startAnchor="right"
+                      endAnchor="left"
+                      color={
+                        subConnectionsQuantity
+                          ? transparentize(0.8, color)
+                          : 'rgba(0,0,0,0.05)'
+                      }
+                    />
+                  </>
+                )),
+            ),
+        )}
       </Anchors>
       <Content>
         <HiQuestionMarkCircle
@@ -64,7 +132,7 @@ const Suboutcome: React.FC<SuboutcomeProps> = ({
       <FineTuneGroup>
         <FineTune
           isActive={fineTune[id] === 'off' || !fineTune[id]}
-          color="red"
+          color={color}
           onClick={() => {
             handleFineTuneClick([], id);
             setFineTune({ ...fineTune, [id]: 'off' });
@@ -72,25 +140,22 @@ const Suboutcome: React.FC<SuboutcomeProps> = ({
         >
           Off
         </FineTune>
-        {Object.entries(nutraceuticals)
-          .filter(nutraceutical => !!nutraceutical[1].length)
-          .map(nutraceutical => {
-            const { 0: key, 1: value } = nutraceutical;
-
-            return (
-              <FineTune
-                key={key}
-                isActive={fineTune[id] === key}
-                color="green"
-                onClick={() => {
-                  handleFineTuneClick(value, id);
-                  setFineTune({ ...fineTune, [id]: key });
-                }}
-              >
-                {key.charAt(0).toUpperCase() + key.slice(1)}
-              </FineTune>
-            );
-          })}
+        {Object.entries(nutraceuticals).map(({ 0: key, 1: value }) => (
+          <FineTune
+            key={key}
+            isActive={fineTune[id] === key}
+            isEmpty={!value.length}
+            color={color}
+            onClick={() => {
+              if (value.length) {
+                handleFineTuneClick(value, id);
+                setFineTune({ ...fineTune, [id]: key });
+              }
+            }}
+          >
+            {key.charAt(0).toUpperCase() + key.slice(1)}
+          </FineTune>
+        ))}
       </FineTuneGroup>
     </Container>
   );

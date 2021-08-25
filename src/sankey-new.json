@@ -61,7 +61,7 @@
       "suboutcomes": [
         "anxiety",
         "depression",
-        "overall-well-being",
+        "overall-well-being-energy-and-mood",
         "sleep",
         "stress-management"
       ]
@@ -93,8 +93,8 @@
       "color": "#3BB9A0",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
       "suboutcomes": [
-        "immune-response",
-        "nutrient-supplementation",
+        "immune-response-immunity",
+        "nutrient-supplementation-immunity",
         "preventive-immunity"
       ]
     },
@@ -127,11 +127,11 @@
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
       "suboutcomes": [
         "anti-oxidant-longevity-and-prevention",
-        "fatigue-prevention",
+        "fatigue-prevention-longevity-and-prevention",
         "hormone-function",
         "hydration",
-        "nutrient-supplementation",
-        "overall-well-being"
+        "nutrient-supplementation-longevity-and-prevention",
+        "overall-well-being-longevity-and-prevention"
       ]
     },
     "muscle-health": {
@@ -140,7 +140,7 @@
       "color": "#FEC763",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
       "suboutcomes": [
-        "fatigue-prevention",
+        "fatigue-prevention-muscle-health",
         "muscle-gain",
         "muscle-recovery",
         "muscular-endurance",
@@ -153,7 +153,7 @@
       "color": "#B09AC9",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
       "suboutcomes": [
-        "nutrient-supplementation"
+        "nutrient-supplementation-nutritional-support"
       ]
     },
     "respiratory-health": {
@@ -162,7 +162,7 @@
       "color": "#50BADF",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus ex ut quam sodales rutrum. Morbi nec quam est. Phasellus imperdiet diam nibh, nec semper purus aliquet nec. Nulla lobortis euismod sem, et vulputate tellus scelerisque quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec porttitor sem a lacus posuere convallis. Nulla fermentum laoreet blandit. Quisque quis erat metus. Nulla ornare augue non pellentesque pellentesque. Curabitur sapien turpis, pulvinar at orci sit amet, tincidunt suscipit lacus.",
       "suboutcomes": [
-        "immune-response"
+        "immune-response-respiratory-health"
       ]
     },
     "weight-management": {

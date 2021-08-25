@@ -83,7 +83,17 @@ const Sankey: React.FC = () => {
             </Outcomes>
             <SubOutcomes>
               {Object.values(suboutcomes).map(suboutcome => {
-                return <Suboutcome key={suboutcome.id} {...suboutcome} />;
+                const outcomeColor = Object.values(outcomes).find(outcome =>
+                  outcome.suboutcomes.includes(suboutcome.id),
+                )?.color;
+
+                return (
+                  <Suboutcome
+                    key={suboutcome.id}
+                    {...suboutcome}
+                    color={outcomeColor || '#565656'}
+                  />
+                );
               })}
             </SubOutcomes>
             <Nutraceuticals />

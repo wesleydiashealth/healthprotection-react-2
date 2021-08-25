@@ -38,7 +38,6 @@ import Container, {
 import { useApp } from '../../contexts/app';
 
 import sankeyData from '../../sankey2.json';
-import sankeyDataNew from '../../sankey-new.json';
 
 interface FineTune {
   [key: string]: string;
@@ -69,11 +68,6 @@ const Sankey: React.FC = () => {
   previousStep.isCompleted = true;
 
   const { outcomes, suboutcomes } = sankeyData;
-  const {
-    outcomes: outcomes2,
-    suboutcomes: suboutcomes2,
-    nutraceuticals: nutraceuticals2,
-  } = sankeyDataNew;
 
   const [fineTune, setFineTune] = useState<FineTune>({});
   const [nutraceutics, setNutraceutics] = useState<Substance[]>([]);
@@ -81,14 +75,14 @@ const Sankey: React.FC = () => {
   const [connections, setConnections] = useState<Connections>(() => {
     const items = {};
 
-    Object.values(outcomes2).forEach(outcome => {
+    Object.values(outcomes).forEach(outcome => {
       const subItems = {};
 
       outcome.suboutcomes.forEach(suboutcome => {
         Object.assign(subItems, { [suboutcome]: [] });
       });
 
-      Object.assign(items, { [outcome.id]: subItems });
+      Object.assign(items, { [outcome.key]: subItems });
     });
 
     return items;
@@ -96,7 +90,7 @@ const Sankey: React.FC = () => {
 
   const handleFineTuneClick = useCallback(
     async (items: Array<Substance>, suboutcome) => {
-      const suboutcomeParents = Object.values(outcomes2).filter(outcome =>
+      const suboutcomeParents = Object.values(outcomes).filter(outcome =>
         outcome.suboutcomes.includes(suboutcome),
       );
 
@@ -146,7 +140,7 @@ const Sankey: React.FC = () => {
           }
 
           suboutcomeParents.forEach(parent => {
-            const connectionItems = connections[parent.id][suboutcome];
+            const connectionItems = connections[parent.key][suboutcome];
 
             const subItemIndex = connectionItems.indexOf(item.key);
 
@@ -177,7 +171,7 @@ const Sankey: React.FC = () => {
         );
 
         suboutcomeParents.forEach(parent => {
-          const connectionItems = connections[parent.id][suboutcome];
+          const connectionItems = connections[parent.key][suboutcome];
 
           connectionItems.splice(0, connectionItems.length);
 
@@ -187,7 +181,7 @@ const Sankey: React.FC = () => {
         context.updateStep('step2', { isCompleted: false });
       }
     },
-    [nutraceutics, connections, outcomes2, context],
+    [nutraceutics, connections, outcomes, context],
   );
 
   return (
@@ -241,9 +235,9 @@ const Sankey: React.FC = () => {
               return <Outcome2 id={outcome.key} {...outcome} />;
             })} */}
 
-            {Object.values(outcomes2).map(outcome => {
+            {Object.values(outcomes).map(outcome => {
               const connectionIndex = Object.keys(connections).findIndex(
-                connection => connection === outcome.id,
+                connection => connection === outcome.key,
               );
 
               const outcomeConnections =
@@ -261,8 +255,8 @@ const Sankey: React.FC = () => {
 
               return (
                 <Outcome
-                  key={outcome.id}
-                  id={outcome.id}
+                  key={outcome.key}
+                  id={outcome.key}
                   color={outcome.color}
                   suboutcomes={
                     outcome.suboutcomes.length +
@@ -283,15 +277,15 @@ const Sankey: React.FC = () => {
                               .map(nutraceutic => {
                                 return (
                                   <React.Fragment
-                                    key={`${outcome.id}-${child[0]}-${nutraceutic}`}
+                                    key={`${outcome.key}-${child[0]}-${nutraceutic}`}
                                   >
                                     <div
-                                      id={`${outcome.id}-${child[0]}-${nutraceutic}`}
+                                      id={`${outcome.key}-${child[0]}-${nutraceutic}`}
                                       className="anchors__item"
                                     />
                                     <Xarrow
-                                      start={`${outcome.id}-${child[0]}-${nutraceutic}`}
-                                      end={`${nutraceutic}-${child[0]}-${outcome.id}`}
+                                      start={`${outcome.key}-${child[0]}-${nutraceutic}`}
+                                      end={`${nutraceutic}-${child[0]}-${outcome.key}`}
                                       showHead={false}
                                       strokeWidth={58}
                                       curveness={0.6}
@@ -310,14 +304,14 @@ const Sankey: React.FC = () => {
                           ) : (
                             <>
                               <div
-                                key={`${outcome.id}-${child[0]}`}
-                                id={`${outcome.id}-${child[0]}`}
+                                key={`${outcome.key}-${child[0]}`}
+                                id={`${outcome.key}-${child[0]}`}
                                 className="anchors__item"
                               />
                               <Xarrow
-                                key={`arrow-${outcome.id}-${child[0]}`}
-                                start={`${outcome.id}-${child[0]}`}
-                                end={`${child[0]}-${outcome.id}`}
+                                key={`arrow-${outcome.key}-${child[0]}`}
+                                start={`${outcome.key}-${child[0]}`}
+                                end={`${child[0]}-${outcome.key}`}
                                 showHead={false}
                                 strokeWidth={58}
                                 curveness={0.6}
@@ -334,14 +328,14 @@ const Sankey: React.FC = () => {
                           );
                         })
                       : outcome.suboutcomes.map(suboutcome => (
-                          <React.Fragment key={`${outcome.id}-${suboutcome}`}>
+                          <React.Fragment key={`${outcome.key}-${suboutcome}`}>
                             <div
-                              id={`${outcome.id}-${suboutcome}`}
+                              id={`${outcome.key}-${suboutcome}`}
                               className="anchors__item"
                             />
                             <Xarrow
-                              start={`${outcome.id}-${suboutcome}`}
-                              end={`${suboutcome}-${outcome.id}`}
+                              start={`${outcome.key}-${suboutcome}`}
+                              end={`${suboutcome}-${outcome.key}`}
                               showHead={false}
                               strokeWidth={58}
                               curveness={0.6}
@@ -359,7 +353,7 @@ const Sankey: React.FC = () => {
                   </div>
                   <OutcomeContent className="outcome-wrapper">
                     <img
-                      src={`${process.env.PUBLIC_URL}/icons/outcomes/${outcome.id}.svg`}
+                      src={`${process.env.PUBLIC_URL}/icons/outcomes/${outcome.key}.svg`}
                       alt={outcome.title}
                       width={48}
                     />

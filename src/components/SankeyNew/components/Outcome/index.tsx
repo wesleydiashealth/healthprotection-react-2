@@ -1,6 +1,7 @@
 import React from 'react';
-// import Xarrow from 'react-xarrows';
+import Xarrow from 'react-xarrows';
 import { HiQuestionMarkCircle } from 'react-icons/hi';
+import { transparentize } from 'polished';
 
 import Container, {
   Anchors,
@@ -24,7 +25,9 @@ const Outcome: React.FC<OutcomeProps> = ({ id, title, color, description }) => {
   const context = useSankey();
   const { connections } = context;
 
-  const outcomeConnections = Object.entries(connections)
+  const selectedConnections = Object.entries(connections[id]);
+
+  const connectionsQuantity = Object.entries(connections)
     .filter(connection => connection[0] === id)
     .reduce((acc, curr) => {
       const { 1: value } = curr;
@@ -33,9 +36,31 @@ const Outcome: React.FC<OutcomeProps> = ({ id, title, color, description }) => {
     }, 0);
 
   return (
-    <Container id={id} color={color} connections={outcomeConnections}>
+    <Container id={id} color={color} connections={connectionsQuantity}>
       <Anchors>
-        <Anchor id={`${id}`} />
+        {selectedConnections.map(
+          ({ 0: selectedConnection, 1: subConnections }) => {
+            return (
+              <React.Fragment key={`${id}-${selectedConnection}`}>
+                <Anchor id={`${id}-${selectedConnection}`} />
+                <Xarrow
+                  start={`${id}-${selectedConnection}`}
+                  end={`${selectedConnection}-${id}`}
+                  showHead={false}
+                  strokeWidth={58}
+                  curveness={0.6}
+                  startAnchor="right"
+                  endAnchor="left"
+                  color={
+                    Array.isArray(subConnections) && !!subConnections.length
+                      ? transparentize(0.8, color)
+                      : 'rgba(0,0,0,0.05)'
+                  }
+                />
+              </React.Fragment>
+            );
+          },
+        )}
       </Anchors>
       <Content>
         <ContentIcon

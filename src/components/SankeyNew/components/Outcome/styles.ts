@@ -47,6 +47,7 @@ export const Anchors = styled.div`
 
   position: absolute;
   top: 0;
+  right: 0;
 `;
 
 export const Anchor = styled.div`
