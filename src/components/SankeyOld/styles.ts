@@ -167,7 +167,7 @@ export const StepSubDescription = styled.span`
 export const StepContent = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
 
   .sankey-tooltip {
     width: 640px;
@@ -222,7 +222,7 @@ export const Outcomes = styled.div`
   }
 
   @media screen and (min-width: 768px) {
-    align-self: flex-start;
+    align-self: center;
 
     max-width: none;
   }

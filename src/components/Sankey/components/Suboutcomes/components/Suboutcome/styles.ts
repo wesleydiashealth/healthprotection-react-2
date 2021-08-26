@@ -18,7 +18,7 @@ export const Container = styled.div<ContainerProps>`
 
   position: relative;
 
-  min-height: 58px;
+  height: 58px;
 
   display: flex;
   flex-flow: column wrap;

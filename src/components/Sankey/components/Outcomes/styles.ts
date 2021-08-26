@@ -12,7 +12,7 @@ const Container = styled.div`
   }
 
   @media screen and (min-width: 768px) {
-    align-self: flex-start;
+    align-self: center;
 
     max-width: none;
   }

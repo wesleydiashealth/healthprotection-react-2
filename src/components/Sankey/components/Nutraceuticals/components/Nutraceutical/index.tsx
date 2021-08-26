@@ -11,6 +11,11 @@ import Container, {
   Anchor,
   Content,
   ContentPopup,
+  ContentPopupTitle,
+  ContentPopupDescription,
+  ContentPopupLink,
+  ContentPopupList,
+  ContentPopupListIcons,
   ContentTitle,
   ContentDescription,
 } from './styles';
@@ -31,7 +36,7 @@ const Nutraceutical: React.FC<NutraceuticalProps> = ({
   description,
 }) => {
   const context = useSankey();
-  const { connections } = context;
+  const { outcomes, suboutcomes, connections } = context;
 
   const supConnections = Object.values(connections)
     .filter(
@@ -77,28 +82,35 @@ const Nutraceutical: React.FC<NutraceuticalProps> = ({
         >
           <Scrollbar style={{ height: 'calc(100vh - 80px)' }}>
             <ContentPopup>
-              <h3>{title}</h3>
-              <p>{description}</p>
-              <a
+              <ContentPopupTitle>{title}</ContentPopupTitle>
+              <ContentPopupDescription>{description}</ContentPopupDescription>
+              <ContentPopupLink
                 href={`https://www.healthprotection.com/nutraceuticals/${id}`}
                 target="_blank"
                 rel="noreferrer"
               >
                 Access 227 scientific studies
-              </a>
-              {/* <PopupList>
-                {nutraceutic.parents.map(parent => {
-                  const selectedParent = Object.values(suboutcomes).find(
-                    suboutcome => suboutcome.key === parent,
+              </ContentPopupLink>
+              <ContentPopupList>
+                {supConnections.map(supConnection => {
+                  const selectedSuboutcome = Object.values(suboutcomes).find(
+                    suboutcome => suboutcome.id === supConnection,
                   );
+
+                  const selectedOutcome =
+                    selectedSuboutcome &&
+                    outcomes.find(outcome =>
+                      outcome.suboutcomes.includes(selectedSuboutcome.id),
+                    );
+
                   return (
-                    <div key={`popup-${parent}`} className="list-item">
+                    <div key={`popup-${supConnection}`} className="list-item">
                       <h4>
-                        <strong>{nutraceutic.title}</strong> for{' '}
-                        {selectedParent?.title}
+                        <strong>{selectedSuboutcome?.title}</strong> for{' '}
+                        {selectedOutcome?.title}
                       </h4>
                       <h5>These data summarize XX scientific studies</h5>
-                      <PopupListIcons>
+                      <ContentPopupListIcons>
                         <div className="icon-wrapper">
                           <strong>Level of Evidence</strong>
                           <div className="icon-content">
@@ -121,13 +133,13 @@ const Nutraceutical: React.FC<NutraceuticalProps> = ({
                             <span>Notable</span>
                           </div>
                         </div>
-                      </PopupListIcons>
-                      <p>{selectedParent?.description}</p>
-                      <a href="#2">Read each of the scientific studies</a>
+                      </ContentPopupListIcons>
+                      <p>{selectedSuboutcome?.description}</p>
+                      {/* <a href="#2">Read each of the scientific studies</a> */}
                     </div>
                   );
                 })}
-              </PopupList> */}
+              </ContentPopupList>
             </ContentPopup>
           </Scrollbar>
         </Popup>
@@ -137,7 +149,7 @@ const Nutraceutical: React.FC<NutraceuticalProps> = ({
       <FiRefreshCcw
         className="refresh-icon"
         size={20}
-        color="#000"
+        color="#fff"
         data-tip={`${title}`}
         data-for={`sankey-${id}-refresh`}
       />
@@ -149,7 +161,7 @@ const Nutraceutical: React.FC<NutraceuticalProps> = ({
         effect="solid"
         offset={{ top: 10, left: 10 }}
         html
-        backgroundColor="#000"
+        backgroundColor="#fff"
       />
     </Container>
   );

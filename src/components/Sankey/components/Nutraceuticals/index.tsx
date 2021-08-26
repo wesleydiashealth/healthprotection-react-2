@@ -29,7 +29,7 @@ const Nutraceuticals: React.FC = () => {
     .filter((val, index, array) => array.indexOf(val) === index);
 
   return (
-    <Container>
+    <Container isActive={!!selectedNutraceuticals.length}>
       {selectedNutraceuticals.map(selectedNutraceutical => {
         const nutraceutical = nutraceuticals.find(
           item => item.id === selectedNutraceutical,

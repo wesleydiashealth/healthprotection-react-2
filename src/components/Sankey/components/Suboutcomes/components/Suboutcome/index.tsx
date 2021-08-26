@@ -42,18 +42,44 @@ const Suboutcome: React.FC<SuboutcomeProps> = ({
 
   const [fineTune, setFineTune] = useState<FineTuneProps>({});
 
-  const outcomeConnection =
-    Object.values(connections).find(connection =>
-      Object.keys(connection).includes(id),
-    ) || {};
+  const supConnections = Object.entries(connections)
+    .filter(({ 1: subconnections }) => Object.keys(subconnections).includes(id))
+    .reduce((acc: string[], { 0: outcome, 1: suboutcomes }) => {
+      const subconnections = Object.entries(suboutcomes)
+        .filter(({ 0: subconnection }) => subconnection.includes(id))
+        .reduce(
+          (acc2: string[], { 1: subconnectionNutraceuticals }) => [
+            ...acc2,
+            ...subconnectionNutraceuticals.map(
+              subconnectionNutraceutical =>
+                `${subconnectionNutraceutical}_${id}_${outcome}`,
+            ),
+          ],
+          [],
+        );
 
-  const suboutcomeConnection = Object.entries(outcomeConnection).find(
-    ({ 0: suboutcome }) => suboutcome === id,
-  );
+      return subconnections.length
+        ? [...acc, ...subconnections]
+        : [...acc, `${id}_${outcome}`];
+    }, []);
 
-  const { 1: subConnections } = suboutcomeConnection || [];
-
-  const subConnectionsQuantity = subConnections?.length || 1;
+  const subConnections = Object.values(connections)
+    .filter(subconnections => Object.keys(subconnections).includes(id))
+    .reduce(
+      (accumulator: string[], subconnections) => [
+        ...accumulator,
+        ...Object.entries(subconnections)
+          .filter(({ 0: subconnection }) => subconnection === id)
+          .reduce(
+            (subAccumulator: string[], { 1: subconnection }) => [
+              ...subAccumulator,
+              ...subconnection,
+            ],
+            [],
+          ),
+      ],
+      [],
+    );
 
   const handleFineTuneClick = useCallback(
     async (fineTuneGroup, suboutcome) => {
@@ -67,21 +93,18 @@ const Suboutcome: React.FC<SuboutcomeProps> = ({
       id={id}
       color={color}
       isActive={fineTune[id] !== undefined && fineTune[id] !== 'off'}
-      connections={subConnectionsQuantity}
+      connections={supConnections.length}
     >
       <Anchors className="entry-anchors">
-        {/* {outcomeConnections.map(({ 0: key }) => (
-          <Anchor key={`${id}-${key}`} id={`${id}-${key}`} />
-        ))} */}
+        {supConnections.map(supConnection => (
+          <Anchor key={`${supConnection}`} id={`${supConnection}`} />
+        ))}
       </Anchors>
       <Anchors className="exit-anchors">
         {subConnections &&
           subConnections.map(subConnection => (
-            <>
-              <Anchor
-                key={`${id}-${subConnection}`}
-                id={`${id}-${subConnection}`}
-              />
+            <React.Fragment key={`${id}-${subConnection}`}>
+              <Anchor id={`${id}-${subConnection}`} />
               <Xarrow
                 start={`${id}-${subConnection}`}
                 end={`${subConnection}-${id}`}
@@ -91,12 +114,12 @@ const Suboutcome: React.FC<SuboutcomeProps> = ({
                 startAnchor="right"
                 endAnchor="left"
                 color={
-                  subConnectionsQuantity
+                  subConnections.length
                     ? transparentize(0.8, color)
                     : 'rgba(0,0,0,0.05)'
                 }
               />
-            </>
+            </React.Fragment>
           ))}
       </Anchors>
       <Content>
