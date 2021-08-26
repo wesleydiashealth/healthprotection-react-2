@@ -1,44 +1,47 @@
 import React from 'react';
 
+import { useSankey } from 'contexts/sankey';
 import Nutraceutical from './components/Nutraceutical';
 
 import Container from './styles';
 
-import { useSankey } from '../../../../contexts/sankey';
-
-import sankeyData from '../../../../sankey-new.json';
-
 const Nutraceuticals: React.FC = () => {
   const context = useSankey();
-  const { connections } = context;
+  const { nutraceuticals, connections } = context;
 
-  const { nutraceuticals } = sankeyData;
+  const selectedNutraceuticals = Object.values(connections)
+    .reduce(
+      (accumulator: string[], connection) => [
+        ...accumulator,
+        ...Object.values(connection)
+          .filter(subconnections => !!subconnections.length)
+          .reduce(
+            (subAccumulator, subconnections) => [
+              ...subAccumulator,
+              ...subconnections,
+            ],
+            [],
+          )
+          .filter((val, index, array) => array.indexOf(val) === index),
+      ],
+      [],
+    )
+    .filter((val, index, array) => array.indexOf(val) === index);
 
   return (
     <Container>
-      {Object.entries(connections).map(subconnections => {
-        const { 1: suboutcomes } = subconnections;
+      {selectedNutraceuticals.map(selectedNutraceutical => {
+        const nutraceutical = nutraceuticals.find(
+          item => item.id === selectedNutraceutical,
+        );
 
-        return Object.entries(suboutcomes)
-          .filter(subconnection => !!subconnection.length)
-          .map(subconnection => {
-            const { 1: nutraceuticalKeys } = subconnection;
-
-            return (
-              Array.isArray(nutraceuticalKeys) &&
-              nutraceuticalKeys.map(nutraceuticalKey => {
-                const nutraceutical = Object.values(nutraceuticals).find(
-                  item => item.id === nutraceuticalKey,
-                );
-
-                return (
-                  nutraceutical && (
-                    <Nutraceutical key={nutraceutical.id} {...nutraceutical} />
-                  )
-                );
-              })
-            );
-          });
+        return (
+          nutraceutical && (
+            <Nutraceutical key={nutraceutical.id} {...nutraceutical}>
+              {nutraceutical.title}
+            </Nutraceutical>
+          )
+        );
       })}
     </Container>
   );

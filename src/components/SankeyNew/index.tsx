@@ -4,8 +4,8 @@ import 'reactjs-popup/dist/index.css';
 import { HiQuestionMarkCircle, HiLockClosed } from 'react-icons/hi';
 import { IoOptionsOutline } from 'react-icons/io5';
 
-import Outcome from './components/Outcome';
-import Suboutcome from './components/Suboutcome';
+import Outcomes from './components/Outcomes';
+import Suboutcomes from './components/Suboutcomes';
 import Nutraceuticals from './components/Nutraceuticals';
 
 import Container, {
@@ -13,14 +13,10 @@ import Container, {
   StepTitle,
   StepDescription,
   StepContent,
-  Outcomes,
-  SubOutcomes,
 } from './styles';
 
 import { useApp } from '../../contexts/app';
 import { SankeyProvider } from '../../contexts/sankey';
-
-import sankeyData from '../../sankey-new.json';
 
 const Sankey: React.FC = () => {
   const context = useApp();
@@ -28,8 +24,6 @@ const Sankey: React.FC = () => {
   const { step1: previousStep } = steps;
 
   previousStep.isCompleted = true;
-
-  const { outcomes, suboutcomes } = sankeyData;
 
   return (
     <Container id="step_2" isActive={previousStep.isCompleted}>
@@ -76,26 +70,8 @@ const Sankey: React.FC = () => {
       {previousStep.isCompleted && (
         <SankeyProvider>
           <StepContent>
-            <Outcomes>
-              {Object.values(outcomes).map(outcome => {
-                return <Outcome key={outcome.id} {...outcome} />;
-              })}
-            </Outcomes>
-            <SubOutcomes>
-              {Object.values(suboutcomes).map(suboutcome => {
-                const outcomeColor = Object.values(outcomes).find(outcome =>
-                  outcome.suboutcomes.includes(suboutcome.id),
-                )?.color;
-
-                return (
-                  <Suboutcome
-                    key={suboutcome.id}
-                    {...suboutcome}
-                    color={outcomeColor || '#565656'}
-                  />
-                );
-              })}
-            </SubOutcomes>
+            <Outcomes />
+            <Suboutcomes />
             <Nutraceuticals />
           </StepContent>
         </SankeyProvider>

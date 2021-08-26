@@ -1,6 +1,6 @@
 {
-  "outcomes": {
-    "blood-sugar": {
+  "outcomes": [
+    {
       "id": "blood-sugar",
       "title": "Blood Sugar",
       "color": "#B09AC9",
@@ -9,7 +9,7 @@
         "blood-sugar-control"
       ]
     },
-    "bone-and-joint-health": {
+    {
       "id": "bone-and-joint-health",
       "title": "Bone and Joint Health",
       "color": "#3F72B7",
@@ -21,7 +21,7 @@
         "symptoms-of-osteoarthritis"
       ]
     },
-    "cardiovascular-health": {
+    {
       "id": "cardiovascular-health",
       "title": "Cardiovascular Health",
       "color": "#F37E67",
@@ -33,7 +33,7 @@
         "heart-function"
       ]
     },
-    "cognitive-function-and-brain-health": {
+    {
       "id": "cognitive-function-and-brain-health",
       "title": "Cognitive Function and Brain Health",
       "color": "#DA3363",
@@ -44,7 +44,7 @@
         "memory"
       ]
     },
-    "digestive-health": {
+    {
       "id": "digestive-health",
       "title": "Digestive Health",
       "color": "#B09AC9",
@@ -53,7 +53,7 @@
         "stomach-protection"
       ]
     },
-    "energy-and-mood": {
+    {
       "id": "energy-and-mood",
       "title": "Energy and Mood",
       "color": "#3F72B7",
@@ -66,7 +66,7 @@
         "stress-management"
       ]
     },
-    "eye-health": {
+    {
       "id": "eye-health",
       "title": "Eye Health",
       "color": "#DA3363",
@@ -75,7 +75,7 @@
         "eye-function"
       ]
     },
-    "hormone-regulation": {
+    {
       "id": "hormone-regulation",
       "title": "Hormone Regulation",
       "color": "#CD61A4",
@@ -87,7 +87,7 @@
         "testosterone"
       ]
     },
-    "immunity": {
+    {
       "id": "immunity",
       "title": "Immunity",
       "color": "#3BB9A0",
@@ -98,7 +98,7 @@
         "preventive-immunity"
       ]
     },
-    "libido-and-sexual-health": {
+    {
       "id": "libido-and-sexual-health",
       "title": "Libido and Sexual Health",
       "color": "#EF708F",
@@ -109,7 +109,7 @@
         "sexual-performance"
       ]
     },
-    "liver-health": {
+    {
       "id": "liver-health",
       "title": "Liver Health",
       "color": "#028E9B",
@@ -120,7 +120,7 @@
         "liver-function"
       ]
     },
-    "longevity-and-prevention": {
+    {
       "id": "longevity-and-prevention",
       "title": "Longetivy & Prevention",
       "color": "#4FB758",
@@ -134,7 +134,7 @@
         "overall-well-being-longevity-and-prevention"
       ]
     },
-    "muscle-health": {
+    {
       "id": "muscle-health",
       "title": "Muscle Health",
       "color": "#FEC763",
@@ -147,7 +147,7 @@
         "power-output"
       ]
     },
-    "nutritional-support": {
+    {
       "id": "nutritional-support",
       "title": "Nutritional Support",
       "color": "#B09AC9",
@@ -156,7 +156,7 @@
         "nutrient-supplementation-nutritional-support"
       ]
     },
-    "respiratory-health": {
+    {
       "id": "respiratory-health",
       "title": "Respiratory Health",
       "color": "#50BADF",
@@ -165,7 +165,7 @@
         "immune-response-respiratory-health"
       ]
     },
-    "weight-management": {
+    {
       "id": "weight-management",
       "title": "Weight Management",
       "color": "#D3C8BC",
@@ -176,7 +176,7 @@
         "thermogenic-effect"
       ]
     },
-    "womens-health": {
+    {
       "id": "womens-health",
       "title": "Women´s Health",
       "color": "#F37E67",
@@ -186,7 +186,7 @@
         "pms"
       ]
     }
-  },
+  ],
   "suboutcomes": {
     "blood-sugar-control": {
       "id": "blood-sugar-control",

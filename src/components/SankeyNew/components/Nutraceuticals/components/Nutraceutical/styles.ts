@@ -1,6 +1,10 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-const Container = styled.div`
+interface ContainerProps {
+  connections?: number;
+}
+
+const Container = styled.div<ContainerProps>`
   margin-top: 30px;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
@@ -30,6 +34,12 @@ const Container = styled.div`
     right: 0;
     bottom: 0;
   }
+
+  ${props =>
+    props.connections &&
+    css`
+      min-height: ${`${58 * props.connections}px`};
+    `}
 `;
 
 export const Anchors = styled.div`

@@ -3,6 +3,7 @@ import Xarrow from 'react-xarrows';
 import { HiQuestionMarkCircle } from 'react-icons/hi';
 import { transparentize } from 'polished';
 
+import { useSankey } from 'contexts/sankey';
 import Container, {
   Anchors,
   Anchor,
@@ -10,8 +11,6 @@ import Container, {
   ContentIcon,
   ContentTitle,
 } from './styles';
-
-import { useSankey } from '../../../../contexts/sankey';
 
 interface OutcomeProps {
   id: string;

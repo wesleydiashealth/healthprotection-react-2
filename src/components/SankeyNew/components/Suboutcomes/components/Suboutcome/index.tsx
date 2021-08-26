@@ -3,7 +3,7 @@ import Xarrow from 'react-xarrows';
 import { HiQuestionMarkCircle } from 'react-icons/hi';
 import { transparentize } from 'polished';
 
-import { useSankey } from '../../../../contexts/sankey';
+import { useSankey } from 'contexts/sankey';
 
 import Container, {
   Anchors,
@@ -40,30 +40,20 @@ const Suboutcome: React.FC<SuboutcomeProps> = ({
   const context = useSankey();
   const { connections, updateConnections } = context;
 
-  const outcomeConnections = Object.entries(connections).filter(
-    ({ 1: value }) => Object.keys(value).includes(id),
-  );
-
-  const selectedConnections = outcomeConnections.filter(
-    ({ 1: outcomeConnection }) => Object.keys(outcomeConnection).includes(id),
-  );
-
-  const supConnectionsQuantity = outcomeConnections.length;
-
-  const subConnectionsQuantity = outcomeConnections.reduce(
-    (acc, { 1: subconnections }) =>
-      acc +
-      Object.entries(subconnections)
-        .filter(({ 0: key }) => key === id)
-        .reduce((subAcc, subCurr) => {
-          const { 1: value } = subCurr;
-
-          return Array.isArray(value) ? subAcc + value.length : 0;
-        }, 0),
-    0,
-  );
-
   const [fineTune, setFineTune] = useState<FineTuneProps>({});
+
+  const outcomeConnection =
+    Object.values(connections).find(connection =>
+      Object.keys(connection).includes(id),
+    ) || {};
+
+  const suboutcomeConnection = Object.entries(outcomeConnection).find(
+    ({ 0: suboutcome }) => suboutcome === id,
+  );
+
+  const { 1: subConnections } = suboutcomeConnection || [];
+
+  const subConnectionsQuantity = subConnections?.length || 1;
 
   const handleFineTuneClick = useCallback(
     async (fineTuneGroup, suboutcome) => {
@@ -77,47 +67,37 @@ const Suboutcome: React.FC<SuboutcomeProps> = ({
       id={id}
       color={color}
       isActive={fineTune[id] !== undefined && fineTune[id] !== 'off'}
-      connections={subConnectionsQuantity || supConnectionsQuantity}
+      connections={subConnectionsQuantity}
     >
       <Anchors className="entry-anchors">
-        {outcomeConnections.map(({ 0: key }) => (
+        {/* {outcomeConnections.map(({ 0: key }) => (
           <Anchor key={`${id}-${key}`} id={`${id}-${key}`} />
-        ))}
+        ))} */}
       </Anchors>
       <Anchors className="exit-anchors">
-        {selectedConnections.map(({ 1: subconnections }) =>
-          Object.values(subconnections)
-            .filter(
-              subconnection =>
-                Array.isArray(subconnection) && !!subconnection.length,
-            )
-            .map(
-              subconnection =>
-                Array.isArray(subconnection) &&
-                subconnection.map(nutraceutical => (
-                  <>
-                    <Anchor
-                      key={`${id}-${nutraceutical}`}
-                      id={`${id}-${nutraceutical}`}
-                    />
-                    <Xarrow
-                      start={`${id}-${nutraceutical}`}
-                      end={`${nutraceutical}-${id}`}
-                      showHead={false}
-                      strokeWidth={58}
-                      curveness={0.6}
-                      startAnchor="right"
-                      endAnchor="left"
-                      color={
-                        subConnectionsQuantity
-                          ? transparentize(0.8, color)
-                          : 'rgba(0,0,0,0.05)'
-                      }
-                    />
-                  </>
-                )),
-            ),
-        )}
+        {subConnections &&
+          subConnections.map(subConnection => (
+            <>
+              <Anchor
+                key={`${id}-${subConnection}`}
+                id={`${id}-${subConnection}`}
+              />
+              <Xarrow
+                start={`${id}-${subConnection}`}
+                end={`${subConnection}-${id}`}
+                showHead={false}
+                strokeWidth={58}
+                curveness={0.6}
+                startAnchor="right"
+                endAnchor="left"
+                color={
+                  subConnectionsQuantity
+                    ? transparentize(0.8, color)
+                    : 'rgba(0,0,0,0.05)'
+                }
+              />
+            </>
+          ))}
       </Anchors>
       <Content>
         <HiQuestionMarkCircle

@@ -5,6 +5,7 @@ import Popup from 'reactjs-popup';
 import { FiRefreshCcw } from 'react-icons/fi';
 import { FaInfoCircle } from 'react-icons/fa';
 
+import { useSankey } from 'contexts/sankey';
 import Container, {
   Anchors,
   Anchor,
@@ -13,8 +14,6 @@ import Container, {
   ContentTitle,
   ContentDescription,
 } from './styles';
-
-import { useSankey } from '../../../../../../contexts/sankey';
 
 interface NutraceuticalProps {
   id: string;
@@ -34,28 +33,33 @@ const Nutraceutical: React.FC<NutraceuticalProps> = ({
   const context = useSankey();
   const { connections } = context;
 
-  const supConnections = Object.entries(connections).map(({ 1: connection }) =>
-    Object.entries(connection).filter(({ 1: subconnection }) =>
-      Array.isArray(subconnection) ? subconnection.includes(id) : false,
-    ),
-  );
+  const supConnections = Object.values(connections)
+    .filter(
+      subconnections =>
+        !!Object.values(subconnections).reduce(
+          (accumulator, subconnection) => accumulator + subconnection.length,
+          0,
+        ),
+    )
+    .reduce(
+      (accumulator: string[], subconnections) => [
+        ...accumulator,
+        ...Object.entries(subconnections)
+          .filter(({ 1: subconnection }) => subconnection.includes(id))
+          .reduce((acc: string[], curr) => [...acc, curr[0]], []),
+      ],
+      [],
+    );
 
   return (
-    <Container>
+    <Container connections={supConnections.length}>
       <Anchors>
-        {Object.values(supConnections)
-          .filter(supConnection => !!supConnection.length)
-          .filter(
-            (supConnection, index, array) =>
-              array.indexOf(supConnection) === index,
-          )
-          .map(supConnection => {
-            const { 0: suboutcome } = supConnection[0];
-
-            return (
-              <Anchor key={`${id}-${suboutcome}`} id={`${id}-${suboutcome}`} />
-            );
-          })}
+        {supConnections.map(supConnection => (
+          <Anchor
+            key={`${id}-${supConnection}`}
+            id={`${id}-${supConnection}`}
+          />
+        ))}
       </Anchors>
       <Content>
         <Popup
