@@ -9,10 +9,12 @@ interface SankeyContextData {
   suboutcomes: SuboutcomeProps[];
   nutraceuticals: NutraceuticalProps[];
   connections: ConnectionsProps;
+  activeAccordions: string[];
   updateConnections(
     suboutcome: string,
     nutraceuticals: string[],
   ): Promise<void>;
+  updateActiveAccordions(outcome: string): Promise<void>;
 }
 
 interface OutcomeProps {
@@ -55,6 +57,7 @@ export const SankeyProvider: React.FC = ({ children }) => {
   const [outcomes] = useState<OutcomeProps[]>(Outcomes);
   const [suboutcomes] = useState<SuboutcomeProps[]>(Suboutcomes);
   const [nutraceuticals] = useState<NutraceuticalProps[]>(Nutraceuticals);
+  const [activeAccordions, setActiveAccordions] = useState<string[]>([]);
 
   const [connections, setConnections] = useState<ConnectionsProps>(() => {
     const initialConnections: ConnectionsProps = {};
@@ -82,6 +85,19 @@ export const SankeyProvider: React.FC = ({ children }) => {
     setConnections({ ...connections });
   }
 
+  async function updateActiveAccordions(outcome: string) {
+    const updatedActiveAccordions = [...activeAccordions];
+
+    const outcomeIndex = activeAccordions.indexOf(outcome);
+
+    if (outcomeIndex > -1) {
+      updatedActiveAccordions.splice(outcomeIndex, 1);
+    } else {
+      updatedActiveAccordions.push(outcome);
+    }
+    setActiveAccordions([...updatedActiveAccordions]);
+  }
+
   return (
     <SankeyContext.Provider
       value={{
@@ -89,7 +105,9 @@ export const SankeyProvider: React.FC = ({ children }) => {
         suboutcomes,
         nutraceuticals,
         connections,
+        activeAccordions,
         updateConnections,
+        updateActiveAccordions,
       }}
     >
       {children}

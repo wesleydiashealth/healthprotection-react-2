@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Sankey from 'components/Sankey';
-// import SankeyMobile from 'components/SankeyMobile';
+// import Sankey from 'components/Sankey';
+import SankeyMobile from 'components/SankeyMobile';
 
 import { AppProvider } from 'contexts/app';
 
@@ -17,7 +17,8 @@ const Home: React.FC = () => (
     <AppProvider>
       <Hero />
       <Wizard />
-      <Sankey />
+      {/* <Sankey /> */}
+      <SankeyMobile />
       <Habits />
       <Cart />
     </AppProvider>
