@@ -28,7 +28,6 @@ const Home: React.FC = () => {
         <Hero />
         <Wizard />
         {isDesktopOrLaptop ? <Sankey /> : <SankeyMobile />}
-        <SankeyMobile />
         <Habits />
         <Cart />
       </AppProvider>
