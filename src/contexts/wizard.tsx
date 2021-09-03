@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import api from 'services/api';
+import wordpressApi from 'services/wordpress';
 import QuestionData from 'dtos/QuestionData';
 import QuestionAnswersData from 'dtos/QuestionAnswersData';
 
@@ -62,7 +62,7 @@ export const WizardProvider: React.FC = ({ children }) => {
   const [error, setError] = useState<string>('');
 
   useEffect(() => {
-    api
+    wordpressApi
       .get(`/wp-json/hp/v1/wizard/${query.get('lang')}`)
       .then(response => {
         const { content, success, message } = response.data;

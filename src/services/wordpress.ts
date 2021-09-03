@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const api = axios.create({
+const wordpressApi = axios.create({
   baseURL: 'https://www.healthprotection.com/',
   headers: {
     Authorization:
@@ -8,4 +8,4 @@ const api = axios.create({
   },
 });
 
-export default api;
+export default wordpressApi;
