@@ -3,6 +3,7 @@ import Xarrow from 'react-xarrows';
 import { HiQuestionMarkCircle } from 'react-icons/hi';
 import { transparentize } from 'polished';
 
+import { useApp } from 'contexts/app';
 import { useSankey } from 'contexts/sankey';
 
 import Container, {
@@ -37,8 +38,10 @@ const Suboutcome: React.FC<SuboutcomeProps> = ({
   description,
   nutraceuticals,
 }) => {
-  const context = useSankey();
-  const { connections, updateConnections } = context;
+  const appContext = useApp();
+
+  const sankeyContext = useSankey();
+  const { connections, updateConnections } = sankeyContext;
 
   const [fineTune, setFineTune] = useState<FineTuneProps>({});
 
@@ -84,8 +87,10 @@ const Suboutcome: React.FC<SuboutcomeProps> = ({
   const handleFineTuneClick = useCallback(
     async (fineTuneGroup, suboutcome) => {
       updateConnections(suboutcome, fineTuneGroup);
+
+      appContext.updateStep('step2', { isCompleted: true });
     },
-    [updateConnections],
+    [updateConnections, appContext],
   );
 
   return (

@@ -4,184 +4,23 @@ import { HiQuestionMarkCircle, HiOutlineCheckCircle } from 'react-icons/hi';
 import ScrollArea from 'react-scrollbar';
 import { CarouselContext } from 'pure-react-carousel';
 
+import bloodTestJson from 'blood-test.json';
+import { useWizard } from 'contexts/wizard';
 import { StepContainer } from '../styles';
-import formSteps from '../../../form.json';
 
 import Button from '../../Button';
-
-import { useWizard } from '../../../contexts/wizard';
 
 interface BloodTestData {
   [key: string]: string;
 }
 
 const Step7: React.FC = () => {
-  const currentStep = formSteps[1];
-
   const context = useWizard();
   const { steps, questions } = context;
   const { step7: step, step7_1: subStep, step6: previousStep } = steps;
-  const { 14: currentQuestion } = questions || {};
-
-  // const subSteps = [steps.step6_1, steps.step6_2, steps.step6_3, steps.step6_4];
-
-  // const subStepsCompleted = !!subSteps.filter(item => !!item.isCompleted)
-  //   .length;
-
-  const gambiarra = {
-    '1': {
-      id: 1,
-      api: 'redbloodcells',
-      label: 'Red Blood Cells',
-      type: 'S',
-      has_child: false,
-      slug: 'bloodtest',
-    },
-    '2': {
-      id: 2,
-      api: 'hemoglobin',
-      label: 'Hemoglobin',
-      type: 'S',
-      has_child: false,
-      slug: 'bloodtest',
-    },
-    '3': {
-      id: 3,
-      api: 'hematocrit',
-      label: 'Hematocrit',
-      type: 'S',
-      has_child: false,
-      slug: 'bloodtest',
-    },
-    '4': {
-      id: 4,
-      api: 'mcv',
-      label: 'MCV',
-      type: 'S',
-      has_child: false,
-      slug: 'bloodtest',
-    },
-    '5': {
-      id: 5,
-      api: 'mchc',
-      label: 'MCHC',
-      type: 'S',
-      has_child: false,
-      slug: 'bloodtest',
-    },
-    '6': {
-      id: 6,
-      api: 'rdw',
-      label: 'RDW',
-      type: 'S',
-      has_child: false,
-      slug: 'bloodtest',
-    },
-    '7': {
-      id: 7,
-      api: 'leukocytes',
-      label: 'Leukocytes',
-      type: 'S',
-      has_child: false,
-      slug: 'bloodtest',
-    },
-    '8': {
-      id: 8,
-      api: 'neurotrophils',
-      label: 'Neurotrophils',
-      type: 'S',
-      has_child: false,
-      slug: 'bloodtest',
-    },
-    '9': {
-      id: 9,
-      api: 'eosinophils',
-      label: 'Eosinophils',
-      type: 'S',
-      has_child: false,
-      slug: 'bloodtest',
-    },
-    '10': {
-      id: 10,
-      api: 'monocytes',
-      label: 'Monocytes',
-      type: 'S',
-      has_child: false,
-      slug: 'bloodtest',
-    },
-    '11': {
-      id: 11,
-      api: 'lymphocytes',
-      label: 'Lymphocytes',
-      type: 'S',
-      has_child: false,
-      slug: 'bloodtest',
-    },
-    '12': {
-      id: 12,
-      api: 'platelets',
-      label: 'Platelets',
-      type: 'S',
-      has_child: false,
-      slug: 'bloodtest',
-    },
-    '13': {
-      id: 13,
-      api: 'glucose',
-      label: 'Glucose',
-      type: 'S',
-      has_child: false,
-      slug: 'bloodtest',
-    },
-    '14': {
-      id: 14,
-      api: 'cholesterol',
-      label: 'Cholesterol',
-      type: 'S',
-      has_child: false,
-      slug: 'bloodtest',
-    },
-    '15': {
-      id: 15,
-      api: 'creatinine',
-      label: 'Creatinine',
-      type: 'S',
-      has_child: false,
-      slug: 'bloodtest',
-    },
-    '16': {
-      id: 16,
-      api: 'tsh',
-      label: 'TSH',
-      type: 'S',
-      has_child: false,
-      slug: 'bloodtest',
-    },
-    '17': {
-      id: 17,
-      api: 'freethyroxine',
-      label: 'Free Thyroxine',
-      type: 'S',
-      has_child: false,
-      slug: 'bloodtest',
-    },
-    '18': {
-      id: 18,
-      api: 'testosterone',
-      label: 'Total Testosterone',
-      type: 'S',
-      has_child: false,
-      slug: 'bloodtest',
-    },
-    '19': {
-      id: 19,
-      api: 'SDHEA',
-      label: 'SDHEA',
-      type: 'S',
-      has_child: false,
-      slug: 'bloodtest',
-    },
-  };
+  const currentQuestion = questions.find(
+    question => Number(question.id) === 14,
+  );
 
   const [bloodTestData, setBloodTestData] = useState<BloodTestData>({});
 
@@ -196,7 +35,7 @@ const Step7: React.FC = () => {
     item => !item.includes('_'),
   ).length;
 
-  return (
+  return currentQuestion?.answers ? (
     <StepContainer
       isCompleted={step?.isCompleted || subStep?.isCompleted}
       isDisabled={!previousStep?.isCompleted}
@@ -217,14 +56,8 @@ const Step7: React.FC = () => {
         size={20}
         color="#7664C8"
         data-tip={`<strong>${
-          step?.answers !== 'yes'
-            ? currentQuestion?.label
-            : currentStep.substep?.title
-        }</strong><span>${
-          step?.answers !== 'yes'
-            ? currentQuestion?.label
-            : currentStep.substep?.tooltip
-        }</span>`}
+          step?.answers !== 'yes' ? currentQuestion?.label : stepTitle
+        }</strong><span>${currentQuestion?.label}</span>`}
         data-for="step_7_tooltip"
       />
       <ReactToolTip
@@ -237,8 +70,7 @@ const Step7: React.FC = () => {
         html
         backgroundColor="#fff"
       />
-      {step?.answers !== 'yes' &&
-        currentQuestion?.answers &&
+      {step?.answers !== 'yes' ? (
         Object.values(currentQuestion?.answers).map(answer => (
           <Button
             key={answer.id}
@@ -256,18 +88,22 @@ const Step7: React.FC = () => {
               }
             }}
             isActive={step?.answers === answer.api}
-            name="gender"
+            name={currentQuestion.table}
             value={step?.answers}
           >
             {answer.label}
           </Button>
-        ))}
-      {step?.answers === 'yes' && currentQuestion?.answers && (
-        <ScrollArea className="inputs-list" smoothScrolling horizontal={false}>
-          {
-            // Object.values(currentQuestion.answers)
-            Object.values(gambiarra).map(option => {
-              return (
+        ))
+      ) : (
+        <>
+          <ScrollArea
+            className="inputs-list"
+            smoothScrolling
+            horizontal={false}
+          >
+            {
+              // Object.values(currentQuestion.answers)
+              Object.values(bloodTestJson).map(option => (
                 <label key={option.api} htmlFor={`bloodtest-${option.api}`}>
                   {option.label}
                   <input
@@ -288,28 +124,30 @@ const Step7: React.FC = () => {
                     }}
                   />
                 </label>
-              );
-            })
-          }
-        </ScrollArea>
+              ))
+            }
+          </ScrollArea>
+          {!!Object.values(bloodTestData).filter(data => !!data.length)
+            .length && (
+            <button
+              type="button"
+              className="advance-button"
+              onClick={() => {
+                context.updateStep('step7', {
+                  isCompleted: true,
+                  answers: step?.answers,
+                });
+                carouselContext.setStoreState({ currentSlide: 7 });
+              }}
+            >
+              Next Question
+            </button>
+          )}
+        </>
       )}
-      {step?.answers === 'yes' &&
-        !!Object.values(bloodTestData).filter(data => !!data.length).length && (
-          <button
-            type="button"
-            className="advance-button"
-            onClick={() => {
-              context.updateStep('step7', {
-                isCompleted: true,
-                answers: step?.answers,
-              });
-              carouselContext.setStoreState({ currentSlide: 7 });
-            }}
-          >
-            Next Question
-          </button>
-        )}
     </StepContainer>
+  ) : (
+    <></>
   );
 };
 

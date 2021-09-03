@@ -13,7 +13,7 @@ const Step1: React.FC = () => {
   const context = useWizard();
   const { steps, questions } = context;
   const { step1: step } = steps;
-  const { 1: currentQuestion } = questions || {};
+  const currentQuestion = questions.find(question => Number(question.id) === 1);
 
   const previousStep = { isCompleted: true };
 
@@ -67,7 +67,7 @@ const Step1: React.FC = () => {
               carouselContext.setStoreState({ currentSlide: 1 });
             }}
             isActive={step.answers === answer.api}
-            name="age"
+            name={currentQuestion.table}
             value={step.answers}
           >
             {answer.label}

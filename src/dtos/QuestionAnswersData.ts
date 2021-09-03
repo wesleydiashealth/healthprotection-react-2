@@ -6,7 +6,5 @@ export default interface QuestionAnswersData {
   label?: string;
   has_child: boolean;
   slug?: string;
-  internal?: {
-    [key: string]: QuestionAnswersData;
-  };
+  answers?: QuestionAnswersData[];
 }

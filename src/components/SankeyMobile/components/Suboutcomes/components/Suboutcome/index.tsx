@@ -2,6 +2,7 @@ import React, { useState, useCallback } from 'react';
 import Xarrow from 'react-xarrows';
 import { transparentize } from 'polished';
 
+import { useApp } from 'contexts/app';
 import { useSankey } from 'contexts/sankey';
 
 import Container, {
@@ -37,8 +38,10 @@ const Suboutcome: React.FC<SuboutcomeProps> = ({
   nutraceuticals,
   outcome,
 }) => {
-  const context = useSankey();
-  const { connections, activeAccordions, updateConnections } = context;
+  const appContext = useApp();
+
+  const sankeyContext = useSankey();
+  const { connections, activeAccordions, updateConnections } = sankeyContext;
 
   const [fineTune, setFineTune] = useState<FineTuneProps>({});
 
@@ -55,8 +58,10 @@ const Suboutcome: React.FC<SuboutcomeProps> = ({
   const handleFineTuneClick = useCallback(
     async (fineTuneGroup, suboutcome) => {
       updateConnections(suboutcome, fineTuneGroup);
+
+      appContext.updateStep('step2', { isCompleted: true });
     },
-    [updateConnections],
+    [updateConnections, appContext],
   );
 
   return (

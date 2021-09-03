@@ -3,25 +3,18 @@ import ReactToolTip from 'react-tooltip';
 import { HiQuestionMarkCircle, HiOutlineCheckCircle } from 'react-icons/hi';
 import { CarouselContext } from 'pure-react-carousel';
 
+import { useWizard } from 'contexts/wizard';
 import { StepContainer } from '../styles';
-import formSteps from '../../../form.json';
 
 import Button from '../../Button';
 
-import { useWizard } from '../../../contexts/wizard';
-
 const Step8: React.FC = () => {
-  const currentStep = formSteps[1];
-
   const context = useWizard();
   const { steps, questions } = context;
   const { step8: step, step8_1: subStep, step7: previousStep } = steps;
-  const { 15: currentQuestion } = questions || {};
-
-  // const subSteps = [steps.step6_1, steps.step6_2, steps.step6_3, steps.step6_4];
-
-  // const subStepsCompleted = !!subSteps.filter(item => !!item.isCompleted)
-  //   .length;
+  const currentQuestion = questions.find(
+    question => Number(question.id) === 15,
+  );
 
   const [stepNumber, setStepNumber] = useState<string>('8');
   const [stepTitle, setStepTitle] = useState<string>(
@@ -34,7 +27,7 @@ const Step8: React.FC = () => {
     item => !item.includes('_'),
   ).length;
 
-  return (
+  return currentQuestion?.answers ? (
     <StepContainer
       isCompleted={step?.isCompleted || subStep?.isCompleted}
       isDisabled={!previousStep?.isCompleted}
@@ -55,14 +48,8 @@ const Step8: React.FC = () => {
         size={20}
         color="#7664C8"
         data-tip={`<strong>${
-          step?.answers !== 'yes'
-            ? currentQuestion?.label
-            : currentStep.substep?.title
-        }</strong><span>${
-          step?.answers !== 'yes'
-            ? currentQuestion?.label
-            : currentStep.substep?.tooltip
-        }</span>`}
+          step?.answers !== 'yes' ? currentQuestion?.label : stepTitle
+        }</strong><span>${currentQuestion?.label}</span>`}
         data-for="step_8_tooltip"
       />
       <ReactToolTip
@@ -75,8 +62,7 @@ const Step8: React.FC = () => {
         html
         backgroundColor="#fff"
       />
-      {step?.answers !== 'yes' &&
-        currentQuestion?.answers &&
+      {step?.answers !== 'yes' ? (
         Object.values(currentQuestion?.answers).map(answer => (
           <Button
             key={answer.id}
@@ -94,13 +80,13 @@ const Step8: React.FC = () => {
               }
             }}
             isActive={step?.answers === answer.api}
-            name="gender"
+            name={currentQuestion.table}
             value={step?.answers}
           >
             {answer.label}
           </Button>
-        ))}
-      {step?.answers === 'yes' && (
+        ))
+      ) : (
         <>
           <input type="file" name="dna_file" id="dna_file" />
           <button
@@ -135,6 +121,8 @@ const Step8: React.FC = () => {
         </>
       )}
     </StepContainer>
+  ) : (
+    <></>
   );
 };
 

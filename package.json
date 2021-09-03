@@ -27,6 +27,7 @@
     "react-icons": "^4.2.0",
     "react-loading": "^2.0.3",
     "react-multi-carousel": "^2.6.3",
+    "react-responsive": "^9.0.0-beta.3",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "react-scrollbar": "^0.5.6",
@@ -64,6 +65,7 @@
     ]
   },
   "devDependencies": {
+    "@types/react-responsive": "^8.0.3",
     "@types/react-router-dom": "^5.1.7",
     "@types/react-scrollbar": "^0.5.1",
     "@types/styled-components": "^5.1.9",

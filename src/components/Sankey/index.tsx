@@ -23,8 +23,6 @@ const Sankey: React.FC = () => {
   const { steps } = context;
   const { step1: previousStep } = steps;
 
-  previousStep.isCompleted = true;
-
   return (
     <Container id="step_2" isActive={previousStep.isCompleted}>
       <StepIntro>

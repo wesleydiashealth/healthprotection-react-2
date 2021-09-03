@@ -69,7 +69,7 @@ const Wizard: React.FC = () => {
   }, []);
 
   return (
-    <Container id="step_1" isActive={previousStep.isCompleted}>
+    <Container id="step_1" isActive={!!previousStep.isCompleted}>
       <StepIntro>
         <IoChatbubblesOutline
           size={52}
@@ -107,7 +107,7 @@ const Wizard: React.FC = () => {
             <Carousel>
               <CarouselProvider
                 naturalSlideWidth={400}
-                naturalSlideHeight={800}
+                naturalSlideHeight={500}
                 totalSlides={10}
                 visibleSlides={1}
                 step={1}

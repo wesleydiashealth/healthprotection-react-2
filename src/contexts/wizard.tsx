@@ -1,14 +1,16 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import api from '../services/api';
-import QuestionData from '../dtos/QuestionData';
+import api from 'services/api';
+import QuestionData from 'dtos/QuestionData';
+import QuestionAnswersData from 'dtos/QuestionAnswersData';
 
 interface StepData {
   isCompleted?: boolean;
   isActive?: boolean;
   isDisabled?: boolean;
   answers: string | Array<string>;
+  subAnswers?: QuestionAnswersData[];
 }
 
 interface StepsData {
@@ -17,14 +19,10 @@ interface StepsData {
 
 interface WizardContextData {
   steps: StepsData;
-  questions: QuestionsData;
+  questions: QuestionData[];
   error: string;
   updateStep(step: string, attrs: StepData): Promise<void>;
   resetSteps(): Promise<void>;
-}
-
-interface QuestionsData {
-  [key: string]: QuestionData;
 }
 
 const WizardContext = createContext<WizardContextData>({} as WizardContextData);
@@ -59,15 +57,7 @@ export const WizardProvider: React.FC = ({ children }) => {
     step9: { isCompleted: false, answers: [] },
   });
 
-  const [questions, setQuestions] = useState<QuestionsData>({
-    '1': {
-      slug: '',
-      type: '',
-      table: '',
-      label: '',
-      answers: {},
-    },
-  });
+  const [questions, setQuestions] = useState<QuestionData[]>([]);
 
   const [error, setError] = useState<string>('');
 

@@ -48,7 +48,7 @@ const Container = styled.div<ContainerProps>`
   }
 
   ${props =>
-    props.isActive &&
+    !!props.isActive &&
     css`
       h3 {
         strong {
@@ -380,15 +380,15 @@ export const StepContainer = styled.div<StepContainerProps>`
   }
 
   .buttons-list {
-    /* height: 240px; */
+    height: 240px;
 
     > div {
       display: flex;
       flex-direction: column;
 
-      /* button {
+      button {
         margin-right: 20px;
-      } */
+      }
     }
   }
 

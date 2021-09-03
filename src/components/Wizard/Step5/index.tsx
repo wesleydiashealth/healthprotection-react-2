@@ -3,15 +3,13 @@ import ReactToolTip from 'react-tooltip';
 import { HiQuestionMarkCircle, HiOutlineCheckCircle } from 'react-icons/hi';
 // import ScrollArea from 'react-scrollbar';
 import { CarouselContext } from 'pure-react-carousel';
-// eslint-disable-next-line import/no-unresolved
-// import Chip from '@material-ui/core/chip';
 import Autocomplete from '@material-ui/lab/Autocomplete';
-// import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 
 import { StepContainer } from '../styles';
 
 import Button from '../../Button';
+import Input from '../../Input';
 
 import { useWizard } from '../../../contexts/wizard';
 
@@ -27,7 +25,7 @@ const Step5: React.FC = () => {
   const context = useWizard();
   const { steps, questions } = context;
   const { step5: step, step4: previousStep } = steps;
-  const { 8: currentQuestion } = questions || {};
+  const currentQuestion = questions.find(question => Number(question.id) === 8);
 
   const subSteps = [steps.step5_1, steps.step5_2, steps.step5_3, steps.step5_4];
 
@@ -36,7 +34,7 @@ const Step5: React.FC = () => {
 
   const [stepNumber, setStepNumber] = useState<string>('5');
   const [stepTitle, setStepTitle] = useState<string>(
-    currentQuestion.label || '',
+    currentQuestion?.label || '',
   );
 
   const carouselContext = useContext(CarouselContext);
@@ -68,7 +66,7 @@ const Step5: React.FC = () => {
     [context],
   );
 
-  return (
+  return currentQuestion?.answers ? (
     <StepContainer
       isCompleted={step?.isCompleted}
       isDisabled={!previousStep?.isCompleted}
@@ -102,8 +100,7 @@ const Step5: React.FC = () => {
         html
         backgroundColor="#fff"
       />
-      {step?.answers !== 'yes' &&
-        currentQuestion?.answers &&
+      {step?.answers !== 'yes' ? (
         Object.values(currentQuestion.answers).map(option => (
           <Button
             key={option.api}
@@ -121,14 +118,19 @@ const Step5: React.FC = () => {
               }
             }}
             isActive={step?.answers === option.api}
-            name="has_medications"
+            name={currentQuestion.table}
             value={step?.answers}
           >
             {option.label}
           </Button>
-        ))}
-      {step?.answers === 'yes' && currentQuestion?.answers && (
+        ))
+      ) : (
         <>
+          <Input
+            type="hidden"
+            name="med_daily"
+            value={steps?.step5_1.answers}
+          />
           <Autocomplete
             multiple
             id="medications_daily"
@@ -146,6 +148,11 @@ const Step5: React.FC = () => {
                 placeholder="Type your medications"
               />
             )}
+          />
+          <Input
+            type="hidden"
+            name="med_occasionally"
+            value={steps?.step5_2.answers}
           />
           <Autocomplete
             multiple
@@ -165,25 +172,26 @@ const Step5: React.FC = () => {
               />
             )}
           />
+          {subStepsCompleted && (
+            <button
+              type="button"
+              className="advance-button"
+              onClick={() => {
+                context.updateStep('step5', {
+                  isCompleted: true,
+                  answers: step?.answers,
+                });
+                carouselContext.setStoreState({ currentSlide: 5 });
+              }}
+            >
+              Next Question
+            </button>
+          )}
         </>
       )}
-
-      {step?.answers === 'yes' && subStepsCompleted && (
-        <button
-          type="button"
-          className="advance-button"
-          onClick={() => {
-            context.updateStep('step5', {
-              isCompleted: true,
-              answers: step?.answers,
-            });
-            carouselContext.setStoreState({ currentSlide: 5 });
-          }}
-        >
-          Next Question
-        </button>
-      )}
     </StepContainer>
+  ) : (
+    <></>
   );
 };
 

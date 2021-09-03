@@ -27,7 +27,9 @@ const Step6: React.FC = () => {
   const context = useWizard();
   const { steps, questions } = context;
   const { step6: step, step5: previousStep } = steps;
-  const { 13: currentQuestion } = questions || {};
+  const currentQuestion = questions.find(
+    question => Number(question.id) === 13,
+  );
 
   const subSteps = [steps.step6_1, steps.step6_2, steps.step6_3, steps.step6_4];
 
@@ -68,7 +70,7 @@ const Step6: React.FC = () => {
     [context],
   );
 
-  return (
+  return currentQuestion?.answers ? (
     <StepContainer
       isCompleted={step?.isCompleted}
       isDisabled={!previousStep?.isCompleted}
@@ -102,8 +104,7 @@ const Step6: React.FC = () => {
         html
         backgroundColor="#fff"
       />
-      {step?.answers !== 'yes' &&
-        currentQuestion?.answers &&
+      {step?.answers !== 'yes' ? (
         Object.values(currentQuestion.answers).map(option => (
           <Button
             key={option.api}
@@ -121,13 +122,13 @@ const Step6: React.FC = () => {
               }
             }}
             isActive={step?.answers === option.api}
-            name="has_medications"
+            name={currentQuestion.table}
             value={step?.answers}
           >
             {option.label}
           </Button>
-        ))}
-      {step?.answers === 'yes' && currentQuestion?.answers && (
+        ))
+      ) : (
         <>
           <Autocomplete
             multiple
@@ -165,25 +166,26 @@ const Step6: React.FC = () => {
               />
             )}
           />
+          {subStepsCompleted && (
+            <button
+              type="button"
+              className="advance-button"
+              onClick={() => {
+                context.updateStep('step6', {
+                  isCompleted: true,
+                  answers: step?.answers,
+                });
+                carouselContext.setStoreState({ currentSlide: 6 });
+              }}
+            >
+              Next Question
+            </button>
+          )}
         </>
       )}
-
-      {step?.answers === 'yes' && subStepsCompleted && (
-        <button
-          type="button"
-          className="advance-button"
-          onClick={() => {
-            context.updateStep('step6', {
-              isCompleted: true,
-              answers: step?.answers,
-            });
-            carouselContext.setStoreState({ currentSlide: 6 });
-          }}
-        >
-          Next Question
-        </button>
-      )}
     </StepContainer>
+  ) : (
+    <></>
   );
 };
 

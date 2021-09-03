@@ -4,10 +4,9 @@ import { HiQuestionMarkCircle } from 'react-icons/hi';
 import { IoOptionsOutline } from 'react-icons/io5';
 import { CarouselContext } from 'pure-react-carousel';
 
+import { useApp } from 'contexts/app';
+import { useWizard } from 'contexts/wizard';
 import StepContainer from './styles';
-
-import { useApp } from '../../../contexts/app';
-import { useWizard } from '../../../contexts/wizard';
 
 const Step10: React.FC = () => {
   const appContext = useApp();

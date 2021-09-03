@@ -7,6 +7,7 @@ import { CarouselContext } from 'pure-react-carousel';
 import { StepContainer } from '../styles';
 
 import Button from '../../Button';
+import Input from '../../Input';
 
 import { useWizard } from '../../../contexts/wizard';
 
@@ -14,7 +15,7 @@ const Step4: React.FC = () => {
   const context = useWizard();
   const { steps, questions } = context;
   const { step4: step, step3: previousStep } = steps;
-  const { 7: currentQuestion } = questions || {};
+  const currentQuestion = questions.find(question => Number(question.id) === 7);
 
   const carouselContext = useContext(CarouselContext);
 
@@ -44,7 +45,7 @@ const Step4: React.FC = () => {
     [context, step, carouselContext],
   );
 
-  return (
+  return currentQuestion?.answers ? (
     <StepContainer
       isCompleted={step?.isCompleted}
       isDisabled={!previousStep.isCompleted}
@@ -76,21 +77,25 @@ const Step4: React.FC = () => {
         backgroundColor="#fff"
       />
       <ScrollArea className="buttons-list" smoothScrolling horizontal={false}>
-        {currentQuestion?.answers &&
-          Object.values(currentQuestion.answers).map(answer => (
-            <Button
-              key={answer.id}
-              type="button"
-              onClick={() => {
-                handleButtonClick(answer.api);
-              }}
-              isActive={step?.answers.indexOf(answer.api) > -1}
-              name="allergies"
-              value={step?.answers}
-            >
-              {answer.label}
-            </Button>
-          ))}
+        <Input
+          type="hidden"
+          name={currentQuestion.table}
+          value={step?.answers}
+        />
+        {Object.values(currentQuestion.answers).map(answer => (
+          <Button
+            key={answer.id}
+            type="button"
+            onClick={() => {
+              handleButtonClick(answer.api);
+            }}
+            isActive={step?.answers.indexOf(answer.api) > -1}
+            name={`${currentQuestion.table}_selector`}
+            value={step?.answers}
+          >
+            {answer.label}
+          </Button>
+        ))}
       </ScrollArea>
       {step?.answers.length > 0 && step.answers.indexOf('none') === -1 && (
         <button
@@ -108,6 +113,8 @@ const Step4: React.FC = () => {
         </button>
       )}
     </StepContainer>
+  ) : (
+    <></>
   );
 };
 

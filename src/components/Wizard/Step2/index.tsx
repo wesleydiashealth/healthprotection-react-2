@@ -1,22 +1,25 @@
-import React, { useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import ReactToolTip from 'react-tooltip';
 import { HiQuestionMarkCircle, HiOutlineCheckCircle } from 'react-icons/hi';
 import { CarouselContext } from 'pure-react-carousel';
 
 import { StepContainer } from '../styles';
-import formSteps from '../../../form.json';
 
 import Button from '../../Button';
+import Input from '../../Input';
 
 import { useWizard } from '../../../contexts/wizard';
 
 const Step2: React.FC = () => {
-  const currentStep = formSteps[1];
-
   const context = useWizard();
   const { steps, questions } = context;
   const { step2: step, step2_1: subStep, step1: previousStep } = steps;
-  const { 2: currentQuestion } = questions || {};
+  const currentQuestion = questions.find(question => Number(question.id) === 2);
+
+  const [stepNumber, setStepNumber] = useState<string>('2');
+  const [stepTitle, setStepTitle] = useState<string>(
+    currentQuestion?.label || '',
+  );
 
   const carouselContext = useContext(CarouselContext);
 
@@ -24,7 +27,7 @@ const Step2: React.FC = () => {
     item => !item.includes('_'),
   ).length;
 
-  return (
+  return currentQuestion?.answers ? (
     <StepContainer
       isCompleted={step?.isCompleted || subStep?.isCompleted}
       isDisabled={!previousStep?.isCompleted}
@@ -37,26 +40,16 @@ const Step2: React.FC = () => {
         />
       )}
       <span>
-        Question {step?.answers !== 'female' ? '2' : '2.1'}/{wizardSteps}
+        Question {stepNumber}/{wizardSteps}
       </span>
-      <strong>
-        {step?.answers !== 'female'
-          ? currentQuestion?.label
-          : currentStep.substep?.label}
-      </strong>
+      <strong>{stepTitle}</strong>
       <HiQuestionMarkCircle
         className="tooltip-icon"
         size={20}
         color="#7664C8"
         data-tip={`<strong>${
-          step?.answers !== 'female'
-            ? currentQuestion?.label
-            : currentStep.substep?.title
-        }</strong><span>${
-          step?.answers !== 'female'
-            ? currentQuestion?.label
-            : currentStep.substep?.tooltip
-        }</span>`}
+          step?.answers !== 'female' ? currentQuestion?.label : stepTitle
+        }</strong><span>${currentQuestion?.label}</span>`}
         data-for="step_2_tooltip"
       />
       <ReactToolTip
@@ -69,8 +62,7 @@ const Step2: React.FC = () => {
         html
         backgroundColor="#fff"
       />
-      {step?.answers !== 'female' &&
-        currentQuestion?.answers &&
+      {!step.subAnswers ? (
         Object.values(currentQuestion?.answers).map(answer => (
           <Button
             key={answer.id}
@@ -79,42 +71,52 @@ const Step2: React.FC = () => {
               context.updateStep('step2', {
                 isCompleted: answer.api !== 'female',
                 answers: answer.api,
+                subAnswers: answer?.answers,
               });
-              if (answer.api !== 'female')
+              if (answer.api !== 'female') {
                 carouselContext.setStoreState({ currentSlide: 2 });
+              } else {
+                setStepNumber('2.1');
+                setStepTitle('Are you:');
+              }
             }}
             isActive={step?.answers === answer.api}
-            name="gender"
+            name={currentQuestion.table}
             value={step?.answers}
           >
             {answer.label}
           </Button>
-        ))}
-      {step?.answers === 'female' &&
-        currentQuestion?.answers &&
-        Object.values(currentQuestion.answers)
-          .filter(answer => !!answer.has_child)
-          .map(option => {
-            return (
-              <Button
-                key={option.api}
-                type="button"
-                onClick={() => {
-                  context.updateStep('step2_1', {
-                    isCompleted: true,
-                    answers: option.api,
-                  });
-                  carouselContext.setStoreState({ currentSlide: 2 });
-                }}
-                isActive={subStep?.answers === option.api}
-                name="female_condition"
-                value={subStep?.answers}
-              >
-                {option.label}
-              </Button>
-            );
-          })}
+        ))
+      ) : (
+        <>
+          <Input
+            type="hidden"
+            name={currentQuestion.table}
+            value={step?.answers}
+          />
+          {step.subAnswers.map(subAnswer => (
+            <Button
+              key={subAnswer.slug}
+              type="button"
+              onClick={() => {
+                context.updateStep('step2_1', {
+                  isCompleted: true,
+                  answers: subAnswer.api,
+                });
+                carouselContext.setStoreState({ currentSlide: 2 });
+              }}
+              isActive={subStep?.answers === subAnswer.api}
+              name="female_condition"
+              value={subStep?.answers}
+            >
+              {subAnswer.label}
+            </Button>
+          ))}
+        </>
+      )}
     </StepContainer>
+  ) : (
+    <></>
   );
 };
 

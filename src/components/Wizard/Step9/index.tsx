@@ -14,7 +14,9 @@ const Step9: React.FC = () => {
   const context = useWizard();
   const { steps, questions } = context;
   const { step9: step, step8: previousStep, step8_1: previousSubStep } = steps;
-  const { 11: currentQuestion } = questions || {};
+  const currentQuestion = questions.find(
+    question => Number(question.id) === 11,
+  );
 
   const [stepNumber] = useState<string>('9');
   const [stepTitle] = useState<string>(currentQuestion?.label || '');

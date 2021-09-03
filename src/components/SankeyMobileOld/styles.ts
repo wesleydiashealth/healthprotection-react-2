@@ -49,7 +49,7 @@ const Container = styled.div<ContainerProps>`
   }
 
   ${props =>
-    props.isActive &&
+    !!props.isActive &&
     css`
       h3 {
         strong {
@@ -436,7 +436,7 @@ export const SubOutcome = styled.div<SubOutcomeProps>`
     `}
 
   ${props =>
-    props.isActive &&
+    !!props.isActive &&
     props.color &&
     css`
       background-color: ${transparentize(0.8, props.color)};
@@ -521,7 +521,7 @@ export const FineTune = styled.a<FineTuneProps>`
   `}
 
   ${props =>
-    props.isActive &&
+    !!props.isActive &&
     css`
       color: #fff;
       background: ${props.color};
@@ -543,7 +543,7 @@ export const Substances = styled.div<SubstancesProps>`
   }
 
   ${props =>
-    props.isActive &&
+    !!props.isActive &&
     css`
       &:before {
         content: 'Scientific foundation';

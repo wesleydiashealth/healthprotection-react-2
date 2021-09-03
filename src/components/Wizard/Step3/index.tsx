@@ -4,17 +4,17 @@ import { HiQuestionMarkCircle, HiOutlineCheckCircle } from 'react-icons/hi';
 import ScrollArea from 'react-scrollbar';
 import { CarouselContext } from 'pure-react-carousel';
 
+import { useWizard } from 'contexts/wizard';
 import { StepContainer } from '../styles';
 
 import Button from '../../Button';
-
-import { useWizard } from '../../../contexts/wizard';
+import Input from '../../Input';
 
 const Step3: React.FC = () => {
   const context = useWizard();
   const { steps, questions } = context;
   const { step3: step, step2: previousStep, step2_1: previousSubStep } = steps;
-  const { 6: currentQuestion } = questions || {};
+  const currentQuestion = questions.find(question => Number(question.id) === 6);
 
   const carouselContext = useContext(CarouselContext);
 
@@ -44,7 +44,7 @@ const Step3: React.FC = () => {
     [context, step, carouselContext],
   );
 
-  return (
+  return currentQuestion?.answers ? (
     <StepContainer
       isCompleted={step?.isCompleted}
       isDisabled={!previousStep.isCompleted && !previousSubStep.isCompleted}
@@ -76,21 +76,25 @@ const Step3: React.FC = () => {
         backgroundColor="#fff"
       />
       <ScrollArea className="buttons-list" smoothScrolling horizontal={false}>
-        {currentQuestion?.answers &&
-          Object.values(currentQuestion.answers).map(answer => (
-            <Button
-              key={answer.id}
-              type="button"
-              onClick={() => {
-                handleButtonClick(answer.api);
-              }}
-              isActive={step?.answers.indexOf(answer.api) > -1}
-              name="diets"
-              value={step?.answers}
-            >
-              {answer.label}
-            </Button>
-          ))}
+        <Input
+          type="hidden"
+          name={currentQuestion.table}
+          value={step?.answers}
+        />
+        {Object.values(currentQuestion.answers).map(answer => (
+          <Button
+            key={answer.id}
+            type="button"
+            onClick={() => {
+              handleButtonClick(answer.api);
+            }}
+            isActive={step?.answers.indexOf(answer.api) > -1}
+            name={`${currentQuestion.table}_selector`}
+            value={step?.answers}
+          >
+            {answer.label}
+          </Button>
+        ))}
       </ScrollArea>
       {step?.answers.length > 0 && step.answers.indexOf('none') === -1 && (
         <button
@@ -108,6 +112,8 @@ const Step3: React.FC = () => {
         </button>
       )}
     </StepContainer>
+  ) : (
+    <></>
   );
 };
 
