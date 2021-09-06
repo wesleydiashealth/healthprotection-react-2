@@ -15,6 +15,8 @@ const Container = styled.button<ContainerProps>`
   border-radius: 12px;
   padding: 8px 32px;
 
+  color: #565656;
+
   background: transparent;
 
   font-family: 'Montserrat';

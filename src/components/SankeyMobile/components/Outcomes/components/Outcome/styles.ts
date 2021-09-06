@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-// import { transparentize } from 'polished';
+import { transparentize } from 'polished';
 // import { fadeIn } from 'react-animations';
 
 import Accordion from '@material-ui/core/Accordion';
@@ -97,7 +97,7 @@ export const Content = styled(AccordionSummary)<ContentProps>`
   ${props =>
     props.color &&
     css`
-      background-color: ${props.color} !important;
+      background-color: ${transparentize(0.5, props.color)} !important;
     `}
 
   ${props =>

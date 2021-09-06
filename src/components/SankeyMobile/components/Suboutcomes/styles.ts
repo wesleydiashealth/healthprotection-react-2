@@ -20,7 +20,7 @@ const Container = styled(AccordionDetails)<ContainerProps>`
   ${props =>
     props.color &&
     css`
-      background-color: ${transparentize(0.5, props.color)};
+      background-color: ${transparentize(0.8, props.color)};
     `}
 `;
 

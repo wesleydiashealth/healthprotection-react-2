@@ -3,11 +3,10 @@ import ReactToolTip from 'react-tooltip';
 import { HiQuestionMarkCircle, HiOutlineCheckCircle } from 'react-icons/hi';
 import { CarouselContext } from 'pure-react-carousel';
 
+import { useWizard } from 'contexts/wizard';
 import { StepContainer } from '../styles';
 
 import Button from '../../Button';
-
-import { useWizard } from '../../../contexts/wizard';
 
 const Step1: React.FC = () => {
   const context = useWizard();

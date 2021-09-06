@@ -25,7 +25,7 @@ const Container = styled.div<ContainerProps>`
     margin-top: 20px;
   }
 
-  :after {
+  /* :after {
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
     content: '';
@@ -42,7 +42,7 @@ const Container = styled.div<ContainerProps>`
     min-width: fit-content;
     position: relative;
     z-index: 5;
-  }
+  } */
 
   @media screen and (min-width: 768px) {
     flex-flow: row nowrap;

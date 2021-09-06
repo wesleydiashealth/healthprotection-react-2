@@ -4,21 +4,20 @@ import { HiQuestionMarkCircle, HiOutlineCheckCircle } from 'react-icons/hi';
 import ScrollArea from 'react-scrollbar';
 import { CarouselContext } from 'pure-react-carousel';
 
+import { useWizard } from 'contexts/wizard';
 import { StepContainer } from '../styles';
 
 import Button from '../../Button';
 
-import { useWizard } from '../../../contexts/wizard';
-
 const Step9: React.FC = () => {
   const context = useWizard();
   const { steps, questions } = context;
-  const { step9: step, step8: previousStep, step8_1: previousSubStep } = steps;
+  const { step9: step, step6: previousStep, step6_1: previousSubStep } = steps;
   const currentQuestion = questions.find(
     question => Number(question.id) === 11,
   );
 
-  const [stepNumber] = useState<string>('9');
+  const [stepNumber] = useState<string>('7');
   const [stepTitle] = useState<string>(currentQuestion?.label || '');
 
   const carouselContext = useContext(CarouselContext);
@@ -46,7 +45,7 @@ const Step9: React.FC = () => {
       <HiQuestionMarkCircle
         className="tooltip-icon"
         size={20}
-        color="#7664C8"
+        color="#7664c8"
         data-tip={`<strong>${currentQuestion?.label}</strong><span>${currentQuestion?.label}</span>`}
         data-for="step_9_tooltip"
       />

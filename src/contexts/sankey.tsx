@@ -10,6 +10,8 @@ interface SankeyContextData {
   nutraceuticals: NutraceuticalProps[];
   connections: ConnectionsProps;
   activeAccordions: string[];
+  updateOutcomes(outcomes: OutcomeProps[]): Promise<void>;
+  updateSuboutcomes(suboutcomes: SuboutcomeProps[]): Promise<void>;
   updateConnections(
     suboutcome: string,
     nutraceuticals: string[],
@@ -54,8 +56,9 @@ interface ConnectionsProps {
 const SankeyContext = createContext<SankeyContextData>({} as SankeyContextData);
 
 export const SankeyProvider: React.FC = ({ children }) => {
-  const [outcomes] = useState<OutcomeProps[]>(Outcomes);
-  const [suboutcomes] = useState<SuboutcomeProps[]>(Suboutcomes);
+  const [outcomes, setOutcomes] = useState<OutcomeProps[]>(Outcomes);
+  const [suboutcomes, setSuboutcomes] =
+    useState<SuboutcomeProps[]>(Suboutcomes);
   const [nutraceuticals] = useState<NutraceuticalProps[]>(Nutraceuticals);
   const [activeAccordions, setActiveAccordions] = useState<string[]>([]);
 
@@ -74,6 +77,14 @@ export const SankeyProvider: React.FC = ({ children }) => {
 
     return initialConnections;
   });
+
+  async function updateOutcomes(newOutcomes: OutcomeProps[]) {
+    setOutcomes(newOutcomes);
+  }
+
+  async function updateSuboutcomes(newSuboutcomes: SuboutcomeProps[]) {
+    setSuboutcomes(newSuboutcomes);
+  }
 
   async function updateConnections(suboutcome: string, items: string[]) {
     const updatedConnection = Object.entries(connections).findIndex(
@@ -106,6 +117,8 @@ export const SankeyProvider: React.FC = ({ children }) => {
         nutraceuticals,
         connections,
         activeAccordions,
+        updateOutcomes,
+        updateSuboutcomes,
         updateConnections,
         updateActiveAccordions,
       }}

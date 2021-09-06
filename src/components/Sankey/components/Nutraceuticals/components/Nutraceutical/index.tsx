@@ -1,8 +1,8 @@
 import React from 'react';
-import ReactToolTip from 'react-tooltip';
+// import ReactToolTip from 'react-tooltip';
 import { Scrollbar } from 'react-scrollbars-custom';
 import Popup from 'reactjs-popup';
-import { FiRefreshCcw } from 'react-icons/fi';
+// import { FiRefreshCcw } from 'react-icons/fi';
 import { FaInfoCircle } from 'react-icons/fa';
 
 import { useSankey } from 'contexts/sankey';
@@ -146,7 +146,7 @@ const Nutraceutical: React.FC<NutraceuticalProps> = ({
         <ContentTitle>{title}</ContentTitle>
         <ContentDescription>{`${dosage} ${unit}`}</ContentDescription>
       </Content>
-      <FiRefreshCcw
+      {/* <FiRefreshCcw
         className="refresh-icon"
         size={20}
         color="#fff"
@@ -162,7 +162,7 @@ const Nutraceutical: React.FC<NutraceuticalProps> = ({
         offset={{ top: 10, left: 10 }}
         html
         backgroundColor="#fff"
-      />
+      /> */}
     </Container>
   );
 };

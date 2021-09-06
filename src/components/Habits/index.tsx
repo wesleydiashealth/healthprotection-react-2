@@ -18,6 +18,12 @@ const Habits: React.FC = () => {
 
   return (
     <Container id="step_3" isActive={previousStep.isCompleted}>
+      <div>
+        <strong>
+          Help us to train our app for food recognition with artificial
+          intelligence
+        </strong>
+      </div>
       <div className="step-intro content-wrapper">
         <GiForkKnifeSpoon
           size={52}

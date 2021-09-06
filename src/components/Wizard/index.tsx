@@ -19,8 +19,13 @@ import {
 import * as Yup from 'yup';
 import { IoChatbubblesOutline } from 'react-icons/io5';
 
-import getValidationErrors from '../../utils/getValidationErrors';
+import createUserQuery from 'services/createUserQuery';
 
+// import { useApp } from 'contexts/app';
+
+import getValidationErrors from 'utils/getValidationErrors';
+
+import { WizardProvider } from 'contexts/wizard';
 import Container, {
   StepIntro,
   StepTitle,
@@ -31,7 +36,6 @@ import Container, {
 import 'react-multi-carousel/lib/styles.css';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 
-import { WizardProvider } from '../../contexts/wizard';
 import Carousel from './Carousel';
 
 import Step1 from './Step1';
@@ -40,17 +44,29 @@ import Step3 from './Step3';
 import Step4 from './Step4';
 import Step5 from './Step5';
 import Step6 from './Step6';
-import Step7 from './Step7';
-import Step8 from './Step8';
+// import Step7 from './Step7';
+// import Step8 from './Step8';
 import Step9 from './Step9';
 import Step10 from './Step10';
 
 const Wizard: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
 
+  // const context = useApp();
+
   const previousStep = { isCompleted: true };
 
   const handleSubmit = useCallback(async (data: HTMLFormElement) => {
+    const { age, gender, diet, allergies, med } = data;
+
+    const requestData = [
+      { question: 'age', answer: age },
+      { question: 'gender', answer: gender },
+      { question: 'diet', answer: diet },
+      { question: 'allergies', answer: allergies },
+      { question: 'med', answer: med },
+    ];
+
     try {
       formRef.current?.setErrors({});
 
@@ -61,6 +77,8 @@ const Wizard: React.FC = () => {
       await schema.validate(data, {
         abortEarly: false,
       });
+
+      await createUserQuery(requestData);
     } catch (err) {
       const errors = getValidationErrors(err);
 
@@ -113,6 +131,21 @@ const Wizard: React.FC = () => {
                 step={1}
                 dragEnabled={false}
               >
+                <SliderNavigation>
+                  <ButtonBack>
+                    <>
+                      <HiOutlineArrowNarrowLeft size={20} />
+                      Prev
+                    </>
+                  </ButtonBack>
+                  <DotGroup showAsSelectedForCurrentSlideOnly />
+                  <ButtonNext>
+                    <>
+                      Next
+                      <HiOutlineArrowNarrowRight size={20} />
+                    </>
+                  </ButtonNext>
+                </SliderNavigation>
                 <Slider>
                   <Slide index={1}>
                     <Step1 />
@@ -132,12 +165,12 @@ const Wizard: React.FC = () => {
                   <Slide index={6}>
                     <Step6 />
                   </Slide>
-                  <Slide index={7}>
+                  {/* <Slide index={7}>
                     <Step7 />
                   </Slide>
                   <Slide index={8}>
                     <Step8 />
-                  </Slide>
+                  </Slide> */}
                   <Slide index={9}>
                     <Step9 />
                   </Slide>
@@ -145,21 +178,6 @@ const Wizard: React.FC = () => {
                     <Step10 />
                   </Slide>
                 </Slider>
-                <SliderNavigation>
-                  <ButtonBack>
-                    <>
-                      <HiOutlineArrowNarrowLeft size={20} />
-                      Prev
-                    </>
-                  </ButtonBack>
-                  <DotGroup showAsSelectedForCurrentSlideOnly />
-                  <ButtonNext>
-                    <>
-                      Next
-                      <HiOutlineArrowNarrowRight size={20} />
-                    </>
-                  </ButtonNext>
-                </SliderNavigation>
               </CarouselProvider>
             </Carousel>
           </WizardProvider>

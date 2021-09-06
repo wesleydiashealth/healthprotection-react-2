@@ -170,6 +170,7 @@ export const StepSubDescription = styled.span`
 `;
 
 export const SliderNavigation = styled.div`
+  margin-bottom: 20px;
   padding: 10px 0;
 
   display: flex;
@@ -244,11 +245,11 @@ export const StepContainer = styled.div<StepContainerProps>`
   flex-direction: column;
   position: relative;
 
+  background: #f5f5f5;
+
   width: 360px;
 
-  background: #ffffff;
-
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.11);
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
   border-radius: 20px;
 
   label {
@@ -285,6 +286,18 @@ export const StepContainer = styled.div<StepContainerProps>`
 
     img {
       margin-bottom: 10px;
+    }
+  }
+
+  .scrollbar-container {
+    border-radius: 10px;
+    overflow: hidden;
+    opacity: 1 !important;
+    background: #ccc;
+
+    .scrollbar {
+      border-radius: 10px;
+      background: #7664c8 !important;
     }
   }
 
@@ -381,6 +394,8 @@ export const StepContainer = styled.div<StepContainerProps>`
 
   .buttons-list {
     height: 240px;
+
+    background: transparent;
 
     > div {
       display: flex;

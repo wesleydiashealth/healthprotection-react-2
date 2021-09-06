@@ -12,6 +12,8 @@ interface StepsData {
 
 interface AppContextData {
   steps: StepsData;
+  userQuery: string;
+  updateUserQuery(userQuery: string): Promise<void>;
   updateStep(step: string, attrs: StepData): Promise<void>;
 }
 
@@ -24,14 +26,22 @@ export const AppProvider: React.FC = ({ children }) => {
     step3: { isCompleted: false, isDisabled: true },
   });
 
+  const [userQuery, setUserQuery] = useState<string>('');
+
   async function updateStep(step: string, attrs: StepData) {
     steps[step] = attrs;
 
     setSteps({ ...steps });
   }
 
+  async function updateUserQuery(newUserQuery: string) {
+    setUserQuery(newUserQuery);
+  }
+
   return (
-    <AppContext.Provider value={{ steps, updateStep }}>
+    <AppContext.Provider
+      value={{ steps, userQuery, updateUserQuery, updateStep }}
+    >
       {children}
     </AppContext.Provider>
   );
