@@ -1,12 +1,16 @@
 import styled, { css } from 'styled-components';
+import { transparentize } from 'polished';
+import { Alert, AlertTitle } from '@material-ui/lab';
 
 interface ContainerProps {
   isActive?: boolean;
 }
 
 const Container = styled.div<ContainerProps>`
-  margin: 0 auto;
-  padding: 80px 10px 0;
+  margin: 80px auto 0;
+  padding: 0 10px;
+
+  position: relative;
 
   max-width: 1300px;
 
@@ -121,6 +125,33 @@ const Container = styled.div<ContainerProps>`
       padding: 80px 50px 0;
     }
   }
+`;
+
+export const ContainerAlert = styled(Alert)`
+  margin: 0 0 40px 0;
+  position: relative;
+
+  background-color: ${transparentize(0.8, '#1bc9bd')} !important;
+
+  svg {
+    color: #1bc9bd;
+  }
+
+  @media screen and (min-width: 768px) {
+    position: absolute;
+
+    top: 50px;
+    right: 0;
+
+    max-width: 360px;
+  }
+`;
+
+export const ContainerAlertTitle = styled(AlertTitle)`
+  color: #1bc9bd;
+
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 600 !important;
 `;
 
 export const HabitsContainer = styled.div`

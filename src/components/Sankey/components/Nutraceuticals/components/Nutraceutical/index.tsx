@@ -1,21 +1,25 @@
 import React from 'react';
-// import ReactToolTip from 'react-tooltip';
-import { Scrollbar } from 'react-scrollbars-custom';
-import Popup from 'reactjs-popup';
+import ReactDOMServer from 'react-dom/server';
+import ReactToolTip from 'react-tooltip';
+// import { Scrollbar } from 'react-scrollbars-custom';
+// import Popup from 'reactjs-popup';
 // import { FiRefreshCcw } from 'react-icons/fi';
-import { FaInfoCircle } from 'react-icons/fa';
+import { HiQuestionMarkCircle } from 'react-icons/hi';
 
 import { useSankey } from 'contexts/sankey';
+
+import Tooltip from './components/Tooltip';
+
 import Container, {
   Anchors,
   Anchor,
   Content,
-  ContentPopup,
-  ContentPopupTitle,
-  ContentPopupDescription,
-  ContentPopupLink,
-  ContentPopupList,
-  ContentPopupListIcons,
+  // ContentPopup,
+  // ContentPopupTitle,
+  // ContentPopupDescription,
+  // ContentPopupLink,
+  // ContentPopupList,
+  // ContentPopupListIcons,
   ContentTitle,
   ContentDescription,
 } from './styles';
@@ -36,7 +40,7 @@ const Nutraceutical: React.FC<NutraceuticalProps> = ({
   description,
 }) => {
   const context = useSankey();
-  const { outcomes, suboutcomes, connections } = context;
+  const { connections } = context;
 
   const supConnections = Object.values(connections)
     .filter(
@@ -66,8 +70,17 @@ const Nutraceutical: React.FC<NutraceuticalProps> = ({
           />
         ))}
       </Anchors>
-      <Content>
-        <Popup
+      <Content
+        data-tip={ReactDOMServer.renderToStaticMarkup(
+          <Tooltip
+            {...{
+              ...{ id, title, description, supConnections },
+            }}
+          />,
+        )}
+        data-for={`${id}-tooltip`}
+      >
+        {/* <Popup
           trigger={
             <FaInfoCircle
               className="tooltip-icon"
@@ -135,17 +148,30 @@ const Nutraceutical: React.FC<NutraceuticalProps> = ({
                         </div>
                       </ContentPopupListIcons>
                       <p>{selectedSuboutcome?.description}</p>
-                      {/* <a href="#2">Read each of the scientific studies</a> */}
+                      <a href="#2">Read each of the scientific studies</a>
                     </div>
                   );
                 })}
               </ContentPopupList>
             </ContentPopup>
           </Scrollbar>
-        </Popup>
+        </Popup> */}
+        <HiQuestionMarkCircle
+          className="tooltip-icon"
+          size={20}
+          color="rgba(0,0,0,0.7)"
+        />
         <ContentTitle>{title}</ContentTitle>
         <ContentDescription>{`${dosage} ${unit}`}</ContentDescription>
       </Content>
+      <ReactToolTip
+        id={`${id}-tooltip`}
+        place="left"
+        type="light"
+        effect="solid"
+        html
+        backgroundColor="#fff"
+      />
       {/* <FiRefreshCcw
         className="refresh-icon"
         size={20}

@@ -5,7 +5,12 @@ import { GiForkKnifeSpoon } from 'react-icons/gi';
 import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
 
-import Container, { HabitsContainer, HabitContainer } from './styles';
+import Container, {
+  ContainerAlert,
+  ContainerAlertTitle,
+  HabitsContainer,
+  HabitContainer,
+} from './styles';
 
 import { useApp } from '../../contexts/app';
 
@@ -18,12 +23,6 @@ const Habits: React.FC = () => {
 
   return (
     <Container id="step_3" isActive={previousStep.isCompleted}>
-      <div>
-        <strong>
-          Help us to train our app for food recognition with artificial
-          intelligence
-        </strong>
-      </div>
       <div className="step-intro content-wrapper">
         <GiForkKnifeSpoon
           size={52}
@@ -64,6 +63,11 @@ const Habits: React.FC = () => {
           <strong>Fine-tune</strong> by adjusting your food habits
         </h3>
       </div>
+      <ContainerAlert severity="info">
+        <ContainerAlertTitle>Download our App</ContainerAlertTitle>
+        Help us to train our app for food recognition with artificial
+        intelligence
+      </ContainerAlert>
 
       {previousStep.isCompleted && (
         <HabitsContainer className="content-wrapper">

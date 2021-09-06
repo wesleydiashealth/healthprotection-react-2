@@ -5,7 +5,6 @@ interface ContainerProps {
 }
 
 const Container = styled.div<ContainerProps>`
-  margin-top: 30px;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
   padding: 10px;

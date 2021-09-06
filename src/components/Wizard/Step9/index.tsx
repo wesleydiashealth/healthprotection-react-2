@@ -70,7 +70,7 @@ const Step9: React.FC = () => {
                   isCompleted: true,
                   answers: answer.api,
                 });
-                carouselContext.setStoreState({ currentSlide: 9 });
+                carouselContext.setStoreState({ currentSlide: 7 });
               }}
               isActive={step?.answers === answer.api}
               name="category"

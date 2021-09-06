@@ -22,10 +22,9 @@ const Container = styled.div<ContainerProps>`
     props.isActive &&
     css`
       &:before {
-        content: 'Scientific foundation';
-        position: absolute;
-        top: 0;
-        left: 0;
+        content: 'Mouse over for Scientific foundation';
+
+        max-width: 180px;
       }
     `}
 `;
