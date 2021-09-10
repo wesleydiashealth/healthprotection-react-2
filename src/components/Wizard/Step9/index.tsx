@@ -68,12 +68,12 @@ const Step9: React.FC = () => {
               onClick={() => {
                 context.updateStep('step9', {
                   isCompleted: true,
-                  answers: answer.api,
+                  answers: answer.slug || '',
                 });
                 carouselContext.setStoreState({ currentSlide: 7 });
               }}
-              isActive={step?.answers === answer.api}
-              name="category"
+              isActive={step?.answers === answer.slug}
+              name={currentQuestion.table}
               value={step?.answers}
             >
               {answer.label}

@@ -14,8 +14,6 @@ const Step1: React.FC = () => {
   const { step1: step } = steps;
   const currentQuestion = questions.find(question => Number(question.id) === 1);
 
-  const previousStep = { isCompleted: true };
-
   const carouselContext = useContext(CarouselContext);
 
   const wizardSteps = Object.keys(steps).filter(
@@ -23,10 +21,7 @@ const Step1: React.FC = () => {
   ).length;
 
   return (
-    <StepContainer
-      isCompleted={step.isCompleted}
-      isDisabled={!previousStep?.isCompleted}
-    >
+    <StepContainer isCompleted={step.isCompleted}>
       {step.isCompleted && (
         <HiOutlineCheckCircle
           className="completed-icon"
@@ -57,7 +52,7 @@ const Step1: React.FC = () => {
         Object.values(currentQuestion.answers).map(answer => (
           <Button
             key={answer.id}
-            type="button"
+            type="submit"
             onClick={() => {
               context.updateStep('step1', {
                 isCompleted: true,

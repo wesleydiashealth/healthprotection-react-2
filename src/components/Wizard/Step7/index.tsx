@@ -74,7 +74,7 @@ const Step7: React.FC = () => {
         Object.values(currentQuestion?.answers).map(answer => (
           <Button
             key={answer.id}
-            type="button"
+            type="submit"
             onClick={() => {
               context.updateStep('step7', {
                 isCompleted: answer.api !== 'yes',
@@ -130,7 +130,7 @@ const Step7: React.FC = () => {
           {!!Object.values(bloodTestData).filter(data => !!data.length)
             .length && (
             <button
-              type="button"
+              type="submit"
               className="advance-button"
               onClick={() => {
                 context.updateStep('step7', {

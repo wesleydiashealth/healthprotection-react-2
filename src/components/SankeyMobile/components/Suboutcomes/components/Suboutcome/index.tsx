@@ -39,9 +39,10 @@ const Suboutcome: React.FC<SuboutcomeProps> = ({
   outcome,
 }) => {
   const appContext = useApp();
+  const { connections, updateConnections } = appContext;
 
   const sankeyContext = useSankey();
-  const { connections, activeAccordions, updateConnections } = sankeyContext;
+  const { activeAccordions } = sankeyContext;
 
   const [fineTune, setFineTune] = useState<FineTuneProps>({});
 

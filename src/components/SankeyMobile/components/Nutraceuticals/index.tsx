@@ -1,13 +1,18 @@
 import React from 'react';
 
+import { useApp } from 'contexts/app';
 import { useSankey } from 'contexts/sankey';
+
 import Nutraceutical from './components/Nutraceutical';
 
 import Container from './styles';
 
 const Nutraceuticals: React.FC = () => {
+  const appContext = useApp();
+  const { connections } = appContext;
+
   const context = useSankey();
-  const { nutraceuticals, connections } = context;
+  const { nutraceuticals } = context;
 
   const selectedNutraceuticals = Object.values(connections)
     .reduce(

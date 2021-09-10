@@ -1,9 +1,10 @@
 import React from 'react';
+import ReactToolTip from 'react-tooltip';
 import Xarrow from 'react-xarrows';
 import { HiQuestionMarkCircle } from 'react-icons/hi';
 import { transparentize } from 'polished';
 
-import { useSankey } from 'contexts/sankey';
+import { useApp } from 'contexts/app';
 import Container, {
   Anchors,
   Anchor,
@@ -21,7 +22,7 @@ interface OutcomeProps {
 }
 
 const Outcome: React.FC<OutcomeProps> = ({ id, title, color, description }) => {
-  const context = useSankey();
+  const context = useApp();
   const { connections } = context;
 
   const subConnections = Object.entries(connections)
@@ -79,7 +80,7 @@ const Outcome: React.FC<OutcomeProps> = ({ id, title, color, description }) => {
               endAnchor="left"
               color={
                 subConnectionsActive.includes(subConnection.split('_')[0])
-                  ? transparentize(0.8, color)
+                  ? transparentize(0.8, color || '#565656')
                   : 'rgba(0,0,0,0.05)'
               }
             />
@@ -97,8 +98,17 @@ const Outcome: React.FC<OutcomeProps> = ({ id, title, color, description }) => {
           size={20}
           color="rgba(0,0,0,0.7)"
           data-tip={`<strong>${title}</strong><span>${description}</span>`}
-          data-for="sankey-tooltip"
+          data-for={`${id}-tooltip`}
           className="tooltip-icon"
+        />
+        <ReactToolTip
+          id={`${id}-tooltip`}
+          className="sankey-title-tooltip"
+          place="bottom"
+          type="light"
+          effect="solid"
+          html
+          backgroundColor="#fff"
         />
       </Content>
     </Container>

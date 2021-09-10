@@ -4,6 +4,8 @@ import 'reactjs-popup/dist/index.css';
 import { HiQuestionMarkCircle, HiLockClosed } from 'react-icons/hi';
 import { IoOptionsOutline } from 'react-icons/io5';
 
+import { useApp } from 'contexts/app';
+import { SankeyProvider } from 'contexts/sankey';
 import Outcomes from './components/Outcomes';
 import Suboutcomes from './components/Suboutcomes';
 import Nutraceuticals from './components/Nutraceuticals';
@@ -14,9 +16,6 @@ import Container, {
   StepDescription,
   StepContent,
 } from './styles';
-
-import { useApp } from '../../contexts/app';
-import { SankeyProvider } from '../../contexts/sankey';
 
 const Sankey: React.FC = () => {
   const context = useApp();

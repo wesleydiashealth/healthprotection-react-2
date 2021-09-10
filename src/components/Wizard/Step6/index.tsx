@@ -3,19 +3,14 @@ import ReactToolTip from 'react-tooltip';
 import { HiQuestionMarkCircle, HiOutlineCheckCircle } from 'react-icons/hi';
 // import ScrollArea from 'react-scrollbar';
 import { CarouselContext } from 'pure-react-carousel';
-// eslint-disable-next-line import/no-unresolved
-// import Chip from '@material-ui/core/chip';
 import Autocomplete from '@material-ui/lab/Autocomplete';
-// import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 
+import { useWizard } from 'contexts/wizard';
+import drugs from 'drugs.json';
 import { StepContainer } from '../styles';
 
 import Button from '../../Button';
-
-import { useWizard } from '../../../contexts/wizard';
-
-import drugs from '../../../drugs.json';
 
 interface MedicationData {
   id: string;
@@ -108,7 +103,7 @@ const Step6: React.FC = () => {
         Object.values(currentQuestion.answers).map(option => (
           <Button
             key={option.api}
-            type="button"
+            type="submit"
             onClick={() => {
               context.updateStep('step6', {
                 isCompleted: option.api !== 'yes',
@@ -168,7 +163,7 @@ const Step6: React.FC = () => {
           />
           {subStepsCompleted && (
             <button
-              type="button"
+              type="submit"
               className="advance-button"
               onClick={() => {
                 context.updateStep('step6', {

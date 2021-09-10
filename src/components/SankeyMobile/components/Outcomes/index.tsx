@@ -1,13 +1,14 @@
 import React from 'react';
 
-import { useSankey } from 'contexts/sankey';
+import { useApp } from 'contexts/app';
+
 import Outcome from './components/Outcome';
 
 import Container from './styles';
 
 const Outcomes: React.FC = () => {
-  const sankeyContext = useSankey();
-  const { outcomes } = sankeyContext;
+  const appContext = useApp();
+  const { outcomes } = appContext;
 
   return (
     <Container>

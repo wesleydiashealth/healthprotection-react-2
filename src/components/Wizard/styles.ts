@@ -302,7 +302,7 @@ export const StepContainer = styled.div<StepContainerProps>`
   }
 
   ${props =>
-    (props.isCompleted || props.isDisabled) &&
+    props.isDisabled &&
     css`
       opacity: 0.3;
 

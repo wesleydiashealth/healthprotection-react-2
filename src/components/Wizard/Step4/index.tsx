@@ -34,6 +34,12 @@ const Step4: React.FC = () => {
 
       const updatedAllergies = Array.isArray(step.answers) ? step.answers : [];
 
+      const noneIndex = updatedAllergies.indexOf('none');
+
+      if (noneIndex > -1) {
+        updatedAllergies.splice(noneIndex, 1);
+      }
+
       if (!step?.answers.includes(value)) {
         updatedAllergies.push(value);
       } else {
@@ -85,7 +91,7 @@ const Step4: React.FC = () => {
         {Object.values(currentQuestion.answers).map(answer => (
           <Button
             key={answer.id}
-            type="button"
+            type="submit"
             onClick={() => {
               handleButtonClick(answer.api);
             }}
@@ -99,7 +105,7 @@ const Step4: React.FC = () => {
       </ScrollArea>
       {step?.answers.length > 0 && step.answers.indexOf('none') === -1 && (
         <button
-          type="button"
+          type="submit"
           className="advance-button"
           onClick={() => {
             context.updateStep('step4', {

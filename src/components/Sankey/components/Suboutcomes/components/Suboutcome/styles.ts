@@ -31,6 +31,36 @@ export const Container = styled.div<ContainerProps>`
     margin-top: 20px;
   }
 
+  .__react_component_tooltip {
+    border-radius: 20px;
+    padding: 20px;
+
+    width: 460px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.11);
+
+    text-align: justify;
+
+    strong {
+      margin-bottom: 5px;
+
+      display: block;
+
+      color: #7664c8;
+
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    span {
+      display: block;
+
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 22px;
+    }
+  }
+
   @media screen and (min-width: 768px) {
     flex-flow: row nowrap;
     align-items: center;

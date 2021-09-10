@@ -5,7 +5,9 @@ import Popup from 'reactjs-popup';
 // import { FiRefreshCcw } from 'react-icons/fi';
 import { FaInfoCircle } from 'react-icons/fa';
 
+import { useApp } from 'contexts/app';
 import { useSankey } from 'contexts/sankey';
+
 import Container, {
   Anchors,
   Anchor,
@@ -35,8 +37,11 @@ const Nutraceutical: React.FC<NutraceuticalProps> = ({
   unit,
   description,
 }) => {
+  const appContext = useApp();
+  const { outcomes, suboutcomes, connections } = appContext;
+
   const context = useSankey();
-  const { outcomes, suboutcomes, connections, activeAccordions } = context;
+  const { activeAccordions } = context;
 
   const supConnections = Object.entries(connections)
     .filter(

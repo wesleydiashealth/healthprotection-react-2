@@ -3,7 +3,9 @@ import Xarrow from 'react-xarrows';
 import { transparentize } from 'polished';
 import { FiChevronDown } from 'react-icons/fi';
 
+import { useApp } from 'contexts/app';
 import { useSankey } from 'contexts/sankey';
+
 import Suboutcomes from '../../../Suboutcomes';
 import Container, {
   Content,
@@ -22,8 +24,11 @@ interface OutcomeProps {
 }
 
 const Outcome: React.FC<OutcomeProps> = ({ id, title, color, suboutcomes }) => {
+  const appContext = useApp();
+  const { connections } = appContext;
+
   const context = useSankey();
-  const { connections, activeAccordions, updateActiveAccordions } = context;
+  const { activeAccordions, updateActiveAccordions } = context;
 
   const subConnections = Object.entries(connections)
     .filter(({ 0: connection }) => connection.includes(id))

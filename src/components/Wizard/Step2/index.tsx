@@ -66,7 +66,7 @@ const Step2: React.FC = () => {
         Object.values(currentQuestion?.answers).map(answer => (
           <Button
             key={answer.id}
-            type="button"
+            type="submit"
             onClick={() => {
               context.updateStep('step2', {
                 isCompleted: answer.api !== 'female',
@@ -97,17 +97,17 @@ const Step2: React.FC = () => {
           {step.subAnswers.map(subAnswer => (
             <Button
               key={subAnswer.slug}
-              type="button"
+              type="submit"
               onClick={() => {
                 context.updateStep('step2_1', {
                   isCompleted: true,
-                  answers: subAnswer.api,
+                  answers: subAnswer.slug || '',
                 });
                 carouselContext.setStoreState({ currentSlide: 2 });
               }}
-              isActive={subStep?.answers === subAnswer.api}
+              isActive={subStep?.answers === subAnswer.slug}
               name="female_condition"
-              value={subStep?.answers}
+              value={subAnswer.api}
             >
               {subAnswer.label}
             </Button>

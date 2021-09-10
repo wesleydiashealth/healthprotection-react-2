@@ -19,9 +19,9 @@ import {
 import * as Yup from 'yup';
 import { IoChatbubblesOutline } from 'react-icons/io5';
 
-import createUserQuery from 'services/createUserQuery';
+import { useApp } from 'contexts/app';
 
-// import { useApp } from 'contexts/app';
+import createUserQuery from 'services/createUserQuery';
 
 import getValidationErrors from 'utils/getValidationErrors';
 
@@ -30,7 +30,6 @@ import Container, {
   StepIntro,
   StepTitle,
   StepDescription,
-  // StepSubDescription,
   SliderNavigation,
 } from './styles';
 import 'react-multi-carousel/lib/styles.css';
@@ -52,39 +51,57 @@ import Step10 from './Step10';
 const Wizard: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
 
-  // const context = useApp();
+  const context = useApp();
+  const { updateUserQuery, updateOutcomes, updateSuboutcomes } = context;
 
   const previousStep = { isCompleted: true };
 
-  const handleSubmit = useCallback(async (data: HTMLFormElement) => {
-    const { age, gender, diet, allergies, med } = data;
+  const handleSubmit = useCallback(
+    async (data: HTMLFormElement) => {
+      const { age, gender, diet, allergies, med, drugs, decease } = data;
 
-    const requestData = [
-      { question: 'age', answer: age },
-      { question: 'gender', answer: gender },
-      { question: 'diet', answer: diet },
-      { question: 'allergies', answer: allergies },
-      { question: 'med', answer: med },
-    ];
+      const requestData = [
+        { question: 'age', answer: age },
+        { question: 'gender', answer: gender },
+        { question: 'diet', answer: diet },
+        { question: 'allergies', answer: allergies },
+        { question: 'med', answer: med },
+        { question: 'drugs', answer: drugs },
+        { question: 'decease', answer: decease },
+      ];
 
-    try {
-      formRef.current?.setErrors({});
+      const isCompleted = requestData.reduce(
+        (acc, { answer }) => !!answer,
+        false,
+      );
 
-      const schema = Yup.object().shape({
-        age: Yup.string().required('Idade obrigatório'),
-      });
+      if (!isCompleted) return;
 
-      await schema.validate(data, {
-        abortEarly: false,
-      });
+      try {
+        formRef.current?.setErrors({});
 
-      await createUserQuery(requestData);
-    } catch (err) {
-      const errors = getValidationErrors(err);
+        const schema = Yup.object().shape({
+          age: Yup.string().required('Idade obrigatório'),
+        });
 
-      formRef.current?.setErrors(errors);
-    }
-  }, []);
+        await schema.validate(data, {
+          abortEarly: false,
+        });
+
+        const response = await createUserQuery(requestData);
+        const { uuid, outcomes, suboutcomes } = response.content;
+
+        updateUserQuery(uuid);
+        updateOutcomes(outcomes);
+        updateSuboutcomes(suboutcomes);
+      } catch (err) {
+        const errors = getValidationErrors(err);
+
+        formRef.current?.setErrors(errors);
+      }
+    },
+    [updateUserQuery, updateOutcomes, updateSuboutcomes],
+  );
 
   return (
     <Container id="step_1" isActive={!!previousStep.isCompleted}>

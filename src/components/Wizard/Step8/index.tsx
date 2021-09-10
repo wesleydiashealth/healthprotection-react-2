@@ -66,7 +66,7 @@ const Step8: React.FC = () => {
         Object.values(currentQuestion?.answers).map(answer => (
           <Button
             key={answer.id}
-            type="button"
+            type="submit"
             onClick={() => {
               context.updateStep('step8', {
                 isCompleted: answer.api !== 'yes',
@@ -90,7 +90,7 @@ const Step8: React.FC = () => {
         <>
           <input type="file" name="dna_file" id="dna_file" />
           <button
-            type="button"
+            type="submit"
             className="advance-button"
             onClick={() => {
               context.updateStep('step8', {

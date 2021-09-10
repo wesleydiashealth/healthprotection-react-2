@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { useSankey } from 'contexts/sankey';
+import { useApp } from 'contexts/app';
+
 import Suboutcome from './components/Suboutcome';
 
 import Container from './styles';
@@ -16,8 +17,8 @@ const Suboutcomes: React.FC<SuboutcomesProps> = ({
   outcomeSuboutcomes,
   color,
 }) => {
-  const sankeyContext = useSankey();
-  const { suboutcomes } = sankeyContext;
+  const appContext = useApp();
+  const { suboutcomes } = appContext;
 
   return (
     <Container color={color}>

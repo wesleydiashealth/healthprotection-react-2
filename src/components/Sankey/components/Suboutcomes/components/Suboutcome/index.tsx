@@ -1,10 +1,10 @@
 import React, { useState, useCallback } from 'react';
+import ReactToolTip from 'react-tooltip';
 import Xarrow from 'react-xarrows';
 import { HiQuestionMarkCircle } from 'react-icons/hi';
 import { transparentize } from 'polished';
 
 import { useApp } from 'contexts/app';
-import { useSankey } from 'contexts/sankey';
 
 import Container, {
   Anchors,
@@ -39,9 +39,7 @@ const Suboutcome: React.FC<SuboutcomeProps> = ({
   nutraceuticals,
 }) => {
   const appContext = useApp();
-
-  const sankeyContext = useSankey();
-  const { connections, updateConnections } = sankeyContext;
+  const { connections, updateConnections } = appContext;
 
   const [fineTune, setFineTune] = useState<FineTuneProps>({});
 
@@ -132,8 +130,17 @@ const Suboutcome: React.FC<SuboutcomeProps> = ({
           size={20}
           color="rgba(0,0,0,0.7)"
           data-tip={`<strong>${title}</strong><span>${description}</span>`}
-          data-for="sankey-tooltip"
+          data-for={`${id}-tooltip`}
           className="tooltip-icon"
+        />
+        <ReactToolTip
+          id={`${id}-tooltip`}
+          className="sankey-title-tooltip"
+          place="bottom"
+          type="light"
+          effect="solid"
+          html
+          backgroundColor="#fff"
         />
         <ContentTitle>{title}</ContentTitle>
       </Content>

@@ -104,7 +104,7 @@ const Step5: React.FC = () => {
         Object.values(currentQuestion.answers).map(option => (
           <Button
             key={option.api}
-            type="button"
+            type="submit"
             onClick={() => {
               context.updateStep('step5', {
                 isCompleted: option.api !== 'yes',
@@ -174,7 +174,7 @@ const Step5: React.FC = () => {
           />
           {subStepsCompleted && (
             <button
-              type="button"
+              type="submit"
               className="advance-button"
               onClick={() => {
                 context.updateStep('step5', {

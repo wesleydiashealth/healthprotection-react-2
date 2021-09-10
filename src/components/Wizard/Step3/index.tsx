@@ -33,6 +33,12 @@ const Step3: React.FC = () => {
 
       const updatedDiets = Array.isArray(step.answers) ? step.answers : [];
 
+      const noneIndex = updatedDiets.indexOf('none');
+
+      if (noneIndex > -1) {
+        updatedDiets.splice(noneIndex, 1);
+      }
+
       if (!step?.answers.includes(value)) {
         updatedDiets.push(value);
       } else {
@@ -84,7 +90,7 @@ const Step3: React.FC = () => {
         {Object.values(currentQuestion.answers).map(answer => (
           <Button
             key={answer.id}
-            type="button"
+            type="submit"
             onClick={() => {
               handleButtonClick(answer.api);
             }}
@@ -98,7 +104,7 @@ const Step3: React.FC = () => {
       </ScrollArea>
       {step?.answers.length > 0 && step.answers.indexOf('none') === -1 && (
         <button
-          type="button"
+          type="submit"
           className="advance-button"
           onClick={() => {
             context.updateStep('step3', {

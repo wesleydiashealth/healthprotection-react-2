@@ -1,12 +1,9 @@
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import ReactToolTip from 'react-tooltip';
-// import { Scrollbar } from 'react-scrollbars-custom';
-// import Popup from 'reactjs-popup';
-// import { FiRefreshCcw } from 'react-icons/fi';
 import { HiQuestionMarkCircle } from 'react-icons/hi';
 
-import { useSankey } from 'contexts/sankey';
+import { useApp } from 'contexts/app';
 
 import Tooltip from './components/Tooltip';
 
@@ -14,12 +11,6 @@ import Container, {
   Anchors,
   Anchor,
   Content,
-  // ContentPopup,
-  // ContentPopupTitle,
-  // ContentPopupDescription,
-  // ContentPopupLink,
-  // ContentPopupList,
-  // ContentPopupListIcons,
   ContentTitle,
   ContentDescription,
 } from './styles';
@@ -39,8 +30,8 @@ const Nutraceutical: React.FC<NutraceuticalProps> = ({
   unit,
   description,
 }) => {
-  const context = useSankey();
-  const { connections } = context;
+  const appContext = useApp();
+  const { connections } = appContext;
 
   const supConnections = Object.values(connections)
     .filter(
