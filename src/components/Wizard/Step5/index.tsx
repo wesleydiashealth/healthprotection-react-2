@@ -1,19 +1,17 @@
 import React, { useCallback, useContext, useState } from 'react';
 import ReactToolTip from 'react-tooltip';
 import { HiQuestionMarkCircle, HiOutlineCheckCircle } from 'react-icons/hi';
-// import ScrollArea from 'react-scrollbar';
+import { FaUndoAlt } from 'react-icons/fa';
 import { CarouselContext } from 'pure-react-carousel';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import TextField from '@material-ui/core/TextField';
 
+import { useWizard } from 'contexts/wizard';
+import medications from 'medications.json';
+
+import Button from 'components/Button';
+import Input from 'components/Input';
 import { StepContainer } from '../styles';
-
-import Button from '../../Button';
-import Input from '../../Input';
-
-import { useWizard } from '../../../contexts/wizard';
-
-import medications from '../../../medications.json';
 
 interface MedicationData {
   id: string;
@@ -27,7 +25,7 @@ const Step5: React.FC = () => {
   const { step5: step, step4: previousStep } = steps;
   const currentQuestion = questions.find(question => Number(question.id) === 8);
 
-  const subSteps = [steps.step5_1, steps.step5_2, steps.step5_3, steps.step5_4];
+  const subSteps = [steps.step5_1, steps.step5_2];
 
   const subStepsCompleted = !!subSteps.filter(subStep => !!subStep.isCompleted)
     .length;
@@ -69,7 +67,10 @@ const Step5: React.FC = () => {
   return currentQuestion?.answers ? (
     <StepContainer
       isCompleted={step?.isCompleted}
-      isDisabled={!previousStep?.isCompleted}
+      isDisabled={
+        !previousStep?.isCompleted ||
+        carouselContext.getStoreState().currentSlide !== 4
+      }
     >
       {((step?.answers.length > 0 && step?.isCompleted) ||
         step?.answers === 'no') && (
@@ -81,6 +82,27 @@ const Step5: React.FC = () => {
       )}
       <span>
         Question {stepNumber}/{wizardSteps}
+        {(step.isCompleted || subStepsCompleted) && (
+          <FaUndoAlt
+            size={16}
+            color="#7664c8"
+            onClick={() => {
+              carouselContext.setStoreState({ currentSlide: 4 });
+              context.updateStep('step5', {
+                isCompleted: false,
+                answers: [],
+              });
+              context.updateStep('step5_1', {
+                isCompleted: false,
+                answers: [],
+              });
+              context.updateStep('step5_2', {
+                isCompleted: false,
+                answers: [],
+              });
+            }}
+          />
+        )}
       </span>
       <strong>{stepTitle}</strong>
       <HiQuestionMarkCircle

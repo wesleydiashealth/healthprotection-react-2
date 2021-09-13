@@ -4,6 +4,7 @@ import 'reactjs-popup/dist/index.css';
 import { HiQuestionMarkCircle, HiLockClosed } from 'react-icons/hi';
 import { IoOptionsOutline } from 'react-icons/io5';
 
+import Loading from 'components/Loading';
 import Outcomes from './components/Outcomes';
 import Nutraceuticals from './components/Nutraceuticals';
 
@@ -19,7 +20,7 @@ import { SankeyProvider } from '../../contexts/sankey';
 
 const Sankey: React.FC = () => {
   const context = useApp();
-  const { steps } = context;
+  const { steps, outcomes } = context;
   const { step1: previousStep } = steps;
 
   return (
@@ -67,8 +68,14 @@ const Sankey: React.FC = () => {
       {previousStep.isCompleted && (
         <SankeyProvider>
           <StepContent>
-            <Outcomes />
-            <Nutraceuticals />
+            {outcomes.length ? (
+              <>
+                <Outcomes />
+                <Nutraceuticals />
+              </>
+            ) : (
+              <Loading color="#db71af" />
+            )}
           </StepContent>
         </SankeyProvider>
       )}

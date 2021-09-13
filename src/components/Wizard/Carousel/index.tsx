@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { useWizard } from '../../../contexts/wizard';
+import { useWizard } from 'contexts/wizard';
 
-import Loading from '../../Loading';
-import Error from '../../Error';
+import Loading from 'components/Loading';
+import Error from 'components/Error';
 
 const Carousel: React.FC = ({ children }) => {
   const context = useWizard();

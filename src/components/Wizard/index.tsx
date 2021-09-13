@@ -1,21 +1,9 @@
 import React, { useCallback, useRef } from 'react';
 import ReactToolTip from 'react-tooltip';
-import {
-  HiOutlineArrowNarrowLeft,
-  HiOutlineArrowNarrowRight,
-  HiQuestionMarkCircle,
-  HiLockClosed,
-} from 'react-icons/hi';
+import { HiQuestionMarkCircle, HiLockClosed } from 'react-icons/hi';
 import { Form } from '@unform/web';
 import { FormHandles } from '@unform/core';
-import {
-  CarouselProvider,
-  Slider,
-  Slide,
-  ButtonBack,
-  ButtonNext,
-  DotGroup,
-} from 'pure-react-carousel';
+import { CarouselProvider, Slider, Slide } from 'pure-react-carousel';
 import * as Yup from 'yup';
 import { IoChatbubblesOutline } from 'react-icons/io5';
 
@@ -26,16 +14,13 @@ import createUserQuery from 'services/createUserQuery';
 import getValidationErrors from 'utils/getValidationErrors';
 
 import { WizardProvider } from 'contexts/wizard';
-import Container, {
-  StepIntro,
-  StepTitle,
-  StepDescription,
-  SliderNavigation,
-} from './styles';
+import Container, { StepIntro, StepTitle, StepDescription } from './styles';
 import 'react-multi-carousel/lib/styles.css';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 
 import Carousel from './Carousel';
+
+import Navigation from './Navigation';
 
 import Step1 from './Step1';
 import Step2 from './Step2';
@@ -95,9 +80,11 @@ const Wizard: React.FC = () => {
         updateOutcomes(outcomes);
         updateSuboutcomes(suboutcomes);
       } catch (err) {
-        const errors = getValidationErrors(err);
+        if (err instanceof Yup.ValidationError) {
+          const errors = getValidationErrors(err);
 
-        formRef.current?.setErrors(errors);
+          formRef.current?.setErrors(errors);
+        }
       }
     },
     [updateUserQuery, updateOutcomes, updateSuboutcomes],
@@ -138,31 +125,17 @@ const Wizard: React.FC = () => {
       </StepIntro>
       {previousStep.isCompleted && (
         <Form ref={formRef} onSubmit={handleSubmit}>
-          <WizardProvider>
-            <Carousel>
-              <CarouselProvider
-                naturalSlideWidth={400}
-                naturalSlideHeight={640}
-                totalSlides={8}
-                visibleSlides={1}
-                step={1}
-                dragEnabled={false}
-              >
-                <SliderNavigation>
-                  <ButtonBack>
-                    <>
-                      <HiOutlineArrowNarrowLeft size={20} />
-                      Prev
-                    </>
-                  </ButtonBack>
-                  <DotGroup showAsSelectedForCurrentSlideOnly />
-                  <ButtonNext>
-                    <>
-                      Next
-                      <HiOutlineArrowNarrowRight size={20} />
-                    </>
-                  </ButtonNext>
-                </SliderNavigation>
+          <CarouselProvider
+            naturalSlideWidth={400}
+            naturalSlideHeight={640}
+            totalSlides={8}
+            visibleSlides={1}
+            step={1}
+            dragEnabled={false}
+          >
+            <WizardProvider>
+              <Carousel>
+                <Navigation />
                 <Slider>
                   <Slide index={1}>
                     <Step1 />
@@ -195,9 +168,9 @@ const Wizard: React.FC = () => {
                     <Step10 />
                   </Slide>
                 </Slider>
-              </CarouselProvider>
-            </Carousel>
-          </WizardProvider>
+              </Carousel>
+            </WizardProvider>
+          </CarouselProvider>
         </Form>
       )}
     </Container>

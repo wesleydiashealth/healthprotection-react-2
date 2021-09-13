@@ -1,14 +1,13 @@
 import React, { useState, useContext } from 'react';
 import ReactToolTip from 'react-tooltip';
 import { HiQuestionMarkCircle, HiOutlineCheckCircle } from 'react-icons/hi';
+import { FaUndoAlt } from 'react-icons/fa';
 import { CarouselContext } from 'pure-react-carousel';
 
+import { useWizard } from 'contexts/wizard';
+import Button from 'components/Button';
+import Input from 'components/Input';
 import { StepContainer } from '../styles';
-
-import Button from '../../Button';
-import Input from '../../Input';
-
-import { useWizard } from '../../../contexts/wizard';
 
 const Step2: React.FC = () => {
   const context = useWizard();
@@ -30,7 +29,10 @@ const Step2: React.FC = () => {
   return currentQuestion?.answers ? (
     <StepContainer
       isCompleted={step?.isCompleted || subStep?.isCompleted}
-      isDisabled={!previousStep?.isCompleted}
+      isDisabled={
+        !previousStep?.isCompleted ||
+        carouselContext.getStoreState().currentSlide !== 1
+      }
     >
       {(step?.isCompleted || subStep?.isCompleted) && (
         <HiOutlineCheckCircle
@@ -41,8 +43,25 @@ const Step2: React.FC = () => {
       )}
       <span>
         Question {stepNumber}/{wizardSteps}
+        {(step.isCompleted || subStep.isCompleted) && (
+          <FaUndoAlt
+            size={16}
+            color="#7664c8"
+            onClick={() => {
+              context.updateStep('step2', {
+                isCompleted: false,
+                answers: [],
+              });
+              context.updateStep('step2_1', {
+                isCompleted: false,
+                answers: [],
+              });
+            }}
+          />
+        )}
       </span>
       <strong>{stepTitle}</strong>
+
       <HiQuestionMarkCircle
         className="tooltip-icon"
         size={20}

@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { CarouselContext, CarouselStoreInterface } from 'pure-react-carousel';
 
 import wordpressApi from 'services/wordpress';
 import QuestionData from 'dtos/QuestionData';
@@ -21,6 +22,7 @@ interface WizardContextData {
   steps: StepsData;
   questions: QuestionData[];
   error: string;
+  currentSlide: number;
   updateStep(step: string, attrs: StepData): Promise<void>;
   resetSteps(): Promise<void>;
 }
@@ -32,6 +34,8 @@ function useQuery() {
 }
 
 export const WizardProvider: React.FC = ({ children }) => {
+  const carouselContext: CarouselStoreInterface = useContext(CarouselContext);
+
   const query = useQuery();
 
   const [steps, setSteps] = useState<StepsData>({
@@ -60,6 +64,18 @@ export const WizardProvider: React.FC = ({ children }) => {
   const [questions, setQuestions] = useState<QuestionData[]>([]);
 
   const [error, setError] = useState<string>('');
+
+  const [currentSlide, setCurrentSlide] = useState<number>(
+    carouselContext.state.currentSlide,
+  );
+
+  useEffect(() => {
+    function onChange() {
+      setCurrentSlide(carouselContext.state.currentSlide);
+    }
+    carouselContext.subscribe(onChange);
+    return () => carouselContext.unsubscribe(onChange);
+  }, [carouselContext]);
 
   useEffect(() => {
     wordpressApi
@@ -104,7 +120,14 @@ export const WizardProvider: React.FC = ({ children }) => {
 
   return (
     <WizardContext.Provider
-      value={{ steps, questions, error, updateStep, resetSteps }}
+      value={{
+        steps,
+        questions,
+        error,
+        currentSlide,
+        updateStep,
+        resetSteps,
+      }}
     >
       {children}
     </WizardContext.Provider>

@@ -5,9 +5,8 @@ import ScrollArea from 'react-scrollbar';
 import { CarouselContext } from 'pure-react-carousel';
 
 import { useWizard } from 'contexts/wizard';
+import Button from 'components/Button';
 import { StepContainer } from '../styles';
-
-import Button from '../../Button';
 
 const Step9: React.FC = () => {
   const context = useWizard();
@@ -29,7 +28,10 @@ const Step9: React.FC = () => {
   return (
     <StepContainer
       isCompleted={step?.isCompleted}
-      isDisabled={!previousStep.isCompleted && !previousSubStep.isCompleted}
+      isDisabled={
+        (!previousStep.isCompleted && !previousSubStep.isCompleted) ||
+        carouselContext.getStoreState().currentSlide !== 6
+      }
     >
       {step?.answers.length > 0 && (
         <HiOutlineCheckCircle

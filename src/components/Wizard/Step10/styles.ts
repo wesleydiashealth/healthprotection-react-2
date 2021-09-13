@@ -11,6 +11,8 @@ const StepContainer = styled.div`
   border-radius: 20px;
   padding: 24px;
 
+  width: 600px;
+
   background: ${transparentize(0.9, '#db71af')};
 
   color: #565656;

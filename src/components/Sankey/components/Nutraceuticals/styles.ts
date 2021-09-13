@@ -22,7 +22,7 @@ const Container = styled.div<ContainerProps>`
     props.isActive &&
     css`
       &:before {
-        content: 'Mouse over for Scientific foundation';
+        content: 'Click for Scientific foundation';
 
         max-width: 180px;
       }

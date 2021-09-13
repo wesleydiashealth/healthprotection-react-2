@@ -54,7 +54,10 @@ const Step4: React.FC = () => {
   return currentQuestion?.answers ? (
     <StepContainer
       isCompleted={step?.isCompleted}
-      isDisabled={!previousStep.isCompleted}
+      isDisabled={
+        !previousStep.isCompleted ||
+        carouselContext.getStoreState().currentSlide !== 3
+      }
     >
       {step?.isCompleted && (
         <HiOutlineCheckCircle

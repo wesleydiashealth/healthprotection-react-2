@@ -21,7 +21,9 @@ const Step1: React.FC = () => {
   ).length;
 
   return (
-    <StepContainer isCompleted={step.isCompleted}>
+    <StepContainer
+      isDisabled={carouselContext.getStoreState().currentSlide !== 0}
+    >
       {step.isCompleted && (
         <HiOutlineCheckCircle
           className="completed-icon"

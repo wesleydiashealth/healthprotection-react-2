@@ -6,6 +6,7 @@ import { IoOptionsOutline } from 'react-icons/io5';
 
 import { useApp } from 'contexts/app';
 import { SankeyProvider } from 'contexts/sankey';
+import Loading from 'components/Loading';
 import Outcomes from './components/Outcomes';
 import Suboutcomes from './components/Suboutcomes';
 import Nutraceuticals from './components/Nutraceuticals';
@@ -19,7 +20,7 @@ import Container, {
 
 const Sankey: React.FC = () => {
   const context = useApp();
-  const { steps } = context;
+  const { steps, outcomes } = context;
   const { step1: previousStep } = steps;
 
   return (
@@ -67,9 +68,15 @@ const Sankey: React.FC = () => {
       {previousStep.isCompleted && (
         <SankeyProvider>
           <StepContent>
-            <Outcomes />
-            <Suboutcomes />
-            <Nutraceuticals />
+            {outcomes.length ? (
+              <>
+                <Outcomes />
+                <Suboutcomes />
+                <Nutraceuticals />
+              </>
+            ) : (
+              <Loading color="#db71af" />
+            )}
           </StepContent>
         </SankeyProvider>
       )}
