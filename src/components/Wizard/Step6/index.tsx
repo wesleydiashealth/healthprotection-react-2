@@ -82,12 +82,14 @@ const Step6: React.FC = () => {
       )}
       <span>
         Question {stepNumber}/{wizardSteps}
-        {(step.isCompleted || subStepsCompleted) && (
+        {(step.isCompleted || !!step.answers.length) && (
           <FaUndoAlt
             size={16}
             color="#7664c8"
             onClick={() => {
               carouselContext.setStoreState({ currentSlide: 5 });
+              setStepNumber('6');
+              setStepTitle(currentQuestion?.label);
               context.updateStep('step6', {
                 isCompleted: false,
                 answers: [],

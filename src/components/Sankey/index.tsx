@@ -62,7 +62,7 @@ const Sankey: React.FC = () => {
           </div>
         )}
         <StepDescription>
-          <strong>Fine-tune</strong> your desired outcomes
+          <strong>Customize</strong> your desired outcomes
         </StepDescription>
       </StepIntro>
       {previousStep.isCompleted && (
