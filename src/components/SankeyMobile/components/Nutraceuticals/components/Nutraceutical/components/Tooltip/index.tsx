@@ -16,14 +16,14 @@ import Container, {
 } from './styles';
 
 interface TooltipProps {
-  id: string;
+  slug: string;
   title: string;
   description: string;
   supConnections: string[];
 }
 
 const Tooltip: React.FC<TooltipProps> = ({
-  id,
+  slug,
   title,
   description,
   supConnections,
@@ -36,7 +36,7 @@ const Tooltip: React.FC<TooltipProps> = ({
       <ContainerTitle>{title}</ContainerTitle>
       <ContainerDescription>{description}</ContainerDescription>
       <ContainerLink
-        href={`https://www.healthprotection.com/nutraceuticals/${id}`}
+        href={`https://www.healthprotection.com/nutraceuticals/${slug}`}
         target="_blank"
         rel="noreferrer"
       >

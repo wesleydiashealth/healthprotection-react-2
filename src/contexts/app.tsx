@@ -1,7 +1,11 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+
+import wordpressApi from 'services/wordpress';
 
 import OutcomeData from 'dtos/OutcomeData';
 import SuboutcomeData from 'dtos/SuboutcomeData';
+import NutraceuticalData from 'dtos/NutraceuticalData';
 
 interface StepData {
   isCompleted?: boolean;
@@ -18,7 +22,9 @@ interface AppContextData {
   userQuery: string;
   outcomes: OutcomeData[];
   suboutcomes: SuboutcomeData[];
+  nutraceuticals: NutraceuticalData[];
   connections: ConnectionsProps;
+  error: string;
   updateStep(step: string, attrs: StepData): Promise<void>;
   updateUserQuery(userQuery: string): Promise<void>;
   updateOutcomes(updatedOutcomes: OutcomeData[]): Promise<void>;
@@ -37,6 +43,10 @@ interface ConnectionsProps {
 
 const AppContext = createContext<AppContextData>({} as AppContextData);
 
+function useQuery() {
+  return new URLSearchParams(useLocation().search);
+}
+
 export const AppProvider: React.FC = ({ children }) => {
   const [steps, setSteps] = useState<StepsData>({
     step1: { isCompleted: false },
@@ -44,12 +54,18 @@ export const AppProvider: React.FC = ({ children }) => {
     step3: { isCompleted: false, isDisabled: true },
   });
 
+  const query = useQuery();
+
   const [userQuery, setUserQuery] = useState<string>('');
 
   const [outcomes, setOutcomes] = useState<OutcomeData[]>([]);
   const [suboutcomes, setSuboutcomes] = useState<SuboutcomeData[]>([]);
 
+  const [nutraceuticals, setNutraceuticals] = useState<NutraceuticalData[]>([]);
+
   const [connections, setConnections] = useState<ConnectionsProps>({});
+
+  const [error, setError] = useState<string>('');
 
   useEffect(() => {
     const initialConnections: ConnectionsProps = {};
@@ -66,6 +82,35 @@ export const AppProvider: React.FC = ({ children }) => {
 
     setConnections(initialConnections);
   }, [outcomes]);
+
+  useEffect(() => {
+    wordpressApi
+      .get(`/wp-json/hp/v1/nutraceuticals/${query.get('lang')}`)
+      .then(response => {
+        const { content, success, message } = response.data;
+
+        if (success) {
+          setNutraceuticals(content);
+          setError('');
+        } else {
+          setError(message);
+        }
+      })
+      .catch(err => {
+        if (err.response) {
+          setError(err.request.data.message);
+        } else if (err.request) {
+          const errorMessage = err.request.response
+            ? JSON.parse(err.request.response).message
+            : 'Unknown Error';
+
+          setError(errorMessage);
+        } else {
+          setError(err.message);
+        }
+      });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   async function updateStep(step: string, attrs: StepData) {
     steps[step] = attrs;
@@ -102,7 +147,9 @@ export const AppProvider: React.FC = ({ children }) => {
         userQuery,
         outcomes,
         suboutcomes,
+        nutraceuticals,
         connections,
+        error,
         updateStep,
         updateUserQuery,
         updateOutcomes,

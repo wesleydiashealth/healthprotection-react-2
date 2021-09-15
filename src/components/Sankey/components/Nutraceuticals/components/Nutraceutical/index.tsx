@@ -5,6 +5,8 @@ import { FaInfoCircle } from 'react-icons/fa';
 
 import { useApp } from 'contexts/app';
 
+import NutraceuticalData from 'dtos/NutraceuticalData';
+
 import Tooltip from './components/Tooltip';
 
 import Container, {
@@ -16,23 +18,16 @@ import Container, {
   ContentDescription,
 } from './styles';
 
-interface NutraceuticalProps {
-  id: string;
-  title: string;
-  dosage: number;
-  unit: string;
-  description: string;
-}
-
-const Nutraceutical: React.FC<NutraceuticalProps> = ({
-  id,
+const Nutraceutical: React.FC<NutraceuticalData> = ({
+  slug,
   title,
   dosage,
-  unit,
-  description,
+  info,
 }) => {
   const appContext = useApp();
   const { connections } = appContext;
+
+  const { description } = info;
 
   const supConnections = Object.values(connections)
     .filter(
@@ -46,7 +41,7 @@ const Nutraceutical: React.FC<NutraceuticalProps> = ({
       (accumulator: string[], subconnections) => [
         ...accumulator,
         ...Object.entries(subconnections)
-          .filter(({ 1: subconnection }) => subconnection.includes(id))
+          .filter(({ 1: subconnection }) => subconnection.includes(slug))
           .reduce((acc: string[], curr) => [...acc, curr[0]], []),
       ],
       [],
@@ -57,8 +52,8 @@ const Nutraceutical: React.FC<NutraceuticalProps> = ({
       <Anchors>
         {supConnections.map(supConnection => (
           <Anchor
-            key={`${id}-${supConnection}`}
-            id={`${id}-${supConnection}`}
+            key={`${slug}-${supConnection}`}
+            id={`${slug}-${supConnection}`}
           />
         ))}
       </Anchors>
@@ -68,7 +63,7 @@ const Nutraceutical: React.FC<NutraceuticalProps> = ({
             <Content>
               <FaInfoCircle size={20} color="rgba(0,0,0,0.7)" />
               <ContentTitle>{title}</ContentTitle>
-              <ContentDescription>{`${dosage} ${unit}`}</ContentDescription>
+              <ContentDescription>{`${dosage}`}</ContentDescription>
             </Content>
           }
           modal
@@ -77,7 +72,7 @@ const Nutraceutical: React.FC<NutraceuticalProps> = ({
           <Scrollbar style={{ height: 'calc(100vh - 80px)' }}>
             <Tooltip
               {...{
-                ...{ id, title, description, supConnections },
+                ...{ slug, title, description, supConnections },
               }}
             />
           </Scrollbar>

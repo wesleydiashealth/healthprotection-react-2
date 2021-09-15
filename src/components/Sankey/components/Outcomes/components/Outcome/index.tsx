@@ -5,6 +5,9 @@ import { HiQuestionMarkCircle } from 'react-icons/hi';
 import { transparentize } from 'polished';
 
 import { useApp } from 'contexts/app';
+
+import OutcomeData from 'dtos/OutcomeData';
+
 import Container, {
   Anchors,
   Anchor,
@@ -13,15 +16,7 @@ import Container, {
   ContentTitle,
 } from './styles';
 
-interface OutcomeProps {
-  id: string;
-  title: string;
-  color: string;
-  description: string;
-  suboutcomes: string[];
-}
-
-const Outcome: React.FC<OutcomeProps> = ({ id, title, color, description }) => {
+const Outcome: React.FC<OutcomeData> = ({ id, title, color, description }) => {
   const context = useApp();
   const { connections } = context;
 

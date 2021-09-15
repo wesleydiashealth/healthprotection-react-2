@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { useApp } from 'contexts/app';
-import { useSankey } from 'contexts/sankey';
 
 import Nutraceutical from './components/Nutraceutical';
 
@@ -9,10 +8,7 @@ import Container from './styles';
 
 const Nutraceuticals: React.FC = () => {
   const appContext = useApp();
-  const { connections } = appContext;
-
-  const context = useSankey();
-  const { nutraceuticals } = context;
+  const { connections, nutraceuticals } = appContext;
 
   const selectedNutraceuticals = Object.values(connections)
     .reduce(
@@ -37,12 +33,12 @@ const Nutraceuticals: React.FC = () => {
     <Container isActive={!!selectedNutraceuticals.length}>
       {selectedNutraceuticals.map(selectedNutraceutical => {
         const nutraceutical = nutraceuticals.find(
-          item => item.id === selectedNutraceutical,
+          item => item.slug === selectedNutraceutical,
         );
 
         return (
           nutraceutical && (
-            <Nutraceutical key={nutraceutical.id} {...nutraceutical}>
+            <Nutraceutical key={nutraceutical.slug} {...nutraceutical}>
               {nutraceutical.title}
             </Nutraceutical>
           )
