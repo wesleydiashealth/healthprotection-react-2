@@ -6,6 +6,7 @@ import wordpressApi from 'services/wordpress';
 import OutcomeData from 'dtos/OutcomeData';
 import SuboutcomeData from 'dtos/SuboutcomeData';
 import NutraceuticalData from 'dtos/NutraceuticalData';
+import FoodData from 'dtos/FoodData';
 
 interface StepData {
   isCompleted?: boolean;
@@ -24,6 +25,7 @@ interface AppContextData {
   suboutcomes: SuboutcomeData[];
   nutraceuticals: NutraceuticalData[];
   connections: ConnectionsProps;
+  foods: FoodData[];
   error: string;
   updateStep(step: string, attrs: StepData): Promise<void>;
   updateUserQuery(userQuery: string): Promise<void>;
@@ -33,6 +35,7 @@ interface AppContextData {
     suboutcome: string,
     nutraceuticals: string[],
   ): Promise<void>;
+  updateFoods(updatedFoods: FoodData[]): Promise<void>;
 }
 
 interface ConnectionsProps {
@@ -64,6 +67,8 @@ export const AppProvider: React.FC = ({ children }) => {
   const [nutraceuticals, setNutraceuticals] = useState<NutraceuticalData[]>([]);
 
   const [connections, setConnections] = useState<ConnectionsProps>({});
+
+  const [foods, setFoods] = useState<FoodData[]>([]);
 
   const [error, setError] = useState<string>('');
 
@@ -140,6 +145,10 @@ export const AppProvider: React.FC = ({ children }) => {
     setConnections({ ...connections });
   }
 
+  async function updateFoods(updatedFoods: FoodData[]) {
+    setFoods(updatedFoods);
+  }
+
   return (
     <AppContext.Provider
       value={{
@@ -149,12 +158,14 @@ export const AppProvider: React.FC = ({ children }) => {
         suboutcomes,
         nutraceuticals,
         connections,
+        foods,
         error,
         updateStep,
         updateUserQuery,
         updateOutcomes,
         updateSuboutcomes,
         updateConnections,
+        updateFoods,
       }}
     >
       {children}

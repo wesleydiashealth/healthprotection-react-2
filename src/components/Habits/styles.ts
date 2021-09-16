@@ -171,77 +171,97 @@ export const HabitContainer = styled.div`
 
   width: 100%;
 
-  .habit-intro {
-    margin-right: 20px;
-
-    img {
-      max-width: 60px;
-      height: auto;
-    }
-  }
-
-  .habit-content {
-    max-width: 100%;
-
-    h4 {
-      color: #565656;
-
-      font-weight: 600;
-
-      font-size: 18px;
-      line-height: 26px;
-
-      svg {
-        margin-left: 5px;
-      }
-    }
-
-    p {
-      margin-bottom: 10px;
-
-      font-size: 14px;
-      line-height: 22px;
-    }
-
-    .Dropdown-root {
-      width: 360px;
-
-      font-size: 14px;
-      line-height: 22px;
-
-      .Dropdown-control {
-        border-radius: 12px;
-        padding: 8px 52px 8px 20px;
-
-        min-height: 44px;
-
-        display: flex;
-        align-items: center;
-      }
-
-      .Dropdown-menu {
-        border-radius: 12px;
-      }
-
-      .Dropdown-arrow {
-        top: 19px;
-      }
-    }
-  }
-
   @media screen and (min-width: 768px) {
     width: calc(50% - 20px);
 
     &:nth-child(odd) {
       margin-right: 40px;
     }
+  }
+`;
 
-    .habit-intro {
-      img {
-        max-width: 120px;
-      }
+export const HabitContainerIntro = styled.div`
+  margin-right: 20px;
+
+  img {
+    max-width: 60px;
+    height: auto;
+  }
+
+  @media screen and (min-width: 768px) {
+    img {
+      max-width: 120px;
     }
   }
+`;
+
+export const HabitContainerContent = styled.div`
+  max-width: 100%;
+
+  h4 {
+    color: #565656;
+
+    font-weight: 600;
+
+    font-size: 18px;
+    line-height: 26px;
+
+    svg {
+      margin-left: 5px;
+    }
+  }
+
+  p {
+    margin-bottom: 10px;
+
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  .Dropdown-root {
+    width: 360px;
+
+    font-size: 14px;
+    line-height: 22px;
+
+    .Dropdown-control {
+      border-radius: 12px;
+      padding: 8px 52px 8px 20px;
+
+      min-height: 44px;
+
+      display: flex;
+      align-items: center;
+    }
+
+    .Dropdown-menu {
+      border-radius: 12px;
+    }
+
+    .Dropdown-arrow {
+      top: 19px;
+    }
+  }
+`;
+
+export const HabitTitle = styled.h4`
+  margin-bottom: 10px;
+`;
+
+export const HabitQuestion = styled.span`
+  display: block;
+
+  font-size: 16px;
+  line-height: 24px;
+`;
+
+export const HabitDosages = styled.span`
+  margin-bottom: 20px;
+
+  display: block;
+
+  font-size: 14px;
+  line-height: 20px;
 `;
 
 export default Container;

@@ -6,6 +6,8 @@ import { transparentize } from 'polished';
 
 import { useApp } from 'contexts/app';
 
+import getFoods from 'services/getFoods';
+
 import Container, {
   Anchors,
   Anchor,
@@ -39,7 +41,7 @@ const Suboutcome: React.FC<SuboutcomeProps> = ({
   nutraceuticals,
 }) => {
   const appContext = useApp();
-  const { connections, updateConnections } = appContext;
+  const { userQuery, connections, updateConnections, updateFoods } = appContext;
 
   const [fineTune, setFineTune] = useState<FineTuneProps>({});
 
@@ -87,8 +89,28 @@ const Suboutcome: React.FC<SuboutcomeProps> = ({
       updateConnections(suboutcome, fineTuneGroup);
 
       appContext.updateStep('step2', { isCompleted: true });
+
+      const selectedNutraceuticals = Array.from(
+        new Set(
+          Object.values(connections).reduce((acc: string[], curr) => {
+            const xpto = Object.values(curr).reduce(
+              (acc2, curr2) => [...acc2, ...curr2],
+              [],
+            );
+
+            return [...acc, ...xpto];
+          }, []),
+        ),
+      );
+
+      const response = await getFoods({
+        uuid: userQuery,
+        nutraceuticals: selectedNutraceuticals,
+      });
+
+      updateFoods(response.content);
     },
-    [updateConnections, appContext],
+    [updateConnections, appContext, connections, userQuery, updateFoods],
   );
 
   return (
