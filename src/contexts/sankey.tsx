@@ -1,26 +1,13 @@
 import React, { createContext, useContext, useState } from 'react';
 
-import Nutraceuticals from '../nutraceuticals.json';
-
 interface SankeyContextData {
-  nutraceuticals: NutraceuticalProps[];
   activeAccordions: string[];
   updateActiveAccordions(outcome: string): Promise<void>;
-}
-
-interface NutraceuticalProps {
-  id: string;
-  title: string;
-  dosage: number;
-  unit: string;
-  label: string;
-  description: string;
 }
 
 const SankeyContext = createContext<SankeyContextData>({} as SankeyContextData);
 
 export const SankeyProvider: React.FC = ({ children }) => {
-  const [nutraceuticals] = useState<NutraceuticalProps[]>(Nutraceuticals);
   const [activeAccordions, setActiveAccordions] = useState<string[]>([]);
 
   async function updateActiveAccordions(outcome: string) {
@@ -39,7 +26,6 @@ export const SankeyProvider: React.FC = ({ children }) => {
   return (
     <SankeyContext.Provider
       value={{
-        nutraceuticals,
         activeAccordions,
         updateActiveAccordions,
       }}
