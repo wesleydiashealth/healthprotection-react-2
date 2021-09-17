@@ -11,12 +11,12 @@ import { StepContainer } from '../styles';
 const Step9: React.FC = () => {
   const context = useWizard();
   const { steps, questions } = context;
-  const { step9: step, step6: previousStep, step6_1: previousSubStep } = steps;
+  const { step9: step, step7: previousStep } = steps;
   const currentQuestion = questions.find(
     question => Number(question.id) === 11,
   );
 
-  const [stepNumber] = useState<string>('7');
+  const [stepNumber] = useState<string>('8');
   const [stepTitle] = useState<string>(currentQuestion?.label || '');
 
   const carouselContext = useContext(CarouselContext);
@@ -29,8 +29,8 @@ const Step9: React.FC = () => {
     <StepContainer
       isCompleted={step?.isCompleted}
       isDisabled={
-        (!previousStep.isCompleted && !previousSubStep.isCompleted) ||
-        carouselContext.getStoreState().currentSlide !== 6
+        !previousStep.isCompleted ||
+        carouselContext.getStoreState().currentSlide !== 7
       }
     >
       {step?.answers.length > 0 && (
@@ -72,7 +72,7 @@ const Step9: React.FC = () => {
                   isCompleted: true,
                   answers: answer.slug || '',
                 });
-                carouselContext.setStoreState({ currentSlide: 7 });
+                carouselContext.setStoreState({ currentSlide: 8 });
               }}
               isActive={step?.answers === answer.slug}
               name={currentQuestion.table}

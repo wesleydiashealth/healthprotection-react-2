@@ -150,11 +150,8 @@ const Step5: React.FC = () => {
         ))
       ) : (
         <>
-          <Input
-            type="hidden"
-            name="med_daily"
-            value={steps?.step5_1.answers}
-          />
+          <Input type="hidden" name="med" value={steps?.step5_1.answers} />
+          <Input type="hidden" name="medDaily" value={steps?.step5_1.answers} />
           <Autocomplete
             multiple
             id="medications_daily"
@@ -175,7 +172,7 @@ const Step5: React.FC = () => {
           />
           <Input
             type="hidden"
-            name="med_occasionally"
+            name="medOccasionally"
             value={steps?.step5_2.answers}
           />
           <Autocomplete

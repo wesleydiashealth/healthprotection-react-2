@@ -7,8 +7,11 @@ import Autocomplete from '@material-ui/lab/Autocomplete';
 import TextField from '@material-ui/core/TextField';
 
 import { useWizard } from 'contexts/wizard';
+
 import drugs from 'drugs.json';
+
 import Button from 'components/Button';
+import Input from 'components/Input';
 import { StepContainer } from '../styles';
 
 interface MedicationData {
@@ -150,6 +153,12 @@ const Step6: React.FC = () => {
         ))
       ) : (
         <>
+          <Input type="hidden" name="drugs" value={steps?.step6_1.answers} />
+          <Input
+            type="hidden"
+            name="drugsDaily"
+            value={steps?.step6_1.answers}
+          />
           <Autocomplete
             multiple
             id="drugs_daily"
@@ -167,6 +176,11 @@ const Step6: React.FC = () => {
                 placeholder="Type your medications"
               />
             )}
+          />
+          <Input
+            type="hidden"
+            name="drugsOccasionally"
+            value={steps?.step6_2.answers}
           />
           <Autocomplete
             multiple

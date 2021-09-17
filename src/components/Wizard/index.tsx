@@ -28,7 +28,7 @@ import Step3 from './Step3';
 import Step4 from './Step4';
 import Step5 from './Step5';
 import Step6 from './Step6';
-// import Step7 from './Step7';
+import Step7 from './Step7';
 // import Step8 from './Step8';
 import Step9 from './Step9';
 import Step10 from './Step10';
@@ -43,7 +43,21 @@ const Wizard: React.FC = () => {
 
   const handleSubmit = useCallback(
     async (data: HTMLFormElement) => {
-      const { age, gender, diet, allergies, med, drugs, decease } = data;
+      const {
+        age,
+        gender,
+        diet,
+        allergies,
+        med,
+        drugs,
+        // medDaily,
+        // medOccasionally,
+        // drugsDaily,
+        // drugsOccasionally,
+        // nutraceuticalsDaily,
+        // nutraceuticalsOccasionally,
+        decease,
+      } = data;
 
       const requestData = [
         { question: 'age', answer: age },
@@ -52,6 +66,15 @@ const Wizard: React.FC = () => {
         { question: 'allergies', answer: allergies },
         { question: 'med', answer: med },
         { question: 'drugs', answer: drugs },
+        // { question: 'med_daily', answer: medDaily },
+        // { question: 'med_occasionally', answer: medOccasionally },
+        // { question: 'drugs_daily', answer: drugsDaily },
+        // { question: 'drugs_occasionally', answer: drugsOccasionally },
+        // { question: 'nutraceuticals_daily', answer: nutraceuticalsDaily },
+        // {
+        //   question: 'nutraceuticals_occasionally',
+        //   answer: nutraceuticalsOccasionally,
+        // },
         { question: 'decease', answer: decease },
       ];
 
@@ -128,7 +151,7 @@ const Wizard: React.FC = () => {
           <CarouselProvider
             naturalSlideWidth={400}
             naturalSlideHeight={640}
-            totalSlides={8}
+            totalSlides={9}
             visibleSlides={1}
             step={1}
             dragEnabled={false}
@@ -155,10 +178,10 @@ const Wizard: React.FC = () => {
                   <Slide index={6}>
                     <Step6 />
                   </Slide>
-                  {/* <Slide index={7}>
+                  <Slide index={7}>
                     <Step7 />
                   </Slide>
-                  <Slide index={8}>
+                  {/* <Slide index={8}>
                     <Step8 />
                   </Slide> */}
                   <Slide index={9}>

@@ -1,11 +1,12 @@
 import React from 'react';
 import { Scrollbar } from 'react-scrollbars-custom';
 import Popup from 'reactjs-popup';
-import { FaInfoCircle } from 'react-icons/fa';
 
 import { useApp } from 'contexts/app';
 
 import NutraceuticalData from 'dtos/NutraceuticalData';
+
+import { ReactComponent as NutritionInfoIcon } from 'assets/nutrition_info.svg';
 
 import Tooltip from './components/Tooltip';
 
@@ -61,7 +62,7 @@ const Nutraceutical: React.FC<NutraceuticalData> = ({
         <Popup
           trigger={
             <Content>
-              <FaInfoCircle size={20} color="rgba(0,0,0,0.7)" />
+              <NutritionInfoIcon />
               <ContentTitle>{title}</ContentTitle>
               <ContentDescription>{`${dosage}`}</ContentDescription>
             </Content>
