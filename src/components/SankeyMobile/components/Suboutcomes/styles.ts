@@ -13,6 +13,8 @@ const Container = styled(AccordionDetails)<ContainerProps>`
 
   flex-flow: column wrap;
 
+  background-color: ${transparentize(0.8, '#565656')};
+
   p {
     font-size: 12px;
   }

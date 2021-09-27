@@ -10,9 +10,23 @@ import StepContainer from './styles';
 
 const Step10: React.FC = () => {
   const appContext = useApp();
+  const { suboutcomes } = appContext;
 
   const context = useWizard();
   const carouselContext = useContext(CarouselContext);
+
+  const queryNutraceuticals = suboutcomes.reduce(
+    (acc: string[], { nutraceuticals }) => {
+      const xpto = Object.values(nutraceuticals).reduce(
+        (subAcc: string[], subNutraceuticals) => {
+          return Array.from(new Set([...subAcc, ...subNutraceuticals]));
+        },
+      );
+
+      return Array.from(new Set([...acc, ...xpto]));
+    },
+    [],
+  );
 
   return (
     <StepContainer>
@@ -38,7 +52,7 @@ const Step10: React.FC = () => {
 
       <p>
         Based on your answers we&apos;ve filtered{' '}
-        <strong>more than 1,000 nutraceuticals to just 11</strong>
+        <strong>{`more than 1,000 nutraceuticals to just ${queryNutraceuticals.length}`}</strong>
       </p>
 
       <p>

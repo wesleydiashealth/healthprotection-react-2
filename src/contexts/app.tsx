@@ -36,6 +36,7 @@ interface AppContextData {
     nutraceuticals: string[],
   ): Promise<void>;
   updateFoods(updatedFoods: FoodData[]): Promise<void>;
+  updateError(updatedError: string): Promise<void>;
 }
 
 interface ConnectionsProps {
@@ -149,6 +150,10 @@ export const AppProvider: React.FC = ({ children }) => {
     setFoods(updatedFoods);
   }
 
+  async function updateError(updatedError: string) {
+    setError(updatedError);
+  }
+
   return (
     <AppContext.Provider
       value={{
@@ -166,6 +171,7 @@ export const AppProvider: React.FC = ({ children }) => {
         updateSuboutcomes,
         updateConnections,
         updateFoods,
+        updateError,
       }}
     >
       {children}

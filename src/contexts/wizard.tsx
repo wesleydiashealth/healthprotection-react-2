@@ -47,8 +47,6 @@ export const WizardProvider: React.FC = ({ children }) => {
     step5: { isCompleted: false, answers: [] },
     step5_1: { isCompleted: false, answers: [] },
     step5_2: { isCompleted: false, answers: [] },
-    step5_3: { isCompleted: false, answers: [] },
-    step5_4: { isCompleted: false, answers: [] },
     step6: { isCompleted: false, answers: [] },
     step6_1: { isCompleted: false, answers: [] },
     step6_2: { isCompleted: false, answers: [] },

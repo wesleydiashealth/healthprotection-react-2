@@ -22,46 +22,36 @@ interface TooltipProps {
   supConnections: string[];
 }
 
-const Tooltip: React.FC<TooltipProps> = ({
-  slug,
-  title,
-  description,
-  supConnections,
-}) => {
+const Tooltip: React.FC<TooltipProps> = ({ slug, supConnections }) => {
   const context = useApp();
-  const { outcomes, suboutcomes } = context;
+  const { nutraceuticals } = context;
+
+  const nutraceutical = nutraceuticals.find(item => item.slug === slug);
 
   return (
     <Container>
-      <ContainerTitle>{title}</ContainerTitle>
-      <ContainerDescription>{description}</ContainerDescription>
+      <ContainerTitle>{nutraceutical?.info.title}</ContainerTitle>
+      <ContainerDescription>
+        {nutraceutical?.info.description}
+      </ContainerDescription>
       <ContainerLink
-        href={`https://www.healthprotection.com/nutraceuticals/${slug}`}
+        href={nutraceutical?.info.link}
         target="_blank"
         rel="noreferrer"
       >
-        Access 227 scientific studies
+        {`Access ${nutraceutical?.info.studies} scientific studies`}
       </ContainerLink>
       <ContainerList>
-        {supConnections.map(supConnection => {
-          const selectedSuboutcome = Object.values(suboutcomes).find(
-            suboutcome => suboutcome.id === supConnection,
-          );
-
-          const selectedOutcome =
-            selectedSuboutcome &&
-            outcomes.find(outcome =>
-              outcome.suboutcomes.includes(selectedSuboutcome.id),
-            );
-
-          return (
-            <ContainerListItem key={`popup-${supConnection}`}>
+        {nutraceutical?.info.relations
+          .filter(relation => supConnections.includes(relation.suboutcome.slug))
+          .map(relation => (
+            <ContainerListItem key={relation.slug}>
               <ContainerListItemTitle>
-                <strong>{selectedSuboutcome?.title}</strong> for{' '}
-                {selectedOutcome?.title}
+                <strong>{relation.suboutcome.title}</strong> for{' '}
+                {relation.outcome.title}
               </ContainerListItemTitle>
               <ContainerListItemDetails>
-                These data summarize XX scientific studies
+                {`These data summarize ${relation.studies} scientific studies`}
               </ContainerListItemDetails>
               <ContainerListIcons>
                 <div className="icon-wrapper">
@@ -88,14 +78,13 @@ const Tooltip: React.FC<TooltipProps> = ({
                 </div>
               </ContainerListIcons>
               <ContainerListItemDescription>
-                {selectedSuboutcome?.description}
+                {relation?.description}
               </ContainerListItemDescription>
-              <ContainerListItemLink href="#2">
+              <ContainerListItemLink href={relation.link} target="_blank">
                 Read each of the scientific studies
               </ContainerListItemLink>
             </ContainerListItem>
-          );
-        })}
+          ))}
       </ContainerList>
     </Container>
   );

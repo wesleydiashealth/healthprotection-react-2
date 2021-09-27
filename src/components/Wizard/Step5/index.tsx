@@ -1,4 +1,4 @@
-import React, { useCallback, useContext, useState } from 'react';
+import React, { useCallback, useContext, useEffect, useState } from 'react';
 import ReactToolTip from 'react-tooltip';
 import { HiQuestionMarkCircle, HiOutlineCheckCircle } from 'react-icons/hi';
 import { FaUndoAlt } from 'react-icons/fa';
@@ -6,15 +6,18 @@ import { CarouselContext } from 'pure-react-carousel';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import TextField from '@material-ui/core/TextField';
 
+import CircularProgress from '@material-ui/core/CircularProgress';
+
+import getMedications from 'services/getMedications';
+
 import { useWizard } from 'contexts/wizard';
-import medications from 'medications.json';
+// import medications from 'medications.json';
 
 import Button from 'components/Button';
 import Input from 'components/Input';
 import { StepContainer } from '../styles';
 
 interface MedicationData {
-  id: string;
   slug: string;
   title: string;
 }
@@ -41,7 +44,56 @@ const Step5: React.FC = () => {
     item => !item.includes('_'),
   ).length;
 
-  const handleButtonClick = useCallback(
+  const [meds, setMeds] = useState<string[]>([]);
+
+  const [medDaily, setMedDaily] = useState<MedicationData[]>([]);
+  const [medDailyOpen, setMedDailyOpen] = useState(false);
+  const medDailyLoading = medDailyOpen && medDaily.length === 0;
+
+  const [medOcca, setMedOcca] = useState<MedicationData[]>([]);
+  const [medOccaOpen, setMedOccaOpen] = useState(false);
+  const medOccaLoading = medOccaOpen && medOcca.length === 0;
+
+  useEffect(() => {
+    let mergedMeds: string[] = [];
+
+    mergedMeds = mergedMeds.concat(steps.step5_1.answers);
+    mergedMeds = mergedMeds.concat(steps.step5_2.answers);
+
+    const updatedMeds = Array.from(new Set(mergedMeds));
+
+    setMeds(updatedMeds);
+
+    // setMed(meds);
+  }, [steps.step5_1.answers, steps.step5_2.answers]);
+
+  useEffect(() => {
+    if (!medDailyOpen) {
+      setMedDaily([]);
+    }
+  }, [medDailyOpen]);
+
+  useEffect(() => {
+    if (!medOccaOpen) {
+      setMedOcca([]);
+    }
+  }, [medOccaOpen]);
+
+  const handleMedDailyInput = useCallback(async (medication: string) => {
+    const response = await getMedications(medication);
+
+    if (!response.length) setMedDailyOpen(false);
+    setMedDaily(response);
+  }, []);
+
+  const handleMedOccaInput = useCallback(async (medication: string) => {
+    const response = await getMedications(medication);
+
+    if (!response.length) setMedOccaOpen(false);
+    setMedOcca(response);
+  }, []);
+
+  const handleMedChange = useCallback(
     (medicationObject: MedicationData[], updatedStep: string) => {
       const medicationsList: string[] = [];
 
@@ -150,9 +202,53 @@ const Step5: React.FC = () => {
         ))
       ) : (
         <>
-          <Input type="hidden" name="med" value={steps?.step5_1.answers} />
+          <Input type="hidden" name="med" value={meds} />
+
           <Input type="hidden" name="medDaily" value={steps?.step5_1.answers} />
+
           <Autocomplete
+            multiple
+            id="medications_daily"
+            open={medDailyOpen}
+            onClose={() => {
+              setMedDailyOpen(false);
+            }}
+            onInputChange={(event, value) => {
+              if (value.length >= 3) {
+                setMedDailyOpen(true);
+                handleMedDailyInput(value);
+              } else {
+                setMedDailyOpen(false);
+              }
+            }}
+            onChange={(event, newValue) => {
+              handleMedChange(newValue, 'step5_1');
+            }}
+            getOptionSelected={(option, value) => option.slug === value.slug}
+            getOptionLabel={option => option.title}
+            options={medDaily}
+            loading={medDailyLoading}
+            renderInput={params => (
+              <TextField
+                {...params}
+                label="Daily Use"
+                variant="standard"
+                InputProps={{
+                  ...params.InputProps,
+                  endAdornment: (
+                    <>
+                      {medDailyLoading ? (
+                        <CircularProgress color="inherit" size={20} />
+                      ) : null}
+                      {params.InputProps.endAdornment}
+                    </>
+                  ),
+                }}
+              />
+            )}
+          />
+
+          {/* <Autocomplete
             multiple
             id="medications_daily"
             options={medications}
@@ -169,13 +265,57 @@ const Step5: React.FC = () => {
                 placeholder="Type your medications"
               />
             )}
-          />
+          /> */}
+
           <Input
             type="hidden"
             name="medOccasionally"
             value={steps?.step5_2.answers}
           />
+
           <Autocomplete
+            multiple
+            id="medications_occasionally"
+            open={medOccaOpen}
+            onClose={() => {
+              setMedOccaOpen(false);
+            }}
+            onInputChange={(event, value) => {
+              if (value.length >= 3) {
+                setMedOccaOpen(true);
+                handleMedOccaInput(value);
+              } else {
+                setMedOccaOpen(false);
+              }
+            }}
+            onChange={(event, newValue) => {
+              handleMedChange(newValue, 'step5_2');
+            }}
+            getOptionSelected={(option, value) => option.slug === value.slug}
+            getOptionLabel={option => option.title}
+            options={medOcca}
+            loading={medOccaLoading}
+            renderInput={params => (
+              <TextField
+                {...params}
+                label="Occasionally Use"
+                variant="standard"
+                InputProps={{
+                  ...params.InputProps,
+                  endAdornment: (
+                    <>
+                      {medOccaLoading ? (
+                        <CircularProgress color="inherit" size={20} />
+                      ) : null}
+                      {params.InputProps.endAdornment}
+                    </>
+                  ),
+                }}
+              />
+            )}
+          />
+
+          {/* <Autocomplete
             multiple
             id="medications_occasionally"
             options={medications}
@@ -192,7 +332,8 @@ const Step5: React.FC = () => {
                 placeholder="Type your medications"
               />
             )}
-          />
+          /> */}
+
           {subStepsCompleted && (
             <button
               type="submit"

@@ -1,3 +1,5 @@
+import RelationData from './RelationData';
+
 export default interface NutraceuticalData {
   slug: string;
   title: string;
@@ -5,6 +7,9 @@ export default interface NutraceuticalData {
   info: {
     slug: string;
     title: string;
+    link: string;
     description: string;
+    relations: RelationData[];
+    studies: number;
   };
 }

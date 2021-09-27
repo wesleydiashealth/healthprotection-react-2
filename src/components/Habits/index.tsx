@@ -12,6 +12,7 @@ import Container, {
   ContainerAlert,
   ContainerAlertTitle,
   HabitsContainer,
+  HabitsErrorContainer,
   HabitContainer,
   HabitContainerIntro,
   HabitContainerContent,
@@ -22,7 +23,7 @@ import Container, {
 
 const Habits: React.FC = () => {
   const context = useApp();
-  const { steps, foods } = context;
+  const { steps, foods, error } = context;
   const { step2: previousStep } = steps;
 
   const intakeFrequency = [
@@ -96,7 +97,8 @@ const Habits: React.FC = () => {
 
       {previousStep.isCompleted && (
         <HabitsContainer>
-          {foods.length ? (
+          {error && <HabitsErrorContainer>{error}</HabitsErrorContainer>}
+          {foods.length && !error ? (
             <>
               {foods.map(food => (
                 <HabitContainer key={food.slug}>
@@ -138,7 +140,7 @@ const Habits: React.FC = () => {
               ))}
             </>
           ) : (
-            <Loading color="#1bc9bd" />
+            <>{!error && <Loading color="#1bc9bd" />}</>
           )}
         </HabitsContainer>
       )}

@@ -16,7 +16,9 @@ export default function getFoods(data: Request): Promise<Response> {
     wordpressApi
       .post('/wp-json/hp/v1/foods', data)
       .then(async response => {
-        resolve(response.data);
+        const { data: responseData } = response;
+
+        resolve(responseData);
       })
       .catch(error => {
         reject(error);

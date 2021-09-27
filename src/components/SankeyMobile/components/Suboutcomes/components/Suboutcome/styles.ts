@@ -123,7 +123,7 @@ export const FineTune = styled.a<FineTuneProps>`
     props.isActive &&
     css`
       color: #fff;
-      background: ${props.color};
+      background: ${props.color || '#565656'};
     `}
 
     ${props =>

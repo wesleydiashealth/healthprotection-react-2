@@ -41,7 +41,13 @@ const Suboutcome: React.FC<SuboutcomeProps> = ({
   nutraceuticals,
 }) => {
   const appContext = useApp();
-  const { userQuery, connections, updateConnections, updateFoods } = appContext;
+  const {
+    userQuery,
+    connections,
+    updateConnections,
+    updateFoods,
+    updateError,
+  } = appContext;
 
   const [fineTune, setFineTune] = useState<FineTuneProps>({});
 
@@ -108,9 +114,23 @@ const Suboutcome: React.FC<SuboutcomeProps> = ({
         nutraceuticals: selectedNutraceuticals,
       });
 
-      updateFoods(response.content);
+      if (!response.content.length) {
+        updateError(
+          'With your choices there are no adjustments to be made. See below for your list of nutraceuticals.',
+        );
+      } else {
+        updateError('');
+        updateFoods(response.content);
+      }
     },
-    [updateConnections, appContext, connections, userQuery, updateFoods],
+    [
+      updateConnections,
+      appContext,
+      connections,
+      userQuery,
+      updateFoods,
+      updateError,
+    ],
   );
 
   return (

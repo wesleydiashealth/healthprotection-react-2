@@ -27,7 +27,7 @@ import Step2 from './Step2';
 import Step3 from './Step3';
 import Step4 from './Step4';
 import Step5 from './Step5';
-import Step6 from './Step6';
+// import Step6 from './Step6';
 import Step7 from './Step7';
 // import Step8 from './Step8';
 import Step9 from './Step9';
@@ -43,21 +43,7 @@ const Wizard: React.FC = () => {
 
   const handleSubmit = useCallback(
     async (data: HTMLFormElement) => {
-      const {
-        age,
-        gender,
-        diet,
-        allergies,
-        med,
-        drugs,
-        // medDaily,
-        // medOccasionally,
-        // drugsDaily,
-        // drugsOccasionally,
-        // nutraceuticalsDaily,
-        // nutraceuticalsOccasionally,
-        decease,
-      } = data;
+      const { age, gender, diet, allergies, med, decease } = data;
 
       const requestData = [
         { question: 'age', answer: age },
@@ -65,16 +51,6 @@ const Wizard: React.FC = () => {
         { question: 'diet', answer: diet },
         { question: 'allergies', answer: allergies },
         { question: 'med', answer: med },
-        { question: 'drugs', answer: drugs },
-        // { question: 'med_daily', answer: medDaily },
-        // { question: 'med_occasionally', answer: medOccasionally },
-        // { question: 'drugs_daily', answer: drugsDaily },
-        // { question: 'drugs_occasionally', answer: drugsOccasionally },
-        // { question: 'nutraceuticals_daily', answer: nutraceuticalsDaily },
-        // {
-        //   question: 'nutraceuticals_occasionally',
-        //   answer: nutraceuticalsOccasionally,
-        // },
         { question: 'decease', answer: decease },
       ];
 
@@ -126,7 +102,7 @@ const Wizard: React.FC = () => {
           <HiQuestionMarkCircle
             size={20}
             color={previousStep.isCompleted ? '#7664C8' : '#565656'}
-            data-tip="<strong>Step 2</strong><span>We already made a pre-selection...</span>"
+            data-tip="<strong>Step 1</strong><span>We already made a pre-selection...</span>"
             data-for="wizard-title-tooltip"
           />
           <ReactToolTip
@@ -151,7 +127,7 @@ const Wizard: React.FC = () => {
           <CarouselProvider
             naturalSlideWidth={400}
             naturalSlideHeight={640}
-            totalSlides={9}
+            totalSlides={8}
             visibleSlides={1}
             step={1}
             dragEnabled={false}
@@ -175,9 +151,9 @@ const Wizard: React.FC = () => {
                   <Slide index={5}>
                     <Step5 />
                   </Slide>
-                  <Slide index={6}>
+                  {/* <Slide index={6}>
                     <Step6 />
-                  </Slide>
+                  </Slide> */}
                   <Slide index={7}>
                     <Step7 />
                   </Slide>

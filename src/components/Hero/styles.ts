@@ -99,17 +99,21 @@ export const HeroList = styled.ul`
   display: flex;
   flex-flow: column wrap;
 
-  li {
-    display: flex;
-    align-items: center;
-  }
+  @media screen and (min-width: 768px) {
+    flex-flow: row nowrap;
 
-  li {
-    & ~ li {
-      margin: 5px 0 0;
-      border-top: 1px solid #e0e0e0;
-      padding: 5px 0 0;
-    }
+    grid-column: 1;
+  }
+`;
+
+export const HeroListItem = styled.li`
+  display: flex;
+  align-items: center;
+
+  & ~ li {
+    margin: 5px 0 0;
+    border-top: 1px solid #e0e0e0;
+    padding: 5px 0 0;
   }
 
   svg {
@@ -117,41 +121,62 @@ export const HeroList = styled.ul`
     fill: #db71af;
   }
 
-  a {
-    color: #db71af;
-
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 10px;
-    line-height: 12px;
+  @media screen and (min-width: 768px) {
+    & ~ li {
+      margin: 0 0 0 10px;
+      border-top: none;
+      border-left: 1px solid #e0e0e0;
+      padding: 0 0 0 10px;
+    }
   }
+`;
+
+export const HeroListItemLink = styled.a`
+  color: #db71af;
+
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 10px;
+  line-height: 12px;
 
   @media screen and (min-width: 768px) {
-    flex-flow: row nowrap;
-
-    grid-column: 1;
-
-    li {
-      & ~ li {
-        margin: 0 0 0 10px;
-        border-top: none;
-        border-left: 1px solid #e0e0e0;
-        padding: 0 0 0 10px;
-      }
-    }
-
-    a {
-      font-size: 16px;
-      line-height: 22px;
-    }
+    font-size: 16px;
+    line-height: 22px;
   }
 
   @media screen and (min-width: 992px) {
-    a {
-      font-size: 18px;
-      line-height: 24px;
-    }
+    font-size: 18px;
+    line-height: 24px;
   }
+`;
+
+export const HeroListItemText = styled.span`
+  color: #db71af;
+
+  cursor: pointer;
+
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 10px;
+  line-height: 12px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  @media screen and (min-width: 992px) {
+    font-size: 18px;
+    line-height: 24px;
+  }
+`;
+
+export const HeroListItemPopupContent = styled.div`
+  padding: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 export default Container;

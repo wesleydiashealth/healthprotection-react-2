@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { transparentize } from 'polished';
 
 interface ContainerProps {
   connections?: number;
@@ -11,6 +12,8 @@ const Container = styled.div<ContainerProps>`
 
   position: relative;
 
+  cursor: pointer;
+
   display: flex;
   flex-flow: column wrap;
   align-items: center;
@@ -18,7 +21,11 @@ const Container = styled.div<ContainerProps>`
 
   max-width: 300px;
 
-  background: #f2f2f2;
+  background-color: ${transparentize(0.95, '#000')};
+
+  :hover {
+    background-color: ${transparentize(0.8, '#000')};
+  }
 
   & ~ div {
     margin-top: 20px;

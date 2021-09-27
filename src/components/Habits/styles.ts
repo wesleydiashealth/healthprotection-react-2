@@ -10,6 +10,11 @@ const Container = styled.div<ContainerProps>`
   margin: 80px auto 0;
   padding: 0 10px;
 
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+
   position: relative;
 
   max-width: 1300px;
@@ -153,6 +158,8 @@ export const ContainerAlertTitle = styled(AlertTitle)`
   font-family: 'Montserrat', sans-serif !important;
   font-weight: 600 !important;
 `;
+
+export const HabitsErrorContainer = styled.div``;
 
 export const HabitsContainer = styled.div`
   display: flex;

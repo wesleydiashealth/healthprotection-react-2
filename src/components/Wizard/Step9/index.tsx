@@ -30,7 +30,7 @@ const Step9: React.FC = () => {
       isCompleted={step?.isCompleted}
       isDisabled={
         !previousStep.isCompleted ||
-        carouselContext.getStoreState().currentSlide !== 7
+        carouselContext.getStoreState().currentSlide !== 6
       }
     >
       {step?.answers.length > 0 && (
@@ -72,7 +72,7 @@ const Step9: React.FC = () => {
                   isCompleted: true,
                   answers: answer.slug || '',
                 });
-                carouselContext.setStoreState({ currentSlide: 8 });
+                carouselContext.setStoreState({ currentSlide: 7 });
               }}
               isActive={step?.answers === answer.slug}
               name={currentQuestion.table}

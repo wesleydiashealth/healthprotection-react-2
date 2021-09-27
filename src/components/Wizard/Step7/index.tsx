@@ -24,7 +24,7 @@ const Step7: React.FC = () => {
 
   const context = useWizard();
   const { steps, questions } = context;
-  const { step7: step, step6: previousStep } = steps;
+  const { step7: step, step5: previousStep } = steps;
   const currentQuestion = questions.find(
     question => Number(question.id) === 17,
   );
@@ -34,7 +34,7 @@ const Step7: React.FC = () => {
   const subStepsCompleted = !!subSteps.filter(subStep => !!subStep.isCompleted)
     .length;
 
-  const [stepNumber, setStepNumber] = useState<string>('7');
+  const [stepNumber, setStepNumber] = useState<string>('6');
   const [stepTitle, setStepTitle] = useState<string>(
     currentQuestion?.label || '',
   );
@@ -73,7 +73,7 @@ const Step7: React.FC = () => {
       isCompleted={step?.isCompleted || subStepsCompleted}
       isDisabled={
         !previousStep?.isCompleted ||
-        carouselContext.getStoreState().currentSlide !== 6
+        carouselContext.getStoreState().currentSlide !== 5
       }
     >
       {(step?.isCompleted || subStepsCompleted) && (
@@ -140,7 +140,7 @@ const Step7: React.FC = () => {
                 answers: answer.api,
               });
               if (answer.api !== 'yes') {
-                carouselContext.setStoreState({ currentSlide: 7 });
+                carouselContext.setStoreState({ currentSlide: 6 });
               } else {
                 setStepNumber('7.1');
                 setStepTitle('Select below which one you use:');
@@ -210,7 +210,7 @@ const Step7: React.FC = () => {
                   isCompleted: true,
                   answers: step?.answers,
                 });
-                carouselContext.setStoreState({ currentSlide: 7 });
+                carouselContext.setStoreState({ currentSlide: 6 });
               }}
             >
               Next Question

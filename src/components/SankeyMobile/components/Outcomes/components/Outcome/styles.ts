@@ -58,6 +58,8 @@ export const Content = styled(AccordionSummary)<ContentProps>`
   flex-flow: row nowrap;
   align-items: center;
 
+  background-color: ${transparentize(0.5, '#565656')} !important;
+
   position: relative;
   z-index: 10;
 
