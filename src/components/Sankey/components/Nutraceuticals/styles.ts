@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 interface ContainerProps {
   isActive?: boolean;
@@ -17,16 +17,18 @@ const Container = styled.div<ContainerProps>`
     max-width: none;
     min-width: 200px;
   }
+`;
 
-  ${props =>
-    props.isActive &&
-    css`
-      &:before {
-        content: 'Click for Scientific foundation';
+export const ContainerLabel = styled.div`
+  margin-bottom: 10px;
 
-        max-width: 180px;
-      }
-    `}
+  display: block;
+  max-width: 180px;
+
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 22px;
 `;
 
 export default Container;

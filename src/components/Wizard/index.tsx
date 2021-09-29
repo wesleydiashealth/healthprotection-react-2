@@ -37,7 +37,8 @@ const Wizard: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
 
   const context = useApp();
-  const { updateUserQuery, updateOutcomes, updateSuboutcomes } = context;
+  const { labels, updateUserQuery, updateOutcomes, updateSuboutcomes } =
+    context;
 
   const previousStep = { isCompleted: true };
 
@@ -98,11 +99,11 @@ const Wizard: React.FC = () => {
         />
         <StepTitle>
           {!previousStep.isCompleted && <HiLockClosed size={20} />}
-          Step 1
+          {labels.step_1_title}
           <HiQuestionMarkCircle
             size={20}
             color={previousStep.isCompleted ? '#7664C8' : '#565656'}
-            data-tip="<strong>Step 1</strong><span>We already made a pre-selection...</span>"
+            data-tip={`<strong>${labels.step_1_title}</strong><span>${labels.step_1_tooltip}</span>`}
             data-for="wizard-title-tooltip"
           />
           <ReactToolTip
@@ -119,7 +120,10 @@ const Wizard: React.FC = () => {
           <div className="step-disabled">Step Blocked.</div>
         )}
         <StepDescription>
-          <strong>Start</strong> by talking a little about yourself
+          <strong>{labels.step_1_description.split(' ')[0]}</strong>{' '}
+          {labels.step_1_description.substr(
+            labels.step_1_description.indexOf(' ') + 1,
+          )}
         </StepDescription>
       </StepIntro>
       {previousStep.isCompleted && (

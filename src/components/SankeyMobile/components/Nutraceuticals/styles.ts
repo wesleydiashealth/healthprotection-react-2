@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 interface ContainerProps {
   isActive?: boolean;
@@ -16,14 +16,15 @@ const Container = styled.div<ContainerProps>`
 
     max-width: none;
   }
+`;
 
-  ${props =>
-    props.isActive &&
-    css`
-      &:before {
-        content: 'Scientific foundation';
-      }
-    `}
+export const ContainerLabel = styled.span`
+  margin-bottom: 10px;
+
+  display: block;
+
+  font-size: 10px;
+  line-height: 18px;
 `;
 
 export default Container;

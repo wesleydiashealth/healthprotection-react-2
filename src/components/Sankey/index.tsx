@@ -6,6 +6,7 @@ import { IoOptionsOutline } from 'react-icons/io5';
 
 import { useApp } from 'contexts/app';
 import { SankeyProvider } from 'contexts/sankey';
+
 import Loading from 'components/Loading';
 import Outcomes from './components/Outcomes';
 import Suboutcomes from './components/Suboutcomes';
@@ -20,7 +21,7 @@ import Container, {
 
 const Sankey: React.FC = () => {
   const context = useApp();
-  const { steps, outcomes } = context;
+  const { labels, steps, outcomes } = context;
   const { step1: previousStep } = steps;
 
   return (
@@ -36,12 +37,12 @@ const Sankey: React.FC = () => {
               <HiLockClosed size={20} className="locked-icon" />
             </>
           )}
-          Step 2
+          {labels.step_2_title}
           <HiQuestionMarkCircle
             className="tooltip-icon"
             size={20}
             color={previousStep.isCompleted ? '#DB71AF' : '#565656'}
-            data-tip="<strong>Step 2</strong><span>We already made a pre-selection...</span>"
+            data-tip={`<strong>${labels.step_2_title}</strong><span>${labels.step_2_tooltip}</span>`}
             data-for="sankey-title-tooltip"
           />
           <ReactToolTip
@@ -62,7 +63,10 @@ const Sankey: React.FC = () => {
           </div>
         )}
         <StepDescription>
-          <strong>Customize</strong> your desired outcomes
+          <strong>{labels.step_2_description.split(' ')[0]}</strong>{' '}
+          {labels.step_2_description.substr(
+            labels.step_2_description.indexOf(' ') + 1,
+          )}
         </StepDescription>
       </StepIntro>
       {previousStep.isCompleted && (

@@ -9,21 +9,31 @@ const Container = styled.div`
 
   font-weight: 600;
 
-  &:before {
-    content: 'Choose your Sub-outcomes';
-  }
-
-  &:after {
-    content: 'Fine-tune';
-    position: absolute;
-    top: 0;
-    left: 260px;
-  }
-
   @media screen and (min-width: 768px) {
     align-self: center;
 
-    max-width: none;
+    max-width: 460px;
+  }
+`;
+
+export const ContainerLabel = styled.div`
+  margin-bottom: 10px;
+
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+
+  strong {
+    display: block;
+
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  span {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 22px;
   }
 `;
 

@@ -19,6 +19,12 @@ const Container = styled.div<ContainerProps>`
 
   max-width: 1300px;
 
+  .__react_component_tooltip {
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.11);
+    border-radius: 20px;
+    padding: 10px;
+  }
+
   ${props =>
     props.isActive &&
     css`
@@ -263,12 +269,48 @@ export const HabitQuestion = styled.span`
 `;
 
 export const HabitDosages = styled.span`
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 
   display: block;
 
   font-size: 14px;
   line-height: 20px;
+`;
+
+export const HabitNutraceuticals = styled.div`
+  margin-bottom: 10px;
+
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+`;
+
+export const HabitNutraceuticalsLabel = styled.span`
+  margin-right: 10px;
+
+  font-size: 14px;
+  line-height: 22px;
+`;
+
+export const HabitNutraceuticalsItem = styled.div`
+  margin: 5px 0;
+  border-radius: 10px;
+  padding: 5px 10px;
+
+  background-color: #e5e5e5;
+
+  display: inline-block;
+
+  font-size: 14px;
+  line-height: 20px;
+
+  & ~ div {
+    margin-left: 10px;
+  }
+
+  strong {
+    font-weight: 600;
+  }
 `;
 
 export default Container;

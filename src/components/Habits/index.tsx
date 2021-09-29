@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import ReactDOMServer from 'react-dom/server';
 import ReactToolTip from 'react-tooltip';
 import { HiQuestionMarkCircle, HiLockClosed } from 'react-icons/hi';
 import { GiForkKnifeSpoon } from 'react-icons/gi';
 import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
 
-import Loading from 'components/Loading';
-
 import { useApp } from 'contexts/app';
+import Loading from 'components/Loading';
+import Tooltip from './components/Tooltip';
+
 import Container, {
   ContainerAlert,
   ContainerAlertTitle,
@@ -19,33 +21,19 @@ import Container, {
   HabitTitle,
   HabitQuestion,
   HabitDosages,
+  HabitNutraceuticals,
+  HabitNutraceuticalsLabel,
+  HabitNutraceuticalsItem,
 } from './styles';
 
 const Habits: React.FC = () => {
   const context = useApp();
-  const { steps, foods, error } = context;
+  const { steps, selectedNutraceuticals, foods, error } = context;
   const { step2: previousStep } = steps;
 
-  const intakeFrequency = [
-    { value: '0', label: 'I don´t consume' },
-    { value: '1', label: 'Once a week' },
-    { value: '2', label: 'Twice a week' },
-    { value: '3+', label: 'Three or more times a week' },
-    { value: '4+', label: 'Four or more times a week' },
-    { value: '5+', label: 'Five or more times a week' },
-    { value: '7+', label: 'Seven or more times a week' },
-    { value: '7', label: 'Seven times a week' },
-    { value: '8+', label: 'Eight or more times a week' },
-    { value: '14', label: 'Fourteen times a week' },
-    { value: '21', label: 'Twenty one times a week' },
-    { value: '28+', label: 'Twenty eight or more times a week' },
-    { value: '1-2', label: 'Once or twice a week' },
-    { value: '1-3', label: 'From one to three times a week' },
-    { value: '2-3', label: 'From two to three times a week' },
-    { value: '3-4', label: 'From three to four times a week' },
-    { value: '3-6', label: 'From three to six times a week' },
-    { value: '4-7', label: 'From four to seven times a week' },
-  ];
+  useEffect(() => {
+    ReactToolTip.rebuild();
+  });
 
   return (
     <Container id="step_3" isActive={previousStep.isCompleted}>
@@ -100,44 +88,83 @@ const Habits: React.FC = () => {
           {error && <HabitsErrorContainer>{error}</HabitsErrorContainer>}
           {foods.length && !error ? (
             <>
-              {foods.map(food => (
-                <HabitContainer key={food.slug}>
-                  <HabitContainerIntro>
-                    <img src={food.icon} alt={food.title} />
-                  </HabitContainerIntro>
-                  <HabitContainerContent>
-                    <HabitTitle>
-                      {food.title}
-                      <HiQuestionMarkCircle
-                        className="tooltip-icon"
-                        size={20}
-                        color={previousStep.isCompleted ? '#1bc9bd' : '#565656'}
-                        data-tip={food.title}
-                        data-for="habit-title-tooltip"
+              {foods.map(food => {
+                const { title, dosages, interactions, dataSource } = food;
+
+                const nutraceuticalsInteractions = food.interactions.filter(
+                  interaction => {
+                    return selectedNutraceuticals.includes(
+                      interaction.nutraceuticalSlug,
+                    );
+                  },
+                );
+
+                return (
+                  <HabitContainer key={food.slug}>
+                    <HabitContainerIntro>
+                      <img
+                        src={food.icon}
+                        alt={food.title}
+                        title={food.title}
                       />
-                      <ReactToolTip
-                        id="habit-title-tooltip"
-                        className="habit-title-tooltip"
-                        place="bottom"
-                        type="light"
-                        effect="solid"
-                        offset={{ top: 10, left: 10 }}
-                        html
-                        backgroundColor="#fff"
+                    </HabitContainerIntro>
+                    <HabitContainerContent>
+                      <HabitTitle>
+                        {food.title}
+                        <HiQuestionMarkCircle
+                          className="tooltip-icon"
+                          size={20}
+                          color={
+                            previousStep.isCompleted ? '#1bc9bd' : '#565656'
+                          }
+                          data-tip={ReactDOMServer.renderToStaticMarkup(
+                            <Tooltip
+                              {...{ title, dosages, interactions, dataSource }}
+                            />,
+                          )}
+                          data-for="habit-title-tooltip"
+                        />
+                        <ReactToolTip
+                          id="habit-title-tooltip"
+                          className="habit-title-tooltip"
+                          place="bottom"
+                          type="light"
+                          effect="solid"
+                          offset={{ top: 10, left: 10 }}
+                          html
+                          backgroundColor="#fff"
+                        />
+                      </HabitTitle>
+
+                      <HabitQuestion>
+                        How many {food.unit} do you consume per week?
+                      </HabitQuestion>
+                      <HabitDosages>{food.dosages}</HabitDosages>
+                      <HabitNutraceuticals>
+                        <HabitNutraceuticalsLabel>
+                          This food interacts with:
+                        </HabitNutraceuticalsLabel>
+                        {nutraceuticalsInteractions.map(
+                          nutraceuticalsInteraction => (
+                            <HabitNutraceuticalsItem
+                              key={nutraceuticalsInteraction.nutraceuticalSlug}
+                            >
+                              <strong>
+                                {nutraceuticalsInteraction.nutraceutical}
+                              </strong>
+                            </HabitNutraceuticalsItem>
+                          ),
+                        )}
+                      </HabitNutraceuticals>
+                      <Dropdown
+                        options={food.intakeFrequency}
+                        value={food.intakeFrequency[0]}
+                        placeholder="Select an option"
                       />
-                    </HabitTitle>
-                    <HabitQuestion>
-                      How many {food.unit} do you consume per week?
-                    </HabitQuestion>
-                    <HabitDosages>{food.dosages}</HabitDosages>
-                    <Dropdown
-                      options={intakeFrequency}
-                      value={intakeFrequency[0]}
-                      placeholder="Select an option"
-                    />
-                  </HabitContainerContent>
-                </HabitContainer>
-              ))}
+                    </HabitContainerContent>
+                  </HabitContainer>
+                );
+              })}
             </>
           ) : (
             <>{!error && <Loading color="#1bc9bd" />}</>

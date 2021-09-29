@@ -47,6 +47,7 @@ const Suboutcome: React.FC<SuboutcomeProps> = ({
     updateConnections,
     updateFoods,
     updateError,
+    updateSelectedNutraceuticals,
   } = appContext;
 
   const [fineTune, setFineTune] = useState<FineTuneProps>({});
@@ -109,6 +110,8 @@ const Suboutcome: React.FC<SuboutcomeProps> = ({
         ),
       );
 
+      updateSelectedNutraceuticals(selectedNutraceuticals);
+
       const response = await getFoods({
         uuid: userQuery,
         nutraceuticals: selectedNutraceuticals,
@@ -130,6 +133,7 @@ const Suboutcome: React.FC<SuboutcomeProps> = ({
       userQuery,
       updateFoods,
       updateError,
+      updateSelectedNutraceuticals,
     ],
   );
 

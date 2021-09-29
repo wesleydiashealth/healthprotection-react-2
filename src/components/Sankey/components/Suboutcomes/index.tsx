@@ -4,7 +4,7 @@ import { useApp } from 'contexts/app';
 
 import Suboutcome from './components/Suboutcome';
 
-import Container from './styles';
+import Container, { ContainerLabel } from './styles';
 
 const Suboutcomes: React.FC = () => {
   const appContext = useApp();
@@ -12,6 +12,14 @@ const Suboutcomes: React.FC = () => {
 
   return (
     <Container>
+      <ContainerLabel>
+        <strong>Fine-tune your chosen sub-outcomes</strong>
+        <span>
+          The min-max range reflects the efficiency of nutraceuticals
+          <br />
+          on this specific situation.
+        </span>
+      </ContainerLabel>
       {suboutcomes.map(suboutcome => {
         const outcomeColor = Object.values(outcomes).find(outcome =>
           outcome.suboutcomes.includes(suboutcome.id),

@@ -19,6 +19,8 @@ const Container = styled.div<ContainerProps>`
   align-items: center;
   justify-content: space-between;
 
+  box-sizing: border-box;
+
   max-width: 300px;
 
   background-color: ${transparentize(0.95, '#000')};

@@ -4,7 +4,7 @@ import { useApp } from 'contexts/app';
 
 import Outcome from './components/Outcome';
 
-import Container from './styles';
+import Container, { ContainerLabel } from './styles';
 
 const Outcomes: React.FC = () => {
   const appContext = useApp();
@@ -12,6 +12,7 @@ const Outcomes: React.FC = () => {
 
   return (
     <Container>
+      <ContainerLabel>Filtered Outcomes</ContainerLabel>
       {outcomes.map(outcome => {
         return <Outcome key={outcome.id} {...outcome} />;
       })}

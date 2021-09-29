@@ -3,10 +3,16 @@ import { useLocation } from 'react-router-dom';
 
 import wordpressApi from 'services/wordpress';
 
+import defaultLabels from 'labels.json';
+
 import OutcomeData from 'dtos/OutcomeData';
 import SuboutcomeData from 'dtos/SuboutcomeData';
 import NutraceuticalData from 'dtos/NutraceuticalData';
 import FoodData from 'dtos/FoodData';
+
+interface LabelsData {
+  [key: string]: string;
+}
 
 interface StepData {
   isCompleted?: boolean;
@@ -19,16 +25,21 @@ interface StepsData {
 }
 
 interface AppContextData {
+  labels: LabelsData;
   steps: StepsData;
   userQuery: string;
   outcomes: OutcomeData[];
   suboutcomes: SuboutcomeData[];
   nutraceuticals: NutraceuticalData[];
+  selectedNutraceuticals: string[];
   connections: ConnectionsProps;
   foods: FoodData[];
   error: string;
   updateStep(step: string, attrs: StepData): Promise<void>;
   updateUserQuery(userQuery: string): Promise<void>;
+  updateSelectedNutraceuticals(
+    updatedSelectedNutraceuticals: string[],
+  ): Promise<void>;
   updateOutcomes(updatedOutcomes: OutcomeData[]): Promise<void>;
   updateSuboutcomes(updatedSuboutcomes: SuboutcomeData[]): Promise<void>;
   updateConnections(
@@ -52,13 +63,15 @@ function useQuery() {
 }
 
 export const AppProvider: React.FC = ({ children }) => {
+  const query = useQuery();
+
+  const [labels, setLabels] = useState<LabelsData>(defaultLabels);
+
   const [steps, setSteps] = useState<StepsData>({
     step1: { isCompleted: false },
     step2: { isCompleted: false, isDisabled: true },
     step3: { isCompleted: false, isDisabled: true },
   });
-
-  const query = useQuery();
 
   const [userQuery, setUserQuery] = useState<string>('');
 
@@ -67,11 +80,41 @@ export const AppProvider: React.FC = ({ children }) => {
 
   const [nutraceuticals, setNutraceuticals] = useState<NutraceuticalData[]>([]);
 
+  const [selectedNutraceuticals, setSelectedNutraceuticals] = useState<
+    string[]
+  >([]);
+
   const [connections, setConnections] = useState<ConnectionsProps>({});
 
   const [foods, setFoods] = useState<FoodData[]>([]);
 
   const [error, setError] = useState<string>('');
+
+  useEffect(() => {
+    wordpressApi
+      .get(`/wp-json/hp/v1/labels/${query.get('lang')}`)
+      .then(response => {
+        const { content, success } = response.data;
+
+        if (success) {
+          setLabels(content);
+        }
+      })
+      .catch(err => {
+        if (err.response) {
+          setError(err.request.data.message);
+        } else if (err.request) {
+          const errorMessage = err.request.response
+            ? JSON.parse(err.request.response).message
+            : 'Unknown Error';
+
+          setError(errorMessage);
+        } else {
+          setError(err.message);
+        }
+      });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => {
     const initialConnections: ConnectionsProps = {};
@@ -128,6 +171,12 @@ export const AppProvider: React.FC = ({ children }) => {
     setUserQuery(newUserQuery);
   }
 
+  async function updateSelectedNutraceuticals(
+    updatedSelectedNutraceuticals: string[],
+  ) {
+    setSelectedNutraceuticals(updatedSelectedNutraceuticals);
+  }
+
   async function updateOutcomes(updatedOutcomes: OutcomeData[]) {
     setOutcomes(updatedOutcomes);
   }
@@ -157,16 +206,19 @@ export const AppProvider: React.FC = ({ children }) => {
   return (
     <AppContext.Provider
       value={{
+        labels,
         steps,
         userQuery,
         outcomes,
         suboutcomes,
         nutraceuticals,
+        selectedNutraceuticals,
         connections,
         foods,
         error,
         updateStep,
         updateUserQuery,
+        updateSelectedNutraceuticals,
         updateOutcomes,
         updateSuboutcomes,
         updateConnections,

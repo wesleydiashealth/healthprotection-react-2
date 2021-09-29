@@ -2,9 +2,10 @@ import React from 'react';
 
 import { useApp } from 'contexts/app';
 
+import { ReactComponent as NutritionInfoIcon } from 'assets/nutrition_info.svg';
 import Nutraceutical from './components/Nutraceutical';
 
-import Container from './styles';
+import Container, { ContainerLabel } from './styles';
 
 const Nutraceuticals: React.FC = () => {
   const appContext = useApp();
@@ -31,6 +32,11 @@ const Nutraceuticals: React.FC = () => {
 
   return (
     <Container isActive={!!selectedNutraceuticals.length}>
+      {!!selectedNutraceuticals.length && (
+        <ContainerLabel>
+          Click on <NutritionInfoIcon /> for Scientific foundation
+        </ContainerLabel>
+      )}
       {selectedNutraceuticals.map(selectedNutraceutical => {
         const nutraceutical = nutraceuticals.find(
           item => item.slug === selectedNutraceutical,
