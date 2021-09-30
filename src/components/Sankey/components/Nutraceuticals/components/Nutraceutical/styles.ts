@@ -106,7 +106,7 @@ export const ContentTitle = styled.h4`
 export const ContentDescription = styled.span`
   min-width: 80px;
 
-  color: #565656;
+  color: #62a8ea;
   text-align: right;
 `;
 

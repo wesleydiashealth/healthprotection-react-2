@@ -24,12 +24,43 @@ import Container, {
   HabitNutraceuticals,
   HabitNutraceuticalsLabel,
   HabitNutraceuticalsItem,
+  HabitInvalidNutraceuticals,
 } from './styles';
 
 const Habits: React.FC = () => {
   const context = useApp();
-  const { steps, selectedNutraceuticals, foods, error } = context;
+  const { steps, nutraceuticals, selectedNutraceuticals, foods, error } =
+    context;
   const { step2: previousStep } = steps;
+
+  const foodsNutraceuticals = foods.reduce(
+    (acc: string[], { interactions }) =>
+      Array.from(
+        new Set([
+          ...acc,
+          ...interactions.reduce(
+            (interaction: string[], nutraceutical) => [
+              ...interaction,
+              nutraceutical.nutraceuticalSlug,
+            ],
+            [],
+          ),
+        ]),
+      ),
+    [],
+  );
+
+  const invalidNutraceuticals = selectedNutraceuticals.filter(
+    selectedNutraceutical =>
+      !foodsNutraceuticals.includes(selectedNutraceutical),
+  );
+
+  const invalidNutraceuticalsTitles = invalidNutraceuticals.map(
+    invalidNutraceutical =>
+      nutraceuticals.find(
+        nutraceutical => nutraceutical.slug === invalidNutraceutical,
+      )?.title,
+  );
 
   useEffect(() => {
     ReactToolTip.rebuild();
@@ -144,6 +175,7 @@ const Habits: React.FC = () => {
                         <HabitNutraceuticalsLabel>
                           This food interacts with:
                         </HabitNutraceuticalsLabel>
+
                         {nutraceuticalsInteractions.map(
                           nutraceuticalsInteraction => (
                             <HabitNutraceuticalsItem
@@ -165,6 +197,12 @@ const Habits: React.FC = () => {
                   </HabitContainer>
                 );
               })}
+              <HabitInvalidNutraceuticals>
+                For <strong>{invalidNutraceuticalsTitles.join(', ')}</strong>{' '}
+                there {invalidNutraceuticals.length > 1 ? 'are' : 'is'} no
+                adjustments to be made. See below for your list of
+                nutraceuticals.
+              </HabitInvalidNutraceuticals>
             </>
           ) : (
             <>{!error && <Loading color="#1bc9bd" />}</>

@@ -313,4 +313,21 @@ export const HabitNutraceuticalsItem = styled.div`
   }
 `;
 
+export const HabitInvalidNutraceuticals = styled.p`
+  margin: 0 auto;
+  border-radius: 10px;
+  padding: 10px 20px;
+
+  background: #e5e5e5;
+
+  font-size: 14px;
+  line-height: 22px;
+
+  strong {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 22px;
+  }
+`;
+
 export default Container;

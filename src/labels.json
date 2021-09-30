@@ -2,6 +2,7 @@
   "hero_title": "Deep level personalization",
   "hero_subtitle": "A new approach to understand your nutritional needs through science, true Artificial Intelligence and top-level products.",
   "hero_description": "Try now by taking 3 quick steps",
+  "hero_button": "Go to Step 1",
   "hero_video": "Watch the Video",
   "hero_science": "The Science behind us",
   "hero_foundation": "Our Solid Foundation",
@@ -19,6 +20,5 @@
   "step_3_description": "Fine-tune by adjusting your food habits",
   "step_3_tooltip": "We already made a pre-selection...",
   "step_3_notification_title": "Download our App",
-  "step_3_notification_description": "Help us to train our app for food recognition with artificial intelligence",
-  "hero_button": "Go to Step 1"
+  "step_3_notification_description": "Help us to train our app for food recognition with artificial intelligence"
 }
