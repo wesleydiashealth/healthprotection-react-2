@@ -62,6 +62,13 @@ const Habits: React.FC = () => {
       )?.title,
   );
 
+  const invalidNutraceuticalsString = invalidNutraceuticalsTitles.join(', ');
+  const invalidNutraceuticalsSeparator = ',';
+
+  const lastComma = invalidNutraceuticalsString.lastIndexOf(
+    invalidNutraceuticalsSeparator,
+  );
+
   useEffect(() => {
     ReactToolTip.rebuild();
   });
@@ -198,7 +205,13 @@ const Habits: React.FC = () => {
                 );
               })}
               <HabitInvalidNutraceuticals>
-                For <strong>{invalidNutraceuticalsTitles.join(', ')}</strong>{' '}
+                For{' '}
+                <strong>
+                  {invalidNutraceuticalsString.slice(0, lastComma) +
+                    invalidNutraceuticalsString
+                      .slice(lastComma)
+                      .replace(invalidNutraceuticalsSeparator, ' and')}
+                </strong>{' '}
                 there {invalidNutraceuticals.length > 1 ? 'are' : 'is'} no
                 adjustments to be made. See below for your list of
                 nutraceuticals.
