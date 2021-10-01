@@ -6,7 +6,7 @@ export const ContainerTitle = styled.h3`
   margin-bottom: 20px;
 `;
 
-export const ContainerDescription = styled.p`
+export const ContainerDescription = styled.div`
   margin-bottom: 10px;
 
   text-align: justify;

@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactHtmlParser from 'react-html-parser';
 
 import { useApp } from 'contexts/app';
 
@@ -32,7 +33,8 @@ const Tooltip: React.FC<TooltipProps> = ({ slug, supConnections }) => {
     <Container>
       <ContainerTitle>{nutraceutical?.info.title}</ContainerTitle>
       <ContainerDescription>
-        {nutraceutical?.info.description}
+        {nutraceutical?.info.description &&
+          ReactHtmlParser(nutraceutical?.info.description)}
       </ContainerDescription>
       <ContainerLink
         href={nutraceutical?.info.link}

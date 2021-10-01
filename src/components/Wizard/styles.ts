@@ -202,6 +202,16 @@ export const StepContainer = styled.div<StepContainerProps>`
     width: 100%;
   }
 
+  .select-input {
+    > div {
+      border-radius: 12px;
+    }
+
+    & ~ .select-input {
+      margin-top: 15px;
+    }
+  }
+
   input[type='file'] {
     margin-bottom: 40px;
   }

@@ -1,12 +1,34 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState, useEffect, useCallback } from 'react';
 import ReactToolTip from 'react-tooltip';
 import { HiQuestionMarkCircle, HiOutlineCheckCircle } from 'react-icons/hi';
 import { CarouselContext } from 'pure-react-carousel';
+import Select from 'react-select';
 
 import { useWizard } from 'contexts/wizard';
+// import Button from 'components/Button';
+import Input from 'components/Input';
+
+import months from 'months.json';
+
 import { StepContainer } from '../styles';
 
-import Button from '../../Button';
+function getYears(startYear = 1901) {
+  const currentYear = new Date().getFullYear();
+  const years = [];
+
+  let updatedYear = currentYear;
+
+  while (startYear <= updatedYear) {
+    updatedYear -= 1;
+
+    years.push({
+      value: updatedYear,
+      label: updatedYear,
+    });
+  }
+
+  return years;
+}
 
 const Step1: React.FC = () => {
   const context = useWizard();
@@ -16,9 +38,27 @@ const Step1: React.FC = () => {
 
   const carouselContext = useContext(CarouselContext);
 
+  const [birthMonth, setBirthMonth] = useState<string>('');
+  const [birthYear, setBirthYear] = useState<string>('');
+  const [birthGroup, setBirthGroup] = useState<string>('');
+
   const wizardSteps = Object.keys(steps).filter(
     item => !item.includes('_'),
   ).length;
+
+  useEffect(() => {
+    setBirthGroup(`${birthMonth}/${birthYear}`);
+  }, [birthMonth, birthYear]);
+
+  const handleMonthInput = useCallback((month = '') => {
+    setBirthMonth(month);
+  }, []);
+
+  const handleYearInput = useCallback((year = '') => {
+    setBirthYear(year);
+  }, []);
+
+  const years = getYears();
 
   return (
     <StepContainer
@@ -50,7 +90,34 @@ const Step1: React.FC = () => {
         html
         backgroundColor="#fff"
       />
-      {currentQuestion?.answers &&
+      <Input type="hidden" name="age" value={birthGroup} />
+      <Select
+        name="birth_month"
+        id="birth_month"
+        className="select-input"
+        options={months}
+        placeholder="Select your birth month"
+        onChange={event => {
+          handleMonthInput(event?.value || '');
+        }}
+      />
+      <Select
+        name="birth_year"
+        id="birth_year"
+        className="select-input"
+        options={years}
+        placeholder="Select your birth year"
+        isDisabled={!birthMonth}
+        onChange={event => {
+          handleYearInput(event?.value || '');
+          context.updateStep('step1', {
+            isCompleted: true,
+            answers: birthGroup,
+          });
+          carouselContext.setStoreState({ currentSlide: 1 });
+        }}
+      />
+      {/* {currentQuestion?.answers &&
         Object.values(currentQuestion.answers).map(answer => (
           <Button
             key={answer.id}
@@ -68,7 +135,7 @@ const Step1: React.FC = () => {
           >
             {answer.label}
           </Button>
-        ))}
+        ))} */}
     </StepContainer>
   );
 };
