@@ -34,7 +34,9 @@ const Nutraceuticals: React.FC = () => {
     <Container isActive={!!selectedNutraceuticals.length}>
       {!!selectedNutraceuticals.length && (
         <ContainerLabel>
-          Click on <NutritionInfoIcon /> for Scientific foundation
+          Click on <NutritionInfoIcon />
+          <br />
+          for Scientific foundation
         </ContainerLabel>
       )}
       {selectedNutraceuticals.map(selectedNutraceutical => {

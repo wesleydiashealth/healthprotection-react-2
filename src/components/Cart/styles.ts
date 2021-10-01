@@ -123,11 +123,10 @@ const Container = styled.div<ContainerProps>`
 
   .step-content {
     display: flex;
+    flex-flow: column;
   }
 
   .products-wrapper {
-    margin-right: 40px;
-
     border: 1px solid #c6c6c6;
     border-radius: 12px;
     padding: 20px;
@@ -144,12 +143,125 @@ const Container = styled.div<ContainerProps>`
       color: #1bc9bd;
     }
   }
+
+  @media screen and (min-width: 768px) {
+    .step-content {
+      flex-flow: row nowrap;
+    }
+
+    .products-wrapper {
+      margin-right: 40px;
+    }
+  }
+`;
+
+export const StepIntro = styled.div`
+  width: 100%;
+  max-width: 100%;
+
+  color: #565656;
+  text-align: center;
+
+  svg {
+    &:first-child {
+      margin-right: 5px;
+    }
+
+    &:last-of-type {
+      margin-left: 5px;
+    }
+  }
+
+  .__react_component_tooltip {
+    width: 260px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.11);
+    border-radius: 20px;
+
+    text-align: left;
+
+    strong {
+      margin-bottom: 5px;
+
+      display: block;
+
+      color: #7664c8;
+
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    span {
+      display: block;
+
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 22px;
+    }
+  }
+
+  .step-disabled {
+    margin-bottom: 10px;
+
+    color: #707070;
+
+    font-family: 'Montserrat';
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 40px;
+    padding: 0 20px;
+
+    .__react_component_tooltip {
+      width: 320px;
+    }
+  }
+`;
+
+export const StepTitle = styled.h2`
+  margin-bottom: 10px;
+
+  font-weight: 500;
+
+  font-size: 18px;
+  line-height: 32px;
+
+  strong {
+    font-weight: 600;
+  }
+
+  @media screen and (min-width: 768px) {
+    font-weight: 700;
+
+    font-size: 33px;
+    line-height: 40px;
+  }
+`;
+
+export const StepDescription = styled.h3`
+  margin-bottom: 10px;
+
+  font-size: 14px;
+  line-height: 18px;
+
+  strong {
+    font-weight: 600;
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 28px;
+    line-height: 34px;
+  }
 `;
 
 export const ProductsList = styled.div``;
 
 export const Product = styled.div`
   display: flex;
+  flex-flow: row wrap;
   align-items: center;
   justify-content: space-between;
 
@@ -157,15 +269,11 @@ export const Product = styled.div`
     margin-top: 40px;
   }
 
-  > *:not(:last-child) {
-    margin-right: 40px;
-  }
-
   .product-content {
     display: flex;
     align-items: center;
 
-    width: 240px;
+    flex: 1;
 
     img {
       margin-right: 20px;
@@ -188,14 +296,21 @@ export const Product = styled.div`
   }
 
   a {
+    margin: 10px 0;
+
     font-weight: 600;
 
     color: #1bc9bd;
   }
 
   .product-values {
+    margin: 10px 0;
+
     display: flex;
     align-items: center;
+    justify-content: center;
+
+    width: 100%;
   }
 
   .product-price {
@@ -276,11 +391,25 @@ export const Product = styled.div`
       margin-right: 5px;
     }
   }
+
+  @media screen and (min-width: 768px) {
+    flex-flow: row nowrap;
+
+    > *:not(:last-child) {
+      margin-right: 40px;
+    }
+
+    .product-content {
+      width: 240px;
+    }
+
+    a {
+      margin: 0;
+    }
+  }
 `;
 
 export const CheckoutSidebar = styled.div`
-  width: 25%;
-
   color: #565656;
 
   .newsletter,
@@ -307,31 +436,22 @@ export const CheckoutSidebar = styled.div`
       margin-bottom: 20px;
 
       display: flex;
-      align-items: center;
-      justify-content: space-between;
+      flex-flow: column;
     }
 
     input[type='text'] {
-      margin-right: 20px;
+      margin: 0 0 20px;
+      border: 1px solid #8d8d8d;
+      border-radius: 32px;
 
       display: flex;
       flex-direction: row;
       align-items: center;
       padding: 16px 0px 16px 24px;
 
-      position: static;
-      left: 0%;
-      right: 35.42%;
-      top: 0%;
-      bottom: 0%;
-
-      border: 1px solid #8d8d8d;
-      border-radius: 32px;
-
       flex: none;
       order: 0;
       flex-grow: 0;
-      margin: 0px 16px;
     }
 
     input[type='submit'] {
@@ -340,7 +460,7 @@ export const CheckoutSidebar = styled.div`
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      align-items: center;
+      align-self: center;
       padding: 16px 24px;
 
       position: static;
@@ -434,6 +554,22 @@ export const CheckoutSidebar = styled.div`
 
       font-size: 14px;
       line-height: 22px;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 25%;
+
+    .newsletter {
+      .newsletter-buttons {
+        flex-flow: row nowrap;
+      }
+
+      input[type='text'] {
+        margin: 0 20px 0 0;
+
+        flex: 1;
+      }
     }
   }
 `;

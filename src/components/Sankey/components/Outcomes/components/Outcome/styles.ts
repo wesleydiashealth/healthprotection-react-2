@@ -119,8 +119,8 @@ export const ContentTitle = styled.h3`
   line-height: 20px;
 
   @media screen and (min-width: 768px) {
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 14px;
+    line-height: 22px;
   }
 `;
 

@@ -71,6 +71,8 @@ export const ContentContainer = styled.div`
 
 export const Content = styled.div`
   display: flex;
+  align-items: center;
+
   flex: 1;
 `;
 
@@ -83,7 +85,7 @@ export const ContentTitle = styled.h4`
 
   flex: 1;
 
-  font-weight: 600;
+  font-weight: 500;
   font-size: 10px;
   line-height: 18px;
 
@@ -98,8 +100,8 @@ export const ContentTitle = styled.h4`
   }
 
   @media screen and (min-width: 768px) {
-    font-size: 14px;
-    line-height: 18px;
+    font-size: 13px;
+    line-height: 20px;
   }
 `;
 
@@ -108,6 +110,8 @@ export const ContentDescription = styled.span`
 
   color: #62a8ea;
   text-align: right;
+  font-size: 13px;
+  line-height: 20px;
 `;
 
 export default Container;

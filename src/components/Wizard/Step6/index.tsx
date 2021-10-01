@@ -162,6 +162,7 @@ const Step6: React.FC = () => {
           <Autocomplete
             multiple
             id="drugs_daily"
+            className="autocomplete-input"
             options={drugs}
             getOptionLabel={option => option.title}
             disabled={step?.isCompleted}
@@ -185,6 +186,7 @@ const Step6: React.FC = () => {
           <Autocomplete
             multiple
             id="drugs_occasionally"
+            className="autocomplete-input"
             options={drugs}
             getOptionLabel={option => option.title}
             disabled={step?.isCompleted}

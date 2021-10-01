@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactHtmlParser from 'react-html-parser';
 
 import { useApp } from 'contexts/app';
 
@@ -34,7 +35,9 @@ const Tooltip: React.FC<TooltipProps> = ({
   return (
     <Container>
       <ContainerTitle>{title}</ContainerTitle>
-      <ContainerDescription>{description}</ContainerDescription>
+      <ContainerDescription>
+        {ReactHtmlParser(description)}
+      </ContainerDescription>
       <ContainerLink
         href={`https://www.healthprotection.com/nutraceuticals/${slug}`}
         target="_blank"

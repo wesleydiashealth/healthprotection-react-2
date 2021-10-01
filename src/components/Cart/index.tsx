@@ -5,11 +5,17 @@ import { BsArrowRight } from 'react-icons/bs';
 import { FaTimesCircle } from 'react-icons/fa';
 import { TiShoppingCart } from 'react-icons/ti';
 
-import Container, { ProductsList, Product, CheckoutSidebar } from './styles';
+import { useApp } from 'contexts/app';
 
-import { useApp } from '../../contexts/app';
-
-import products from '../../products.json';
+import products from 'products.json';
+import Container, {
+  StepIntro,
+  StepTitle,
+  StepDescription,
+  ProductsList,
+  Product,
+  CheckoutSidebar,
+} from './styles';
 
 const Cart: React.FC = () => {
   const context = useApp();
@@ -18,12 +24,12 @@ const Cart: React.FC = () => {
 
   return (
     <Container isActive={previousStep.isCompleted}>
-      <div className="step-intro content-wrapper">
+      <StepIntro>
         <TiShoppingCart
           size={52}
           color={previousStep.isCompleted ? '#1bc9bd' : '#565656'}
         />
-        <h2>
+        <StepTitle>
           {!previousStep.isCompleted && (
             <HiLockClosed size={20} className="locked-icon" />
           )}
@@ -45,7 +51,7 @@ const Cart: React.FC = () => {
             html
             backgroundColor="#fff"
           />
-        </h2>
+        </StepTitle>
 
         {!previousStep.isCompleted && (
           <div className="step-disabled">
@@ -54,8 +60,10 @@ const Cart: React.FC = () => {
           </div>
         )}
 
-        <span>Now you are ready to buy what is best for your health</span>
-      </div>
+        <StepDescription>
+          Now you are ready to buy what is best for your health
+        </StepDescription>
+      </StepIntro>
 
       {previousStep.isCompleted && (
         <div className="step-content content-wrapper">

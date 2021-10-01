@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 interface ContainerProps {
   connections?: number;
@@ -24,12 +24,6 @@ const Container = styled.div<ContainerProps>`
   @media screen and (min-width: 768px) {
     flex-flow: row nowrap;
   }
-
-  ${props =>
-    props.connections &&
-    css`
-      min-height: ${`${58 * props.connections}px`};
-    `}
 `;
 
 export const Anchors = styled.div`
@@ -57,16 +51,16 @@ export const Content = styled.div`
   padding-right: 10px;
 
   display: flex;
-  flex-flow: column wrap;
-  align-items: flex-start;
-
-  flex: 1;
+  align-items: center;
 
   svg {
-    width: 16px;
+    margin-right: 10px;
+    width: 24px;
     height: auto;
   }
 `;
+
+export const ContentGroup = styled.div``;
 
 export const ContentTitle = styled.h4`
   position: relative;

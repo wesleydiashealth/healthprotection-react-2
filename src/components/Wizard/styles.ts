@@ -171,7 +171,7 @@ export const StepSubDescription = styled.span`
 
 export const StepContainer = styled.div<StepContainerProps>`
   margin: 20px;
-  padding: 24px;
+  padding: 24px 16px;
 
   display: flex;
   flex-direction: column;
@@ -179,7 +179,7 @@ export const StepContainer = styled.div<StepContainerProps>`
 
   background: #f5f5f5;
 
-  width: 360px;
+  width: 240px;
 
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
   border-radius: 20px;
@@ -203,12 +203,23 @@ export const StepContainer = styled.div<StepContainerProps>`
   }
 
   .select-input {
+    font-size: 12px;
+    line-height: 12px;
+
     > div {
       border-radius: 12px;
     }
 
     & ~ .select-input {
       margin-top: 15px;
+    }
+  }
+
+  .autocomplete-input {
+    label,
+    input {
+      font-size: 12px;
+      line-height: 12px;
     }
   }
 
@@ -249,16 +260,6 @@ export const StepContainer = styled.div<StepContainerProps>`
     }
   }
 
-  ${props =>
-    props.isDisabled &&
-    css`
-      opacity: 0.3;
-
-      button {
-        pointer-events: none;
-      }
-    `}
-
   > span {
     margin-bottom: 10px;
 
@@ -280,12 +281,8 @@ export const StepContainer = styled.div<StepContainerProps>`
     margin-bottom: 24px;
 
     font-weight: 500;
-    font-size: 14px;
-    line-height: 22px;
-
-    &:first-of-type {
-      min-height: 44px;
-    }
+    font-size: 12px;
+    line-height: 20px;
   }
 
   .secondary-question {
@@ -374,14 +371,57 @@ export const StepContainer = styled.div<StepContainerProps>`
     background: #7664c8;
     color: white;
 
-    font-size: 14px;
-    line-height: 18px;
+    font-size: 11px;
+    line-height: 11px;
     font-weight: 500;
 
     &:hover {
       background: ${transparentize(0.2, '#7664c8')};
     }
   }
+
+  @media screen and (min-width: 768px) {
+    padding: 24px;
+
+    width: 360px;
+
+    > strong {
+      font-size: 14px;
+      line-height: 22px;
+
+      &:first-of-type {
+        min-height: 44px;
+      }
+    }
+
+    .select-input {
+      font-size: 14px;
+      line-height: 14px;
+    }
+
+    .autocomplete-input {
+      label,
+      input {
+        font-size: 14px;
+        line-height: 14px;
+      }
+    }
+
+    .advance-button {
+      font-size: 14px;
+      line-height: 18px;
+    }
+  }
+
+  ${props =>
+    props.isDisabled &&
+    css`
+      opacity: 0.3;
+
+      button {
+        pointer-events: none;
+      }
+    `}
 `;
 
 export default Container;

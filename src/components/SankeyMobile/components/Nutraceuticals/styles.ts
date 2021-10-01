@@ -7,7 +7,7 @@ interface ContainerProps {
 const Container = styled.div<ContainerProps>`
   align-self: flex-start;
 
-  max-width: 45%;
+  max-width: 40%;
 
   font-weight: 600;
 
@@ -25,6 +25,11 @@ export const ContainerLabel = styled.span`
 
   font-size: 10px;
   line-height: 18px;
+
+  svg {
+    width: 22px;
+    height: auto;
+  }
 `;
 
 export default Container;

@@ -33,12 +33,12 @@ export const HeroMainTitle = styled.h1`
 
   text-transform: uppercase;
   font-weight: 700;
-  font-size: 26px;
-  line-height: 32px;
+  font-size: 22px;
+  line-height: 30px;
 
   @media screen and (min-width: 768px) {
-    font-size: 36px;
-    line-height: 44px;
+    font-size: 32px;
+    line-height: 40px;
   }
 
   @media screen and (min-width: 992px) {

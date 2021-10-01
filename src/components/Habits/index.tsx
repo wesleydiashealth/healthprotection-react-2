@@ -11,6 +11,9 @@ import Loading from 'components/Loading';
 import Tooltip from './components/Tooltip';
 
 import Container, {
+  StepIntro,
+  StepTitle,
+  StepDescription,
   ContainerAlert,
   ContainerAlertTitle,
   HabitsContainer,
@@ -75,15 +78,13 @@ const Habits: React.FC = () => {
 
   return (
     <Container id="step_3" isActive={previousStep.isCompleted}>
-      <div className="step-intro content-wrapper">
+      <StepIntro>
         <GiForkKnifeSpoon
           size={52}
           color={previousStep.isCompleted ? '#1bc9bd' : '#565656'}
         />
-        <h2>
-          {!previousStep.isCompleted && (
-            <HiLockClosed size={20} className="locked-icon" />
-          )}
+        <StepTitle>
+          {!previousStep.isCompleted && <HiLockClosed size={20} />}
           Step 3
           <HiQuestionMarkCircle
             className="tooltip-icon"
@@ -102,7 +103,7 @@ const Habits: React.FC = () => {
             html
             backgroundColor="#fff"
           />
-        </h2>
+        </StepTitle>
 
         {!previousStep.isCompleted && (
           <div className="step-disabled">
@@ -111,10 +112,10 @@ const Habits: React.FC = () => {
           </div>
         )}
 
-        <h3>
+        <StepDescription>
           <strong>Fine-tune</strong> by adjusting your food habits
-        </h3>
-      </div>
+        </StepDescription>
+      </StepIntro>
       <ContainerAlert severity="info">
         <ContainerAlertTitle>Download our App</ContainerAlertTitle>
         Help us to train our app for food recognition with artificial
@@ -122,105 +123,115 @@ const Habits: React.FC = () => {
       </ContainerAlert>
 
       {previousStep.isCompleted && (
-        <HabitsContainer>
-          {error && <HabitsErrorContainer>{error}</HabitsErrorContainer>}
-          {foods.length && !error ? (
-            <>
-              {foods.map(food => {
-                const { title, dosages, interactions, dataSource } = food;
+        <>
+          <HabitsContainer>
+            {error && <HabitsErrorContainer>{error}</HabitsErrorContainer>}
+            {foods.length && !error ? (
+              <>
+                {foods.map(food => {
+                  const { title, dosages, interactions, dataSource } = food;
 
-                const nutraceuticalsInteractions = food.interactions.filter(
-                  interaction => {
-                    return selectedNutraceuticals.includes(
-                      interaction.nutraceuticalSlug,
-                    );
-                  },
-                );
+                  const nutraceuticalsInteractions = food.interactions.filter(
+                    interaction => {
+                      return selectedNutraceuticals.includes(
+                        interaction.nutraceuticalSlug,
+                      );
+                    },
+                  );
 
-                return (
-                  <HabitContainer key={food.slug}>
-                    <HabitContainerIntro>
-                      <img
-                        src={food.icon}
-                        alt={food.title}
-                        title={food.title}
-                      />
-                    </HabitContainerIntro>
-                    <HabitContainerContent>
-                      <HabitTitle>
-                        {food.title}
-                        <HiQuestionMarkCircle
-                          className="tooltip-icon"
-                          size={20}
-                          color={
-                            previousStep.isCompleted ? '#1bc9bd' : '#565656'
-                          }
-                          data-tip={ReactDOMServer.renderToStaticMarkup(
-                            <Tooltip
-                              {...{ title, dosages, interactions, dataSource }}
-                            />,
+                  return (
+                    <HabitContainer key={food.slug}>
+                      <HabitContainerIntro>
+                        <img
+                          src={food.icon}
+                          alt={food.title}
+                          title={food.title}
+                        />
+                      </HabitContainerIntro>
+                      <HabitContainerContent>
+                        <HabitTitle>
+                          {food.title}
+                          <HiQuestionMarkCircle
+                            className="tooltip-icon"
+                            size={20}
+                            color={
+                              previousStep.isCompleted ? '#1bc9bd' : '#565656'
+                            }
+                            data-tip={ReactDOMServer.renderToStaticMarkup(
+                              <Tooltip
+                                {...{
+                                  title,
+                                  dosages,
+                                  interactions,
+                                  dataSource,
+                                }}
+                              />,
+                            )}
+                            data-for="habit-title-tooltip"
+                          />
+                          <ReactToolTip
+                            id="habit-title-tooltip"
+                            className="habit-title-tooltip"
+                            place="bottom"
+                            type="light"
+                            effect="solid"
+                            offset={{ top: 10, left: 10 }}
+                            html
+                            backgroundColor="#fff"
+                          />
+                        </HabitTitle>
+
+                        <HabitQuestion>
+                          {`How many ${food.unit} do you consume per week?`}
+                        </HabitQuestion>
+                        <HabitDosages>{food.dosages}</HabitDosages>
+                        <HabitNutraceuticals>
+                          <HabitNutraceuticalsLabel>
+                            This food interacts with:
+                          </HabitNutraceuticalsLabel>
+
+                          {nutraceuticalsInteractions.map(
+                            nutraceuticalsInteraction => (
+                              <HabitNutraceuticalsItem
+                                key={
+                                  nutraceuticalsInteraction.nutraceuticalSlug
+                                }
+                              >
+                                <strong>
+                                  {nutraceuticalsInteraction.nutraceutical}
+                                </strong>
+                              </HabitNutraceuticalsItem>
+                            ),
                           )}
-                          data-for="habit-title-tooltip"
+                        </HabitNutraceuticals>
+                        <Dropdown
+                          options={food.intakeFrequency}
+                          value={food.intakeFrequency[0]}
+                          placeholder="Select an option"
                         />
-                        <ReactToolTip
-                          id="habit-title-tooltip"
-                          className="habit-title-tooltip"
-                          place="bottom"
-                          type="light"
-                          effect="solid"
-                          offset={{ top: 10, left: 10 }}
-                          html
-                          backgroundColor="#fff"
-                        />
-                      </HabitTitle>
-
-                      <HabitQuestion>
-                        How many {food.unit} do you consume per week?
-                      </HabitQuestion>
-                      <HabitDosages>{food.dosages}</HabitDosages>
-                      <HabitNutraceuticals>
-                        <HabitNutraceuticalsLabel>
-                          This food interacts with:
-                        </HabitNutraceuticalsLabel>
-
-                        {nutraceuticalsInteractions.map(
-                          nutraceuticalsInteraction => (
-                            <HabitNutraceuticalsItem
-                              key={nutraceuticalsInteraction.nutraceuticalSlug}
-                            >
-                              <strong>
-                                {nutraceuticalsInteraction.nutraceutical}
-                              </strong>
-                            </HabitNutraceuticalsItem>
-                          ),
-                        )}
-                      </HabitNutraceuticals>
-                      <Dropdown
-                        options={food.intakeFrequency}
-                        value={food.intakeFrequency[0]}
-                        placeholder="Select an option"
-                      />
-                    </HabitContainerContent>
-                  </HabitContainer>
-                );
-              })}
-              <HabitInvalidNutraceuticals>
-                For{' '}
-                <strong>
-                  {invalidNutraceuticalsString.slice(0, lastComma) +
-                    invalidNutraceuticalsString
-                      .slice(lastComma)
-                      .replace(invalidNutraceuticalsSeparator, ' and')}
-                </strong>{' '}
-                there {invalidNutraceuticals.length > 1 ? 'are' : 'is'} no
-                adjustments to be made. See below for your list of
-                nutraceuticals.
-              </HabitInvalidNutraceuticals>
-            </>
-          ) : (
-            <>{!error && <Loading color="#1bc9bd" />}</>
+                      </HabitContainerContent>
+                    </HabitContainer>
+                  );
+                })}
+              </>
+            ) : (
+              <>{!error && <Loading color="#1bc9bd" />}</>
+            )}
+          </HabitsContainer>
+          {!!invalidNutraceuticals.length && (
+            <HabitInvalidNutraceuticals>
+              For{' '}
+              <strong>
+                {invalidNutraceuticalsString.slice(0, lastComma) +
+                  invalidNutraceuticalsString
+                    .slice(lastComma)
+                    .replace(invalidNutraceuticalsSeparator, ' and')}
+              </strong>{' '}
+              there {invalidNutraceuticals.length > 1 ? 'are' : 'is'} no
+              adjustments to be made. See below for your list of nutraceuticals.
+            </HabitInvalidNutraceuticals>
           )}
-        </HabitsContainer>
+        </>
       )}
     </Container>
   );

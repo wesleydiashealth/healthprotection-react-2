@@ -122,7 +122,7 @@ export const Content = styled.div`
 export const ContentTitle = styled.h3`
   display: block;
 
-  font-weight: 600;
+  font-weight: 500;
   font-size: 10px;
   line-height: 18px;
 
@@ -131,8 +131,7 @@ export const ContentTitle = styled.h3`
 
     display: block;
 
-    font-weight: 600;
-    font-size: 14px;
+    font-size: 13px;
     line-height: 20px;
   }
 `;

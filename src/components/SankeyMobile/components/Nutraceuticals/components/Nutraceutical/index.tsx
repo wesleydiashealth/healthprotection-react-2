@@ -16,6 +16,7 @@ import Container, {
   Anchor,
   ContentContainer,
   Content,
+  ContentGroup,
   ContentTitle,
   ContentDescription,
 } from './styles';
@@ -68,8 +69,10 @@ const Nutraceutical: React.FC<NutraceuticalData> = ({
           trigger={
             <Content>
               <NutritionInfoIcon />
-              <ContentTitle>{title}</ContentTitle>
-              <ContentDescription>{`${dosage}`}</ContentDescription>
+              <ContentGroup>
+                <ContentTitle>{title}</ContentTitle>
+                <ContentDescription>{`${dosage}`}</ContentDescription>
+              </ContentGroup>
             </Content>
           }
           modal

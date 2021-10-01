@@ -20,12 +20,17 @@ const Container = styled.button<ContainerProps>`
   background: transparent;
 
   font-family: 'Montserrat';
-  font-size: 14px;
-  line-height: 18px;
+  font-size: 11px;
+  line-height: 11px;
   font-weight: 500;
 
   & ~ button {
     margin-top: 15px;
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 14px;
+    line-height: 18px;
   }
 
   ${props =>

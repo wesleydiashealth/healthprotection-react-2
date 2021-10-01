@@ -209,6 +209,7 @@ const Step5: React.FC = () => {
           <Autocomplete
             multiple
             id="medications_daily"
+            className="autocomplete-input"
             open={medDailyOpen}
             onClose={() => {
               setMedDailyOpen(false);
@@ -276,6 +277,7 @@ const Step5: React.FC = () => {
           <Autocomplete
             multiple
             id="medications_occasionally"
+            className="autocomplete-input"
             open={medOccaOpen}
             onClose={() => {
               setMedOccaOpen(false);

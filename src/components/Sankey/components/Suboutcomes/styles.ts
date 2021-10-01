@@ -12,7 +12,7 @@ const Container = styled.div`
   @media screen and (min-width: 768px) {
     align-self: center;
 
-    max-width: 460px;
+    max-width: 420px;
   }
 `;
 

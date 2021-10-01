@@ -47,6 +47,7 @@ const Suboutcome: React.FC<SuboutcomeProps> = ({
     updateConnections,
     updateFoods,
     updateError,
+    updateSelectedNutraceuticals,
   } = appContext;
 
   const sankeyContext = useSankey();
@@ -83,6 +84,8 @@ const Suboutcome: React.FC<SuboutcomeProps> = ({
         ),
       );
 
+      updateSelectedNutraceuticals(selectedNutraceuticals);
+
       const response = await getFoods({
         uuid: userQuery,
         nutraceuticals: selectedNutraceuticals,
@@ -104,6 +107,7 @@ const Suboutcome: React.FC<SuboutcomeProps> = ({
       userQuery,
       updateFoods,
       updateError,
+      updateSelectedNutraceuticals,
     ],
   );
 
@@ -159,7 +163,7 @@ const Suboutcome: React.FC<SuboutcomeProps> = ({
                   start={`${id}-${subConnection}`}
                   end={`${subConnection}-${id}`}
                   showHead={false}
-                  strokeWidth={28}
+                  strokeWidth={14}
                   curveness={0.8}
                   startAnchor="right"
                   endAnchor="left"

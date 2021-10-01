@@ -24,6 +24,10 @@ const Container = styled(Accordion)<OutcomeProps>`
     margin-top: 20px;
   }
 
+  &:before {
+    background-color: transparent;
+  }
+
   @media screen and (min-width: 768px) {
     padding: 10px 20px;
   }

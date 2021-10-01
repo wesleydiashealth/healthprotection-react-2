@@ -63,16 +63,29 @@ export default createGlobalStyle`
     margin-bottom: 10px !important;
   }
 
+  .popup-overlay {
+    max-width: 100vw;
+  }
+
   .popup-content {
+    margin: auto;
     border-radius: 16px;
 
     color: #565656;
 
+    max-width: calc(100vw - 40px);
+    width: 100%;
 
     filter: drop-shadow(10px 10px 26px rgba(0, 0, 0, 0.15));
 
     .ScrollbarsCustom-Content {
       padding: 30px !important;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .popup-content {
+
     }
   }
 `;

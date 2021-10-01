@@ -80,7 +80,7 @@ const Outcome: React.FC<OutcomeProps> = ({ id, title, color, suboutcomes }) => {
                   start={`${id}-${subConnection}`}
                   end={`${subConnection}-${id}`}
                   showHead={false}
-                  strokeWidth={28}
+                  strokeWidth={14}
                   curveness={0.8}
                   startAnchor="right"
                   endAnchor="left"
