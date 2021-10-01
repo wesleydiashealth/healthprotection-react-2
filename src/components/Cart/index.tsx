@@ -12,6 +12,8 @@ import Container, {
   StepIntro,
   StepTitle,
   StepDescription,
+  StepContent,
+  CheckoutProducts,
   ProductsList,
   Product,
   CheckoutSidebar,
@@ -19,7 +21,7 @@ import Container, {
 
 const Cart: React.FC = () => {
   const context = useApp();
-  const { steps } = context;
+  const { steps, labels } = context;
   const { step2: previousStep } = steps;
 
   return (
@@ -33,12 +35,12 @@ const Cart: React.FC = () => {
           {!previousStep.isCompleted && (
             <HiLockClosed size={20} className="locked-icon" />
           )}
-          <strong>Buy</strong> your products
+          {labels.cart_title}
           <HiQuestionMarkCircle
             className="tooltip-icon"
             size={20}
             color={previousStep.isCompleted ? '#1bc9bd' : '#565656'}
-            data-tip="<strong>Step 2</strong><span>We already made a pre-selection...</span>"
+            data-tip={`<strong>${labels.cart_title}</strong><span>${labels.cart_tooltip}</span>`}
             data-for="habits-title-tooltip"
           />
           <ReactToolTip
@@ -60,15 +62,12 @@ const Cart: React.FC = () => {
           </div>
         )}
 
-        <StepDescription>
-          Now you are ready to buy what is best for your health
-        </StepDescription>
+        <StepDescription>{labels.cart_description}</StepDescription>
       </StepIntro>
-
       {previousStep.isCompleted && (
-        <div className="step-content content-wrapper">
-          <div className="products-wrapper">
-            <h4>The safest products for your health</h4>
+        <StepContent>
+          <CheckoutProducts>
+            <h4>{labels.cart_subtitle}</h4>
             <ProductsList>
               {products.map(product => (
                 <Product key={product.value}>
@@ -82,7 +81,7 @@ const Cart: React.FC = () => {
                       <span>{product.dosage}</span>
                     </div>
                   </div>
-                  <a href="#xpto">Science-based information</a>
+                  <a href="#xpto">{labels.cart_science}</a>
                   <div className="product-values">
                     <span className="product-price">
                       {new Intl.NumberFormat('en-US', {
@@ -115,15 +114,15 @@ const Cart: React.FC = () => {
                   </div>
                   <a href="#remover" className="product-remove">
                     <FaTimesCircle />
-                    Remove
+                    {labels.cart_remove}
                   </a>
                 </Product>
               ))}
             </ProductsList>
-          </div>
+          </CheckoutProducts>
           <CheckoutSidebar>
             <div className="newsletter">
-              <h4>Get your personalized and detailed report by email:</h4>
+              <h4>{labels.newsletter_title}</h4>
               <div className="newsletter-buttons">
                 <input type="text" />
                 <input type="submit" value="Send" />
@@ -134,23 +133,25 @@ const Cart: React.FC = () => {
                   id="privacy_policy"
                   name="privacy_policy"
                 />
-                I agree with the privacy policy
+                {labels.newsletter_agree}
               </label>
             </div>
             <div className="summary">
               <h4>
-                <span>Total</span> $50.68
+                <span>{labels.summary_total}</span> $50.68
               </h4>
               <span className="summary-details">0.54/day</span>
-              <em>Your purchase serves for 30 days.</em>
-              <p>Shipping duties and taxes will be calculated at checkout</p>
+              <em>{labels.summary_description}</em>
+              <p>{labels.summary_shipping}</p>
               <button type="button">
-                GO TO CHECKOUT <BsArrowRight size={18} />
+                {labels.summary_button} <BsArrowRight size={18} />
               </button>
-              <span className="summary-save">Save your recommendation</span>
+              <span className="summary-save">
+                {labels.summary_save_recommendation}
+              </span>
             </div>
           </CheckoutSidebar>
-        </div>
+        </StepContent>
       )}
     </Container>
   );

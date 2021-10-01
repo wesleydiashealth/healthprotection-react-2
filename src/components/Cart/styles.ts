@@ -5,7 +5,17 @@ interface ContainerProps {
 }
 
 const Container = styled.div<ContainerProps>`
-  padding: 80px 0 0;
+  margin: 80px auto 40px;
+  padding: 0 10px;
+
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+
+  max-width: 1300px;
 
   ${props =>
     props.isActive &&
@@ -22,127 +32,6 @@ const Container = styled.div<ContainerProps>`
         }
       }
     `}
-
-  .step-intro {
-    margin-bottom: 40px;
-
-    text-align: center;
-
-    .locked-icon {
-      margin-right: 5px;
-    }
-
-    h2,
-    h3 {
-      margin-bottom: 10px;
-
-      color: #565656;
-    }
-
-    h2 {
-      display: flex;
-      justify-content: center;
-
-      font-weight: 700;
-
-      font-size: 33px;
-      line-height: 40px;
-
-      strong {
-        margin-right: 10px;
-
-        font-weight: 700;
-      }
-    }
-
-    h3 {
-      margin-bottom: 10px;
-
-      font-size: 28px;
-      line-height: 34px;
-
-      strong {
-        font-weight: 600;
-      }
-    }
-
-    span {
-      display: inline-block;
-      max-width: 900px;
-
-      color: #565656;
-
-      font-size: 18px;
-      line-height: 26px;
-    }
-
-    .tooltip-icon {
-      margin-left: 5px;
-      display: inline-flex;
-    }
-
-    .habits-title-tooltip {
-      width: 320px;
-      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.11);
-      border-radius: 20px;
-
-      text-align: left;
-      font-size: 14px;
-      line-height: 22px;
-
-      strong {
-        display: block;
-        margin-bottom: 10px;
-        font-size: 20px;
-        line-height: 28px;
-        font-weight: 500;
-      }
-
-      span {
-        font-size: 14px;
-        line-height: 22px;
-      }
-    }
-
-    .step-disabled {
-      margin-bottom: 10px;
-
-      strong {
-        font-weight: 600;
-      }
-
-      &,
-      span {
-        color: #707070;
-
-        font-size: 14px;
-        line-height: 22px;
-      }
-    }
-  }
-
-  .step-content {
-    display: flex;
-    flex-flow: column;
-  }
-
-  .products-wrapper {
-    border: 1px solid #c6c6c6;
-    border-radius: 12px;
-    padding: 20px;
-
-    overflow: hidden;
-
-    flex: 1;
-
-    > h4 {
-      margin-bottom: 20px;
-
-      font-weight: 600;
-
-      color: #1bc9bd;
-    }
-  }
 
   @media screen and (min-width: 768px) {
     .step-content {
@@ -254,6 +143,36 @@ export const StepDescription = styled.h3`
   @media screen and (min-width: 768px) {
     font-size: 28px;
     line-height: 34px;
+  }
+`;
+
+export const StepContent = styled.div`
+  display: flex;
+
+  @media screen and (min-width: 768px) {
+    flex-flow: row nowrap;
+  }
+`;
+
+export const CheckoutProducts = styled.div`
+  border: 1px solid #c6c6c6;
+  border-radius: 12px;
+  padding: 20px;
+
+  overflow: hidden;
+
+  flex: 1;
+
+  > h4 {
+    margin-bottom: 20px;
+
+    font-weight: 600;
+
+    color: #1bc9bd;
+  }
+
+  @media screen and (min-width: 768px) {
+    margin-right: 40px;
   }
 `;
 
@@ -569,6 +488,16 @@ export const CheckoutSidebar = styled.div`
         margin: 0 20px 0 0;
 
         flex: 1;
+      }
+    }
+
+    @media screen and (min-width: 768px) {
+      .newsletter {
+        .newsletter-buttons {
+          input[type='text'] {
+            width: 100%;
+          }
+        }
       }
     }
   }
