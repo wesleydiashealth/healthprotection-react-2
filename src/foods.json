@@ -1,0 +1,277 @@
+[
+  {
+      "slug": "coffee",
+      "title": "Coffee",
+      "content": "how often do you consume coffee?",
+      "icon": "https://www.healthprotection.com/wp-content/uploads/2021/09/icon-coffee.jpg",
+      "options": [
+          {
+              "slug": "coffee",
+              "title": "Coffee",
+              "type": "ml",
+              "default_slice": "80ml",
+              "slice_per_100g": "0.8",
+              "slice_eq_100g": "0",
+              "nutraceutic_slice_100g": "40"
+          },
+          {
+              "slug": "coffee",
+              "title": "Coffee",
+              "type": "ml",
+              "default_slice": "80ml",
+              "slice_per_100g": "0.8",
+              "slice_eq_100g": "5.6",
+              "nutraceutic_slice_100g": "40"
+          },
+          {
+              "slug": "coffee",
+              "title": "Coffee",
+              "type": "ml",
+              "default_slice": "80ml",
+              "slice_per_100g": "0.8",
+              "slice_eq_100g": "11.2",
+              "nutraceutic_slice_100g": "40"
+          },
+          {
+              "slug": "coffee",
+              "title": "Coffee",
+              "type": "ml",
+              "default_slice": "80ml",
+              "slice_per_100g": "0.8",
+              "slice_eq_100g": "16.8",
+              "nutraceutic_slice_100g": "40"
+          }
+      ],
+      "diet": [],
+      "allergy": [],
+      "unit": "cups",
+      "dosages": "1 cup = 80ml = 2.7oz.",
+      "interactions": [
+          {
+              "nutraceutical": "Caffeine",
+              "nutraceuticalSlug": "caffeine",
+              "dosage": "40",
+              "dosageUnit": "mg"
+          },
+          {
+              "nutraceutical": "Magnesium",
+              "nutraceuticalSlug": "magnesium",
+              "dosage": "3",
+              "dosageUnit": "mg"
+          }
+      ],
+      "dataSource": [
+          "usda"
+      ],
+      "intakeFrequency": [
+          {
+              "value": "0",
+              "label": "I don't consume"
+          },
+          {
+              "value": "7",
+              "label": "Seven times a week"
+          },
+          {
+              "value": "14",
+              "label": "Fourteen times a week"
+          },
+          {
+              "value": "21",
+              "label": "Twenty one times a week"
+          },
+          {
+              "value": "28+",
+              "label": "Twenty eight or more times a week"
+          }
+      ]
+  },
+  {
+      "slug": "food-green-tea",
+      "title": "Green Tea",
+      "content": "how often do you consume green tea?",
+      "icon": "https://www.healthprotection.com/wp-content/uploads/2021/09/icon-green-tea.jpg",
+      "options": [
+          {
+              "slug": "green-tea",
+              "title": "Green Tea",
+              "type": "xícara de chá",
+              "default_slice": "240ml",
+              "slice_per_100g": "2.4",
+              "slice_eq_100g": "0",
+              "nutraceutic_slice_100g": "12"
+          },
+          {
+              "slug": "green-tea",
+              "title": "Green Tea",
+              "type": "xícara de chá",
+              "default_slice": "240ml",
+              "slice_per_100g": "2.4",
+              "slice_eq_100g": "16.8",
+              "nutraceutic_slice_100g": "12"
+          },
+          {
+              "slug": "green-tea",
+              "title": "Green Tea",
+              "type": "xícara de chá",
+              "default_slice": "240ml",
+              "slice_per_100g": "2.4",
+              "slice_eq_100g": "33.6",
+              "nutraceutic_slice_100g": "12"
+          },
+          {
+              "slug": "green-tea",
+              "title": "Green Tea",
+              "type": "xícara de chá",
+              "default_slice": "240ml",
+              "slice_per_100g": "2.4",
+              "slice_eq_100g": "50.4",
+              "nutraceutic_slice_100g": "12"
+          }
+      ],
+      "diet": [],
+      "allergy": [],
+      "unit": "tea-cups",
+      "dosages": "1 tea-cup = 240ml = 8.12 fl.oz.",
+      "interactions": [
+          {
+              "nutraceutical": "Caffeine",
+              "nutraceuticalSlug": "caffeine",
+              "dosage": "12",
+              "dosageUnit": "mg"
+          },
+          {
+              "nutraceutical": "EGCG",
+              "nutraceuticalSlug": "egcg",
+              "dosage": "75",
+              "dosageUnit": "mg"
+          },
+          {
+              "nutraceutical": "Green Tea",
+              "nutraceuticalSlug": "green-tea",
+              "dosage": "100",
+              "dosageUnit": "mg"
+          },
+          {
+              "nutraceutical": "Theanine",
+              "nutraceuticalSlug": "theanine",
+              "dosage": "6,5",
+              "dosageUnit": "mg"
+          }
+      ],
+      "dataSource": [
+          "usda",
+          "nih",
+          "healthline"
+      ],
+      "intakeFrequency": [
+          {
+              "value": "0",
+              "label": "I don't consume"
+          },
+          {
+              "value": "7",
+              "label": "Seven times a week"
+          },
+          {
+              "value": "14",
+              "label": "Fourteen times a week"
+          },
+          {
+              "value": "21",
+              "label": "Twenty one times a week"
+          },
+          {
+              "value": "28+",
+              "label": "Twenty eight or more times a week"
+          }
+      ]
+  },
+  {
+      "slug": "food-yerba-mate",
+      "title": "Yerba Mate",
+      "content": "how often do you consume yerba mate?",
+      "icon": "https://www.healthprotection.com/wp-content/uploads/2021/09/icon-yerba-mate.jpg",
+      "options": [
+          {
+              "slug": "yerba-mate",
+              "title": "Yerba Mate",
+              "type": "xícara de chá",
+              "default_slice": "240ml",
+              "slice_per_100g": "2.4",
+              "slice_eq_100g": "0",
+              "nutraceutic_slice_100g": "9999"
+          },
+          {
+              "slug": "yerba-mate",
+              "title": "Yerba Mate",
+              "type": "xícara de chá",
+              "default_slice": "240ml",
+              "slice_per_100g": "2.4",
+              "slice_eq_100g": "16.8",
+              "nutraceutic_slice_100g": "9999"
+          },
+          {
+              "slug": "yerba-mate",
+              "title": "Yerba Mate",
+              "type": "xícara de chá",
+              "default_slice": "240ml",
+              "slice_per_100g": "2.4",
+              "slice_eq_100g": "33.6",
+              "nutraceutic_slice_100g": "9999"
+          },
+          {
+              "slug": "yerba-mate",
+              "title": "Yerba Mate",
+              "type": "xícara de chá",
+              "default_slice": "240ml",
+              "slice_per_100g": "2.4",
+              "slice_eq_100g": "50.4",
+              "nutraceutic_slice_100g": "9999"
+          }
+      ],
+      "diet": [],
+      "allergy": [],
+      "unit": "tea-cups",
+      "dosages": "1 tea-cup = 240ml = 8.12 fl.oz.",
+      "interactions": [
+          {
+              "nutraceutical": "Caffeine",
+              "nutraceuticalSlug": "caffeine",
+              "dosage": "72",
+              "dosageUnit": "mg"
+          },
+          {
+              "nutraceutical": "Yerba Mate",
+              "nutraceuticalSlug": "yerba-mate",
+              "dosage": "100",
+              "dosageUnit": "mg"
+          }
+      ],
+      "dataSource": [
+          "medline-plus"
+      ],
+      "intakeFrequency": [
+          {
+              "value": "0",
+              "label": "I don't consume"
+          },
+          {
+              "value": "7",
+              "label": "Seven times a week"
+          },
+          {
+              "value": "14",
+              "label": "Fourteen times a week"
+          },
+          {
+              "value": "21",
+              "label": "Twenty one times a week"
+          },
+          {
+              "value": "28+",
+              "label": "Twenty eight or more times a week"
+          }
+      ]
+  }
+]

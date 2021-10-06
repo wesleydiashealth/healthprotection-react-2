@@ -4,13 +4,13 @@ import { useMediaQuery } from 'react-responsive';
 import Sankey from 'components/Sankey';
 import SankeyMobile from 'components/SankeyMobile';
 
-import { AppProvider } from 'contexts/app';
-
 import Hero from 'components/Hero';
 import Wizard from 'components/Wizard';
-
 import Cart from 'components/Cart';
 import Habits from 'components/Habits';
+
+import { AppProvider } from 'contexts/app';
+
 import Container from './styles';
 
 const Home: React.FC = () => {

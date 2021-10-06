@@ -6,6 +6,7 @@ import { FiChevronDown } from 'react-icons/fi';
 import { useApp } from 'contexts/app';
 import { useSankey } from 'contexts/sankey';
 
+import OutcomeData from 'dtos/OutcomeData';
 import Suboutcomes from '../../../Suboutcomes';
 import Container, {
   Content,
@@ -15,15 +16,13 @@ import Container, {
   Anchor,
 } from './styles';
 
-interface OutcomeProps {
-  id: string;
-  title: string;
-  color: string;
-  description: string;
-  suboutcomes: string[];
-}
-
-const Outcome: React.FC<OutcomeProps> = ({ id, title, color, suboutcomes }) => {
+const Outcome: React.FC<OutcomeData> = ({
+  id,
+  title,
+  color,
+  suboutcomes,
+  icon,
+}) => {
   const appContext = useApp();
   const { connections } = appContext;
 
@@ -66,10 +65,7 @@ const Outcome: React.FC<OutcomeProps> = ({ id, title, color, suboutcomes }) => {
         color={color}
         expandIcon={<FiChevronDown color="#000" />}
       >
-        <ContentIcon
-          src={`${process.env.PUBLIC_URL}/icons/outcomes/${id}.svg`}
-          alt={title}
-        />
+        <ContentIcon src={icon} alt={title} />
         <ContentTitle>{title}</ContentTitle>
         {!activeAccordions.includes(id) && !!subConnections.length && (
           <Anchors>

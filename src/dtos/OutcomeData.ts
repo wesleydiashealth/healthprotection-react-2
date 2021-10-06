@@ -4,4 +4,5 @@ export default interface OutcomeData {
   color: string;
   description: string;
   suboutcomes: string[];
+  icon: string;
 }

@@ -16,7 +16,13 @@ import Container, {
   ContentTitle,
 } from './styles';
 
-const Outcome: React.FC<OutcomeData> = ({ id, title, color, description }) => {
+const Outcome: React.FC<OutcomeData> = ({
+  id,
+  title,
+  color,
+  description,
+  icon,
+}) => {
   const context = useApp();
   const { connections } = context;
 
@@ -83,11 +89,7 @@ const Outcome: React.FC<OutcomeData> = ({ id, title, color, description }) => {
         ))}
       </Anchors>
       <Content>
-        <ContentIcon
-          src={`${process.env.PUBLIC_URL}/icons/outcomes/${id}.svg`}
-          alt={title}
-          width={36}
-        />
+        <ContentIcon src={icon} alt={title} width={36} />
         <ContentTitle>{title}</ContentTitle>
         <HiQuestionMarkCircle
           size={20}
