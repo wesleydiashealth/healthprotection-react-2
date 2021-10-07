@@ -1,0 +1,16 @@
+{
+  "outcomes": [],
+  "sub_outcomes": {
+      "gender": {
+          "male": [
+              "menopause",
+              "pms"
+          ]
+      }
+  },
+  "nutraceutical": {
+      "out": {
+          "gender": "male"
+      }
+  }
+}

@@ -5,10 +5,13 @@ import wordpressApi from 'services/wordpress';
 
 import defaultLabels from 'labels.json';
 
+import AnswerData from 'dtos/AnswerData';
+import ExcludesData from 'dtos/ExcludesData';
 import OutcomeData from 'dtos/OutcomeData';
 import SuboutcomeData from 'dtos/SuboutcomeData';
 import NutraceuticalData from 'dtos/NutraceuticalData';
 import FoodData from 'dtos/FoodData';
+import HabitData from 'dtos/HabitData';
 
 interface LabelsData {
   [key: string]: string;
@@ -26,6 +29,8 @@ interface StepsData {
 
 interface AppContextData {
   labels: LabelsData;
+  answers: AnswerData[];
+  excludes: ExcludesData;
   steps: StepsData;
   userQuery: string;
   outcomes: OutcomeData[];
@@ -34,8 +39,11 @@ interface AppContextData {
   selectedNutraceuticals: string[];
   connections: ConnectionsProps;
   foods: FoodData[];
+  habits: HabitData[];
   error: string;
   updateStep(step: string, attrs: StepData): Promise<void>;
+  updateAnswers(answers: AnswerData[]): Promise<void>;
+  updateExcludes(updatedExcludes: ExcludesData): Promise<void>;
   updateUserQuery(userQuery: string): Promise<void>;
   updateSelectedNutraceuticals(
     updatedSelectedNutraceuticals: string[],
@@ -47,6 +55,7 @@ interface AppContextData {
     nutraceuticals: string[],
   ): Promise<void>;
   updateFoods(updatedFoods: FoodData[]): Promise<void>;
+  updateHabits(updatedHabits: HabitData[]): Promise<void>;
   updateError(updatedError: string): Promise<void>;
 }
 
@@ -73,6 +82,13 @@ export const AppProvider: React.FC = ({ children }) => {
     step3: { isCompleted: false, isDisabled: true },
   });
 
+  const [answers, setAnswers] = useState<AnswerData[]>([]);
+
+  const [excludes, setExcludes] = useState<ExcludesData>({
+    outcomes: {},
+    sub_outcomes: {},
+  });
+
   const [userQuery, setUserQuery] = useState<string>('');
 
   const [outcomes, setOutcomes] = useState<OutcomeData[]>([]);
@@ -87,6 +103,8 @@ export const AppProvider: React.FC = ({ children }) => {
   const [connections, setConnections] = useState<ConnectionsProps>({});
 
   const [foods, setFoods] = useState<FoodData[]>([]);
+
+  const [habits, setHabits] = useState<HabitData[]>([]);
 
   const [error, setError] = useState<string>('');
 
@@ -167,8 +185,16 @@ export const AppProvider: React.FC = ({ children }) => {
     setSteps({ ...steps });
   }
 
+  async function updateAnswers(updatedAnswers: AnswerData[]) {
+    setAnswers(updatedAnswers);
+  }
+
   async function updateUserQuery(newUserQuery: string) {
     setUserQuery(newUserQuery);
+  }
+
+  async function updateExcludes(updatedExcludes: ExcludesData) {
+    setExcludes(updatedExcludes);
   }
 
   async function updateSelectedNutraceuticals(
@@ -199,6 +225,10 @@ export const AppProvider: React.FC = ({ children }) => {
     setFoods(updatedFoods);
   }
 
+  async function updateHabits(updatedHabits: HabitData[]) {
+    setHabits(updatedHabits);
+  }
+
   async function updateError(updatedError: string) {
     setError(updatedError);
   }
@@ -207,6 +237,8 @@ export const AppProvider: React.FC = ({ children }) => {
     <AppContext.Provider
       value={{
         labels,
+        answers,
+        excludes,
         steps,
         userQuery,
         outcomes,
@@ -215,14 +247,18 @@ export const AppProvider: React.FC = ({ children }) => {
         selectedNutraceuticals,
         connections,
         foods,
+        habits,
         error,
         updateStep,
+        updateAnswers,
+        updateExcludes,
         updateUserQuery,
         updateSelectedNutraceuticals,
         updateOutcomes,
         updateSuboutcomes,
         updateConnections,
         updateFoods,
+        updateHabits,
         updateError,
       }}
     >

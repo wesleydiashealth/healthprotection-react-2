@@ -1,0 +1,26 @@
+[
+  {
+      "question": "age",
+      "answer": "04/2016"
+  },
+  {
+      "question": "gender",
+      "answer": "male"
+  },
+  {
+      "question": "diet",
+      "answer": "none"
+  },
+  {
+      "question": "allergies",
+      "answer": "none"
+  },
+  {
+      "question": "med",
+      "answer": "no"
+  },
+  {
+      "question": "decease",
+      "answer": "do-you-fit-in-any-of-these-categories-none"
+  }
+]

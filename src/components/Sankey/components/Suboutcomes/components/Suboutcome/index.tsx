@@ -100,12 +100,12 @@ const Suboutcome: React.FC<SuboutcomeProps> = ({
       const selectedNutraceuticals = Array.from(
         new Set(
           Object.values(connections).reduce((acc: string[], curr) => {
-            const xpto = Object.values(curr).reduce(
+            const connection = Object.values(curr).reduce(
               (acc2, curr2) => [...acc2, ...curr2],
               [],
             );
 
-            return [...acc, ...xpto];
+            return [...acc, ...connection];
           }, []),
         ),
       );
@@ -116,6 +116,8 @@ const Suboutcome: React.FC<SuboutcomeProps> = ({
         uuid: userQuery,
         nutraceuticals: selectedNutraceuticals,
       });
+
+      updateFoods(response.content);
 
       if (!response.content.length) {
         updateError(

@@ -8,7 +8,8 @@
       "suboutcomes": [
           "eye-function"
       ],
-      "icon": "https://www.healthprotection.com/wp-content/uploads/2021/10/eye-health.svg"
+      "icon": "https://www.healthprotection.com/wp-content/uploads/2021/10/eye-health.svg",
+      "iconPng": "https://www.healthprotection.com/wp-content/uploads/2021/10/eye-health-1.png"
   },
   {
       "id": "weight-management",
@@ -21,7 +22,8 @@
           "thermogenic-effect",
           "fat-loss"
       ],
-      "icon": "https://www.healthprotection.com/wp-content/uploads/2021/10/weight-management.svg"
+      "icon": "https://www.healthprotection.com/wp-content/uploads/2021/10/weight-management.svg",
+      "iconPng": "https://www.healthprotection.com/wp-content/uploads/2021/10/weight-management-1.png"
   },
   {
       "id": "libido-and-sexual-health",
@@ -34,7 +36,8 @@
           "sexual-performance",
           "erections"
       ],
-      "icon": "https://www.healthprotection.com/wp-content/uploads/2021/10/libido-and-sexual-health.svg"
+      "icon": "https://www.healthprotection.com/wp-content/uploads/2021/10/libido-and-sexual-health.svg",
+      "iconPng": "https://www.healthprotection.com/wp-content/uploads/2021/10/libido-and-sexual-health-1.png"
   },
   {
       "id": "liver-health",
@@ -45,7 +48,8 @@
       "suboutcomes": [
           "liver-function"
       ],
-      "icon": "https://www.healthprotection.com/wp-content/uploads/2021/10/liver-health.svg"
+      "icon": "https://www.healthprotection.com/wp-content/uploads/2021/10/liver-health.svg",
+      "iconPng": "https://www.healthprotection.com/wp-content/uploads/2021/10/liver-health-1.png"
   },
   {
       "id": "bone-and-joint-health",
@@ -58,7 +62,8 @@
           "bone-density",
           "joint-pain-and-stiffness"
       ],
-      "icon": "https://www.healthprotection.com/wp-content/uploads/2021/10/bone-and-joint-health.svg"
+      "icon": "https://www.healthprotection.com/wp-content/uploads/2021/10/bone-and-joint-health.svg",
+      "iconPng": "https://www.healthprotection.com/wp-content/uploads/2021/10/bone-and-joint-health-1.png"
   },
   {
       "id": "cognitive-function-and-brain-health",
@@ -71,7 +76,8 @@
           "memory",
           "focus-attention"
       ],
-      "icon": "https://www.healthprotection.com/wp-content/uploads/2021/10/cognitive-function-and-brain-health.svg"
+      "icon": "https://www.healthprotection.com/wp-content/uploads/2021/10/cognitive-function-and-brain-health.svg",
+      "iconPng": "https://www.healthprotection.com/wp-content/uploads/2021/10/cognitive-function-and-brain-health-1.png"
   },
   {
       "id": "cardiovascular-health",
@@ -83,7 +89,8 @@
           "blood-pressure-cardiovascular-health",
           "cholesterol-triglycerides"
       ],
-      "icon": "https://www.healthprotection.com/wp-content/uploads/2021/10/cardiovascular-health.svg"
+      "icon": "https://www.healthprotection.com/wp-content/uploads/2021/10/cardiovascular-health.svg",
+      "iconPng": "https://www.healthprotection.com/wp-content/uploads/2021/10/cardiovascular-health-1.png"
   },
   {
       "id": "muscle-health",
@@ -97,7 +104,8 @@
           "muscle-gain",
           "muscle-recovery"
       ],
-      "icon": "https://www.healthprotection.com/wp-content/uploads/2021/10/muscle-health.svg"
+      "icon": "https://www.healthprotection.com/wp-content/uploads/2021/10/muscle-health.svg",
+      "iconPng": "https://www.healthprotection.com/wp-content/uploads/2021/10/muscle-health-1.png"
   },
   {
       "id": "hormone-regulation",
@@ -108,6 +116,7 @@
       "suboutcomes": [
           "testosterone"
       ],
-      "icon": "https://www.healthprotection.com/wp-content/uploads/2021/10/hormone-regulation.svg"
+      "icon": "https://www.healthprotection.com/wp-content/uploads/2021/10/hormone-regulation.svg",
+      "iconPng": "https://www.healthprotection.com/wp-content/uploads/2021/10/hormone-regulation-1.png"
   }
 ]

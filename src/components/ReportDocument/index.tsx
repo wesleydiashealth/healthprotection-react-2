@@ -4,7 +4,9 @@ import { Page, Text, Link, Image, View, Document } from '@react-pdf/renderer';
 
 // import { useApp } from 'contexts/app';
 
-import foods from 'foods.json';
+import answers from 'answers.json';
+// import excludes from 'excludes.json';
+import habits from 'habits.json';
 import outcomes from 'outcomes.json';
 import suboutcomes from 'suboutcomes.json';
 
@@ -13,14 +15,24 @@ import styles from './styles';
 // Create Document Component
 const ReportDocument: React.FC = () => {
   // const context = useApp();
+  const today = new Date();
 
   return (
     <Document>
       <Page size="A4" style={styles.page}>
         <View style={styles.header}>
-          <Text style={styles.date}>test performed on: 10/05/2021</Text>
+          <Text style={styles.date}>
+            test performed on:{' '}
+            {`${today.getDate()}/${
+              today.getMonth() + 1
+            }/${today.getFullYear()}`}
+          </Text>
         </View>
         <View style={styles.intro}>
+          <Image
+            style={styles.introIcon}
+            src="/images/healthprotection_icon.png"
+          />
           <Text style={styles.introTitle}>Personalized for you</Text>
           <Text style={styles.introDesc}>
             We are glad you are taking care of yourself and we are here to
@@ -51,23 +63,15 @@ const ReportDocument: React.FC = () => {
             there are a few things you will need to know and note.
           </Text>
         </View>
-        <View style={styles.answers}>
+        <View style={styles.answers} break>
           <Text style={styles.sectionTitle}>Your answers in Step 1</Text>
-          <Text style={styles.sectionLabel}>
-            Age: <Text style={styles.sectionValue}>18-30</Text>
-          </Text>
-          <Text style={styles.sectionLabel}>
-            Gender: <Text style={styles.sectionValue}>Female</Text>
-          </Text>
-          <Text style={styles.sectionLabel}>
-            Diet: <Text style={styles.sectionValue}>None</Text>
-          </Text>
-          <Text style={styles.sectionLabel}>
-            Allergies: <Text style={styles.sectionValue}>Peanuts</Text>
-          </Text>
-          <Text style={styles.sectionLabel}>
-            Medications: <Text style={styles.sectionValue}>None</Text>
-          </Text>
+          {answers.map(answer => (
+            <Text key={answer.question} style={styles.sectionLabel}>
+              {answer.question.charAt(0).toUpperCase() +
+                answer.question.slice(1)}
+              : <Text style={styles.sectionValue}>{answer.answer}</Text>
+            </Text>
+          ))}
         </View>
         <View style={styles.excludes}>
           <Text style={styles.sectionTitleMt40}>
@@ -82,8 +86,11 @@ const ReportDocument: React.FC = () => {
             Your desire outcomes in Step 2
           </Text>
           {outcomes.map(outcome => (
-            <View style={styles.outcome}>
-              <Image style={styles.outcomeIcon} src={outcome.icon} />
+            <View key={outcome.id} style={styles.outcome}>
+              <Image
+                style={styles.outcomeIcon}
+                src={`/icons/outcomes/${outcome.id}.jpg`}
+              />
               <Text style={styles.outcomeTitle}>{outcome.title}</Text>
             </View>
           ))}
@@ -93,7 +100,7 @@ const ReportDocument: React.FC = () => {
             Your desire sub-outcomes in Step 2
           </Text>
           {suboutcomes.map(suboutcome => (
-            <View style={styles.suboutcome}>
+            <View key={suboutcome.id} style={styles.suboutcome}>
               <Text style={styles.suboutcomeTitle}>{suboutcome.title}</Text>
             </View>
           ))}
@@ -102,12 +109,12 @@ const ReportDocument: React.FC = () => {
           <Text style={styles.sectionTitleMt40}>
             About your eating habits in Step 3
           </Text>
-          {foods.map(food => (
-            <View style={styles.food}>
-              <Image style={styles.foodIcon} src={food.icon} />
-              <View style={styles.foodContent}>
-                <Text style={styles.foodTitle}>{food.title}: </Text>
-                <Text style={styles.foodFrequency}>Once a week</Text>
+          {habits.map(habit => (
+            <View key={habit.food} style={styles.habit}>
+              <Image style={styles.habitIcon} src={habit.icon} />
+              <View style={styles.habitContent}>
+                <Text style={styles.habitTitle}>{habit.food}: </Text>
+                <Text style={styles.habitFrequency}>{habit.frequency}</Text>
               </View>
             </View>
           ))}

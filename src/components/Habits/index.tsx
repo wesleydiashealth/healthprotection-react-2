@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import ReactDOMServer from 'react-dom/server';
 import ReactToolTip from 'react-tooltip';
 import { HiQuestionMarkCircle, HiLockClosed } from 'react-icons/hi';
@@ -8,6 +8,9 @@ import 'react-dropdown/style.css';
 
 import { useApp } from 'contexts/app';
 import Loading from 'components/Loading';
+
+import HabitData from 'dtos/HabitData';
+
 import Tooltip from './components/Tooltip';
 
 import Container, {
@@ -32,8 +35,15 @@ import Container, {
 
 const Habits: React.FC = () => {
   const context = useApp();
-  const { steps, nutraceuticals, selectedNutraceuticals, foods, error } =
-    context;
+  const {
+    steps,
+    habits,
+    nutraceuticals,
+    selectedNutraceuticals,
+    foods,
+    error,
+    updateHabits,
+  } = context;
   const { step2: previousStep } = steps;
 
   const foodsNutraceuticals = foods.reduce(
@@ -75,6 +85,30 @@ const Habits: React.FC = () => {
   useEffect(() => {
     ReactToolTip.rebuild();
   });
+
+  const handleHabitInput = useCallback(
+    (food, frequency) => {
+      const updatedHabits: HabitData[] = [...habits];
+
+      const habitIndex = habits.findIndex(habit => habit.food === food.title);
+
+      if (habitIndex > -1) {
+        updatedHabits[habitIndex] = {
+          food: food.title,
+          icon: food.icon,
+          frequency,
+        };
+
+        updateHabits(updatedHabits);
+      } else {
+        updateHabits([
+          ...habits,
+          { food: food.title, icon: food.icon, frequency },
+        ]);
+      }
+    },
+    [habits, updateHabits],
+  );
 
   return (
     <Container id="step_3" isActive={previousStep.isCompleted}>
@@ -208,6 +242,9 @@ const Habits: React.FC = () => {
                           options={food.intakeFrequency}
                           value={food.intakeFrequency[0]}
                           placeholder="Select an option"
+                          onChange={({ label: frequency }) =>
+                            handleHabitInput(food, frequency)
+                          }
                         />
                       </HabitContainerContent>
                     </HabitContainer>

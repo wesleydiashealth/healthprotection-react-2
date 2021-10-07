@@ -59,11 +59,16 @@ const styles = StyleSheet.create({
     maxWidth: 320,
     textAlign: 'center',
   },
+  introIcon: {
+    marginHorizontal: 'auto',
+    marginBottom: 20,
+    width: 60,
+    height: 'auto',
+  },
   introTitle: {
     marginBottom: 10,
     borderBottom: 1,
     borderColor: '#e5e5e5',
-    paddingBottom: 10,
     color: '#2B2560',
     fontSize: 24,
   },
@@ -97,26 +102,26 @@ const styles = StyleSheet.create({
     color: '#2B2560',
   },
   outcome: {
-    marginBottom: 10,
+    marginBottom: 20,
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
   },
   outcomeIcon: {
     marginRight: 10,
-    width: 48,
+    width: 32,
   },
-  food: {
+  habit: {
     marginBottom: 10,
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
   },
-  foodIcon: {
+  habitIcon: {
     marginRight: 10,
     width: 48,
   },
-  foodContent: {
+  habitContent: {
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',

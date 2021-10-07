@@ -13,6 +13,8 @@ import createUserQuery from 'services/createUserQuery';
 
 import getValidationErrors from 'utils/getValidationErrors';
 
+import AnswerData from 'dtos/AnswerData';
+
 import { WizardProvider } from 'contexts/wizard';
 import Container, { StepIntro, StepTitle, StepDescription } from './styles';
 import 'react-multi-carousel/lib/styles.css';
@@ -37,8 +39,14 @@ const Wizard: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
 
   const context = useApp();
-  const { labels, updateUserQuery, updateOutcomes, updateSuboutcomes } =
-    context;
+  const {
+    labels,
+    updateAnswers,
+    updateExcludes,
+    updateUserQuery,
+    updateOutcomes,
+    updateSuboutcomes,
+  } = context;
 
   const previousStep = { isCompleted: true };
 
@@ -46,7 +54,7 @@ const Wizard: React.FC = () => {
     async (data: HTMLFormElement) => {
       const { age, gender, diet, allergies, med, decease } = data;
 
-      const requestData = [
+      const requestData: AnswerData[] = [
         { question: 'age', answer: age },
         { question: 'gender', answer: gender },
         { question: 'diet', answer: diet },
@@ -73,10 +81,13 @@ const Wizard: React.FC = () => {
           abortEarly: false,
         });
 
+        updateAnswers(requestData);
+
         const response = await createUserQuery(requestData);
-        const { uuid, outcomes, suboutcomes } = response.content;
+        const { uuid, outcomes, suboutcomes, excludes } = response.content;
 
         updateUserQuery(uuid);
+        updateExcludes(excludes);
         updateOutcomes(outcomes);
         updateSuboutcomes(suboutcomes);
       } catch (err) {
@@ -87,7 +98,13 @@ const Wizard: React.FC = () => {
         }
       }
     },
-    [updateUserQuery, updateOutcomes, updateSuboutcomes],
+    [
+      updateAnswers,
+      updateUserQuery,
+      updateExcludes,
+      updateOutcomes,
+      updateSuboutcomes,
+    ],
   );
 
   return (

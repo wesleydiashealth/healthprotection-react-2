@@ -5,4 +5,5 @@ export default interface OutcomeData {
   description: string;
   suboutcomes: string[];
   icon: string;
+  iconPng: string;
 }
