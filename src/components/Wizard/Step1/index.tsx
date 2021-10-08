@@ -4,9 +4,12 @@ import { HiQuestionMarkCircle, HiOutlineCheckCircle } from 'react-icons/hi';
 import { CarouselContext } from 'pure-react-carousel';
 import Select from 'react-select';
 
+import { useApp } from 'contexts/app';
 import { useWizard } from 'contexts/wizard';
 // import Button from 'components/Button';
 import Input from 'components/Input';
+
+import AnswerData from 'dtos/AnswerData';
 
 import months from 'months.json';
 
@@ -31,12 +34,16 @@ function getYears(startYear = 1901) {
 }
 
 const Step1: React.FC = () => {
-  const context = useWizard();
-  const { steps, questions } = context;
+  const appContext = useApp();
+  const { answers, updateAnswers } = appContext;
+
+  const wizardContext = useWizard();
+  const { steps, questions, updateStep } = wizardContext;
   const { step1: step } = steps;
   const currentQuestion = questions.find(question => Number(question.id) === 1);
 
   const carouselContext = useContext(CarouselContext);
+  const { setStoreState } = carouselContext;
 
   const [birthMonth, setBirthMonth] = useState<string>('');
   const [birthYear, setBirthYear] = useState<string>('');
@@ -54,9 +61,49 @@ const Step1: React.FC = () => {
     setBirthMonth(month);
   }, []);
 
-  const handleYearInput = useCallback((year = '') => {
-    setBirthYear(year);
-  }, []);
+  const handleYearInput = useCallback(
+    (year = '') => {
+      const updatedAnswers: AnswerData[] = [...answers];
+
+      const answerIndex = answers.findIndex(
+        answer => answer.question === 'age',
+      );
+
+      setBirthYear(year);
+
+      updateStep('step1', {
+        isCompleted: true,
+        answers: `${birthMonth}/${year}`,
+      });
+
+      if (answerIndex > -1) {
+        updatedAnswers[answerIndex] = {
+          question: currentQuestion?.label || '',
+          answer: `${birthMonth}/${year}`,
+        };
+
+        updateAnswers(updatedAnswers);
+      } else {
+        updateAnswers([
+          ...answers,
+          {
+            question: currentQuestion?.label || '',
+            answer: `${birthMonth}/${year}`,
+          },
+        ]);
+      }
+
+      setStoreState({ currentSlide: 1 });
+    },
+    [
+      answers,
+      updateAnswers,
+      birthMonth,
+      currentQuestion,
+      setStoreState,
+      updateStep,
+    ],
+  );
 
   const years = getYears();
 
@@ -98,7 +145,7 @@ const Step1: React.FC = () => {
         options={months}
         placeholder="Select your birth month"
         onChange={event => {
-          handleMonthInput(event?.value || '');
+          handleMonthInput(event?.value);
         }}
       />
       <Select
@@ -109,33 +156,9 @@ const Step1: React.FC = () => {
         placeholder="Select your birth year"
         isDisabled={!birthMonth}
         onChange={event => {
-          handleYearInput(event?.value || '');
-          context.updateStep('step1', {
-            isCompleted: true,
-            answers: birthGroup,
-          });
-          carouselContext.setStoreState({ currentSlide: 1 });
+          handleYearInput(event?.value);
         }}
       />
-      {/* {currentQuestion?.answers &&
-        Object.values(currentQuestion.answers).map(answer => (
-          <Button
-            key={answer.id}
-            type="submit"
-            onClick={() => {
-              context.updateStep('step1', {
-                isCompleted: true,
-                answers: answer.api,
-              });
-              carouselContext.setStoreState({ currentSlide: 1 });
-            }}
-            isActive={step.answers === answer.api}
-            name={currentQuestion.table}
-            value={step.answers}
-          >
-            {answer.label}
-          </Button>
-        ))} */}
     </StepContainer>
   );
 };

@@ -18,8 +18,6 @@ import Container, {
 
 interface TooltipProps {
   slug: string;
-  title: string;
-  description: string;
   supConnections: string[];
 }
 

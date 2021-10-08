@@ -1,20 +1,38 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
-import { Page, Text, Link, Image, View, Document } from '@react-pdf/renderer';
+import {
+  Page,
+  Text,
+  Link,
+  Image,
+  View,
+  Document,
+  Font,
+} from '@react-pdf/renderer';
 
-// import { useApp } from 'contexts/app';
-
-import answers from 'answers.json';
-// import excludes from 'excludes.json';
-import habits from 'habits.json';
-import outcomes from 'outcomes.json';
-import suboutcomes from 'suboutcomes.json';
+import AnswerData from 'dtos/AnswerData';
+import OutcomeData from 'dtos/OutcomeData';
+import SuboutcomeData from 'dtos/SuboutcomeData';
+import HabitData from 'dtos/HabitData';
 
 import styles from './styles';
 
+Font.registerHyphenationCallback(word => [word]);
+
+interface ReportDocumentData {
+  answers: AnswerData[];
+  outcomes: OutcomeData[];
+  suboutcomes: SuboutcomeData[];
+  habits: HabitData[];
+}
+
 // Create Document Component
-const ReportDocument: React.FC = () => {
-  // const context = useApp();
+const ReportDocument: React.FC<ReportDocumentData> = ({
+  answers,
+  outcomes,
+  suboutcomes,
+  habits,
+}) => {
   const today = new Date();
 
   return (
@@ -119,7 +137,7 @@ const ReportDocument: React.FC = () => {
             </View>
           ))}
         </View>
-        <View style={styles.excludes}>
+        {/* <View style={styles.excludes}>
           <Text style={styles.sectionTitleMt40}>
             What we exclude in this step
           </Text>
@@ -130,7 +148,7 @@ const ReportDocument: React.FC = () => {
           </Text>
           <Text style={styles.sectionValue}>Reishi</Text>
           <Text style={styles.sectionValue}>Ômega 3</Text>
-        </View>
+        </View> */}
         <View>
           <Text style={styles.sectionTitleMt40}>Your result</Text>
           <Text style={styles.sectionLabel}>

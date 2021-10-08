@@ -10,8 +10,11 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 
 import getMedications from 'services/getMedications';
 
+import { useApp } from 'contexts/app';
 import { useWizard } from 'contexts/wizard';
 // import medications from 'medications.json';
+
+import AnswerData from 'dtos/AnswerData';
 
 import Button from 'components/Button';
 import Input from 'components/Input';
@@ -23,8 +26,11 @@ interface MedicationData {
 }
 
 const Step5: React.FC = () => {
-  const context = useWizard();
-  const { steps, questions } = context;
+  const appContext = useApp();
+  const { answers, updateAnswers } = appContext;
+
+  const wizardContext = useWizard();
+  const { steps, questions, updateStep } = wizardContext;
   const { step5: step, step4: previousStep } = steps;
   const currentQuestion = questions.find(question => Number(question.id) === 8);
 
@@ -63,8 +69,6 @@ const Step5: React.FC = () => {
     const updatedMeds = Array.from(new Set(mergedMeds));
 
     setMeds(updatedMeds);
-
-    // setMed(meds);
   }, [steps.step5_1.answers, steps.step5_2.answers]);
 
   useEffect(() => {
@@ -78,6 +82,49 @@ const Step5: React.FC = () => {
       setMedOcca([]);
     }
   }, [medOccaOpen]);
+
+  const handleQuestionInput = useCallback(
+    async answer => {
+      const updatedAnswers: AnswerData[] = [...answers];
+
+      const answerIndex = answers.findIndex(
+        item => item.question === currentQuestion?.label,
+      );
+
+      updateStep('step5', {
+        isCompleted: answer.api !== 'yes',
+        answers: answer.api,
+      });
+
+      if (answerIndex > -1) {
+        updatedAnswers[answerIndex] = {
+          question: currentQuestion?.label || '',
+          answer: answer.label,
+        };
+
+        updateAnswers(updatedAnswers);
+      } else {
+        updateAnswers([
+          ...answers,
+          { question: currentQuestion?.label || '', answer: answer.label },
+        ]);
+      }
+
+      if (answer.api !== 'yes') {
+        carouselContext.setStoreState({ currentSlide: 5 });
+      } else {
+        setStepNumber('5.1');
+        setStepTitle('Select below which medications you use:');
+      }
+    },
+    [
+      answers,
+      currentQuestion?.label,
+      carouselContext,
+      updateStep,
+      updateAnswers,
+    ],
+  );
 
   const handleMedDailyInput = useCallback(async (medication: string) => {
     const response = await getMedications(medication);
@@ -94,26 +141,61 @@ const Step5: React.FC = () => {
   }, []);
 
   const handleMedChange = useCallback(
-    (medicationObject: MedicationData[], updatedStep: string) => {
+    (
+      medicationObject: MedicationData[],
+      updatedStep: string,
+      subQuestion: string,
+    ) => {
       const medicationsList: string[] = [];
+      const medicationsLabels: string[] = [];
 
       if (medicationObject.length) {
         medicationObject.forEach(medication => {
           medicationsList.push(medication.slug);
+          medicationsLabels.push(medication.title);
         });
 
-        context.updateStep(updatedStep, {
+        updateStep(updatedStep, {
           isCompleted: true,
           answers: medicationsList,
         });
       } else {
-        context.updateStep(updatedStep, {
+        updateStep(updatedStep, {
           isCompleted: false,
           answers: [],
         });
       }
+
+      const updatedAnswers: AnswerData[] = [...answers];
+
+      const answerIndex = answers.findIndex(
+        answer => answer.question === currentQuestion?.label || '',
+      );
+
+      if (answerIndex > -1) {
+        const updatedAnswer = updatedAnswers[answerIndex];
+        const updatedSubAnswers = updatedAnswer.subAnswer || [];
+
+        const subAnswerIndex = updatedSubAnswers.findIndex(
+          currentSubAnswer => currentSubAnswer.question === subQuestion,
+        );
+
+        if (subAnswerIndex > -1) {
+          updatedSubAnswers[subAnswerIndex] = {
+            question: subQuestion,
+            answer: medicationsLabels.join(', '),
+          };
+        } else {
+          updatedAnswers[answerIndex].subAnswer = [
+            ...(updatedAnswer.subAnswer || []),
+            { question: subQuestion, answer: medicationsLabels.join(', ') },
+          ];
+        }
+
+        updateAnswers(updatedAnswers);
+      }
     },
-    [context],
+    [answers, currentQuestion?.label, updateAnswers, updateStep],
   );
 
   return currentQuestion?.answers ? (
@@ -142,15 +224,15 @@ const Step5: React.FC = () => {
               carouselContext.setStoreState({ currentSlide: 4 });
               setStepNumber('5');
               setStepTitle(currentQuestion?.label);
-              context.updateStep('step5', {
+              updateStep('step5', {
                 isCompleted: false,
                 answers: [],
               });
-              context.updateStep('step5_1', {
+              updateStep('step5_1', {
                 isCompleted: false,
                 answers: [],
               });
-              context.updateStep('step5_2', {
+              updateStep('step5_2', {
                 isCompleted: false,
                 answers: [],
               });
@@ -182,16 +264,7 @@ const Step5: React.FC = () => {
             key={option.api}
             type="submit"
             onClick={() => {
-              context.updateStep('step5', {
-                isCompleted: option.api !== 'yes',
-                answers: option.api,
-              });
-              if (option.api !== 'yes') {
-                carouselContext.setStoreState({ currentSlide: 5 });
-              } else {
-                setStepNumber('5.1');
-                setStepTitle('Select below which medications you use:');
-              }
+              handleQuestionInput(option);
             }}
             isActive={step?.answers === option.api}
             name={currentQuestion.table}
@@ -203,9 +276,7 @@ const Step5: React.FC = () => {
       ) : (
         <>
           <Input type="hidden" name="med" value={meds} />
-
           <Input type="hidden" name="medDaily" value={steps?.step5_1.answers} />
-
           <Autocomplete
             multiple
             id="medications_daily"
@@ -223,7 +294,7 @@ const Step5: React.FC = () => {
               }
             }}
             onChange={(event, newValue) => {
-              handleMedChange(newValue, 'step5_1');
+              handleMedChange(newValue, 'step5_1', 'Daily Use');
             }}
             getOptionSelected={(option, value) => option.slug === value.slug}
             getOptionLabel={option => option.title}
@@ -248,26 +319,6 @@ const Step5: React.FC = () => {
               />
             )}
           />
-
-          {/* <Autocomplete
-            multiple
-            id="medications_daily"
-            options={medications}
-            getOptionLabel={option => option.title}
-            disabled={step?.isCompleted}
-            onChange={(event, newValue) => {
-              handleButtonClick(newValue, 'step5_1');
-            }}
-            renderInput={params => (
-              <TextField
-                {...params}
-                variant="standard"
-                label="Daily Use"
-                placeholder="Type your medications"
-              />
-            )}
-          /> */}
-
           <Input
             type="hidden"
             name="medOccasionally"
@@ -291,7 +342,7 @@ const Step5: React.FC = () => {
               }
             }}
             onChange={(event, newValue) => {
-              handleMedChange(newValue, 'step5_2');
+              handleMedChange(newValue, 'step5_2', 'Occasionally Use');
             }}
             getOptionSelected={(option, value) => option.slug === value.slug}
             getOptionLabel={option => option.title}
@@ -316,32 +367,12 @@ const Step5: React.FC = () => {
               />
             )}
           />
-
-          {/* <Autocomplete
-            multiple
-            id="medications_occasionally"
-            options={medications}
-            getOptionLabel={option => option.title}
-            disabled={step?.isCompleted}
-            onChange={(event, newValue) => {
-              handleButtonClick(newValue, 'step5_2');
-            }}
-            renderInput={params => (
-              <TextField
-                {...params}
-                variant="standard"
-                label="Occasionally Use"
-                placeholder="Type your medications"
-              />
-            )}
-          /> */}
-
           {subStepsCompleted && (
             <button
               type="submit"
               className="advance-button"
               onClick={() => {
-                context.updateStep('step5', {
+                updateStep('step5', {
                   isCompleted: true,
                   answers: step?.answers,
                 });

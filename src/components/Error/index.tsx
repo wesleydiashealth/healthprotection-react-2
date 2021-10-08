@@ -4,7 +4,7 @@ import { MdErrorOutline } from 'react-icons/md';
 import Container from './styles';
 
 interface ErrorProps {
-  message?: string;
+  message: string;
 }
 
 const Error: React.FC<ErrorProps> = ({ message }) => {

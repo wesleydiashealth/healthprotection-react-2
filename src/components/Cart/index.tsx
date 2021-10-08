@@ -4,8 +4,11 @@ import { HiQuestionMarkCircle, HiLockClosed } from 'react-icons/hi';
 import { BsArrowRight } from 'react-icons/bs';
 import { FaTimesCircle } from 'react-icons/fa';
 import { TiShoppingCart } from 'react-icons/ti';
+import { PDFDownloadLink } from '@react-pdf/renderer';
 
 import { useApp } from 'contexts/app';
+
+import ReportDocument from 'components/ReportDocument';
 
 import products from 'products.json';
 import Container, {
@@ -21,7 +24,7 @@ import Container, {
 
 const Cart: React.FC = () => {
   const context = useApp();
-  const { steps, labels } = context;
+  const { steps, labels, answers, outcomes, suboutcomes, habits } = context;
   const { step2: previousStep } = steps;
 
   return (
@@ -66,6 +69,13 @@ const Cart: React.FC = () => {
       </StepIntro>
       {previousStep.isCompleted && (
         <StepContent>
+          <PDFDownloadLink
+            document={
+              <ReportDocument {...{ answers, outcomes, suboutcomes, habits }} />
+            }
+          >
+            Download personalized report
+          </PDFDownloadLink>
           <CheckoutProducts>
             <h4>{labels.cart_subtitle}</h4>
             <ProductsList>

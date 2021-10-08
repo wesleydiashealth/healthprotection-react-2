@@ -4,7 +4,7 @@ import ReactLoading from 'react-loading';
 import Container from './styles';
 
 interface LoadingProps {
-  color?: string;
+  color: string;
 }
 
 const Loading: React.FC<LoadingProps> = ({ color = '#565656' }) => {

@@ -17,8 +17,8 @@ import Container, {
 interface TooltipProps {
   title: string;
   dosages: string;
-  interactions?: InteractionData[];
-  dataSource?: string[];
+  interactions: InteractionData[];
+  dataSource: string[];
 }
 
 const Tooltip: React.FC<TooltipProps> = ({

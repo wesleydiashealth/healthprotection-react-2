@@ -41,7 +41,6 @@ const Wizard: React.FC = () => {
   const context = useApp();
   const {
     labels,
-    updateAnswers,
     updateExcludes,
     updateUserQuery,
     updateOutcomes,
@@ -81,8 +80,6 @@ const Wizard: React.FC = () => {
           abortEarly: false,
         });
 
-        updateAnswers(requestData);
-
         const response = await createUserQuery(requestData);
         const { uuid, outcomes, suboutcomes, excludes } = response.content;
 
@@ -98,13 +95,7 @@ const Wizard: React.FC = () => {
         }
       }
     },
-    [
-      updateAnswers,
-      updateUserQuery,
-      updateExcludes,
-      updateOutcomes,
-      updateSuboutcomes,
-    ],
+    [updateUserQuery, updateExcludes, updateOutcomes, updateSuboutcomes],
   );
 
   return (

@@ -19,8 +19,7 @@ import Container, {
 interface SuboutcomeProps {
   id: string;
   title: string;
-  color?: string;
-  description: string;
+  color: string;
   nutraceuticals: {
     min: string[];
     med: string[];

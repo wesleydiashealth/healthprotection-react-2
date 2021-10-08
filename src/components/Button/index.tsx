@@ -6,7 +6,7 @@ import Container from './styles';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   name: string;
-  isActive?: boolean;
+  isActive: boolean;
 }
 
 const Button: React.FC<ButtonProps & ButtonGroupProps> = ({

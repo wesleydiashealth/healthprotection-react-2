@@ -9,7 +9,7 @@ import Container from './styles';
 interface SuboutcomesProps {
   outcome: string;
   outcomeSuboutcomes: string[];
-  color?: string;
+  color: string;
 }
 
 const Suboutcomes: React.FC<SuboutcomesProps> = ({
