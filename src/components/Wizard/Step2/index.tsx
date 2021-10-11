@@ -39,7 +39,7 @@ const Step2: React.FC = () => {
       const updatedAnswers: AnswerData[] = [...answers];
 
       const answerIndex = answers.findIndex(
-        item => item.question === currentQuestion?.label,
+        item => item.question.slug === currentQuestion?.slug,
       );
 
       updateStep('step2', {
@@ -50,15 +50,30 @@ const Step2: React.FC = () => {
 
       if (answerIndex > -1) {
         updatedAnswers[answerIndex] = {
-          question: currentQuestion?.label || '',
-          answer: answer.label,
+          question: {
+            slug: currentQuestion?.slug || '',
+            label: currentQuestion?.label || '',
+          },
+          answer: {
+            slug: answer.slug,
+            label: answer.label,
+          },
         };
 
         updateAnswers(updatedAnswers);
       } else {
         updateAnswers([
           ...answers,
-          { question: currentQuestion?.label || '', answer: answer.label },
+          {
+            question: {
+              slug: currentQuestion?.slug || '',
+              label: currentQuestion?.label || '',
+            },
+            answer: {
+              slug: answer.slug,
+              label: answer.label,
+            },
+          },
         ]);
       }
 
@@ -69,38 +84,34 @@ const Step2: React.FC = () => {
         setStepTitle('Are you:');
       }
     },
-    [
-      carouselContext,
-      currentQuestion?.label,
-      answers,
-      updateAnswers,
-      updateStep,
-    ],
+    [carouselContext, currentQuestion, answers, updateAnswers, updateStep],
   );
 
   const handleSubquestionInput = useCallback(
-    subAnswer => {
+    (subAnswer, updatedStep: string, subQuestion: string) => {
       const updatedAnswers: AnswerData[] = answers.map(item =>
-        item.question === currentQuestion?.label
-          ? { ...item, subAnswer: subAnswer.label }
+        item.question.slug === currentQuestion?.slug
+          ? {
+              ...item,
+              subAnswer: [
+                {
+                  question: { slug: subQuestion, label: subQuestion },
+                  answer: { slug: subAnswer.slug, label: subAnswer.label },
+                },
+              ],
+            }
           : item,
       );
 
       updateAnswers(updatedAnswers);
 
-      updateStep('step2_1', {
+      updateStep(updatedStep, {
         isCompleted: true,
         answers: subAnswer.slug || '',
       });
       carouselContext.setStoreState({ currentSlide: 2 });
     },
-    [
-      carouselContext,
-      currentQuestion?.label,
-      answers,
-      updateAnswers,
-      updateStep,
-    ],
+    [carouselContext, currentQuestion, answers, updateAnswers, updateStep],
   );
 
   return currentQuestion?.answers ? (
@@ -187,7 +198,11 @@ const Step2: React.FC = () => {
               key={subAnswer.slug}
               type="submit"
               onClick={() => {
-                handleSubquestionInput(subAnswer);
+                handleSubquestionInput(
+                  subAnswer,
+                  'step2_1',
+                  subAnswer.label || '',
+                );
               }}
               isActive={subStep?.answers === subAnswer.slug}
               name="female_condition"

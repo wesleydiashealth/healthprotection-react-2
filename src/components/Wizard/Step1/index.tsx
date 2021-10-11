@@ -66,7 +66,7 @@ const Step1: React.FC = () => {
       const updatedAnswers: AnswerData[] = [...answers];
 
       const answerIndex = answers.findIndex(
-        answer => answer.question === 'age',
+        answer => answer.question.label === 'age',
       );
 
       setBirthYear(year);
@@ -78,8 +78,14 @@ const Step1: React.FC = () => {
 
       if (answerIndex > -1) {
         updatedAnswers[answerIndex] = {
-          question: currentQuestion?.label || '',
-          answer: `${birthMonth}/${year}`,
+          question: {
+            slug: currentQuestion?.slug || '',
+            label: currentQuestion?.label || '',
+          },
+          answer: {
+            slug: `${birthMonth}/${year}`,
+            label: `${birthMonth}/${year}`,
+          },
         };
 
         updateAnswers(updatedAnswers);
@@ -87,8 +93,14 @@ const Step1: React.FC = () => {
         updateAnswers([
           ...answers,
           {
-            question: currentQuestion?.label || '',
-            answer: `${birthMonth}/${year}`,
+            question: {
+              slug: currentQuestion?.slug || '',
+              label: currentQuestion?.label || '',
+            },
+            answer: {
+              slug: `${birthMonth}/${year}`,
+              label: `${birthMonth}/${year}`,
+            },
           },
         ]);
       }

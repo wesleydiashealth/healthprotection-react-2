@@ -37,13 +37,13 @@ const Step3: React.FC = () => {
       const updatedAnswers: AnswerData[] = [...answers];
 
       const answerIndex = answers.findIndex(
-        item => item.question === currentQuestion?.label,
+        item => item.question.slug === currentQuestion?.slug,
       );
 
       if (answerIndex > -1) {
         const updatedValues =
           (!!updatedAnswers.length &&
-            updatedAnswers[answerIndex].answer.split(', ')) ||
+            updatedAnswers[answerIndex].answer.label.split(', ')) ||
           [];
 
         const noneIndex = updatedValues.indexOf('None');
@@ -59,23 +59,44 @@ const Step3: React.FC = () => {
         }
 
         updatedAnswers[answerIndex] = {
-          question: currentQuestion?.label || '',
-          answer: updatedValues.join(', '),
+          question: {
+            slug: currentQuestion?.slug || '',
+            label: currentQuestion?.label || '',
+          },
+          answer: {
+            slug: answer.slug,
+            label: updatedValues.join(', '),
+          },
         };
 
         updateAnswers(updatedAnswers);
       } else {
         updateAnswers([
           ...answers,
-          { question: currentQuestion?.label || '', answer: label },
+          {
+            question: {
+              slug: currentQuestion?.slug || '',
+              label: currentQuestion?.label || '',
+            },
+            answer: {
+              slug: answer.slug,
+              label,
+            },
+          },
         ]);
       }
 
       if (value === 'none') {
         updateStep('step3', { isCompleted: true, answers: [value] });
         updatedAnswers[answerIndex] = {
-          question: currentQuestion?.label || '',
-          answer: 'None',
+          question: {
+            slug: currentQuestion?.slug || '',
+            label: currentQuestion?.label || '',
+          },
+          answer: {
+            slug: 'none',
+            label: 'None',
+          },
         };
         setStoreState({ currentSlide: 3 });
 
@@ -98,14 +119,7 @@ const Step3: React.FC = () => {
 
       updateStep('step3', { answers: updatedDiets });
     },
-    [
-      step,
-      updateStep,
-      setStoreState,
-      answers,
-      currentQuestion?.label,
-      updateAnswers,
-    ],
+    [step, updateStep, setStoreState, answers, currentQuestion, updateAnswers],
   );
 
   return currentQuestion?.answers ? (

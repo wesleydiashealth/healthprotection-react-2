@@ -1,13 +1,13 @@
+import ExcludesOutcomeData from 'dtos/ExcludesOutcomeData';
+
 export default interface ExcludesData {
-  outcomes: {
-    [question: string]: {
-      [answer: string]: string[];
+  outcomes: ExcludesOutcomeData[];
+  suboutcomes: ExcludesOutcomeData[];
+  nutraceuticals: {
+    medication: {
+      slug: string;
+      title: string;
+      exclude: string[];
     };
-  };
-  // eslint-disable-next-line camelcase
-  sub_outcomes: {
-    [question: string]: {
-      [answer: string]: string[];
-    };
-  };
+  }[];
 }

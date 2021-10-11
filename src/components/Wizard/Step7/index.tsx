@@ -11,6 +11,7 @@ import { useWizard } from 'contexts/wizard';
 
 import Button from 'components/Button';
 import Input from 'components/Input';
+import AnswerData from 'dtos/AnswerData';
 import { StepContainer } from '../styles';
 
 interface NutraceuticalData {
@@ -20,10 +21,10 @@ interface NutraceuticalData {
 
 const Step7: React.FC = () => {
   const appContext = useApp();
-  const { nutraceuticals } = appContext;
+  const { answers, nutraceuticals, updateAnswers } = appContext;
 
   const context = useWizard();
-  const { steps, questions } = context;
+  const { steps, questions, updateStep } = context;
   const { step7: step, step5: previousStep } = steps;
   const currentQuestion = questions.find(
     question => Number(question.id) === 17,
@@ -40,32 +41,135 @@ const Step7: React.FC = () => {
   );
 
   const carouselContext = useContext(CarouselContext);
+  const { setStoreState } = carouselContext;
 
   const wizardSteps = Object.keys(steps).filter(
     item => !item.includes('_'),
   ).length;
 
+  const handleQuestionInput = useCallback(
+    async answer => {
+      const updatedAnswers: AnswerData[] = [...answers];
+
+      const answerIndex = answers.findIndex(
+        item => item.question.slug === currentQuestion?.slug,
+      );
+
+      updateStep('step7', {
+        isCompleted: answer.api !== 'yes',
+        answers: answer.api,
+      });
+
+      if (answerIndex > -1) {
+        updatedAnswers[answerIndex] = {
+          question: {
+            slug: currentQuestion?.slug || '',
+            label: currentQuestion?.label || '',
+          },
+          answer: {
+            slug: answer.slug,
+            label: answer.label,
+          },
+        };
+
+        updateAnswers(updatedAnswers);
+      } else {
+        updateAnswers([
+          ...answers,
+          {
+            question: {
+              slug: currentQuestion?.slug || '',
+              label: currentQuestion?.label || '',
+            },
+            answer: {
+              slug: answer.slug,
+              label: answer.label,
+            },
+          },
+        ]);
+      }
+
+      if (answer.api !== 'yes') {
+        setStoreState({ currentSlide: 6 });
+      } else {
+        setStepNumber('7.1');
+        setStepTitle('Select below which one you use:');
+      }
+    },
+    [answers, currentQuestion, updateStep, updateAnswers, setStoreState],
+  );
+
   const handleButtonClick = useCallback(
-    (medicationObject: NutraceuticalData[], updatedStep: string) => {
+    (
+      medicationObject: NutraceuticalData[],
+      updatedStep: string,
+      subQuestion: string,
+    ) => {
       const medicationsList: string[] = [];
+      const medicationsLabels: string[] = [];
 
       if (medicationObject.length) {
         medicationObject.forEach(medication => {
           medicationsList.push(medication.slug);
+          medicationsLabels.push(medication.title);
         });
 
-        context.updateStep(updatedStep, {
+        updateStep(updatedStep, {
           isCompleted: true,
           answers: medicationsList,
         });
       } else {
-        context.updateStep(updatedStep, {
+        updateStep(updatedStep, {
           isCompleted: false,
           answers: [],
         });
       }
+
+      const updatedAnswers: AnswerData[] = [...answers];
+
+      const answerIndex = answers.findIndex(
+        answer => answer.question.slug === currentQuestion?.slug || '',
+      );
+
+      if (answerIndex > -1) {
+        const updatedAnswer = updatedAnswers[answerIndex];
+        const updatedSubAnswers = updatedAnswer.subAnswer || [];
+
+        const subAnswerIndex = updatedSubAnswers.findIndex(
+          currentSubAnswer => currentSubAnswer.question.label === subQuestion,
+        );
+
+        if (subAnswerIndex > -1) {
+          updatedSubAnswers[subAnswerIndex] = {
+            question: {
+              slug: subQuestion,
+              label: subQuestion,
+            },
+            answer: {
+              slug: medicationsList.join(', '),
+              label: medicationsLabels.join(', '),
+            },
+          };
+        } else {
+          updatedAnswers[answerIndex].subAnswer = [
+            ...(updatedAnswer.subAnswer || []),
+            {
+              question: {
+                slug: subQuestion,
+                label: subQuestion,
+              },
+              answer: {
+                slug: medicationsList.join(', '),
+                label: medicationsLabels.join(', '),
+              },
+            },
+          ];
+        }
+
+        updateAnswers(updatedAnswers);
+      }
     },
-    [context],
+    [answers, currentQuestion, updateAnswers, updateStep],
   );
 
   return currentQuestion?.answers ? (
@@ -90,18 +194,18 @@ const Step7: React.FC = () => {
             size={16}
             color="#7664c8"
             onClick={() => {
-              carouselContext.setStoreState({ currentSlide: 6 });
+              setStoreState({ currentSlide: 6 });
               setStepNumber('7');
               setStepTitle(currentQuestion?.label);
-              context.updateStep('step7', {
+              updateStep('step7', {
                 isCompleted: false,
                 answers: [],
               });
-              context.updateStep('step7_1', {
+              updateStep('step7_1', {
                 isCompleted: false,
                 answers: [],
               });
-              context.updateStep('step7_2', {
+              updateStep('step7_2', {
                 isCompleted: false,
                 answers: [],
               });
@@ -135,16 +239,7 @@ const Step7: React.FC = () => {
             key={answer.id}
             type="submit"
             onClick={() => {
-              context.updateStep('step7', {
-                isCompleted: answer.api !== 'yes',
-                answers: answer.api,
-              });
-              if (answer.api !== 'yes') {
-                carouselContext.setStoreState({ currentSlide: 6 });
-              } else {
-                setStepNumber('7.1');
-                setStepTitle('Select below which one you use:');
-              }
+              handleQuestionInput(answer);
             }}
             isActive={step?.answers === answer.api}
             name={currentQuestion.table}
@@ -168,7 +263,7 @@ const Step7: React.FC = () => {
             getOptionLabel={option => option.title}
             disabled={step?.isCompleted}
             onChange={(event, newValue) => {
-              handleButtonClick(newValue, 'step7_1');
+              handleButtonClick(newValue, 'step7_1', 'Daily Use');
             }}
             renderInput={params => (
               <TextField
@@ -192,7 +287,7 @@ const Step7: React.FC = () => {
             getOptionLabel={option => option.title}
             disabled={step?.isCompleted}
             onChange={(event, newValue) => {
-              handleButtonClick(newValue, 'step7_2');
+              handleButtonClick(newValue, 'step7_2', 'Occasionally Use');
             }}
             renderInput={params => (
               <TextField
@@ -208,11 +303,11 @@ const Step7: React.FC = () => {
               type="submit"
               className="advance-button"
               onClick={() => {
-                context.updateStep('step7', {
+                updateStep('step7', {
                   isCompleted: true,
                   answers: step?.answers,
                 });
-                carouselContext.setStoreState({ currentSlide: 6 });
+                setStoreState({ currentSlide: 6 });
               }}
             >
               Next Question

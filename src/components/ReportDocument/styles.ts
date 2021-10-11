@@ -24,7 +24,6 @@ const styles = StyleSheet.create({
     flexGrow: 1,
   },
   sectionTitle: {
-    marginBottom: 10,
     color: '#F8A034',
     fontSize: 16,
   },
@@ -35,6 +34,10 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   sectionLabel: {
+    color: '#2B2560',
+  },
+  sectionLabelMt20: {
+    marginTop: 20,
     color: '#2B2560',
   },
   sectionValue: {
@@ -100,6 +103,15 @@ const styles = StyleSheet.create({
     fontSize: 16,
     lineHeight: '2rem',
     color: '#2B2560',
+  },
+  answers: {},
+  answersItem: {},
+  answersItemQuestion: {
+    marginTop: 20,
+    color: '#2B2560',
+  },
+  answersItemAnswer: {
+    color: '#000',
   },
   outcome: {
     marginBottom: 20,

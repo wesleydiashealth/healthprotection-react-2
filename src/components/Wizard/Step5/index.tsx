@@ -88,7 +88,7 @@ const Step5: React.FC = () => {
       const updatedAnswers: AnswerData[] = [...answers];
 
       const answerIndex = answers.findIndex(
-        item => item.question === currentQuestion?.label,
+        item => item.question.slug === currentQuestion?.slug,
       );
 
       updateStep('step5', {
@@ -98,15 +98,30 @@ const Step5: React.FC = () => {
 
       if (answerIndex > -1) {
         updatedAnswers[answerIndex] = {
-          question: currentQuestion?.label || '',
-          answer: answer.label,
+          question: {
+            slug: currentQuestion?.slug || '',
+            label: currentQuestion?.label || '',
+          },
+          answer: {
+            slug: answer.slug,
+            label: answer.label,
+          },
         };
 
         updateAnswers(updatedAnswers);
       } else {
         updateAnswers([
           ...answers,
-          { question: currentQuestion?.label || '', answer: answer.label },
+          {
+            question: {
+              slug: currentQuestion?.slug || '',
+              label: currentQuestion?.label || '',
+            },
+            answer: {
+              slug: answer.slug,
+              label: answer.label,
+            },
+          },
         ]);
       }
 
@@ -117,13 +132,7 @@ const Step5: React.FC = () => {
         setStepTitle('Select below which medications you use:');
       }
     },
-    [
-      answers,
-      currentQuestion?.label,
-      carouselContext,
-      updateStep,
-      updateAnswers,
-    ],
+    [answers, currentQuestion, carouselContext, updateStep, updateAnswers],
   );
 
   const handleMedDailyInput = useCallback(async (medication: string) => {
@@ -169,7 +178,7 @@ const Step5: React.FC = () => {
       const updatedAnswers: AnswerData[] = [...answers];
 
       const answerIndex = answers.findIndex(
-        answer => answer.question === currentQuestion?.label || '',
+        answer => answer.question.slug === currentQuestion?.slug || '',
       );
 
       if (answerIndex > -1) {
@@ -177,25 +186,40 @@ const Step5: React.FC = () => {
         const updatedSubAnswers = updatedAnswer.subAnswer || [];
 
         const subAnswerIndex = updatedSubAnswers.findIndex(
-          currentSubAnswer => currentSubAnswer.question === subQuestion,
+          currentSubAnswer => currentSubAnswer.question.label === subQuestion,
         );
 
         if (subAnswerIndex > -1) {
           updatedSubAnswers[subAnswerIndex] = {
-            question: subQuestion,
-            answer: medicationsLabels.join(', '),
+            question: {
+              slug: subQuestion,
+              label: subQuestion,
+            },
+            answer: {
+              slug: medicationsList.join(', '),
+              label: medicationsLabels.join(', '),
+            },
           };
         } else {
           updatedAnswers[answerIndex].subAnswer = [
             ...(updatedAnswer.subAnswer || []),
-            { question: subQuestion, answer: medicationsLabels.join(', ') },
+            {
+              question: {
+                slug: subQuestion,
+                label: subQuestion,
+              },
+              answer: {
+                slug: medicationsList.join(', '),
+                label: medicationsLabels.join(', '),
+              },
+            },
           ];
         }
 
         updateAnswers(updatedAnswers);
       }
     },
-    [answers, currentQuestion?.label, updateAnswers, updateStep],
+    [answers, currentQuestion, updateAnswers, updateStep],
   );
 
   return currentQuestion?.answers ? (

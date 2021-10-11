@@ -1,4 +1,4 @@
-export default interface AnswerData {
+export default interface ExcludesOutcomeData {
   question: {
     slug: string;
     label: string;
@@ -7,5 +7,5 @@ export default interface AnswerData {
     slug: string;
     label: string;
   };
-  subAnswer?: AnswerData[];
+  exclude: string[];
 }

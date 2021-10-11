@@ -24,7 +24,8 @@ import Container, {
 
 const Cart: React.FC = () => {
   const context = useApp();
-  const { steps, labels, answers, outcomes, suboutcomes, habits } = context;
+  const { steps, labels, answers, excludes, outcomes, suboutcomes, habits } =
+    context;
   const { step2: previousStep } = steps;
 
   return (
@@ -57,25 +58,16 @@ const Cart: React.FC = () => {
             backgroundColor="#fff"
           />
         </StepTitle>
-
         {!previousStep.isCompleted && (
           <div className="step-disabled">
             <strong>Step Blocked.</strong>{' '}
             <span>Finish Step 2 to proceed.</span>
           </div>
         )}
-
         <StepDescription>{labels.cart_description}</StepDescription>
       </StepIntro>
       {previousStep.isCompleted && (
         <StepContent>
-          <PDFDownloadLink
-            document={
-              <ReportDocument {...{ answers, outcomes, suboutcomes, habits }} />
-            }
-          >
-            Download personalized report
-          </PDFDownloadLink>
           <CheckoutProducts>
             <h4>{labels.cart_subtitle}</h4>
             <ProductsList>
@@ -137,6 +129,15 @@ const Cart: React.FC = () => {
                 <input type="text" />
                 <input type="submit" value="Send" />
               </div>
+              <PDFDownloadLink
+                document={
+                  <ReportDocument
+                    {...{ answers, excludes, outcomes, suboutcomes, habits }}
+                  />
+                }
+              >
+                Download report
+              </PDFDownloadLink>
               <label htmlFor="privacy_policy">
                 <input
                   type="checkbox"

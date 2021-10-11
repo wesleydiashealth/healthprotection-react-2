@@ -1,9 +1,13 @@
 import ExcludesData from 'dtos/ExcludesData';
 import OutcomeData from 'dtos/OutcomeData';
 import SuboutcomeData from 'dtos/SuboutcomeData';
-import AnswerData from 'dtos/AnswerData';
 
 import wordpressApi from 'services/wordpress';
+
+interface RequestData {
+  question: string;
+  answer: string;
+}
 
 interface ResponseData extends Response {
   content: {
@@ -15,7 +19,7 @@ interface ResponseData extends Response {
 }
 
 export default function createUserQuery(
-  data: AnswerData[],
+  data: RequestData[],
 ): Promise<ResponseData> {
   return new Promise((resolve, reject) => {
     wordpressApi

@@ -4,9 +4,9 @@ import { HiQuestionMarkCircle, HiOutlineCheckCircle } from 'react-icons/hi';
 import { CarouselContext } from 'pure-react-carousel';
 
 import { useWizard } from 'contexts/wizard';
-import { StepContainer } from '../styles';
+import Button from 'components/Button';
 
-import Button from '../../Button';
+import { StepContainer } from '../styles';
 
 const Step8: React.FC = () => {
   const context = useWizard();

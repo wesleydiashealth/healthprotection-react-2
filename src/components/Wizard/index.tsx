@@ -13,8 +13,6 @@ import createUserQuery from 'services/createUserQuery';
 
 import getValidationErrors from 'utils/getValidationErrors';
 
-import AnswerData from 'dtos/AnswerData';
-
 import { WizardProvider } from 'contexts/wizard';
 import Container, { StepIntro, StepTitle, StepDescription } from './styles';
 import 'react-multi-carousel/lib/styles.css';
@@ -35,6 +33,11 @@ import Step7 from './Step7';
 import Step9 from './Step9';
 import Step10 from './Step10';
 
+interface RequestData {
+  question: string;
+  answer: string;
+}
+
 const Wizard: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
 
@@ -53,7 +56,7 @@ const Wizard: React.FC = () => {
     async (data: HTMLFormElement) => {
       const { age, gender, diet, allergies, med, decease } = data;
 
-      const requestData: AnswerData[] = [
+      const requestData: RequestData[] = [
         { question: 'age', answer: age },
         { question: 'gender', answer: gender },
         { question: 'diet', answer: diet },

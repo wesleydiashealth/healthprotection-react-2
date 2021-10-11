@@ -351,6 +351,24 @@ export const CheckoutSidebar = styled.div`
       line-height: 28px;
     }
 
+    a {
+      margin: 10px 0;
+
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-self: center;
+      padding: 16px 24px;
+
+      font-weight: 700;
+      color: white;
+      text-transform: uppercase;
+      text-decoration: none;
+
+      background: #ffae30;
+      border-radius: 32px;
+    }
+
     .newsletter-buttons {
       margin-bottom: 20px;
 

@@ -1,16 +1,54 @@
 {
   "outcomes": [],
-  "sub_outcomes": {
-      "gender": {
-          "male": [
-              "menopause",
-              "pms"
-          ]
+  "suboutcomes": [
+    {
+      "question": {
+        "slug": "age",
+        "label": "What is your age?"
+      },
+      "answer": {
+        "slug": "18_30",
+        "label": "18_30"
+      },
+      "exclude": [
+        "PMS"
+      ]
+    },
+    {
+      "question": {
+        "slug": "gender",
+        "label": "What is your birth sex?"
+      },
+      "answer": {
+        "slug": "male",
+        "label": "male"
+      },
+      "exclude": [
+        "Menopause",
+        "PMS"
+      ]
+    }
+],
+  "nutraceuticals": [
+    {
+      "medication": {
+        "slug": "warfarin",
+        "title": "Warfarin",
+        "exclude": [
+          "Chondroitin",
+          "CoQ10",
+          "EGCG",
+          "Ginkgo Biloba",
+          "Omega 3",
+          "Panax Ginseng",
+          "Quercetin",
+          "Resveratrol",
+          "Vitamin C",
+          "Vitamin K",
+          "Melatonin",
+          "Vitamin E"
+      ]
       }
-  },
-  "nutraceutical": {
-      "out": {
-          "gender": "male"
-      }
-  }
+    }
+  ]
 }

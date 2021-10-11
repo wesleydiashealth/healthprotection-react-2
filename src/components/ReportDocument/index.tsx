@@ -11,6 +11,7 @@ import {
 } from '@react-pdf/renderer';
 
 import AnswerData from 'dtos/AnswerData';
+import ExcludeData from 'dtos/ExcludesData';
 import OutcomeData from 'dtos/OutcomeData';
 import SuboutcomeData from 'dtos/SuboutcomeData';
 import HabitData from 'dtos/HabitData';
@@ -21,6 +22,7 @@ Font.registerHyphenationCallback(word => [word]);
 
 interface ReportDocumentData {
   answers: AnswerData[];
+  excludes: ExcludeData;
   outcomes: OutcomeData[];
   suboutcomes: SuboutcomeData[];
   habits: HabitData[];
@@ -29,11 +31,18 @@ interface ReportDocumentData {
 // Create Document Component
 const ReportDocument: React.FC<ReportDocumentData> = ({
   answers,
+  excludes,
   outcomes,
   suboutcomes,
   habits,
 }) => {
   const today = new Date();
+
+  const {
+    outcomes: excludedOutcomes,
+    suboutcomes: excludedSuboutcomes,
+    nutraceuticals: excludedNutraceuticals,
+  } = excludes;
 
   return (
     <Document>
@@ -84,20 +93,77 @@ const ReportDocument: React.FC<ReportDocumentData> = ({
         <View style={styles.answers} break>
           <Text style={styles.sectionTitle}>Your answers in Step 1</Text>
           {answers.map(answer => (
-            <Text key={answer.question} style={styles.sectionLabel}>
-              {answer.question.charAt(0).toUpperCase() +
-                answer.question.slice(1)}
-              : <Text style={styles.sectionValue}>{answer.answer}</Text>
-            </Text>
+            <View style={styles.answersItem}>
+              <Text
+                key={answer.question.slug}
+                style={styles.answersItemQuestion}
+              >
+                {answer.question.label.charAt(0).toUpperCase() +
+                  answer.question.label.slice(1)}
+              </Text>
+              <Text style={styles.answersItemAnswer}>
+                {answer.answer.label}
+              </Text>
+              {!!answer.subAnswer && (
+                <View>
+                  {answer.subAnswer.map(item => (
+                    <Text>{`${item.question.label}: ${item.answer.label}`}</Text>
+                  ))}
+                </View>
+              )}
+            </View>
           ))}
         </View>
         <View style={styles.excludes}>
           <Text style={styles.sectionTitleMt40}>
             What we exclude in this step
           </Text>
-          <Text style={styles.sectionValue}>Maca</Text>
-          <Text style={styles.sectionValue}>Ashwagandha</Text>
-          <Text style={styles.sectionValue}>Vitamin B12</Text>
+
+          <Text style={styles.sectionLabel}>Outcomes:</Text>
+          {excludedOutcomes.length ? (
+            excludedOutcomes.map(excludedOutcome => (
+              <Text
+                key={excludedOutcome.question.slug}
+                style={styles.sectionValue}
+              >
+                {excludedOutcome.question.label}
+              </Text>
+            ))
+          ) : (
+            <Text style={styles.sectionValue}>None</Text>
+          )}
+
+          <Text style={styles.sectionLabelMt20}>Sub-Outcomes:</Text>
+          {excludedSuboutcomes.length ? (
+            excludedSuboutcomes.map(excludedSuboutcome => (
+              <Text
+                key={excludedSuboutcome.question.slug}
+                style={styles.sectionValue}
+              >
+                {`${excludedSuboutcome.question.label} (${
+                  excludedSuboutcome.answer.label
+                }): ${excludedSuboutcome.exclude.join(', ')}`}
+              </Text>
+            ))
+          ) : (
+            <Text style={styles.sectionValue}>None</Text>
+          )}
+
+          <Text style={styles.sectionLabelMt20}>Nutraceuticals:</Text>
+          {excludedNutraceuticals.length ? (
+            excludedNutraceuticals.map(excludedNutraceutical => (
+              <Text
+                key={excludedNutraceutical.medication.slug}
+                style={styles.sectionValue}
+              >
+                {`${
+                  excludedNutraceutical.medication.title
+                }: ${excludedNutraceutical.medication.exclude.join(', ')}`}
+              </Text>
+            ))
+          ) : (
+            <Text style={styles.sectionValue}>None</Text>
+          )}
         </View>
         <View style={styles.Outcomes} break>
           <Text style={styles.sectionTitle}>

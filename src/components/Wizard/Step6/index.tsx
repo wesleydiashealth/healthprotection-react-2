@@ -51,7 +51,59 @@ const Step6: React.FC = () => {
     item => !item.includes('_'),
   ).length;
 
-  const handleButtonClick = useCallback(
+  const handleQuestionInput = useCallback(
+    async answer => {
+      const updatedAnswers: AnswerData[] = [...answers];
+
+      const answerIndex = answers.findIndex(
+        item => item.question.slug === currentQuestion?.slug,
+      );
+
+      updateStep('step6', {
+        isCompleted: answer.api !== 'yes',
+        answers: answer.api,
+      });
+
+      if (answerIndex > -1) {
+        updatedAnswers[answerIndex] = {
+          question: {
+            slug: currentQuestion?.slug || '',
+            label: currentQuestion?.label || '',
+          },
+          answer: {
+            slug: answer.slug,
+            label: answer.label,
+          },
+        };
+
+        updateAnswers(updatedAnswers);
+      } else {
+        updateAnswers([
+          ...answers,
+          {
+            question: {
+              slug: currentQuestion?.slug || '',
+              label: currentQuestion?.label || '',
+            },
+            answer: {
+              slug: answer.slug,
+              label: answer.label,
+            },
+          },
+        ]);
+      }
+
+      if (answer.api !== 'yes') {
+        carouselContext.setStoreState({ currentSlide: 6 });
+      } else {
+        setStepNumber('6.1');
+        setStepTitle('Select below which one you use:');
+      }
+    },
+    [answers, currentQuestion, carouselContext, updateStep, updateAnswers],
+  );
+
+  const handleMedChange = useCallback(
     (
       medicationObject: MedicationData[],
       updatedStep: string,
@@ -80,7 +132,7 @@ const Step6: React.FC = () => {
       const updatedAnswers: AnswerData[] = [...answers];
 
       const answerIndex = answers.findIndex(
-        answer => answer.question === currentQuestion?.label || '',
+        answer => answer.question.slug === currentQuestion?.slug || '',
       );
 
       if (answerIndex > -1) {
@@ -88,25 +140,40 @@ const Step6: React.FC = () => {
         const updatedSubAnswers = updatedAnswer.subAnswer || [];
 
         const subAnswerIndex = updatedSubAnswers.findIndex(
-          currentSubAnswer => currentSubAnswer.question === subQuestion,
+          currentSubAnswer => currentSubAnswer.question.label === subQuestion,
         );
 
         if (subAnswerIndex > -1) {
           updatedSubAnswers[subAnswerIndex] = {
-            question: subQuestion,
-            answer: medicationsLabels.join(', '),
+            question: {
+              slug: subQuestion,
+              label: subQuestion,
+            },
+            answer: {
+              slug: medicationsList.join(', '),
+              label: medicationsLabels.join(', '),
+            },
           };
         } else {
           updatedAnswers[answerIndex].subAnswer = [
             ...(updatedAnswer.subAnswer || []),
-            { question: subQuestion, answer: medicationsLabels.join(', ') },
+            {
+              question: {
+                slug: subQuestion,
+                label: subQuestion,
+              },
+              answer: {
+                slug: medicationsList.join(', '),
+                label: medicationsLabels.join(', '),
+              },
+            },
           ];
         }
 
         updateAnswers(updatedAnswers);
       }
     },
-    [],
+    [answers, currentQuestion, updateAnswers, updateStep],
   );
 
   return currentQuestion?.answers ? (
@@ -175,16 +242,7 @@ const Step6: React.FC = () => {
             key={option.api}
             type="submit"
             onClick={() => {
-              updateStep('step6', {
-                isCompleted: option.api !== 'yes',
-                answers: option.api,
-              });
-              if (option.api !== 'yes') {
-                setStoreState({ currentSlide: 6 });
-              } else {
-                setStepNumber('6.1');
-                setStepTitle('Select below which one you use:');
-              }
+              handleQuestionInput(option);
             }}
             isActive={step?.answers === option.api}
             name={currentQuestion.table}
@@ -209,7 +267,7 @@ const Step6: React.FC = () => {
             getOptionLabel={option => option.title}
             disabled={step?.isCompleted}
             onChange={(event, newValue) => {
-              handleButtonClick(newValue, 'step6_1', 'Daily Use');
+              handleMedChange(newValue, 'step6_1', 'Daily Use');
             }}
             renderInput={params => (
               <TextField
@@ -233,7 +291,7 @@ const Step6: React.FC = () => {
             getOptionLabel={option => option.title}
             disabled={step?.isCompleted}
             onChange={(event, newValue) => {
-              handleButtonClick(newValue, 'step6_2', 'Occasionally Use');
+              handleMedChange(newValue, 'step6_2', 'Occasionally Use');
             }}
             renderInput={params => (
               <TextField

@@ -85,8 +85,9 @@ export const AppProvider: React.FC = ({ children }) => {
   const [answers, setAnswers] = useState<AnswerData[]>([]);
 
   const [excludes, setExcludes] = useState<ExcludesData>({
-    outcomes: {},
-    sub_outcomes: {},
+    outcomes: [],
+    suboutcomes: [],
+    nutraceuticals: [],
   });
 
   const [userQuery, setUserQuery] = useState<string>('');
