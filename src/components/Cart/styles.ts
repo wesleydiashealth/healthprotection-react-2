@@ -417,8 +417,19 @@ export const CheckoutSidebar = styled.div`
     label {
       font-weight: 600;
 
+      display: flex;
+
+      text-align: left;
       font-size: 14px;
       line-height: 22px;
+
+      & ~ label {
+        margin-top: 10px;
+      }
+
+      input {
+        margin-top: 5px;
+      }
     }
 
     input[type='checkbox'] {

@@ -138,13 +138,25 @@ const Cart: React.FC = () => {
               >
                 Download report
               </PDFDownloadLink>
-              <label htmlFor="privacy_policy">
+              <label htmlFor="privacy_policy" aria-required>
                 <input
                   type="checkbox"
                   id="privacy_policy"
                   name="privacy_policy"
                 />
                 {labels.newsletter_agree}
+              </label>
+              <label htmlFor="blog_policy">
+                <input type="checkbox" id="blog_policy" name="blog_policy" />
+                {labels.newsletter_agree_blog}
+              </label>
+              <label htmlFor="newsletter_policy">
+                <input
+                  type="checkbox"
+                  id="newsletter_policy"
+                  name="newsletter_policy"
+                />
+                {labels.newsletter_agree_newsletter}
               </label>
             </div>
             <div className="summary">
