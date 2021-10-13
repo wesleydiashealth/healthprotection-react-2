@@ -7,4 +7,5 @@ export default interface QuestionAnswersData {
   has_child: boolean;
   slug?: string;
   answers?: QuestionAnswersData[];
+  exclude?: string;
 }

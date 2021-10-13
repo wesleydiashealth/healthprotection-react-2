@@ -84,8 +84,12 @@ export default createGlobalStyle`
   }
 
   @media screen and (min-width: 768px) {
-    .popup-content {
 
+  }
+
+  @media screen and (min-width: 1320px) {
+    .popup-content {
+      max-width: 1280px;
     }
   }
 `;

@@ -6,6 +6,9 @@ interface ContainerProps {
 }
 
 const Container = styled.div<ContainerProps>`
+  display: flex;
+  align-items: center;
+
   ${props =>
     props.isFocused &&
     css`

@@ -1,16 +1,15 @@
 import React from 'react';
 import ReactToolTip from 'react-tooltip';
 import { HiQuestionMarkCircle, HiLockClosed } from 'react-icons/hi';
-import { BsArrowRight } from 'react-icons/bs';
 import { FaTimesCircle } from 'react-icons/fa';
 import { TiShoppingCart } from 'react-icons/ti';
-import { PDFDownloadLink } from '@react-pdf/renderer';
 
 import { useApp } from 'contexts/app';
 
-import ReportDocument from 'components/ReportDocument';
-
 import products from 'products.json';
+
+import Sidebar from './components/Sidebar';
+
 import Container, {
   StepIntro,
   StepTitle,
@@ -19,13 +18,11 @@ import Container, {
   CheckoutProducts,
   ProductsList,
   Product,
-  CheckoutSidebar,
 } from './styles';
 
 const Cart: React.FC = () => {
   const context = useApp();
-  const { steps, labels, answers, excludes, outcomes, suboutcomes, habits } =
-    context;
+  const { steps, labels } = context;
   const { step2: previousStep } = steps;
 
   return (
@@ -122,58 +119,7 @@ const Cart: React.FC = () => {
               ))}
             </ProductsList>
           </CheckoutProducts>
-          <CheckoutSidebar>
-            <div className="newsletter">
-              <h4>{labels.newsletter_title}</h4>
-              <div className="newsletter-buttons">
-                <input type="text" />
-                <input type="submit" value="Send" />
-              </div>
-              <PDFDownloadLink
-                document={
-                  <ReportDocument
-                    {...{ answers, excludes, outcomes, suboutcomes, habits }}
-                  />
-                }
-              >
-                Download report
-              </PDFDownloadLink>
-              <label htmlFor="privacy_policy" aria-required>
-                <input
-                  type="checkbox"
-                  id="privacy_policy"
-                  name="privacy_policy"
-                />
-                {labels.newsletter_agree}
-              </label>
-              <label htmlFor="blog_policy">
-                <input type="checkbox" id="blog_policy" name="blog_policy" />
-                {labels.newsletter_agree_blog}
-              </label>
-              <label htmlFor="newsletter_policy">
-                <input
-                  type="checkbox"
-                  id="newsletter_policy"
-                  name="newsletter_policy"
-                />
-                {labels.newsletter_agree_newsletter}
-              </label>
-            </div>
-            <div className="summary">
-              <h4>
-                <span>{labels.summary_total}</span> $50.68
-              </h4>
-              <span className="summary-details">0.54/day</span>
-              <em>{labels.summary_description}</em>
-              <p>{labels.summary_shipping}</p>
-              <button type="button">
-                {labels.summary_button} <BsArrowRight size={18} />
-              </button>
-              <span className="summary-save">
-                {labels.summary_save_recommendation}
-              </span>
-            </div>
-          </CheckoutSidebar>
+          <Sidebar />
         </StepContent>
       )}
     </Container>

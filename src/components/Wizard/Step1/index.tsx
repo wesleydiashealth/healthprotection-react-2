@@ -45,8 +45,8 @@ const Step1: React.FC = () => {
   const carouselContext = useContext(CarouselContext);
   const { setStoreState } = carouselContext;
 
-  const [birthMonth, setBirthMonth] = useState<string>('');
-  const [birthYear, setBirthYear] = useState<string>('');
+  const [birthMonth, setBirthMonth] = useState<number>(0);
+  const [birthYear, setBirthYear] = useState<number>(0);
   const [birthGroup, setBirthGroup] = useState<string>('');
 
   const wizardSteps = Object.keys(steps).filter(
@@ -71,8 +71,18 @@ const Step1: React.FC = () => {
 
       setBirthYear(year);
 
+      const today = new Date();
+      const entryDate = new Date(birthYear, birthMonth);
+      const yearsDiff = entryDate.getFullYear() - today.getFullYear();
+      const monthsDiff =
+        yearsDiff * 12 + (entryDate.getMonth() - today.getMonth());
+
+      // 216 months = 18 years
+      const isChild = monthsDiff >= -216;
+
       updateStep('step1', {
         isCompleted: true,
+        isExcluded: !isChild,
         answers: `${birthMonth}/${year}`,
       });
 
@@ -111,6 +121,7 @@ const Step1: React.FC = () => {
       answers,
       updateAnswers,
       birthMonth,
+      birthYear,
       currentQuestion,
       setStoreState,
       updateStep,
