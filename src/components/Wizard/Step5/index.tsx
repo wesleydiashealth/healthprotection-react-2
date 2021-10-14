@@ -1,6 +1,6 @@
 import React, { useCallback, useContext, useEffect, useState } from 'react';
 import ReactToolTip from 'react-tooltip';
-import { HiQuestionMarkCircle, HiOutlineCheckCircle } from 'react-icons/hi';
+import { HiOutlineCheckCircle } from 'react-icons/hi';
 import { FaUndoAlt } from 'react-icons/fa';
 import { CarouselContext } from 'pure-react-carousel';
 import Autocomplete from '@material-ui/lab/Autocomplete';
@@ -18,7 +18,12 @@ import AnswerData from 'dtos/AnswerData';
 
 import Button from 'components/Button';
 import Input from 'components/Input';
-import { StepContainer } from '../styles';
+import {
+  StepContainer,
+  QuestionPrefix,
+  QuestionTitle,
+  QuestionSuffix,
+} from '../styles';
 
 interface MedicationData {
   slug: string;
@@ -92,6 +97,7 @@ const Step5: React.FC = () => {
       );
 
       updateStep('step5', {
+        index: 5,
         isCompleted: answer.api !== 'yes',
         answers: answer.api,
       });
@@ -165,11 +171,13 @@ const Step5: React.FC = () => {
         });
 
         updateStep(updatedStep, {
+          index: 5,
           isCompleted: true,
           answers: medicationsList,
         });
       } else {
         updateStep(updatedStep, {
+          index: 5,
           isCompleted: false,
           answers: [],
         });
@@ -238,7 +246,7 @@ const Step5: React.FC = () => {
           color="#1BC9BD"
         />
       )}
-      <span>
+      <QuestionPrefix>
         Question {stepNumber}/{wizardSteps}
         {(step.isCompleted || !!step.answers.length) && (
           <FaUndoAlt
@@ -249,31 +257,40 @@ const Step5: React.FC = () => {
               setStepNumber('5');
               setStepTitle(currentQuestion?.label);
               updateStep('step5', {
+                index: 5,
                 isCompleted: false,
                 answers: [],
               });
               updateStep('step5_1', {
+                index: 5,
                 isCompleted: false,
                 answers: [],
               });
               updateStep('step5_2', {
+                index: 5,
                 isCompleted: false,
                 answers: [],
               });
             }}
           />
         )}
-      </span>
-      <strong>{stepTitle}</strong>
-      <HiQuestionMarkCircle
+      </QuestionPrefix>
+      <QuestionTitle>{stepTitle}</QuestionTitle>
+      <QuestionSuffix
+        data-tip={`<strong>${currentQuestion?.label}</strong><span>${currentQuestion?.description}</span>`}
+        data-for="step_5_tooltip"
+      >
+        Why are we asking?
+      </QuestionSuffix>
+      {/* <HiQuestionMarkCircle
         className="tooltip-icon"
         size={20}
         color="#7664C8"
         data-tip={`<strong>${stepTitle}</strong><span>${stepTitle}</span>`}
         data-for="step_5_medications_tooltip"
-      />
+      /> */}
       <ReactToolTip
-        id="step_5_medications_tooltip"
+        id="step_5_tooltip"
         className="step-tooltip"
         place="bottom"
         type="light"
@@ -397,6 +414,7 @@ const Step5: React.FC = () => {
               className="advance-button"
               onClick={() => {
                 updateStep('step5', {
+                  index: 5,
                   isCompleted: true,
                   answers: step?.answers,
                 });

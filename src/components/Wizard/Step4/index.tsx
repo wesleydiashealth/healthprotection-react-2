@@ -1,6 +1,6 @@
 import React, { useContext, useCallback } from 'react';
 import ReactToolTip from 'react-tooltip';
-import { HiQuestionMarkCircle, HiOutlineCheckCircle } from 'react-icons/hi';
+import { HiOutlineCheckCircle } from 'react-icons/hi';
 import ScrollArea from 'react-scrollbar';
 import { CarouselContext } from 'pure-react-carousel';
 
@@ -12,7 +12,12 @@ import Input from 'components/Input';
 
 import AnswerData from 'dtos/AnswerData';
 
-import { StepContainer } from '../styles';
+import {
+  StepContainer,
+  QuestionPrefix,
+  QuestionTitle,
+  QuestionSuffix,
+} from '../styles';
 
 const Step4: React.FC = () => {
   const appContext = useApp();
@@ -87,7 +92,7 @@ const Step4: React.FC = () => {
       }
 
       if (value === 'none') {
-        updateStep('step4', { isCompleted: true, answers: [value] });
+        updateStep('step4', { index: 4, isCompleted: true, answers: [value] });
         updatedAnswers[answerIndex] = {
           question: {
             slug: currentQuestion?.slug || '',
@@ -117,7 +122,7 @@ const Step4: React.FC = () => {
         updatedDiets.splice(step.answers.indexOf(value), 1);
       }
 
-      updateStep('step4', { answers: updatedDiets });
+      updateStep('step4', { index: 4, answers: updatedDiets });
     },
     [step, updateStep, setStoreState, answers, currentQuestion, updateAnswers],
   );
@@ -137,15 +142,21 @@ const Step4: React.FC = () => {
           color="#1BC9BD"
         />
       )}
-      <span>Question 4/{wizardSteps}</span>
-      <strong>{currentQuestion?.label}</strong>
-      <HiQuestionMarkCircle
+      <QuestionPrefix>Question 4/{wizardSteps}</QuestionPrefix>
+      <QuestionTitle>{currentQuestion?.label}</QuestionTitle>
+      <QuestionSuffix
+        data-tip={`<strong>${currentQuestion?.label}</strong><span>${currentQuestion?.description}</span>`}
+        data-for="step_4_tooltip"
+      >
+        Why are we asking?
+      </QuestionSuffix>
+      {/* <HiQuestionMarkCircle
         className="tooltip-icon"
         size={20}
         color="#7664C8"
         data-tip={`<strong>${currentQuestion?.label}</strong><span>${currentQuestion?.label}</span>`}
         data-for="step_4_tooltip"
-      />
+      /> */}
       <ReactToolTip
         id="step_4_tooltip"
         className="step-tooltip"
@@ -183,6 +194,7 @@ const Step4: React.FC = () => {
           className="advance-button"
           onClick={() => {
             updateStep('step4', {
+              index: 4,
               isCompleted: true,
               answers: step?.answers,
             });

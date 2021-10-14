@@ -43,6 +43,10 @@ const StepContainer = styled.div`
 
     display: flex;
 
+    > div {
+      display: flex;
+    }
+
     button {
       margin: 0 5px;
       border: none;
@@ -54,8 +58,22 @@ const StepContainer = styled.div`
       background: #c6c6c6;
     }
 
-    .carousel__dot--selected {
-      background: ${transparentize(0.5, '#7664c8')};
+    .carousel__dot {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+
+      svg {
+        color: #fff;
+      }
+
+      &--completed {
+        background-color: #1bc9bd;
+      }
+
+      &--selected {
+        background: ${transparentize(0.2, '#7664c8')};
+      }
     }
   }
 

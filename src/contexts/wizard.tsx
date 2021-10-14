@@ -7,6 +7,7 @@ import QuestionData from 'dtos/QuestionData';
 import QuestionAnswersData from 'dtos/QuestionAnswersData';
 
 interface StepData {
+  index: number;
   isCompleted?: boolean;
   isActive?: boolean;
   isDisabled?: boolean;
@@ -40,25 +41,18 @@ export const WizardProvider: React.FC = ({ children }) => {
   const query = useQuery();
 
   const [steps, setSteps] = useState<StepsData>({
-    step1: { isCompleted: false, answers: [] },
-    step2: { isCompleted: false, answers: [] },
-    step2_1: { isCompleted: false, answers: [] },
-    step3: { isCompleted: false, answers: [] },
-    step4: { isCompleted: false, answers: [] },
-    step5: { isCompleted: false, answers: [] },
-    step5_1: { isCompleted: false, answers: [] },
-    step5_2: { isCompleted: false, answers: [] },
-    step6: { isCompleted: false, answers: [] },
-    step6_1: { isCompleted: false, answers: [] },
-    step6_2: { isCompleted: false, answers: [] },
-    step6_3: { isCompleted: false, answers: [] },
-    step6_4: { isCompleted: false, answers: [] },
-    step7: { isCompleted: false, answers: [] },
-    step7_1: { isCompleted: false, answers: [] },
-    step7_2: { isCompleted: false, answers: [] },
-    step8: { isCompleted: false, answers: [] },
-    step8_1: { isCompleted: false, answers: [] },
-    step9: { isCompleted: false, answers: [] },
+    step1: { index: 1, isCompleted: false, answers: [] },
+    step2: { index: 2, isCompleted: false, answers: [] },
+    step2_1: { index: 2, isCompleted: false, answers: [] },
+    step3: { index: 3, isCompleted: false, answers: [] },
+    step4: { index: 4, isCompleted: false, answers: [] },
+    step5: { index: 5, isCompleted: false, answers: [] },
+    step5_1: { index: 5, isCompleted: false, answers: [] },
+    step5_2: { index: 5, isCompleted: false, answers: [] },
+    step6: { index: 6, isCompleted: false, answers: [] },
+    step6_1: { index: 6, isCompleted: false, answers: [] },
+    step6_2: { index: 6, isCompleted: false, answers: [] },
+    step7: { index: 7, isCompleted: false, answers: [] },
   });
 
   const [questions, setQuestions] = useState<QuestionData[]>([]);
@@ -114,7 +108,11 @@ export const WizardProvider: React.FC = ({ children }) => {
 
   async function resetSteps() {
     Object.keys(steps).forEach(step => {
-      updateStep(step, { isCompleted: false, answers: [] });
+      updateStep(step, {
+        index: parseInt(step.replace(/^\D+/g, ''), 10),
+        isCompleted: false,
+        answers: [],
+      });
     });
   }
 

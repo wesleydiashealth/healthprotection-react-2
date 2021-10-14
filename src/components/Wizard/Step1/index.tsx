@@ -1,11 +1,12 @@
 import React, { useContext, useState, useEffect, useCallback } from 'react';
 import ReactToolTip from 'react-tooltip';
-import { HiQuestionMarkCircle, HiOutlineCheckCircle } from 'react-icons/hi';
+import { HiOutlineCheckCircle } from 'react-icons/hi';
 import { CarouselContext } from 'pure-react-carousel';
 import Select from 'react-select';
 
 import { useApp } from 'contexts/app';
 import { useWizard } from 'contexts/wizard';
+
 // import Button from 'components/Button';
 import Input from 'components/Input';
 
@@ -13,7 +14,12 @@ import AnswerData from 'dtos/AnswerData';
 
 import months from 'months.json';
 
-import { StepContainer } from '../styles';
+import {
+  StepContainer,
+  QuestionPrefix,
+  QuestionTitle,
+  QuestionSuffix,
+} from '../styles';
 
 function getYears(startYear = 1901) {
   const currentYear = new Date().getFullYear();
@@ -81,6 +87,7 @@ const Step1: React.FC = () => {
       const isChild = monthsDiff >= -216;
 
       updateStep('step1', {
+        index: 1,
         isCompleted: true,
         isExcluded: !isChild,
         answers: `${birthMonth}/${year}`,
@@ -141,15 +148,21 @@ const Step1: React.FC = () => {
           color="#1BC9BD"
         />
       )}
-      <span>Question 1/{wizardSteps}</span>
-      <strong>{currentQuestion?.label}</strong>
-      <HiQuestionMarkCircle
+      <QuestionPrefix>Question 1/{wizardSteps}</QuestionPrefix>
+      <QuestionTitle>{currentQuestion?.label}</QuestionTitle>
+      <QuestionSuffix
+        data-tip={`<strong>${currentQuestion?.label}</strong><span>${currentQuestion?.description}</span>`}
+        data-for="step_1_tooltip"
+      >
+        Why are we asking?
+      </QuestionSuffix>
+      {/* <HiQuestionMarkCircle
         className="tooltip-icon"
         size={20}
         color="#7664C8"
         data-tip={`<strong>${currentQuestion?.label}</strong><span>${currentQuestion?.label}</span>`}
         data-for="step_1_tooltip"
-      />
+      /> */}
       <ReactToolTip
         id="step_1_tooltip"
         className="step-tooltip"

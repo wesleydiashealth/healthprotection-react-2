@@ -60,6 +60,7 @@ const Step6: React.FC = () => {
       );
 
       updateStep('step6', {
+        index: 6,
         isCompleted: answer.api !== 'yes',
         answers: answer.api,
       });
@@ -119,11 +120,13 @@ const Step6: React.FC = () => {
         });
 
         updateStep(updatedStep, {
+          index: 6,
           isCompleted: true,
           answers: medicationsList,
         });
       } else {
         updateStep(updatedStep, {
+          index: 6,
           isCompleted: false,
           answers: [],
         });
@@ -203,14 +206,17 @@ const Step6: React.FC = () => {
               setStepNumber('6');
               setStepTitle(currentQuestion?.label);
               updateStep('step6', {
+                index: 6,
                 isCompleted: false,
                 answers: [],
               });
               updateStep('step6_1', {
+                index: 6,
                 isCompleted: false,
                 answers: [],
               });
               updateStep('step6_2', {
+                index: 6,
                 isCompleted: false,
                 answers: [],
               });
@@ -308,6 +314,7 @@ const Step6: React.FC = () => {
               className="advance-button"
               onClick={() => {
                 updateStep('step6', {
+                  index: 6,
                   isCompleted: true,
                   answers: step?.answers,
                 });

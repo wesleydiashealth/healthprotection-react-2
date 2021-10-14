@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaToggleOn } from 'react-icons/fa';
 
 import { useApp } from 'contexts/app';
 
@@ -14,6 +15,7 @@ const Suboutcomes: React.FC = () => {
     <Container>
       <ContainerLabel>
         <strong>Fine-tune your chosen sub-outcomes</strong>
+        <FaToggleOn />
         <span>
           The min-max range reflects the efficiency of nutraceuticals
           <br />

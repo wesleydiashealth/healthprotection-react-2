@@ -1,6 +1,6 @@
 import React, { useState, useContext, useCallback } from 'react';
 import ReactToolTip from 'react-tooltip';
-import { HiQuestionMarkCircle, HiOutlineCheckCircle } from 'react-icons/hi';
+import { HiOutlineCheckCircle } from 'react-icons/hi';
 import { FaUndoAlt } from 'react-icons/fa';
 import { CarouselContext } from 'pure-react-carousel';
 import Autocomplete from '@material-ui/lab/Autocomplete';
@@ -12,7 +12,12 @@ import { useWizard } from 'contexts/wizard';
 import Button from 'components/Button';
 import Input from 'components/Input';
 import AnswerData from 'dtos/AnswerData';
-import { StepContainer } from '../styles';
+import {
+  StepContainer,
+  QuestionPrefix,
+  QuestionTitle,
+  QuestionSuffix,
+} from '../styles';
 
 interface NutraceuticalData {
   slug: string;
@@ -25,12 +30,12 @@ const Step7: React.FC = () => {
 
   const context = useWizard();
   const { steps, questions, updateStep } = context;
-  const { step7: step, step5: previousStep } = steps;
+  const { step6: step, step5: previousStep } = steps;
   const currentQuestion = questions.find(
     question => Number(question.id) === 17,
   );
 
-  const subSteps = [steps.step7_1, steps.step7_2];
+  const subSteps = [steps.step6_1, steps.step6_2];
 
   const subStepsCompleted = !!subSteps.filter(subStep => !!subStep.isCompleted)
     .length;
@@ -55,7 +60,8 @@ const Step7: React.FC = () => {
         item => item.question.slug === currentQuestion?.slug,
       );
 
-      updateStep('step7', {
+      updateStep('step6', {
+        index: 6,
         isCompleted: answer.api !== 'yes',
         answers: answer.api,
       });
@@ -92,7 +98,7 @@ const Step7: React.FC = () => {
       if (answer.api !== 'yes') {
         setStoreState({ currentSlide: 6 });
       } else {
-        setStepNumber('7.1');
+        setStepNumber('6.1');
         setStepTitle('Select below which one you use:');
       }
     },
@@ -115,11 +121,13 @@ const Step7: React.FC = () => {
         });
 
         updateStep(updatedStep, {
+          index: 6,
           isCompleted: true,
           answers: medicationsList,
         });
       } else {
         updateStep(updatedStep, {
+          index: 6,
           isCompleted: false,
           answers: [],
         });
@@ -187,7 +195,7 @@ const Step7: React.FC = () => {
           color="#1BC9BD"
         />
       )}
-      <span>
+      <QuestionPrefix>
         Question {stepNumber}/{wizardSteps}
         {(step.isCompleted || !!step.answers.length) && (
           <FaUndoAlt
@@ -195,36 +203,45 @@ const Step7: React.FC = () => {
             color="#7664c8"
             onClick={() => {
               setStoreState({ currentSlide: 6 });
-              setStepNumber('7');
+              setStepNumber('6');
               setStepTitle(currentQuestion?.label);
-              updateStep('step7', {
+              updateStep('step6', {
+                index: 6,
                 isCompleted: false,
                 answers: [],
               });
-              updateStep('step7_1', {
+              updateStep('step6_1', {
+                index: 6,
                 isCompleted: false,
                 answers: [],
               });
-              updateStep('step7_2', {
+              updateStep('step6_2', {
+                index: 6,
                 isCompleted: false,
                 answers: [],
               });
             }}
           />
         )}
-      </span>
-      <strong>{stepTitle}</strong>
-      <HiQuestionMarkCircle
+      </QuestionPrefix>
+      <QuestionTitle>{stepTitle}</QuestionTitle>
+      <QuestionSuffix
+        data-tip={`<strong>${currentQuestion?.label}</strong><span>${currentQuestion?.description}</span>`}
+        data-for="step_6_tooltip"
+      >
+        Why are we asking?
+      </QuestionSuffix>
+      {/* <HiQuestionMarkCircle
         className="tooltip-icon"
         size={20}
         color="#7664C8"
         data-tip={`<strong>${
           step?.answers !== 'yes' ? currentQuestion?.label : stepTitle
         }</strong><span>${currentQuestion?.label}</span>`}
-        data-for="step_7_tooltip"
-      />
+        data-for="step_6_tooltip"
+      /> */}
       <ReactToolTip
-        id="step_7_tooltip"
+        id="step_6_tooltip"
         className="step-tooltip"
         place="bottom"
         type="light"
@@ -253,7 +270,7 @@ const Step7: React.FC = () => {
           <Input
             type="hidden"
             name="nutraceuticalsDaily"
-            value={steps?.step7_1.answers}
+            value={steps?.step6_1.answers}
           />
           <Autocomplete
             multiple
@@ -263,7 +280,7 @@ const Step7: React.FC = () => {
             getOptionLabel={option => option.title}
             disabled={step?.isCompleted}
             onChange={(event, newValue) => {
-              handleButtonClick(newValue, 'step7_1', 'Daily Use');
+              handleButtonClick(newValue, 'step6_1', 'Daily Use');
             }}
             renderInput={params => (
               <TextField
@@ -277,7 +294,7 @@ const Step7: React.FC = () => {
           <Input
             type="hidden"
             name="nutraceuticalsOccasionally"
-            value={steps?.step7_2.answers}
+            value={steps?.step6_2.answers}
           />
           <Autocomplete
             multiple
@@ -287,7 +304,7 @@ const Step7: React.FC = () => {
             getOptionLabel={option => option.title}
             disabled={step?.isCompleted}
             onChange={(event, newValue) => {
-              handleButtonClick(newValue, 'step7_2', 'Occasionally Use');
+              handleButtonClick(newValue, 'step6_2', 'Occasionally Use');
             }}
             renderInput={params => (
               <TextField
@@ -303,7 +320,8 @@ const Step7: React.FC = () => {
               type="submit"
               className="advance-button"
               onClick={() => {
-                updateStep('step7', {
+                updateStep('step6', {
+                  index: 6,
                   isCompleted: true,
                   answers: step?.answers,
                 });

@@ -311,25 +311,27 @@ export const StepContainer = styled.div<StepContainerProps>`
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.11);
     border-radius: 20px;
 
-    text-align: left;
     font-family: 'Montserrat';
 
     strong {
-      margin-bottom: 5px;
+      margin-bottom: 10px;
 
       display: block;
 
       color: #7664c8;
 
       font-weight: 600;
-      font-size: 16px;
-      line-height: 24px;
+      font-size: 14px;
+      line-height: 22px;
     }
 
     span {
+      display: block;
+
+      text-align: justify;
       font-weight: normal;
-      font-size: 14px;
-      line-height: 22px;
+      font-size: 12px;
+      line-height: 20px;
     }
   }
 
@@ -422,6 +424,45 @@ export const StepContainer = styled.div<StepContainerProps>`
         pointer-events: none;
       }
     `}
+`;
+
+export const QuestionPrefix = styled.span`
+  margin-bottom: 10px;
+
+  display: flex;
+  align-items: center;
+
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 20px;
+
+  svg {
+    margin-left: 10px;
+
+    box-sizing: border-box;
+  }
+`;
+
+export const QuestionTitle = styled.strong`
+  margin-bottom: 24px;
+
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 20px;
+`;
+
+export const QuestionSuffix = styled.span`
+  position: absolute;
+  top: 15px;
+  right: 15px !important;
+
+  text-decoration: underline;
+
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: none;
+  }
 `;
 
 export default Container;

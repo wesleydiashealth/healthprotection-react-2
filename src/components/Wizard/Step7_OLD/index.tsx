@@ -6,9 +6,9 @@ import { CarouselContext } from 'pure-react-carousel';
 
 import bloodTestJson from 'blood-test.json';
 import { useWizard } from 'contexts/wizard';
-import { StepContainer } from '../styles';
+import Button from 'components/Button';
 
-import Button from '../../Button';
+import { StepContainer } from '../styles';
 
 interface BloodTestData {
   [key: string]: string;
@@ -80,6 +80,7 @@ const Step7: React.FC = () => {
             type="submit"
             onClick={() => {
               context.updateStep('step7', {
+                index: 7,
                 isCompleted: answer.api !== 'yes',
                 answers: answer.api,
               });
@@ -137,6 +138,7 @@ const Step7: React.FC = () => {
               className="advance-button"
               onClick={() => {
                 context.updateStep('step7', {
+                  index: 7,
                   isCompleted: true,
                   answers: step?.answers,
                 });

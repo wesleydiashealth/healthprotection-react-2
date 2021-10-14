@@ -169,16 +169,16 @@ const Wizard: React.FC = () => {
                   {/* <Slide index={6}>
                     <Step6 />
                   </Slide> */}
-                  <Slide index={7}>
+                  <Slide index={6}>
                     <Step7 />
                   </Slide>
                   {/* <Slide index={8}>
                     <Step8 />
                   </Slide> */}
-                  <Slide index={9}>
+                  <Slide index={7}>
                     <Step9 />
                   </Slide>
-                  <Slide index={10}>
+                  <Slide index={8}>
                     <Step10 />
                   </Slide>
                 </Slider>

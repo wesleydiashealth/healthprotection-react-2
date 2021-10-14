@@ -6,6 +6,7 @@ export default interface QuestionData {
   type: string;
   table: string;
   label: string;
+  description: string;
   answers: {
     [key: string]: QuestionAnswersData;
   };

@@ -17,13 +17,13 @@ const Step10: React.FC = () => {
 
   const queryNutraceuticals = suboutcomes.reduce(
     (acc: string[], { nutraceuticals }) => {
-      const xpto = Object.values(nutraceuticals).reduce(
+      const suboutcome = Object.values(nutraceuticals).reduce(
         (subAcc: string[], subNutraceuticals) => {
           return Array.from(new Set([...subAcc, ...subNutraceuticals]));
         },
       );
 
-      return Array.from(new Set([...acc, ...xpto]));
+      return Array.from(new Set([...acc, ...suboutcome]));
     },
     [],
   );

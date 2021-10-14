@@ -1,6 +1,6 @@
 import React, { useContext, useState, useCallback } from 'react';
 import ReactToolTip from 'react-tooltip';
-import { HiQuestionMarkCircle, HiOutlineCheckCircle } from 'react-icons/hi';
+import { HiOutlineCheckCircle } from 'react-icons/hi';
 import ScrollArea from 'react-scrollbar';
 import { CarouselContext } from 'pure-react-carousel';
 
@@ -10,7 +10,12 @@ import Button from 'components/Button';
 
 import AnswerData from 'dtos/AnswerData';
 
-import { StepContainer } from '../styles';
+import {
+  StepContainer,
+  QuestionPrefix,
+  QuestionTitle,
+  QuestionSuffix,
+} from '../styles';
 
 const Step9: React.FC = () => {
   const appContext = useApp();
@@ -18,12 +23,12 @@ const Step9: React.FC = () => {
 
   const wizardContext = useWizard();
   const { steps, questions, updateStep } = wizardContext;
-  const { step9: step, step7: previousStep } = steps;
+  const { step7: step, step6: previousStep } = steps;
   const currentQuestion = questions.find(
     question => Number(question.id) === 11,
   );
 
-  const [stepNumber] = useState<string>('8');
+  const [stepNumber] = useState<string>('7');
   const [stepTitle] = useState<string>(currentQuestion?.label || '');
 
   const carouselContext = useContext(CarouselContext);
@@ -41,7 +46,8 @@ const Step9: React.FC = () => {
         item => item.question.slug === currentQuestion?.slug,
       );
 
-      updateStep('step9', {
+      updateStep('step7', {
+        index: 7,
         isCompleted: true,
         answers: answer.slug || '',
       });
@@ -95,19 +101,25 @@ const Step9: React.FC = () => {
           color="#1BC9BD"
         />
       )}
-      <span>
+      <QuestionPrefix>
         Question {stepNumber}/{wizardSteps}
-      </span>
-      <strong>{stepTitle}</strong>
-      <HiQuestionMarkCircle
+      </QuestionPrefix>
+      <QuestionTitle>{stepTitle}</QuestionTitle>
+      <QuestionSuffix
+        data-tip={`<strong>${currentQuestion?.label}</strong><span>${currentQuestion?.description}</span>`}
+        data-for="step_7_tooltip"
+      >
+        Why are we asking?
+      </QuestionSuffix>
+      {/* <HiQuestionMarkCircle
         className="tooltip-icon"
         size={20}
         color="#7664c8"
         data-tip={`<strong>${currentQuestion?.label}</strong><span>${currentQuestion?.label}</span>`}
-        data-for="step_9_tooltip"
-      />
+        data-for="step_7_tooltip"
+      /> */}
       <ReactToolTip
-        id="step_9_tooltip"
+        id="step_7_tooltip"
         className="step-tooltip"
         place="bottom"
         type="light"

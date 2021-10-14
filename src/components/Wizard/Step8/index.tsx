@@ -72,6 +72,7 @@ const Step8: React.FC = () => {
             type="submit"
             onClick={() => {
               context.updateStep('step8', {
+                index: 8,
                 isCompleted: answer.api !== 'yes',
                 answers: answer.api,
               });
@@ -97,6 +98,7 @@ const Step8: React.FC = () => {
             className="advance-button"
             onClick={() => {
               context.updateStep('step8', {
+                index: 8,
                 isCompleted: true,
                 answers: step?.answers,
               });

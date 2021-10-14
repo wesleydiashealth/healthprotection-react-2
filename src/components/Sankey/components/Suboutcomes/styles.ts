@@ -35,6 +35,11 @@ export const ContainerLabel = styled.div`
     font-size: 14px;
     line-height: 22px;
   }
+
+  svg {
+    width: 24px;
+    height: auto;
+  }
 `;
 
 export default Container;

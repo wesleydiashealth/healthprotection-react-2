@@ -1,6 +1,6 @@
 import React, { useState, useContext, useCallback } from 'react';
 import ReactToolTip from 'react-tooltip';
-import { HiQuestionMarkCircle, HiOutlineCheckCircle } from 'react-icons/hi';
+import { HiOutlineCheckCircle } from 'react-icons/hi';
 import { FaUndoAlt } from 'react-icons/fa';
 import { CarouselContext } from 'pure-react-carousel';
 
@@ -12,7 +12,12 @@ import Input from 'components/Input';
 
 import AnswerData from 'dtos/AnswerData';
 
-import { StepContainer } from '../styles';
+import {
+  StepContainer,
+  QuestionPrefix,
+  QuestionTitle,
+  QuestionSuffix,
+} from '../styles';
 
 const Step2: React.FC = () => {
   const appContext = useApp();
@@ -43,6 +48,7 @@ const Step2: React.FC = () => {
       );
 
       updateStep('step2', {
+        index: 2,
         isCompleted: answer.api !== 'female',
         answers: answer.api,
         subAnswers: answer?.answers,
@@ -106,6 +112,7 @@ const Step2: React.FC = () => {
       updateAnswers(updatedAnswers);
 
       updateStep(updatedStep, {
+        index: 2,
         isCompleted: true,
         answers: subAnswer.slug || '',
       });
@@ -129,7 +136,7 @@ const Step2: React.FC = () => {
           color="#1BC9BD"
         />
       )}
-      <span>
+      <QuestionPrefix>
         Question {stepNumber}/{wizardSteps}
         {(step.isCompleted || !!step.answers.length) && (
           <FaUndoAlt
@@ -140,19 +147,27 @@ const Step2: React.FC = () => {
               setStepNumber('2');
               setStepTitle(currentQuestion?.label);
               updateStep('step2', {
+                index: 2,
                 isCompleted: false,
                 answers: [],
               });
               updateStep('step2_1', {
+                index: 2,
                 isCompleted: false,
                 answers: [],
               });
             }}
           />
         )}
-      </span>
-      <strong>{stepTitle}</strong>
-      <HiQuestionMarkCircle
+      </QuestionPrefix>
+      <QuestionTitle>{stepTitle}</QuestionTitle>
+      <QuestionSuffix
+        data-tip={`<strong>${currentQuestion?.label}</strong><span>${currentQuestion?.description}</span>`}
+        data-for="step_2_tooltip"
+      >
+        Why are we asking?
+      </QuestionSuffix>
+      {/* <HiQuestionMarkCircle
         className="tooltip-icon"
         size={20}
         color="#7664C8"
@@ -160,7 +175,7 @@ const Step2: React.FC = () => {
           step?.answers !== 'female' ? currentQuestion?.label : stepTitle
         }</strong><span>${currentQuestion?.label}</span>`}
         data-for="step_2_tooltip"
-      />
+      /> */}
       <ReactToolTip
         id="step_2_tooltip"
         className="step-tooltip"
