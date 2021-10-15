@@ -76,7 +76,19 @@ const Cart: React.FC = () => {
                       alt=""
                     />
                     <div className="">
-                      <h5>{product.label}</h5>
+                      <h5>
+                        {product.link ? (
+                          <a
+                            href={product.link}
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            {product.label}
+                          </a>
+                        ) : (
+                          product.label
+                        )}
+                      </h5>
                       <span>{product.dosage}</span>
                     </div>
                   </div>

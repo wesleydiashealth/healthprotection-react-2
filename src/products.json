@@ -1,10 +1,10 @@
 [
-  {"image": "5-HTP.svg", "value": "5-htp", "label": "5-HTP", "dosage": "1000mg / day", "link": "#", "price": 7.00},
-  {"image": "Acai.svg", "value": "acai", "label": "Açaí", "dosage": "1000mg / day", "link": "#", "price": 7.00},
-  {"image": "Agmatine.svg", "value": "agmatine", "label": "Agmatine", "dosage": "1000mg / day", "link": "#", "price": 7.00},
-  {"image": "Aloe_Vera.svg", "value": "aloe-vera", "label": "Aloe Vera", "dosage": "1000mg / day", "link": "#", "price": 7.00},
-  {"image": "Alpha-GPC.svg", "value": "alpha-gpc", "label": "Alpha-GPC", "dosage": "1000mg / day", "link": "#", "price": 7.00},
-  {"image": "Alpha-Lipoic_Acid.svg", "value": "alpha-lipoic-acid", "label": "Alpha-Lipoic Acid", "dosage": "1000mg / day", "link": "#", "price": 7.00},
-  {"image": "Arginine.svg", "value": "arginine", "label": "Arginine", "dosage": "1000mg / day", "link": "#", "price": 7.00},
-  {"image": "Ashwagandha.svg", "value": "ashwagandha", "label": "Ashwagandha", "dosage": "1000mg / day", "link": "#", "price": 7.00}
+  {"image": "Ashwagandha.svg", "value": "ashwagandha", "label": "Ashwagandha", "dosage": "1000mg / day", "link": "https://www.amazon.es/gp/product/B0924NVD4Y/ref=as_li_qf_asin_il_tl?ie=UTF8&tag=healthprotect-21&creative=24630&linkCode=as2&creativeASIN=B0924NVD4Y&linkId=0db331ecdaa0bc0ba143d3abad92e498", "price": 7.00},
+  {"image": "Acai.svg", "value": "sotya", "label": "SOTYA Levedura de cerveja", "dosage": "1000mg / day", "link": "https://www.amazon.es/gp/product/B00V6AIW6M/ref=as_li_qf_asin_il_tl?ie=UTF8&tag=healthprotect-21&creative=24630&linkCode=as2&creativeASIN=B00V6AIW6M&linkId=4c9321b7f49471ff860e0526f47320ba", "price": 7.00},
+  {"image": "Agmatine.svg", "value": "colageno", "label": "Colágeno", "dosage": "1000mg / day", "link": "https://www.amazon.es/gp/product/B00XO27QH6/ref=as_li_qf_asin_il_tl?ie=UTF8&tag=healthprotect-21&creative=24630&linkCode=as2&creativeASIN=B00XO27QH6&linkId=d8fc9795df47fb01a0405f2b048735ad", "price": 7.00},
+  {"image": "Aloe_Vera.svg", "value": "aloe-vera", "label": "Aloe Vera", "dosage": "1000mg / day", "link": "", "price": 7.00},
+  {"image": "Alpha-GPC.svg", "value": "alpha-gpc", "label": "Alpha-GPC", "dosage": "1000mg / day", "link": "", "price": 7.00},
+  {"image": "Alpha-Lipoic_Acid.svg", "value": "alpha-lipoic-acid", "label": "Alpha-Lipoic Acid", "dosage": "1000mg / day", "link": "", "price": 7.00},
+  {"image": "Arginine.svg", "value": "arginine", "label": "Arginine", "dosage": "1000mg / day", "link": "", "price": 7.00},
+  {"image": "Ashwagandha.svg", "value": "ashwagandha", "label": "Ashwagandha", "dosage": "1000mg / day", "link": "", "price": 7.00}
 ]

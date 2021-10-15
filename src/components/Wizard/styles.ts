@@ -456,13 +456,9 @@ export const QuestionSuffix = styled.span`
   top: 15px;
   right: 15px !important;
 
-  text-decoration: underline;
+  color: #7664c8;
 
   cursor: pointer;
-
-  &:hover {
-    text-decoration: none;
-  }
 `;
 
 export default Container;
