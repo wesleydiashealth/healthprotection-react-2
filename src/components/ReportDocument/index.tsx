@@ -36,7 +36,7 @@ const ReportDocument: React.FC<ReportDocumentData> = ({
   suboutcomes,
   habits,
 }) => {
-  const today = new Date();
+  // const today = new Date();
 
   const {
     outcomes: excludedOutcomes,
@@ -47,22 +47,22 @@ const ReportDocument: React.FC<ReportDocumentData> = ({
   return (
     <Document>
       <Page size="A4" style={styles.page}>
-        <View style={styles.header}>
+        {/* <View style={styles.header}>
           <Text style={styles.date}>
             test performed on:{' '}
             {`${today.getDate()}/${
               today.getMonth() + 1
             }/${today.getFullYear()}`}
           </Text>
-        </View>
+        </View> */}
         <View style={styles.intro}>
           <Image
             style={styles.introIcon}
-            src="/images/healthprotection_icon.png"
+            src="/images/healthprotection_retina.png"
           />
           <Text style={styles.introTitle}>Personalized for you</Text>
           <Text style={styles.introDesc}>
-            We are glad you are taking care of yourself and we are here to
+            Hi! We are glad you are taking care of yourself and we are here to
             support you.
           </Text>
         </View>
@@ -86,34 +86,42 @@ const ReportDocument: React.FC<ReportDocumentData> = ({
         <View style={styles.featured}>
           <Text>
             So now that you have chosen your{' '}
-            <Text style={styles.mainColor}>Health Protection</Text> supplements
-            there are a few things you will need to know and note.
+            <Text style={styles.bold}>Health Protection</Text> supplements there
+            are a few things you will need to know and note.
           </Text>
         </View>
-        <View style={styles.answers} break>
+
+        <View style={styles.step1} break>
           <Text style={styles.sectionTitle}>Your answers in Step 1</Text>
-          {answers.map(answer => (
-            <View style={styles.answersItem}>
-              <Text
-                key={answer.question.slug}
-                style={styles.answersItemQuestion}
-              >
-                {answer.question.label.charAt(0).toUpperCase() +
-                  answer.question.label.slice(1)}
-              </Text>
-              <Text style={styles.answersItemAnswer}>
-                {answer.answer.label}
-              </Text>
-              {!!answer.subAnswer && (
-                <View>
-                  {answer.subAnswer.map(item => (
-                    <Text>{`${item.question.label}: ${item.answer.label}`}</Text>
-                  ))}
-                </View>
-              )}
-            </View>
-          ))}
+          <Text style={styles.sectionSubtitle}>
+            Show on the red box if excludes outcomes, sub-outcomes and
+            netraceuticals
+          </Text>
+          <View style={styles.answers}>
+            {answers.map(answer => (
+              <View style={styles.answersItem}>
+                <Text
+                  key={answer.question.slug}
+                  style={styles.answersItemQuestion}
+                >
+                  {answer.question.label.charAt(0).toUpperCase() +
+                    answer.question.label.slice(1)}
+                </Text>
+                <Text style={styles.answersItemAnswer}>
+                  {answer.answer.label}
+                </Text>
+                {!!answer.subAnswer && (
+                  <View>
+                    {answer.subAnswer.map(item => (
+                      <Text>{`${item.question.label}: ${item.answer.label}`}</Text>
+                    ))}
+                  </View>
+                )}
+              </View>
+            ))}
+          </View>
         </View>
+
         <View style={styles.excludes}>
           <Text style={styles.sectionTitleMt40}>
             What we exclude in this step
