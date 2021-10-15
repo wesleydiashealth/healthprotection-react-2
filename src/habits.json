@@ -1,16 +1,19 @@
 [
   {
       "food": "Cereals",
+      "unit": "unidade",
       "icon": "https://www.healthprotection.com/wp-content/uploads/2021/09/icon-cereals.jpg",
       "frequency": "Once a week"
   },
   {
       "food": "Flaxseeds",
+      "unit": "unidade",
       "icon": "https://www.healthprotection.com/wp-content/uploads/2021/09/icon-flaxseeds.jpg",
       "frequency": "Twice a week"
   },
   {
       "food": "Jello",
+      "unit": "unidade",
       "icon": "https://www.healthprotection.com/wp-content/uploads/2021/09/icon-jello.jpg",
       "frequency": "Three or more times a week"
   }

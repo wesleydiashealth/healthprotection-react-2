@@ -12,8 +12,8 @@ import {
 
 import AnswerData from 'dtos/AnswerData';
 import ExcludeData from 'dtos/ExcludesData';
-import OutcomeData from 'dtos/OutcomeData';
-import SuboutcomeData from 'dtos/SuboutcomeData';
+// import OutcomeData from 'dtos/OutcomeData';
+// import SuboutcomeData from 'dtos/SuboutcomeData';
 import HabitData from 'dtos/HabitData';
 
 import styles from './styles';
@@ -23,8 +23,6 @@ Font.registerHyphenationCallback(word => [word]);
 interface ReportDocumentData {
   answers: AnswerData[];
   excludes: ExcludeData;
-  outcomes: OutcomeData[];
-  suboutcomes: SuboutcomeData[];
   habits: HabitData[];
 }
 
@@ -32,17 +30,9 @@ interface ReportDocumentData {
 const ReportDocument: React.FC<ReportDocumentData> = ({
   answers,
   excludes,
-  outcomes,
-  suboutcomes,
   habits,
 }) => {
   // const today = new Date();
-
-  const {
-    outcomes: excludedOutcomes,
-    suboutcomes: excludedSuboutcomes,
-    nutraceuticals: excludedNutraceuticals,
-  } = excludes;
 
   return (
     <Document>
@@ -91,6 +81,12 @@ const ReportDocument: React.FC<ReportDocumentData> = ({
           </Text>
         </View>
 
+        <View style={styles.step2} break>
+          <Text style={styles.sectionTitle}>
+            Your desire outcomes and sub-outcomes in Step 2
+          </Text>
+        </View>
+
         <View style={styles.step1} break>
           <Text style={styles.sectionTitle}>Your answers in Step 1</Text>
           <Text style={styles.sectionSubtitle}>
@@ -98,31 +94,60 @@ const ReportDocument: React.FC<ReportDocumentData> = ({
             netraceuticals
           </Text>
           <View style={styles.answers}>
-            {answers.map(answer => (
-              <View style={styles.answersItem}>
-                <Text
-                  key={answer.question.slug}
-                  style={styles.answersItemQuestion}
-                >
-                  {answer.question.label.charAt(0).toUpperCase() +
-                    answer.question.label.slice(1)}
-                </Text>
-                <Text style={styles.answersItemAnswer}>
-                  {answer.answer.label}
-                </Text>
-                {!!answer.subAnswer && (
+            {answers.map(answer => {
+              const answerExcludes = Object.entries(excludes).filter(
+                ({ 0: exclude }) => exclude === answer.question.slug,
+              );
+
+              return (
+                <View key={answer.question.slug} style={styles.answer}>
+                  <Text style={styles.answerQuestion}>
+                    {answer.question.label.charAt(0).toUpperCase() +
+                      answer.question.label.slice(1)}
+                  </Text>
                   <View>
-                    {answer.subAnswer.map(item => (
-                      <Text>{`${item.question.label}: ${item.answer.label}`}</Text>
+                    {answer.answer.label.split(', ').map(item => (
+                      <Text style={styles.answerAnswer}>{item}</Text>
                     ))}
                   </View>
-                )}
-              </View>
-            ))}
+                  {!!answer.subAnswer && (
+                    <View>
+                      {answer.subAnswer.map(item => (
+                        <View key={item.answer.slug}>
+                          <Text
+                            style={styles.answerSubQuestion}
+                          >{`${item.question.label}:`}</Text>
+                          <Text style={styles.answerSubAnswer}>
+                            {item.answer.label}
+                          </Text>
+                        </View>
+                      ))}
+                    </View>
+                  )}
+                  {!!answerExcludes.length && (
+                    <View style={styles.answerExcludes}>
+                      <Text style={styles.answerExcludesTitle}>
+                        What we exclude in this answer:
+                      </Text>
+                      {answerExcludes.map(({ 1: exclude }) =>
+                        exclude.map(value => (
+                          <Text
+                            key={value.slug}
+                            style={styles.answerExcludesValue}
+                          >
+                            {value.label}
+                          </Text>
+                        )),
+                      )}
+                    </View>
+                  )}
+                </View>
+              );
+            })}
           </View>
         </View>
 
-        <View style={styles.excludes}>
+        {/* <View style={styles.excludes}>
           <Text style={styles.sectionTitleMt40}>
             What we exclude in this step
           </Text>
@@ -172,8 +197,8 @@ const ReportDocument: React.FC<ReportDocumentData> = ({
           ) : (
             <Text style={styles.sectionValue}>None</Text>
           )}
-        </View>
-        <View style={styles.Outcomes} break>
+        </View> */}
+        {/* <View style={styles.Outcomes} break>
           <Text style={styles.sectionTitle}>
             Your desire outcomes in Step 2
           </Text>
@@ -196,39 +221,25 @@ const ReportDocument: React.FC<ReportDocumentData> = ({
               <Text style={styles.suboutcomeTitle}>{suboutcome.title}</Text>
             </View>
           ))}
-        </View>
-        <View style={styles.eatingHabits}>
+        </View> */}
+        <View style={styles.step3}>
           <Text style={styles.sectionTitleMt40}>
             About your eating habits in Step 3
           </Text>
-          {habits.map(habit => (
-            <View key={habit.food} style={styles.habit}>
-              <Image style={styles.habitIcon} src={habit.icon} />
-              <View style={styles.habitContent}>
-                <Text style={styles.habitTitle}>{habit.food}: </Text>
-                <Text style={styles.habitFrequency}>{habit.frequency}</Text>
+          <View style={styles.habits}>
+            {habits.map(habit => (
+              <View key={habit.food} style={styles.habit}>
+                <Image style={styles.habitIcon} src={habit.icon} />
+                <View style={styles.habitContent}>
+                  <Text style={styles.habitTitle}>{habit.food}</Text>
+                  <Text style={styles.habitQuestion}>
+                    How many {habit.unit} do you consume per week?
+                  </Text>
+                  <Text style={styles.habitFrequency}>{habit.frequency}</Text>
+                </View>
               </View>
-            </View>
-          ))}
-        </View>
-        {/* <View style={styles.excludes}>
-          <Text style={styles.sectionTitleMt40}>
-            What we exclude in this step
-          </Text>
-          <Text style={styles.sectionLabel}>
-            Through your eating habits and areas you want to take care of, our
-            scientific base along with our AI has ruled out the following
-            nutraceuticals:
-          </Text>
-          <Text style={styles.sectionValue}>Reishi</Text>
-          <Text style={styles.sectionValue}>Ômega 3</Text>
-        </View> */}
-        <View>
-          <Text style={styles.sectionTitleMt40}>Your result</Text>
-          <Text style={styles.sectionLabel}>
-            Each pack contains 30-day capsules. Check which nutraceuticals can
-            help you and the recommended daily dose.
-          </Text>
+            ))}
+          </View>
         </View>
       </Page>
     </Document>

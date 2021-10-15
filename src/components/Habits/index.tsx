@@ -95,6 +95,7 @@ const Habits: React.FC = () => {
       if (habitIndex > -1) {
         updatedHabits[habitIndex] = {
           food: food.title,
+          unit: food.unit,
           icon: food.icon,
           frequency,
         };
@@ -103,7 +104,7 @@ const Habits: React.FC = () => {
       } else {
         updateHabits([
           ...habits,
-          { food: food.title, icon: food.icon, frequency },
+          { food: food.title, unit: food.unit, icon: food.icon, frequency },
         ]);
       }
     },
