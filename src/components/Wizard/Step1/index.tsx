@@ -54,21 +54,22 @@ const Step1: React.FC = () => {
   const [birthMonth, setBirthMonth] = useState<number>(0);
   const [birthYear, setBirthYear] = useState<number>(0);
   const [birthGroup, setBirthGroup] = useState<string>('');
-
-  const wizardSteps = Object.keys(steps).filter(
-    item => !item.includes('_'),
-  ).length;
+  const [isChild, setIsChild] = useState<boolean>(false);
 
   useEffect(() => {
     setBirthGroup(`${birthMonth}/${birthYear}`);
   }, [birthMonth, birthYear]);
+
+  const wizardSteps = Object.keys(steps).filter(
+    item => !item.includes('_'),
+  ).length;
 
   const handleMonthInput = useCallback((month = '') => {
     setBirthMonth(month);
   }, []);
 
   const handleYearInput = useCallback(
-    (year = '') => {
+    async (year = '') => {
       const updatedAnswers: AnswerData[] = [...answers];
 
       const answerIndex = answers.findIndex(
@@ -78,13 +79,12 @@ const Step1: React.FC = () => {
       setBirthYear(year);
 
       const today = new Date();
-      const entryDate = new Date(birthYear, birthMonth);
+      const entryDate = new Date(year, birthMonth);
       const yearsDiff = entryDate.getFullYear() - today.getFullYear();
       const monthsDiff =
         yearsDiff * 12 + (entryDate.getMonth() - today.getMonth());
 
-      // 216 months = 18 years
-      const isChild = monthsDiff >= -216;
+      setIsChild(monthsDiff >= -216);
 
       updateStep('step1', {
         index: 1,
@@ -129,7 +129,7 @@ const Step1: React.FC = () => {
       answers,
       updateAnswers,
       birthMonth,
-      birthYear,
+      isChild,
       currentQuestion,
       setStoreState,
       updateStep,
