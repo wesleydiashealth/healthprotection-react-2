@@ -65,6 +65,7 @@ const Navigation: React.FC = () => {
 
                 return (
                   <button
+                    key={key}
                     aria-label="slide dot"
                     type="button"
                     className={`carousel__dot carousel__dot--${index} ${

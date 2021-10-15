@@ -54,7 +54,6 @@ const Step1: React.FC = () => {
   const [birthMonth, setBirthMonth] = useState<number>(0);
   const [birthYear, setBirthYear] = useState<number>(0);
   const [birthGroup, setBirthGroup] = useState<string>('');
-  const [isChild, setIsChild] = useState<boolean>(false);
 
   useEffect(() => {
     setBirthGroup(`${birthMonth}/${birthYear}`);
@@ -84,12 +83,10 @@ const Step1: React.FC = () => {
       const monthsDiff =
         yearsDiff * 12 + (entryDate.getMonth() - today.getMonth());
 
-      setIsChild(monthsDiff >= -216);
-
       updateStep('step1', {
         index: 1,
         isCompleted: true,
-        isExcluded: !isChild,
+        isExcluded: monthsDiff >= -216,
         excludeMessage: currentQuestion?.exclude,
         answers: `${birthMonth}/${year}`,
       });
@@ -129,7 +126,6 @@ const Step1: React.FC = () => {
       answers,
       updateAnswers,
       birthMonth,
-      isChild,
       currentQuestion,
       setStoreState,
       updateStep,
