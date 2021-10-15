@@ -7,6 +7,7 @@ export default interface QuestionData {
   table: string;
   label: string;
   description: string;
+  exclude: string;
   answers: {
     [key: string]: QuestionAnswersData;
   };

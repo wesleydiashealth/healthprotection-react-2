@@ -23,7 +23,7 @@ export const Container = styled.div<ContainerProps>`
   display: flex;
   flex-flow: column wrap;
   align-items: flex-start;
-  justify-content: space-between;
+  justify-content: flex-start;
 
   background: #f2f2f2;
 
@@ -107,6 +107,8 @@ export const Content = styled.div`
   display: flex;
   flex-flow: row nowrap;
 
+  box-sizing: border-box;
+
   svg {
     margin-right: 5px;
     flex-shrink: 0;
@@ -115,7 +117,7 @@ export const Content = styled.div`
   @media screen and (min-width: 768px) {
     margin: 0 20px 0 0;
 
-    max-width: 170px;
+    width: 155px;
   }
 `;
 

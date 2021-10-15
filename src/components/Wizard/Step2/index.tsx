@@ -111,6 +111,15 @@ const Step2: React.FC = () => {
 
       updateAnswers(updatedAnswers);
 
+      updateStep('step2', {
+        index: 2,
+        isCompleted: step.isCompleted,
+        isExcluded: !!subAnswer?.exclude,
+        excludeMessage: subAnswer?.exclude,
+        answers: step.answers,
+        subAnswers: step.subAnswers,
+      });
+
       updateStep(updatedStep, {
         index: 2,
         isCompleted: true,
@@ -118,7 +127,14 @@ const Step2: React.FC = () => {
       });
       carouselContext.setStoreState({ currentSlide: 2 });
     },
-    [carouselContext, currentQuestion, answers, updateAnswers, updateStep],
+    [
+      carouselContext,
+      currentQuestion,
+      answers,
+      step,
+      updateAnswers,
+      updateStep,
+    ],
   );
 
   return currentQuestion?.answers ? (

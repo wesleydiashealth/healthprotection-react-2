@@ -90,6 +90,7 @@ const Step1: React.FC = () => {
         index: 1,
         isCompleted: true,
         isExcluded: !isChild,
+        excludeMessage: currentQuestion?.exclude,
         answers: `${birthMonth}/${year}`,
       });
 

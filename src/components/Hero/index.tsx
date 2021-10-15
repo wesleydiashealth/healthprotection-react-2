@@ -1,5 +1,4 @@
 import React from 'react';
-import { FaExclamationCircle } from 'react-icons/fa';
 import { GiMicroscope } from 'react-icons/gi';
 import { ImPlay } from 'react-icons/im';
 import Popup from 'reactjs-popup';
@@ -40,13 +39,6 @@ const Hero: React.FC = () => {
       modal: false,
       title: labels.hero_science,
     },
-    {
-      id: 'foundation',
-      icon: <FaExclamationCircle size={32} color="#DB71AF" />,
-      link: 'https://www.healthprotection.com/our-solid-foundation/',
-      modal: true,
-      title: labels.hero_foundation,
-    },
   ];
 
   return (
@@ -59,7 +51,7 @@ const Hero: React.FC = () => {
           {labels.hero_button}
         </HeroButton>
       </HeroIntro>
-
+      <source src="https://vimeo.com/632061013" type="video/mp4" />
       <HeroImage src={heroImg} alt="" />
       <HeroList>
         {steps.map(step => (

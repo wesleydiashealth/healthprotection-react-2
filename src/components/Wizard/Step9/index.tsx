@@ -49,6 +49,8 @@ const Step9: React.FC = () => {
       updateStep('step7', {
         index: 7,
         isCompleted: true,
+        isExcluded: !!answer.exclude,
+        excludeMessage: answer.exclude,
         answers: answer.slug || '',
       });
 

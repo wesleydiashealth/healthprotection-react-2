@@ -37,8 +37,12 @@ export const ContainerLabel = styled.div`
   }
 
   svg {
-    width: 24px;
+    margin: 0 5px 0 0;
+
+    width: 20px;
     height: auto;
+
+    vertical-align: sub;
   }
 `;
 

@@ -203,22 +203,26 @@ const Suboutcome: React.FC<SuboutcomeProps> = ({
         >
           Off
         </FineTune>
-        {Object.entries(nutraceuticals).map(({ 0: key, 1: value }) => (
-          <FineTune
-            key={key}
-            isActive={fineTune[id] === key}
-            isEmpty={!value.length}
-            color={color}
-            onClick={() => {
-              if (value.length) {
-                handleFineTuneClick(value, id);
-                setFineTune({ ...fineTune, [id]: key });
-              }
-            }}
-          >
-            {key.charAt(0).toUpperCase() + key.slice(1)}
-          </FineTune>
-        ))}
+        {Object.entries(nutraceuticals).map(({ 0: key, 1: value }) => {
+          return (
+            !!value.length && (
+              <FineTune
+                key={key}
+                isActive={fineTune[id] === key}
+                isEmpty={!value.length}
+                color={color}
+                onClick={() => {
+                  if (value.length) {
+                    handleFineTuneClick(value, id);
+                    setFineTune({ ...fineTune, [id]: key });
+                  }
+                }}
+              >
+                {key.charAt(0).toUpperCase() + key.slice(1)}
+              </FineTune>
+            )
+          );
+        })}
       </FineTuneGroup>
     </Container>
   );

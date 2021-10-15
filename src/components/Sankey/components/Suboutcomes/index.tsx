@@ -15,11 +15,10 @@ const Suboutcomes: React.FC = () => {
     <Container>
       <ContainerLabel>
         <strong>Fine-tune your chosen sub-outcomes</strong>
-        <FaToggleOn />
+
         <span>
-          The min-max range reflects the efficiency of nutraceuticals
-          <br />
-          on this specific situation.
+          <FaToggleOn /> The range on the min-med-max selector refletcs the
+          efficiency of the nutraceutical(s) on the condition.
         </span>
       </ContainerLabel>
       {suboutcomes.map(suboutcome => {

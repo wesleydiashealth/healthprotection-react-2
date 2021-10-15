@@ -12,6 +12,7 @@ interface StepData {
   isActive?: boolean;
   isDisabled?: boolean;
   isExcluded?: boolean;
+  excludeMessage?: string;
   answers: string | Array<string>;
   subAnswers?: QuestionAnswersData[];
 }
