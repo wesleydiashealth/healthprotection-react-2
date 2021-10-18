@@ -12,8 +12,8 @@ import {
 
 import AnswerData from 'dtos/AnswerData';
 import ExcludeData from 'dtos/ExcludesData';
-// import OutcomeData from 'dtos/OutcomeData';
-// import SuboutcomeData from 'dtos/SuboutcomeData';
+import OutcomeData from 'dtos/OutcomeData';
+import SuboutcomeData from 'dtos/SuboutcomeData';
 import HabitData from 'dtos/HabitData';
 
 import styles from './styles';
@@ -22,6 +22,13 @@ Font.registerHyphenationCallback(word => [word]);
 
 interface ReportDocumentData {
   answers: AnswerData[];
+  outcomes: OutcomeData[];
+  suboutcomes: SuboutcomeData[];
+  selectedConnections: {
+    [key: string]: {
+      [key: string]: string[];
+    };
+  };
   excludes: ExcludeData;
   habits: HabitData[];
 }
@@ -29,6 +36,9 @@ interface ReportDocumentData {
 // Create Document Component
 const ReportDocument: React.FC<ReportDocumentData> = ({
   answers,
+  outcomes,
+  suboutcomes,
+  selectedConnections,
   excludes,
   habits,
 }) => {
@@ -85,6 +95,34 @@ const ReportDocument: React.FC<ReportDocumentData> = ({
           <Text style={styles.sectionTitle}>
             Your desire outcomes and sub-outcomes in Step 2
           </Text>
+
+          <View style={styles.sankey}>
+            <View style={styles.sankeyOutcomes}>
+              {outcomes
+                .filter(outcome =>
+                  Object.keys(selectedConnections).includes(outcome.id),
+                )
+                .map(outcome => {
+                  return <Text>{outcome.title}</Text>;
+                })}
+            </View>
+
+            <View style={styles.sankeySubOutcomes}>
+              {suboutcomes
+                .filter(suboutcome =>
+                  Object.values(selectedConnections).reduce(
+                    (acc: boolean, curr) =>
+                      Object.keys(curr).includes(suboutcome.id)
+                        ? !!Object.keys(curr).includes(suboutcome.id)
+                        : acc,
+                    false,
+                  ),
+                )
+                .map(suboutcome => {
+                  return <Text>{suboutcome.title}</Text>;
+                })}
+            </View>
+          </View>
         </View>
 
         <View style={styles.step1} break>

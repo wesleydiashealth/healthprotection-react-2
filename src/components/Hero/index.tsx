@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/media-has-caption */
 import React from 'react';
 import { GiMicroscope } from 'react-icons/gi';
 import { ImPlay } from 'react-icons/im';
@@ -5,14 +6,14 @@ import Popup from 'reactjs-popup';
 
 import { useApp } from 'contexts/app';
 
-import heroImg from 'assets/header_hero.svg';
+// import heroImg from 'assets/header_hero.svg';
 import Container, {
   HeroIntro,
   HeroMainTitle,
   HeroSubTitle,
   HeroDescription,
   HeroButton,
-  HeroImage,
+  // HeroImage,
   HeroList,
   HeroListItem,
   HeroListItemLink,
@@ -51,8 +52,11 @@ const Hero: React.FC = () => {
           {labels.hero_button}
         </HeroButton>
       </HeroIntro>
-      <source src="https://vimeo.com/632061013" type="video/mp4" />
-      <HeroImage src={heroImg} alt="" />
+      <video width="720" autoPlay loop muted>
+        <source src="/videos/hero_video.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      {/* <HeroImage src={heroImg} alt="" /> */}
       <HeroList>
         {steps.map(step => (
           <React.Fragment key={step.id}>

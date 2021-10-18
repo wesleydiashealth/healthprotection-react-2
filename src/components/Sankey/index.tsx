@@ -7,7 +7,10 @@ import { IoOptionsOutline } from 'react-icons/io5';
 import { useApp } from 'contexts/app';
 import { SankeyProvider } from 'contexts/sankey';
 
+import ConnectionsData from 'dtos/ConnectionsData';
+
 import Loading from 'components/Loading';
+
 import Outcomes from './components/Outcomes';
 import Suboutcomes from './components/Suboutcomes';
 import Nutraceuticals from './components/Nutraceuticals';
@@ -19,7 +22,17 @@ import Container, {
   StepContent,
 } from './styles';
 
-const Sankey: React.FC = () => {
+interface SankeyProps {
+  connections?: ConnectionsData;
+  showTooltips?: boolean;
+  showFineTune?: boolean;
+}
+
+const Sankey: React.FC<SankeyProps> = ({
+  connections,
+  showTooltips,
+  showFineTune,
+}) => {
   const context = useApp();
   const { labels, steps, outcomes } = context;
   const { step1: previousStep } = steps;
@@ -74,8 +87,17 @@ const Sankey: React.FC = () => {
           <StepContent>
             {outcomes.length ? (
               <>
-                <Outcomes />
-                <Suboutcomes />
+                <Outcomes
+                  {...showTooltips}
+                  selectedOutcomes={Object.keys(connections || {})}
+                />
+                <Suboutcomes
+                  {...{ showTooltips, showFineTune }}
+                  selectedSuboutcomes={Object.values(connections || {}).reduce(
+                    (acc: string[], curr) => [...acc, ...Object.keys(curr)],
+                    [],
+                  )}
+                />
                 <Nutraceuticals />
               </>
             ) : (
@@ -86,6 +108,12 @@ const Sankey: React.FC = () => {
       )}
     </Container>
   );
+};
+
+Sankey.defaultProps = {
+  connections: {},
+  showTooltips: true,
+  showFineTune: true,
 };
 
 export default Sankey;

@@ -5,6 +5,7 @@ import wordpressApi from 'services/wordpress';
 
 import defaultLabels from 'labels.json';
 
+import ConnectionsData from 'dtos/ConnectionsData';
 import AnswerData from 'dtos/AnswerData';
 import ExcludesData from 'dtos/ExcludesData';
 import OutcomeData from 'dtos/OutcomeData';
@@ -37,7 +38,8 @@ interface AppContextData {
   suboutcomes: SuboutcomeData[];
   nutraceuticals: NutraceuticalData[];
   selectedNutraceuticals: string[];
-  connections: ConnectionsProps;
+  connections: ConnectionsData;
+  selectedConnections: ConnectionsData;
   foods: FoodData[];
   habits: HabitData[];
   error: string;
@@ -54,15 +56,10 @@ interface AppContextData {
     suboutcome: string,
     nutraceuticals: string[],
   ): Promise<void>;
+  updateSelectedConnections(allConnections: ConnectionsData): Promise<void>;
   updateFoods(updatedFoods: FoodData[]): Promise<void>;
   updateHabits(updatedHabits: HabitData[]): Promise<void>;
   updateError(updatedError: string): Promise<void>;
-}
-
-interface ConnectionsProps {
-  [key: string]: {
-    [key: string]: string[];
-  };
 }
 
 const AppContext = createContext<AppContextData>({} as AppContextData);
@@ -101,7 +98,10 @@ export const AppProvider: React.FC = ({ children }) => {
     string[]
   >([]);
 
-  const [connections, setConnections] = useState<ConnectionsProps>({});
+  const [connections, setConnections] = useState<ConnectionsData>({});
+
+  const [selectedConnections, setSelectedConnections] =
+    useState<ConnectionsData>({});
 
   const [foods, setFoods] = useState<FoodData[]>([]);
 
@@ -136,7 +136,7 @@ export const AppProvider: React.FC = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    const initialConnections: ConnectionsProps = {};
+    const initialConnections: ConnectionsData = {};
 
     outcomes.forEach(outcome => {
       const { id, suboutcomes: outcomeSuboutcomes } = outcome;
@@ -222,6 +222,33 @@ export const AppProvider: React.FC = ({ children }) => {
     setConnections({ ...connections });
   }
 
+  async function updateSelectedConnections() {
+    const updatedSelectedConnections = Object.entries(connections)
+      .filter(({ 1: subConnections }) =>
+        Object.values(subConnections).reduce(
+          (acc: boolean, curr) => (curr.length ? !!curr.length : acc),
+          false,
+        ),
+      )
+      .reduce(
+        (acc, { 0: key, 1: currs }) => ({
+          ...acc,
+          [key]: Object.entries(currs)
+            .filter(({ 1: curr }) => !!curr.length)
+            .reduce(
+              (subAcc, { 0: subKey, 1: subCurr }) => ({
+                ...subAcc,
+                [subKey]: subCurr,
+              }),
+              {},
+            ),
+        }),
+        {},
+      );
+
+    setSelectedConnections({ ...updatedSelectedConnections });
+  }
+
   async function updateFoods(updatedFoods: FoodData[]) {
     setFoods(updatedFoods);
   }
@@ -247,6 +274,7 @@ export const AppProvider: React.FC = ({ children }) => {
         nutraceuticals,
         selectedNutraceuticals,
         connections,
+        selectedConnections,
         foods,
         habits,
         error,
@@ -258,6 +286,7 @@ export const AppProvider: React.FC = ({ children }) => {
         updateOutcomes,
         updateSuboutcomes,
         updateConnections,
+        updateSelectedConnections,
         updateFoods,
         updateHabits,
         updateError,

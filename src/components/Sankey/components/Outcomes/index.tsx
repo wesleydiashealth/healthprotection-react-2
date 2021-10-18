@@ -6,18 +6,32 @@ import Outcome from './components/Outcome';
 
 import Container, { ContainerLabel } from './styles';
 
-const Outcomes: React.FC = () => {
+interface OutcomesData {
+  selectedOutcomes?: string[];
+}
+
+const Outcomes: React.FC<OutcomesData> = ({ selectedOutcomes }) => {
   const appContext = useApp();
   const { outcomes } = appContext;
 
   return (
     <Container>
       <ContainerLabel>Filtered Outcomes</ContainerLabel>
-      {outcomes.map(outcome => {
-        return <Outcome key={outcome.id} {...outcome} />;
-      })}
+      {outcomes
+        .filter(outcome =>
+          selectedOutcomes?.length
+            ? selectedOutcomes.includes(outcome.id)
+            : true,
+        )
+        .map(outcome => {
+          return <Outcome key={outcome.id} {...outcome} />;
+        })}
     </Container>
   );
+};
+
+Outcomes.defaultProps = {
+  selectedOutcomes: [],
 };
 
 export default Outcomes;

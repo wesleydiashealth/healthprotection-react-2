@@ -97,6 +97,18 @@ const styles = StyleSheet.create({
     fontSize: 14,
     lineHeight: 1.5,
   },
+  step2: {},
+  sankey: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  sankeyOutcomes: {
+    width: '30%',
+  },
+  sankeySubOutcomes: {
+    width: '30%',
+  },
   step1: {},
   answers: {
     display: 'flex',
