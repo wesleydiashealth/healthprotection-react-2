@@ -28,6 +28,17 @@ export const HeroIntro = styled.div`
   }
 `;
 
+export const HeroVideo = styled.video`
+  margin-bottom: 20px;
+
+  max-width: 100%;
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 0;
+    padding-left: 40px;
+  }
+`;
+
 export const HeroMainTitle = styled.h1`
   margin-bottom: 10px;
 

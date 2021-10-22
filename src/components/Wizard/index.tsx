@@ -48,6 +48,7 @@ const Wizard: React.FC = () => {
     updateUserQuery,
     updateOutcomes,
     updateSuboutcomes,
+    updateConnections,
   } = context;
 
   const previousStep = { isCompleted: true };
@@ -90,6 +91,7 @@ const Wizard: React.FC = () => {
         updateExcludes(excludes);
         updateOutcomes(outcomes);
         updateSuboutcomes(suboutcomes);
+        updateConnections(outcomes, suboutcomes);
       } catch (err) {
         if (err instanceof Yup.ValidationError) {
           const errors = getValidationErrors(err);
@@ -98,7 +100,13 @@ const Wizard: React.FC = () => {
         }
       }
     },
-    [updateUserQuery, updateExcludes, updateOutcomes, updateSuboutcomes],
+    [
+      updateUserQuery,
+      updateExcludes,
+      updateOutcomes,
+      updateSuboutcomes,
+      updateConnections,
+    ],
   );
 
   return (

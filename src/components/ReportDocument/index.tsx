@@ -14,6 +14,7 @@ import AnswerData from 'dtos/AnswerData';
 import ExcludeData from 'dtos/ExcludesData';
 import OutcomeData from 'dtos/OutcomeData';
 import SuboutcomeData from 'dtos/SuboutcomeData';
+import NutraceuticalData from 'dtos/NutraceuticalData';
 import HabitData from 'dtos/HabitData';
 
 import styles from './styles';
@@ -24,6 +25,7 @@ interface ReportDocumentData {
   answers: AnswerData[];
   outcomes: OutcomeData[];
   suboutcomes: SuboutcomeData[];
+  nutraceuticals: NutraceuticalData[];
   selectedConnections: {
     [key: string]: {
       [key: string]: string[];
@@ -38,6 +40,7 @@ const ReportDocument: React.FC<ReportDocumentData> = ({
   answers,
   outcomes,
   suboutcomes,
+  nutraceuticals,
   selectedConnections,
   excludes,
   habits,
@@ -96,17 +99,94 @@ const ReportDocument: React.FC<ReportDocumentData> = ({
             Your desire outcomes and sub-outcomes in Step 2
           </Text>
 
-          <View style={styles.sankey}>
+          <View style={styles.outcomes}>
+            {Object.entries(selectedConnections).map(
+              ({ 0: outcome, 1: subConnections }, outcomeIndex) => {
+                const selectedOutcome = outcomes.find(
+                  item => item.id === outcome,
+                );
+
+                const selectedOutcomeStyle = {
+                  marginTop: outcomeIndex ? 20 : 0,
+                  borderRadius: 10,
+                  padding: 10,
+                  backgroundColor: selectedOutcome?.color || '#ccc',
+                };
+
+                return (
+                  <View key={outcome} style={selectedOutcomeStyle}>
+                    <Text style={styles.outcomeTitle}>
+                      {selectedOutcome?.title}
+                    </Text>
+                    <View style={styles.suboutcomes}>
+                      {Object.entries(subConnections).map(
+                        (
+                          { 0: suboutcome, 1: suboutcomeNutraceuticals },
+                          suboutcomeIndex,
+                        ) => {
+                          const selectedSuboutcome = suboutcomes.find(
+                            item => item.id === suboutcome,
+                          );
+                          return (
+                            <View
+                              key={suboutcome}
+                              style={
+                                suboutcomeIndex
+                                  ? styles.suboutcomeSibling
+                                  : styles.suboutcome
+                              }
+                            >
+                              <Text style={styles.suboutcomeTitle}>
+                                {selectedSuboutcome?.title}
+                              </Text>
+                              <View style={styles.nutraceuticals}>
+                                {suboutcomeNutraceuticals.map(
+                                  (nutraceutical, nutraceuticalIndex) => {
+                                    const selectedNutraceutical =
+                                      nutraceuticals.find(
+                                        item => item.slug === nutraceutical,
+                                      );
+
+                                    const nutraceuticalStyle = {
+                                      marginLeft: nutraceuticalIndex ? 5 : 0,
+                                      borderRadius: 10,
+                                      paddingVertical: 5,
+                                      paddingHorizontal: 10,
+                                      backgroundColor: selectedOutcome?.color,
+                                    };
+
+                                    return (
+                                      <Text
+                                        key={nutraceutical}
+                                        style={nutraceuticalStyle}
+                                      >
+                                        {selectedNutraceutical?.title}
+                                      </Text>
+                                    );
+                                  },
+                                )}
+                              </View>
+                            </View>
+                          );
+                        },
+                      )}
+                    </View>
+                  </View>
+                );
+              },
+            )}
+          </View>
+
+          {/* <View style={styles.sankey}>
             <View style={styles.sankeyOutcomes}>
               {outcomes
                 .filter(outcome =>
                   Object.keys(selectedConnections).includes(outcome.id),
                 )
                 .map(outcome => {
-                  return <Text>{outcome.title}</Text>;
+                  return <Text key={outcome.id}>{outcome.title}</Text>;
                 })}
             </View>
-
             <View style={styles.sankeySubOutcomes}>
               {suboutcomes
                 .filter(suboutcome =>
@@ -119,10 +199,10 @@ const ReportDocument: React.FC<ReportDocumentData> = ({
                   ),
                 )
                 .map(suboutcome => {
-                  return <Text>{suboutcome.title}</Text>;
+                  return <Text key={suboutcome.id}>{suboutcome.title}</Text>;
                 })}
             </View>
-          </View>
+          </View> */}
         </View>
 
         <View style={styles.step1} break>
@@ -145,7 +225,9 @@ const ReportDocument: React.FC<ReportDocumentData> = ({
                   </Text>
                   <View>
                     {answer.answer.label.split(', ').map(item => (
-                      <Text style={styles.answerAnswer}>{item}</Text>
+                      <Text key={item} style={styles.answerAnswer}>
+                        {item}
+                      </Text>
                     ))}
                   </View>
                   {!!answer.subAnswer && (

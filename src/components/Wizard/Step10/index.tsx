@@ -60,7 +60,7 @@ const Step10: React.FC = () => {
           <Title>Well done, now it&apos;s time to fine-tune your goals</Title>
           <Description>
             Based on your answers we&apos;ve filtered{' '}
-            <strong>{`more than 1,000 nutraceuticals to just ${queryNutraceuticals.length}`}</strong>
+            <strong>{`more than 100 nutraceuticals to just ${queryNutraceuticals.length}`}</strong>
           </Description>
           <Instruction>
             Go safely to the Step 2 100% risks free based on your answers.

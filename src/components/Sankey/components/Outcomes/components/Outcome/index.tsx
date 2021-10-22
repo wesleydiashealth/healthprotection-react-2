@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactToolTip from 'react-tooltip';
 import Xarrow from 'react-xarrows';
 import { HiQuestionMarkCircle } from 'react-icons/hi';
@@ -26,26 +26,32 @@ const Outcome: React.FC<OutcomeData> = ({
   const context = useApp();
   const { connections } = context;
 
-  const subConnections = Object.entries(connections)
-    .filter(({ 0: connection }) => connection.includes(id))
-    .reduce((accumulator: string[], { 1: suboutcomes }) => {
-      const subconnections = Object.entries(suboutcomes).reduce(
-        (subAccumulator: string[], { 0: suboutcome, 1: nutraceuticals }) =>
-          nutraceuticals.length
-            ? [
-                ...subAccumulator,
-                ...nutraceuticals.map(
-                  nutraceutical => `${suboutcome}_${nutraceutical}`,
-                ),
-              ]
-            : [...subAccumulator, suboutcome],
-        [],
-      );
+  const [subConnections, setSubConnections] = useState<string[]>([]);
 
-      return subconnections.length
-        ? [...accumulator, ...subconnections]
-        : [...accumulator, ...Object.keys(suboutcomes)];
-    }, []);
+  useEffect(() => {
+    const updatedSubConnections = Object.entries(connections)
+      .filter(({ 0: connection }) => connection.includes(id))
+      .reduce((accumulator: string[], { 1: suboutcomes }) => {
+        const subconnections = Object.entries(suboutcomes).reduce(
+          (subAccumulator: string[], { 0: suboutcome, 1: nutraceuticals }) =>
+            nutraceuticals.length
+              ? [
+                  ...subAccumulator,
+                  ...nutraceuticals.map(
+                    nutraceutical => `${suboutcome}_${nutraceutical}`,
+                  ),
+                ]
+              : [...subAccumulator, suboutcome],
+          [],
+        );
+
+        return subconnections.length
+          ? [...accumulator, ...subconnections]
+          : [...accumulator, ...Object.keys(suboutcomes)];
+      }, []);
+
+    setSubConnections(updatedSubConnections);
+  }, [id, connections]);
 
   const subConnectionsActive = Object.entries(connections)
     .filter(({ 0: connection }) => connection === id)

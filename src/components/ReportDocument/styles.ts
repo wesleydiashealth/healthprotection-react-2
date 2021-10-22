@@ -98,16 +98,59 @@ const styles = StyleSheet.create({
     lineHeight: 1.5,
   },
   step2: {},
-  sankey: {
+  outcomes: {
+    color: '#000',
+  },
+  outcome: {
+    borderRadius: 10,
+    padding: 10,
+    backgroundColor: '#ccc',
+  },
+  outcomeSibling: {
+    marginTop: 20,
+    borderRadius: 10,
+    padding: 10,
+    backgroundColor: '#ccc',
+  },
+  outcomeTitle: {
+    marginBottom: 5,
+
+    fontSize: 12,
+    lineHeight: 1,
+  },
+  suboutcomes: {
+    marginTop: 5,
+    borderRadius: 10,
+    padding: 10,
+    backgroundColor: '#f5f5f5',
+  },
+  suboutcome: {},
+  suboutcomeSibling: {
+    marginTop: 10,
+  },
+  suboutcomeTitle: {
+    marginBottom: 5,
+    fontSize: 10,
+    lineHeight: 1,
+  },
+  nutraceuticals: {
     display: 'flex',
     flexDirection: 'row',
-    alignItems: 'center',
+    fontSize: 10,
+    lineHeight: 1,
   },
-  sankeyOutcomes: {
-    width: '30%',
+  nutraceutical: {
+    borderRadius: 10,
+    paddingVertical: 5,
+    paddingHorizontal: 10,
+    backgroundColor: '#ccc',
   },
-  sankeySubOutcomes: {
-    width: '30%',
+  nutraceuticalSibling: {
+    marginLeft: 5,
+    borderRadius: 10,
+    paddingVertical: 5,
+    paddingHorizontal: 10,
+    backgroundColor: '#ccc',
   },
   step1: {},
   answers: {
@@ -167,16 +210,16 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
   answerExcludesValue: {},
-  outcome: {
-    marginBottom: 20,
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  outcomeIcon: {
-    marginRight: 10,
-    width: 32,
-  },
+  // outcome: {
+  //   marginBottom: 20,
+  //   display: 'flex',
+  //   flexDirection: 'row',
+  //   alignItems: 'center',
+  // },
+  // outcomeIcon: {
+  //   marginRight: 10,
+  //   width: 32,
+  // },
   habits: {
     marginTop: 10,
     display: 'flex',

@@ -13,7 +13,7 @@ interface SuboutcomesData {
 
 const Suboutcomes: React.FC<SuboutcomesData> = ({ selectedSuboutcomes }) => {
   const appContext = useApp();
-  const { outcomes, suboutcomes } = appContext;
+  const { outcomes, suboutcomes, connections } = appContext;
 
   return (
     <Container>
@@ -25,7 +25,34 @@ const Suboutcomes: React.FC<SuboutcomesData> = ({ selectedSuboutcomes }) => {
           efficiency of the nutraceutical(s) on the condition.
         </span>
       </ContainerLabel>
-      {suboutcomes
+      {Object.values(connections).map(subConnections =>
+        Object.keys(subConnections)
+          .filter(subConnection =>
+            selectedSuboutcomes?.length
+              ? selectedSuboutcomes.includes(subConnection)
+              : true,
+          )
+          .map(subConnection => {
+            const currentSuboutcome = suboutcomes.find(
+              suboutcome => suboutcome.id === subConnection,
+            );
+
+            const outcomeColor = Object.values(outcomes).find(outcome =>
+              outcome.suboutcomes.includes(subConnection),
+            )?.color;
+
+            return (
+              currentSuboutcome && (
+                <Suboutcome
+                  key={currentSuboutcome.id}
+                  {...currentSuboutcome}
+                  color={outcomeColor || '#565656'}
+                />
+              )
+            );
+          }),
+      )}
+      {/* {suboutcomes
         .filter(suboutcome =>
           selectedSuboutcomes?.length
             ? selectedSuboutcomes.includes(suboutcome.id)
@@ -43,7 +70,7 @@ const Suboutcomes: React.FC<SuboutcomesData> = ({ selectedSuboutcomes }) => {
               color={outcomeColor || '#565656'}
             />
           );
-        })}
+        })} */}
     </Container>
   );
 };

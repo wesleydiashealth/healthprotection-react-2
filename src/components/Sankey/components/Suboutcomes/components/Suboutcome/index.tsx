@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import ReactToolTip from 'react-tooltip';
 import Xarrow from 'react-xarrows';
 import { HiQuestionMarkCircle } from 'react-icons/hi';
@@ -44,57 +44,67 @@ const Suboutcome: React.FC<SuboutcomeProps> = ({
   const {
     userQuery,
     connections,
-    updateConnections,
+    updateConnection,
     updateSelectedConnections,
     updateFoods,
     updateError,
     updateSelectedNutraceuticals,
   } = appContext;
 
+  const [supConnections, setSupConnections] = useState<string[]>([]);
+  const [subConnections, setSubConnections] = useState<string[]>([]);
   const [fineTune, setFineTune] = useState<FineTuneProps>({});
 
-  const supConnections = Object.entries(connections)
-    .filter(({ 1: subconnections }) => Object.keys(subconnections).includes(id))
-    .reduce((acc: string[], { 0: outcome, 1: suboutcomes }) => {
-      const subconnections = Object.entries(suboutcomes)
-        .filter(({ 0: subconnection }) => subconnection.includes(id))
-        .reduce(
-          (acc2: string[], { 1: subconnectionNutraceuticals }) => [
-            ...acc2,
-            ...subconnectionNutraceuticals.map(
-              subconnectionNutraceutical =>
-                `${subconnectionNutraceutical}_${id}_${outcome}`,
-            ),
-          ],
-          [],
-        );
-
-      return subconnections.length
-        ? [...acc, ...subconnections]
-        : [...acc, `${id}_${outcome}`];
-    }, []);
-
-  const subConnections = Object.values(connections)
-    .filter(subconnections => Object.keys(subconnections).includes(id))
-    .reduce(
-      (accumulator: string[], subconnections) => [
-        ...accumulator,
-        ...Object.entries(subconnections)
-          .filter(({ 0: subconnection }) => subconnection === id)
+  useEffect(() => {
+    const updatedSupConnections = Object.entries(connections)
+      .filter(({ 1: subconnections }) =>
+        Object.keys(subconnections).includes(id),
+      )
+      .reduce((acc: string[], { 0: outcome, 1: suboutcomes }) => {
+        const subconnections = Object.entries(suboutcomes)
+          .filter(({ 0: subconnection }) => subconnection.includes(id))
           .reduce(
-            (subAccumulator: string[], { 1: subconnection }) => [
-              ...subAccumulator,
-              ...subconnection,
+            (acc2: string[], { 1: subconnectionNutraceuticals }) => [
+              ...acc2,
+              ...subconnectionNutraceuticals.map(
+                subconnectionNutraceutical =>
+                  `${subconnectionNutraceutical}_${id}_${outcome}`,
+              ),
             ],
             [],
-          ),
-      ],
-      [],
-    );
+          );
+
+        return subconnections.length
+          ? [...acc, ...subconnections]
+          : [...acc, `${id}_${outcome}`];
+      }, []);
+
+    setSupConnections(updatedSupConnections);
+
+    const updatedSubConnections = Object.values(connections)
+      .filter(subconnections => Object.keys(subconnections).includes(id))
+      .reduce(
+        (accumulator: string[], subconnections) => [
+          ...accumulator,
+          ...Object.entries(subconnections)
+            .filter(({ 0: subconnection }) => subconnection === id)
+            .reduce(
+              (subAccumulator: string[], { 1: subconnection }) => [
+                ...subAccumulator,
+                ...subconnection,
+              ],
+              [],
+            ),
+        ],
+        [],
+      );
+
+    setSubConnections(updatedSubConnections);
+  }, [id, connections]);
 
   const handleFineTuneClick = useCallback(
     async (fineTuneGroup, suboutcome) => {
-      updateConnections(suboutcome, fineTuneGroup);
+      updateConnection(suboutcome, fineTuneGroup);
       updateSelectedConnections(connections);
 
       appContext.updateStep('step2', { isCompleted: true });
@@ -131,7 +141,7 @@ const Suboutcome: React.FC<SuboutcomeProps> = ({
       }
     },
     [
-      updateConnections,
+      updateConnection,
       updateSelectedConnections,
       appContext,
       connections,

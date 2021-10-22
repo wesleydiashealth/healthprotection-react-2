@@ -52,9 +52,10 @@ interface AppContextData {
   ): Promise<void>;
   updateOutcomes(updatedOutcomes: OutcomeData[]): Promise<void>;
   updateSuboutcomes(updatedSuboutcomes: SuboutcomeData[]): Promise<void>;
+  updateConnection(suboutcome: string, nutraceuticals: string[]): Promise<void>;
   updateConnections(
-    suboutcome: string,
-    nutraceuticals: string[],
+    updatedOutcomes: OutcomeData[],
+    updatedSuboutcomes: SuboutcomeData[],
   ): Promise<void>;
   updateSelectedConnections(allConnections: ConnectionsData): Promise<void>;
   updateFoods(updatedFoods: FoodData[]): Promise<void>;
@@ -136,22 +137,6 @@ export const AppProvider: React.FC = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    const initialConnections: ConnectionsData = {};
-
-    outcomes.forEach(outcome => {
-      const { id, suboutcomes: outcomeSuboutcomes } = outcome;
-
-      initialConnections[id] = {};
-
-      outcomeSuboutcomes.forEach(outcomeSuboutcome => {
-        initialConnections[id][outcomeSuboutcome] = [];
-      });
-    });
-
-    setConnections(initialConnections);
-  }, [outcomes]);
-
-  useEffect(() => {
     wordpressApi
       .get(`/wp-json/hp/v1/nutraceuticals/${query.get('lang')}`)
       .then(response => {
@@ -212,7 +197,7 @@ export const AppProvider: React.FC = ({ children }) => {
     setSuboutcomes(updatedSuboutcomes);
   }
 
-  async function updateConnections(suboutcome: string, items: string[]) {
+  async function updateConnection(suboutcome: string, items: string[]) {
     const updatedConnection = Object.entries(connections).findIndex(
       ({ 1: connection }) => !!Object.keys(connection).includes(suboutcome),
     );
@@ -220,6 +205,137 @@ export const AppProvider: React.FC = ({ children }) => {
     Object.values(connections)[updatedConnection][suboutcome] = items;
 
     setConnections({ ...connections });
+  }
+
+  async function updateConnections(
+    updatedOutcomes: OutcomeData[],
+    updatedSuboutcomes: SuboutcomeData[],
+  ) {
+    const validNutraceuticals = Array.from(
+      new Set(
+        updatedSuboutcomes.reduce(
+          (acc: string[], updatedSuboutcome) => [
+            ...acc,
+            ...Array.from(
+              new Set(
+                Object.values(updatedSuboutcome.nutraceuticals).reduce(
+                  (subAcc, subCurr) => [...subAcc, ...subCurr],
+                  [],
+                ),
+              ),
+            ),
+          ],
+          [],
+        ),
+      ),
+    );
+
+    const updatedConnections = updatedOutcomes.reduce(
+      (acc, updatedOutcome) => ({
+        ...acc,
+        [updatedOutcome.id]: updatedOutcome.suboutcomes.reduce(
+          (subAcc, outcomeSuboutcome) => {
+            const suboutcomeNutraceuticals = Object.entries(connections)
+              .filter(({ 0: connection }) =>
+                connection.includes(updatedOutcome.id),
+              )
+              .reduce(
+                (subConnectionsAcc: string[], { 1: subConnections }) => [
+                  ...subConnectionsAcc,
+                  ...Object.entries(subConnections)
+                    .filter(({ 0: subConnection }) =>
+                      subConnection.includes(outcomeSuboutcome),
+                    )
+                    .reduce(
+                      (subConnectionAcc: string[], { 1: subConnection }) => [
+                        ...subConnectionAcc,
+                        ...subConnection.filter(item =>
+                          validNutraceuticals.includes(item),
+                        ),
+                      ],
+                      [],
+                    ),
+                ],
+                [],
+              );
+
+            return {
+              ...subAcc,
+              [outcomeSuboutcome]: suboutcomeNutraceuticals || [],
+            };
+          },
+          {},
+        ),
+      }),
+      {},
+    );
+
+    setConnections(updatedConnections);
+
+    // if (!Object.keys(connections).length) {
+    //   const initialConnections: ConnectionsData = {};
+    //   updatedOutcomes.forEach(outcome => {
+    //     const { id, suboutcomes: outcomeSuboutcomes } = outcome;
+    //     initialConnections[id] = {};
+    //     outcomeSuboutcomes.forEach(outcomeSuboutcome => {
+    //       initialConnections[id][outcomeSuboutcome] = [];
+    //     });
+    //   });
+    //   setConnections(initialConnections);
+    // } else {
+    //   const updatedOutcomesIds = updatedOutcomes.reduce(
+    //     (acc: string[], curr) => [...acc, curr.id],
+    //     [],
+    //   );
+    //   let updatedConnections = Object.entries(connections)
+    //     .filter(({ 0: connection }) => updatedOutcomesIds.includes(connection))
+    //     .reduce(
+    //       (acc, { 0: connection, 1: currs }) => ({
+    //         ...acc,
+    //         [connection]: Object.entries(currs).reduce(
+    //           (subAcc, { 0: subKey, 1: subCurr }) => ({
+    //             ...subAcc,
+    //             [subKey]: subCurr,
+    //           }),
+    //           {},
+    //         ),
+    //       }),
+    //       {},
+    //     );
+    //   const newSuboutcomes = updatedSuboutcomes
+    //     .filter(
+    //       updatedSuboutcome =>
+    //         !Object.values(connections).filter(connection =>
+    //           Object.keys(connection).includes(updatedSuboutcome.id),
+    //         ).length,
+    //     )
+    //     .reduce((acc, updatedSuboutcome) => {
+    //       const selectedOutcome = updatedOutcomes.find(updatedOutcome =>
+    //         updatedOutcome.suboutcomes.includes(updatedSuboutcome.id),
+    //       );
+    //       return selectedOutcome
+    //         ? { ...acc, [selectedOutcome.id]: { [updatedSuboutcome.id]: [] } }
+    //         : acc;
+    //     }, {});
+    //   updatedConnections = { ...updatedConnections, ...newSuboutcomes };
+    //   const newOutcomes = updatedOutcomes
+    //     .filter(
+    //       updatedOutcome =>
+    //         !Object.keys(connections).includes(updatedOutcome.id),
+    //     )
+    //     .reduce(
+    //       (acc, newOutcome) => ({
+    //         ...acc,
+    //         [newOutcome.id]: newOutcome.suboutcomes.reduce(
+    //           (subAcc, newSuboutcome) => ({ ...subAcc, [newSuboutcome]: [] }),
+    //           {},
+    //         ),
+    //       }),
+    //       {},
+    //     );
+    //   updatedConnections = { ...updatedConnections, ...newOutcomes };
+    //   setConnections({ ...updatedConnections });
+    // }
   }
 
   async function updateSelectedConnections() {
@@ -285,6 +401,7 @@ export const AppProvider: React.FC = ({ children }) => {
         updateSelectedNutraceuticals,
         updateOutcomes,
         updateSuboutcomes,
+        updateConnection,
         updateConnections,
         updateSelectedConnections,
         updateFoods,

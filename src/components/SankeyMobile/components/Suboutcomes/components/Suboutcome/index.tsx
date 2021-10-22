@@ -43,7 +43,7 @@ const Suboutcome: React.FC<SuboutcomeProps> = ({
   const {
     userQuery,
     connections,
-    updateConnections,
+    updateConnection,
     updateFoods,
     updateError,
     updateSelectedNutraceuticals,
@@ -66,7 +66,7 @@ const Suboutcome: React.FC<SuboutcomeProps> = ({
 
   const handleFineTuneClick = useCallback(
     async (fineTuneGroup, suboutcome) => {
-      updateConnections(suboutcome, fineTuneGroup);
+      updateConnection(suboutcome, fineTuneGroup);
 
       appContext.updateStep('step2', { isCompleted: true });
 
@@ -100,7 +100,7 @@ const Suboutcome: React.FC<SuboutcomeProps> = ({
       }
     },
     [
-      updateConnections,
+      updateConnection,
       appContext,
       connections,
       userQuery,
