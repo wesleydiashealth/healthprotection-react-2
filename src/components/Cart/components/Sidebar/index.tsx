@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Report from './components/Report';
-import Summary from './components/Summary';
+// import Summary from './components/Summary';
 
 import Container from './styles';
 
