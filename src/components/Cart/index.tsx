@@ -1,13 +1,11 @@
 import React from 'react';
 import ReactToolTip from 'react-tooltip';
 import { HiQuestionMarkCircle, HiLockClosed } from 'react-icons/hi';
-import { FaTimesCircle } from 'react-icons/fa';
 import { TiShoppingCart } from 'react-icons/ti';
 
 import { useApp } from 'contexts/app';
 
-import products from 'products.json';
-
+import Products from './components/Products';
 import Sidebar from './components/Sidebar';
 
 import Container, {
@@ -16,8 +14,6 @@ import Container, {
   StepDescription,
   StepContent,
   CheckoutProducts,
-  ProductsList,
-  Product,
 } from './styles';
 
 const Cart: React.FC = () => {
@@ -67,7 +63,8 @@ const Cart: React.FC = () => {
         <StepContent>
           <CheckoutProducts>
             <h4>{labels.cart_subtitle}</h4>
-            <ProductsList>
+            <Products />
+            {/* <ProductsList>
               {products.map(product => (
                 <Product key={product.value}>
                   <div className="product-content">
@@ -129,7 +126,7 @@ const Cart: React.FC = () => {
                   </a>
                 </Product>
               ))}
-            </ProductsList>
+            </ProductsList> */}
           </CheckoutProducts>
           <Sidebar />
         </StepContent>

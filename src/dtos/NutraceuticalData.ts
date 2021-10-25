@@ -11,5 +11,7 @@ export default interface NutraceuticalData {
     description: string;
     relations: RelationData[];
     studies: number;
+    productLink: string;
+    productPrice: number;
   };
 }

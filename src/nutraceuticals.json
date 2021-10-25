@@ -4,6 +4,8 @@
       "title": "5-HTP",
       "dosage": "100mg",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "5-htp",
           "title": "5-HTP",
           "link": "https://www.healthprotection.com/nutraceuticals/5-htp/",
@@ -37,6 +39,8 @@
       "title": "Acai",
       "dosage": "empty",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "acai",
           "title": "Acai",
           "link": "https://www.healthprotection.com/nutraceuticals/acai/",
@@ -70,6 +74,8 @@
       "title": "Agmatine",
       "dosage": "empty",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "agmatine",
           "title": "Agmatine",
           "link": "https://www.healthprotection.com/nutraceuticals/agmatine/",
@@ -103,6 +109,8 @@
       "title": "Aloe Vera",
       "dosage": "empty",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "aloe-vera",
           "title": "Aloe Vera",
           "link": "https://www.healthprotection.com/nutraceuticals/aloe-vera/",
@@ -136,6 +144,8 @@
       "title": "Alpha-GPC",
       "dosage": "600mg",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "alpha-gpc",
           "title": "Alpha-GPC",
           "link": "https://www.healthprotection.com/nutraceuticals/alpha-gpc/",
@@ -188,6 +198,8 @@
       "title": "Alpha-Lipoic Acid",
       "dosage": "empty",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "alpha-lipoic-acid",
           "title": "Alpha-Lipoic Acid",
           "link": "https://www.healthprotection.com/nutraceuticals/alpha-lipoic-acid/",
@@ -221,6 +233,8 @@
       "title": "Arginine ",
       "dosage": "empty",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "arginine",
           "title": "Arginine",
           "link": "https://www.healthprotection.com/nutraceuticals/arginine/",
@@ -273,6 +287,8 @@
       "title": "Ashwagandha ",
       "dosage": "500mg",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "ashwagandha",
           "title": "Ashwagandha",
           "description": "<p>Ashwagandha is a plant used in Ayurvedic medicine, the traditional Indian medicine. Several parts of the plant are used, but the most common in supplements is an extract from its roots. Ashwagandha is classified as an adaptogen, meaning it can help your body manage stress.</p>\n",
@@ -420,6 +436,8 @@
       "title": "Astragalus Root",
       "dosage": "empty",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "astragalus-root",
           "title": "Astragalus Root",
           "link": "https://www.healthprotection.com/nutraceuticals/astragalus-root/",
@@ -453,6 +471,8 @@
       "title": "Bacopa",
       "dosage": "300mg",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "bacopa",
           "title": "Bacopa",
           "link": "https://www.healthprotection.com/nutraceuticals/bacopa/",
@@ -505,6 +525,8 @@
       "title": "BCAA's",
       "dosage": "empty",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "empty",
           "title": "",
           "link": "empty",
@@ -518,6 +540,8 @@
       "title": "Beta-Alanine",
       "dosage": "5000mg",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "beta-alanine",
           "title": "Beta-Alanine",
           "link": "https://www.healthprotection.com/nutraceuticals/beta-alanine/",
@@ -589,6 +613,8 @@
       "title": "Bifidobacterium",
       "dosage": "empty",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "bifidobacterium",
           "title": "Bifidobacterium",
           "link": "https://www.healthprotection.com/nutraceuticals/bifidobacterium/",
@@ -622,6 +648,8 @@
       "title": "Biotin",
       "dosage": "empty",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "biotin",
           "title": "Biotin",
           "link": "https://www.healthprotection.com/nutraceuticals/biotin/",
@@ -655,6 +683,8 @@
       "title": "Blueberry",
       "dosage": "500mg",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "blueberry",
           "title": "Blueberry",
           "link": "https://www.healthprotection.com/nutraceuticals/blueberry/",
@@ -745,6 +775,8 @@
       "title": "Boswellia",
       "dosage": "500mg",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "boswellia",
           "title": "Boswellia",
           "link": "https://www.healthprotection.com/nutraceuticals/boswellia/",
@@ -778,6 +810,8 @@
       "title": "Bromelain",
       "dosage": "empty",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "bromelain",
           "title": "Bromelain",
           "link": "https://www.healthprotection.com/nutraceuticals/bromelain/",
@@ -811,6 +845,8 @@
       "title": "Caffeine",
       "dosage": "200mg",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "caffeine",
           "title": "Caffeine",
           "link": "https://www.healthprotection.com/nutraceuticals/caffeine/",
@@ -844,6 +880,8 @@
       "title": "Calcium",
       "dosage": "empty",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "calcium",
           "title": "Calcium",
           "link": "https://www.healthprotection.com/nutraceuticals/calcium/",
@@ -877,6 +915,8 @@
       "title": "Carnitine",
       "dosage": "1000mg",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "carnitine",
           "title": "Carnitine",
           "link": "https://www.healthprotection.com/nutraceuticals/carnitine/",
@@ -948,6 +988,8 @@
       "title": "CDP-Choline",
       "dosage": "250mg",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "cdp-choline",
           "title": "CDP-Choline",
           "link": "https://www.healthprotection.com/nutraceuticals/cdp-choline/",
@@ -1019,6 +1061,8 @@
       "title": "Chaga",
       "dosage": "empty",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "chaga",
           "title": "Chaga",
           "link": "https://www.healthprotection.com/nutraceuticals/chaga/",
@@ -1109,6 +1153,8 @@
       "title": "Chlorella",
       "dosage": "500mg",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "chlorella",
           "title": "Chlorella",
           "link": "https://www.healthprotection.com/nutraceuticals/chlorella/",
@@ -1142,6 +1188,8 @@
       "title": "Chondroitin",
       "dosage": "empty",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "chondroitin",
           "title": "Chondroitin",
           "link": "https://www.healthprotection.com/nutraceuticals/chondroitin/",
@@ -1175,6 +1223,8 @@
       "title": "Chromium",
       "dosage": "empty",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "chromium",
           "title": "Chromium",
           "link": "https://www.healthprotection.com/nutraceuticals/chromium/",
@@ -1208,6 +1258,8 @@
       "title": "Cinnamon",
       "dosage": "empty",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "cinnamon",
           "title": "Cinnamon",
           "link": "https://www.healthprotection.com/nutraceuticals/cinnamon/",
@@ -1241,6 +1293,8 @@
       "title": "Cissus quadrangularis",
       "dosage": "empty",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "cissus-quadrangularis",
           "title": "Cissus Quadrangularis",
           "link": "https://www.healthprotection.com/nutraceuticals/cissus-quadrangularis/",
@@ -1274,6 +1328,8 @@
       "title": "Citrulline",
       "dosage": "empty",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "citrulline",
           "title": "Citrulline",
           "link": "https://www.healthprotection.com/nutraceuticals/citrulline/",
@@ -1326,6 +1382,8 @@
       "title": "Collagen",
       "dosage": "40mg",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "collagen",
           "title": "Collagen",
           "link": "https://www.healthprotection.com/nutraceuticals/collagen/",
@@ -1378,6 +1436,8 @@
       "title": "CoQ10",
       "dosage": "100mg",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "coq10",
           "title": "CoQ10",
           "link": "https://www.healthprotection.com/nutraceuticals/coq10/",
@@ -1411,6 +1471,8 @@
       "title": "Creatine",
       "dosage": "5000mg",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "creatine",
           "title": "Creatine",
           "link": "https://www.healthprotection.com/nutraceuticals/creatine/",
@@ -1596,6 +1658,8 @@
       "title": "Curcumin",
       "dosage": "1000mg",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "curcumin",
           "title": "Curcumin",
           "link": "https://www.healthprotection.com/nutraceuticals/curcumin/",
@@ -1724,6 +1788,8 @@
       "title": "D-Aspartic Acid",
       "dosage": "empty",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "d-aspartic-acid",
           "title": "D-Aspartic Acid",
           "link": "https://www.healthprotection.com/nutraceuticals/d-aspartic-acid/",
@@ -1737,6 +1803,8 @@
       "title": "D-Ribose",
       "dosage": "empty",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "d-ribose",
           "title": "D-Ribose",
           "link": "https://www.healthprotection.com/nutraceuticals/d-ribose/",
@@ -1770,6 +1838,8 @@
       "title": "DHEA",
       "dosage": "100mg",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "dhea",
           "title": "DHEA",
           "link": "https://www.healthprotection.com/nutraceuticals/dhea/",
@@ -1879,6 +1949,8 @@
       "title": "Echinacea",
       "dosage": "empty",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "empty",
           "title": "",
           "description": "",
@@ -1897,6 +1969,8 @@
       "title": "Echinacea Purpurea",
       "dosage": "empty",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "echinacea-purpurea",
           "title": "Echinacea Purpurea",
           "link": "https://www.healthprotection.com/nutraceuticals/echinacea-purpurea/",
@@ -1930,6 +2004,8 @@
       "title": "EGCG",
       "dosage": "500mg",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "egcg",
           "title": "EGCG",
           "link": "https://www.healthprotection.com/nutraceuticals/egcg/",
@@ -1963,6 +2039,8 @@
       "title": "Elderberries",
       "dosage": "empty",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "elderberries",
           "title": "Elderberries",
           "link": "https://www.healthprotection.com/nutraceuticals/elderberries/",
@@ -1996,6 +2074,8 @@
       "title": "Fenugreek",
       "dosage": "empty",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "fenugreek",
           "title": "Fenugreek",
           "link": "https://www.healthprotection.com/nutraceuticals/fenugreek/",
@@ -2029,6 +2109,8 @@
       "title": "Folic Acid",
       "dosage": "empty",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "folic-acid",
           "title": "Folic Acid",
           "link": "https://www.healthprotection.com/nutraceuticals/folic-acid/",
@@ -2062,6 +2144,8 @@
       "title": "FOS",
       "dosage": "empty",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "fos",
           "title": "FOS",
           "link": "https://www.healthprotection.com/nutraceuticals/fos/",
@@ -2095,6 +2179,8 @@
       "title": "Garlic",
       "dosage": "1200mg",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "garlic",
           "title": "Garlic",
           "description": "<p>Garlic is an Allium sativum plant, whose bulb is edible and used both as a spice and medicinal purposes. It has been used as a medicine to compose various medicines due to its antimicrobial properties and its beneficial effects on heart and blood circulation. Garlic contains vitamins, amino acids, adenosine, minerals, enzymes and biologically active compounds such as allicin.</p>\n",
@@ -2152,6 +2238,8 @@
       "title": "Ginger",
       "dosage": "1000mg",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "ginger",
           "title": "Ginger",
           "link": "https://www.healthprotection.com/nutraceuticals/ginger/",
@@ -2204,6 +2292,8 @@
       "title": "Ginkgo Biloba",
       "dosage": "120mg",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "ginkgo-biloba",
           "title": "Ginkgo Biloba",
           "link": "https://www.healthprotection.com/nutraceuticals/ginkgo-biloba/",
@@ -2256,6 +2346,8 @@
       "title": "Ginseng",
       "dosage": "empty",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "empty",
           "title": "",
           "description": "",
@@ -2273,6 +2365,8 @@
       "title": "Glucosamine",
       "dosage": "1500mg",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "glucosamine",
           "title": "Glucosamine",
           "link": "https://www.healthprotection.com/nutraceuticals/glucosamine/",
@@ -2325,6 +2419,8 @@
       "title": "Glutamine",
       "dosage": "empty",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "glutamine",
           "title": "Glutamine",
           "link": "https://www.healthprotection.com/nutraceuticals/glutamine/",
@@ -2377,6 +2473,8 @@
       "title": "Glutathione",
       "dosage": "empty",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "glutathione",
           "title": "Glutathione",
           "link": "https://www.healthprotection.com/nutraceuticals/glutathione/",
@@ -2410,6 +2508,8 @@
       "title": "Glycine",
       "dosage": "1000mg",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "glycine",
           "title": "Glycine",
           "link": "https://www.healthprotection.com/nutraceuticals/glycine/",
@@ -2443,6 +2543,8 @@
       "title": "Grape Seed Extract",
       "dosage": "empty",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "grape-seed-extract",
           "title": "Grape Seed Extract",
           "link": "https://www.healthprotection.com/nutraceuticals/grape-seed-extract/",
@@ -2456,6 +2558,8 @@
       "title": "Green Tea",
       "dosage": "empty",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "green-tea",
           "title": "Green Tea",
           "link": "https://www.healthprotection.com/nutraceuticals/green-tea/",
@@ -2469,6 +2573,8 @@
       "title": "Hibiscus",
       "dosage": "250mg",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "hibiscus",
           "title": "Hibiscus",
           "link": "https://www.healthprotection.com/nutraceuticals/hibiscus/",
@@ -2502,6 +2608,8 @@
       "title": "HMB",
       "dosage": "1000mg",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "hmb",
           "title": "HMB",
           "link": "https://www.healthprotection.com/nutraceuticals/hmb/",
@@ -2535,6 +2643,8 @@
       "title": "Huperzine A",
       "dosage": "empty",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "huperzine-a",
           "title": "Huperzine A",
           "link": "https://www.healthprotection.com/nutraceuticals/huperzine-a/",
@@ -2568,6 +2678,8 @@
       "title": "Inositol",
       "dosage": "1000mg",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "inositol",
           "title": "Inositol",
           "link": "https://www.healthprotection.com/nutraceuticals/inositol/",
@@ -2639,6 +2751,8 @@
       "title": "Iodine",
       "dosage": "empty",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "empty",
           "title": "",
           "link": "empty",
@@ -2652,6 +2766,8 @@
       "title": "Iron",
       "dosage": "empty",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "iron",
           "title": "Iron",
           "link": "https://www.healthprotection.com/nutraceuticals/iron/",
@@ -2685,6 +2801,8 @@
       "title": "Kava",
       "dosage": "250mg",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "kava",
           "title": "Kava",
           "link": "https://www.healthprotection.com/nutraceuticals/kava/",
@@ -2775,6 +2893,8 @@
       "title": "Lactobacilus",
       "dosage": "empty",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "lactobacilus",
           "title": "Lactobacilus",
           "link": "https://www.healthprotection.com/nutraceuticals/lactobacilus/",
@@ -2808,6 +2928,8 @@
       "title": "Lactoferrin",
       "dosage": "empty",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "lactoferrin",
           "title": "Lactoferrin",
           "link": "https://www.healthprotection.com/nutraceuticals/lactoferrin/",
@@ -2841,6 +2963,8 @@
       "title": "Lavender",
       "dosage": "empty",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "lavender",
           "title": "Lavender",
           "link": "https://www.healthprotection.com/nutraceuticals/lavender/",
@@ -2874,6 +2998,8 @@
       "title": "Lemon Balm",
       "dosage": "1000mg",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "lemon-balm",
           "title": "Lemon Balm",
           "link": "https://www.healthprotection.com/nutraceuticals/lemon-balm/",
@@ -2926,6 +3052,8 @@
       "title": "Limonene",
       "dosage": "empty",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "limonene",
           "title": "Limonene",
           "link": "https://www.healthprotection.com/nutraceuticals/limonene/",
@@ -2939,6 +3067,8 @@
       "title": "Lion's Mane",
       "dosage": "empty",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "empty",
           "title": "",
           "link": "empty",
@@ -2952,6 +3082,8 @@
       "title": "Lutein",
       "dosage": "20mg",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "lutein",
           "title": "Lutein",
           "link": "https://www.healthprotection.com/nutraceuticals/lutein/",
@@ -2985,6 +3117,8 @@
       "title": "Lysine",
       "dosage": "empty",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "lysine",
           "title": "Lysine",
           "link": "https://www.healthprotection.com/nutraceuticals/lysine/",
@@ -3018,6 +3152,8 @@
       "title": "Maca",
       "dosage": "500mg",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "maca",
           "title": "Maca",
           "link": "https://www.healthprotection.com/nutraceuticals/maca/",
@@ -3089,6 +3225,8 @@
       "title": "Magnesium",
       "dosage": "400mg",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "magnesium",
           "title": "Magnesium",
           "link": "https://www.healthprotection.com/nutraceuticals/magnesium/",
@@ -3198,6 +3336,8 @@
       "title": "MCT",
       "dosage": "500mg",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "mct",
           "title": "MCT",
           "link": "https://www.healthprotection.com/nutraceuticals/mct/",
@@ -3231,6 +3371,8 @@
       "title": "Melatonin",
       "dosage": "5mg",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "melatonin",
           "title": "Melatonin",
           "link": "https://www.healthprotection.com/nutraceuticals/melatonin/",
@@ -3283,6 +3425,8 @@
       "title": "Melissa",
       "dosage": "empty",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "empty",
           "title": "",
           "link": "empty",
@@ -3296,6 +3440,8 @@
       "title": "Milk Thistle",
       "dosage": "empty",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "milk-thistle",
           "title": "Milk Thistle",
           "link": "https://www.healthprotection.com/nutraceuticals/milk-thistle/",
@@ -3329,6 +3475,8 @@
       "title": "MSM",
       "dosage": "empty",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "msm",
           "title": "MSM",
           "link": "https://www.healthprotection.com/nutraceuticals/msm/",
@@ -3362,6 +3510,8 @@
       "title": "NAC",
       "dosage": "1000mg",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "nac",
           "title": "NAC",
           "link": "https://www.healthprotection.com/nutraceuticals/nac/",
@@ -3433,6 +3583,8 @@
       "title": "Olive Leaf Extract",
       "dosage": "empty",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "olive-leaf-extract",
           "title": "Olive Leaf Extract",
           "link": "https://www.healthprotection.com/nutraceuticals/olive-leaf-extract/",
@@ -3466,6 +3618,8 @@
       "title": "Omega 3",
       "dosage": "1000mg",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "omega-3",
           "title": "Omega 3",
           "link": "https://www.healthprotection.com/nutraceuticals/omega-3/",
@@ -3575,6 +3729,8 @@
       "title": "Omega 3 (fish oil)",
       "dosage": "empty",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "empty",
           "title": "",
           "link": "empty",
@@ -3588,6 +3744,8 @@
       "title": "Panax Ginseng",
       "dosage": "empty",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "panax-ginseng",
           "title": "Panax Ginseng",
           "link": "https://www.healthprotection.com/nutraceuticals/panax-ginseng/",
@@ -3678,6 +3836,8 @@
       "title": "Passionflower",
       "dosage": "empty",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "passionflower",
           "title": "Passionflower",
           "link": "https://www.healthprotection.com/nutraceuticals/passionflower/",
@@ -3749,6 +3909,8 @@
       "title": "Pelargonium Sidoides",
       "dosage": "empty",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "pelargonium-sidoides",
           "title": "Pelargonium Sidoides",
           "link": "https://www.healthprotection.com/nutraceuticals/pelargonium-sidoides/",
@@ -3801,6 +3963,8 @@
       "title": "Probiotics (bifidobacterium)",
       "dosage": "empty",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "empty",
           "title": "",
           "link": "empty",
@@ -3814,6 +3978,8 @@
       "title": "Probiotics (lactobacilus)",
       "dosage": "empty",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "empty",
           "title": "",
           "link": "empty",
@@ -3827,6 +3993,8 @@
       "title": "Protein",
       "dosage": "empty",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "empty",
           "title": "",
           "link": "empty",
@@ -3840,6 +4008,8 @@
       "title": "Psyllium",
       "dosage": "700mg",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "psyllium",
           "title": "Psyllium",
           "link": "https://www.healthprotection.com/nutraceuticals/psyllium/",
@@ -3930,6 +4100,8 @@
       "title": "Pycnogenol",
       "dosage": "100mg",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "pycnogenol",
           "title": "Pycnogenol",
           "link": "https://www.healthprotection.com/nutraceuticals/pycnogenol/",
@@ -4001,6 +4173,8 @@
       "title": "Quercetin",
       "dosage": "empty",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "quercetin",
           "title": "Quercetin",
           "link": "https://www.healthprotection.com/nutraceuticals/quercetin/",
@@ -4034,6 +4208,8 @@
       "title": "Raspberry Ketone",
       "dosage": "empty",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "empty",
           "title": "",
           "link": "empty",
@@ -4047,6 +4223,8 @@
       "title": "Reishi",
       "dosage": "empty",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "reishi",
           "title": "Reishi",
           "link": "https://www.healthprotection.com/nutraceuticals/reishi/",
@@ -4080,6 +4258,8 @@
       "title": "Resveratrol",
       "dosage": "empty",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "resveratrol",
           "title": "Resveratrol",
           "link": "https://www.healthprotection.com/nutraceuticals/resveratrol/",
@@ -4093,6 +4273,8 @@
       "title": "Rhodiola rosea",
       "dosage": "500mg",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "rhodiola-rosea",
           "title": "Rhodiola rosea",
           "link": "https://www.healthprotection.com/nutraceuticals/rhodiola-rosea/",
@@ -4202,6 +4384,8 @@
       "title": "Riboflavin (vit B2)",
       "dosage": "empty",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "empty",
           "title": "",
           "link": "empty",
@@ -4215,6 +4399,8 @@
       "title": "Sage",
       "dosage": "empty",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "sage",
           "title": "Sage",
           "link": "https://www.healthprotection.com/nutraceuticals/sage/",
@@ -4248,6 +4434,8 @@
       "title": "SAMe",
       "dosage": "empty",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "same",
           "title": "SAMe",
           "link": "https://www.healthprotection.com/nutraceuticals/same/",
@@ -4319,6 +4507,8 @@
       "title": "Saw Palmetto",
       "dosage": "empty",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "saw-palmetto",
           "title": "Saw Palmetto",
           "link": "https://www.healthprotection.com/nutraceuticals/saw-palmetto/",
@@ -4371,6 +4561,8 @@
       "title": "Selenium",
       "dosage": "empty",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "selenium",
           "title": "Selenium",
           "link": "https://www.healthprotection.com/nutraceuticals/selenium/",
@@ -4461,6 +4653,8 @@
       "title": "Shiitake",
       "dosage": "empty",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "shiitake",
           "title": "Shiitake",
           "link": "https://www.healthprotection.com/nutraceuticals/shiitake/",
@@ -4494,6 +4688,8 @@
       "title": "Sodium bicarbonate",
       "dosage": "empty",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "empty",
           "title": "",
           "link": "empty",
@@ -4507,6 +4703,8 @@
       "title": "Spirulina",
       "dosage": "500mg",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "spirulina",
           "title": "Spirulina",
           "description": "<p>Spirulina is a type of blue-green seaweed known as a very good plant based source of protein, iron and vitamin B12. It promotes a lot of different benefits to the human body, like improving glucose and lipid metabolism, preventing oxidation, promoting cardiovascular health and reducing liver fat.</p>\n",
@@ -4602,6 +4800,8 @@
       "title": "St. John’s wort ",
       "dosage": "empty",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "empty",
           "title": "",
           "link": "empty",
@@ -4615,6 +4815,8 @@
       "title": "Taurine",
       "dosage": "empty",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "taurine",
           "title": "Taurine",
           "link": "https://www.healthprotection.com/nutraceuticals/taurine/",
@@ -4628,6 +4830,8 @@
       "title": "Theanine",
       "dosage": "empty",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "theanine",
           "title": "Theanine",
           "link": "https://www.healthprotection.com/nutraceuticals/theanine/",
@@ -4661,6 +4865,8 @@
       "title": "Tribulus terrestris",
       "dosage": "1000mg",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "tribulus-terrestris",
           "title": "Tribulus Terrestris",
           "link": "https://www.healthprotection.com/nutraceuticals/tribulus-terrestris/",
@@ -4713,6 +4919,8 @@
       "title": "Valerian",
       "dosage": "empty",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "valerian",
           "title": "Valerian",
           "link": "https://www.healthprotection.com/nutraceuticals/valerian/",
@@ -4746,6 +4954,8 @@
       "title": "Vitamin A",
       "dosage": "10000UI",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "vitamin-a",
           "title": "Vitamin A",
           "link": "https://www.healthprotection.com/nutraceuticals/vitamin-a/",
@@ -4779,6 +4989,8 @@
       "title": "Vitamin B12",
       "dosage": "empty",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "vitamin-b12",
           "title": "Vitamin B12",
           "link": "https://www.healthprotection.com/nutraceuticals/vitamin-b12/",
@@ -4812,6 +5024,8 @@
       "title": "Vitamin C",
       "dosage": "empty",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "vitamin-c",
           "title": "Vitamin C",
           "description": "<p>Vitamin C is a hydrosoluble and thermolabile vitamin. It is a safe and powerful antioxidant essential micronutrient. Vitamin C is usually supplemented by its efficiency in protecting the immune system from common colds and it is also related to anticancer effects.</p>\n",
@@ -4869,6 +5083,8 @@
       "title": "Vitamin D",
       "dosage": "5000UI",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "vitamin-d",
           "title": "Vitamin D",
           "description": "<p>Vitamin D is consumed in the form of vitamin D2 (ergocalciferol) and vitamin D3 (cholecalciferol). It can be obtained exogenously (via food) or by endogenous synthesis from cholesterol, which is initiated by sun’s UVB rays incidence on the skin. The main function of vitamin D is to maintain calcium homeostasis. Its deficiency can be observed in individuals who have low sun exposure, lipid absorption problems or dietary problems.</p>\n",
@@ -5002,6 +5218,8 @@
       "title": "Vitamin E",
       "dosage": "empty",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "vitamin-e",
           "title": "Vitamin E",
           "link": "https://www.healthprotection.com/nutraceuticals/vitamin-e/",
@@ -5054,6 +5272,8 @@
       "title": "Vitamin K",
       "dosage": "100mcg",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "vitamin-k",
           "title": "Vitamin K",
           "link": "https://www.healthprotection.com/nutraceuticals/vitamin-k/",
@@ -5087,6 +5307,8 @@
       "title": "vitex agnus-castus",
       "dosage": "400mg",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "vitex-agnus-castus",
           "title": "Vitex Agnus-castus",
           "link": "https://www.healthprotection.com/nutraceuticals/vitex-agnus-castus/",
@@ -5158,6 +5380,8 @@
       "title": "Yerba Mate",
       "dosage": "empty",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "yerba-mate",
           "title": "Yerba Mate",
           "link": "https://www.healthprotection.com/nutraceuticals/yerba-mate/",
@@ -5191,6 +5415,8 @@
       "title": "Zinc",
       "dosage": "50mg",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "zinc",
           "title": "Zinc",
           "link": "https://www.healthprotection.com/nutraceuticals/zinc/",
@@ -5338,6 +5564,8 @@
       "title": "ZMA",
       "dosage": "empty",
       "info": {
+          "productLink": "",
+          "productPrice": 9.99,
           "slug": "zma",
           "title": "ZMA",
           "link": "https://www.healthprotection.com/nutraceuticals/zma/",
