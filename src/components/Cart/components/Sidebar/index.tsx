@@ -9,7 +9,7 @@ const Sidebar: React.FC = () => {
   return (
     <Container>
       <Report />
-      <Summary />
+      {/* <Summary /> */}
     </Container>
   );
 };
