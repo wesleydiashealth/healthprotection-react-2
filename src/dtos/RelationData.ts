@@ -13,7 +13,7 @@ export default interface RelationData {
   };
   description: string;
   studies: number;
-  levelOfEvidence: string;
-  magnitudeOfEffect: string;
+  levelOfEvidence: number;
+  magnitudeOfEffect: number;
   link: string;
 }

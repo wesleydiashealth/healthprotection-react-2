@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components';
 import { transparentize } from 'polished';
 
 interface ButtonProps {
+  isDisabled?: boolean;
   background?: string;
 }
 
@@ -81,6 +82,8 @@ export const Button = styled.a<ButtonProps>`
   line-height: 1;
   background-color: #db71af;
 
+  cursor: pointer;
+
   & ~ a {
     margin-left: 20px;
   }
@@ -89,6 +92,14 @@ export const Button = styled.a<ButtonProps>`
     props.background &&
     css`
       background-color: ${props.background};
+    `}
+
+  ${props =>
+    props.isDisabled &&
+    css`
+      cursor: default;
+      opacity: 0.4;
+      pointer-events: none;
     `}
 
   @media screen and (min-width: 768px) {

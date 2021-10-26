@@ -14,6 +14,13 @@ import Container, {
   ContainerListItemDescription,
   ContainerListItemLink,
   ContainerListIcons,
+  ContainerListIcon,
+  ContainerListIconTitle,
+  ContainerListIconContent,
+  EffectsMeter,
+  NeutralIcon,
+  HappyIcon,
+  HappierIcon,
 } from './styles';
 
 interface TooltipProps {
@@ -54,28 +61,32 @@ const Tooltip: React.FC<TooltipProps> = ({ slug, supConnections }) => {
                 {`These data summarize ${relation.studies} scientific studies`}
               </ContainerListItemDetails>
               <ContainerListIcons>
-                <div className="icon-wrapper">
-                  <strong>Level of Evidence</strong>
-                  <div className="icon-content">
-                    <img
-                      src={`${process.env.PUBLIC_URL}/icons/evidence+3.svg`}
-                      alt=""
-                      height="24"
+                <ContainerListIcon>
+                  <ContainerListIconTitle>
+                    Consistent Effects
+                  </ContainerListIconTitle>
+                  <ContainerListIconContent>
+                    <EffectsMeter width={relation.levelOfEvidence}>
+                      <div />
+                    </EffectsMeter>
+                  </ContainerListIconContent>
+                </ContainerListIcon>
+                <ContainerListIcon>
+                  <ContainerListIconTitle>
+                    Strength of Effects
+                  </ContainerListIconTitle>
+                  <ContainerListIconContent>
+                    <NeutralIcon
+                      isActive={Math.abs(relation.magnitudeOfEffect) === 1}
                     />
-                    <span>High</span>
-                  </div>
-                </div>
-                <div className="icon-wrapper">
-                  <strong>Magnitude of Effect</strong>
-                  <div className="icon-content">
-                    <img
-                      src={`${process.env.PUBLIC_URL}/icons/magnitude+2.svg`}
-                      alt=""
-                      height="24"
+                    <HappyIcon
+                      isActive={Math.abs(relation.magnitudeOfEffect) === 2}
                     />
-                    <span>Notable</span>
-                  </div>
-                </div>
+                    <HappierIcon
+                      isActive={Math.abs(relation.magnitudeOfEffect) === 3}
+                    />
+                  </ContainerListIconContent>
+                </ContainerListIcon>
               </ContainerListIcons>
               <ContainerListItemDescription>
                 {relation?.description}

@@ -1,4 +1,16 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+
+import { ReactComponent as Strength1Icon } from 'assets/strength_1.svg';
+import { ReactComponent as Strength2Icon } from 'assets/strength_2.svg';
+import { ReactComponent as Strength3Icon } from 'assets/strength_3.svg';
+
+interface EffectsMeterProps {
+  width: number;
+}
+
+interface StrengthIconProps {
+  isActive: boolean;
+}
 
 const Container = styled.div``;
 
@@ -87,32 +99,105 @@ export const ContainerListIcons = styled.div`
   margin-bottom: 20px;
 
   display: flex;
+`;
 
-  .icon-wrapper {
-    strong {
-      margin-bottom: 10px;
+export const ContainerListIcon = styled.div`
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
 
-      display: block;
+  & ~ div {
+    margin-left: 20px;
+  }
+`;
 
-      font-weight: 700;
-      font-size: 14px;
-      line-height: 18px;
-    }
+export const ContainerListIconTitle = styled.strong`
+  margin-bottom: 10px;
 
-    & ~ .icon-wrapper {
-      margin-left: 40px;
-    }
+  display: block;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 14px;
+`;
+
+export const ContainerListIconContent = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex: 1;
+`;
+
+export const EffectsMeter = styled.div<EffectsMeterProps>`
+  border-radius: 16px;
+
+  max-width: 140px;
+  width: 100%;
+  height: 8px;
+
+  background: #c4c4c4;
+
+  overflow: hidden;
+
+  div {
+    background: #f89c1c;
+    height: 8px;
+
+    ${props =>
+      props.width &&
+      css`
+        width: ${`${100 - 100 / props.width}%`};
+      `}
+  }
+`;
+
+export const NeutralIcon = styled(Strength1Icon)<StrengthIconProps>`
+  width: 24px;
+
+  fill: #c4c4c4;
+
+  & ~ svg {
+    margin-left: 5px;
   }
 
-  .icon-content {
-    display: flex;
-    align-items: center;
+  ${props =>
+    props.isActive &&
+    css`
+      fill: #1bc9bd;
+    `}
+`;
 
-    img {
-      margin-right: 10px;
-      flex-shrink: 0;
-    }
+export const HappyIcon = styled(Strength2Icon)<StrengthIconProps>`
+  width: 24px;
+
+  fill: #c4c4c4;
+
+  & ~ svg {
+    margin-left: 5px;
   }
+
+  ${props =>
+    props.isActive &&
+    css`
+      fill: #1bc9bd;
+    `}
+`;
+
+export const HappierIcon = styled(Strength3Icon)<StrengthIconProps>`
+  width: 24px;
+
+  fill: #c4c4c4;
+
+  & ~ svg {
+    margin-left: 5px;
+  }
+
+  ${props =>
+    props.isActive &&
+    css`
+      fill: #1bc9bd;
+    `}
 `;
 
 export default Container;

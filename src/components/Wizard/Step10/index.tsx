@@ -65,27 +65,28 @@ const Step10: React.FC = () => {
           <Instruction>
             Go safely to the Step 2 100% risks free based on your answers.
           </Instruction>
-          <Buttons>
-            <Button
-              background="#707070"
-              onClick={() => {
-                resetSteps();
-                setStoreState({ currentSlide: 0 });
-              }}
-            >
-              Reset
-            </Button>
-            <Button
-              href="#step_2"
-              onClick={() => {
-                updateStep('step1', { isCompleted: true });
-              }}
-            >
-              Go to Step 2
-            </Button>
-          </Buttons>
         </>
       )}
+      <Buttons>
+        <Button
+          background="#707070"
+          onClick={() => {
+            resetSteps();
+            setStoreState({ currentSlide: 0 });
+          }}
+        >
+          Reset
+        </Button>
+        <Button
+          href="#step_2"
+          onClick={() => {
+            updateStep('step1', { isCompleted: true });
+          }}
+          isDisabled={!!excludeStep?.length}
+        >
+          Go to Step 2
+        </Button>
+      </Buttons>
     </Container>
   );
 };

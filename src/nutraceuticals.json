@@ -26,8 +26,8 @@
                   },
                   "description": "Appetite include physical hunger, subjective appetite (desire to eat) and satiety. These aspects are controlled and regulated by hormones (leptin, ghrelin, serotonin, etc.) that act in the gastrointestinal tract and in the brain through negative feedback. In addition to hormones, appetite is also influenced by metabolic factors, hydration, blood glucose, intestinal motility, among others. The compounds that influence appetite are those that regulate the hormones involved, assist in satiety, benefit the gastrointestinal tract, improve blood glucose, among others.",
                   "studies": 3,
-                  "levelOfEvidence": "3",
-                  "magnitudeOfEffect": "-2",
+                  "levelOfEvidence": 3,
+                  "magnitudeOfEffect": -2,
                   "link": "https://www.healthprotection.com/relations/5-htp-appetite-control-weight-management/"
               }
           ],
@@ -61,8 +61,8 @@
                   },
                   "description": "Well-being is related to one's ability to achieve needs and be satisfied with life. It is considered that, for an individual to be healthy, must live the most complete state of physical, mental and social well-being.",
                   "studies": 0,
-                  "levelOfEvidence": "0",
-                  "magnitudeOfEffect": "0",
+                  "levelOfEvidence": 5,
+                  "magnitudeOfEffect": 0,
                   "link": "https://www.healthprotection.com/relations/acai-overall-well-being-longevity-anti-aging/"
               }
           ],
@@ -96,8 +96,8 @@
                   },
                   "description": "Depression is a chronic and recurrent psychiatric condition that produces mood changes characterized by deep sadness, mood swings, loss of interest in activities, causing significant impairment in daily life.",
                   "studies": 0,
-                  "levelOfEvidence": "1",
-                  "magnitudeOfEffect": "-3",
+                  "levelOfEvidence": 1,
+                  "magnitudeOfEffect": -3,
                   "link": "https://www.healthprotection.com/relations/agmatine-depression-energy-and-mood/"
               }
           ],
@@ -131,8 +131,8 @@
                   },
                   "description": "Digestion refers to the breakdown of food into smaller components that can be absorbed into the bloodstream. Therefore it is one of the most important systems of the body, because it is responsable for all the nutrient income that ''feed'' all of our cells. Maintaining a good digestions is not always easy, as the digestive system behaves differently depending on how and what you eat. Some ingredients help this mechanism work better and preventing discomfort.",
                   "studies": 0,
-                  "levelOfEvidence": "2",
-                  "magnitudeOfEffect": "-1",
+                  "levelOfEvidence": 2,
+                  "magnitudeOfEffect": -1,
                   "link": "https://www.healthprotection.com/relations/aloe-vera-digestion-digestive-health/"
               }
           ],
@@ -166,8 +166,8 @@
                   },
                   "description": "Power output is the strength the body can develop in the shortest amount of time. It have to do with muscle fibers, creatine stores and ATP.",
                   "studies": 1,
-                  "levelOfEvidence": "2",
-                  "magnitudeOfEffect": "2",
+                  "levelOfEvidence": 2,
+                  "magnitudeOfEffect": 2,
                   "link": "https://www.healthprotection.com/relations/alpha-gpc-power-output-muscle-health/"
               },
               {
@@ -185,8 +185,8 @@
                   },
                   "description": "Cognition refers to the mental processes involved in gaining knowledge and comprehension. Cognitive actions include thinking, knowing, remembering, judging, and problem-solving. These are higher-level functions of the brain and include language, imagination, perception, and planning.",
                   "studies": 0,
-                  "levelOfEvidence": "2",
-                  "magnitudeOfEffect": "-2",
+                  "levelOfEvidence": 2,
+                  "magnitudeOfEffect": -2,
                   "link": "https://www.healthprotection.com/relations/alpha-gpc-cognition-cognitive-function-and-brain-health/"
               }
           ],
@@ -220,8 +220,8 @@
                   },
                   "description": "Oxidation reactions occur naturally in all cells of the body, which produce free radicals. These radicals can initiate chain reactions that can damage cells or cause them to die. Antioxidant substances eliminate free radicals and inhibit other oxidation reactions, thus protecting and prolonging cellular functions and protectiong them against tumors.",
                   "studies": 0,
-                  "levelOfEvidence": "3",
-                  "magnitudeOfEffect": "-1",
+                  "levelOfEvidence": 3,
+                  "magnitudeOfEffect": -1,
                   "link": "https://www.healthprotection.com/relations/alpha-lipoic-acid-anti-oxidant-longevity-anti-aging/"
               }
           ],
@@ -255,8 +255,8 @@
                   },
                   "description": "Anxiety is the body's natural response to stress. It's a feeling of fear or apprehension about what's to come. It can be triggered by a specific situation and not last long - which is very common and ok - or it can be a generalized disorder (which is considered a illness) that can bring harm to everyday life and also cause other conditions like depression.",
                   "studies": 0,
-                  "levelOfEvidence": "0",
-                  "magnitudeOfEffect": "0",
+                  "levelOfEvidence": 0,
+                  "magnitudeOfEffect": 0,
                   "link": "https://www.healthprotection.com/relations/arginine-anxiety-energy-and-mood/"
               },
               {
@@ -274,8 +274,8 @@
                   },
                   "description": "White blood cells - or leukocytes - are the body's defense cells that destroy foreign agents, for example, bacteria, viruses and toxic substances that attack our body and cause infections or other diseases. There are also enzymes that refer to the antioxidant defense system that plays the role of inhibiting and/or reducing the damage caused by the harmful action of free radicals or non-radical reactive species.",
                   "studies": 0,
-                  "levelOfEvidence": "0",
-                  "magnitudeOfEffect": "0",
+                  "levelOfEvidence": 0,
+                  "magnitudeOfEffect": 0,
                   "link": "https://www.healthprotection.com/relations/arginine-preventive-immunity-immunity/"
               }
           ],
@@ -309,8 +309,8 @@
                   },
                   "description": "White blood cells - or leukocytes - are the body's defense cells that destroy foreign agents, for example, bacteria, viruses and toxic substances that attack our body and cause infections or other diseases. There are also enzymes that refer to the antioxidant defense system that plays the role of inhibiting and/or reducing the damage caused by the harmful action of free radicals or non-radical reactive species.",
                   "studies": 1,
-                  "levelOfEvidence": "1",
-                  "magnitudeOfEffect": "1",
+                  "levelOfEvidence": 1,
+                  "magnitudeOfEffect": 1,
                   "link": "https://www.healthprotection.com/relations/ashwagandha-preventive-immunity-immunity/"
               },
               {
@@ -328,8 +328,8 @@
                   },
                   "description": "Anxiety is the body's natural response to stress. It's a feeling of fear or apprehension about what's to come. It can be triggered by a specific situation and not last long - which is very common and ok - or it can be a generalized disorder (which is considered a illness) that can bring harm to everyday life and also cause other conditions like depression.",
                   "studies": 9,
-                  "levelOfEvidence": "3",
-                  "magnitudeOfEffect": "-2",
+                  "levelOfEvidence": 3,
+                  "magnitudeOfEffect": -2,
                   "link": "https://www.healthprotection.com/relations/ashwagandha-anxiety-energy-and-mood/"
               },
               {
@@ -347,8 +347,8 @@
                   },
                   "description": "Depression is a chronic and recurrent psychiatric condition that produces mood changes characterized by deep sadness, mood swings, loss of interest in activities, causing significant impairment in daily life.",
                   "studies": 0,
-                  "levelOfEvidence": "2",
-                  "magnitudeOfEffect": "-1",
+                  "levelOfEvidence": 2,
+                  "magnitudeOfEffect": -1,
                   "link": "https://www.healthprotection.com/relations/ashwagandha-depression-energy-and-mood/"
               },
               {
@@ -366,8 +366,8 @@
                   },
                   "description": "Well-being is not just the absence of disease or illness. It's a complex combination of a person's physical, mental, emotional and social health factors. Wellbeing is strongly linked to happiness and life satisfaction. There are some lifestyle changes and natural products that can be very effective in that.",
                   "studies": 3,
-                  "levelOfEvidence": "2",
-                  "magnitudeOfEffect": "1",
+                  "levelOfEvidence": 2,
+                  "magnitudeOfEffect": 1,
                   "link": "https://www.healthprotection.com/relations/ashwagandha-overall-well-being-energy-and-mood-energy-and-mood/"
               },
               {
@@ -385,8 +385,8 @@
                   },
                   "description": "Stress can be understood as a situation in which the individual is physically or mentally overloaded, which can cause pain, tension and physical injury, as well as emotional fatigue, tiredness, reduced productivity and attention. The substances that help control stress act on hormonal regulation (for example, cortisol), on the circadian cycle and promote physical and mental relaxation.",
                   "studies": 1,
-                  "levelOfEvidence": "2",
-                  "magnitudeOfEffect": "2",
+                  "levelOfEvidence": 2,
+                  "magnitudeOfEffect": 2,
                   "link": "https://www.healthprotection.com/relations/ashwagandha-stress-management-energy-and-mood/"
               },
               {
@@ -404,8 +404,8 @@
                   },
                   "description": "Sleep is a very important physiological process, as it regulates the body's functions. It is responsible for promoting / facilitating energy conservation, synthesis and secretion of hormones and proteins, learning and memory through brain changes. Sleep is mainly driven by the circadian cycle, which involves exposure to light, hormones such as melatonin, and hypothalamic activity. The compounds that help regulate sleep work in different pathways, they can facilitate the process of falling asleep, increase the duration of continuous sleep or improve the quality of sleep.",
                   "studies": 0,
-                  "levelOfEvidence": "1",
-                  "magnitudeOfEffect": "-1",
+                  "levelOfEvidence": 1,
+                  "magnitudeOfEffect": -1,
                   "link": "https://www.healthprotection.com/relations/ashwagandha-sleep-energy-and-mood/"
               },
               {
@@ -423,8 +423,8 @@
                   },
                   "description": "Power output is the strength the body can develop in the shortest amount of time. It have to do with muscle fibers, creatine stores and ATP.",
                   "studies": 0,
-                  "levelOfEvidence": "2",
-                  "magnitudeOfEffect": "2",
+                  "levelOfEvidence": 2,
+                  "magnitudeOfEffect": 2,
                   "link": "https://www.healthprotection.com/relations/ashwagandha-power-output-muscle-health/"
               }
           ],
@@ -458,8 +458,8 @@
                   },
                   "description": "Nasal congestion is another term for ''stuffy nose''. It is often a symptom of another health problem, such as sinusitis, allergic rhinitis or a common cold, other times it can be caused by changes in the structure of the nose, such as deviated septum. Nasal congestion is marked by clogged nose or runny nose, sinus pain, mucus accumulation and swollen nasal tissues. There are a lot of different treatments for nasal congestion, depending of the cause of it. There are some natural products that can alliviate and help treat this condition.",
                   "studies": 0,
-                  "levelOfEvidence": "2",
-                  "magnitudeOfEffect": "-1",
+                  "levelOfEvidence": 2,
+                  "magnitudeOfEffect": -1,
                   "link": "https://www.healthprotection.com/relations/astragalus-root-nasal-congestion-respiratory-health/"
               }
           ],
@@ -493,8 +493,8 @@
                   },
                   "description": "Attention is the behavioral and cognitive process of selectively concentrating on a discrete aspect of information, whether considered subjective or objective. ",
                   "studies": 9,
-                  "levelOfEvidence": "3",
-                  "magnitudeOfEffect": "0",
+                  "levelOfEvidence": 3,
+                  "magnitudeOfEffect": 0,
                   "link": "https://www.healthprotection.com/relations/bacopa-focus-attention-cognitive-function-and-brain-health/"
               },
               {
@@ -512,8 +512,8 @@
                   },
                   "description": "Memory is the faculty by which the brain encodes, stores, and retrieves information. It is a record of experience for guiding future action. ",
                   "studies": 5,
-                  "levelOfEvidence": "3",
-                  "magnitudeOfEffect": "1",
+                  "levelOfEvidence": 3,
+                  "magnitudeOfEffect": 1,
                   "link": "https://www.healthprotection.com/relations/bacopa-memory-cognitive-function-and-brain-health/"
               }
           ],
@@ -562,8 +562,8 @@
                   },
                   "description": "Fatigue is characterized by a reduction in physical energy. It can also appear as acute and/or chronic fatigue. Acute fatigue is due to excessive activities, such as physical exercise. Chronic fatigue is multifactorial, influenced by metabolic disorders, nutrient deficiency, physical inactivity, causing tiredness and constant lack of motivation.The substances that help with that are neuroprotective, affecting metabolism, hormones and motor function.",
                   "studies": 6,
-                  "levelOfEvidence": "3",
-                  "magnitudeOfEffect": "-1",
+                  "levelOfEvidence": 3,
+                  "magnitudeOfEffect": -1,
                   "link": "https://www.healthprotection.com/relations/beta-alanine-fatigue-prevention-muscle-health-muscle-health/"
               },
               {
@@ -581,8 +581,8 @@
                   },
                   "description": "Muscle gain, also called hypertrophy, occurs when muscle cells receive a kind of stimulation that generates microlesions. For the healing of these lesions there is an increase in protein synthesis, which gives the muscle a larger volume. This occurs with the aid of a positive calorie balance (more calories consumed than spent). Supplements that increase muscle mass promote resistance and affect the rate of synthesis and breakdown of muscle proteins directly or indirectly.",
                   "studies": 3,
-                  "levelOfEvidence": "2",
-                  "magnitudeOfEffect": "1",
+                  "levelOfEvidence": 2,
+                  "magnitudeOfEffect": 1,
                   "link": "https://www.healthprotection.com/relations/beta-alanine-muscle-gain-muscle-health/"
               },
               {
@@ -600,8 +600,8 @@
                   },
                   "description": "It is about the capacity of a muscle to repeatedly exercise during a set of movements. Compounds that improve power output are the ones which also have antifatigue effects.",
                   "studies": 4,
-                  "levelOfEvidence": "4",
-                  "magnitudeOfEffect": "1",
+                  "levelOfEvidence": 4,
+                  "magnitudeOfEffect": 1,
                   "link": "https://www.healthprotection.com/relations/beta-alanine-muscular-endurance-muscle-health/"
               }
           ],
@@ -635,8 +635,8 @@
                   },
                   "description": "The absorption and different uses for each nutrient is highly linked to the body's immune system, which is the set of chemical reactions that protect us from any ''intruder'' and susteins our vital functions. All the vitamins and minerals are essencial for the whole functioning of this system. ",
                   "studies": 0,
-                  "levelOfEvidence": "2",
-                  "magnitudeOfEffect": "-2",
+                  "levelOfEvidence": 2,
+                  "magnitudeOfEffect": -2,
                   "link": "https://www.healthprotection.com/relations/bifidobacterium-nutrient-issues-immunity-immunity/"
               }
           ],
@@ -670,8 +670,8 @@
                   },
                   "description": "The body's cells use glucose to produce energy. Glucose comes from food and is stored in the body in the form of glycogen (in the muscles and liver) or circulating glucose (in the blood). Cells need the hormone Insulin to capture glucose molecules. The glucose / insulin balance in the blood is essential for the proper functioning of the body's whole  metabolism. A change in this metabolism can lead to serious physiological dysfunctions, leading to the development of chronic non-communicable diseases, such as type II diabetes and cardiovascular diseases. There are several classes of compounds that influence this metabolism, these can increase insulin synthesis and secretion, decrease blood glucose levels, reduce the immediate absorption of carbohydrates, regulate the sensitivity of cells to insulin, among others.",
                   "studies": 0,
-                  "levelOfEvidence": "2",
-                  "magnitudeOfEffect": "0",
+                  "levelOfEvidence": 2,
+                  "magnitudeOfEffect": 0,
                   "link": "https://www.healthprotection.com/relations/biotin-blood-sugar-control-diabetes-blood-sugar/"
               }
           ],
@@ -705,8 +705,8 @@
                   },
                   "description": "Oxidation reactions occur naturally in all cells of the body, which produce free radicals. These radicals can initiate chain reactions that can damage cells or cause them to die. Antioxidant substances eliminate free radicals and inhibit other oxidation reactions, thus protecting and prolonging cellular functions and protectiong them against tumors.",
                   "studies": 3,
-                  "levelOfEvidence": "2",
-                  "magnitudeOfEffect": "-1",
+                  "levelOfEvidence": 2,
+                  "magnitudeOfEffect": -1,
                   "link": "https://www.healthprotection.com/relations/blueberry-anti-oxidant-longevity-anti-aging/"
               },
               {
@@ -724,8 +724,8 @@
                   },
                   "description": "Well-being is related to one's ability to achieve needs and be satisfied with life. It is considered that, for an individual to be healthy, must live the most complete state of physical, mental and social well-being.",
                   "studies": 0,
-                  "levelOfEvidence": "2",
-                  "magnitudeOfEffect": "1",
+                  "levelOfEvidence": 2,
+                  "magnitudeOfEffect": 1,
                   "link": "https://www.healthprotection.com/relations/blueberry-overall-well-being-longevity-anti-aging/"
               },
               {
@@ -743,8 +743,8 @@
                   },
                   "description": "Cognition refers to the mental processes involved in gaining knowledge and comprehension. Cognitive actions include thinking, knowing, remembering, judging, and problem-solving. These are higher-level functions of the brain and include language, imagination, perception, and planning.",
                   "studies": 1,
-                  "levelOfEvidence": "2",
-                  "magnitudeOfEffect": "-1",
+                  "levelOfEvidence": 2,
+                  "magnitudeOfEffect": -1,
                   "link": "https://www.healthprotection.com/relations/blueberry-cognition-cognitive-function-and-brain-health/"
               },
               {
@@ -762,8 +762,8 @@
                   },
                   "description": "Memory is the faculty by which the brain encodes, stores, and retrieves information. It is a record of experience for guiding future action. ",
                   "studies": 0,
-                  "levelOfEvidence": "2",
-                  "magnitudeOfEffect": "1",
+                  "levelOfEvidence": 2,
+                  "magnitudeOfEffect": 1,
                   "link": "https://www.healthprotection.com/relations/blueberry-memory-cognitive-function-and-brain-health/"
               }
           ],
@@ -797,8 +797,8 @@
                   },
                   "description": "Osteoarthritis is a very common chronic condition among the elderly that incompasses bones and cartilage. Symptoms include joint pain in the hands, neck, lower back, knees or hips, as well as movement difficultness.",
                   "studies": 4,
-                  "levelOfEvidence": "3",
-                  "magnitudeOfEffect": "-2",
+                  "levelOfEvidence": 3,
+                  "magnitudeOfEffect": -2,
                   "link": "https://www.healthprotection.com/relations/boswellia-symptoms-of-osteoarthritis-bone-and-joint-health/"
               }
           ],
@@ -832,8 +832,8 @@
                   },
                   "description": "When you exercise, you generate stress on your muscles and that damages the muscle fibers, causing them to break apart. During recovery the muscles need fuel to heal stronger than they were before, which will make them stronger.",
                   "studies": 0,
-                  "levelOfEvidence": "2",
-                  "magnitudeOfEffect": "-1",
+                  "levelOfEvidence": 2,
+                  "magnitudeOfEffect": -1,
                   "link": "https://www.healthprotection.com/relations/bromelain-muscle-recovery-muscle-health/"
               }
           ],
@@ -867,8 +867,8 @@
                   },
                   "description": "Thermogenesis is the body's energy production process, responsible for regulating internal temperature and all natural energy processes. There are some compounds that amplify this process, such as caffeine and other thermogens.",
                   "studies": 1,
-                  "levelOfEvidence": "2",
-                  "magnitudeOfEffect": "1",
+                  "levelOfEvidence": 2,
+                  "magnitudeOfEffect": 1,
                   "link": "https://www.healthprotection.com/relations/caffeine-thermogenic-effect-weight-management/"
               }
           ],
@@ -902,8 +902,8 @@
                   },
                   "description": "Bone density or bone mineral density (BMD) is the amount of bone mineral in bone tissue. The measurement of bone mineral density is used in medicine as an indirect indicator of osteoporosis and risk of fractures.",
                   "studies": 0,
-                  "levelOfEvidence": "1",
-                  "magnitudeOfEffect": "0",
+                  "levelOfEvidence": 1,
+                  "magnitudeOfEffect": 0,
                   "link": "https://www.healthprotection.com/relations/calcium-bone-density-bone-and-joint-health/"
               }
           ],
@@ -937,8 +937,8 @@
                   },
                   "description": "Fatigue is characterized by a reduction in mental energy. It can also appear as acute and/or chronic fatigue. Acute fatigue is due to excessive mentally demanding work. Chronic fatigue is multifactorial, influenced by insomnia, stress, anxiety, depression, causing tiredness and constant lack of motivation. The substances indicated for fatigue help to improve sleep and mood problems as they are neuroprotective, affecting neurological function.",
                   "studies": 0,
-                  "levelOfEvidence": "3",
-                  "magnitudeOfEffect": "-1",
+                  "levelOfEvidence": 3,
+                  "magnitudeOfEffect": -1,
                   "link": "https://www.healthprotection.com/relations/carnitine-fatigue-prevention-longevity-anti-aging/"
               },
               {
@@ -956,8 +956,8 @@
                   },
                   "description": "Triglycerides and cholesterol are both types of fat present in blood. They play very important roles in the body, such as hormone metabolism and nutrient circulation. In order for them to function properly, they need to be at optimum levels - not too high neither too low. The primary way to keep those good levels is to have a healthy diet, with lots of fiber and balanced fats. But there are some nutraceutics that have been proven to help in this process in a very effective way.",
                   "studies": 30,
-                  "levelOfEvidence": "4",
-                  "magnitudeOfEffect": "-1",
+                  "levelOfEvidence": 4,
+                  "magnitudeOfEffect": -1,
                   "link": "https://www.healthprotection.com/relations/carnitine-cholesterol-triglycerides-cardiovascular-health/"
               },
               {
@@ -975,8 +975,8 @@
                   },
                   "description": "The heart is one of the most strong muscles in the body, as it works nonstop and very steady. But it can also fail, brought down by a poor diet and lack of exercise, smoking, infection, unlucky genes, etc. It's essential to your health to take care of your heart health. ",
                   "studies": 1,
-                  "levelOfEvidence": "4",
-                  "magnitudeOfEffect": "-1",
+                  "levelOfEvidence": 4,
+                  "magnitudeOfEffect": -1,
                   "link": "https://www.healthprotection.com/relations/carnitine-heart-protection-cardiovascular-health/"
               }
           ],
@@ -1010,8 +1010,8 @@
                   },
                   "description": "Cognition refers to the mental processes involved in gaining knowledge and comprehension. Cognitive actions include thinking, knowing, remembering, judging, and problem-solving. These are higher-level functions of the brain and include language, imagination, perception, and planning.",
                   "studies": 1,
-                  "levelOfEvidence": "2",
-                  "magnitudeOfEffect": "-1",
+                  "levelOfEvidence": 2,
+                  "magnitudeOfEffect": -1,
                   "link": "https://www.healthprotection.com/relations/cdp-choline-cognition-cognitive-function-and-brain-health/"
               },
               {
@@ -1029,8 +1029,8 @@
                   },
                   "description": "Attention is the behavioral and cognitive process of selectively concentrating on a discrete aspect of information, whether considered subjective or objective. ",
                   "studies": 0,
-                  "levelOfEvidence": "2",
-                  "magnitudeOfEffect": "1",
+                  "levelOfEvidence": 2,
+                  "magnitudeOfEffect": 1,
                   "link": "https://www.healthprotection.com/relations/cdp-choline-focus-attention-cognitive-function-and-brain-health/"
               },
               {
@@ -1048,8 +1048,8 @@
                   },
                   "description": "Memory is the faculty by which the brain encodes, stores, and retrieves information. It is a record of experience for guiding future action. ",
                   "studies": 1,
-                  "levelOfEvidence": "2",
-                  "magnitudeOfEffect": "1",
+                  "levelOfEvidence": 2,
+                  "magnitudeOfEffect": 1,
                   "link": "https://www.healthprotection.com/relations/cdp-choline-memory-cognitive-function-and-brain-health/"
               }
           ],
@@ -1083,8 +1083,8 @@
                   },
                   "description": "The immune response is measured by how fast and how effective the immune system can neutralize any kind of sickness, being viruses, bacteria or other pathogens.",
                   "studies": 0,
-                  "levelOfEvidence": "0",
-                  "magnitudeOfEffect": "0",
+                  "levelOfEvidence": 0,
+                  "magnitudeOfEffect": 0,
                   "link": "https://www.healthprotection.com/relations/chaga-immune-response-immunity-immunity/"
               },
               {
@@ -1102,8 +1102,8 @@
                   },
                   "description": "For short-term conditions, inflammation is helpful, but sustained low levels of inflammation irritate your blood vessels. Inflammation may promote the growth of plaques, loosen plaque in your arteries and trigger blood clots, which are the primary cause of heart attacks and strokes. Anti inflammatories can prevent the cardiovascular system to get to the first stages of diseases.",
                   "studies": 0,
-                  "levelOfEvidence": "0",
-                  "magnitudeOfEffect": "0",
+                  "levelOfEvidence": 0,
+                  "magnitudeOfEffect": 0,
                   "link": "https://www.healthprotection.com/relations/chaga-anti-inflammatory-cardiovascular-health-cardiovascular-health/"
               },
               {
@@ -1121,8 +1121,8 @@
                   },
                   "description": "Triglycerides and cholesterol are both types of fat present in blood. They play very important roles in the body, such as hormone metabolism and nutrient circulation. In order for them to function properly, they need to be at optimum levels - not too high neither too low. The primary way to keep those good levels is to have a healthy diet, with lots of fiber and balanced fats. But there are some nutraceutics that have been proven to help in this process in a very effective way.",
                   "studies": 0,
-                  "levelOfEvidence": "0",
-                  "magnitudeOfEffect": "0",
+                  "levelOfEvidence": 0,
+                  "magnitudeOfEffect": 0,
                   "link": "https://www.healthprotection.com/relations/chaga-cholesterol-triglycerides-cardiovascular-health/"
               },
               {
@@ -1140,8 +1140,8 @@
                   },
                   "description": "The body's cells use glucose to produce energy. Glucose comes from food and is stored in the body in the form of glycogen (in the muscles and liver) or circulating glucose (in the blood). Cells need the hormone Insulin to capture glucose molecules. The glucose / insulin balance in the blood is essential for the proper functioning of the body's whole  metabolism. A change in this metabolism can lead to serious physiological dysfunctions, leading to the development of chronic non-communicable diseases, such as type II diabetes and cardiovascular diseases. There are several classes of compounds that influence this metabolism, these can increase insulin synthesis and secretion, decrease blood glucose levels, reduce the immediate absorption of carbohydrates, regulate the sensitivity of cells to insulin, among others.",
                   "studies": 0,
-                  "levelOfEvidence": "0",
-                  "magnitudeOfEffect": "0",
+                  "levelOfEvidence": 0,
+                  "magnitudeOfEffect": 0,
                   "link": "https://www.healthprotection.com/relations/chaga-blood-sugar-control-diabetes-blood-sugar/"
               }
           ],
@@ -1175,8 +1175,8 @@
                   },
                   "description": "White blood cells - or leukocytes - are the body's defense cells that destroy foreign agents, for example, bacteria, viruses and toxic substances that attack our body and cause infections or other diseases. There are also enzymes that refer to the antioxidant defense system that plays the role of inhibiting and/or reducing the damage caused by the harmful action of free radicals or non-radical reactive species.",
                   "studies": 1,
-                  "levelOfEvidence": "2",
-                  "magnitudeOfEffect": "1",
+                  "levelOfEvidence": 2,
+                  "magnitudeOfEffect": 1,
                   "link": "https://www.healthprotection.com/relations/chlorella-preventive-immunity-immunity/"
               }
           ],
@@ -1210,8 +1210,8 @@
                   },
                   "description": "Different types of Arthritis causes joints to be inflamed, thus they can develop stiffness, warmth, swelling, redness and pain. There are numerous of compounds that can be used to ease those symptoms",
                   "studies": 0,
-                  "levelOfEvidence": "0",
-                  "magnitudeOfEffect": "0",
+                  "levelOfEvidence": 0,
+                  "magnitudeOfEffect": 0,
                   "link": "https://www.healthprotection.com/relations/chondroitin-joint-pain-and-stiffness-bone-and-joint-health/"
               }
           ],
@@ -1245,8 +1245,8 @@
                   },
                   "description": "The body's cells use glucose to produce energy. Glucose comes from food and is stored in the body in the form of glycogen (in the muscles and liver) or circulating glucose (in the blood). Cells need the hormone Insulin to capture glucose molecules. The glucose / insulin balance in the blood is essential for the proper functioning of the body's whole  metabolism. A change in this metabolism can lead to serious physiological dysfunctions, leading to the development of chronic non-communicable diseases, such as type II diabetes and cardiovascular diseases. There are several classes of compounds that influence this metabolism, these can increase insulin synthesis and secretion, decrease blood glucose levels, reduce the immediate absorption of carbohydrates, regulate the sensitivity of cells to insulin, among others.",
                   "studies": 0,
-                  "levelOfEvidence": "4",
-                  "magnitudeOfEffect": "-1",
+                  "levelOfEvidence": 4,
+                  "magnitudeOfEffect": -1,
                   "link": "https://www.healthprotection.com/relations/chromium-blood-sugar-control-diabetes-blood-sugar/"
               }
           ],
@@ -1280,8 +1280,8 @@
                   },
                   "description": "The body's cells use glucose to produce energy. Glucose comes from food and is stored in the body in the form of glycogen (in the muscles and liver) or circulating glucose (in the blood). Cells need the hormone Insulin to capture glucose molecules. The glucose / insulin balance in the blood is essential for the proper functioning of the body's whole  metabolism. A change in this metabolism can lead to serious physiological dysfunctions, leading to the development of chronic non-communicable diseases, such as type II diabetes and cardiovascular diseases. There are several classes of compounds that influence this metabolism, these can increase insulin synthesis and secretion, decrease blood glucose levels, reduce the immediate absorption of carbohydrates, regulate the sensitivity of cells to insulin, among others.",
                   "studies": 0,
-                  "levelOfEvidence": "0",
-                  "magnitudeOfEffect": "0",
+                  "levelOfEvidence": 0,
+                  "magnitudeOfEffect": 0,
                   "link": "https://www.healthprotection.com/relations/cinnamon-blood-sugar-control-diabetes-blood-sugar/"
               }
           ],
@@ -1315,8 +1315,8 @@
                   },
                   "description": "Different types of Arthritis causes joints to be inflamed, thus they can develop stiffness, warmth, swelling, redness and pain. There are numerous of compounds that can be used to ease those symptoms",
                   "studies": 0,
-                  "levelOfEvidence": "1",
-                  "magnitudeOfEffect": "2",
+                  "levelOfEvidence": 1,
+                  "magnitudeOfEffect": 2,
                   "link": "https://www.healthprotection.com/relations/cissus-quadrangularis-joint-pain-and-stiffness-bone-and-joint-health/"
               }
           ],
@@ -1350,8 +1350,8 @@
                   },
                   "description": "Muscle gain, also called hypertrophy, occurs when muscle cells receive a kind of stimulation that generates microlesions. For the healing of these lesions there is an increase in protein synthesis, which gives the muscle a larger volume. This occurs with the aid of a positive calorie balance (more calories consumed than spent). Supplements that increase muscle mass promote resistance and affect the rate of synthesis and breakdown of muscle proteins directly or indirectly.",
                   "studies": 0,
-                  "levelOfEvidence": "3",
-                  "magnitudeOfEffect": "1",
+                  "levelOfEvidence": 3,
+                  "magnitudeOfEffect": 1,
                   "link": "https://www.healthprotection.com/relations/citrulline-muscle-gain-muscle-health/"
               },
               {
@@ -1369,8 +1369,8 @@
                   },
                   "description": "Fatigue is characterized by a reduction in physical energy. It can also appear as acute and/or chronic fatigue. Acute fatigue is due to excessive activities, such as physical exercise. Chronic fatigue is multifactorial, influenced by metabolic disorders, nutrient deficiency, physical inactivity, causing tiredness and constant lack of motivation.The substances that help with that are neuroprotective, affecting metabolism, hormones and motor function.",
                   "studies": 0,
-                  "levelOfEvidence": "2",
-                  "magnitudeOfEffect": "-2",
+                  "levelOfEvidence": 2,
+                  "magnitudeOfEffect": -2,
                   "link": "https://www.healthprotection.com/relations/citrulline-fatigue-prevention-muscle-health-muscle-health/"
               }
           ],
@@ -1404,8 +1404,8 @@
                   },
                   "description": "Different types of Arthritis causes joints to be inflamed, thus they can develop stiffness, warmth, swelling, redness and pain. There are numerous of compounds that can be used to ease those symptoms",
                   "studies": 5,
-                  "levelOfEvidence": "3",
-                  "magnitudeOfEffect": "-1",
+                  "levelOfEvidence": 3,
+                  "magnitudeOfEffect": -1,
                   "link": "https://www.healthprotection.com/relations/collagen-joint-pain-and-stiffness-bone-and-joint-health/"
               },
               {
@@ -1423,8 +1423,8 @@
                   },
                   "description": "Osteoarthritis is a very common chronic condition among the elderly that incompasses bones and cartilage. Symptoms include joint pain in the hands, neck, lower back, knees or hips, as well as movement difficultness.",
                   "studies": 0,
-                  "levelOfEvidence": "2",
-                  "magnitudeOfEffect": "-1",
+                  "levelOfEvidence": 2,
+                  "magnitudeOfEffect": -1,
                   "link": "https://www.healthprotection.com/relations/collagen-symptoms-of-osteoarthritis-bone-and-joint-health/"
               }
           ],
@@ -1458,8 +1458,8 @@
                   },
                   "description": "The heart is one of the most strong muscles in the body, as it works nonstop and very steady. But it can also fail, brought down by a poor diet and lack of exercise, smoking, infection, unlucky genes, etc. It's essential to your health to take care of your heart health. ",
                   "studies": 4,
-                  "levelOfEvidence": "2",
-                  "magnitudeOfEffect": "1",
+                  "levelOfEvidence": 2,
+                  "magnitudeOfEffect": 1,
                   "link": "https://www.healthprotection.com/relations/coq10-heart-protection-cardiovascular-health/"
               }
           ],
@@ -1493,8 +1493,8 @@
                   },
                   "description": "Fatigue is characterized by a reduction in mental energy. It can also appear as acute and/or chronic fatigue. Acute fatigue is due to excessive mentally demanding work. Chronic fatigue is multifactorial, influenced by insomnia, stress, anxiety, depression, causing tiredness and constant lack of motivation. The substances indicated for fatigue help to improve sleep and mood problems as they are neuroprotective, affecting neurological function.",
                   "studies": 0,
-                  "levelOfEvidence": "3",
-                  "magnitudeOfEffect": "-2",
+                  "levelOfEvidence": 3,
+                  "magnitudeOfEffect": -2,
                   "link": "https://www.healthprotection.com/relations/creatine-fatigue-prevention-longevity-anti-aging/"
               },
               {
@@ -1512,8 +1512,8 @@
                   },
                   "description": "Water is the fundamental component of all cells in the body. It helps regulate body temperature and organ function, eliminates toxins, helps lubricate mucous membranes and, as a solvent, acts as a vehicle for transporting nutrients. It is very important to keep the body hydrated, and some nutraceutics can help.",
                   "studies": 9,
-                  "levelOfEvidence": "4",
-                  "magnitudeOfEffect": "2",
+                  "levelOfEvidence": 4,
+                  "magnitudeOfEffect": 2,
                   "link": "https://www.healthprotection.com/relations/creatine-hydration-longevity-anti-aging/"
               },
               {
@@ -1531,8 +1531,8 @@
                   },
                   "description": "Bone density or bone mineral density (BMD) is the amount of bone mineral in bone tissue. The measurement of bone mineral density is used in medicine as an indirect indicator of osteoporosis and risk of fractures.",
                   "studies": 3,
-                  "levelOfEvidence": "3",
-                  "magnitudeOfEffect": "1",
+                  "levelOfEvidence": 3,
+                  "magnitudeOfEffect": 1,
                   "link": "https://www.healthprotection.com/relations/creatine-bone-density-bone-and-joint-health/"
               },
               {
@@ -1550,8 +1550,8 @@
                   },
                   "description": "Fatigue is characterized by a reduction in physical energy. It can also appear as acute and/or chronic fatigue. Acute fatigue is due to excessive activities, such as physical exercise. Chronic fatigue is multifactorial, influenced by metabolic disorders, nutrient deficiency, physical inactivity, causing tiredness and constant lack of motivation.The substances that help with that are neuroprotective, affecting metabolism, hormones and motor function.",
                   "studies": 0,
-                  "levelOfEvidence": "3",
-                  "magnitudeOfEffect": "-2",
+                  "levelOfEvidence": 3,
+                  "magnitudeOfEffect": -2,
                   "link": "https://www.healthprotection.com/relations/creatine-fatigue-prevention-muscle-health-muscle-health/"
               },
               {
@@ -1569,8 +1569,8 @@
                   },
                   "description": "Muscle gain, also called hypertrophy, occurs when muscle cells receive a kind of stimulation that generates microlesions. For the healing of these lesions there is an increase in protein synthesis, which gives the muscle a larger volume. This occurs with the aid of a positive calorie balance (more calories consumed than spent). Supplements that increase muscle mass promote resistance and affect the rate of synthesis and breakdown of muscle proteins directly or indirectly.",
                   "studies": 17,
-                  "levelOfEvidence": "4",
-                  "magnitudeOfEffect": "1",
+                  "levelOfEvidence": 4,
+                  "magnitudeOfEffect": 1,
                   "link": "https://www.healthprotection.com/relations/creatine-muscle-gain-muscle-health/"
               },
               {
@@ -1588,8 +1588,8 @@
                   },
                   "description": "When you exercise, you generate stress on your muscles and that damages the muscle fibers, causing them to break apart. During recovery the muscles need fuel to heal stronger than they were before, which will make them stronger.",
                   "studies": 4,
-                  "levelOfEvidence": "3",
-                  "magnitudeOfEffect": "-1",
+                  "levelOfEvidence": 3,
+                  "magnitudeOfEffect": -1,
                   "link": "https://www.healthprotection.com/relations/creatine-muscle-recovery-muscle-health/"
               },
               {
@@ -1607,8 +1607,8 @@
                   },
                   "description": "It is about the capacity of a muscle to repeatedly exercise during a set of movements. Compounds that improve power output are the ones which also have antifatigue effects.",
                   "studies": 3,
-                  "levelOfEvidence": "3",
-                  "magnitudeOfEffect": "1",
+                  "levelOfEvidence": 3,
+                  "magnitudeOfEffect": 1,
                   "link": "https://www.healthprotection.com/relations/creatine-muscular-endurance-muscle-health/"
               },
               {
@@ -1626,8 +1626,8 @@
                   },
                   "description": "Power output is the strength the body can develop in the shortest amount of time. It have to do with muscle fibers, creatine stores and ATP.",
                   "studies": 45,
-                  "levelOfEvidence": "4",
-                  "magnitudeOfEffect": "3",
+                  "levelOfEvidence": 4,
+                  "magnitudeOfEffect": 3,
                   "link": "https://www.healthprotection.com/relations/creatine-power-output-muscle-health/"
               },
               {
@@ -1645,8 +1645,8 @@
                   },
                   "description": "Cognition refers to the mental processes involved in gaining knowledge and comprehension. Cognitive actions include thinking, knowing, remembering, judging, and problem-solving. These are higher-level functions of the brain and include language, imagination, perception, and planning.",
                   "studies": 0,
-                  "levelOfEvidence": "2",
-                  "magnitudeOfEffect": "1",
+                  "levelOfEvidence": 2,
+                  "magnitudeOfEffect": 1,
                   "link": "https://www.healthprotection.com/relations/creatine-cognition-cognitive-function-and-brain-health/"
               }
           ],
@@ -1680,8 +1680,8 @@
                   },
                   "description": "The bones are constantly in change, as weirdly as it seems, they are organs that participates in a lor of metabolism and balance in the body. As they loose and build cells they are prone to inflamation. Anti-inflammatory compounds prevent inflammation from impairing the healthy functioning of bones and joints.",
                   "studies": 6,
-                  "levelOfEvidence": "3",
-                  "magnitudeOfEffect": "-2",
+                  "levelOfEvidence": 3,
+                  "magnitudeOfEffect": -2,
                   "link": "https://www.healthprotection.com/relations/curcumin-bone-anti-inflammatory-bone-and-joint-health/"
               },
               {
@@ -1699,8 +1699,8 @@
                   },
                   "description": "Different types of Arthritis causes joints to be inflamed, thus they can develop stiffness, warmth, swelling, redness and pain. There are numerous of compounds that can be used to ease those symptoms",
                   "studies": 13,
-                  "levelOfEvidence": "3",
-                  "magnitudeOfEffect": "-2",
+                  "levelOfEvidence": 3,
+                  "magnitudeOfEffect": -2,
                   "link": "https://www.healthprotection.com/relations/curcumin-joint-pain-and-stiffness-bone-and-joint-health/"
               },
               {
@@ -1718,8 +1718,8 @@
                   },
                   "description": "Osteoarthritis is a very common chronic condition among the elderly that incompasses bones and cartilage. Symptoms include joint pain in the hands, neck, lower back, knees or hips, as well as movement difficultness.",
                   "studies": 2,
-                  "levelOfEvidence": "3",
-                  "magnitudeOfEffect": "-2",
+                  "levelOfEvidence": 3,
+                  "magnitudeOfEffect": -2,
                   "link": "https://www.healthprotection.com/relations/curcumin-symptoms-of-osteoarthritis-bone-and-joint-health/"
               },
               {
@@ -1737,8 +1737,8 @@
                   },
                   "description": "For short-term conditions, inflammation is helpful, but sustained low levels of inflammation irritate your blood vessels. Inflammation may promote the growth of plaques, loosen plaque in your arteries and trigger blood clots, which are the primary cause of heart attacks and strokes. Anti inflammatories can prevent the cardiovascular system to get to the first stages of diseases.",
                   "studies": 0,
-                  "levelOfEvidence": "3",
-                  "magnitudeOfEffect": "-1",
+                  "levelOfEvidence": 3,
+                  "magnitudeOfEffect": -1,
                   "link": "https://www.healthprotection.com/relations/curcumin-anti-inflammatory-cardiovascular-health-cardiovascular-health/"
               },
               {
@@ -1756,8 +1756,8 @@
                   },
                   "description": "Depression is a chronic and recurrent psychiatric condition that produces mood changes characterized by deep sadness, mood swings, loss of interest in activities, causing significant impairment in daily life.",
                   "studies": 8,
-                  "levelOfEvidence": "3",
-                  "magnitudeOfEffect": "-2",
+                  "levelOfEvidence": 3,
+                  "magnitudeOfEffect": -2,
                   "link": "https://www.healthprotection.com/relations/curcumin-depression-energy-and-mood/"
               },
               {
@@ -1775,8 +1775,8 @@
                   },
                   "description": "Anxiety is the body's natural response to stress. It's a feeling of fear or apprehension about what's to come. It can be triggered by a specific situation and not last long - which is very common and ok - or it can be a generalized disorder (which is considered a illness) that can bring harm to everyday life and also cause other conditions like depression.",
                   "studies": 0,
-                  "levelOfEvidence": "3",
-                  "magnitudeOfEffect": "-1",
+                  "levelOfEvidence": 3,
+                  "magnitudeOfEffect": -1,
                   "link": "https://www.healthprotection.com/relations/curcumin-anxiety-energy-and-mood/"
               }
           ],
@@ -1825,8 +1825,8 @@
                   },
                   "description": "The heart is one of the most strong muscles in the body, as it works nonstop and very steady. But it can also fail, brought down by a poor diet and lack of exercise, smoking, infection, unlucky genes, etc. It's essential to your health to take care of your heart health. ",
                   "studies": 0,
-                  "levelOfEvidence": "2",
-                  "magnitudeOfEffect": "0",
+                  "levelOfEvidence": 2,
+                  "magnitudeOfEffect": 0,
                   "link": "https://www.healthprotection.com/relations/d-ribose-heart-protection-cardiovascular-health/"
               }
           ],
@@ -1860,8 +1860,8 @@
                   },
                   "description": "Hormone regulation is carried out through a mechanism called feedback, whereby the level of a hormone in the blood determines the stimulation or inhibition of the activity of a certain gland. This system needs to be very precise in order to the body function perfectly, otherwise it can cause ilnesses, such as hyperthyroidism. It is very common to have instabilities on the feedback, but a good diet and some supplements can help it get back on track.",
                   "studies": 0,
-                  "levelOfEvidence": "3",
-                  "magnitudeOfEffect": "1",
+                  "levelOfEvidence": 3,
+                  "magnitudeOfEffect": 1,
                   "link": "https://www.healthprotection.com/relations/dhea-hormone-function-longevity-anti-aging/"
               },
               {
@@ -1879,8 +1879,8 @@
                   },
                   "description": "Estrogen strengthens the menstrual cycle and the development of secondary sexual characteristics after puberty. it also has many other important functions, such as maintaining bone health, regulating other hormones, balancing cognitive function and mood, and more.",
                   "studies": 14,
-                  "levelOfEvidence": "4",
-                  "magnitudeOfEffect": "2",
+                  "levelOfEvidence": 4,
+                  "magnitudeOfEffect": 2,
                   "link": "https://www.healthprotection.com/relations/dhea-estrogen-hormone-regulation-hormone-regulation/"
               },
               {
@@ -1898,8 +1898,8 @@
                   },
                   "description": "Fertility is the term used to categorize the ability to reproduce easily. There are many problems between men and women regarding fertility, but there are several ways to improve this process. Some compounds can help with it by regulating hormones, for example. ",
                   "studies": 2,
-                  "levelOfEvidence": "2",
-                  "magnitudeOfEffect": "1",
+                  "levelOfEvidence": 2,
+                  "magnitudeOfEffect": 1,
                   "link": "https://www.healthprotection.com/relations/dhea-fertility-hormone-regulation/"
               },
               {
@@ -1917,8 +1917,8 @@
                   },
                   "description": "Growth hormone is produced in the pituitary gland, a small gland that sits at the bottom of the brain. GH is responsible for the physical growth of the human body, including bones, muscles and organs. It also promotes cell reproduction and regeneration, as well as cognitive enhancement.",
                   "studies": 1,
-                  "levelOfEvidence": "1",
-                  "magnitudeOfEffect": "1",
+                  "levelOfEvidence": 1,
+                  "magnitudeOfEffect": 1,
                   "link": "https://www.healthprotection.com/relations/dhea-growth-hormone-hormone-regulation/"
               },
               {
@@ -1936,8 +1936,8 @@
                   },
                   "description": "Testosterone is the main male sex hormone. It is responsible for regulating fertility, muscle mass, fat distribution and the production of red blood cells. Women's ovaries also produce testosterone, although in much smaller quantities.",
                   "studies": 3,
-                  "levelOfEvidence": "4",
-                  "magnitudeOfEffect": "2",
+                  "levelOfEvidence": 4,
+                  "magnitudeOfEffect": 2,
                   "link": "https://www.healthprotection.com/relations/dhea-testosterone-hormone-regulation/"
               }
           ],
@@ -1991,8 +1991,8 @@
                   },
                   "description": "The immune response is measured by how fast and how effective the immune system can neutralize any kind of sickness, being viruses, bacteria or other pathogens.",
                   "studies": 0,
-                  "levelOfEvidence": "3",
-                  "magnitudeOfEffect": "1",
+                  "levelOfEvidence": 3,
+                  "magnitudeOfEffect": 1,
                   "link": "https://www.healthprotection.com/relations/echinacea-purpurea-immune-response-immunity-immunity/"
               }
           ],
@@ -2026,8 +2026,8 @@
                   },
                   "description": "Fat loss is a different process then losing body weight, because when you lose weight, it does not necessarily mean that there is fat loss. For fat loss to happen, caloric deficit and practice of exercises are necessary. There are certain supplements that assist the metabolism of energy and nutrients, which cause the body to control appetite, increase its metabolic rate and reduce the absorption of macronutrients during digestion.",
                   "studies": 13,
-                  "levelOfEvidence": "4",
-                  "magnitudeOfEffect": "-1",
+                  "levelOfEvidence": 4,
+                  "magnitudeOfEffect": -1,
                   "link": "https://www.healthprotection.com/relations/egcg-fat-loss-weight-management/"
               }
           ],
@@ -2061,8 +2061,8 @@
                   },
                   "description": "The immune response is measured by how fast and how effective the immune system can neutralize any kind of sickness, being viruses, bacteria or other pathogens.",
                   "studies": 0,
-                  "levelOfEvidence": "0",
-                  "magnitudeOfEffect": "0",
+                  "levelOfEvidence": 0,
+                  "magnitudeOfEffect": 0,
                   "link": "https://www.healthprotection.com/relations/elderberries-immune-response-immunity-immunity/"
               }
           ],
@@ -2096,8 +2096,8 @@
                   },
                   "description": "Libido is the overall sexual drive or desire for sexual activity which is influenced by biological, psychological, and social factors.",
                   "studies": 0,
-                  "levelOfEvidence": "2",
-                  "magnitudeOfEffect": "2",
+                  "levelOfEvidence": 2,
+                  "magnitudeOfEffect": 2,
                   "link": "https://www.healthprotection.com/relations/fenugreek-libido-libido-and-sexual-health/"
               }
           ],
@@ -2131,8 +2131,8 @@
                   },
                   "description": "Cognition refers to the mental processes involved in gaining knowledge and comprehension. Cognitive actions include thinking, knowing, remembering, judging, and problem-solving. These are higher-level functions of the brain and include language, imagination, perception, and planning.",
                   "studies": 0,
-                  "levelOfEvidence": "1",
-                  "magnitudeOfEffect": "-1",
+                  "levelOfEvidence": 1,
+                  "magnitudeOfEffect": -1,
                   "link": "https://www.healthprotection.com/relations/folic-acid-cognition-cognitive-function-and-brain-health/"
               }
           ],
@@ -2166,8 +2166,8 @@
                   },
                   "description": "Digestion refers to the breakdown of food into smaller components that can be absorbed into the bloodstream. Therefore it is one of the most important systems of the body, because it is responsable for all the nutrient income that ''feed'' all of our cells. Maintaining a good digestions is not always easy, as the digestive system behaves differently depending on how and what you eat. Some ingredients help this mechanism work better and preventing discomfort.",
                   "studies": 0,
-                  "levelOfEvidence": "0",
-                  "magnitudeOfEffect": "0",
+                  "levelOfEvidence": 0,
+                  "magnitudeOfEffect": 0,
                   "link": "https://www.healthprotection.com/relations/fos-digestion-digestive-health/"
               }
           ],
@@ -2206,8 +2206,8 @@
                   },
                   "description": "Triglycerides and cholesterol are both types of fat present in blood. They play very important roles in the body, such as hormone metabolism and nutrient circulation. In order for them to function properly, they need to be at optimum levels - not too high neither too low. The primary way to keep those good levels is to have a healthy diet, with lots of fiber and balanced fats. But there are some nutraceutics that have been proven to help in this process in a very effective way.",
                   "studies": 11,
-                  "levelOfEvidence": "4",
-                  "magnitudeOfEffect": "-2",
+                  "levelOfEvidence": 4,
+                  "magnitudeOfEffect": -2,
                   "link": "https://www.healthprotection.com/relations/garlic-cholesterol-triglycerides-cardiovascular-health/"
               },
               {
@@ -2225,8 +2225,8 @@
                   },
                   "description": "The immune response is measured by how fast and how effective the immune system can neutralize any kind of sickness, being viruses, bacteria or other pathogens.",
                   "studies": 2,
-                  "levelOfEvidence": "2",
-                  "magnitudeOfEffect": "3",
+                  "levelOfEvidence": 2,
+                  "magnitudeOfEffect": 3,
                   "link": "https://www.healthprotection.com/relations/garlic-immune-response-immunity-immunity/"
               }
           ],
@@ -2260,8 +2260,8 @@
                   },
                   "description": "The most common problems associated with acidity are heartburn and acid reflux. Heartburn is that uncomfortable burning sensation in the center of the chest, especially after eating a large meal. Acid reflux occurs when you taste regurgitated food or a sour, bitter liquid in the back of your mouth or throat. Acidity symptoms can be very unpleasant and occur at the most inconvenient times, but, in general, they can be treated quickly and simply with drugs or natural products.",
                   "studies": 11,
-                  "levelOfEvidence": "4",
-                  "magnitudeOfEffect": "-2",
+                  "levelOfEvidence": 4,
+                  "magnitudeOfEffect": -2,
                   "link": "https://www.healthprotection.com/relations/ginger-acidity-control-digestive-health/"
               },
               {
@@ -2279,8 +2279,8 @@
                   },
                   "description": "The bones are constantly in change, as weirdly as it seems, they are organs that participates in a lor of metabolism and balance in the body. As they loose and build cells they are prone to inflamation. Anti-inflammatory compounds prevent inflammation from impairing the healthy functioning of bones and joints.",
                   "studies": 4,
-                  "levelOfEvidence": "3",
-                  "magnitudeOfEffect": "-1",
+                  "levelOfEvidence": 3,
+                  "magnitudeOfEffect": -1,
                   "link": "https://www.healthprotection.com/relations/ginger-bone-anti-inflammatory-bone-and-joint-health/"
               }
           ],
@@ -2314,8 +2314,8 @@
                   },
                   "description": "Cognition refers to the mental processes involved in gaining knowledge and comprehension. Cognitive actions include thinking, knowing, remembering, judging, and problem-solving. These are higher-level functions of the brain and include language, imagination, perception, and planning.",
                   "studies": 10,
-                  "levelOfEvidence": "4",
-                  "magnitudeOfEffect": "-2",
+                  "levelOfEvidence": 4,
+                  "magnitudeOfEffect": -2,
                   "link": "https://www.healthprotection.com/relations/ginkgo-biloba-cognition-cognitive-function-and-brain-health/"
               },
               {
@@ -2333,8 +2333,8 @@
                   },
                   "description": "Attention is the behavioral and cognitive process of selectively concentrating on a discrete aspect of information, whether considered subjective or objective. ",
                   "studies": 4,
-                  "levelOfEvidence": "3",
-                  "magnitudeOfEffect": "0",
+                  "levelOfEvidence": 3,
+                  "magnitudeOfEffect": 0,
                   "link": "https://www.healthprotection.com/relations/ginkgo-biloba-focus-attention-cognitive-function-and-brain-health/"
               }
           ],
@@ -2387,8 +2387,8 @@
                   },
                   "description": "Different types of Arthritis causes joints to be inflamed, thus they can develop stiffness, warmth, swelling, redness and pain. There are numerous of compounds that can be used to ease those symptoms",
                   "studies": 8,
-                  "levelOfEvidence": "4",
-                  "magnitudeOfEffect": "-1",
+                  "levelOfEvidence": 4,
+                  "magnitudeOfEffect": -1,
                   "link": "https://www.healthprotection.com/relations/glucosamine-joint-pain-and-stiffness-bone-and-joint-health/"
               },
               {
@@ -2406,8 +2406,8 @@
                   },
                   "description": "Osteoarthritis is a very common chronic condition among the elderly that incompasses bones and cartilage. Symptoms include joint pain in the hands, neck, lower back, knees or hips, as well as movement difficultness.",
                   "studies": 11,
-                  "levelOfEvidence": "4",
-                  "magnitudeOfEffect": "-2",
+                  "levelOfEvidence": 4,
+                  "magnitudeOfEffect": -2,
                   "link": "https://www.healthprotection.com/relations/glucosamine-symptoms-of-osteoarthritis-bone-and-joint-health/"
               }
           ],
@@ -2441,8 +2441,8 @@
                   },
                   "description": "It is about the capacity of a muscle to repeatedly exercise during a set of movements. Compounds that improve power output are the ones which also have antifatigue effects.",
                   "studies": 0,
-                  "levelOfEvidence": "2",
-                  "magnitudeOfEffect": "1",
+                  "levelOfEvidence": 2,
+                  "magnitudeOfEffect": 1,
                   "link": "https://www.healthprotection.com/relations/glutamine-muscular-endurance-muscle-health/"
               },
               {
@@ -2460,8 +2460,8 @@
                   },
                   "description": "The heart is one of the most strong muscles in the body, as it works nonstop and very steady. But it can also fail, brought down by a poor diet and lack of exercise, smoking, infection, unlucky genes, etc. It's essential to your health to take care of your heart health. ",
                   "studies": 0,
-                  "levelOfEvidence": "2",
-                  "magnitudeOfEffect": "1",
+                  "levelOfEvidence": 2,
+                  "magnitudeOfEffect": 1,
                   "link": "https://www.healthprotection.com/relations/glutamine-heart-protection-cardiovascular-health/"
               }
           ],
@@ -2495,8 +2495,8 @@
                   },
                   "description": "Oxidation reactions occur naturally in all cells of the body, which produce free radicals. These radicals can initiate chain reactions that can damage cells or cause them to die. Antioxidant substances eliminate free radicals and inhibit other oxidation reactions, thus protecting and prolonging cellular functions and protectiong them against tumors.",
                   "studies": 0,
-                  "levelOfEvidence": "2",
-                  "magnitudeOfEffect": "0",
+                  "levelOfEvidence": 2,
+                  "magnitudeOfEffect": 0,
                   "link": "https://www.healthprotection.com/relations/glutathione-anti-oxidant-longevity-anti-aging/"
               }
           ],
@@ -2530,8 +2530,8 @@
                   },
                   "description": "Sleep is a very important physiological process, as it regulates the body's functions. It is responsible for promoting / facilitating energy conservation, synthesis and secretion of hormones and proteins, learning and memory through brain changes. Sleep is mainly driven by the circadian cycle, which involves exposure to light, hormones such as melatonin, and hypothalamic activity. The compounds that help regulate sleep work in different pathways, they can facilitate the process of falling asleep, increase the duration of continuous sleep or improve the quality of sleep.",
                   "studies": 3,
-                  "levelOfEvidence": "2",
-                  "magnitudeOfEffect": "1",
+                  "levelOfEvidence": 2,
+                  "magnitudeOfEffect": 1,
                   "link": "https://www.healthprotection.com/relations/glycine-sleep-energy-and-mood/"
               }
           ],
@@ -2595,8 +2595,8 @@
                   },
                   "description": "Triglycerides and cholesterol are both types of fat present in blood. They play very important roles in the body, such as hormone metabolism and nutrient circulation. In order for them to function properly, they need to be at optimum levels - not too high neither too low. The primary way to keep those good levels is to have a healthy diet, with lots of fiber and balanced fats. But there are some nutraceutics that have been proven to help in this process in a very effective way.",
                   "studies": 0,
-                  "levelOfEvidence": "2",
-                  "magnitudeOfEffect": "-2",
+                  "levelOfEvidence": 2,
+                  "magnitudeOfEffect": -2,
                   "link": "https://www.healthprotection.com/relations/hibiscus-cholesterol-triglycerides-cardiovascular-health/"
               }
           ],
@@ -2630,8 +2630,8 @@
                   },
                   "description": "When you exercise, you generate stress on your muscles and that damages the muscle fibers, causing them to break apart. During recovery the muscles need fuel to heal stronger than they were before, which will make them stronger.",
                   "studies": 3,
-                  "levelOfEvidence": "3",
-                  "magnitudeOfEffect": "2",
+                  "levelOfEvidence": 3,
+                  "magnitudeOfEffect": 2,
                   "link": "https://www.healthprotection.com/relations/hmb-muscle-recovery-muscle-health/"
               }
           ],
@@ -2665,8 +2665,8 @@
                   },
                   "description": "Cognition refers to the mental processes involved in gaining knowledge and comprehension. Cognitive actions include thinking, knowing, remembering, judging, and problem-solving. These are higher-level functions of the brain and include language, imagination, perception, and planning.",
                   "studies": 0,
-                  "levelOfEvidence": "0",
-                  "magnitudeOfEffect": "0",
+                  "levelOfEvidence": 0,
+                  "magnitudeOfEffect": 0,
                   "link": "https://www.healthprotection.com/relations/huperzine-a-cognition-cognitive-function-and-brain-health/"
               }
           ],
@@ -2700,8 +2700,8 @@
                   },
                   "description": "The body's cells use glucose to produce energy. Glucose comes from food and is stored in the body in the form of glycogen (in the muscles and liver) or circulating glucose (in the blood). Cells need the hormone Insulin to capture glucose molecules. The glucose / insulin balance in the blood is essential for the proper functioning of the body's whole  metabolism. A change in this metabolism can lead to serious physiological dysfunctions, leading to the development of chronic non-communicable diseases, such as type II diabetes and cardiovascular diseases. There are several classes of compounds that influence this metabolism, these can increase insulin synthesis and secretion, decrease blood glucose levels, reduce the immediate absorption of carbohydrates, regulate the sensitivity of cells to insulin, among others.",
                   "studies": 9,
-                  "levelOfEvidence": "3",
-                  "magnitudeOfEffect": "-1",
+                  "levelOfEvidence": 3,
+                  "magnitudeOfEffect": -1,
                   "link": "https://www.healthprotection.com/relations/inositol-blood-sugar-control-diabetes-blood-sugar/"
               },
               {
@@ -2719,8 +2719,8 @@
                   },
                   "description": "Anxiety is the body's natural response to stress. It's a feeling of fear or apprehension about what's to come. It can be triggered by a specific situation and not last long - which is very common and ok - or it can be a generalized disorder (which is considered a illness) that can bring harm to everyday life and also cause other conditions like depression.",
                   "studies": 4,
-                  "levelOfEvidence": "3",
-                  "magnitudeOfEffect": "-2",
+                  "levelOfEvidence": 3,
+                  "magnitudeOfEffect": -2,
                   "link": "https://www.healthprotection.com/relations/inositol-anxiety-energy-and-mood/"
               },
               {
@@ -2738,8 +2738,8 @@
                   },
                   "description": "Depression is a chronic and recurrent psychiatric condition that produces mood changes characterized by deep sadness, mood swings, loss of interest in activities, causing significant impairment in daily life.",
                   "studies": 6,
-                  "levelOfEvidence": "3",
-                  "magnitudeOfEffect": "-1",
+                  "levelOfEvidence": 3,
+                  "magnitudeOfEffect": -1,
                   "link": "https://www.healthprotection.com/relations/inositol-depression-energy-and-mood/"
               }
           ],
@@ -2788,8 +2788,8 @@
                   },
                   "description": "The immune response is measured by how fast and how effective the immune system can neutralize any kind of sickness, being viruses, bacteria or other pathogens.",
                   "studies": 0,
-                  "levelOfEvidence": "2",
-                  "magnitudeOfEffect": "-1",
+                  "levelOfEvidence": 2,
+                  "magnitudeOfEffect": -1,
                   "link": "https://www.healthprotection.com/relations/iron-immune-response-immunity-immunity/"
               }
           ],
@@ -2823,8 +2823,8 @@
                   },
                   "description": "Anxiety is the body's natural response to stress. It's a feeling of fear or apprehension about what's to come. It can be triggered by a specific situation and not last long - which is very common and ok - or it can be a generalized disorder (which is considered a illness) that can bring harm to everyday life and also cause other conditions like depression.",
                   "studies": 8,
-                  "levelOfEvidence": "4",
-                  "magnitudeOfEffect": "-2",
+                  "levelOfEvidence": 4,
+                  "magnitudeOfEffect": -2,
                   "link": "https://www.healthprotection.com/relations/kava-anxiety-energy-and-mood/"
               },
               {
@@ -2842,8 +2842,8 @@
                   },
                   "description": "Well-being is not just the absence of disease or illness. It's a complex combination of a person's physical, mental, emotional and social health factors. Wellbeing is strongly linked to happiness and life satisfaction. There are some lifestyle changes and natural products that can be very effective in that.",
                   "studies": 1,
-                  "levelOfEvidence": "3",
-                  "magnitudeOfEffect": "2",
+                  "levelOfEvidence": 3,
+                  "magnitudeOfEffect": 2,
                   "link": "https://www.healthprotection.com/relations/kava-overall-well-being-energy-and-mood-energy-and-mood/"
               },
               {
@@ -2861,8 +2861,8 @@
                   },
                   "description": "Stress can be understood as a situation in which the individual is physically or mentally overloaded, which can cause pain, tension and physical injury, as well as emotional fatigue, tiredness, reduced productivity and attention. The substances that help control stress act on hormonal regulation (for example, cortisol), on the circadian cycle and promote physical and mental relaxation.",
                   "studies": 2,
-                  "levelOfEvidence": "1",
-                  "magnitudeOfEffect": "1",
+                  "levelOfEvidence": 1,
+                  "magnitudeOfEffect": 1,
                   "link": "https://www.healthprotection.com/relations/kava-stress-management-energy-and-mood/"
               },
               {
@@ -2880,8 +2880,8 @@
                   },
                   "description": "Depression is a chronic and recurrent psychiatric condition that produces mood changes characterized by deep sadness, mood swings, loss of interest in activities, causing significant impairment in daily life.",
                   "studies": 0,
-                  "levelOfEvidence": "2",
-                  "magnitudeOfEffect": "-1",
+                  "levelOfEvidence": 2,
+                  "magnitudeOfEffect": -1,
                   "link": "https://www.healthprotection.com/relations/kava-depression-energy-and-mood/"
               }
           ],
@@ -2915,8 +2915,8 @@
                   },
                   "description": "The absorption and different uses for each nutrient is highly linked to the body's immune system, which is the set of chemical reactions that protect us from any ''intruder'' and susteins our vital functions. All the vitamins and minerals are essencial for the whole functioning of this system. ",
                   "studies": 3,
-                  "levelOfEvidence": "2",
-                  "magnitudeOfEffect": "0",
+                  "levelOfEvidence": 2,
+                  "magnitudeOfEffect": 0,
                   "link": "https://www.healthprotection.com/relations/lactobacilus-nutrient-issues-immunity-immunity/"
               }
           ],
@@ -2950,8 +2950,8 @@
                   },
                   "description": "The immune response is measured by how fast and how effective the immune system can neutralize any kind of sickness, being viruses, bacteria or other pathogens.",
                   "studies": 0,
-                  "levelOfEvidence": "",
-                  "magnitudeOfEffect": "",
+                  "levelOfEvidence": 0,
+                  "magnitudeOfEffect": 0,
                   "link": "https://www.healthprotection.com/relations/lactoferrin-immune-response-immunity-immunity/"
               }
           ],
@@ -2985,8 +2985,8 @@
                   },
                   "description": "Anxiety is the body's natural response to stress. It's a feeling of fear or apprehension about what's to come. It can be triggered by a specific situation and not last long - which is very common and ok - or it can be a generalized disorder (which is considered a illness) that can bring harm to everyday life and also cause other conditions like depression.",
                   "studies": 0,
-                  "levelOfEvidence": "2",
-                  "magnitudeOfEffect": "-2",
+                  "levelOfEvidence": 2,
+                  "magnitudeOfEffect": -2,
                   "link": "https://www.healthprotection.com/relations/lavender-anxiety-energy-and-mood/"
               }
           ],
@@ -3020,8 +3020,8 @@
                   },
                   "description": "Premenstrual syndrome (PMS) is a condition that affects a woman’s emotions, physical health, and behavior during certain days of the menstrual cycle, generally just before her menses. PMS is a very common condition. Its symptoms affect more than 90 percent of menstruating women. It must impair some aspect of your life for your doctor to diagnose you. PMS symptoms start five to 11 days before menstruation and typically go away once menstruation begins. The cause of PMS is unknown. However, many researchers believe that it’s related to a change in both sex hormone and serotonin levels at the beginning of the menstrual cycle. Levels of estrogen and progesterone increase during certain times of the month. An increase in these hormones can cause mood swings, anxiety, and irritability. Ovarian steroids also modulate activity in parts of your brain associated with premenstrual symptoms.",
                   "studies": 3,
-                  "levelOfEvidence": "2",
-                  "magnitudeOfEffect": "-2",
+                  "levelOfEvidence": 2,
+                  "magnitudeOfEffect": -2,
                   "link": "https://www.healthprotection.com/relations/lemon-balm-pms-womens-health/"
               },
               {
@@ -3039,8 +3039,8 @@
                   },
                   "description": "Stress can be understood as a situation in which the individual is physically or mentally overloaded, which can cause pain, tension and physical injury, as well as emotional fatigue, tiredness, reduced productivity and attention. The substances that help control stress act on hormonal regulation (for example, cortisol), on the circadian cycle and promote physical and mental relaxation.",
                   "studies": 0,
-                  "levelOfEvidence": "2",
-                  "magnitudeOfEffect": "-1",
+                  "levelOfEvidence": 2,
+                  "magnitudeOfEffect": -1,
                   "link": "https://www.healthprotection.com/relations/lemon-balm-stress-management-energy-and-mood/"
               }
           ],
@@ -3104,8 +3104,8 @@
                   },
                   "description": "The eyes are extremely sensitive, thus they deserve preventive care because when they are harmed, they are not easily treated. The compounds used for eye health are mainly specific antioxidants and fatty acids.",
                   "studies": 20,
-                  "levelOfEvidence": "0",
-                  "magnitudeOfEffect": "0",
+                  "levelOfEvidence": 0,
+                  "magnitudeOfEffect": 0,
                   "link": "https://www.healthprotection.com/relations/lutein-eye-function-eye-health/"
               }
           ],
@@ -3139,8 +3139,8 @@
                   },
                   "description": "Anxiety is the body's natural response to stress. It's a feeling of fear or apprehension about what's to come. It can be triggered by a specific situation and not last long - which is very common and ok - or it can be a generalized disorder (which is considered a illness) that can bring harm to everyday life and also cause other conditions like depression.",
                   "studies": 0,
-                  "levelOfEvidence": "0",
-                  "magnitudeOfEffect": "0",
+                  "levelOfEvidence": 0,
+                  "magnitudeOfEffect": 0,
                   "link": "https://www.healthprotection.com/relations/lysine-anxiety-energy-and-mood/"
               }
           ],
@@ -3174,8 +3174,8 @@
                   },
                   "description": "Libido is the overall sexual drive or desire for sexual activity which is influenced by biological, psychological, and social factors.",
                   "studies": 4,
-                  "levelOfEvidence": "3",
-                  "magnitudeOfEffect": "2",
+                  "levelOfEvidence": 3,
+                  "magnitudeOfEffect": 2,
                   "link": "https://www.healthprotection.com/relations/maca-libido-libido-and-sexual-health/"
               },
               {
@@ -3193,8 +3193,8 @@
                   },
                   "description": "There are a lot of factors that influcence sexual performance, most of them connected to a healthy lifestyle, like exercising, drinking good amounts of water, etc. But there are also some nutraceutics that can help the body to stay sexualy active by working on specific systems connected to libido and sex hormones. ",
                   "studies": 2,
-                  "levelOfEvidence": "2",
-                  "magnitudeOfEffect": "1",
+                  "levelOfEvidence": 2,
+                  "magnitudeOfEffect": 1,
                   "link": "https://www.healthprotection.com/relations/maca-sexual-performance-libido-and-sexual-health/"
               },
               {
@@ -3212,8 +3212,8 @@
                   },
                   "description": "Menopause is a natural decline in reproductive hormones when a woman reaches around 50 years old. It causes uncorfortable symptoms but thay can me eased with certain medications and nutraceutics",
                   "studies": 4,
-                  "levelOfEvidence": "2",
-                  "magnitudeOfEffect": "-1",
+                  "levelOfEvidence": 2,
+                  "magnitudeOfEffect": -1,
                   "link": "https://www.healthprotection.com/relations/maca-menopause-womens-health/"
               }
           ],
@@ -3247,8 +3247,8 @@
                   },
                   "description": "Bone density or bone mineral density (BMD) is the amount of bone mineral in bone tissue. The measurement of bone mineral density is used in medicine as an indirect indicator of osteoporosis and risk of fractures.",
                   "studies": 1,
-                  "levelOfEvidence": "2",
-                  "magnitudeOfEffect": "1",
+                  "levelOfEvidence": 2,
+                  "magnitudeOfEffect": 1,
                   "link": "https://www.healthprotection.com/relations/magnesium-bone-density-bone-and-joint-health/"
               },
               {
@@ -3266,8 +3266,8 @@
                   },
                   "description": "Sleep is a very important physiological process, as it regulates the body's functions. It is responsible for promoting / facilitating energy conservation, synthesis and secretion of hormones and proteins, learning and memory through brain changes. Sleep is mainly driven by the circadian cycle, which involves exposure to light, hormones such as melatonin, and hypothalamic activity. The compounds that help regulate sleep work in different pathways, they can facilitate the process of falling asleep, increase the duration of continuous sleep or improve the quality of sleep.",
                   "studies": 2,
-                  "levelOfEvidence": "2",
-                  "magnitudeOfEffect": "1",
+                  "levelOfEvidence": 2,
+                  "magnitudeOfEffect": 1,
                   "link": "https://www.healthprotection.com/relations/magnesium-sleep-energy-and-mood/"
               },
               {
@@ -3285,8 +3285,8 @@
                   },
                   "description": "The metabolism of nutrients is highly linked to the body's energy metabolism, which is the set of chemical reactions that produce the energy necessary for the performance of vital functions. All the vitamins and minerals are essencial for the whole functioning of all systems of the body. ",
                   "studies": 0,
-                  "levelOfEvidence": "2",
-                  "magnitudeOfEffect": "2",
+                  "levelOfEvidence": 2,
+                  "magnitudeOfEffect": 2,
                   "link": "https://www.healthprotection.com/relations/magnesium-nutrient-issues-longevity-anti-aging/"
               },
               {
@@ -3304,8 +3304,8 @@
                   },
                   "description": "The body's cells use glucose to produce energy. Glucose comes from food and is stored in the body in the form of glycogen (in the muscles and liver) or circulating glucose (in the blood). Cells need the hormone Insulin to capture glucose molecules. The glucose / insulin balance in the blood is essential for the proper functioning of the body's whole  metabolism. A change in this metabolism can lead to serious physiological dysfunctions, leading to the development of chronic non-communicable diseases, such as type II diabetes and cardiovascular diseases. There are several classes of compounds that influence this metabolism, these can increase insulin synthesis and secretion, decrease blood glucose levels, reduce the immediate absorption of carbohydrates, regulate the sensitivity of cells to insulin, among others.",
                   "studies": 0,
-                  "levelOfEvidence": "3",
-                  "magnitudeOfEffect": "-1",
+                  "levelOfEvidence": 3,
+                  "magnitudeOfEffect": -1,
                   "link": "https://www.healthprotection.com/relations/magnesium-blood-sugar-control-diabetes-blood-sugar/"
               },
               {
@@ -3323,8 +3323,8 @@
                   },
                   "description": "Depression is a chronic and recurrent psychiatric condition that produces mood changes characterized by deep sadness, mood swings, loss of interest in activities, causing significant impairment in daily life.",
                   "studies": 0,
-                  "levelOfEvidence": "1",
-                  "magnitudeOfEffect": "-1",
+                  "levelOfEvidence": 1,
+                  "magnitudeOfEffect": -1,
                   "link": "https://www.healthprotection.com/relations/magnesium-depression-energy-and-mood/"
               }
           ],
@@ -3358,8 +3358,8 @@
                   },
                   "description": "Thermogenesis is the body's energy production process, responsible for regulating internal temperature and all natural energy processes. There are some compounds that amplify this process, such as caffeine and other thermogens.",
                   "studies": 4,
-                  "levelOfEvidence": "2",
-                  "magnitudeOfEffect": "1",
+                  "levelOfEvidence": 2,
+                  "magnitudeOfEffect": 1,
                   "link": "https://www.healthprotection.com/relations/mct-thermogenic-effect-weight-management/"
               }
           ],
@@ -3393,8 +3393,8 @@
                   },
                   "description": "The most common problems associated with acidity are heartburn and acid reflux. Heartburn is that uncomfortable burning sensation in the center of the chest, especially after eating a large meal. Acid reflux occurs when you taste regurgitated food or a sour, bitter liquid in the back of your mouth or throat. Acidity symptoms can be very unpleasant and occur at the most inconvenient times, but, in general, they can be treated quickly and simply with drugs or natural products.",
                   "studies": 4,
-                  "levelOfEvidence": "3",
-                  "magnitudeOfEffect": "2",
+                  "levelOfEvidence": 3,
+                  "magnitudeOfEffect": 2,
                   "link": "https://www.healthprotection.com/relations/melatonin-acidity-control-digestive-health/"
               },
               {
@@ -3412,8 +3412,8 @@
                   },
                   "description": "Sleep is a very important physiological process, as it regulates the body's functions. It is responsible for promoting / facilitating energy conservation, synthesis and secretion of hormones and proteins, learning and memory through brain changes. Sleep is mainly driven by the circadian cycle, which involves exposure to light, hormones such as melatonin, and hypothalamic activity. The compounds that help regulate sleep work in different pathways, they can facilitate the process of falling asleep, increase the duration of continuous sleep or improve the quality of sleep.",
                   "studies": 8,
-                  "levelOfEvidence": "3",
-                  "magnitudeOfEffect": "3",
+                  "levelOfEvidence": 3,
+                  "magnitudeOfEffect": 3,
                   "link": "https://www.healthprotection.com/relations/melatonin-sleep-energy-and-mood/"
               }
           ],
@@ -3462,8 +3462,8 @@
                   },
                   "description": "Liver inflammation is a reaction that occurs when liver cells are attacked by a disease-causing microbe, substance or chronic condition. Symptoms of liver inflammation can involve a variety of body systems, so it is thoughfull to prevent this type of problem with natural anti-inflammatories that can assist the organ to protect itself.",
                   "studies": 0,
-                  "levelOfEvidence": "0",
-                  "magnitudeOfEffect": "0",
+                  "levelOfEvidence": 0,
+                  "magnitudeOfEffect": 0,
                   "link": "https://www.healthprotection.com/relations/milk-thistle-anti-inflammatory-liver-health-liver-health/"
               }
           ],
@@ -3497,8 +3497,8 @@
                   },
                   "description": "Osteoarthritis is a very common chronic condition among the elderly that incompasses bones and cartilage. Symptoms include joint pain in the hands, neck, lower back, knees or hips, as well as movement difficultness.",
                   "studies": 0,
-                  "levelOfEvidence": "2",
-                  "magnitudeOfEffect": "-1",
+                  "levelOfEvidence": 2,
+                  "magnitudeOfEffect": -1,
                   "link": "https://www.healthprotection.com/relations/msm-symptoms-of-osteoarthritis-bone-and-joint-health/"
               }
           ],
@@ -3532,8 +3532,8 @@
                   },
                   "description": "The liver is the organ responsible for the fat metabolism in our body. Fat excess accumulation results in fatty liver (alcohol or non-alcoholic) and might even cause cirrhosis if it is not taken care of. Some nutraceutics and supplements are able to reduce liver fat stores. Detoxing compounds help detoxification pathways and the cleansing this organ as well. ",
                   "studies": 1,
-                  "levelOfEvidence": "2",
-                  "magnitudeOfEffect": "2",
+                  "levelOfEvidence": 2,
+                  "magnitudeOfEffect": 2,
                   "link": "https://www.healthprotection.com/relations/nac-liver-function-liver-health/"
               },
               {
@@ -3551,8 +3551,8 @@
                   },
                   "description": "The respiratory immune response consists of multiple tiers of cellular responses that are engaged in a sequential manner in order to control infections. The more engagement those immune cells have, the less tissue damage there is.",
                   "studies": 4,
-                  "levelOfEvidence": "3",
-                  "magnitudeOfEffect": "1",
+                  "levelOfEvidence": 3,
+                  "magnitudeOfEffect": 1,
                   "link": "https://www.healthprotection.com/relations/nac-immune-response-respiratory-health-respiratory-health/"
               },
               {
@@ -3570,8 +3570,8 @@
                   },
                   "description": "Well-being is not just the absence of disease or illness. It's a complex combination of a person's physical, mental, emotional and social health factors. Wellbeing is strongly linked to happiness and life satisfaction. There are some lifestyle changes and natural products that can be very effective in that.",
                   "studies": 0,
-                  "levelOfEvidence": "2",
-                  "magnitudeOfEffect": "0",
+                  "levelOfEvidence": 2,
+                  "magnitudeOfEffect": 0,
                   "link": "https://www.healthprotection.com/relations/nac-overall-well-being-energy-and-mood-energy-and-mood/"
               }
           ],
@@ -3605,8 +3605,8 @@
                   },
                   "description": "Triglycerides and cholesterol are both types of fat present in blood. They play very important roles in the body, such as hormone metabolism and nutrient circulation. In order for them to function properly, they need to be at optimum levels - not too high neither too low. The primary way to keep those good levels is to have a healthy diet, with lots of fiber and balanced fats. But there are some nutraceutics that have been proven to help in this process in a very effective way.",
                   "studies": 0,
-                  "levelOfEvidence": "3",
-                  "magnitudeOfEffect": "-1",
+                  "levelOfEvidence": 3,
+                  "magnitudeOfEffect": -1,
                   "link": "https://www.healthprotection.com/relations/olive-leaf-extract-cholesterol-triglycerides-cardiovascular-health/"
               }
           ],
@@ -3640,8 +3640,8 @@
                   },
                   "description": "The bones are constantly in change, as weirdly as it seems, they are organs that participates in a lor of metabolism and balance in the body. As they loose and build cells they are prone to inflamation. Anti-inflammatory compounds prevent inflammation from impairing the healthy functioning of bones and joints.",
                   "studies": 17,
-                  "levelOfEvidence": "4",
-                  "magnitudeOfEffect": "-1",
+                  "levelOfEvidence": 4,
+                  "magnitudeOfEffect": -1,
                   "link": "https://www.healthprotection.com/relations/omega-3-bone-anti-inflammatory-bone-and-joint-health/"
               },
               {
@@ -3659,8 +3659,8 @@
                   },
                   "description": "For short-term conditions, inflammation is helpful, but sustained low levels of inflammation irritate your blood vessels. Inflammation may promote the growth of plaques, loosen plaque in your arteries and trigger blood clots, which are the primary cause of heart attacks and strokes. Anti inflammatories can prevent the cardiovascular system to get to the first stages of diseases.",
                   "studies": 0,
-                  "levelOfEvidence": "4",
-                  "magnitudeOfEffect": "-1",
+                  "levelOfEvidence": 4,
+                  "magnitudeOfEffect": -1,
                   "link": "https://www.healthprotection.com/relations/omega-3-anti-inflammatory-cardiovascular-health-cardiovascular-health/"
               },
               {
@@ -3678,8 +3678,8 @@
                   },
                   "description": "Triglycerides and cholesterol are both types of fat present in blood. They play very important roles in the body, such as hormone metabolism and nutrient circulation. In order for them to function properly, they need to be at optimum levels - not too high neither too low. The primary way to keep those good levels is to have a healthy diet, with lots of fiber and balanced fats. But there are some nutraceutics that have been proven to help in this process in a very effective way.",
                   "studies": 35,
-                  "levelOfEvidence": "4",
-                  "magnitudeOfEffect": "-3",
+                  "levelOfEvidence": 4,
+                  "magnitudeOfEffect": -3,
                   "link": "https://www.healthprotection.com/relations/omega-3-cholesterol-triglycerides-cardiovascular-health/"
               },
               {
@@ -3697,8 +3697,8 @@
                   },
                   "description": "Depression is a chronic and recurrent psychiatric condition that produces mood changes characterized by deep sadness, mood swings, loss of interest in activities, causing significant impairment in daily life.",
                   "studies": 0,
-                  "levelOfEvidence": "4",
-                  "magnitudeOfEffect": "-2",
+                  "levelOfEvidence": 4,
+                  "magnitudeOfEffect": -2,
                   "link": "https://www.healthprotection.com/relations/omega-3-depression-energy-and-mood/"
               },
               {
@@ -3716,8 +3716,8 @@
                   },
                   "description": "Anxiety is the body's natural response to stress. It's a feeling of fear or apprehension about what's to come. It can be triggered by a specific situation and not last long - which is very common and ok - or it can be a generalized disorder (which is considered a illness) that can bring harm to everyday life and also cause other conditions like depression.",
                   "studies": 0,
-                  "levelOfEvidence": "3",
-                  "magnitudeOfEffect": "-1",
+                  "levelOfEvidence": 3,
+                  "magnitudeOfEffect": -1,
                   "link": "https://www.healthprotection.com/relations/omega-3-anxiety-energy-and-mood/"
               }
           ],
@@ -3766,8 +3766,8 @@
                   },
                   "description": "The body's cells use glucose to produce energy. Glucose comes from food and is stored in the body in the form of glycogen (in the muscles and liver) or circulating glucose (in the blood). Cells need the hormone Insulin to capture glucose molecules. The glucose / insulin balance in the blood is essential for the proper functioning of the body's whole  metabolism. A change in this metabolism can lead to serious physiological dysfunctions, leading to the development of chronic non-communicable diseases, such as type II diabetes and cardiovascular diseases. There are several classes of compounds that influence this metabolism, these can increase insulin synthesis and secretion, decrease blood glucose levels, reduce the immediate absorption of carbohydrates, regulate the sensitivity of cells to insulin, among others.",
                   "studies": 0,
-                  "levelOfEvidence": "4",
-                  "magnitudeOfEffect": "-1",
+                  "levelOfEvidence": 4,
+                  "magnitudeOfEffect": -1,
                   "link": "https://www.healthprotection.com/relations/panax-ginseng-blood-sugar-control-diabetes-blood-sugar/"
               },
               {
@@ -3785,8 +3785,8 @@
                   },
                   "description": "Well-being is not just the absence of disease or illness. It's a complex combination of a person's physical, mental, emotional and social health factors. Wellbeing is strongly linked to happiness and life satisfaction. There are some lifestyle changes and natural products that can be very effective in that.",
                   "studies": 0,
-                  "levelOfEvidence": "3",
-                  "magnitudeOfEffect": "1",
+                  "levelOfEvidence": 3,
+                  "magnitudeOfEffect": 1,
                   "link": "https://www.healthprotection.com/relations/panax-ginseng-overall-well-being-energy-and-mood-energy-and-mood/"
               },
               {
@@ -3804,8 +3804,8 @@
                   },
                   "description": "When the penis becomes rigid - erect. Erectile dysfunction may have different causes and some compounds can help by increasing blod flow or regulate a hormonal deficiency or a nutrient deficiency.",
                   "studies": 0,
-                  "levelOfEvidence": "3",
-                  "magnitudeOfEffect": "1",
+                  "levelOfEvidence": 3,
+                  "magnitudeOfEffect": 1,
                   "link": "https://www.healthprotection.com/relations/panax-ginseng-erections-libido-and-sexual-health/"
               },
               {
@@ -3823,8 +3823,8 @@
                   },
                   "description": "Cognition refers to the mental processes involved in gaining knowledge and comprehension. Cognitive actions include thinking, knowing, remembering, judging, and problem-solving. These are higher-level functions of the brain and include language, imagination, perception, and planning.",
                   "studies": 0,
-                  "levelOfEvidence": "3",
-                  "magnitudeOfEffect": "1",
+                  "levelOfEvidence": 3,
+                  "magnitudeOfEffect": 1,
                   "link": "https://www.healthprotection.com/relations/panax-ginseng-cognition-cognitive-function-and-brain-health/"
               }
           ],
@@ -3858,8 +3858,8 @@
                   },
                   "description": "Anxiety is the body's natural response to stress. It's a feeling of fear or apprehension about what's to come. It can be triggered by a specific situation and not last long - which is very common and ok - or it can be a generalized disorder (which is considered a illness) that can bring harm to everyday life and also cause other conditions like depression.",
                   "studies": 0,
-                  "levelOfEvidence": "0",
-                  "magnitudeOfEffect": "0",
+                  "levelOfEvidence": 0,
+                  "magnitudeOfEffect": 0,
                   "link": "https://www.healthprotection.com/relations/passionflower-anxiety-energy-and-mood/"
               },
               {
@@ -3877,8 +3877,8 @@
                   },
                   "description": "Sleep is a very important physiological process, as it regulates the body's functions. It is responsible for promoting / facilitating energy conservation, synthesis and secretion of hormones and proteins, learning and memory through brain changes. Sleep is mainly driven by the circadian cycle, which involves exposure to light, hormones such as melatonin, and hypothalamic activity. The compounds that help regulate sleep work in different pathways, they can facilitate the process of falling asleep, increase the duration of continuous sleep or improve the quality of sleep.",
                   "studies": 0,
-                  "levelOfEvidence": "0",
-                  "magnitudeOfEffect": "0",
+                  "levelOfEvidence": 0,
+                  "magnitudeOfEffect": 0,
                   "link": "https://www.healthprotection.com/relations/passionflower-sleep-energy-and-mood/"
               },
               {
@@ -3896,8 +3896,8 @@
                   },
                   "description": "Digestion refers to the breakdown of food into smaller components that can be absorbed into the bloodstream. Therefore it is one of the most important systems of the body, because it is responsable for all the nutrient income that ''feed'' all of our cells. Maintaining a good digestions is not always easy, as the digestive system behaves differently depending on how and what you eat. Some ingredients help this mechanism work better and preventing discomfort.",
                   "studies": 0,
-                  "levelOfEvidence": "0",
-                  "magnitudeOfEffect": "0",
+                  "levelOfEvidence": 0,
+                  "magnitudeOfEffect": 0,
                   "link": "https://www.healthprotection.com/relations/passionflower-digestion-digestive-health/"
               }
           ],
@@ -3931,8 +3931,8 @@
                   },
                   "description": "The immune response is measured by how fast and how effective the immune system can neutralize any kind of sickness, being viruses, bacteria or other pathogens.",
                   "studies": 0,
-                  "levelOfEvidence": "4",
-                  "magnitudeOfEffect": "-1",
+                  "levelOfEvidence": 4,
+                  "magnitudeOfEffect": -1,
                   "link": "https://www.healthprotection.com/relations/pelargonium-sidoides-immune-response-immunity-immunity/"
               },
               {
@@ -3950,8 +3950,8 @@
                   },
                   "description": "Nasal congestion is another term for ''stuffy nose''. It is often a symptom of another health problem, such as sinusitis, allergic rhinitis or a common cold, other times it can be caused by changes in the structure of the nose, such as deviated septum. Nasal congestion is marked by clogged nose or runny nose, sinus pain, mucus accumulation and swollen nasal tissues. There are a lot of different treatments for nasal congestion, depending of the cause of it. There are some natural products that can alliviate and help treat this condition.",
                   "studies": 0,
-                  "levelOfEvidence": "3",
-                  "magnitudeOfEffect": "-2",
+                  "levelOfEvidence": 3,
+                  "magnitudeOfEffect": -2,
                   "link": "https://www.healthprotection.com/relations/pelargonium-sidoides-nasal-congestion-respiratory-health/"
               }
           ],
@@ -4030,8 +4030,8 @@
                   },
                   "description": "Appetite include physical hunger, subjective appetite (desire to eat) and satiety. These aspects are controlled and regulated by hormones (leptin, ghrelin, serotonin, etc.) that act in the gastrointestinal tract and in the brain through negative feedback. In addition to hormones, appetite is also influenced by metabolic factors, hydration, blood glucose, intestinal motility, among others. The compounds that influence appetite are those that regulate the hormones involved, assist in satiety, benefit the gastrointestinal tract, improve blood glucose, among others.",
                   "studies": 3,
-                  "levelOfEvidence": "2",
-                  "magnitudeOfEffect": "-1",
+                  "levelOfEvidence": 2,
+                  "magnitudeOfEffect": -1,
                   "link": "https://www.healthprotection.com/relations/psyllium-appetite-control-weight-management/"
               },
               {
@@ -4049,8 +4049,8 @@
                   },
                   "description": "The body's cells use glucose to produce energy. Glucose comes from food and is stored in the body in the form of glycogen (in the muscles and liver) or circulating glucose (in the blood). Cells need the hormone Insulin to capture glucose molecules. The glucose / insulin balance in the blood is essential for the proper functioning of the body's whole  metabolism. A change in this metabolism can lead to serious physiological dysfunctions, leading to the development of chronic non-communicable diseases, such as type II diabetes and cardiovascular diseases. There are several classes of compounds that influence this metabolism, these can increase insulin synthesis and secretion, decrease blood glucose levels, reduce the immediate absorption of carbohydrates, regulate the sensitivity of cells to insulin, among others.",
                   "studies": 4,
-                  "levelOfEvidence": "3",
-                  "magnitudeOfEffect": "-1",
+                  "levelOfEvidence": 3,
+                  "magnitudeOfEffect": -1,
                   "link": "https://www.healthprotection.com/relations/psyllium-blood-sugar-control-diabetes-blood-sugar/"
               },
               {
@@ -4068,8 +4068,8 @@
                   },
                   "description": "The absorption and different uses for each nutrient is highly linked to the body's immune system, which is the set of chemical reactions that protect us from any ''intruder'' and susteins our vital functions. All the vitamins and minerals are essencial for the whole functioning of this system. ",
                   "studies": 0,
-                  "levelOfEvidence": "2",
-                  "magnitudeOfEffect": "3",
+                  "levelOfEvidence": 2,
+                  "magnitudeOfEffect": 3,
                   "link": "https://www.healthprotection.com/relations/psyllium-nutrient-issues-immunity-immunity/"
               },
               {
@@ -4087,8 +4087,8 @@
                   },
                   "description": "Triglycerides and cholesterol are both types of fat present in blood. They play very important roles in the body, such as hormone metabolism and nutrient circulation. In order for them to function properly, they need to be at optimum levels - not too high neither too low. The primary way to keep those good levels is to have a healthy diet, with lots of fiber and balanced fats. But there are some nutraceutics that have been proven to help in this process in a very effective way.",
                   "studies": 0,
-                  "levelOfEvidence": "4",
-                  "magnitudeOfEffect": "-1",
+                  "levelOfEvidence": 4,
+                  "magnitudeOfEffect": -1,
                   "link": "https://www.healthprotection.com/relations/psyllium-cholesterol-triglycerides-cardiovascular-health/"
               }
           ],
@@ -4122,8 +4122,8 @@
                   },
                   "description": "When the penis becomes rigid - erect. Erectile dysfunction may have different causes and some compounds can help by increasing blod flow or regulate a hormonal deficiency or a nutrient deficiency.",
                   "studies": 1,
-                  "levelOfEvidence": "1",
-                  "magnitudeOfEffect": "1",
+                  "levelOfEvidence": 1,
+                  "magnitudeOfEffect": 1,
                   "link": "https://www.healthprotection.com/relations/pycnogenol-erections-libido-and-sexual-health/"
               },
               {
@@ -4141,8 +4141,8 @@
                   },
                   "description": "Osteoarthritis is a very common chronic condition among the elderly that incompasses bones and cartilage. Symptoms include joint pain in the hands, neck, lower back, knees or hips, as well as movement difficultness.",
                   "studies": 0,
-                  "levelOfEvidence": "2",
-                  "magnitudeOfEffect": "-2",
+                  "levelOfEvidence": 2,
+                  "magnitudeOfEffect": -2,
                   "link": "https://www.healthprotection.com/relations/pycnogenol-symptoms-of-osteoarthritis-bone-and-joint-health/"
               },
               {
@@ -4160,8 +4160,8 @@
                   },
                   "description": "Different types of Arthritis causes joints to be inflamed, thus they can develop stiffness, warmth, swelling, redness and pain. There are numerous of compounds that can be used to ease those symptoms",
                   "studies": 0,
-                  "levelOfEvidence": "2",
-                  "magnitudeOfEffect": "-2",
+                  "levelOfEvidence": 2,
+                  "magnitudeOfEffect": -2,
                   "link": "https://www.healthprotection.com/relations/pycnogenol-joint-pain-and-stiffness-bone-and-joint-health/"
               }
           ],
@@ -4195,8 +4195,8 @@
                   },
                   "description": "Oxidation reactions occur naturally in all cells of the body, which produce free radicals. These radicals can initiate chain reactions that can damage cells or cause them to die. Antioxidant substances eliminate free radicals and inhibit other oxidation reactions, thus protecting and prolonging cellular functions and protectiong them against tumors.",
                   "studies": 0,
-                  "levelOfEvidence": "2",
-                  "magnitudeOfEffect": "-1",
+                  "levelOfEvidence": 2,
+                  "magnitudeOfEffect": -1,
                   "link": "https://www.healthprotection.com/relations/quercetin-anti-oxidant-longevity-anti-aging/"
               }
           ],
@@ -4245,8 +4245,8 @@
                   },
                   "description": "The immune response is measured by how fast and how effective the immune system can neutralize any kind of sickness, being viruses, bacteria or other pathogens.",
                   "studies": 0,
-                  "levelOfEvidence": "0",
-                  "magnitudeOfEffect": "0",
+                  "levelOfEvidence": 0,
+                  "magnitudeOfEffect": 0,
                   "link": "https://www.healthprotection.com/relations/reishi-immune-response-immunity-immunity/"
               }
           ],
@@ -4295,8 +4295,8 @@
                   },
                   "description": "Fatigue is characterized by a reduction in physical energy. It can also appear as acute and/or chronic fatigue. Acute fatigue is due to excessive activities, such as physical exercise. Chronic fatigue is multifactorial, influenced by metabolic disorders, nutrient deficiency, physical inactivity, causing tiredness and constant lack of motivation.The substances that help with that are neuroprotective, affecting metabolism, hormones and motor function.",
                   "studies": 4,
-                  "levelOfEvidence": "4",
-                  "magnitudeOfEffect": "-2",
+                  "levelOfEvidence": 4,
+                  "magnitudeOfEffect": -2,
                   "link": "https://www.healthprotection.com/relations/rhodiola-rosea-fatigue-prevention-muscle-health-muscle-health/"
               },
               {
@@ -4314,8 +4314,8 @@
                   },
                   "description": "Well-being is not just the absence of disease or illness. It's a complex combination of a person's physical, mental, emotional and social health factors. Wellbeing is strongly linked to happiness and life satisfaction. There are some lifestyle changes and natural products that can be very effective in that.",
                   "studies": 7,
-                  "levelOfEvidence": "3",
-                  "magnitudeOfEffect": "1",
+                  "levelOfEvidence": 3,
+                  "magnitudeOfEffect": 1,
                   "link": "https://www.healthprotection.com/relations/rhodiola-rosea-overall-well-being-energy-and-mood-energy-and-mood/"
               },
               {
@@ -4333,8 +4333,8 @@
                   },
                   "description": "Stress can be understood as a situation in which the individual is physically or mentally overloaded, which can cause pain, tension and physical injury, as well as emotional fatigue, tiredness, reduced productivity and attention. The substances that help control stress act on hormonal regulation (for example, cortisol), on the circadian cycle and promote physical and mental relaxation.",
                   "studies": 4,
-                  "levelOfEvidence": "2",
-                  "magnitudeOfEffect": "1",
+                  "levelOfEvidence": 2,
+                  "magnitudeOfEffect": 1,
                   "link": "https://www.healthprotection.com/relations/rhodiola-rosea-stress-management-energy-and-mood/"
               },
               {
@@ -4352,8 +4352,8 @@
                   },
                   "description": "Depression is a chronic and recurrent psychiatric condition that produces mood changes characterized by deep sadness, mood swings, loss of interest in activities, causing significant impairment in daily life.",
                   "studies": 0,
-                  "levelOfEvidence": "2",
-                  "magnitudeOfEffect": "-1",
+                  "levelOfEvidence": 2,
+                  "magnitudeOfEffect": -1,
                   "link": "https://www.healthprotection.com/relations/rhodiola-rosea-depression-energy-and-mood/"
               },
               {
@@ -4371,8 +4371,8 @@
                   },
                   "description": "Anxiety is the body's natural response to stress. It's a feeling of fear or apprehension about what's to come. It can be triggered by a specific situation and not last long - which is very common and ok - or it can be a generalized disorder (which is considered a illness) that can bring harm to everyday life and also cause other conditions like depression.",
                   "studies": 0,
-                  "levelOfEvidence": "1",
-                  "magnitudeOfEffect": "-1",
+                  "levelOfEvidence": 1,
+                  "magnitudeOfEffect": -1,
                   "link": "https://www.healthprotection.com/relations/rhodiola-rosea-anxiety-energy-and-mood/"
               }
           ],
@@ -4421,8 +4421,8 @@
                   },
                   "description": "Fatigue is characterized by a reduction in mental energy. It can also appear as acute and/or chronic fatigue. Acute fatigue is due to excessive mentally demanding work. Chronic fatigue is multifactorial, influenced by insomnia, stress, anxiety, depression, causing tiredness and constant lack of motivation. The substances indicated for fatigue help to improve sleep and mood problems as they are neuroprotective, affecting neurological function.",
                   "studies": 0,
-                  "levelOfEvidence": "0",
-                  "magnitudeOfEffect": "0",
+                  "levelOfEvidence": 0,
+                  "magnitudeOfEffect": 0,
                   "link": "https://www.healthprotection.com/relations/sage-fatigue-prevention-longevity-anti-aging/"
               }
           ],
@@ -4456,8 +4456,8 @@
                   },
                   "description": "The liver metabolizes various compounds that produce free radicals. However, antioxidants scavenge those free radicals and maintain the oxidative/antioxidative balance in the liver, which is one of the most import metabolism organs in the body.",
                   "studies": 3,
-                  "levelOfEvidence": "2",
-                  "magnitudeOfEffect": "0",
+                  "levelOfEvidence": 2,
+                  "magnitudeOfEffect": 0,
                   "link": "https://www.healthprotection.com/relations/same-anti-oxidant-liver-health-liver-health/"
               },
               {
@@ -4475,8 +4475,8 @@
                   },
                   "description": "Depression is a chronic and recurrent psychiatric condition that produces mood changes characterized by deep sadness, mood swings, loss of interest in activities, causing significant impairment in daily life.",
                   "studies": 0,
-                  "levelOfEvidence": "2",
-                  "magnitudeOfEffect": "-2",
+                  "levelOfEvidence": 2,
+                  "magnitudeOfEffect": -2,
                   "link": "https://www.healthprotection.com/relations/same-depression-energy-and-mood/"
               },
               {
@@ -4494,8 +4494,8 @@
                   },
                   "description": "Memory is the faculty by which the brain encodes, stores, and retrieves information. It is a record of experience for guiding future action. ",
                   "studies": 0,
-                  "levelOfEvidence": "2",
-                  "magnitudeOfEffect": "1",
+                  "levelOfEvidence": 2,
+                  "magnitudeOfEffect": 1,
                   "link": "https://www.healthprotection.com/relations/same-memory-cognitive-function-and-brain-health/"
               }
           ],
@@ -4529,8 +4529,8 @@
                   },
                   "description": "Testosterone is the main male sex hormone. It is responsible for regulating fertility, muscle mass, fat distribution and the production of red blood cells. Women's ovaries also produce testosterone, although in much smaller quantities.",
                   "studies": 0,
-                  "levelOfEvidence": "2",
-                  "magnitudeOfEffect": "1",
+                  "levelOfEvidence": 2,
+                  "magnitudeOfEffect": 1,
                   "link": "https://www.healthprotection.com/relations/saw-palmetto-testosterone-hormone-regulation/"
               },
               {
@@ -4548,8 +4548,8 @@
                   },
                   "description": "Well-being is related to one's ability to achieve needs and be satisfied with life. It is considered that, for an individual to be healthy, must live the most complete state of physical, mental and social well-being.",
                   "studies": 0,
-                  "levelOfEvidence": "1",
-                  "magnitudeOfEffect": "2",
+                  "levelOfEvidence": 1,
+                  "magnitudeOfEffect": 2,
                   "link": "https://www.healthprotection.com/relations/saw-palmetto-overall-well-being-longevity-anti-aging/"
               }
           ],
@@ -4583,8 +4583,8 @@
                   },
                   "description": "Oxidation reactions occur naturally in all cells of the body, which produce free radicals. These radicals can initiate chain reactions that can damage cells or cause them to die. Antioxidant substances eliminate free radicals and inhibit other oxidation reactions, thus protecting and prolonging cellular functions and protectiong them against tumors.",
                   "studies": 0,
-                  "levelOfEvidence": "0",
-                  "magnitudeOfEffect": "0",
+                  "levelOfEvidence": 0,
+                  "magnitudeOfEffect": 0,
                   "link": "https://www.healthprotection.com/relations/selenium-anti-oxidant-longevity-anti-aging/"
               },
               {
@@ -4602,8 +4602,8 @@
                   },
                   "description": "The heart is one of the most strong muscles in the body, as it works nonstop and very steady. But it can also fail, brought down by a poor diet and lack of exercise, smoking, infection, unlucky genes, etc. It's essential to your health to take care of your heart health. ",
                   "studies": 0,
-                  "levelOfEvidence": "0",
-                  "magnitudeOfEffect": "0",
+                  "levelOfEvidence": 0,
+                  "magnitudeOfEffect": 0,
                   "link": "https://www.healthprotection.com/relations/selenium-heart-protection-cardiovascular-health/"
               },
               {
@@ -4621,8 +4621,8 @@
                   },
                   "description": "The immune response is measured by how fast and how effective the immune system can neutralize any kind of sickness, being viruses, bacteria or other pathogens.",
                   "studies": 0,
-                  "levelOfEvidence": "0",
-                  "magnitudeOfEffect": "0",
+                  "levelOfEvidence": 0,
+                  "magnitudeOfEffect": 0,
                   "link": "https://www.healthprotection.com/relations/selenium-immune-response-immunity-immunity/"
               },
               {
@@ -4640,8 +4640,8 @@
                   },
                   "description": "Cognition refers to the mental processes involved in gaining knowledge and comprehension. Cognitive actions include thinking, knowing, remembering, judging, and problem-solving. These are higher-level functions of the brain and include language, imagination, perception, and planning.",
                   "studies": 0,
-                  "levelOfEvidence": "0",
-                  "magnitudeOfEffect": "0",
+                  "levelOfEvidence": 0,
+                  "magnitudeOfEffect": 0,
                   "link": "https://www.healthprotection.com/relations/selenium-cognition-cognitive-function-and-brain-health/"
               }
           ],
@@ -4675,8 +4675,8 @@
                   },
                   "description": "The immune response is measured by how fast and how effective the immune system can neutralize any kind of sickness, being viruses, bacteria or other pathogens.",
                   "studies": 0,
-                  "levelOfEvidence": "0",
-                  "magnitudeOfEffect": "0",
+                  "levelOfEvidence": 0,
+                  "magnitudeOfEffect": 0,
                   "link": "https://www.healthprotection.com/relations/shiitake-immune-response-immunity-immunity/"
               }
           ],
@@ -4730,8 +4730,8 @@
                   },
                   "description": "The liver metabolizes various compounds that produce free radicals. However, antioxidants scavenge those free radicals and maintain the oxidative/antioxidative balance in the liver, which is one of the most import metabolism organs in the body.",
                   "studies": 7,
-                  "levelOfEvidence": "3",
-                  "magnitudeOfEffect": "-2",
+                  "levelOfEvidence": 3,
+                  "magnitudeOfEffect": -2,
                   "link": "https://www.healthprotection.com/relations/spirulina-anti-oxidant-liver-health-liver-health/"
               },
               {
@@ -4749,8 +4749,8 @@
                   },
                   "description": "The liver is the organ responsible for the fat metabolism in our body. Fat excess accumulation results in fatty liver (alcohol or non-alcoholic) and might even cause cirrhosis if it is not taken care of. Some nutraceutics and supplements are able to reduce liver fat stores. Detoxing compounds help detoxification pathways and the cleansing this organ as well. ",
                   "studies": 5,
-                  "levelOfEvidence": "2",
-                  "magnitudeOfEffect": "2",
+                  "levelOfEvidence": 2,
+                  "magnitudeOfEffect": 2,
                   "link": "https://www.healthprotection.com/relations/spirulina-liver-function-liver-health/"
               },
               {
@@ -4768,8 +4768,8 @@
                   },
                   "description": "The immune response is measured by how fast and how effective the immune system can neutralize any kind of sickness, being viruses, bacteria or other pathogens.",
                   "studies": 0,
-                  "levelOfEvidence": "3",
-                  "magnitudeOfEffect": "-2",
+                  "levelOfEvidence": 3,
+                  "magnitudeOfEffect": -2,
                   "link": "https://www.healthprotection.com/relations/spirulina-immune-response-immunity-immunity/"
               },
               {
@@ -4787,8 +4787,8 @@
                   },
                   "description": "Nasal congestion is another term for ''stuffy nose''. It is often a symptom of another health problem, such as sinusitis, allergic rhinitis or a common cold, other times it can be caused by changes in the structure of the nose, such as deviated septum. Nasal congestion is marked by clogged nose or runny nose, sinus pain, mucus accumulation and swollen nasal tissues. There are a lot of different treatments for nasal congestion, depending of the cause of it. There are some natural products that can alliviate and help treat this condition.",
                   "studies": 0,
-                  "levelOfEvidence": "2",
-                  "magnitudeOfEffect": "-3",
+                  "levelOfEvidence": 2,
+                  "magnitudeOfEffect": -3,
                   "link": "https://www.healthprotection.com/relations/spirulina-nasal-congestion-respiratory-health/"
               }
           ],
@@ -4852,8 +4852,8 @@
                   },
                   "description": "Attention is the behavioral and cognitive process of selectively concentrating on a discrete aspect of information, whether considered subjective or objective. ",
                   "studies": 0,
-                  "levelOfEvidence": "2",
-                  "magnitudeOfEffect": "1",
+                  "levelOfEvidence": 2,
+                  "magnitudeOfEffect": 1,
                   "link": "https://www.healthprotection.com/relations/theanine-focus-attention-cognitive-function-and-brain-health/"
               }
           ],
@@ -4887,8 +4887,8 @@
                   },
                   "description": "When the penis becomes rigid - erect. Erectile dysfunction may have different causes and some compounds can help by increasing blod flow or regulate a hormonal deficiency or a nutrient deficiency.",
                   "studies": 4,
-                  "levelOfEvidence": "2",
-                  "magnitudeOfEffect": "1",
+                  "levelOfEvidence": 2,
+                  "magnitudeOfEffect": 1,
                   "link": "https://www.healthprotection.com/relations/tribulus-terrestris-erections-libido-and-sexual-health/"
               },
               {
@@ -4906,8 +4906,8 @@
                   },
                   "description": "Libido is the overall sexual drive or desire for sexual activity which is influenced by biological, psychological, and social factors.",
                   "studies": 4,
-                  "levelOfEvidence": "2",
-                  "magnitudeOfEffect": "1",
+                  "levelOfEvidence": 2,
+                  "magnitudeOfEffect": 1,
                   "link": "https://www.healthprotection.com/relations/tribulus-terrestris-libido-libido-and-sexual-health/"
               }
           ],
@@ -4941,8 +4941,8 @@
                   },
                   "description": "Sleep is a very important physiological process, as it regulates the body's functions. It is responsible for promoting / facilitating energy conservation, synthesis and secretion of hormones and proteins, learning and memory through brain changes. Sleep is mainly driven by the circadian cycle, which involves exposure to light, hormones such as melatonin, and hypothalamic activity. The compounds that help regulate sleep work in different pathways, they can facilitate the process of falling asleep, increase the duration of continuous sleep or improve the quality of sleep.",
                   "studies": 0,
-                  "levelOfEvidence": "3",
-                  "magnitudeOfEffect": "1",
+                  "levelOfEvidence": 3,
+                  "magnitudeOfEffect": 1,
                   "link": "https://www.healthprotection.com/relations/valerian-sleep-energy-and-mood/"
               }
           ],
@@ -4976,8 +4976,8 @@
                   },
                   "description": "White blood cells - or leukocytes - are the body's defense cells that destroy foreign agents, for example, bacteria, viruses and toxic substances that attack our body and cause infections or other diseases. There are also enzymes that refer to the antioxidant defense system that plays the role of inhibiting and/or reducing the damage caused by the harmful action of free radicals or non-radical reactive species.",
                   "studies": 0,
-                  "levelOfEvidence": "0",
-                  "magnitudeOfEffect": "0",
+                  "levelOfEvidence": 0,
+                  "magnitudeOfEffect": 0,
                   "link": "https://www.healthprotection.com/relations/vitamin-a-preventive-immunity-immunity/"
               }
           ],
@@ -5011,8 +5011,8 @@
                   },
                   "description": "The metabolism of nutrients is highly linked to the body's energy metabolism, which is the set of chemical reactions that produce the energy necessary for the performance of vital functions. All the vitamins and minerals are essencial for the whole functioning of all systems of the body. ",
                   "studies": 0,
-                  "levelOfEvidence": "1",
-                  "magnitudeOfEffect": "0",
+                  "levelOfEvidence": 1,
+                  "magnitudeOfEffect": 0,
                   "link": "https://www.healthprotection.com/relations/vitamin-b12-nutrient-issues-longevity-anti-aging/"
               }
           ],
@@ -5051,8 +5051,8 @@
                   },
                   "description": "The immune response is measured by how fast and how effective the immune system can neutralize any kind of sickness, being viruses, bacteria or other pathogens.",
                   "studies": 11,
-                  "levelOfEvidence": "3",
-                  "magnitudeOfEffect": "3",
+                  "levelOfEvidence": 3,
+                  "magnitudeOfEffect": 3,
                   "link": "https://www.healthprotection.com/relations/vitamin-c-immune-response-immunity-immunity/"
               },
               {
@@ -5070,8 +5070,8 @@
                   },
                   "description": "Bone density or bone mineral density (BMD) is the amount of bone mineral in bone tissue. The measurement of bone mineral density is used in medicine as an indirect indicator of osteoporosis and risk of fractures.",
                   "studies": 0,
-                  "levelOfEvidence": "3",
-                  "magnitudeOfEffect": "3",
+                  "levelOfEvidence": 3,
+                  "magnitudeOfEffect": 3,
                   "link": "https://www.healthprotection.com/relations/vitamin-c-bone-density-bone-and-joint-health/"
               }
           ],
@@ -5110,8 +5110,8 @@
                   },
                   "description": "The metabolism of nutrients is highly linked to the body's energy metabolism, which is the set of chemical reactions that produce the energy necessary for the performance of vital functions. All the vitamins and minerals are essencial for the whole functioning of all systems of the body. ",
                   "studies": 4,
-                  "levelOfEvidence": "4",
-                  "magnitudeOfEffect": "2",
+                  "levelOfEvidence": 4,
+                  "magnitudeOfEffect": 2,
                   "link": "https://www.healthprotection.com/relations/vitamin-d-nutrient-issues-longevity-anti-aging/"
               },
               {
@@ -5129,8 +5129,8 @@
                   },
                   "description": "Testosterone is the main male sex hormone. It is responsible for regulating fertility, muscle mass, fat distribution and the production of red blood cells. Women's ovaries also produce testosterone, although in much smaller quantities.",
                   "studies": 1,
-                  "levelOfEvidence": "2",
-                  "magnitudeOfEffect": "1",
+                  "levelOfEvidence": 2,
+                  "magnitudeOfEffect": 1,
                   "link": "https://www.healthprotection.com/relations/vitamin-d-testosterone-hormone-regulation/"
               },
               {
@@ -5148,8 +5148,8 @@
                   },
                   "description": "The immune response is measured by how fast and how effective the immune system can neutralize any kind of sickness, being viruses, bacteria or other pathogens.",
                   "studies": 0,
-                  "levelOfEvidence": "3",
-                  "magnitudeOfEffect": "-1",
+                  "levelOfEvidence": 3,
+                  "magnitudeOfEffect": -1,
                   "link": "https://www.healthprotection.com/relations/vitamin-d-immune-response-immunity-immunity/"
               },
               {
@@ -5167,8 +5167,8 @@
                   },
                   "description": "Bone density or bone mineral density (BMD) is the amount of bone mineral in bone tissue. The measurement of bone mineral density is used in medicine as an indirect indicator of osteoporosis and risk of fractures.",
                   "studies": 0,
-                  "levelOfEvidence": "4",
-                  "magnitudeOfEffect": "-2",
+                  "levelOfEvidence": 4,
+                  "magnitudeOfEffect": -2,
                   "link": "https://www.healthprotection.com/relations/vitamin-d-bone-density-bone-and-joint-health/"
               },
               {
@@ -5186,8 +5186,8 @@
                   },
                   "description": "Anxiety is the body's natural response to stress. It's a feeling of fear or apprehension about what's to come. It can be triggered by a specific situation and not last long - which is very common and ok - or it can be a generalized disorder (which is considered a illness) that can bring harm to everyday life and also cause other conditions like depression.",
                   "studies": 0,
-                  "levelOfEvidence": "1",
-                  "magnitudeOfEffect": "0",
+                  "levelOfEvidence": 1,
+                  "magnitudeOfEffect": 0,
                   "link": "https://www.healthprotection.com/relations/vitamin-d-anxiety-energy-and-mood/"
               },
               {
@@ -5205,8 +5205,8 @@
                   },
                   "description": "Depression is a chronic and recurrent psychiatric condition that produces mood changes characterized by deep sadness, mood swings, loss of interest in activities, causing significant impairment in daily life.",
                   "studies": 0,
-                  "levelOfEvidence": "1",
-                  "magnitudeOfEffect": "0",
+                  "levelOfEvidence": 1,
+                  "magnitudeOfEffect": 0,
                   "link": "https://www.healthprotection.com/relations/vitamin-d-depression-energy-and-mood/"
               }
           ],
@@ -5240,8 +5240,8 @@
                   },
                   "description": "The immune response is measured by how fast and how effective the immune system can neutralize any kind of sickness, being viruses, bacteria or other pathogens.",
                   "studies": 5,
-                  "levelOfEvidence": "3",
-                  "magnitudeOfEffect": "1",
+                  "levelOfEvidence": 3,
+                  "magnitudeOfEffect": 1,
                   "link": "https://www.healthprotection.com/relations/vitamin-e-immune-response-immunity-immunity/"
               },
               {
@@ -5259,8 +5259,8 @@
                   },
                   "description": "The absorption and different uses for each nutrient is highly linked to the body's immune system, which is the set of chemical reactions that protect us from any ''intruder'' and susteins our vital functions. All the vitamins and minerals are essencial for the whole functioning of this system. ",
                   "studies": 0,
-                  "levelOfEvidence": "3",
-                  "magnitudeOfEffect": "1",
+                  "levelOfEvidence": 3,
+                  "magnitudeOfEffect": 1,
                   "link": "https://www.healthprotection.com/relations/vitamin-e-nutrient-issues-immunity-immunity/"
               }
           ],
@@ -5294,8 +5294,8 @@
                   },
                   "description": "Bone density or bone mineral density (BMD) is the amount of bone mineral in bone tissue. The measurement of bone mineral density is used in medicine as an indirect indicator of osteoporosis and risk of fractures.",
                   "studies": 15,
-                  "levelOfEvidence": "4",
-                  "magnitudeOfEffect": "2",
+                  "levelOfEvidence": 4,
+                  "magnitudeOfEffect": 2,
                   "link": "https://www.healthprotection.com/relations/vitamin-k-bone-density-bone-and-joint-health/"
               }
           ],
@@ -5329,8 +5329,8 @@
                   },
                   "description": "Premenstrual syndrome (PMS) is a condition that affects a woman’s emotions, physical health, and behavior during certain days of the menstrual cycle, generally just before her menses. PMS is a very common condition. Its symptoms affect more than 90 percent of menstruating women. It must impair some aspect of your life for your doctor to diagnose you. PMS symptoms start five to 11 days before menstruation and typically go away once menstruation begins. The cause of PMS is unknown. However, many researchers believe that it’s related to a change in both sex hormone and serotonin levels at the beginning of the menstrual cycle. Levels of estrogen and progesterone increase during certain times of the month. An increase in these hormones can cause mood swings, anxiety, and irritability. Ovarian steroids also modulate activity in parts of your brain associated with premenstrual symptoms.",
                   "studies": 11,
-                  "levelOfEvidence": "3",
-                  "magnitudeOfEffect": "-3",
+                  "levelOfEvidence": 3,
+                  "magnitudeOfEffect": -3,
                   "link": "https://www.healthprotection.com/relations/vitex-agnus-castus-pms-womens-health/"
               },
               {
@@ -5348,8 +5348,8 @@
                   },
                   "description": "Depression is a chronic and recurrent psychiatric condition that produces mood changes characterized by deep sadness, mood swings, loss of interest in activities, causing significant impairment in daily life.",
                   "studies": 0,
-                  "levelOfEvidence": "2",
-                  "magnitudeOfEffect": "-1",
+                  "levelOfEvidence": 2,
+                  "magnitudeOfEffect": -1,
                   "link": "https://www.healthprotection.com/relations/vitex-agnus-castus-depression-energy-and-mood/"
               },
               {
@@ -5367,8 +5367,8 @@
                   },
                   "description": "Anxiety is the body's natural response to stress. It's a feeling of fear or apprehension about what's to come. It can be triggered by a specific situation and not last long - which is very common and ok - or it can be a generalized disorder (which is considered a illness) that can bring harm to everyday life and also cause other conditions like depression.",
                   "studies": 0,
-                  "levelOfEvidence": "2",
-                  "magnitudeOfEffect": "-1",
+                  "levelOfEvidence": 2,
+                  "magnitudeOfEffect": -1,
                   "link": "https://www.healthprotection.com/relations/vitex-agnus-castus-anxiety-energy-and-mood/"
               }
           ],
@@ -5402,8 +5402,8 @@
                   },
                   "description": "Fat loss is a different process then losing body weight, because when you lose weight, it does not necessarily mean that there is fat loss. For fat loss to happen, caloric deficit and practice of exercises are necessary. There are certain supplements that assist the metabolism of energy and nutrients, which cause the body to control appetite, increase its metabolic rate and reduce the absorption of macronutrients during digestion.",
                   "studies": 0,
-                  "levelOfEvidence": "3",
-                  "magnitudeOfEffect": "1",
+                  "levelOfEvidence": 3,
+                  "magnitudeOfEffect": 1,
                   "link": "https://www.healthprotection.com/relations/yerba-mate-fat-loss-weight-management/"
               }
           ],
@@ -5437,8 +5437,8 @@
                   },
                   "description": "Fertility is the term used to categorize the ability to reproduce easily. There are many problems between men and women regarding fertility, but there are several ways to improve this process. Some compounds can help with it by regulating hormones, for example. ",
                   "studies": 1,
-                  "levelOfEvidence": "2",
-                  "magnitudeOfEffect": "1",
+                  "levelOfEvidence": 2,
+                  "magnitudeOfEffect": 1,
                   "link": "https://www.healthprotection.com/relations/zinc-fertility-hormone-regulation/"
               },
               {
@@ -5456,8 +5456,8 @@
                   },
                   "description": "Testosterone is the main male sex hormone. It is responsible for regulating fertility, muscle mass, fat distribution and the production of red blood cells. Women's ovaries also produce testosterone, although in much smaller quantities.",
                   "studies": 3,
-                  "levelOfEvidence": "3",
-                  "magnitudeOfEffect": "1",
+                  "levelOfEvidence": 3,
+                  "magnitudeOfEffect": 1,
                   "link": "https://www.healthprotection.com/relations/zinc-testosterone-hormone-regulation/"
               },
               {
@@ -5475,8 +5475,8 @@
                   },
                   "description": "The immune response is measured by how fast and how effective the immune system can neutralize any kind of sickness, being viruses, bacteria or other pathogens.",
                   "studies": 0,
-                  "levelOfEvidence": "3",
-                  "magnitudeOfEffect": "-1",
+                  "levelOfEvidence": 3,
+                  "magnitudeOfEffect": -1,
                   "link": "https://www.healthprotection.com/relations/zinc-immune-response-immunity-immunity/"
               },
               {
@@ -5494,8 +5494,8 @@
                   },
                   "description": "The body's cells use glucose to produce energy. Glucose comes from food and is stored in the body in the form of glycogen (in the muscles and liver) or circulating glucose (in the blood). Cells need the hormone Insulin to capture glucose molecules. The glucose / insulin balance in the blood is essential for the proper functioning of the body's whole  metabolism. A change in this metabolism can lead to serious physiological dysfunctions, leading to the development of chronic non-communicable diseases, such as type II diabetes and cardiovascular diseases. There are several classes of compounds that influence this metabolism, these can increase insulin synthesis and secretion, decrease blood glucose levels, reduce the immediate absorption of carbohydrates, regulate the sensitivity of cells to insulin, among others.",
                   "studies": 0,
-                  "levelOfEvidence": "3",
-                  "magnitudeOfEffect": "-1",
+                  "levelOfEvidence": 3,
+                  "magnitudeOfEffect": -1,
                   "link": "https://www.healthprotection.com/relations/zinc-blood-sugar-control-diabetes-blood-sugar/"
               },
               {
@@ -5513,8 +5513,8 @@
                   },
                   "description": "Anxiety is the body's natural response to stress. It's a feeling of fear or apprehension about what's to come. It can be triggered by a specific situation and not last long - which is very common and ok - or it can be a generalized disorder (which is considered a illness) that can bring harm to everyday life and also cause other conditions like depression.",
                   "studies": 0,
-                  "levelOfEvidence": "1",
-                  "magnitudeOfEffect": "-1",
+                  "levelOfEvidence": 1,
+                  "magnitudeOfEffect": -1,
                   "link": "https://www.healthprotection.com/relations/zinc-anxiety-energy-and-mood/"
               },
               {
@@ -5532,8 +5532,8 @@
                   },
                   "description": "Depression is a chronic and recurrent psychiatric condition that produces mood changes characterized by deep sadness, mood swings, loss of interest in activities, causing significant impairment in daily life.",
                   "studies": 0,
-                  "levelOfEvidence": "3",
-                  "magnitudeOfEffect": "-2",
+                  "levelOfEvidence": 3,
+                  "magnitudeOfEffect": -2,
                   "link": "https://www.healthprotection.com/relations/zinc-depression-energy-and-mood/"
               },
               {
@@ -5551,8 +5551,8 @@
                   },
                   "description": "Well-being is not just the absence of disease or illness. It's a complex combination of a person's physical, mental, emotional and social health factors. Wellbeing is strongly linked to happiness and life satisfaction. There are some lifestyle changes and natural products that can be very effective in that.",
                   "studies": 0,
-                  "levelOfEvidence": "2",
-                  "magnitudeOfEffect": "1",
+                  "levelOfEvidence": 2,
+                  "magnitudeOfEffect": 1,
                   "link": "https://www.healthprotection.com/relations/zinc-overall-well-being-energy-and-mood-energy-and-mood/"
               }
           ],
@@ -5586,8 +5586,8 @@
                   },
                   "description": "White blood cells - or leukocytes - are the body's defense cells that destroy foreign agents, for example, bacteria, viruses and toxic substances that attack our body and cause infections or other diseases. There are also enzymes that refer to the antioxidant defense system that plays the role of inhibiting and/or reducing the damage caused by the harmful action of free radicals or non-radical reactive species.",
                   "studies": 0,
-                  "levelOfEvidence": "0",
-                  "magnitudeOfEffect": "0",
+                  "levelOfEvidence": 0,
+                  "magnitudeOfEffect": 0,
                   "link": "https://www.healthprotection.com/relations/zma-preventive-immunity-immunity/"
               }
           ],
