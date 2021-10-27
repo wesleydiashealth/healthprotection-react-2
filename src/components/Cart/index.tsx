@@ -19,24 +19,21 @@ import Container, {
 const Cart: React.FC = () => {
   const context = useApp();
   const { steps, labels } = context;
-  const { step2: previousStep } = steps;
+  const { step1: initialStep, step2: previousStep } = steps;
+
+  const isActive = previousStep.isCompleted && initialStep.isCompleted;
 
   return (
-    <Container isActive={previousStep.isCompleted}>
+    <Container isActive={isActive}>
       <StepIntro>
-        <TiShoppingCart
-          size={52}
-          color={previousStep.isCompleted ? '#1bc9bd' : '#565656'}
-        />
+        <TiShoppingCart size={52} color={isActive ? '#1bc9bd' : '#565656'} />
         <StepTitle>
-          {!previousStep.isCompleted && (
-            <HiLockClosed size={20} className="locked-icon" />
-          )}
+          {!isActive && <HiLockClosed size={20} className="locked-icon" />}
           {labels.cart_title}
           <HiQuestionMarkCircle
             className="tooltip-icon"
             size={20}
-            color={previousStep.isCompleted ? '#1bc9bd' : '#565656'}
+            color={isActive ? '#1bc9bd' : '#565656'}
             data-tip={`<strong>${labels.cart_title}</strong><span>${labels.cart_tooltip}</span>`}
             data-for="habits-title-tooltip"
           />
@@ -51,7 +48,7 @@ const Cart: React.FC = () => {
             backgroundColor="#fff"
           />
         </StepTitle>
-        {!previousStep.isCompleted && (
+        {!isActive && (
           <div className="step-disabled">
             <strong>Step Blocked.</strong>{' '}
             <span>Finish Step 2 to proceed.</span>
@@ -59,7 +56,7 @@ const Cart: React.FC = () => {
         )}
         <StepDescription>{labels.cart_description}</StepDescription>
       </StepIntro>
-      {previousStep.isCompleted && (
+      {isActive && (
         <StepContent>
           <CheckoutProducts>
             <h4>{labels.cart_subtitle}</h4>

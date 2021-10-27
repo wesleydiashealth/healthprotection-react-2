@@ -23,7 +23,9 @@ const Habits: React.FC = () => {
   const context = useApp();
   const { steps, nutraceuticals, selectedNutraceuticals, foods, error } =
     context;
-  const { step2: previousStep, step3: currentStep } = steps;
+  const { step1: initialStep, step2: previousStep, step3: currentStep } = steps;
+
+  const isActive = previousStep.isCompleted && initialStep.isCompleted;
 
   const foodsNutraceuticals = foods.reduce(
     (acc: string[], { interactions }) =>
@@ -62,19 +64,16 @@ const Habits: React.FC = () => {
   );
 
   return (
-    <Container id="step_3" isActive={previousStep.isCompleted}>
+    <Container id="step_3" isActive={isActive}>
       <StepIntro>
-        <GiForkKnifeSpoon
-          size={52}
-          color={previousStep.isCompleted ? '#1bc9bd' : '#565656'}
-        />
+        <GiForkKnifeSpoon size={52} color={isActive ? '#1bc9bd' : '#565656'} />
         <StepTitle>
-          {!previousStep.isCompleted && <HiLockClosed size={20} />}
+          {!isActive && <HiLockClosed size={20} />}
           Step 3
           <HiQuestionMarkCircle
             className="tooltip-icon"
             size={20}
-            color={previousStep.isCompleted ? '#1bc9bd' : '#565656'}
+            color={isActive ? '#1bc9bd' : '#565656'}
             data-tip="<strong>Step 2</strong><span>We already made a pre-selection...</span>"
             data-for="habits-title-tooltip"
           />
@@ -90,7 +89,7 @@ const Habits: React.FC = () => {
           />
         </StepTitle>
 
-        {!previousStep.isCompleted && (
+        {!isActive && (
           <div className="step-disabled">
             <strong>Step Blocked.</strong>{' '}
             <span>Finish Step 2 to proceed.</span>
@@ -107,7 +106,7 @@ const Habits: React.FC = () => {
         intelligence
       </ContainerAlert>
 
-      {previousStep.isCompleted && (
+      {isActive && (
         <>
           {currentStep.isLoaded ? (
             <>
