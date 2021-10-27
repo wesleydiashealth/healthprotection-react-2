@@ -117,11 +117,6 @@ export const ContentTitle = styled.h3`
   color: #000;
   font-size: 12px;
   line-height: 20px;
-
-  @media screen and (min-width: 768px) {
-    font-size: 14px;
-    line-height: 22px;
-  }
 `;
 
 export default Container;
