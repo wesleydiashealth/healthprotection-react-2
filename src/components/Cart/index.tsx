@@ -64,69 +64,6 @@ const Cart: React.FC = () => {
           <CheckoutProducts>
             <h4>{labels.cart_subtitle}</h4>
             <Products />
-            {/* <ProductsList>
-              {products.map(product => (
-                <Product key={product.value}>
-                  <div className="product-content">
-                    <img
-                      src={`${process.env.PUBLIC_URL}/svg/${product.image}`}
-                      alt=""
-                    />
-                    <div className="">
-                      <h5>
-                        {product.link ? (
-                          <a
-                            href={product.link}
-                            target="_blank"
-                            rel="noreferrer"
-                          >
-                            {product.label}
-                          </a>
-                        ) : (
-                          product.label
-                        )}
-                      </h5>
-                      <span>{product.dosage}</span>
-                    </div>
-                  </div>
-                  <a href="#xpto">{labels.cart_science}</a>
-                  <div className="product-values">
-                    <span className="product-price">
-                      {new Intl.NumberFormat('en-US', {
-                        style: 'currency',
-                        currency: 'USD',
-                      }).format(product.price)}
-                    </span>
-                    <div className="product-quantity-wrapper">
-                      <input
-                        type="button"
-                        value="-"
-                        className="button-minus"
-                        data-field="quantity"
-                      />
-                      <input
-                        type="number"
-                        step="1"
-                        max=""
-                        value="1"
-                        name="product-quantity"
-                        className="quantity-field"
-                      />
-                      <input
-                        type="button"
-                        value="+"
-                        className="button-plus"
-                        data-field="quantity"
-                      />
-                    </div>
-                  </div>
-                  <a href="#remover" className="product-remove">
-                    <FaTimesCircle />
-                    {labels.cart_remove}
-                  </a>
-                </Product>
-              ))}
-            </ProductsList> */}
           </CheckoutProducts>
           <Sidebar />
         </StepContent>

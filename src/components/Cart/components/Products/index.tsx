@@ -26,7 +26,7 @@ const Products: React.FC = () => {
         );
 
         return (
-          <Product>
+          <Product key={selectedNutraceutical}>
             <ProductImage
               src={`${process.env.PUBLIC_URL}/svg/${currentProduct?.slug}.svg`}
               alt={currentProduct?.title}

@@ -29,10 +29,6 @@ interface SuboutcomeProps {
   };
 }
 
-interface FineTuneProps {
-  [key: string]: string;
-}
-
 const Suboutcome: React.FC<SuboutcomeProps> = ({
   id,
   title,
@@ -43,8 +39,12 @@ const Suboutcome: React.FC<SuboutcomeProps> = ({
   const appContext = useApp();
   const {
     userQuery,
+    steps,
+    fineTune,
     connections,
+    updateStep,
     updateConnection,
+    updateFineTune,
     updateSelectedConnections,
     updateFoods,
     updateError,
@@ -53,7 +53,8 @@ const Suboutcome: React.FC<SuboutcomeProps> = ({
 
   const [supConnections, setSupConnections] = useState<string[]>([]);
   const [subConnections, setSubConnections] = useState<string[]>([]);
-  const [fineTune, setFineTune] = useState<FineTuneProps>({});
+
+  const { step2: currentStep, step3: nextStep } = steps;
 
   useEffect(() => {
     const updatedSupConnections = Object.entries(connections)
@@ -107,7 +108,8 @@ const Suboutcome: React.FC<SuboutcomeProps> = ({
       updateConnection(suboutcome, fineTuneGroup);
       updateSelectedConnections(connections);
 
-      appContext.updateStep('step2', { isCompleted: true });
+      updateStep('step2', { ...currentStep, isCompleted: true });
+      updateStep('step3', { ...nextStep, isLoaded: false });
 
       const selectedNutraceuticals = Array.from(
         new Set(
@@ -131,6 +133,8 @@ const Suboutcome: React.FC<SuboutcomeProps> = ({
 
       updateFoods(response.content);
 
+      updateStep('step3', { ...nextStep, isLoaded: true });
+
       if (!response.content.length) {
         updateError(
           'With your choices there are no adjustments to be made. See below for your list of nutraceuticals.',
@@ -141,13 +145,15 @@ const Suboutcome: React.FC<SuboutcomeProps> = ({
       }
     },
     [
-      updateConnection,
-      updateSelectedConnections,
-      appContext,
+      nextStep,
       connections,
       userQuery,
+      currentStep,
       updateFoods,
       updateError,
+      updateStep,
+      updateConnection,
+      updateSelectedConnections,
       updateSelectedNutraceuticals,
     ],
   );
@@ -211,7 +217,7 @@ const Suboutcome: React.FC<SuboutcomeProps> = ({
           color={color}
           onClick={() => {
             handleFineTuneClick([], id);
-            setFineTune({ ...fineTune, [id]: 'off' });
+            updateFineTune({ ...fineTune, [id]: 'off' });
           }}
         >
           Off
@@ -227,7 +233,7 @@ const Suboutcome: React.FC<SuboutcomeProps> = ({
                 onClick={() => {
                   if (value.length) {
                     handleFineTuneClick(value, id);
-                    setFineTune({ ...fineTune, [id]: key });
+                    updateFineTune({ ...fineTune, [id]: key });
                   }
                 }}
               >

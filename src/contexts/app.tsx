@@ -13,6 +13,7 @@ import SuboutcomeData from 'dtos/SuboutcomeData';
 import NutraceuticalData from 'dtos/NutraceuticalData';
 import FoodData from 'dtos/FoodData';
 import HabitData from 'dtos/HabitData';
+import FineTuneData from 'dtos/FineTuneData';
 
 interface LabelsData {
   [key: string]: string;
@@ -22,6 +23,7 @@ interface StepData {
   isCompleted?: boolean;
   isActive?: boolean;
   isDisabled?: boolean;
+  isLoaded?: boolean;
 }
 
 interface StepsData {
@@ -37,6 +39,7 @@ interface AppContextData {
   outcomes: OutcomeData[];
   suboutcomes: SuboutcomeData[];
   nutraceuticals: NutraceuticalData[];
+  fineTune: FineTuneData;
   selectedNutraceuticals: string[];
   connections: ConnectionsData;
   selectedConnections: ConnectionsData;
@@ -52,6 +55,7 @@ interface AppContextData {
   ): Promise<void>;
   updateOutcomes(updatedOutcomes: OutcomeData[]): Promise<void>;
   updateSuboutcomes(updatedSuboutcomes: SuboutcomeData[]): Promise<void>;
+  updateFineTune(updatedFineTune: FineTuneData): Promise<void>;
   updateConnection(suboutcome: string, nutraceuticals: string[]): Promise<void>;
   updateConnections(
     updatedOutcomes: OutcomeData[],
@@ -94,6 +98,8 @@ export const AppProvider: React.FC = ({ children }) => {
   const [suboutcomes, setSuboutcomes] = useState<SuboutcomeData[]>([]);
 
   const [nutraceuticals, setNutraceuticals] = useState<NutraceuticalData[]>([]);
+
+  const [fineTune, setFineTune] = useState<FineTuneData>({});
 
   const [selectedNutraceuticals, setSelectedNutraceuticals] = useState<
     string[]
@@ -197,6 +203,10 @@ export const AppProvider: React.FC = ({ children }) => {
     setSuboutcomes(updatedSuboutcomes);
   }
 
+  async function updateFineTune(updatedFineTune: FineTuneData) {
+    setFineTune({ ...fineTune, ...updatedFineTune });
+  }
+
   async function updateConnection(suboutcome: string, items: string[]) {
     const updatedConnection = Object.entries(connections).findIndex(
       ({ 1: connection }) => !!Object.keys(connection).includes(suboutcome),
@@ -271,71 +281,6 @@ export const AppProvider: React.FC = ({ children }) => {
     );
 
     setConnections(updatedConnections);
-
-    // if (!Object.keys(connections).length) {
-    //   const initialConnections: ConnectionsData = {};
-    //   updatedOutcomes.forEach(outcome => {
-    //     const { id, suboutcomes: outcomeSuboutcomes } = outcome;
-    //     initialConnections[id] = {};
-    //     outcomeSuboutcomes.forEach(outcomeSuboutcome => {
-    //       initialConnections[id][outcomeSuboutcome] = [];
-    //     });
-    //   });
-    //   setConnections(initialConnections);
-    // } else {
-    //   const updatedOutcomesIds = updatedOutcomes.reduce(
-    //     (acc: string[], curr) => [...acc, curr.id],
-    //     [],
-    //   );
-    //   let updatedConnections = Object.entries(connections)
-    //     .filter(({ 0: connection }) => updatedOutcomesIds.includes(connection))
-    //     .reduce(
-    //       (acc, { 0: connection, 1: currs }) => ({
-    //         ...acc,
-    //         [connection]: Object.entries(currs).reduce(
-    //           (subAcc, { 0: subKey, 1: subCurr }) => ({
-    //             ...subAcc,
-    //             [subKey]: subCurr,
-    //           }),
-    //           {},
-    //         ),
-    //       }),
-    //       {},
-    //     );
-    //   const newSuboutcomes = updatedSuboutcomes
-    //     .filter(
-    //       updatedSuboutcome =>
-    //         !Object.values(connections).filter(connection =>
-    //           Object.keys(connection).includes(updatedSuboutcome.id),
-    //         ).length,
-    //     )
-    //     .reduce((acc, updatedSuboutcome) => {
-    //       const selectedOutcome = updatedOutcomes.find(updatedOutcome =>
-    //         updatedOutcome.suboutcomes.includes(updatedSuboutcome.id),
-    //       );
-    //       return selectedOutcome
-    //         ? { ...acc, [selectedOutcome.id]: { [updatedSuboutcome.id]: [] } }
-    //         : acc;
-    //     }, {});
-    //   updatedConnections = { ...updatedConnections, ...newSuboutcomes };
-    //   const newOutcomes = updatedOutcomes
-    //     .filter(
-    //       updatedOutcome =>
-    //         !Object.keys(connections).includes(updatedOutcome.id),
-    //     )
-    //     .reduce(
-    //       (acc, newOutcome) => ({
-    //         ...acc,
-    //         [newOutcome.id]: newOutcome.suboutcomes.reduce(
-    //           (subAcc, newSuboutcome) => ({ ...subAcc, [newSuboutcome]: [] }),
-    //           {},
-    //         ),
-    //       }),
-    //       {},
-    //     );
-    //   updatedConnections = { ...updatedConnections, ...newOutcomes };
-    //   setConnections({ ...updatedConnections });
-    // }
   }
 
   async function updateSelectedConnections() {
@@ -388,6 +333,7 @@ export const AppProvider: React.FC = ({ children }) => {
         outcomes,
         suboutcomes,
         nutraceuticals,
+        fineTune,
         selectedNutraceuticals,
         connections,
         selectedConnections,
@@ -401,6 +347,7 @@ export const AppProvider: React.FC = ({ children }) => {
         updateSelectedNutraceuticals,
         updateOutcomes,
         updateSuboutcomes,
+        updateFineTune,
         updateConnection,
         updateConnections,
         updateSelectedConnections,

@@ -266,12 +266,11 @@ export const ContainerAlertTitle = styled(AlertTitle)`
   font-weight: 600 !important;
 `;
 
-export const HabitsErrorContainer = styled.div``;
-
 export const HabitsContainer = styled.div`
   padding: 0 20px;
 
   max-width: 100vw;
+  width: 100%;
 
   @media screen and (min-width: 768px) {
     display: flex;
@@ -317,8 +316,11 @@ export const HabitContainerIntro = styled.div`
 export const HabitContainerContent = styled.div`
   text-align: center;
 
+  flex: 1;
+
   .Dropdown-root {
-    max-width: 360px;
+    width: 360px;
+    max-width: 100%;
 
     text-align: left;
     font-size: 12px;

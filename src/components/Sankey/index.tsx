@@ -35,7 +35,7 @@ const Sankey: React.FC<SankeyProps> = ({
 }) => {
   const context = useApp();
   const { labels, steps, outcomes } = context;
-  const { step1: previousStep } = steps;
+  const { step1: previousStep, step2: currentStep } = steps;
 
   return (
     <Container id="step_2" isActive={previousStep.isCompleted}>
@@ -84,26 +84,32 @@ const Sankey: React.FC<SankeyProps> = ({
       </StepIntro>
       {previousStep.isCompleted && (
         <SankeyProvider>
-          <StepContent>
-            {outcomes.length ? (
-              <>
-                <Outcomes
-                  {...showTooltips}
-                  selectedOutcomes={Object.keys(connections || {})}
-                />
-                <Suboutcomes
-                  {...{ showTooltips, showFineTune }}
-                  selectedSuboutcomes={Object.values(connections || {}).reduce(
-                    (acc: string[], curr) => [...acc, ...Object.keys(curr)],
-                    [],
-                  )}
-                />
-                <Nutraceuticals />
-              </>
-            ) : (
-              <Loading color="#db71af" />
-            )}
-          </StepContent>
+          {currentStep.isLoaded ? (
+            <StepContent>
+              {outcomes.length ? (
+                <>
+                  <Outcomes
+                    {...showTooltips}
+                    selectedOutcomes={Object.keys(connections || {})}
+                  />
+                  <Suboutcomes
+                    {...{ showTooltips, showFineTune }}
+                    selectedSuboutcomes={Object.values(
+                      connections || {},
+                    ).reduce(
+                      (acc: string[], curr) => [...acc, ...Object.keys(curr)],
+                      [],
+                    )}
+                  />
+                  <Nutraceuticals />
+                </>
+              ) : (
+                <Loading color="#db71af" />
+              )}
+            </StepContent>
+          ) : (
+            <Loading color="#db71af" />
+          )}
         </SankeyProvider>
       )}
     </Container>

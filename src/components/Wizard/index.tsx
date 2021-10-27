@@ -44,18 +44,23 @@ const Wizard: React.FC = () => {
   const context = useApp();
   const {
     labels,
+    steps,
     updateExcludes,
     updateUserQuery,
     updateOutcomes,
     updateSuboutcomes,
     updateConnections,
+    updateStep,
   } = context;
 
   const previousStep = { isCompleted: true };
+  const { step1: currentStep, step2: nextStep } = steps;
 
   const handleSubmit = useCallback(
     async (data: HTMLFormElement) => {
       const { age, gender, diet, allergies, med, decease } = data;
+
+      updateStep('step2', { ...nextStep, isLoaded: false });
 
       const requestData: RequestData[] = [
         { question: 'age', answer: age },
@@ -73,6 +78,8 @@ const Wizard: React.FC = () => {
 
       if (!isCompleted) return;
 
+      updateStep('step1', { ...currentStep, isCompleted: true });
+
       try {
         formRef.current?.setErrors({});
 
@@ -86,6 +93,8 @@ const Wizard: React.FC = () => {
 
         const response = await createUserQuery(requestData);
         const { uuid, outcomes, suboutcomes, excludes } = response.content;
+
+        updateStep('step2', { ...nextStep, isLoaded: true });
 
         updateUserQuery(uuid);
         updateExcludes(excludes);
@@ -101,7 +110,10 @@ const Wizard: React.FC = () => {
       }
     },
     [
+      currentStep,
+      nextStep,
       updateUserQuery,
+      updateStep,
       updateExcludes,
       updateOutcomes,
       updateSuboutcomes,

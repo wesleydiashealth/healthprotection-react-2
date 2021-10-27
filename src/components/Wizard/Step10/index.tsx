@@ -1,7 +1,8 @@
-import React, { useContext } from 'react';
+import React, { useContext, useRef } from 'react';
 import { IoOptionsOutline } from 'react-icons/io5';
 import { AiOutlineStop } from 'react-icons/ai';
 import { CarouselContext } from 'pure-react-carousel';
+import { FormHandles } from '@unform/core';
 
 import { useApp } from 'contexts/app';
 import { useWizard } from 'contexts/wizard';
@@ -14,8 +15,12 @@ import Container, {
 } from './styles';
 
 const Step10: React.FC = () => {
+  const formRef = useRef<FormHandles>(null);
+
   const appContext = useApp();
-  const { suboutcomes, updateStep } = appContext;
+  const { steps: appSteps, suboutcomes, updateStep } = appContext;
+
+  const { step1: currentStep } = appSteps;
 
   const wizardContext = useWizard();
   const { steps, resetSteps } = wizardContext;
@@ -72,6 +77,7 @@ const Step10: React.FC = () => {
           background="#707070"
           onClick={() => {
             resetSteps();
+            updateStep('step1', { ...currentStep, isCompleted: false });
             setStoreState({ currentSlide: 0 });
           }}
         >
@@ -80,7 +86,7 @@ const Step10: React.FC = () => {
         <Button
           href="#step_2"
           onClick={() => {
-            updateStep('step1', { isCompleted: true });
+            formRef.current?.submitForm();
           }}
           isDisabled={!!excludeStep?.length}
         >
