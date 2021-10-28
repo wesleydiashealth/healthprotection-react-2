@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactHtmlParser from 'react-html-parser';
 import { FaToggleOn } from 'react-icons/fa';
 
 import { useApp } from 'contexts/app';
@@ -13,16 +14,16 @@ interface SuboutcomesData {
 
 const Suboutcomes: React.FC<SuboutcomesData> = ({ selectedSuboutcomes }) => {
   const appContext = useApp();
-  const { outcomes, suboutcomes, connections } = appContext;
+  const { labels, outcomes, suboutcomes, connections } = appContext;
 
   return (
     <Container>
       <ContainerLabel>
-        <strong>Fine-tune your chosen sub-outcomes</strong>
+        <strong>{labels.step_2_suboutcomes_title}</strong>
 
         <span>
-          <FaToggleOn /> The range on the min-med-max selector refletcs the
-          efficiency of the nutraceutical(s) on the condition.
+          <FaToggleOn />{' '}
+          {ReactHtmlParser(labels.step_2_suboutcomes_description)}
         </span>
       </ContainerLabel>
       {Object.values(connections).map(subConnections =>
@@ -52,25 +53,6 @@ const Suboutcomes: React.FC<SuboutcomesData> = ({ selectedSuboutcomes }) => {
             );
           }),
       )}
-      {/* {suboutcomes
-        .filter(suboutcome =>
-          selectedSuboutcomes?.length
-            ? selectedSuboutcomes.includes(suboutcome.id)
-            : true,
-        )
-        .map(suboutcome => {
-          const outcomeColor = Object.values(outcomes).find(outcome =>
-            outcome.suboutcomes.includes(suboutcome.id),
-          )?.color;
-
-          return (
-            <Suboutcome
-              key={suboutcome.id}
-              {...suboutcome}
-              color={outcomeColor || '#565656'}
-            />
-          );
-        })} */}
     </Container>
   );
 };

@@ -21,7 +21,7 @@ import {
 
 const Step3: React.FC = () => {
   const appContext = useApp();
-  const { answers, updateAnswers } = appContext;
+  const { labels, answers, updateAnswers } = appContext;
 
   const wizardContext = useWizard();
   const { steps, questions, updateStep } = wizardContext;
@@ -142,13 +142,13 @@ const Step3: React.FC = () => {
           color="#1BC9BD"
         />
       )}
-      <QuestionPrefix>Question 3/{wizardSteps}</QuestionPrefix>
+      <QuestionPrefix>{`${labels.step_1_question} 3/${wizardSteps}`}</QuestionPrefix>
       <QuestionTitle>{currentQuestion?.label}</QuestionTitle>
       <QuestionSuffix
         data-tip={`<strong>${currentQuestion?.label}</strong><span>${currentQuestion?.description}</span>`}
         data-for="step_3_tooltip"
       >
-        Why are we asking?
+        {labels.step_1_question_tooltip}
       </QuestionSuffix>
       {/* <HiQuestionMarkCircle
         className="tooltip-icon"
@@ -201,7 +201,7 @@ const Step3: React.FC = () => {
             setStoreState({ currentSlide: 3 });
           }}
         >
-          Next Question
+          {labels.step_1_next_question}
         </button>
       )}
     </StepContainer>

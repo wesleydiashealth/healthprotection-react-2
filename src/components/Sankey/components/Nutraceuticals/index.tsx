@@ -1,4 +1,5 @@
 import React from 'react';
+import regexifyString from 'regexify-string';
 
 import { useApp } from 'contexts/app';
 
@@ -9,14 +10,19 @@ import Container, { ContainerLabel } from './styles';
 
 const Nutraceuticals: React.FC = () => {
   const appContext = useApp();
-  const { connections, nutraceuticals, selectedNutraceuticals } = appContext;
+  const { labels, connections, nutraceuticals, selectedNutraceuticals } =
+    appContext;
+
+  const nutraceuticalsLabel = regexifyString({
+    pattern: /%s/,
+    decorator: () => <NutritionInfoIcon />,
+    input: labels.step_2_nutraceuticals,
+  });
 
   return (
     <Container isActive={!!selectedNutraceuticals.length}>
       {!!selectedNutraceuticals.length && (
-        <ContainerLabel>
-          Click on <NutritionInfoIcon /> for Scientific foundation
-        </ContainerLabel>
+        <ContainerLabel>{nutraceuticalsLabel}</ContainerLabel>
       )}
 
       {Array.from(
@@ -45,20 +51,6 @@ const Nutraceuticals: React.FC = () => {
           )
         );
       })}
-
-      {/* {selectedNutraceuticals.map(selectedNutraceutical => {
-        const nutraceutical = nutraceuticals.find(
-          item => item.slug === selectedNutraceutical,
-        );
-
-        return (
-          nutraceutical && (
-            <Nutraceutical key={nutraceutical.slug} {...nutraceutical}>
-              {nutraceutical.title}
-            </Nutraceutical>
-          )
-        );
-      })} */}
     </Container>
   );
 };

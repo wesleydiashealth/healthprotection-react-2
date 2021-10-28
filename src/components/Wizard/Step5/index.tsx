@@ -32,7 +32,7 @@ interface MedicationData {
 
 const Step5: React.FC = () => {
   const appContext = useApp();
-  const { answers, updateAnswers } = appContext;
+  const { labels, answers, updateAnswers } = appContext;
 
   const wizardContext = useWizard();
   const { steps, questions, updateStep } = wizardContext;
@@ -247,7 +247,7 @@ const Step5: React.FC = () => {
         />
       )}
       <QuestionPrefix>
-        Question {stepNumber}/{wizardSteps}
+        {`${labels.step_1_question} ${stepNumber}/${wizardSteps}`}
         {(step.isCompleted || !!step.answers.length) && (
           <FaUndoAlt
             size={16}
@@ -280,7 +280,7 @@ const Step5: React.FC = () => {
         data-tip={`<strong>${currentQuestion?.label}</strong><span>${currentQuestion?.description}</span>`}
         data-for="step_5_tooltip"
       >
-        Why are we asking?
+        {labels.step_1_question_tooltip}
       </QuestionSuffix>
       {/* <HiQuestionMarkCircle
         className="tooltip-icon"
@@ -344,7 +344,7 @@ const Step5: React.FC = () => {
             renderInput={params => (
               <TextField
                 {...params}
-                label="Daily Use"
+                label={labels.step_1_daily_use}
                 variant="standard"
                 InputProps={{
                   ...params.InputProps,
@@ -392,7 +392,7 @@ const Step5: React.FC = () => {
             renderInput={params => (
               <TextField
                 {...params}
-                label="Occasionally Use"
+                label={labels.step_1_occasionally_use}
                 variant="standard"
                 InputProps={{
                   ...params.InputProps,
@@ -421,7 +421,7 @@ const Step5: React.FC = () => {
                 carouselContext.setStoreState({ currentSlide: 5 });
               }}
             >
-              Next Question
+              {labels.step_1_next_question}
             </button>
           )}
         </>

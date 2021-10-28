@@ -26,7 +26,7 @@ interface NutraceuticalData {
 
 const Step7: React.FC = () => {
   const appContext = useApp();
-  const { answers, nutraceuticals, updateAnswers } = appContext;
+  const { labels, answers, nutraceuticals, updateAnswers } = appContext;
 
   const context = useWizard();
   const { steps, questions, updateStep } = context;
@@ -286,7 +286,7 @@ const Step7: React.FC = () => {
               <TextField
                 {...params}
                 variant="standard"
-                label="Daily Use"
+                label={labels.step_1_daily_use}
                 placeholder="Type your medications"
               />
             )}
@@ -310,7 +310,7 @@ const Step7: React.FC = () => {
               <TextField
                 {...params}
                 variant="standard"
-                label="Occasionally Use"
+                label={labels.step_1_occasionally_use}
                 placeholder="Type your medications"
               />
             )}
@@ -328,7 +328,7 @@ const Step7: React.FC = () => {
                 setStoreState({ currentSlide: 6 });
               }}
             >
-              Next Question
+              {labels.step_1_next_question}
             </button>
           )}
         </>

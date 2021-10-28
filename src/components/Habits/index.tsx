@@ -3,6 +3,7 @@ import ReactToolTip from 'react-tooltip';
 import { HiQuestionMarkCircle, HiLockClosed } from 'react-icons/hi';
 import { GiForkKnifeSpoon } from 'react-icons/gi';
 import 'react-dropdown/style.css';
+import ReactHtmlParser from 'react-html-parser';
 
 import { useApp } from 'contexts/app';
 import Loading from 'components/Loading';
@@ -21,8 +22,14 @@ import Container, {
 
 const Habits: React.FC = () => {
   const context = useApp();
-  const { steps, nutraceuticals, selectedNutraceuticals, foods, error } =
-    context;
+  const {
+    labels,
+    steps,
+    nutraceuticals,
+    selectedNutraceuticals,
+    foods,
+    error,
+  } = context;
   const { step1: initialStep, step2: previousStep, step3: currentStep } = steps;
 
   const isActive = previousStep.isCompleted && initialStep.isCompleted;
@@ -63,18 +70,24 @@ const Habits: React.FC = () => {
     invalidNutraceuticalsSeparator,
   );
 
+  const invalidNutraceuticalsText =
+    invalidNutraceuticalsString.slice(0, lastComma) +
+    invalidNutraceuticalsString
+      .slice(lastComma)
+      .replace(invalidNutraceuticalsSeparator, ' and');
+
   return (
     <Container id="step_3" isActive={isActive}>
       <StepIntro>
         <GiForkKnifeSpoon size={52} color={isActive ? '#1bc9bd' : '#565656'} />
         <StepTitle>
           {!isActive && <HiLockClosed size={20} />}
-          Step 3
+          {labels.step_3_title}
           <HiQuestionMarkCircle
             className="tooltip-icon"
             size={20}
             color={isActive ? '#1bc9bd' : '#565656'}
-            data-tip="<strong>Step 2</strong><span>We already made a pre-selection...</span>"
+            data-tip={`<strong>${labels.step_3_title}</strong><span>${labels.step_3_tooltip}</span>`}
             data-for="habits-title-tooltip"
           />
           <ReactToolTip
@@ -91,19 +104,25 @@ const Habits: React.FC = () => {
 
         {!isActive && (
           <div className="step-disabled">
-            <strong>Step Blocked.</strong>{' '}
-            <span>Finish Step 2 to proceed.</span>
+            <strong>{labels.step_3_disabled.split('.')[0]}</strong>.
+            {labels.step_3_disabled.substr(
+              labels.step_3_disabled.indexOf('.') + 1,
+            )}
           </div>
         )}
 
         <StepDescription>
-          <strong>Fine-tune</strong> by adjusting your food habits
+          <strong>{labels.step_3_description.split(' ')[0]}</strong>{' '}
+          {labels.step_3_description.substr(
+            labels.step_3_description.indexOf(' ') + 1,
+          )}
         </StepDescription>
       </StepIntro>
       <ContainerAlert severity="info">
-        <ContainerAlertTitle>Download our App</ContainerAlertTitle>
-        Help us to train our app for food recognition with artificial
-        intelligence
+        <ContainerAlertTitle>
+          {labels.step_3_notification_title}
+        </ContainerAlertTitle>
+        {labels.step_3_notification_description}
       </ContainerAlert>
 
       {isActive && (
@@ -121,16 +140,19 @@ const Habits: React.FC = () => {
               </HabitsContainer>
               {!!invalidNutraceuticals.length && (
                 <HabitInvalidNutraceuticals>
-                  For{' '}
-                  <strong>
-                    {invalidNutraceuticalsString.slice(0, lastComma) +
-                      invalidNutraceuticalsString
-                        .slice(lastComma)
-                        .replace(invalidNutraceuticalsSeparator, ' and')}
-                  </strong>{' '}
-                  there {invalidNutraceuticals.length > 1 ? 'are' : 'is'} no
-                  adjustments to be made. See below for your list of
-                  nutraceuticals.
+                  {invalidNutraceuticals.length > 1
+                    ? ReactHtmlParser(
+                        labels.step_3_invalid_nutraceuticals_plural.replace(
+                          '%s',
+                          `<strong>${invalidNutraceuticalsText}</strong>`,
+                        ),
+                      )
+                    : ReactHtmlParser(
+                        labels.step_3_invalid_nutraceuticals_singular.replace(
+                          '%s',
+                          `<strong>${invalidNutraceuticalsText}</strong>`,
+                        ),
+                      )}
                 </HabitInvalidNutraceuticals>
               )}
             </>

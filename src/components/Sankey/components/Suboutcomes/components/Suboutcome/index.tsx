@@ -38,6 +38,7 @@ const Suboutcome: React.FC<SuboutcomeProps> = ({
 }) => {
   const appContext = useApp();
   const {
+    labels,
     userQuery,
     steps,
     fineTune,
@@ -220,7 +221,7 @@ const Suboutcome: React.FC<SuboutcomeProps> = ({
             updateFineTune({ ...fineTune, [id]: 'off' });
           }}
         >
-          Off
+          {labels.step_2_off}
         </FineTune>
         {Object.entries(nutraceuticals).map(({ 0: key, 1: value }) => {
           return (
@@ -237,7 +238,7 @@ const Suboutcome: React.FC<SuboutcomeProps> = ({
                   }
                 }}
               >
-                {key.charAt(0).toUpperCase() + key.slice(1)}
+                {labels[`step_2_${key}`]}
               </FineTune>
             )
           );

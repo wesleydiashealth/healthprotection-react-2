@@ -25,7 +25,7 @@ interface MedicationData {
 
 const Step6: React.FC = () => {
   const appContext = useApp();
-  const { answers, updateAnswers } = appContext;
+  const { labels, answers, updateAnswers } = appContext;
 
   const wizardContext = useWizard();
   const { steps, questions, updateStep } = wizardContext;
@@ -279,7 +279,7 @@ const Step6: React.FC = () => {
               <TextField
                 {...params}
                 variant="standard"
-                label="Daily Use"
+                label={labels.step_1_daily_use}
                 placeholder="Type your medications"
               />
             )}
@@ -303,7 +303,7 @@ const Step6: React.FC = () => {
               <TextField
                 {...params}
                 variant="standard"
-                label="Occasionally Use"
+                label={labels.step_1_occasionally_use}
                 placeholder="Type your medications"
               />
             )}
@@ -321,7 +321,7 @@ const Step6: React.FC = () => {
                 setStoreState({ currentSlide: 6 });
               }}
             >
-              Next Question
+              {labels.step_1_next_question}
             </button>
           )}
         </>

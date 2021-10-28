@@ -41,7 +41,7 @@ function getYears(startYear = 1901) {
 
 const Step1: React.FC = () => {
   const appContext = useApp();
-  const { answers, updateAnswers } = appContext;
+  const { labels, answers, updateAnswers } = appContext;
 
   const wizardContext = useWizard();
   const { steps, questions, updateStep } = wizardContext;
@@ -145,13 +145,15 @@ const Step1: React.FC = () => {
           color="#1BC9BD"
         />
       )}
-      <QuestionPrefix>Question 1/{wizardSteps}</QuestionPrefix>
+      <QuestionPrefix>
+        {`${labels.step_1_question} 1/${wizardSteps}`}
+      </QuestionPrefix>
       <QuestionTitle>{currentQuestion?.label}</QuestionTitle>
       <QuestionSuffix
         data-tip={`<strong>${currentQuestion?.label}</strong><span>${currentQuestion?.description}</span>`}
         data-for="step_1_tooltip"
       >
-        Why are we asking?
+        {labels.step_1_question_tooltip}
       </QuestionSuffix>
       {/* <HiQuestionMarkCircle
         className="tooltip-icon"
@@ -176,7 +178,7 @@ const Step1: React.FC = () => {
         id="birth_month"
         className="select-input"
         options={months}
-        placeholder="Select your birth month"
+        placeholder={labels.step_1_birth_month}
         onChange={event => {
           handleMonthInput(event?.value);
         }}
@@ -186,7 +188,7 @@ const Step1: React.FC = () => {
         id="birth_year"
         className="select-input"
         options={years}
-        placeholder="Select your birth year"
+        placeholder={labels.step_1_birth_year}
         isDisabled={!birthMonth}
         onChange={event => {
           handleYearInput(event?.value);

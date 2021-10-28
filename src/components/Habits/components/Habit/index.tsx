@@ -35,7 +35,7 @@ const Habit: React.FC<FoodData> = food => {
   } = food;
 
   const context = useApp();
-  const { habits, selectedNutraceuticals, updateHabits } = context;
+  const { labels, habits, selectedNutraceuticals, updateHabits } = context;
 
   const nutraceuticalsInteractions = interactions.filter(interaction => {
     return selectedNutraceuticals.includes(interaction.nutraceuticalSlug);
@@ -111,10 +111,12 @@ const Habit: React.FC<FoodData> = food => {
           />
         </Title>
 
-        <Question>{`How many ${unit} do you consume per week?`}</Question>
+        <Question>{labels.step_3_question.replace('%s', unit)}</Question>
         <Dosages>{dosages}</Dosages>
         <Nutraceuticals>
-          <NutraceuticalsLabel>This food interacts with:</NutraceuticalsLabel>
+          <NutraceuticalsLabel>
+            {labels.step_3_interactions}
+          </NutraceuticalsLabel>
 
           {nutraceuticalsInteractions.map(nutraceuticalsInteraction => (
             <Nutraceutical key={nutraceuticalsInteraction.nutraceuticalSlug}>
@@ -125,7 +127,7 @@ const Habit: React.FC<FoodData> = food => {
         <Dropdown
           options={intakeFrequency}
           value={intakeFrequency[0]}
-          placeholder="Select an option"
+          placeholder={labels.step_3_answer}
           onChange={({ label: frequency }) => handleHabitInput(food, frequency)}
         />
       </Content>

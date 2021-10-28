@@ -3,12 +3,16 @@ import ReactToolTip from 'react-tooltip';
 import { HiQuestionMarkCircle, HiOutlineCheckCircle } from 'react-icons/hi';
 import { CarouselContext } from 'pure-react-carousel';
 
+import { useApp } from 'contexts/app';
 import { useWizard } from 'contexts/wizard';
 import Button from 'components/Button';
 
 import { StepContainer } from '../styles';
 
 const Step8: React.FC = () => {
+  const appContext = useApp();
+  const { labels } = appContext;
+
   const context = useWizard();
   const { steps, questions } = context;
   const { step8: step, step8_1: subStep, step7: previousStep } = steps;
@@ -105,7 +109,7 @@ const Step8: React.FC = () => {
               carouselContext.setStoreState({ currentSlide: 8 });
             }}
           >
-            Next Question
+            {labels.step_1_next_question}
           </button>
           <strong className="step-8-logos-title">
             You can import your DNA Data from:

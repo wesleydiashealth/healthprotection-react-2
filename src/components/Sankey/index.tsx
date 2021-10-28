@@ -71,8 +71,10 @@ const Sankey: React.FC<SankeyProps> = ({
         </StepTitle>
         {!previousStep.isCompleted && (
           <div className="step-disabled">
-            <strong>Step Blocked.</strong>{' '}
-            <span>Finish Step 1 to proceed.</span>
+            <strong>{labels.step_2_disabled.split('.')[0]}</strong>.
+            {labels.step_2_disabled.substr(
+              labels.step_2_disabled.indexOf('.') + 1,
+            )}
           </div>
         )}
         <StepDescription>

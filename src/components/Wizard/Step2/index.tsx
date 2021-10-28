@@ -21,7 +21,7 @@ import {
 
 const Step2: React.FC = () => {
   const appContext = useApp();
-  const { answers, updateAnswers } = appContext;
+  const { labels, answers, updateAnswers } = appContext;
 
   const wizardContext = useWizard();
   const { steps, questions, updateStep } = wizardContext;
@@ -153,7 +153,7 @@ const Step2: React.FC = () => {
         />
       )}
       <QuestionPrefix>
-        Question {stepNumber}/{wizardSteps}
+        {`${labels.step_1_question} ${stepNumber}/${wizardSteps}`}
         {(step.isCompleted || !!step.answers.length) && (
           <FaUndoAlt
             size={16}
@@ -181,7 +181,7 @@ const Step2: React.FC = () => {
         data-tip={`<strong>${currentQuestion?.label}</strong><span>${currentQuestion?.description}</span>`}
         data-for="step_2_tooltip"
       >
-        Why are we asking?
+        {labels.step_1_question_tooltip}
       </QuestionSuffix>
       {/* <HiQuestionMarkCircle
         className="tooltip-icon"

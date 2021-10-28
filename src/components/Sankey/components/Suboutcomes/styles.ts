@@ -22,6 +22,10 @@ export const ContainerLabel = styled.div`
   font-family: 'Open Sans', sans-serif;
   text-align: center;
 
+  p {
+    display: inline;
+  }
+
   strong {
     display: block;
 

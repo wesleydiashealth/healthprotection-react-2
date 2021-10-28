@@ -3,13 +3,14 @@ import { IoOptionsOutline } from 'react-icons/io5';
 import { AiOutlineStop } from 'react-icons/ai';
 import { CarouselContext } from 'pure-react-carousel';
 import { FormHandles } from '@unform/core';
+import ReactHtmlParser from 'react-html-parser';
 
 import { useApp } from 'contexts/app';
 import { useWizard } from 'contexts/wizard';
 import Container, {
   Title,
   Description,
-  Instruction,
+  // Instruction,
   Buttons,
   Button,
 } from './styles';
@@ -18,7 +19,7 @@ const Step10: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
 
   const appContext = useApp();
-  const { steps: appSteps, suboutcomes, updateStep } = appContext;
+  const { labels, steps: appSteps, suboutcomes, updateStep } = appContext;
 
   const { step1: currentStep } = appSteps;
 
@@ -62,14 +63,18 @@ const Step10: React.FC = () => {
       ) : (
         <>
           <IoOptionsOutline size={52} color="#DB71AF" />
-          <Title>Well done, now it&apos;s time to fine-tune your goals</Title>
+          <Title>{labels.step_1_complete_title}</Title>
           <Description>
-            Based on your answers we&apos;ve filtered{' '}
-            <strong>{`more than 100 nutraceuticals to just ${queryNutraceuticals.length}`}</strong>
+            {ReactHtmlParser(
+              labels.step_1_complete_text.replace(
+                '%i',
+                queryNutraceuticals.length.toString(),
+              ),
+            )}
           </Description>
-          <Instruction>
+          {/* <Instruction>
             Go safely to the Step 2 100% risks free based on your answers.
-          </Instruction>
+          </Instruction> */}
         </>
       )}
       <Buttons>
@@ -81,7 +86,7 @@ const Step10: React.FC = () => {
             setStoreState({ currentSlide: 0 });
           }}
         >
-          Reset
+          {labels.step_1_reset}
         </Button>
         <Button
           href="#step_2"
@@ -90,7 +95,7 @@ const Step10: React.FC = () => {
           }}
           isDisabled={!!excludeStep?.length}
         >
-          Go to Step 2
+          {labels.step_1_advance}
         </Button>
       </Buttons>
     </Container>

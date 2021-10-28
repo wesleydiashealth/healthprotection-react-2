@@ -50,8 +50,10 @@ const Cart: React.FC = () => {
         </StepTitle>
         {!isActive && (
           <div className="step-disabled">
-            <strong>Step Blocked.</strong>{' '}
-            <span>Finish Step 2 to proceed.</span>
+            <strong>{labels.step_3_disabled.split('.')[0]}</strong>.
+            {labels.step_3_disabled.substr(
+              labels.step_3_disabled.indexOf('.') + 1,
+            )}
           </div>
         )}
         <StepDescription>{labels.cart_description}</StepDescription>

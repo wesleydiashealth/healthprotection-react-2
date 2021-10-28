@@ -12,11 +12,11 @@ interface OutcomesData {
 
 const Outcomes: React.FC<OutcomesData> = ({ selectedOutcomes }) => {
   const appContext = useApp();
-  const { outcomes, connections } = appContext;
+  const { labels, outcomes, connections } = appContext;
 
   return (
     <Container>
-      <ContainerLabel>Filtered Outcomes</ContainerLabel>
+      <ContainerLabel>{labels.step_2_outcomes}</ContainerLabel>
       {Object.entries(connections)
         .filter(({ 0: connection }) =>
           selectedOutcomes?.length
@@ -34,15 +34,6 @@ const Outcomes: React.FC<OutcomesData> = ({ selectedOutcomes }) => {
             )
           );
         })}
-      {/* {outcomes
-        .filter(outcome =>
-          selectedOutcomes?.length
-            ? selectedOutcomes.includes(outcome.id)
-            : true,
-        )
-        .map(outcome => {
-          return <Outcome key={outcome.id} {...outcome} />;
-        })} */}
     </Container>
   );
 };
