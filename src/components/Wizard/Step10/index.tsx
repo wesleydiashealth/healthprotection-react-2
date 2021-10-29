@@ -65,12 +65,13 @@ const Step10: React.FC = () => {
           <IoOptionsOutline size={52} color="#DB71AF" />
           <Title>{labels.step_1_complete_title}</Title>
           <Description>
-            {ReactHtmlParser(
-              labels.step_1_complete_text.replace(
-                '%i',
-                queryNutraceuticals.length.toString(),
-              ),
-            )}
+            {labels.step_1_complete_text &&
+              ReactHtmlParser(
+                labels.step_1_complete_text.replace(
+                  '%i',
+                  queryNutraceuticals.length.toString(),
+                ),
+              )}
           </Description>
           {/* <Instruction>
             Go safely to the Step 2 100% risks free based on your answers.
