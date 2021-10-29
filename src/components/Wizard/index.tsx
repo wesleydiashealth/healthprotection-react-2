@@ -130,11 +130,16 @@ const Wizard: React.FC = () => {
         />
         <StepTitle>
           {!previousStep.isCompleted && <HiLockClosed size={20} />}
-          {labels.step_1_title}
+          {labels?.step_1_title || 'Step 1'}
           <HiQuestionMarkCircle
             size={20}
             color={previousStep.isCompleted ? '#7664C8' : '#565656'}
-            data-tip={`<strong>${labels.step_1_title}</strong><span>${labels.step_1_tooltip}</span>`}
+            data-tip={`<strong>${
+              labels?.step_1_title || 'Step 1'
+            }</strong><span>${
+              labels?.step_1_tooltip ||
+              'We have made a pre-selection of questions that will help filter the nutraceuticals that your body needs. Answer truthfully for a safe indication.'
+            }</span>`}
             data-for="wizard-title-tooltip"
           />
           <ReactToolTip
@@ -147,11 +152,8 @@ const Wizard: React.FC = () => {
             backgroundColor="#fff"
           />
         </StepTitle>
-        {!previousStep.isCompleted && (
-          <div className="step-disabled">Step Blocked.</div>
-        )}
         <StepDescription>
-          <strong>{labels.step_1_description.split(' ')[0]}</strong>{' '}
+          <strong>{labels?.step_1_description.split(' ')[0]}</strong>{' '}
           {labels.step_1_description.substr(
             labels.step_1_description.indexOf(' ') + 1,
           )}

@@ -16,7 +16,7 @@ import Container, {
 
 const Products: React.FC = () => {
   const context = useApp();
-  const { nutraceuticals, selectedNutraceuticals } = context;
+  const { labels, nutraceuticals, selectedNutraceuticals } = context;
 
   return (
     <Container>
@@ -55,7 +55,7 @@ const Products: React.FC = () => {
               target="_blank"
               rel="noreferrer"
             >
-              Science-based information
+              {labels?.cart_science}
             </ProductInfo>
             <ProductPrice>
               {!!currentProduct?.info.productPrice && (

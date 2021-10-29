@@ -111,7 +111,11 @@ const Report: React.FC = () => {
             </PopupContent>
           </Popup>
         </label>
-        <input type="submit" value="View report" disabled={!userConsent} />
+        <input
+          type="submit"
+          value={labels?.newsletter_button}
+          disabled={!userConsent}
+        />
         {/* <PDFDownloadLink
           document={
             <ReportDocument

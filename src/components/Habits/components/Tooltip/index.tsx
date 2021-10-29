@@ -2,6 +2,8 @@ import React from 'react';
 
 import InteractionData from 'dtos/InteractionData';
 
+import { useApp } from 'contexts/app';
+
 import Container, {
   ContainerTitle,
   ContainerDosage,
@@ -27,13 +29,20 @@ const Tooltip: React.FC<TooltipProps> = ({
   interactions,
   dataSource,
 }) => {
+  const context = useApp();
+  const { labels } = context;
+
   return (
     <Container>
       <ContainerTitle>{title}</ContainerTitle>
       <ContainerDosage>{dosages}</ContainerDosage>
       <ContainerInteractions>
         <ContainerInteractionsLabel>
-          {`The follow table considers 100 grams of ${title.toLowerCase()}:`}
+          {labels?.step_3_food_table
+            ? labels.step_3_food_table
+                .replace('%i', '100')
+                .replace('%s', title.toLowerCase())
+            : `The follow table considers 100 grams of ${title.toLowerCase()}:`}
         </ContainerInteractionsLabel>
         {interactions?.map(interaction => (
           <ContainerInteractionsItem key={interaction.nutraceuticalSlug}>
