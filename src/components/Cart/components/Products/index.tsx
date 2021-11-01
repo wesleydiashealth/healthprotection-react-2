@@ -10,18 +10,22 @@ import Container, {
   ProductContentTitle,
   // ProductContentTitleLink,
   ProductContentDosage,
-  // ProductInfo,
+  ProductInfo,
   ProductPrice,
   ProductBuy,
 } from './styles';
 
 const Products: React.FC = () => {
   const context = useApp();
-  const { products } = context;
+  const { nutraceuticals, products, labels } = context;
 
   return (
     <Container>
       {products.map(product => {
+        const productNutraceutical = nutraceuticals.find(
+          nutraceutical => nutraceutical.slug === product.nutraceutical,
+        );
+
         return (
           <Product key={product.name}>
             {/* <ProductImage
@@ -40,13 +44,15 @@ const Products: React.FC = () => {
                 {`${product.dosageCapsule}mg (${product.capsules} capsules) - ${product.brand}`}
               </ProductContentDosage>
             </ProductContent>
-            {/* <ProductInfo
-              href={product?.info.link}
-              target="_blank"
-              rel="noreferrer"
-            >
-              {labels?.cart_science}
-            </ProductInfo> */}
+            {productNutraceutical?.info.link && (
+              <ProductInfo
+                href={productNutraceutical?.info.link}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {labels?.cart_science}
+              </ProductInfo>
+            )}
             <ProductPrice>
               {!!product.price && (
                 <>
