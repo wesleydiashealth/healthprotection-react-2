@@ -7,7 +7,7 @@ export const Product = styled.div`
   align-items: center;
 
   & ~ div {
-    margin-top: 20px;
+    margin-top: 40px;
   }
 `;
 
@@ -43,6 +43,26 @@ export const ProductInfo = styled.a`
 
 export const ProductPrice = styled.span`
   min-width: 60px;
+`;
+
+export const ProductBuy = styled.a`
+  margin-left: 20px;
+  border: none;
+  border-radius: 32px;
+  padding: 8px 16px;
+
+  cursor: pointer;
+
+  font-weight: 700;
+  color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  background: #ffae30;
+
+  &:hover {
+    opacity: 0.7;
+  }
 `;
 
 export default Container;

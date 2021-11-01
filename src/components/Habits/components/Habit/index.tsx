@@ -8,6 +8,7 @@ import { useApp } from 'contexts/app';
 
 import HabitData from 'dtos/HabitData';
 import FoodData from 'dtos/FoodData';
+import ProductData from 'dtos/ProductData';
 
 import Tooltip from '../Tooltip';
 
@@ -35,7 +36,15 @@ const Habit: React.FC<FoodData> = food => {
   } = food;
 
   const context = useApp();
-  const { labels, habits, selectedNutraceuticals, updateHabits } = context;
+  const {
+    labels,
+    habits,
+    nutraceuticals,
+    selectedNutraceuticals,
+    products,
+    updateHabits,
+    updateProducts,
+  } = context;
 
   const nutraceuticalsInteractions = interactions.filter(interaction => {
     return selectedNutraceuticals.includes(interaction.nutraceuticalSlug);
@@ -46,7 +55,7 @@ const Habit: React.FC<FoodData> = food => {
   });
 
   const handleHabitInput = useCallback(
-    (selectedFood, frequency) => {
+    (selectedFood: FoodData, frequency) => {
       const updatedHabits: HabitData[] = [...habits];
 
       const habitIndex = habits.findIndex(habit => habit.food === food.title);
@@ -56,7 +65,7 @@ const Habit: React.FC<FoodData> = food => {
           food: selectedFood.title,
           unit: selectedFood.unit,
           icon: selectedFood.icon,
-          frequency,
+          frequency: frequency.label,
         };
 
         updateHabits(updatedHabits);
@@ -67,12 +76,70 @@ const Habit: React.FC<FoodData> = food => {
             food: selectedFood.title,
             unit: selectedFood.unit,
             icon: selectedFood.icon,
-            frequency,
+            frequency: frequency.label,
           },
         ]);
       }
+
+      const interactionProducts = selectedFood.interactions
+        .filter(interaction =>
+          selectedNutraceuticals.includes(interaction.nutraceuticalSlug),
+        )
+        .reduce((accProducts: ProductData[], interaction) => {
+          const updatedProducts = products.filter(
+            product => product.nutraceutical !== interaction.nutraceuticalSlug,
+          );
+
+          const interactionDosage =
+            interaction.dosagesGroup.find(
+              dosageGroup => dosageGroup.dosageFrequency === frequency.value,
+            )?.dosageAmount || 0;
+
+          const interactionNutraceutical = nutraceuticals.find(
+            nutraceutical => nutraceutical.title === interaction.nutraceutical,
+          );
+
+          if (!interactionNutraceutical) return updatedProducts;
+
+          const nutraceuticalDosage =
+            interactionNutraceutical?.info.dosage || 0;
+
+          const belowAverage = nutraceuticalDosage / 2 > interactionDosage;
+          const nutraceuticalProduct = belowAverage
+            ? interactionNutraceutical.info.product1
+            : interactionNutraceutical.info.product2;
+
+          const selectedProduct = {
+            name: nutraceuticalProduct.productName,
+            nutraceutical: interaction.nutraceuticalSlug,
+            image: nutraceuticalProduct.productImage,
+            link: nutraceuticalProduct.productLink,
+            brand: nutraceuticalProduct.productBrand,
+            dosageCapsule: nutraceuticalProduct.productDosageCapsule,
+            capsules: nutraceuticalProduct.productCapsules,
+            price: nutraceuticalProduct.productPrice,
+          };
+
+          const productExists = !!products.filter(
+            product => product.name === selectedProduct.name,
+          ).length;
+
+          return productExists
+            ? updatedProducts
+            : [...updatedProducts, selectedProduct];
+        }, []);
+
+      updateProducts(interactionProducts);
     },
-    [food, habits, updateHabits],
+    [
+      food,
+      habits,
+      nutraceuticals,
+      products,
+      selectedNutraceuticals,
+      updateHabits,
+      updateProducts,
+    ],
   );
 
   return (
@@ -128,7 +195,12 @@ const Habit: React.FC<FoodData> = food => {
           options={intakeFrequency}
           value={intakeFrequency[0]}
           placeholder={labels.step_3_answer}
-          onChange={({ label: frequency }) => handleHabitInput(food, frequency)}
+          onChange={({ value: frequencyValue, label: frequencyLabel }) =>
+            handleHabitInput(food, {
+              value: frequencyValue,
+              label: frequencyLabel,
+            })
+          }
         />
       </Content>
     </Container>

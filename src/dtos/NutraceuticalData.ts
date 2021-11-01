@@ -7,11 +7,29 @@ export default interface NutraceuticalData {
   info: {
     slug: string;
     title: string;
+    dosage: number;
+    dosageUnit: string;
     link: string;
     description: string;
     relations: RelationData[];
     studies: number;
-    productLink: string;
-    productPrice: number;
+    product1: {
+      productName: string;
+      productImage: string;
+      productLink: string;
+      productBrand: string;
+      productDosageCapsule: number;
+      productCapsules: number;
+      productPrice: number;
+    };
+    product2: {
+      productName: string;
+      productImage: string;
+      productLink: string;
+      productBrand: string;
+      productDosageCapsule: number;
+      productCapsules: number;
+      productPrice: number;
+    };
   };
 }

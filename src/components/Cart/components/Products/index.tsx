@@ -8,65 +8,62 @@ import Container, {
   ProductImage,
   ProductContent,
   ProductContentTitle,
-  ProductContentTitleLink,
+  // ProductContentTitleLink,
   ProductContentDosage,
-  ProductInfo,
+  // ProductInfo,
   ProductPrice,
+  ProductBuy,
 } from './styles';
 
 const Products: React.FC = () => {
   const context = useApp();
-  const { labels, nutraceuticals, selectedNutraceuticals } = context;
+  const { products } = context;
 
   return (
     <Container>
-      {selectedNutraceuticals.map(selectedNutraceutical => {
-        const currentProduct = nutraceuticals.find(
-          nutraceutical => nutraceutical.slug === selectedNutraceutical,
-        );
-
+      {products.map(product => {
         return (
-          <Product key={selectedNutraceutical}>
-            <ProductImage
+          <Product key={product.name}>
+            {/* <ProductImage
               src={`${process.env.PUBLIC_URL}/svg/${currentProduct?.slug}.svg`}
               alt={currentProduct?.title}
               title={currentProduct?.title}
+            /> */}
+            <ProductImage
+              src={product.image}
+              alt={product.name}
+              title={product.name}
             />
             <ProductContent>
-              <ProductContentTitle>
-                {currentProduct?.info.productLink ? (
-                  <ProductContentTitleLink
-                    href={currentProduct?.info.productLink}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    {currentProduct?.title}
-                  </ProductContentTitleLink>
-                ) : (
-                  currentProduct?.title
-                )}
-              </ProductContentTitle>
+              <ProductContentTitle>{product.name}</ProductContentTitle>
               <ProductContentDosage>
-                {currentProduct?.dosage}
+                {`${product.dosageCapsule}mg (${product.capsules} capsules) - ${product.brand}`}
               </ProductContentDosage>
             </ProductContent>
-            <ProductInfo
-              href={currentProduct?.info.link}
+            {/* <ProductInfo
+              href={product?.info.link}
               target="_blank"
               rel="noreferrer"
             >
               {labels?.cart_science}
-            </ProductInfo>
+            </ProductInfo> */}
             <ProductPrice>
-              {!!currentProduct?.info.productPrice && (
+              {!!product.price && (
                 <>
                   {`${new Intl.NumberFormat('es-ES', {
                     style: 'currency',
                     currency: 'EUR',
-                  }).format(currentProduct.info.productPrice)}`}
+                  }).format(product.price)}`}
                 </>
               )}
             </ProductPrice>
+            <ProductBuy
+              href={product.link}
+              target="_blank"
+              rel="norefereer noopener"
+            >
+              Buy
+            </ProductBuy>
           </Product>
         );
       })}

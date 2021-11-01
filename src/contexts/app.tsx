@@ -14,6 +14,7 @@ import NutraceuticalData from 'dtos/NutraceuticalData';
 import FoodData from 'dtos/FoodData';
 import HabitData from 'dtos/HabitData';
 import FineTuneData from 'dtos/FineTuneData';
+import ProductData from 'dtos/ProductData';
 
 interface LabelsData {
   [key: string]: string;
@@ -46,6 +47,7 @@ interface AppContextData {
   foods: FoodData[];
   habits: HabitData[];
   error: string;
+  products: ProductData[];
   updateStep(step: string, attrs: StepData): Promise<void>;
   updateAnswers(answers: AnswerData[]): Promise<void>;
   updateExcludes(updatedExcludes: ExcludesData): Promise<void>;
@@ -65,6 +67,7 @@ interface AppContextData {
   updateFoods(updatedFoods: FoodData[]): Promise<void>;
   updateHabits(updatedHabits: HabitData[]): Promise<void>;
   updateError(updatedError: string): Promise<void>;
+  updateProducts(updatedProducts: ProductData[]): Promise<void>;
 }
 
 const AppContext = createContext<AppContextData>({} as AppContextData);
@@ -115,6 +118,8 @@ export const AppProvider: React.FC = ({ children }) => {
   const [habits, setHabits] = useState<HabitData[]>([]);
 
   const [error, setError] = useState<string>('');
+
+  const [products, setProducts] = useState<ProductData[]>([]);
 
   useEffect(() => {
     wordpressApi
@@ -322,6 +327,10 @@ export const AppProvider: React.FC = ({ children }) => {
     setError(updatedError);
   }
 
+  async function updateProducts(updatedProducts: ProductData[]) {
+    setProducts(updatedProducts);
+  }
+
   return (
     <AppContext.Provider
       value={{
@@ -340,6 +349,7 @@ export const AppProvider: React.FC = ({ children }) => {
         foods,
         habits,
         error,
+        products,
         updateStep,
         updateAnswers,
         updateExcludes,
@@ -354,6 +364,7 @@ export const AppProvider: React.FC = ({ children }) => {
         updateFoods,
         updateHabits,
         updateError,
+        updateProducts,
       }}
     >
       {children}

@@ -8,6 +8,7 @@ import { useApp } from 'contexts/app';
 
 import getFoods from 'services/getFoods';
 
+import ProductData from 'dtos/ProductData';
 import Container, {
   Anchors,
   Anchor,
@@ -42,7 +43,9 @@ const Suboutcome: React.FC<SuboutcomeProps> = ({
     userQuery,
     steps,
     fineTune,
+    nutraceuticals: appNutraceuticals,
     connections,
+    products,
     updateStep,
     updateConnection,
     updateFineTune,
@@ -50,6 +53,7 @@ const Suboutcome: React.FC<SuboutcomeProps> = ({
     updateFoods,
     updateError,
     updateSelectedNutraceuticals,
+    updateProducts,
   } = appContext;
 
   const [supConnections, setSupConnections] = useState<string[]>([]);
@@ -127,6 +131,35 @@ const Suboutcome: React.FC<SuboutcomeProps> = ({
 
       updateSelectedNutraceuticals(selectedNutraceuticals);
 
+      const selectedProducts = appNutraceuticals
+        .filter(appNutraceutical =>
+          selectedNutraceuticals.includes(appNutraceutical.slug),
+        )
+        .reduce((acc: ProductData[], nutraceutical) => {
+          const nutraceuticalProduct = nutraceutical.info.product1;
+
+          if (!nutraceuticalProduct.productName) return acc;
+
+          const selectedProduct = {
+            name: nutraceuticalProduct.productName,
+            nutraceutical: nutraceutical.slug,
+            image: nutraceuticalProduct.productImage,
+            link: nutraceuticalProduct.productLink,
+            brand: nutraceuticalProduct.productBrand,
+            dosageCapsule: nutraceuticalProduct.productDosageCapsule,
+            capsules: nutraceuticalProduct.productCapsules,
+            price: nutraceuticalProduct.productPrice,
+          };
+
+          const productExists = !!products.filter(
+            product => product.name === selectedProduct.name,
+          ).length;
+
+          return productExists ? acc : [...acc, selectedProduct];
+        }, []);
+
+      updateProducts([...products, ...selectedProducts]);
+
       const response = await getFoods({
         uuid: userQuery,
         nutraceuticals: selectedNutraceuticals,
@@ -149,6 +182,8 @@ const Suboutcome: React.FC<SuboutcomeProps> = ({
       nextStep,
       connections,
       userQuery,
+      appNutraceuticals,
+      products,
       currentStep,
       updateFoods,
       updateError,
@@ -156,6 +191,7 @@ const Suboutcome: React.FC<SuboutcomeProps> = ({
       updateConnection,
       updateSelectedConnections,
       updateSelectedNutraceuticals,
+      updateProducts,
     ],
   );
 

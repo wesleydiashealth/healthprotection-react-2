@@ -133,7 +133,7 @@ const Habits: React.FC = () => {
                 {!error && (
                   <>
                     {foods.map(food => (
-                      <Habit {...food} />
+                      <Habit key={food.slug} {...food} />
                     ))}
                   </>
                 )}
