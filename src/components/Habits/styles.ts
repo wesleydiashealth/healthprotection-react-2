@@ -25,6 +25,10 @@ const Container = styled.div<ContainerProps>`
     padding: 10px;
   }
 
+  @media screen and (min-width: 768px) {
+    padding: 80px 50px 0;
+  }
+
   ${props =>
     props.isActive &&
     css`

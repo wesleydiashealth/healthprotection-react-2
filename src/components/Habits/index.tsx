@@ -14,8 +14,8 @@ import Container, {
   StepIntro,
   StepTitle,
   StepDescription,
-  ContainerAlert,
-  ContainerAlertTitle,
+  // ContainerAlert,
+  // ContainerAlertTitle,
   HabitsContainer,
   HabitInvalidNutraceuticals,
 } from './styles';
@@ -118,12 +118,12 @@ const Habits: React.FC = () => {
           )}
         </StepDescription>
       </StepIntro>
-      <ContainerAlert severity="info">
+      {/* <ContainerAlert severity="info">
         <ContainerAlertTitle>
           {labels.step_3_notification_title}
         </ContainerAlertTitle>
         {labels.step_3_notification_description}
-      </ContainerAlert>
+      </ContainerAlert> */}
 
       {isActive && (
         <>
