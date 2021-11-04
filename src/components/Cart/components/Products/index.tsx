@@ -11,7 +11,7 @@ import Container, {
   // ProductContentTitleLink,
   ProductContentDosage,
   ProductInfo,
-  ProductPrice,
+  // ProductPrice,
   ProductBuy,
 } from './styles';
 
