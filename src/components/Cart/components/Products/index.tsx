@@ -53,7 +53,7 @@ const Products: React.FC = () => {
                 {labels?.cart_science}
               </ProductInfo>
             )}
-            <ProductPrice>
+            {/* <ProductPrice>
               {!!product.price && (
                 <>
                   {`${new Intl.NumberFormat('es-ES', {
@@ -62,7 +62,7 @@ const Products: React.FC = () => {
                   }).format(product.price)}`}
                 </>
               )}
-            </ProductPrice>
+            </ProductPrice> */}
             <ProductBuy
               href={product.link}
               target="_blank"
