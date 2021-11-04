@@ -68,7 +68,7 @@ const Products: React.FC = () => {
               target="_blank"
               rel="norefereer noopener"
             >
-              Buy
+              Buy from Amazon
             </ProductBuy>
           </Product>
         );

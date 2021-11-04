@@ -226,7 +226,7 @@ const Step7: React.FC = () => {
       </QuestionPrefix>
       <QuestionTitle>{stepTitle}</QuestionTitle>
       <QuestionSuffix
-        data-tip={`<strong>${currentQuestion?.label}</strong><span>${currentQuestion?.description}</span>`}
+        data-tip={`<span>${currentQuestion?.description}</span>`}
         data-for="step_6_tooltip"
       >
         Why are we asking?

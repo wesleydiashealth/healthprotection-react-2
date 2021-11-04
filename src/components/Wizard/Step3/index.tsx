@@ -145,7 +145,7 @@ const Step3: React.FC = () => {
       <QuestionPrefix>{`${labels.step_1_question} 3/${wizardSteps}`}</QuestionPrefix>
       <QuestionTitle>{currentQuestion?.label}</QuestionTitle>
       <QuestionSuffix
-        data-tip={`<strong>${currentQuestion?.label}</strong><span>${currentQuestion?.description}</span>`}
+        data-tip={`<span>${currentQuestion?.description}</span>`}
         data-for="step_3_tooltip"
       >
         {labels.step_1_question_tooltip}

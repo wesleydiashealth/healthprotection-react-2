@@ -108,7 +108,7 @@ const Step9: React.FC = () => {
       </QuestionPrefix>
       <QuestionTitle>{stepTitle}</QuestionTitle>
       <QuestionSuffix
-        data-tip={`<strong>${currentQuestion?.label}</strong><span>${currentQuestion?.description}</span>`}
+        data-tip={`<span>${currentQuestion?.description}</span>`}
         data-for="step_7_tooltip"
       >
         {labels.step_1_question_tooltip}

@@ -229,7 +229,7 @@ const Step6: React.FC = () => {
         className="tooltip-icon"
         size={20}
         color="#7664C8"
-        data-tip={`<strong>${stepTitle}</strong><span>${stepTitle}</span>`}
+        data-tip={`<span>${stepTitle}</span>`}
         data-for="step_6_drugs_tooltip"
       />
       <ReactToolTip

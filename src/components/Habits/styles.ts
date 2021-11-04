@@ -171,7 +171,7 @@ export const StepIntro = styled.div`
 
       display: block;
 
-      color: #7664c8;
+      color: #1bc9bd;
 
       font-weight: 600;
       font-size: 16px;
@@ -235,6 +235,7 @@ export const StepDescription = styled.h3`
 
   strong {
     font-weight: 600;
+    color: #1bc9bd;
   }
 
   @media screen and (min-width: 768px) {
