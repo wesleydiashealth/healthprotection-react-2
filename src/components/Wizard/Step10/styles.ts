@@ -31,16 +31,32 @@ export const Title = styled.h3`
   font-weight: 700;
   text-align: center;
 
-  font-size: 16px;
-  line-height: 24px;
-`;
-
-export const Description = styled.p`
   font-size: 14px;
   line-height: 22px;
 
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+    line-height: 24px;
+  }
+`;
+
+export const Description = styled.p`
+  &,
+  p {
+    font-size: 12px;
+    line-height: 20px;
+  }
+
   strong {
     font-weight: 600;
+  }
+
+  @media screen and (min-width: 768px) {
+    &,
+    p {
+      font-size: 14px;
+      line-height: 22px;
+    }
   }
 `;
 
@@ -48,8 +64,13 @@ export const Instruction = styled.p`
   margin-top: 20px;
 
   font-weight: 600;
-  font-size: 14px;
-  line-height: 22px;
+  font-size: 12px;
+  line-height: 20px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 14px;
+    line-height: 22px;
+  }
 `;
 
 export const Buttons = styled.div`
@@ -70,7 +91,7 @@ export const Buttons = styled.div`
 export const Button = styled.a<ButtonProps>`
   border: none;
   border-radius: 32px;
-  padding: 16px 18px;
+  padding: 12px;
 
   display: inline-block;
   box-sizing: border-box;
@@ -86,6 +107,10 @@ export const Button = styled.a<ButtonProps>`
 
   & ~ a {
     margin-left: 20px;
+  }
+
+  @media screen and (min-width: 768px) {
+    padding: 16px 18px;
   }
 
   ${props =>

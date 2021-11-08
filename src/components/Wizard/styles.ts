@@ -21,16 +21,16 @@ const Container = styled.div<ContainerProps>`
     outline: none !important;
   }
 
-  /* max-width constrains the width of our carousel to 550, but shrinks on small devices */
+  /* gives us the illusion of a "centered" slide */
+  .carousel__slider {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* max-width constrains the width of our carousel, but shrinks on small devices */
   .carousel__container {
     max-width: 360px;
     margin: auto;
-  }
-
-  /* gives us the illusion of a "centered" slide */
-  .carousel__slider {
-    padding-left: calc((100% - 400px) / 2);
-    padding-right: calc((100% - 400px) / 2);
   }
 
   /* gives us the illusion of spaces between the slides */
@@ -45,6 +45,12 @@ const Container = styled.div<ContainerProps>`
 
   @media screen and (min-width: 768px) {
     padding: 80px 50px 0;
+
+    /* gives us the illusion of a "centered" slide */
+    .carousel__slider {
+      padding-left: calc((100% - 400px) / 2);
+      padding-right: calc((100% - 400px) / 2);
+    }
   }
 
   ${props =>
@@ -179,7 +185,7 @@ export const StepContainer = styled.div<StepContainerProps>`
 
   background: #f5f5f5;
 
-  width: 240px;
+  width: 100%;
 
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
   border-radius: 20px;

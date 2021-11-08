@@ -151,7 +151,12 @@ export const StepDescription = styled.h3`
 `;
 
 export const StepContent = styled.div`
+  padding: 0 20px;
+
   display: flex;
+  flex-flow: column;
+
+  max-width: 100%;
 
   @media screen and (min-width: 768px) {
     flex-flow: row nowrap;
@@ -159,6 +164,7 @@ export const StepContent = styled.div`
 `;
 
 export const CheckoutProducts = styled.div`
+  margin-bottom: 40px;
   border: 1px solid #c6c6c6;
   border-radius: 12px;
   padding: 20px;
