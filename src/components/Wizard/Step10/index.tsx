@@ -91,6 +91,7 @@ const Step10: React.FC = () => {
         </Button>
         <Button
           href="#step_2"
+          className="step-1-completed"
           onClick={() => {
             formRef.current?.submitForm();
           }}

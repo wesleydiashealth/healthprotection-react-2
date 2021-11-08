@@ -252,6 +252,7 @@ const Suboutcome: React.FC<SuboutcomeProps> = ({
         <FineTune
           isActive={fineTune[id] === 'off' || !fineTune[id]}
           color={color}
+          className="step-2-completed"
           onClick={() => {
             handleFineTuneClick([], id);
             updateFineTune({ ...fineTune, [id]: 'off' });
@@ -267,6 +268,7 @@ const Suboutcome: React.FC<SuboutcomeProps> = ({
                 isActive={fineTune[id] === key}
                 isEmpty={!value.length}
                 color={color}
+                className="step-2-completed"
                 onClick={() => {
                   if (value.length) {
                     handleFineTuneClick(value, id);

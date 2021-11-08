@@ -49,7 +49,7 @@ const Report: React.FC = () => {
   return (
     <Container>
       <Title>{labels.newsletter_title}</Title>
-      <Form ref={formRef} onSubmit={handleSubmit}>
+      <Form id="report_form" ref={formRef} onSubmit={handleSubmit}>
         <Input type="text" name="email" placeholder="E-mail*" />
         <label htmlFor="user_consent" aria-required>
           <Input

@@ -49,7 +49,7 @@ const Hero: React.FC = () => {
         <HeroMainTitle>{labels.hero_title}</HeroMainTitle>
         <HeroSubTitle>{labels.hero_subtitle}</HeroSubTitle>
         <HeroDescription>{labels.hero_description}</HeroDescription>
-        <HeroButton className="button" href="#step_1">
+        <HeroButton className="button hero__button" href="#step_1">
           {labels.hero_button}
         </HeroButton>
       </HeroIntro>

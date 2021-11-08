@@ -67,6 +67,7 @@ const Products: React.FC = () => {
               href={product.link}
               target="_blank"
               rel="norefereer noopener"
+              className="buy-button"
             >
               Buy from Amazon
             </ProductBuy>

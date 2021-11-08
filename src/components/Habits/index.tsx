@@ -129,7 +129,7 @@ const Habits: React.FC = () => {
         <>
           {currentStep.isLoaded ? (
             <>
-              <HabitsContainer>
+              <HabitsContainer className="step-3-container">
                 {!error && (
                   <>
                     {foods.map(food => (
