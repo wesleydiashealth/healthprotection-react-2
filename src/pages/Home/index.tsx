@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useMediaQuery } from 'react-responsive';
 
 import Sankey from 'components/Sankey';
@@ -23,7 +23,9 @@ const Home: React.FC = () => {
   // const isPortrait = useMediaQuery({ query: '(orientation: portrait)' });
   // const isRetina = useMediaQuery({ query: '(min-resolution: 2dppx)' });
 
-  hotjar.initialize(2690176, 6);
+  useEffect(() => {
+    hotjar.initialize(2690176, 6);
+  }, []);
 
   return (
     <Container>
