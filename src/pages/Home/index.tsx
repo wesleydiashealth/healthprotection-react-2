@@ -8,6 +8,7 @@ import Hero from 'components/Hero';
 import Wizard from 'components/Wizard';
 import Cart from 'components/Cart';
 import Habits from 'components/Habits';
+import { hotjar } from 'react-hotjar';
 
 import { AppProvider } from 'contexts/app';
 
@@ -21,6 +22,8 @@ const Home: React.FC = () => {
   // const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' });
   // const isPortrait = useMediaQuery({ query: '(orientation: portrait)' });
   // const isRetina = useMediaQuery({ query: '(min-resolution: 2dppx)' });
+
+  hotjar.initialize(2690176, 6);
 
   return (
     <Container>
