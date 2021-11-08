@@ -7,6 +7,8 @@ import { useSankey } from 'contexts/sankey';
 
 import getFoods from 'services/getFoods';
 
+import ProductData from 'dtos/ProductData';
+
 import Container, {
   Anchors,
   Anchor,
@@ -42,12 +44,20 @@ const Suboutcome: React.FC<SuboutcomeProps> = ({
   const appContext = useApp();
   const {
     userQuery,
+    labels,
+    steps,
+    nutraceuticals: appNutraceuticals,
     connections,
+    products,
     updateConnection,
     updateFoods,
     updateError,
     updateSelectedNutraceuticals,
+    updateStep,
+    updateProducts,
   } = appContext;
+
+  const { step2: currentStep, step3: nextStep } = steps;
 
   const sankeyContext = useSankey();
   const { activeAccordions } = sankeyContext;
@@ -68,7 +78,8 @@ const Suboutcome: React.FC<SuboutcomeProps> = ({
     async (fineTuneGroup, suboutcome) => {
       updateConnection(suboutcome, fineTuneGroup);
 
-      appContext.updateStep('step2', { isCompleted: true });
+      updateStep('step2', { ...currentStep, isCompleted: true });
+      updateStep('step3', { ...nextStep, isLoaded: false });
 
       const selectedNutraceuticals = Array.from(
         new Set(
@@ -85,10 +96,43 @@ const Suboutcome: React.FC<SuboutcomeProps> = ({
 
       updateSelectedNutraceuticals(selectedNutraceuticals);
 
+      const selectedProducts = appNutraceuticals
+        .filter(appNutraceutical =>
+          selectedNutraceuticals.includes(appNutraceutical.slug),
+        )
+        .reduce((acc: ProductData[], nutraceutical) => {
+          const nutraceuticalProduct = nutraceutical.info.product1;
+
+          if (!nutraceuticalProduct.productName) return acc;
+
+          const selectedProduct = {
+            name: nutraceuticalProduct.productName,
+            nutraceutical: nutraceutical.slug,
+            image: nutraceuticalProduct.productImage,
+            link: nutraceuticalProduct.productLink,
+            brand: nutraceuticalProduct.productBrand,
+            dosageCapsule: nutraceuticalProduct.productDosageCapsule,
+            capsules: nutraceuticalProduct.productCapsules,
+            price: nutraceuticalProduct.productPrice,
+          };
+
+          const productExists = !!products.filter(
+            product => product.name === selectedProduct.name,
+          ).length;
+
+          return productExists ? acc : [...acc, selectedProduct];
+        }, []);
+
+      updateProducts([...products, ...selectedProducts]);
+
       const response = await getFoods({
         uuid: userQuery,
         nutraceuticals: selectedNutraceuticals,
       });
+
+      updateFoods(response.content);
+
+      updateStep('step3', { ...nextStep, isLoaded: true });
 
       if (!response.content.length) {
         updateError(
@@ -101,12 +145,17 @@ const Suboutcome: React.FC<SuboutcomeProps> = ({
     },
     [
       updateConnection,
-      appContext,
       connections,
+      products,
       userQuery,
+      appNutraceuticals,
+      currentStep,
+      nextStep,
       updateFoods,
       updateError,
       updateSelectedNutraceuticals,
+      updateProducts,
+      updateStep,
     ],
   );
 
@@ -135,7 +184,7 @@ const Suboutcome: React.FC<SuboutcomeProps> = ({
             setFineTune({ ...fineTune, [id]: 'off' });
           }}
         >
-          Off
+          {labels.step_2_off}
         </FineTune>
         {Object.entries(nutraceuticals).map(({ 0: key, 1: value }) => (
           <FineTune
@@ -150,7 +199,7 @@ const Suboutcome: React.FC<SuboutcomeProps> = ({
               }
             }}
           >
-            {key.charAt(0).toUpperCase() + key.slice(1)}
+            {labels[`step_2_${key}`]}
           </FineTune>
         ))}
         <Anchors className="exit-anchors">
