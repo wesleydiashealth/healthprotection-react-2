@@ -17,7 +17,7 @@ import Container, {
 
 const Products: React.FC = () => {
   const context = useApp();
-  const { nutraceuticals, products, labels } = context;
+  const { nutraceuticals, products } = context;
 
   return (
     <Container>
