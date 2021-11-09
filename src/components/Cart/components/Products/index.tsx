@@ -41,16 +41,23 @@ const Products: React.FC = () => {
             <ProductContent>
               <ProductContentTitle>{product.name}</ProductContentTitle>
               <ProductContentDosage>
-                {`${product.dosageCapsule}mg (${product.capsules} capsules) - ${product.brand}`}
+                {`${product.dosageCapsule}mg (${product.capsules} capsules)`}
               </ProductContentDosage>
             </ProductContent>
+            <ProductInfo>
+              <span>{`Why this ${productNutraceutical?.info.title}?`}</span>
+              <p>{product.brand}</p>
+            </ProductInfo>
             {productNutraceutical?.info.link && (
-              <ProductInfo
-                href={productNutraceutical?.info.link}
-                target="_blank"
-                rel="noreferrer"
-              >
-                {labels?.cart_science}
+              <ProductInfo>
+                <span>Read About</span>
+                <a
+                  href={productNutraceutical?.info.link}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {productNutraceutical?.info.title}
+                </a>
               </ProductInfo>
             )}
             {/* <ProductPrice>

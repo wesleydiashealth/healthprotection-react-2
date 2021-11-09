@@ -51,12 +51,36 @@ export const ProductContentDosage = styled.span`
   line-height: 20px;
 `;
 
-export const ProductInfo = styled.a`
+export const ProductInfo = styled.div`
   margin: 10px 0 0;
 
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  text-align: center;
   flex: 1;
 
-  color: #1bc9bd;
+  span {
+    margin-bottom: 10px;
+
+    color: #565656;
+
+    font-size: 14px;
+    line-height: 1;
+  }
+
+  a,
+  p {
+    border-radius: 12px;
+    padding: 8px 14px;
+
+    background: #f5f5f5;
+    color: #565656;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 22px;
+  }
 
   @media screen and (min-width: 768px) {
     margin: 0;
