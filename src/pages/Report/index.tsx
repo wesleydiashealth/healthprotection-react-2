@@ -8,8 +8,10 @@ import excludes from 'excludes.json';
 import outcomes from 'outcomes.json';
 import nutraceuticals from 'nutraceuticals.json';
 import suboutcomes from 'suboutcomes.json';
+import foods from 'foods.json';
 import habits from 'habits.json';
 import selectedConnections from 'selectedConnections.json';
+import products from 'products.json';
 
 const Report: React.FC = () => (
   <PDFViewer style={{ width: '100%', height: '100vh' }}>
@@ -21,7 +23,9 @@ const Report: React.FC = () => (
         nutraceuticals,
         selectedConnections,
         excludes,
+        foods,
         habits,
+        products,
       }}
     />
   </PDFViewer>

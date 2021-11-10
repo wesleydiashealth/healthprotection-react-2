@@ -11,5 +11,8 @@ export default interface FoodData {
   dosages: string;
   interactions: InteractionData[];
   dataSource: string[];
-  intakeFrequency: string[];
+  intakeFrequency: {
+    value: string;
+    label: string;
+  }[];
 }

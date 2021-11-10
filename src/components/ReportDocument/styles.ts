@@ -265,6 +265,70 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 9,
   },
+  products: {},
+  product: {
+    marginBottom: 20,
+    display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'nowrap',
+    alignItems: 'center',
+  },
+  productImageContainer: {
+    width: 80,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  productImage: {
+    marginRight: 20,
+    width: 'auto',
+    height: 64,
+  },
+  productContent: {
+    flex: 1,
+  },
+  productTitle: {
+    fontSize: 11,
+  },
+  productDosage: {
+    fontSize: 9,
+  },
+  productInfo: {
+    marginLeft: 20,
+    width: 100,
+    textAlign: 'center',
+  },
+  productInfoLabel: {
+    marginBottom: 5,
+    textAlign: 'center',
+    display: 'flex',
+    fontSize: 9,
+    color: '#565656',
+  },
+  productInfoValue: {
+    borderRadius: 12,
+    paddingVertical: 4,
+    paddingHorizontal: 8,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    fontSize: 10,
+    lineHeight: 1,
+    color: '#565656',
+    backgroundColor: '#f5f5f5',
+    textDecoration: 'none',
+  },
+  productBuy: {
+    marginLeft: 20,
+    borderRadius: 32,
+    padding: 8,
+    color: '#fff',
+    backgroundColor: '#ffae30',
+    textDecoration: 'none',
+    textTransform: 'uppercase',
+    fontSize: 8,
+    lineHeight: 1,
+  },
 });
 
 export default styles;

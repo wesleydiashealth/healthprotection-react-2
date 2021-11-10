@@ -65,7 +65,7 @@ const Habit: React.FC<FoodData> = food => {
           food: selectedFood.title,
           unit: selectedFood.unit,
           icon: selectedFood.icon,
-          frequency: frequency.label,
+          frequency,
         };
 
         updateHabits(updatedHabits);
@@ -76,7 +76,7 @@ const Habit: React.FC<FoodData> = food => {
             food: selectedFood.title,
             unit: selectedFood.unit,
             icon: selectedFood.icon,
-            frequency: frequency.label,
+            frequency,
           },
         ]);
       }

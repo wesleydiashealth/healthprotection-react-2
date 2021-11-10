@@ -15,7 +15,9 @@ import ExcludeData from 'dtos/ExcludesData';
 import OutcomeData from 'dtos/OutcomeData';
 import SuboutcomeData from 'dtos/SuboutcomeData';
 import NutraceuticalData from 'dtos/NutraceuticalData';
+import FoodData from 'dtos/FoodData';
 import HabitData from 'dtos/HabitData';
+import ProductData from 'dtos/ProductData';
 
 import styles from './styles';
 
@@ -32,7 +34,9 @@ interface ReportDocumentData {
     };
   };
   excludes: ExcludeData;
+  foods: FoodData[];
   habits: HabitData[];
+  products: ProductData[];
 }
 
 // Create Document Component
@@ -43,7 +47,9 @@ const ReportDocument: React.FC<ReportDocumentData> = ({
   nutraceuticals,
   selectedConnections,
   excludes,
+  foods,
   habits,
+  products,
 }) => {
   // const today = new Date();
 
@@ -98,7 +104,6 @@ const ReportDocument: React.FC<ReportDocumentData> = ({
           <Text style={styles.sectionTitle}>
             Your desire outcomes and sub-outcomes in Step 2
           </Text>
-
           <View style={styles.outcomes}>
             {Object.entries(selectedConnections).map(
               ({ 0: outcome, 1: subConnections }, outcomeIndex) => {
@@ -175,6 +180,54 @@ const ReportDocument: React.FC<ReportDocumentData> = ({
                 );
               },
             )}
+          </View>
+
+          <View style={styles.cart} break>
+            <Text style={styles.sectionTitle}>Products</Text>
+
+            {products.map(product => {
+              const productNutraceutical = nutraceuticals.find(
+                nutraceutical => nutraceutical.slug === product.nutraceutical,
+              );
+
+              return (
+                <View
+                  key={product.nutraceutical}
+                  style={styles.product}
+                  wrap={false}
+                >
+                  <View style={styles.productImageContainer}>
+                    <Image style={styles.productImage} src={product.image} />
+                  </View>
+                  <View style={styles.productContent}>
+                    <Text style={styles.productTitle}>{product.name}</Text>
+                    <Text
+                      style={styles.productDosage}
+                    >{`${product.dosageCapsule}mg (${product.capsules} capsules)`}</Text>
+                  </View>
+                  <View style={styles.productInfo}>
+                    <Text style={styles.productInfoLabel}>
+                      {`Why this ${productNutraceutical?.info.title}?`}
+                    </Text>
+                    <Text style={styles.productInfoValue}>{product.brand}</Text>
+                  </View>
+                  {productNutraceutical?.info.link && (
+                    <View style={styles.productInfo}>
+                      <Text style={styles.productInfoLabel}>Read About</Text>
+                      <Link
+                        src={productNutraceutical?.info.link}
+                        style={styles.productInfoValue}
+                      >
+                        {productNutraceutical?.info.title}
+                      </Link>
+                    </View>
+                  )}
+                  <Link src={product.link} style={styles.productBuy}>
+                    Buy from Amazon
+                  </Link>
+                </View>
+              );
+            })}
           </View>
 
           {/* <View style={styles.sankey}>
@@ -347,18 +400,40 @@ const ReportDocument: React.FC<ReportDocumentData> = ({
             About your eating habits in Step 3
           </Text>
           <View style={styles.habits}>
-            {habits.map(habit => (
-              <View key={habit.food} style={styles.habit}>
-                <Image style={styles.habitIcon} src={habit.icon} />
-                <View style={styles.habitContent}>
-                  <Text style={styles.habitTitle}>{habit.food}</Text>
-                  <Text style={styles.habitQuestion}>
-                    How many {habit.unit} do you consume per week?
-                  </Text>
-                  <Text style={styles.habitFrequency}>{habit.frequency}</Text>
+            {habits.map(habit => {
+              const habitFood = foods.find(food => food.title === habit.food);
+
+              return (
+                <View key={habit.food} style={styles.habit}>
+                  <Image style={styles.habitIcon} src={habit.icon} />
+                  <View style={styles.habitContent}>
+                    <Text style={styles.habitTitle}>{habit.food}</Text>
+                    <Text style={styles.habitQuestion}>
+                      How many {habit.unit} do you consume per week?
+                    </Text>
+                    <Text style={styles.habitFrequency}>
+                      {habit.frequency.label}
+                    </Text>
+                    <View style={styles.habitNutraceuticals}>
+                      {habitFood?.interactions.map(interaction => {
+                        const interactionDosageGroup =
+                          interaction.dosagesGroup.find(
+                            dosageGroup =>
+                              dosageGroup.dosageFrequency ===
+                              habit.frequency.value,
+                          );
+
+                        return (
+                          <Text style={styles.habitNutraceutical}>
+                            {`${interaction.nutraceutical}: ${interactionDosageGroup?.dosageAmount}mg`}
+                          </Text>
+                        );
+                      })}
+                    </View>
+                  </View>
                 </View>
-              </View>
-            ))}
+              );
+            })}
           </View>
         </View>
       </Page>
