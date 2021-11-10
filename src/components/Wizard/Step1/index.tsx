@@ -177,6 +177,7 @@ const Step1: React.FC = () => {
         name="birth_month"
         id="birth_month"
         className="select-input birth-month"
+        classNamePrefix="birth-month"
         options={months}
         placeholder={labels.step_1_birth_month}
         onChange={event => {
@@ -187,6 +188,7 @@ const Step1: React.FC = () => {
         name="birth_year"
         id="birth_year"
         className="select-input birth-year"
+        classNamePrefix="birth-year"
         options={years}
         placeholder={labels.step_1_birth_year}
         isDisabled={!birthMonth}
