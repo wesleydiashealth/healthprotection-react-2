@@ -36,7 +36,10 @@ const Tooltip: React.FC<TooltipProps> = ({ slug, supConnections }) => {
 
   return (
     <Container>
-      <ContainerTitle>{nutraceutical?.info.title}</ContainerTitle>
+      <ContainerTitle>
+        Scientific summary for{' '}
+        <a href={nutraceutical?.info.link}>{nutraceutical?.info.title}</a>
+      </ContainerTitle>
       <ContainerDescription>
         {nutraceutical?.info.description &&
           ReactHtmlParser(nutraceutical?.info.description)}
@@ -54,8 +57,21 @@ const Tooltip: React.FC<TooltipProps> = ({ slug, supConnections }) => {
           .map(relation => (
             <ContainerListItem key={relation.slug}>
               <ContainerListItemTitle>
-                <strong>{relation.suboutcome.title}</strong> for{' '}
-                {relation.outcome.title}
+                <a
+                  href={nutraceutical.info.link}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {nutraceutical.title}
+                </a>{' '}
+                for{' '}
+                <a
+                  href={relation.suboutcome.link}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {relation.suboutcome.title}
+                </a>
               </ContainerListItemTitle>
               <ContainerListItemDetails>
                 {`These data summarize ${relation.studies} scientific studies`}

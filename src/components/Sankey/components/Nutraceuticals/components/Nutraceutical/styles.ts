@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import { transparentize } from 'polished';
+import { IoMdCloseCircle } from 'react-icons/io';
 
 interface ContainerProps {
   connections?: number;
@@ -42,6 +43,17 @@ const Container = styled.div<ContainerProps>`
     css`
       min-height: ${`${58 * props.connections}px`};
     `}
+`;
+
+export const ContainerCloseButton = styled(IoMdCloseCircle)`
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 9999;
+
+  color: #62a8ea;
+
+  cursor: pointer;
 `;
 
 export const Anchors = styled.div`

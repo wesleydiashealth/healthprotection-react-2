@@ -16,6 +16,17 @@ const Container = styled.div``;
 
 export const ContainerTitle = styled.h3`
   margin-bottom: 20px;
+
+  a {
+    color: #62a8ea;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 `;
 
 export const ContainerDescription = styled.div`
@@ -56,14 +67,20 @@ export const ContainerListItemTitle = styled.h4`
   font-size: 18px;
   line-height: 22px;
 
-  strong {
+  a {
     color: #62a8ea;
     font-weight: 600;
+
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 `;
 
 export const ContainerListItemDetails = styled.h5`
-  margin: 10px 0;
+  margin: 10px 0 30px;
   border-radius: 10px;
   padding: 6px 18px;
 

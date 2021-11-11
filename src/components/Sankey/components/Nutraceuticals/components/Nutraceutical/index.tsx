@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Scrollbar } from 'react-scrollbars-custom';
 import Popup from 'reactjs-popup';
 
@@ -11,6 +11,7 @@ import { ReactComponent as NutritionInfoIcon } from 'assets/nutrition_info.svg';
 import Tooltip from './components/Tooltip';
 
 import Container, {
+  ContainerCloseButton,
   Anchors,
   Anchor,
   ContentContainer,
@@ -27,6 +28,9 @@ const Nutraceutical: React.FC<NutraceuticalData> = ({
 }) => {
   const appContext = useApp();
   const { connections } = appContext;
+
+  const [open, setOpen] = useState(false);
+  const closeModal = () => setOpen(false);
 
   const { description } = info;
 
@@ -60,8 +64,11 @@ const Nutraceutical: React.FC<NutraceuticalData> = ({
       </Anchors>
       <ContentContainer>
         <Popup
+          open={open}
+          closeOnDocumentClick
+          onClose={closeModal}
           trigger={
-            <Content>
+            <Content onClick={() => setOpen(o => !o)}>
               <NutritionInfoIcon />
               <ContentTitle>{title}</ContentTitle>
               <ContentDescription>{`${dosage}`}</ContentDescription>
@@ -70,7 +77,8 @@ const Nutraceutical: React.FC<NutraceuticalData> = ({
           modal
           nested
         >
-          <Scrollbar style={{ height: 'calc(100vh - 80px)' }}>
+          <Scrollbar style={{ height: '600px' }}>
+            <ContainerCloseButton size={24} onClick={() => setOpen(o => !o)} />
             <Tooltip
               {...{
                 ...{ slug, title, description, supConnections },
