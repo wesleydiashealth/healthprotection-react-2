@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Scrollbar } from 'react-scrollbars-custom';
 
 import { useApp } from 'contexts/app';
@@ -31,17 +31,6 @@ const Nutraceutical: React.FC<NutraceuticalData> = ({
 
   const [open, setOpen] = useState(false);
   const closeModal = () => setOpen(false);
-
-  const [scrollTop, setScrollTop] = useState(0);
-
-  useEffect(() => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const onScroll = (e: any) => {
-      setScrollTop(e.target.documentElement.scrollTop);
-    };
-
-    window.addEventListener('scroll', onScroll);
-  }, [scrollTop]);
 
   const { description } = info;
 
@@ -78,9 +67,12 @@ const Nutraceutical: React.FC<NutraceuticalData> = ({
           open={open}
           closeOnDocumentClick
           onClose={closeModal}
-          offsetTop={scrollTop}
           trigger={
-            <Content onClick={() => setOpen(o => !o)}>
+            <Content
+              onClick={() => {
+                setOpen(o => !o);
+              }}
+            >
               <NutritionInfoIcon />
               <ContentTitle>{title}</ContentTitle>
               <ContentDescription>{`${dosage}`}</ContentDescription>

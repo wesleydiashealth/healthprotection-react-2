@@ -15,6 +15,14 @@ export const ContainerPopup = styled(Popup)<ContainerPopupProps>`
   &-content {
     margin: auto !important;
   }
+
+  ${props =>
+    props.offsetTop &&
+    css`
+      &-content {
+        margin-top: ${`${props.offsetTop}px`};
+      }
+    `}
 `;
 
 const Container = styled.div<ContainerProps>`
