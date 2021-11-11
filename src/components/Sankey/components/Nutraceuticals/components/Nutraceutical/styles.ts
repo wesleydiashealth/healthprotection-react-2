@@ -1,10 +1,29 @@
 import styled, { css } from 'styled-components';
 import { transparentize } from 'polished';
 import { IoMdCloseCircle } from 'react-icons/io';
+import Popup from 'reactjs-popup';
 
 interface ContainerProps {
   connections?: number;
 }
+
+interface ContainerPopupProps {
+  offsetTop?: number;
+}
+
+export const ContainerPopup = styled(Popup)<ContainerPopupProps>`
+  &-content {
+    margin-top: auto !important;
+  }
+
+  ${props =>
+    props.offsetTop &&
+    css`
+      &-content {
+        margin-top: ${`${props.offsetTop}px !important`};
+      }
+    `}
+`;
 
 const Container = styled.div<ContainerProps>`
   border-top-right-radius: 20px;

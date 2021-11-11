@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Scrollbar } from 'react-scrollbars-custom';
-import Popup from 'reactjs-popup';
 
 import { useApp } from 'contexts/app';
 
@@ -11,6 +10,7 @@ import { ReactComponent as NutritionInfoIcon } from 'assets/nutrition_info.svg';
 import Tooltip from './components/Tooltip';
 
 import Container, {
+  ContainerPopup,
   ContainerCloseButton,
   Anchors,
   Anchor,
@@ -31,6 +31,17 @@ const Nutraceutical: React.FC<NutraceuticalData> = ({
 
   const [open, setOpen] = useState(false);
   const closeModal = () => setOpen(false);
+
+  const [scrollTop, setScrollTop] = useState(0);
+
+  useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const onScroll = (e: any) => {
+      setScrollTop(e.target.documentElement.scrollTop);
+    };
+
+    window.addEventListener('scroll', onScroll);
+  }, [scrollTop]);
 
   const { description } = info;
 
@@ -63,10 +74,11 @@ const Nutraceutical: React.FC<NutraceuticalData> = ({
         ))}
       </Anchors>
       <ContentContainer>
-        <Popup
+        <ContainerPopup
           open={open}
           closeOnDocumentClick
           onClose={closeModal}
+          offsetTop={scrollTop}
           trigger={
             <Content onClick={() => setOpen(o => !o)}>
               <NutritionInfoIcon />
@@ -85,7 +97,7 @@ const Nutraceutical: React.FC<NutraceuticalData> = ({
               }}
             />
           </Scrollbar>
-        </Popup>
+        </ContainerPopup>
       </ContentContainer>
     </Container>
   );
