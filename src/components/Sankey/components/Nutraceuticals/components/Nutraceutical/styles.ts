@@ -13,16 +13,8 @@ interface ContainerPopupProps {
 
 export const ContainerPopup = styled(Popup)<ContainerPopupProps>`
   &-content {
-    margin-top: auto !important;
+    margin: auto !important;
   }
-
-  ${props =>
-    props.offsetTop &&
-    css`
-      &-content {
-        margin-top: ${`${props.offsetTop}px !important`};
-      }
-    `}
 `;
 
 const Container = styled.div<ContainerProps>`
