@@ -108,13 +108,14 @@ const Habits: React.FC = () => {
             )}
           </div>
         )}
-
-        <StepDescription>
-          <strong>{labels.step_3_description.split(' ')[0]}</strong>{' '}
-          {labels.step_3_description.substr(
-            labels.step_3_description.indexOf(' ') + 1,
-          )}
-        </StepDescription>
+        {labels.step_3_description && (
+          <StepDescription>
+            <strong>{labels.step_3_description.split(' ')[0]}</strong>{' '}
+            {labels.step_3_description.substr(
+              labels.step_3_description.indexOf(' ') + 1,
+            )}
+          </StepDescription>
+        )}
       </StepIntro>
       {/* <ContainerAlert severity="info">
         <ContainerAlertTitle>

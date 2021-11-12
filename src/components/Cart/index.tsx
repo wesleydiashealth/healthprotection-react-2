@@ -57,7 +57,14 @@ const Cart: React.FC = () => {
             )}
           </div>
         )}
-        <StepDescription>{labels?.cart_description}</StepDescription>
+        {labels.cart_description && (
+          <StepDescription>
+            <strong>{labels.cart_description.split(' ')[0]}</strong>{' '}
+            {labels.cart_description.substr(
+              labels.cart_description.indexOf(' ') + 1,
+            )}
+          </StepDescription>
+        )}
       </StepIntro>
       {isActive && (
         <StepContent>

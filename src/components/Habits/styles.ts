@@ -27,94 +27,17 @@ const Container = styled.div<ContainerProps>`
   ${props =>
     props.isActive &&
     css`
-      .step-intro {
-        > svg {
+      h3 {
+        strong {
           color: #1bc9bd;
-        }
-
-        h3 {
-          strong {
-            color: #1bc9bd;
-          }
         }
       }
     `}
-
-  .step-intro {
-    margin-bottom: 40px;
-
-    text-align: center;
-
-    .locked-icon {
-      margin-right: 5px;
-    }
-
-    h2,
-    h3 {
-      margin-bottom: 10px;
-
-      color: #565656;
-    }
-
-    h2 {
-      display: flex;
-      justify-content: center;
-
-      font-weight: 700;
-
-      font-size: 33px;
-      line-height: 40px;
-    }
-
-    h3 {
-      margin-bottom: 10px;
-
-      font-size: 28px;
-      line-height: 34px;
-
-      strong {
-        font-weight: 600;
-      }
-    }
-
-    span {
-      display: inline-block;
-      max-width: 900px;
-
-      color: #565656;
-
-      font-size: 18px;
-      line-height: 26px;
-    }
-
-    .tooltip-icon {
-      margin-left: 5px;
-      display: inline-flex;
-    }
-
-    .step-disabled {
-      margin-bottom: 10px;
-
-      strong {
-        font-weight: 600;
-      }
-
-      &,
-      span {
-        color: #707070;
-
-        font-size: 14px;
-        line-height: 22px;
-      }
-    }
-
-    @media screen and (min-width: 768px) {
-      padding: 80px 50px 0;
-    }
-  }
 `;
 
 export const StepIntro = styled.div`
+  margin-bottom: 20px;
+
   width: 100%;
   max-width: 100%;
 
@@ -208,7 +131,6 @@ export const StepDescription = styled.h3`
 
   strong {
     font-weight: 600;
-    color: #1bc9bd;
   }
 
   @media screen and (min-width: 768px) {

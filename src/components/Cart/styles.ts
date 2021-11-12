@@ -7,7 +7,7 @@ interface ContainerProps {
 
 const Container = styled.div<ContainerProps>`
   margin: 80px auto 40px;
-  padding: 0 10px;
+  padding: 20px;
 
   display: flex;
   flex-flow: column;
@@ -25,15 +25,9 @@ const Container = styled.div<ContainerProps>`
   ${props =>
     props.isActive &&
     css`
-      .step-intro {
-        > svg {
+      h3 {
+        strong {
           color: #ec903f;
-        }
-
-        h3 {
-          strong {
-            color: #ec903f;
-          }
         }
       }
     `}
@@ -118,6 +112,9 @@ export const StepTooltip = styled(ReactToolTip)`
 
 export const StepTitle = styled.h2`
   margin-bottom: 10px;
+
+  display: flex;
+  justify-content: center;
 
   font-weight: 500;
 
