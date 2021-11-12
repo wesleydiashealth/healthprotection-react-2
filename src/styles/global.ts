@@ -68,7 +68,7 @@ export default createGlobalStyle`
   }
 
   .popup-content {
-    margin: auto;
+    margin: 20px !important;
     border-radius: 16px;
 
     color: #565656;
