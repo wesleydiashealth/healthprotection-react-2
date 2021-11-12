@@ -55,6 +55,7 @@ const Wizard: React.FC = () => {
     updateSuboutcomes,
     updateConnections,
     updateStep,
+    updateCount,
   } = context;
 
   const previousStep = { isCompleted: true };
@@ -96,7 +97,8 @@ const Wizard: React.FC = () => {
         });
 
         const response = await createUserQuery(requestData);
-        const { uuid, outcomes, suboutcomes, excludes } = response.content;
+        const { uuid, outcomes, suboutcomes, excludes, count } =
+          response.content;
 
         updateStep('step2', { ...nextStep, isLoaded: true });
 
@@ -104,6 +106,7 @@ const Wizard: React.FC = () => {
         updateExcludes(excludes);
         updateOutcomes(outcomes);
         updateSuboutcomes(suboutcomes);
+        updateCount(count);
         updateConnections(outcomes, suboutcomes);
       } catch (err) {
         if (err instanceof Yup.ValidationError) {
@@ -122,6 +125,7 @@ const Wizard: React.FC = () => {
       updateOutcomes,
       updateSuboutcomes,
       updateConnections,
+      updateCount,
     ],
   );
 

@@ -1,6 +1,7 @@
 import ExcludesData from 'dtos/ExcludesData';
 import OutcomeData from 'dtos/OutcomeData';
 import SuboutcomeData from 'dtos/SuboutcomeData';
+import CountData from 'dtos/CountData';
 
 import wordpressApi from 'services/wordpress';
 
@@ -15,6 +16,7 @@ interface ResponseData extends Response {
     outcomes: OutcomeData[];
     suboutcomes: SuboutcomeData[];
     excludes: ExcludesData;
+    count: CountData;
   };
 }
 

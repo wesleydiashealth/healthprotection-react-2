@@ -15,6 +15,7 @@ import FoodData from 'dtos/FoodData';
 import HabitData from 'dtos/HabitData';
 import FineTuneData from 'dtos/FineTuneData';
 import ProductData from 'dtos/ProductData';
+import CountData from 'dtos/CountData';
 
 interface LabelsData {
   [key: string]: string;
@@ -40,6 +41,7 @@ interface AppContextData {
   outcomes: OutcomeData[];
   suboutcomes: SuboutcomeData[];
   nutraceuticals: NutraceuticalData[];
+  count: CountData;
   fineTune: FineTuneData;
   selectedNutraceuticals: string[];
   connections: ConnectionsData;
@@ -57,6 +59,7 @@ interface AppContextData {
   ): Promise<void>;
   updateOutcomes(updatedOutcomes: OutcomeData[]): Promise<void>;
   updateSuboutcomes(updatedSuboutcomes: SuboutcomeData[]): Promise<void>;
+  updateCount(updatedCount: CountData): Promise<void>;
   updateFineTune(updatedFineTune: FineTuneData): Promise<void>;
   updateConnection(suboutcome: string, nutraceuticals: string[]): Promise<void>;
   updateConnections(
@@ -101,6 +104,8 @@ export const AppProvider: React.FC = ({ children }) => {
   const [suboutcomes, setSuboutcomes] = useState<SuboutcomeData[]>([]);
 
   const [nutraceuticals, setNutraceuticals] = useState<NutraceuticalData[]>([]);
+
+  const [count, setCount] = useState<CountData>(Object);
 
   const [fineTune, setFineTune] = useState<FineTuneData>({});
 
@@ -206,6 +211,10 @@ export const AppProvider: React.FC = ({ children }) => {
 
   async function updateSuboutcomes(updatedSuboutcomes: SuboutcomeData[]) {
     setSuboutcomes(updatedSuboutcomes);
+  }
+
+  async function updateCount(updatedCount: CountData) {
+    setCount(updatedCount);
   }
 
   async function updateFineTune(updatedFineTune: FineTuneData) {
@@ -342,6 +351,7 @@ export const AppProvider: React.FC = ({ children }) => {
         outcomes,
         suboutcomes,
         nutraceuticals,
+        count,
         fineTune,
         selectedNutraceuticals,
         connections,
@@ -365,6 +375,7 @@ export const AppProvider: React.FC = ({ children }) => {
         updateHabits,
         updateError,
         updateProducts,
+        updateCount,
       }}
     >
       {children}

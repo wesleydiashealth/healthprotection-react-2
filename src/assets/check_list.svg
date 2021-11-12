@@ -1,0 +1,31 @@
+<svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M9.75 5H5C3.34315 5 2 6.34315 2 8V41C2 42.6569 3.34315 44 5 44H30C31.6569 44 33 42.6569 33 41V33.8125M25.25 5H30C31.6569 5 33 6.34315 33 8V13" stroke="#333333" stroke-width="2"/>
+<rect x="10" y="3" width="16" height="4" rx="2" stroke="#333333" stroke-width="2"/>
+<mask id="path-3-inside-1_1382_2561" fill="white">
+<rect x="7" y="11" width="5" height="5" rx="1"/>
+</mask>
+<rect x="7" y="11" width="5" height="5" rx="1" stroke="#333333" stroke-width="4" mask="url(#path-3-inside-1_1382_2561)"/>
+<mask id="path-4-inside-2_1382_2561" fill="white">
+<rect x="7" y="32" width="5" height="5" rx="1"/>
+</mask>
+<rect x="7" y="32" width="5" height="5" rx="1" stroke="#333333" stroke-width="4" mask="url(#path-4-inside-2_1382_2561)"/>
+<mask id="path-5-inside-3_1382_2561" fill="white">
+<rect x="7" y="18" width="5" height="5" rx="1"/>
+</mask>
+<rect x="7" y="18" width="5" height="5" rx="1" stroke="#333333" stroke-width="4" mask="url(#path-5-inside-3_1382_2561)"/>
+<mask id="path-6-inside-4_1382_2561" fill="white">
+<rect x="7" y="25" width="5" height="5" rx="1"/>
+</mask>
+<rect x="7" y="25" width="5" height="5" rx="1" stroke="#333333" stroke-width="4" mask="url(#path-6-inside-4_1382_2561)"/>
+<line x1="14" y1="12" x2="24" y2="12" stroke="#333333" stroke-width="2" stroke-linecap="round"/>
+<line x1="14" y1="33" x2="20" y2="33" stroke="#333333" stroke-width="2" stroke-linecap="round"/>
+<line x1="14" y1="19" x2="19" y2="19" stroke="#333333" stroke-width="2" stroke-linecap="round"/>
+<line x1="14" y1="26" x2="18" y2="26" stroke="#333333" stroke-width="2" stroke-linecap="round"/>
+<line x1="14" y1="15" x2="20" y2="15" stroke="#333333" stroke-width="2" stroke-linecap="round"/>
+<line x1="14" y1="36" x2="24" y2="36" stroke="#333333" stroke-width="2" stroke-linecap="round"/>
+<line x1="8" y1="40" x2="28" y2="40" stroke="#333333" stroke-width="2" stroke-linecap="round"/>
+<line x1="14" y1="22" x2="16" y2="22" stroke="#333333" stroke-width="2" stroke-linecap="round"/>
+<line x1="14" y1="29" x2="19" y2="29" stroke="#333333" stroke-width="2" stroke-linecap="round"/>
+<circle cx="32.5" cy="23.5" r="10.5" stroke="#333333" stroke-width="2"/>
+<path d="M28 21.8462L32.0909 26L38 20" stroke="#333333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
