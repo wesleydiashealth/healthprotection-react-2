@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import { transparentize } from 'polished';
+import ReactToolTip from 'react-tooltip';
 
 interface ContainerProps {
   isActive?: boolean;
@@ -81,34 +82,6 @@ export const StepIntro = styled.div`
     }
   }
 
-  .__react_component_tooltip {
-    width: 260px;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.11);
-    border-radius: 20px;
-
-    text-align: left;
-
-    strong {
-      margin-bottom: 5px;
-
-      display: block;
-
-      color: #7664c8;
-
-      font-weight: 600;
-      font-size: 16px;
-      line-height: 24px;
-    }
-
-    span {
-      display: block;
-
-      font-weight: normal;
-      font-size: 14px;
-      line-height: 22px;
-    }
-  }
-
   .step-disabled {
     margin-bottom: 10px;
 
@@ -123,10 +96,39 @@ export const StepIntro = styled.div`
   @media screen and (min-width: 768px) {
     margin-bottom: 40px;
     padding: 0 20px;
+  }
+`;
 
-    .__react_component_tooltip {
-      width: 320px;
-    }
+export const StepTooltip = styled(ReactToolTip)`
+  width: 260px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.11);
+  border-radius: 20px;
+
+  text-align: left;
+
+  strong {
+    margin-bottom: 5px;
+
+    display: block;
+
+    color: #7664c8;
+
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  span {
+    display: block;
+
+    text-align: justify;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 320px;
   }
 `;
 

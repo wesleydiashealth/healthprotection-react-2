@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactToolTip from 'react-tooltip';
 import 'reactjs-popup/dist/index.css';
 import { HiQuestionMarkCircle, HiLockClosed } from 'react-icons/hi';
 import { IoOptionsOutline } from 'react-icons/io5';
@@ -17,6 +16,7 @@ import Nutraceuticals from './components/Nutraceuticals';
 
 import Container, {
   StepIntro,
+  StepTooltip,
   StepTitle,
   StepDescription,
   StepContent,
@@ -58,7 +58,7 @@ const Sankey: React.FC<SankeyProps> = ({
             data-tip={`<strong>${labels.step_2_title}</strong><span>${labels.step_2_tooltip}</span>`}
             data-for="sankey-title-tooltip"
           />
-          <ReactToolTip
+          <StepTooltip
             id="sankey-title-tooltip"
             className="sankey-title-tooltip"
             place="bottom"

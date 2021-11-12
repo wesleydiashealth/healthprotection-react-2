@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactToolTip from 'react-tooltip';
 import { HiQuestionMarkCircle, HiLockClosed } from 'react-icons/hi';
 import { TiShoppingCart } from 'react-icons/ti';
 
@@ -11,6 +10,7 @@ import Sidebar from './components/Sidebar';
 import Container, {
   StepIntro,
   StepTitle,
+  StepTooltip,
   StepDescription,
   StepContent,
   CheckoutProducts,
@@ -27,20 +27,20 @@ const Cart: React.FC = () => {
   return (
     <Container isActive={isActive}>
       <StepIntro>
-        <TiShoppingCart size={52} color={isActive ? '#1bc9bd' : '#565656'} />
+        <TiShoppingCart size={52} color={isActive ? '#ec903f' : '#565656'} />
         <StepTitle>
           {!isActive && <HiLockClosed size={20} className="locked-icon" />}
           {labels.cart_title}
           <HiQuestionMarkCircle
             className="tooltip-icon"
             size={20}
-            color={isActive ? '#1bc9bd' : '#565656'}
+            color={isActive ? '#ec903f' : '#565656'}
             data-tip={`<strong>${labels.cart_title}</strong><span>${labels.cart_tooltip}</span>`}
-            data-for="habits-title-tooltip"
+            data-for="cart-title-tooltip"
           />
-          <ReactToolTip
-            id="habits-title-tooltip"
-            className="habits-title-tooltip"
+          <StepTooltip
+            id="cart-title-tooltip"
+            className="cart-title-tooltip"
             place="bottom"
             type="light"
             effect="solid"

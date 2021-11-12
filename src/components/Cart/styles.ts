@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import ReactToolTip from 'react-tooltip';
 
 interface ContainerProps {
   isActive?: boolean;
@@ -26,12 +27,12 @@ const Container = styled.div<ContainerProps>`
     css`
       .step-intro {
         > svg {
-          color: #1bc9bd;
+          color: #ec903f;
         }
 
         h3 {
           strong {
-            color: #1bc9bd;
+            color: #ec903f;
           }
         }
       }
@@ -65,34 +66,6 @@ export const StepIntro = styled.div`
     }
   }
 
-  .__react_component_tooltip {
-    width: 260px;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.11);
-    border-radius: 20px;
-
-    text-align: left;
-
-    strong {
-      margin-bottom: 5px;
-
-      display: block;
-
-      color: #7664c8;
-
-      font-weight: 600;
-      font-size: 16px;
-      line-height: 24px;
-    }
-
-    span {
-      display: block;
-
-      font-weight: normal;
-      font-size: 14px;
-      line-height: 22px;
-    }
-  }
-
   .step-disabled {
     margin-bottom: 10px;
 
@@ -107,10 +80,39 @@ export const StepIntro = styled.div`
   @media screen and (min-width: 768px) {
     margin-bottom: 40px;
     padding: 0 20px;
+  }
+`;
 
-    .__react_component_tooltip {
-      width: 320px;
-    }
+export const StepTooltip = styled(ReactToolTip)`
+  width: 260px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.11);
+  border-radius: 20px;
+
+  text-align: left;
+
+  strong {
+    margin-bottom: 5px;
+
+    display: block;
+
+    color: #ec903f;
+
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  span {
+    display: block;
+
+    text-align: justify;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 320px;
   }
 `;
 
@@ -178,7 +180,7 @@ export const CheckoutProducts = styled.div`
 
     font-weight: 600;
 
-    color: #1bc9bd;
+    color: #ec903f;
   }
 
   @media screen and (min-width: 768px) {
@@ -191,210 +193,6 @@ export const AmazonPolicy = styled.span`
 
   display: block;
   text-align: justify;
-`;
-
-export const CheckoutSidebar = styled.div`
-  color: #565656;
-
-  .newsletter,
-  .summary {
-    border-radius: 12px;
-    padding: 20px;
-
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.11);
-  }
-
-  .newsletter {
-    margin-bottom: 40px;
-
-    text-align: center;
-
-    h4 {
-      margin-bottom: 20px;
-
-      font-size: 20px;
-      line-height: 28px;
-    }
-
-    a {
-      margin: 10px 0;
-
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-self: center;
-      padding: 16px 24px;
-
-      font-weight: 700;
-      color: white;
-      text-transform: uppercase;
-      text-decoration: none;
-
-      background: #ffae30;
-      border-radius: 32px;
-    }
-
-    .newsletter-buttons {
-      margin-bottom: 20px;
-
-      display: flex;
-      flex-flow: column;
-    }
-
-    input[type='text'] {
-      margin: 0 0 20px;
-      border: 1px solid #8d8d8d;
-      border-radius: 32px;
-
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      padding: 16px 0px 16px 24px;
-
-      flex: none;
-      order: 0;
-      flex-grow: 0;
-    }
-
-    input[type='submit'] {
-      border: none;
-
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-self: center;
-      padding: 16px 24px;
-
-      position: static;
-      left: 68.94%;
-      right: 0%;
-      top: 0%;
-      bottom: 0%;
-
-      font-weight: 700;
-      color: white;
-      text-transform: uppercase;
-
-      background: #ffae30;
-      border-radius: 32px;
-    }
-
-    label {
-      font-weight: 600;
-
-      display: flex;
-
-      text-align: left;
-      font-size: 14px;
-      line-height: 22px;
-
-      & ~ label {
-        margin-top: 10px;
-      }
-
-      input {
-        margin-top: 5px;
-      }
-    }
-
-    input[type='checkbox'] {
-      margin-right: 10px;
-    }
-  }
-
-  .summary {
-    display: flex;
-    flex-flow: column wrap;
-    align-items: center;
-
-    h4 {
-      font-size: 24px;
-      line-height: 32px;
-
-      span {
-        font-weight: 600;
-      }
-    }
-
-    &-details {
-      margin-bottom: 20px;
-
-      color: #1bc9bd;
-
-      font-size: 14px;
-      line-height: 22px;
-    }
-
-    em {
-      margin-bottom: 20px;
-
-      font-weight: 600;
-
-      font-size: 14px;
-      line-height: 22px;
-    }
-
-    p {
-      margin-bottom: 20px;
-
-      text-align: center;
-
-      font-size: 14px;
-      line-height: 22px;
-    }
-
-    button {
-      margin-bottom: 20px;
-
-      border: none;
-
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-      padding: 16px 24px;
-
-      font-weight: 700;
-      color: white;
-      text-transform: uppercase;
-
-      background: #ffae30;
-      border-radius: 32px;
-    }
-
-    .summary-save {
-      color: #1bc9bd;
-
-      font-size: 14px;
-      line-height: 22px;
-    }
-  }
-
-  @media screen and (min-width: 768px) {
-    width: 25%;
-
-    .newsletter {
-      .newsletter-buttons {
-        flex-flow: row nowrap;
-      }
-
-      input[type='text'] {
-        margin: 0 20px 0 0;
-
-        flex: 1;
-      }
-    }
-
-    @media screen and (min-width: 768px) {
-      .newsletter {
-        .newsletter-buttons {
-          input[type='text'] {
-            width: 100%;
-          }
-        }
-      }
-    }
-  }
 `;
 
 export default Container;

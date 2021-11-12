@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 import { transparentize } from 'polished';
 import { Alert, AlertTitle } from '@material-ui/lab';
+import ReactToolTip from 'react-tooltip';
 
 interface ContainerProps {
   isActive?: boolean;
@@ -18,12 +19,6 @@ const Container = styled.div<ContainerProps>`
   position: relative;
 
   max-width: 1300px;
-
-  .__react_component_tooltip {
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.11);
-    border-radius: 20px;
-    padding: 10px;
-  }
 
   @media screen and (min-width: 768px) {
     padding: 80px 50px 0;
@@ -97,29 +92,6 @@ const Container = styled.div<ContainerProps>`
       display: inline-flex;
     }
 
-    .habits-title-tooltip {
-      width: 320px;
-      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.11);
-      border-radius: 20px;
-
-      text-align: left;
-      font-size: 14px;
-      line-height: 22px;
-
-      strong {
-        display: block;
-        margin-bottom: 10px;
-        font-size: 20px;
-        line-height: 28px;
-        font-weight: 500;
-      }
-
-      span {
-        font-size: 14px;
-        line-height: 22px;
-      }
-    }
-
     .step-disabled {
       margin-bottom: 10px;
 
@@ -159,34 +131,6 @@ export const StepIntro = styled.div`
     }
   }
 
-  .__react_component_tooltip {
-    width: 260px;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.11);
-    border-radius: 20px;
-
-    text-align: left;
-
-    strong {
-      margin-bottom: 5px;
-
-      display: block;
-
-      color: #1bc9bd;
-
-      font-weight: 600;
-      font-size: 16px;
-      line-height: 24px;
-    }
-
-    span {
-      display: block;
-
-      font-weight: normal;
-      font-size: 14px;
-      line-height: 22px;
-    }
-  }
-
   .step-disabled {
     margin-bottom: 10px;
 
@@ -201,10 +145,39 @@ export const StepIntro = styled.div`
   @media screen and (min-width: 768px) {
     margin-bottom: 40px;
     padding: 0 20px;
+  }
+`;
 
-    .__react_component_tooltip {
-      width: 320px;
-    }
+export const StepTooltip = styled(ReactToolTip)`
+  width: 260px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.11);
+  border-radius: 20px;
+
+  text-align: left;
+
+  strong {
+    margin-bottom: 5px;
+
+    display: block;
+
+    color: #1bc9bd;
+
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  span {
+    display: block;
+
+    text-align: justify;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 320px;
   }
 `;
 

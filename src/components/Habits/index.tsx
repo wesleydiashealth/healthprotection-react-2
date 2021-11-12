@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactToolTip from 'react-tooltip';
 import { HiQuestionMarkCircle, HiLockClosed } from 'react-icons/hi';
 import { GiForkKnifeSpoon } from 'react-icons/gi';
 import 'react-dropdown/style.css';
@@ -13,9 +12,8 @@ import Habit from './components/Habit';
 import Container, {
   StepIntro,
   StepTitle,
+  StepTooltip,
   StepDescription,
-  // ContainerAlert,
-  // ContainerAlertTitle,
   HabitsContainer,
   HabitInvalidNutraceuticals,
 } from './styles';
@@ -90,7 +88,7 @@ const Habits: React.FC = () => {
             data-tip={`<strong>${labels.step_3_title}</strong><span>${labels.step_3_tooltip}</span>`}
             data-for="habits-title-tooltip"
           />
-          <ReactToolTip
+          <StepTooltip
             id="habits-title-tooltip"
             className="habits-title-tooltip"
             place="bottom"

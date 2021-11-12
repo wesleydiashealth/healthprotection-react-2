@@ -1,5 +1,4 @@
 import React, { useCallback, useRef } from 'react';
-import ReactToolTip from 'react-tooltip';
 import { HiQuestionMarkCircle, HiLockClosed } from 'react-icons/hi';
 import { Form } from '@unform/web';
 import { FormHandles } from '@unform/core';
@@ -14,7 +13,12 @@ import createUserQuery from 'services/createUserQuery';
 import getValidationErrors from 'utils/getValidationErrors';
 
 import { WizardProvider } from 'contexts/wizard';
-import Container, { StepIntro, StepTitle, StepDescription } from './styles';
+import Container, {
+  StepIntro,
+  StepTooltip,
+  StepTitle,
+  StepDescription,
+} from './styles';
 import 'react-multi-carousel/lib/styles.css';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 
@@ -142,7 +146,7 @@ const Wizard: React.FC = () => {
             }</span>`}
             data-for="wizard-title-tooltip"
           />
-          <ReactToolTip
+          <StepTooltip
             id="wizard-title-tooltip"
             place="bottom"
             type="light"
