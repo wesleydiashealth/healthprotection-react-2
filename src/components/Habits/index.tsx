@@ -138,7 +138,7 @@ const Habits: React.FC = () => {
                 )}
               </HabitsContainer>
               {!!invalidNutraceuticals.length && (
-                <HabitInvalidNutraceuticals>
+                <HabitInvalidNutraceuticals id="invalid_habits_container">
                   {invalidNutraceuticals.length > 1
                     ? ReactHtmlParser(
                         labels.step_3_invalid_nutraceuticals_plural.replace(
