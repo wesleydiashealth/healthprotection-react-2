@@ -1,4 +1,5 @@
 import React from 'react';
+import { hotjar } from 'react-hotjar';
 // import { FaTimesCircle } from 'react-icons/fa';
 
 import { useApp } from 'contexts/app';
@@ -75,6 +76,9 @@ const Products: React.FC = () => {
               target="_blank"
               rel="norefereer noopener"
               className="buy-button"
+              onClick={() => {
+                hotjar.event('buy-button');
+              }}
             >
               Buy from Amazon
             </ProductBuy>

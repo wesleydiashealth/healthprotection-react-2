@@ -10,7 +10,7 @@ import Routes from './routes';
 const App: React.FC = () => {
   useEffect(() => {
     TagManager.initialize({ gtmId: 'GTM-PPMT6FP' });
-    hotjar.initialize(2690176, 6);
+    hotjar.initialize(2555854, 6);
   }, []);
 
   return (
