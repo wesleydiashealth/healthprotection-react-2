@@ -20,9 +20,7 @@ const formatCombination = (
           item => item.Nome === nutraceutical?.Nome_Suboutcome,
         )
       ];
-
     const slugSuboutcome = suboutcome.Slug;
-
     // Gets outcome's slug
     const slugOutcome =
       outcomes[

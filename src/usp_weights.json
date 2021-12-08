@@ -1,0 +1,15 @@
+{
+  "discountTaxEquation": {
+    "options": [
+      "Exponential",
+      "Linear"
+    ],
+    "selected": "Linear"
+  },
+  "finalEquation": {
+    "agglutinationWeight": 0.1,
+    "amountOfNutraceuticalsWeight": 0,
+    "idealScoreWeight": 1,
+    "interactionWeight": 1
+  }
+}

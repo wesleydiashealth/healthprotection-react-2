@@ -1,0 +1,9 @@
+{
+  "influences": [
+    {
+      "Nutraceutico_influenciador": "Creatine",
+      "Dosagem_nutraceutico_influenciador": 10000,
+      "Nutraceutico_influenciado": "Curcumin"
+    }
+  ]
+}

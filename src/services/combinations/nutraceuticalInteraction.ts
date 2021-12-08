@@ -4,9 +4,10 @@ import NutraceuticalData from './dtos/NutraceuticalData';
 const nutraceuticalInteraction = (
   nutraceuticals: (NutraceuticalData | null)[],
   nutraceuticalInteractionsWithSuboutcomes: InteractionData[],
-): number => {
+): number | string => {
   // Stores the return value
-  let interactionScore = 0;
+  let interactionScore: number | string = 0;
+  let disqualified = false;
 
   // Iterates over the nutraceuticals, searching for negative interactions
   nutraceuticals.some(nutraceutical => {
@@ -19,18 +20,21 @@ const nutraceuticalInteraction = (
     interactions.some(interaction => {
       // If the interaction is an exclusion one, stops the searching
       if (interaction.Interacao === 'DESCLASSIFICAR') {
-        interactionScore = 1;
+        disqualified = true;
         return true;
 
         // Or else, sums the current score to the final interaction score
       }
-      interactionScore += parseInt(interaction.Interacao, 10);
+
+      if (typeof interactionScore === 'number') {
+        interactionScore += parseInt(interaction.Interacao, 10);
+      }
 
       return false;
     });
 
     // If the interaction found an exclusion one, stops the searching
-    if (interactionScore === 1) return true;
+    if (disqualified) return true;
 
     return false;
   });

@@ -8,7 +8,18 @@ import { SankeyProvider } from 'contexts/sankey';
 
 import ConnectionsData from 'dtos/ConnectionsData';
 
+// import CombinationsManager from 'services/combinations/combinationsManager';
+
 import Loading from 'components/Loading';
+
+// USP DATA
+// import uspOutcomes from 'usp_outcomes.json';
+// import uspSuboutcomes from 'usp_suboutcomes.json';
+// import uspNutraceuticals from 'usp_nutraceuticals.json';
+// import uspInfluences from 'usp_influences.json';
+// import uspInterations from 'usp_interactions.json';
+// import uspWeights from 'usp_weights.json';
+// USP DATA
 
 import Outcomes from './components/Outcomes';
 import Suboutcomes from './components/Suboutcomes';
@@ -36,6 +47,14 @@ const Sankey: React.FC<SankeyProps> = ({
   const context = useApp();
   const { labels, steps, outcomes } = context;
   const { step1: previousStep, step2: currentStep } = steps;
+
+  // const xpto = new CombinationsManager(
+  //   uspOutcomes.outcomes,
+  //   uspSuboutcomes.suboutcomes,
+  //   uspNutraceuticals.nutraceuticals,
+  //   uspInfluences.influences,
+  //   uspInterations.interactions,
+  // );
 
   return (
     <Container id="step_2" isActive={previousStep.isCompleted}>

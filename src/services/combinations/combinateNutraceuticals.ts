@@ -14,7 +14,7 @@ const combinateNutraceuticals = (
   let scoreSum = 0; // Stores the sum of the nutraceuticals scores
   let product = 1; // Stores the current product of possibilities. It is used to calculate the index of the nutraceuticals
   let nutraceuticals = 0; // Stores the amount of nutraceuticals in the current combination
-  let combination: (NutraceuticalData | null)[] = []; // Stores the current combination
+  const combination = []; // Stores the current combination
 
   let i: number;
 
@@ -27,10 +27,9 @@ const combinateNutraceuticals = (
     const index = (step / product) % length;
 
     // If nutraceutical is not null
-    if (listOfNutraceuticals[i][index] !== null) {
+    if (listOfNutraceuticals[i][index] != null) {
       // Pushes it into the combination
-      // combination.push(listOfNutraceuticals[i][index]);
-      combination = [...combination, listOfNutraceuticals[i][index]];
+      combination.push(listOfNutraceuticals[i][index]);
 
       // Adds the score to the sum
       scoreSum += listOfNutraceuticals[i][index]?.Score || 0;

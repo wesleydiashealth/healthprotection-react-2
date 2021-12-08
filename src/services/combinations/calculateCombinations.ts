@@ -38,9 +38,9 @@ const calculateCombinations = (
     1,
   );
 
-  // Initializes the array that stores the combinations
-  const combinations: CombinationData[] = [];
-  const rejectedCombinations: RejectedCombinationsData[] = [];
+  // Initializes the array that stores the combinations and the one that stores the rejected combinations
+  const combinations = [];
+  const rejectedCombinations = [];
 
   /**
    * Runs a iterative backtrack, trying all the possible combinations
@@ -87,7 +87,6 @@ const calculateCombinations = (
       });
       continue;
     }
-
     if (surpassesBottomLimit(score, suboutcome, level)) {
       rejectedCombinations.push({
         reason: `Combination score surpasses the bottom limit (${score}/${bottomLimit})`,
@@ -98,7 +97,6 @@ const calculateCombinations = (
       });
       continue;
     }
-
     if (hasNutraceuticalInfluence(combination, influences)) {
       rejectedCombinations.push({
         reason: `Has nutraceutical influence`,

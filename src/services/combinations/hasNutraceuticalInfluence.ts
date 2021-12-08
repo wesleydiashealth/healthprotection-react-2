@@ -12,9 +12,9 @@ const hasNutraceuticalInfluence = (
   nutraceuticals.forEach(nutraceutical => {
     // Verifies if the current nutraceutical is an influencer
     const index = influences.findIndex(
-      influence =>
-        nutraceutical?.Nutraceutico === influence.Nutraceutico_influenciador &&
-        nutraceutical.Dosagem === influence.Dosagem_nutraceutico_influenciador,
+      element =>
+        nutraceutical?.Nutraceutico === element.Nutraceutico_influenciador &&
+        nutraceutical.Dosagem === element.Dosagem_nutraceutico_influenciador,
     );
 
     // If the current nutraceutical is an influencer, verifies if there is any influenced nutraceutical

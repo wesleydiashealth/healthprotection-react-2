@@ -42,7 +42,7 @@ class CombinationsManager {
     RejectedCombinationsData[]
   >(); // Todas as combinacoes rejeitadas filtradas de acordo com a blacklist
 
-  private activeCombinations = new Map<number, CombinationData>(); // Todas as combinacoes ativas pelo usuario no sankey
+  private activeCombinations = new Map<number, CombinationData[]>(); // Todas as combinacoes ativas pelo usuario no sankey
 
   private activeRejectedCombinations = new Map<
     number,
@@ -87,21 +87,26 @@ class CombinationsManager {
     return this.finalCombination;
   }
 
-  // getLogs() {
-  //   const basicCombinations = Object.fromEntries(this.activeCombinations);
-  //   const rejectedBasicCombinations = Object.fromEntries(
-  //     this.activeRejectedCombinations,
-  //   );
-  //   const { finalCombinations } = this;
-  //   const { rejectedFinalCombinations } = this;
+  getLogs(): {
+    basicCombinations: { [key: string]: CombinationData[] };
+    rejectedBasicCombinations: { [key: string]: RejectedCombinationsData };
+    finalCombinations: FinalCombinationsData[];
+    rejectedFinalCombinations: FinalCombinationsData[];
+  } {
+    const basicCombinations = Object.fromEntries(this.activeCombinations);
+    const rejectedBasicCombinations = Object.fromEntries(
+      this.activeRejectedCombinations,
+    );
+    const { finalCombinations } = this;
+    const { rejectedFinalCombinations } = this;
 
-  //   return {
-  //     basicCombinations,
-  //     rejectedBasicCombinations,
-  //     finalCombinations,
-  //     rejectedFinalCombinations,
-  //   };
-  // }
+    return {
+      basicCombinations,
+      rejectedBasicCombinations,
+      finalCombinations,
+      rejectedFinalCombinations,
+    };
+  }
 
   /*
     Recebe o nome do nutraceutico pra adicionar na blacklist
@@ -213,16 +218,18 @@ class CombinationsManager {
     );
   }
 
-  // printCombinations(map) {
+  // printCombinations(map: number): void {
   //   if (!map) return;
 
   //   switch (map) {
   //     case 1:
-  //       this.#printMap(this.#combinations);
+  //       this.printMap(this.combinations);
   //       break;
   //     case 2:
-  //       this.#printMap(this.#filteredCombinations);
+  //       this.printMap(this.filteredCombinations);
   //       break;
+
+  //     default:
   //   }
   // }
 
@@ -234,22 +241,26 @@ class CombinationsManager {
       let level: number;
 
       for (level = 1; level <= 3; level += 1) {
-        const { combinations, rejectedCombinations } = generateCombinations(
+        const generatedCombinations = generateCombinations(
           this.nutraceuticals,
           suboutcome,
           level,
           this.nutraceuticalInfluences,
         );
 
+        const combinations = generatedCombinations?.combinations;
+        const rejectedCombinations =
+          generatedCombinations?.rejectedCombinations;
+
         let tmpValue = this.combinations.get(suboutcome.ID);
         let rejectedTmpValue = this.rejectedCombinations.get(suboutcome.ID);
 
-        if (tmpValue) {
+        if (tmpValue && combinations) {
           tmpValue = [...tmpValue, ...combinations];
           this.combinations.set(suboutcome.ID, tmpValue);
         }
 
-        if (rejectedTmpValue) {
+        if (rejectedTmpValue && rejectedCombinations) {
           rejectedTmpValue = [...rejectedTmpValue, ...rejectedCombinations];
           this.rejectedCombinations.set(suboutcome.ID, rejectedTmpValue);
         }
@@ -257,7 +268,7 @@ class CombinationsManager {
     });
   }
 
-  // private printMap(map) {
+  // private printMap(map: Map<number, CombinationData[]>): void {
   //   for (const [key, value] of map) {
   //     console.log(`/////KEY: ${key}/////`);
 
@@ -282,14 +293,12 @@ class CombinationsManager {
       value.forEach((level, levelIndex) => {
         const rejected: RejectedCombinationsData[] = [];
 
-        const newLevel = Object.values(level).filter(
+        const newLevel: CombinationData[] = Object.values(level).filter(
           (comb: CombinationData) => {
-            const { nutraceuticals } = comb;
-
-            const found = nutraceuticals.find(nutraceutical => {
+            const found = comb.nutraceuticals.find(nutraceutical => {
               // eslint-disable-next-line consistent-return
               this.blacklist.forEach(name => {
-                if (nutraceutical && name === nutraceutical.Nutraceutico) {
+                if (name === nutraceutical?.Nutraceutico) {
                   return true;
                 }
               });
@@ -299,7 +308,7 @@ class CombinationsManager {
 
             if (found)
               rejected.push({
-                reason: `Blacklisted`,
+                reason: 'Blacklisted',
                 ...comb,
               });
 
@@ -308,59 +317,24 @@ class CombinationsManager {
         );
 
         let tmpItem = this.filteredCombinations.get(key);
-        // const tmpRejectedItem = this.filteredRejectedCombinations.get(key);
+        let tmpRejectedItem = this.filteredRejectedCombinations.get(key);
 
-        // const currentRejected = this.rejectedCombinations.get(key);
+        const currentRejected = this.rejectedCombinations.get(key);
+
+        const currentRejectedItem =
+          currentRejected && currentRejected[levelIndex];
 
         if (tmpItem) {
           tmpItem = [...tmpItem, ...newLevel];
           this.filteredCombinations.set(key, tmpItem);
         }
 
-        // tmpRejectedItem.push([...currentRejected, ...rejected]);
-        // this.filteredRejectedCombinations.set(key, tmpRejectedItem);
+        if (currentRejectedItem) {
+          tmpRejectedItem = [currentRejectedItem, ...rejected];
+          this.filteredRejectedCombinations.set(key, tmpRejectedItem);
+        }
       });
     });
-
-    // for (const [key, value] of this.combinations) {
-    //   this.filteredCombinations.set(key, []);
-    //   this.filteredRejectedCombinations.set(key, []);
-
-    //   value.forEach((level, levelIndex) => {
-    //     const rejected = [];
-
-    //     const newLevel = level.filter(comb => {
-    //       const found = comb.nutraceuticals.find(nutraceutical => {
-    //         for (const name of this.#blacklist) {
-    //           if (name == nutraceutical.Nutraceutico) {
-    //             return true;
-    //           }
-    //         }
-
-    //         return false;
-    //       });
-
-    //       if (found)
-    //         rejected.push({
-    //           reason: `Blacklisted`,
-    //           ...comb,
-    //         });
-
-    //       return !found;
-    //     });
-
-    //     const tmpItem = this.filteredCombinations.get(key);
-    //     const tmpRejectedItem = this.filteredRejectedCombinations.get(key);
-
-    //     const currentRejected = this.rejectedCombinations.get(key)[levelIndex];
-
-    //     tmpItem.push(newLevel);
-    //     tmpRejectedItem.push([...currentRejected, ...rejected]);
-
-    //     this.filteredCombinations.set(key, tmpItem);
-    //     this.filteredRejectedCombinations.set(key, tmpRejectedItem);
-    //   });
-    // }
   }
 
   private getActiveCombinations() {
@@ -370,7 +344,8 @@ class CombinationsManager {
         const rsub = this.filteredRejectedCombinations.get(setting.ID);
 
         if (sub) {
-          this.activeCombinations.set(setting.ID, sub[setting.level - 1]);
+          // this.activeCombinations.set(setting.ID, sub[setting.level - 1]);
+          this.activeCombinations.set(setting.ID, [sub[setting.level - 1]]);
         }
 
         if (rsub) {

@@ -17,9 +17,9 @@ const generateCombinations = (
   suboutcome: SuboutcomeData,
   level: number,
   influences: InfluenceData[],
-): ResponseData => {
+): ResponseData | undefined => {
   // Verifies if the level is equal or greater than min
-  // if (level <= 0) return;
+  if (level <= 0) return;
 
   // Gets current suboutcome nutraceuticals
   const suboutcomeNutraceuticals = nutraceuticals.filter(
@@ -27,7 +27,8 @@ const generateCombinations = (
   );
 
   // Calculates all the possible combinations
-  const { combinations, rejectedCombinations } = calculateCombinations(
+  // eslint-disable-next-line prefer-const
+  let { combinations, rejectedCombinations } = calculateCombinations(
     suboutcomeNutraceuticals,
     suboutcome,
     level,
@@ -35,14 +36,11 @@ const generateCombinations = (
   );
 
   // Orders combinations by distance to ideal score and uses score as tiebreaker
-  combinations.sort((a, b) => sortByDistanceToAverage(a, b, level));
+  combinations = combinations.sort((a, b) =>
+    sortByDistanceToAverage(a, b, level),
+  );
 
-  // fs.writeFile(
-  //   './outputs/1_BootstrapCombinations.json',
-  //   JSON.stringify(combinations, null, 2),
-  //   () => {},
-  // );
-
+  // eslint-disable-next-line consistent-return
   return { combinations, rejectedCombinations };
 };
 

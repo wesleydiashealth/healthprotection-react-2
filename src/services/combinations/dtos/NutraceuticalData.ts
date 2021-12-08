@@ -6,7 +6,7 @@ export default interface NutraceuticalData {
   Nutraceutico: string;
   Slug: string;
   Dosagem: number;
-  Score?: number;
-  Importancia?: string;
+  Score?: number | null;
+  Importancia?: string | null;
   Pontuacao_boost?: number;
 }

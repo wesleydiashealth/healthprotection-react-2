@@ -1,0 +1,68 @@
+{
+  "outcomes": [
+    {
+      "Nome": "Bone and Joint Health",
+      "Slug": "bone-and-joint-health"
+    },
+    {
+      "Nome": "Cardiovascular Health",
+      "Slug": "cardiovascular-health"
+    },
+    {
+      "Nome": "Cognitive Function and Brain Health",
+      "Slug": "cognitive-function-and-brain-health"
+    },
+    {
+      "Nome": "Diabetes & Blood Sugar",
+      "Slug": "diabetes-and-blood-sugar"
+    },
+    {
+      "Nome": "Digestive Health",
+      "Slug": "digestive-health"
+    },
+    {
+      "Nome": "Energy and Mood",
+      "Slug": "energy-and-mood"
+    },
+    {
+      "Nome": "Eye Health",
+      "Slug": "eye-health"
+    },
+    {
+      "Nome": "Hormone Regulation",
+      "Slug": "hormone-regulation"
+    },
+    {
+      "Nome": "Immunity",
+      "Slug": "immunity"
+    },
+    {
+      "Nome": "Libido and Sexual Health",
+      "Slug": "libido-and-sexual-health"
+    },
+    {
+      "Nome": "Liver Health",
+      "Slug": "liver-health"
+    },
+    {
+      "Nome": "Longevity & Anti-Aging",
+      "Slug": "longevity-and-anti-aging"
+    },
+    {
+      "Nome": "Muscle Health",
+      "Slug": "muscle-health"
+    },
+    {
+      "Nome": "Respiratory Health",
+      "Slug": "respiratory-health"
+    },
+    {
+      "Nome": "Weight Management",
+      "Slug": "weight-management"
+    },
+    {
+      "Nome": "Women's Health",
+      "Slug": "womens-health"
+    }
+  ]
+}

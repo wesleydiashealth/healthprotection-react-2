@@ -10,6 +10,14 @@ import { useApp } from 'contexts/app';
 
 import createUserQuery from 'services/createUserQuery';
 
+import CombinationsManager from 'services/combinations/combinationsManager';
+
+import getOutcomes from 'services/combinations/apis/getOutcomes';
+import getSuboutcomes from 'services/combinations/apis/getSuboutcomes';
+import getNutraceuticals from 'services/combinations/apis/getNutraceuticals';
+import getInfluences from 'services/combinations/apis/getInfluences';
+import getInteractions from 'services/combinations/apis/getInteractions';
+
 import getValidationErrors from 'utils/getValidationErrors';
 
 import { WizardProvider } from 'contexts/wizard';
@@ -95,6 +103,54 @@ const Wizard: React.FC = () => {
         await schema.validate(data, {
           abortEarly: false,
         });
+
+        const filters = [
+          {
+            valor: 'MAS',
+            categoria: 'GENERO',
+            tipo: 'TAG',
+          },
+          {
+            valor: 40,
+            categoria: 'IDADE',
+            tipo: 'INTERVALO',
+          },
+        ];
+
+        const apiOutcomes = await getOutcomes({
+          filters,
+        });
+
+        const apiSuboutcomes = await getSuboutcomes({
+          filters,
+          ...apiOutcomes,
+        });
+
+        const apiNutraceuticals = await getNutraceuticals({
+          filters,
+          ...apiSuboutcomes,
+        });
+
+        const apiInfluences = await getInfluences({
+          filters,
+          ...apiNutraceuticals,
+        });
+
+        const apiInteractions = await getInteractions({
+          filters,
+          ...apiNutraceuticals,
+        });
+
+        const xpto = new CombinationsManager(
+          apiOutcomes.outcomes,
+          apiSuboutcomes.suboutcomes,
+          apiNutraceuticals.nutraceuticals,
+          apiInfluences.influences,
+          apiInteractions.interactions,
+        );
+
+        // eslint-disable-next-line no-console
+        console.log(xpto);
 
         const response = await createUserQuery(requestData);
         const { uuid, outcomes, suboutcomes, excludes, count } =

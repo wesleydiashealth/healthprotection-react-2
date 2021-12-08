@@ -13,35 +13,35 @@ interface ResponseData {
 }
 
 const generateFinalCombinations = (
-  combinations: Map<number, CombinationData>,
+  combinations: Map<number, CombinationData[]>,
   nutraceuticalInfluences: InfluenceData[],
   nutraceuticalInteractionsWithSuboutcomes: InteractionData[],
   settings: SettingData[],
 ): ResponseData => {
   // Turns combinations map into array
-  // const combinationsArray = Array.from(combinations, ([name, value]) => ({
-  //   name,
-  //   value,
-  // }));
+  const combinationsArray = Array.from(combinations, ([name, value]) => ({
+    name,
+    value,
+  }));
 
   // Filters the desired interactions, matching them with the given settings
   const filteredInteractions = nutraceuticalInteractionsWithSuboutcomes.filter(
     interaction =>
       settings.findIndex(
-        setting =>
-          setting.ID === interaction.ID_Suboutcome &&
-          setting.level === interaction.Nivel,
+        element =>
+          element.ID === interaction.ID_Suboutcome &&
+          element.level === interaction.Nivel,
       ) > -1,
   );
 
   // Filters the populated combinations
-  const filteredCombinations = Object.values(combinations).filter(
-    filteredCombination => filteredCombination.value.length > 0,
+  const filteredCombinations = combinationsArray.filter(
+    sub => sub.value.length > 0,
   );
 
   // Iterates over all the combinations, generating the final combinations
-  // Iterates over all the combinations, generating the final combinations
-  const { finalCombinations, rejectedFinalCombinations } =
+  // eslint-disable-next-line prefer-const
+  let { finalCombinations, rejectedFinalCombinations } =
     iterateOverCombinations(
       filteredCombinations,
       nutraceuticalInfluences,
@@ -49,7 +49,7 @@ const generateFinalCombinations = (
     );
 
   // Orders combinations by score
-  finalCombinations.sort((a, b) => {
+  finalCombinations = finalCombinations.sort((a, b) => {
     // If there is a draw, it uses the amount of nutraceuticals as the parameter
     if (a.finalScore === b.finalScore) {
       return a.nutraceuticals > b.nutraceuticals ? 1 : -1;
@@ -57,17 +57,6 @@ const generateFinalCombinations = (
 
     return a.finalScore > b.finalScore ? -1 : 1;
   });
-
-  // fs.writeFile(
-  //   './outputs/2_Combinations.json',
-  //   JSON.stringify(combinationsArray, null, 2),
-  //   () => {},
-  // );
-  // fs.writeFile(
-  //   './outputs/3_FinalCombinations.json',
-  //   JSON.stringify(finalCombinations, null, 2),
-  //   () => {},
-  // );
 
   return { finalCombinations, rejectedFinalCombinations };
 };

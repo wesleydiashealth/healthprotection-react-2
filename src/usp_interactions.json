@@ -1,0 +1,22 @@
+{
+  "interactions": [
+    {
+      "ID_Nutraceutico": 139,
+      "ID_Suboutcome": 1,
+      "Nivel": 1,
+      "Interacao": "-1"
+    },
+    {
+      "ID_Nutraceutico": 139,
+      "ID_Suboutcome": 1,
+      "Nivel": 2,
+      "Interacao": "-2"
+    },
+    {
+      "ID_Nutraceutico": 139,
+      "ID_Suboutcome": 1,
+      "Nivel": 3,
+      "Interacao": "DESCLASSIFICAR"
+    }
+  ]
+}

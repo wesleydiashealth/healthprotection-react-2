@@ -24,12 +24,6 @@ const getFinalCombination = (
     outcomes,
   );
 
-  // fs.writeFile(
-  //   './outputs/4_FinalCombination.json',
-  //   JSON.stringify(formattedFinalCombination, null, 2),
-  //   () => {},
-  // );
-
   return formattedFinalCombination;
 };
 

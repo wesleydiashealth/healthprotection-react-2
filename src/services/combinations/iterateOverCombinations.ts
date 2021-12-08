@@ -22,8 +22,9 @@ const iterateOverCombinations = (
   nutraceuticalInteractionsWithSuboutcomes: InteractionData[],
 ): ResponseData => {
   // Initializes the final combinations array
-  const finalCombinations: FinalCombinationsData[] = [];
-  const rejectedFinalCombinations: RejectedCombinationData[] = [];
+  const finalCombinations = [];
+
+  const rejectedFinalCombinations = [];
 
   // Gets the amount of combinations
   const amountOfCombinations = combinations.length;
@@ -51,6 +52,9 @@ const iterateOverCombinations = (
       nutraceuticalInteractionsWithSuboutcomes,
     );
 
+    const interactionScoreNumber =
+      typeof interactionScore !== 'number' ? 1 : interactionScore;
+
     // Agglutinates the combination
     const { finalCombination, agglutinationScore } =
       getAgglutinationScore(combination);
@@ -58,7 +62,8 @@ const iterateOverCombinations = (
     // Calculates the final score, using agglutination score and classification as parameters
     const finalScore =
       (1 +
-        weightSettings.finalEquation.interactionWeight * interactionScore +
+        weightSettings.finalEquation.interactionWeight *
+          interactionScoreNumber +
         weightSettings.finalEquation.agglutinationWeight * agglutinationScore) /
       (1 +
         weightSettings.finalEquation.amountOfNutraceuticalsWeight *
@@ -76,10 +81,12 @@ const iterateOverCombinations = (
         interactionScore,
         combination,
       });
+      // eslint-disable-next-line no-continue
+      continue;
     }
 
     // If there is a invalid interaction, removes the current combination
-    if (interactionScore === 0) {
+    if (interactionScore === 'DESCLASSIFICAR') {
       rejectedFinalCombinations.push({
         reason: `Has suboutcome negative interaction`,
         nutraceuticals: finalCombination.length,
@@ -89,6 +96,8 @@ const iterateOverCombinations = (
         interactionScore,
         combination,
       });
+      // eslint-disable-next-line no-continue
+      continue;
     }
 
     // Pushes the combinations into the final combinations array

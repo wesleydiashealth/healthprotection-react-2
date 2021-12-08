@@ -16,17 +16,14 @@ const generateFinalCombination = (
   for (i = amountOfCombinations - 1; i >= 0; i -= 1) {
     // Gets the amount of combinations in this setting
     const { length } = combinationsArray[i].value;
-
     // Calculates the index of the current combination
     const index = (step / product) % length;
-
     // If the combination is not null
-    if (combinationsArray[i].value[index] !== null) {
+    if (combinationsArray[i].value[index] != null) {
       // Concatenates the current combination into the final combination
-      combination = [
-        ...combination,
-        ...combinationsArray[i].value[index].nutraceuticals,
-      ];
+      combination = combination.concat(
+        combinationsArray[i].value[index].nutraceuticals,
+      );
     }
 
     // Sums the current position
